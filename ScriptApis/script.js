@@ -1,12 +1,8 @@
-const express = require('express');
 const axios = require('axios');
 const { MongoClient } = require('mongodb');
-require('dotenv').config();
 
-const app = express();
-const port = 3000;
 
-const mongoUri = "mongodb://localhost:27017";
+const mongoUri = "mongodb://127.0.0.1:27017";
 const googleBooksApiKey = "AIzaSyA_B8AAMitgYFuZJLShoMhRStccAePNpsM";
 const mongoClient = new MongoClient(mongoUri);
 
@@ -32,31 +28,44 @@ async function fetchRandomBook() {
   } : null;
 }
 
+
+
 async function insertBookIntoDb(book) {
   try {
     await mongoClient.connect();
     const database = mongoClient.db('applibros');
     const collection = database.collection('obras');
     await collection.insertOne(book);
-  } finally {
+  } catch(error){
+    console.log(error);
+  } 
+  finally {
     await mongoClient.close();
   }
 }
 
-app.get('/add-random-book', async (req, res) => {
+async function anadirLibro(){
   try {
     const book = await fetchRandomBook();
     if (!book) {
-      return res.status(404).send('No se pudo encontrar un libro.');
+      console.log('No se pudo encontrar un libro.');
+      return;
     }
     await insertBookIntoDb(book);
-    res.send('Libro aleatorio insertado en la colección obras.');
+    
+    console.log('Libro aleatorio insertado en la colección obras.');
   } catch (error) {
     console.error(error);
-    res.status(500).send('Ocurrió un error al insertar el libro.');
+    console.log('Ocurrió un error al insertar el libro.');
   }
-});
+}
 
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
-});
+anadirLibro();
+  
+
+
+
+
+
+
+
