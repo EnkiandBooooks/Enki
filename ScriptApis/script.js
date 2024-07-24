@@ -2,9 +2,10 @@ const axios = require('axios');
 const { MongoClient } = require('mongodb');
 const fs = require('fs');
 const readline = require('readline');
+require('dotenv').config()
 
-const mongoUri = "mongodb://127.0.0.1:27017";
-const googleBooksApiKey = "AIzaSyARA7EVaRqJ31cIwywB-u0NF8ohNs7mrgw";
+const mongoUri = process.env.MONGO_URI;
+const googleBooksApiKey = process.env.API_KEY_MAX;
 const mongoClient = new MongoClient(mongoUri);
 
 const abecedario = 'abcdefghijklmnopqrstuvwxyz';
