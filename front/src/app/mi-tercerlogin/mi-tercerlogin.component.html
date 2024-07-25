@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="caja">
+    <h1>Validando código</h1>
+    <p>Introduce el código que te hemos enviado.</p>
+    <form class="login-form" (ngSubmit)="onSubmit()">
+      <input
+        type="text"
+        #codeInput
+        pattern="[0-9]{6}"
+        maxlength="6"
+        minlength="6"
+        placeholder="Código de 6 dígitos"
+        required
+      />
+      <button type="submit">Continuar</button>
+    </form>
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  </div>
+</div>
