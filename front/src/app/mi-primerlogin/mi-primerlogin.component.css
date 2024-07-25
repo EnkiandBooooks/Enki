@@ -1,0 +1,36 @@
+
+/* body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ADD8E6; 
+}
+*/
+
+.header {
+    display: flex;
+    justify-content: flex-end; /* Esto  Pone el login a la derecha */
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/*
+.login-form {
+    display: flex;
+    align-items: center;
+}
+*/
+.login-form button {
+    padding: 5px 15px; /* Tamaño del dondo verde */
+    margin-left: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px; /* Redondeo borde */
+    cursor: pointer; /* Aparece la mano */
+}
+
+.login-form button:hover {
+    background-color: #45a049;
+}
