@@ -10,6 +10,11 @@ const mongoClient = new MongoClient(mongoUri);
 
 const abecedario = 'abcdefghijklmnopqrstuvwxyz';
 
+/**
+*A partir de una query se busca con la api de google libros con un máximo de resultados.
+*Si la api funciona correctamente y hay resultados devuelve un json con los libros, estos se formatean en una lista objetos jsvascript con los datos que interesan.
+*Si la api no funciona correctamente se devuelve null.
+*/
 async function recogerLibros(query,maxResultados) {
   
   const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=${maxResultados}&langRestrict=es&key=${googleBooksApiKey}`;
@@ -25,7 +30,10 @@ async function recogerLibros(query,maxResultados) {
   })) : null;
 }
 
-
+/**
+* A partir de una lista de objetos de los libros se mueven a la colección obras de la base de datos applibros de mongodb.
+* Se comprueba también antes de añadir un libro si ya existe en la base de dtos para evitar duplicidades
+*/
 async function moverLibroDB(books) {
   try {
     await mongoClient.connect();
@@ -51,6 +59,10 @@ async function moverLibroDB(books) {
   }
 }
 
+/**
+* Se recorren cada una de las letras del abecedario y se pasan como query de la función de recogerLibros con 40 resultados.
+* Si hay libros se añaden a la base de datos.
+*/
 async function anadirLibrosAleatorios(){
   for(letra of abecedario){
     console.log("Letra",letra,":");
@@ -73,7 +85,10 @@ async function anadirLibrosAleatorios(){
   
 }
 
-
+/**
+* Se recorren cada una de las líneas de un archivo de texto y se pasan como query de la función de recogerLibros con 1 resultado.
+* Si hay libros se añaden a la base de datos.
+*/
 async function anadirLibrosDesdeArchivo(archivo) {
   try {
     const fileStream = fs.createReadStream(archivo);
@@ -104,7 +119,9 @@ async function anadirLibrosDesdeArchivo(archivo) {
   }
 }
 
-
+/*
+*Se crean como argumentos en la ejecución --archivo [nombre archivo] y --aleatorio para elegir que modo usar del script
+*/
 async function main() {
   const args = process.argv.slice(2);
   const modo = args[0] || '--archivo';
