@@ -5,7 +5,7 @@ const readline = require('readline');
 require('dotenv').config()
 
 const mongoUri = process.env.MONGO_URI;
-const googleBooksApiKey = process.env.API_KEY_MAX;
+const googleBooksApiKey = process.env.API_KEY;
 const mongoClient = new MongoClient(mongoUri);
 
 const abecedario = 'abcdefghijklmnopqrstuvwxyz';
