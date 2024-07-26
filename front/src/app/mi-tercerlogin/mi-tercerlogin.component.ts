@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mi-tercerlogin',
@@ -6,22 +7,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./mi-tercerlogin.component.css']
 })
 export class MiTercerloginComponent {
-  code: string = ''; // Propiedad para almacenar el código (GPT)
-  errorMessage: string | null = null; // Propiedad para manejar mensajes de error
+  code: string = '';
+  errorMessage: string | null = null;
+
+  constructor(private router: Router) {}
 
   onSubmit() {
-    const codigoCorrecto = this.code.trim(); // Trim elimina los espacios 
+    const codigoCorrecto = this.code.trim();
+    console.log('Código ingresado:', codigoCorrecto);
 
     // Verifica que el código tenga exactamente 6 dígitos numéricos
-    if (codigoCorrecto.length !== 6 || isNaN(Number(codigoCorrecto))) { //Nan significa Not a Number y verifica que hemos puesto número
+    if (codigoCorrecto.length !== 6 || isNaN(Number(codigoCorrecto))) {
       this.errorMessage = 'El código debe tener 6 dígitos numéricos.';
+      console.log('Error: Código inválido.');
       return;
     }
 
-
-  
-
-    // Ver en la consola
-    console.log('Código enviado:', this.code);
+    console.log('Código válido, redirigiendo...');
+    // Redirigir al componente mi-cuartologin si el código es correcto
+    this.router.navigate(['/mi-cuartologin']).then(success => {
+      if (success) {
+        console.log('Redirección exitosa.');
+      } else {
+        console.log('Redirección fallida.');
+      }
+    });
   }
 }
