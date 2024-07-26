@@ -5,7 +5,10 @@ import { AppComponent } from './app.component';
 import { MiPrimerloginComponent } from './mi-primerlogin/mi-primerlogin.component';
 import { MiSegundologinComponent } from './mi-segundologin/mi-segundologin.component';
 import { MiTercerloginComponent } from './mi-tercerlogin/mi-tercerlogin.component';
-import { FormsModule } from '@angular/forms'; // Importa FormsModule
+import { FormsModule } from '@angular/forms';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MiCuartologinComponent } from './mi-cuartologin/mi-cuartologin.component'; // Importa FormsModule
+
 
 
 @NgModule({
@@ -13,13 +16,17 @@ import { FormsModule } from '@angular/forms'; // Importa FormsModule
     AppComponent,
     MiPrimerloginComponent,
     MiSegundologinComponent,
-    MiTercerloginComponent
+    MiTercerloginComponent,
+    MiCuartologinComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
