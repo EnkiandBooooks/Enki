@@ -1,5 +1,5 @@
-require("dotenv").config(); //esto es un requerimiento de nuestro archivo dev donde estaran nuestras credenciales
-const nodemailer = require("nodemailer"); //subimos la libreria
+import 'dotenv/config';
+import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({ //creamos el transporter
     host: "smtp.gmail.com",
@@ -11,5 +11,4 @@ const transporter = nodemailer.createTransport({ //creamos el transporter
     },
 });
 
-module.exports = transporter; //lo exportamos
-
+export default transporter; // Exportar el transporter
