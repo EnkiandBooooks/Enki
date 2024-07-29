@@ -4,12 +4,12 @@
     "express": "^4.19.2",
     "nodemailer": "^6.9.14"
   },
-  "name": "js",
+  "name": "mjs",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch index.js"
+    "dev": "node --watch index.mjs"
   },
   "keywords": [],
   "author": "",

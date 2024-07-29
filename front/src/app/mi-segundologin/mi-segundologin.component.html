@@ -2,7 +2,7 @@
   <form class="login-form">
     <h1>Iniciar sesión</h1>
     <p>Introduce tu correo electrónico y te enviaremos un código de inicio de sesión.</p>
-    <input type="email" #emailInput placeholder="Elden Riiing skrrrrr" required>
+    <input type="email" #emailInput placeholder="Email" required>
     <button type="button" (click)="onClick(emailInput.value)">Continuar</button>
     <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
   </form>
