@@ -1,22 +1,23 @@
 import express from "express"; //importamos express
 import cors from "cors";
-import { EnviarMail, random } from "./enviarmail.js"; //improtamos EnviarMail y Random
+import { EnviarMail } from "./enviarmail.js"; //improtamos EnviarMail y Random
+import { getNumRandom } from "./random.js"
 
 const app = express()
 app.use(cors())
 app.use(express.json())
 const PORT = 1234 //creamos el puerto
+let mail = " "
 
 app.post("/recibirmail", (req,res) =>{ //creamos la funcion para recibir el mail
-    const mail = req.body.email;
-    console.log(mail);
-    EnviarMail(mail);
-    res.send({code: random}) 
+    mail = req.body.email;
 })
 
 app.get("/enviarCodigo",(req , res) =>{ //esta funcion 
-    res.send(`${random}`)
-
+    const numRandom = getNumRandom()
+    
+    EnviarMail(mail, numRandom);
+    res.send({code: numRandom}) 
 } ) // "/" es localhost:1234 y req sirve para enviar y res para recibir
 
 
