@@ -5,15 +5,19 @@
     <form class="login-form" (ngSubmit)="onSubmit()">
       <input
         type="text"
-        #codeInput
+        [(ngModel)]="code"  
         pattern="[0-9]{6}"
         maxlength="6"
         minlength="6"
         placeholder="Código de 6 dígitos"
         required
+        name="codeInput"
       />
       <button type="submit">Continuar</button>
     </form>
     <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
   </div>
 </div>
+
+<!---
+ [(ngModel)]="code" lo usamos en la propiedad del ts -->

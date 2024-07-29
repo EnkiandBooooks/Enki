@@ -15,7 +15,7 @@ const abecedario = 'abcdefghijklmnopqrstuvwxyz';
 *Si la api funciona correctamente y hay resultados devuelve un json con los libros, estos se formatean en una lista objetos jsvascript con los datos que interesan.
 *Si la api no funciona correctamente se devuelve null.
 */
-async function recogerLibros(query,maxResultados) {
+async function recogerLibrosAPI(query,maxResultados) {
   
   const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=${maxResultados}&langRestrict=es&key=${googleBooksApiKey}`;
   const response = await axios.get(url);
@@ -67,7 +67,7 @@ async function anadirLibrosAleatorios(){
   for(letra of abecedario){
     console.log("Letra",letra,":");
     try {
-      const book = await recogerLibros(letra,40);
+      const book = await recogerLibrosAPI(letra,40);
       if (!book) {
         console.log('No se pudo encontrar un libro.');
       
@@ -101,7 +101,7 @@ async function anadirLibrosDesdeArchivo(archivo) {
     for await (const line of rl) {
       console.log(line);
       try {
-        const book = await recogerLibros(line, 1);
+        const book = await recogerLibrosAPI(line, 1);
         if (!book) {
           console.log("No se pudo encontrar un libro.");
         } else {
@@ -119,8 +119,26 @@ async function anadirLibrosDesdeArchivo(archivo) {
   }
 }
 
+async function anadirLibroManual(query){
+    console.log(`Buscando libro con título ${query}`);
+    try {
+      const book = await recogerLibrosAPI(query,1);
+      if (!book) {
+        console.log('No se pudo encontrar un libro.');
+      
+      }else{
+        await moverLibroDB(book);
+      }
+      
+    } catch (error) {
+      console.error(error);
+      console.log('Ocurrió un error al insertar un libro.');
+    }
+}
+
+
 /*
-*Se crean como argumentos en la ejecución --archivo [nombre archivo] y --aleatorio para elegir que modo usar del script
+*Se crean como argumentos en la ejecución --archivo [nombre archivo], --aleatorio y --titulo [nombre obra] para elegir que modo usar del script
 */
 async function main() {
   const args = process.argv.slice(2);
@@ -133,8 +151,12 @@ async function main() {
     const nombreArchivo = args[1] || 'libros.txt';
     console.log(`Ejecutando modo archivo con el archivo: ${nombreArchivo}`);
     await anadirLibrosDesdeArchivo(nombreArchivo);
-  } else {
-    console.log('Modo no reconocido. Use "--aleatorio" o "--archivo [nombre de archivo]".');
+  } else if (modo === '--titulo'){
+    const nombreObra = args[1] || 'harry potter';
+    await anadirLibroManual(nombreObra);
+    
+  }else{
+    console.log('Modo no reconocido. Use "--aleatorio", "--titulo [título de obra]" o "--archivo [nombre de archivo]".');
   }
 }
 
