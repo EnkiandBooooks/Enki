@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { RestService } from '../rest.service';
 
 @Component({
   selector: 'app-mi-tercerlogin',
@@ -9,15 +10,22 @@ import { Router } from '@angular/router';
 export class MiTercerloginComponent {
   code: string = '';
   errorMessage: string | null = null;
+  text = 1;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private restService: RestService) {
+    this.recibirCodigo();
+  }
 
   onSubmit() {
-    const codigoCorrecto = this.code.trim();
-    console.log('Código ingresado:', codigoCorrecto);
+    const codigoCorrecto = this.text;
+    const codigoUsuario = parseInt(this.code.trim());
+
+    console.log('Código ingresado:', codigoUsuario);
+    console.log('Código correcto:', codigoCorrecto);
+
 
     // Verifica que el código tenga exactamente 6 dígitos numéricos
-    if (codigoCorrecto.length !== 6 || isNaN(Number(codigoCorrecto))) {
+    if (codigoCorrecto != codigoUsuario || isNaN(Number(codigoUsuario))) {
       this.errorMessage = 'El código debe tener 6 dígitos numéricos.';
       console.log('Error: Código inválido.');
       return;
@@ -32,5 +40,14 @@ export class MiTercerloginComponent {
         console.log('Redirección fallida.');
       }
     });
+  }
+
+  recibirCodigo(){
+    this.restService.receive().subscribe({
+      next: (data) => {
+        console.log(data)
+        this.text=data
+    }
+  });
   }
 }

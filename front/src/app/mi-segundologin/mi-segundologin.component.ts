@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { RestService } from '../rest.service';
+
 
 @Component({
   selector: 'app-mi-segundologin',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 export class MiSegundologinComponent {
   errorMessage: string | null = null;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private restService: RestService) { }
 
   onClick(email: string) {
     // Verifica si el correo electrónico está vacío. El Trim elimina los espacios en blanco
@@ -24,6 +26,7 @@ export class MiSegundologinComponent {
       return;
     }
 
+    this.sendData(email);
  
     // Verificar en consola que está correcto
     console.log('Correo electrónico:', email);
@@ -32,6 +35,15 @@ export class MiSegundologinComponent {
     this.router.navigate(['/mi-tercerlogin']);
   }
 
+  sendData(email: string): void{
+    console.log(email);
+    const body = {'email': email}
+    // body.append('email', email);
+    console.log(body)
+
+    this.restService.send(body)
+    .subscribe(res => console.log(res))  // Con observables tienes que subscribirte
+  }
   //Parte GPT
   validateEmail(email: string): boolean {
     // Expresión regular para validar el formato del correo electrónico
