@@ -1,12 +1,13 @@
-import transporter from "./transporter.mjs";
+import transporter from "./transporter.js";
+
 function getRandom(min,max) { //esta funcion es para crear el random
     return Math.random() * (max - min) + min;
   }
-  
-  let random = getRandom(100000,999999) //numero random de 6 digitos
+
+  export let random = getRandom(100000,999999) //numero random de 6 digitos
   random = Math.trunc(random) //lo truncamos para que sea un entero
 
-const EnviarMail = (mail) => {
+export const EnviarMail = (mail) => {
 
     transporter.sendMail({ //creamos el operador que enviara el mail
         from: process.env.EMAIL_USER, // el correo que envía
@@ -24,8 +25,6 @@ const EnviarMail = (mail) => {
     
 }
   console.log(Math.trunc(random)) //imprime el numero que vamos a enviar.
-
-  export { EnviarMail, random}; //exportamos el enviar mail
 
 
 

@@ -8,6 +8,7 @@ import { MiTercerloginComponent } from './mi-tercerlogin/mi-tercerlogin.componen
 import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MiCuartologinComponent } from './mi-cuartologin/mi-cuartologin.component'; // Importa FormsModule
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 
 
@@ -25,7 +26,8 @@ import { MiCuartologinComponent } from './mi-cuartologin/mi-cuartologin.componen
     FormsModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent]
 })
