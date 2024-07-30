@@ -45,8 +45,8 @@ export class MiTercerloginComponent {
   recibirCodigo(){
     this.restService.receive().subscribe({
       next: (data) => {
-        console.log(data)
-        this.text=data
+        const codigo = (JSON.stringify(data["code"]))
+        this.text = parseInt(codigo)
     }
   });
   }
