@@ -11,11 +11,11 @@ export class RestService {
 
   send(body: any):Observable<any>{
     console.log(body)
-    return this.http.post(`http://localhost:1234/recibirmail`, body)
+    return this.http.post(`http://localhost:1234/mail/`, body)
   }
 
   receive():Observable<any> {
-    console.log(this.http.get(`http://localhost:1234/enviarCodigo`))
-    return this.http.get(`http://localhost:1234/enviarCodigo`)
+    console.log(this.http.get(`http://localhost:1234/mail/codigo/`))
+    return this.http.get(`http://localhost:1234/mail/codigo/`)
   }
 }

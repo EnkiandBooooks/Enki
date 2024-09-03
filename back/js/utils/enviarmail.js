@@ -1,4 +1,4 @@
-import transporter from "./transporter.js";
+import transporter from "../config/transporter.js";
 
 export const EnviarMail = (mail, random) => {
 
