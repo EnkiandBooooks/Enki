@@ -1,18 +1,27 @@
+import jwt from 'jsonwebtoken';
+import 'dotenv/config';
 import { EnviarMail } from "../utils/enviarmail.js"; //improtamos EnviarMail y Random
 import { getNumRandom } from "../utils/random.js";
 
-let mail = ""
+let mailUsuario = ""
 
 export class mailController {
     static async recibirMail (req, res){ //creamos la funcion para recibir el mail
-        mail = req.body.email;
+        mailUsuario = req.body.email;
+
+        const token = jwt.sign(
+            {mail: mailUsuario}, 
+            process.env.secret_jwt_key, {
+            expiresIn: '1h'
+            })
+        
         res.status(200).json({ message: "Email recibido."});
     }
 
     static async enviarMail (req, res) { //esta funcion 
         const numRandom = getNumRandom();
         
-        EnviarMail(mail, numRandom);
+        EnviarMail(mailUsuario, numRandom);
         res.status(200).send({code: numRandom});
     }
 }
