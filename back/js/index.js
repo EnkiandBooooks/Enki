@@ -19,8 +19,8 @@ app.get("/enviarCodigo",(req, res) =>{ //esta funcion
     
     EnviarMail(mail, numRandom);
     res.send({code: numRandom});
+    console.log(numRandom)
 }); // "/" es localhost:1234 y req sirve para enviar y res para recibir
-
 
 app.listen(PORT, () => {
     console.log(`server running on port http://localhost:${PORT}`);
