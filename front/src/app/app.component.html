@@ -1,0 +1,28 @@
+<mat-toolbar class="custom-toolbar">
+    <span class="toolbar-title">Enki</span>
+    <span class="spacer"></span>
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a mat-button routerLink="/">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a mat-button routerLink="/">Opción2</a>
+        </li>
+        <li class="nav-item">
+          <a mat-button routerLink="/">Opción3</a>
+        </li>
+        <li class="nav-item">
+          <a mat-button routerLink="/">Opción4</a>
+        </li>
+        <li class="nav-item">
+          <a mat-button color="accent" routerLink="/login1" (click)="onClick()">Login</a>
+        </li>
+      </ul>
+    </nav>
+  </mat-toolbar>
+  
+  
+  
+  <router-outlet></router-outlet>
+  
