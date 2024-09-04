@@ -6,7 +6,7 @@ require('dotenv').config()
 const mongoUri = process.env.MONGO_URI;
 const mongoClient = new MongoClient(mongoUri);
 
-async function insertUser(books) {
+async function insertUser(jsonData) {
     try {
         await mongoClient.connect();
         console.log("--------------------------------------------------")
@@ -45,4 +45,4 @@ const usuarioJSON = {
 };
    
 
-insertrUser(usuarioJSON);
+insertUser(usuarioJSON);
