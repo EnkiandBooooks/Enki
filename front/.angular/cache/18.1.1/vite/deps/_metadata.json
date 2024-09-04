@@ -1,0 +1,67 @@
+{
+  "hash": "27182d36",
+  "configHash": "a061183e",
+  "lockfileHash": "f7019cb3",
+  "browserHash": "3bc2dfaf",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "2ad24391",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "b1475773",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "a94e512f",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "b9dfb198",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "e6986166",
+      "needsInterop": false
+    },
+    "@angular/platform-browser/animations/async": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/animations/async.mjs",
+      "file": "@angular_platform-browser_animations_async.js",
+      "fileHash": "1570873f",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "13db701f",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-PJUBOJHE": {
+      "file": "chunk-PJUBOJHE.js"
+    },
+    "chunk-XZKNKDX2": {
+      "file": "chunk-XZKNKDX2.js"
+    },
+    "browser-LXORZJB3": {
+      "file": "browser-LXORZJB3.js"
+    },
+    "chunk-PDAGKNML": {
+      "file": "chunk-PDAGKNML.js"
+    },
+    "chunk-ZM642NCP": {
+      "file": "chunk-ZM642NCP.js"
+    }
+  }
+}
