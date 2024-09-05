@@ -1,4 +1,6 @@
 import { RegisterModel } from "../models/mongodb/register.js";
+import jwt from 'jsonwebtoken';
+import 'dotenv/config';
 
 export class registerController {
     static async recibirUsrPwd (req, res){
@@ -8,7 +10,9 @@ export class registerController {
 
         const nombreUsuario = req.body.userName;
         const contraseña = req.body.passWord;
-        const email = req.body.mail;
+        const token = req.body.cookie;
+        
+        const email = jwt.verify(token, process.env.secret_jwt_key).mail;
 
         const nuevoUsuario = {
             userName: nombreUsuario,
