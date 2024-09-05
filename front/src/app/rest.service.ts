@@ -19,4 +19,10 @@ export class RestService {
     console.log(this.http.get(`http://localhost:1234/mail/codigo/`))
     return this.http.get(`http://localhost:1234/mail/codigo/`)
   }
+
+  sendData(body: any):Observable<any>{
+    console.log(body)
+    return this.http.post(`http://localhost:1234/user/`, body)
+  }
 }
+

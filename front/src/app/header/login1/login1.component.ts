@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RestService } from '../../rest.service';
+import{CookieService} from 'ngx-cookie-service'
 
 @Component({
   selector: 'app-login1',
@@ -20,7 +21,7 @@ import { RestService } from '../../rest.service';
 export class Login1Component {
   email: string = '';
 
-  constructor(private router: Router,private restService:RestService ) {}
+  constructor(private router: Router,private restService:RestService, private cookieService: CookieService ) {}
 
   // Método para validar el formato del correo electrónico
   validateEmail(email: string): boolean {
@@ -32,7 +33,7 @@ export class Login1Component {
   sendData(email:string):void{
     const body= {'email':email}
     this.restService.send(body)
-    .subscribe(res => console.log(res))
+    .subscribe(res => {this.cookieService.set('access_token',res.access_token) , console.log(res)})  //ejemplo cookie
   }
   // Método que se llama al enviar el formulario
   onSubmit(email:string) {
