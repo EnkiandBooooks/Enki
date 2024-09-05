@@ -1,4 +1,4 @@
-<!-- <mat-toolbar class="custom-toolbar">
+<mat-toolbar class="custom-toolbar" *ngIf="showHeaderAndBody" >
   <span class="toolbar-title">Enki</span>
   <span class="spacer"></span>
   <nav>
@@ -7,17 +7,19 @@
         <a mat-button routerLink="/">Inicio</a>
       </li>
       <li class="nav-item">
-        <a mat-button routerLink="/about">Opción2</a>
+        <a mat-button routerLink="/">Opción2</a>
       </li>
       <li class="nav-item">
-        <a mat-button routerLink="/services">Opción3</a>
+        <a mat-button routerLink="/">Opción3</a>
       </li>
       <li class="nav-item">
-        <a mat-button routerLink="/contact">Opción4</a>
+        <a mat-button routerLink="/">Opción4</a>
       </li>
       <li class="nav-item">
-        <a mat-button color="accent" routerLink="/login1">Login</a>
+        <a mat-button color="accent" routerLink="/login1" (click)="onClick()">Login</a>
       </li>
     </ul>
   </nav>
-</mat-toolbar> -->
+</mat-toolbar>
+
+<!-- *ngIf="showHeader" -->

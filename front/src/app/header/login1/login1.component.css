@@ -1,8 +1,8 @@
 /* Contenedor principal que centra el formulario en la pantalla */
 .login-container {
   display: flex; /* Flexbox para centrar el contenido */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+  justify-content: center; 
+  align-items: center; 
   height: 100vh; /* Ocupa toda la altura de la ventana */
   background-color: #f0f0f0; /* Fondo gris claro */
   margin: 0; /* Elimina márgenes predeterminados */
@@ -21,15 +21,15 @@
 
 /* Estilo adicional para personalizar MatCardTitle (opcional) */
 mat-card-title {
-  text-align: center; /* Centra el título */
-  font-size: 24px; /* Tamaño de fuente */
-  color: #333; /* Color del texto */
-  margin-bottom: 20px; /* Espacio inferior para separar del contenido */
+  text-align: center;
+  font-size: 24px; 
+  color: #333; 
+  margin-bottom: 20px; 
 }
 
 /* Personalización de MatButton */
 button {
-  width: 100%; /* Ancho completo del botón */
-  padding: 10px; /* Espaciado interno */
-  font-size: 16px; /* Tamaño de fuente */
+  width: 100%; 
+  padding: 10px; 
+  font-size: 16px; 
 }

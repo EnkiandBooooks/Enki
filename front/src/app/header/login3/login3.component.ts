@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RestService } from '../../rest.service';
 
 @Component({
   selector: 'app-login3',
@@ -24,14 +25,23 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   styleUrls: ['./login3.component.css']
 })
 export class Login3Component {
-  username: string = '';
-  password: string = '';
+  userName: string = '';
+  passWord: string = '';
   confirmPassword: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private restService:RestService) {}
+
+
+  sendData(userName:string, passWord:string ):void{
+    const body= {'userName':userName, 'passWord':passWord}
+    this.restService.send(body)
+    .subscribe(res => console.log(res))
+    console.log(passWord,userName)
+  }
+  // 
 
   onSubmit() {
-    if (this.password === this.confirmPassword && this.password.length >= 8) {
+    if (this.passWord === this.confirmPassword && this.passWord.length >= 8) {
       this.router.navigate(['/login4']);
     } else {
       alert('Por favor, asegúrese de que las contraseñas coincidan y tengan al menos 8 caracteres.');

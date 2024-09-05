@@ -9,7 +9,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Routes } from '@angular/router';
-import { Router } from '@angular/router';
+import { Router,NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -19,16 +21,27 @@ import { Router } from '@angular/router';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    CommonModule
     ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'] 
 })
 export class AppComponent {
   title = 'enkiweb';
-  constructor(private router: Router) { }
-  onClick() {
+  showHeaderAndBody: boolean = true; // Nueva variable para controlar la visibilidad
 
-   this.router.navigate(['/login1']); // Usar ruta absoluta
+  constructor(private router: Router) {
+    // Suscribirse a los eventos de navegación del router
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      // Ocultar header y body en rutas específicas
+      this.showHeaderAndBody = !['/login1', '/login2','/login3','/perfil'].includes(event.url);
+    });
+  }
+
+  onClick() {
+    this.router.navigate(['/login1']); // Usar ruta absoluta
   }
 }
