@@ -1,4 +1,5 @@
 import { RegisterModel } from "../models/mongodb/register.js";
+import { PasswdHashManager } from "../utils/passwdhash.js";
 
 export class registerController {
     static async recibirUsrPwd (req, res){
@@ -7,7 +8,8 @@ export class registerController {
         // TODO Verificación de que las variables estén bien.
 
         const nombreUsuario = req.body.userName;
-        const contraseña = req.body.password;
+         
+        const contraseña = await PasswdHashManager.hashPassword(req.body.pass);
         const email = req.body.mail;
 
         const nuevoUsuario = {
