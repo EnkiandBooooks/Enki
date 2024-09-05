@@ -28,15 +28,15 @@
       <form (ngSubmit)="onSubmit()">
         <mat-form-field appearance="fill">
           <mat-label>Nombre de Usuario</mat-label>
-          <input matInput type="text" id="username" [(ngModel)]="username" name="username" required>
+          <input matInput type="text" id="userName" [(ngModel)]="userName" name="userName" required>
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Contraseña</mat-label>
-          <input matInput type="password" id="password" [(ngModel)]="password" name="password" required minlength="8">
+          <input matInput type="passWord" id="passWord" [(ngModel)]="passWord" name="passWord" required minlength="8">
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Repetir Contraseña</mat-label>
-          <input matInput type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+          <input matInput type="passWord" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" required>
         </mat-form-field>
         <button mat-raised-button color="primary" type="submit">Continuar</button>
       </form>
