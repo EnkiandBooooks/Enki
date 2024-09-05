@@ -10,7 +10,6 @@ export class registerController {
         // TODO Verificación de que las variables estén bien.
 
         const nombreUsuario = req.body.userName;
-         
         const contraseña = await PasswdHashManager.hashPassword(req.body.passWord);
         const token = req.body.cookie;
         const email = jwt.verify(token, process.env.secret_jwt_key).mail;
