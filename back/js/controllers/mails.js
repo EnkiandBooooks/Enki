@@ -25,12 +25,10 @@ export class mailController {
         const token = jwt.sign(
             { mail: mailUsuario }, 
             process.env.secret_jwt_key, {
-                expiresIn: '1h'
-            }
-        );
-
-        // Envía la respuesta con el mensaje y el token de acceso
-        res.status(200).json({ message: "Email recibido.", access_token: token });
+            expiresIn: '1h'
+            })
+        
+        res.status(200).json({ message: "Email recibido.",email_sendcode_token:token}); // ejemplo cookie
     }
 
     /**
