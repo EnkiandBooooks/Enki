@@ -15,7 +15,7 @@ export class mailController {
             expiresIn: '1h'
             })
         
-        res.status(200).json({ message: "Email recibido.",access_token:token}); // ejemplo cookie
+        res.status(200).json({ message: "Email recibido.",email_sendcode_token:token}); // ejemplo cookie
     }
 
     static async enviarMail (req, res) { //esta funcion 
