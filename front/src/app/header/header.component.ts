@@ -22,6 +22,7 @@ import { CommonModule } from '@angular/common'; // importar siempre
 })
 
 
+
 export class HeaderComponent {
   title = 'enkiweb';
   showHeaderAndBody: boolean = true; // Variable para controlar la visibilidad del header y el body
