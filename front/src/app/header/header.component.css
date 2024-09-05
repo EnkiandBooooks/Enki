@@ -1,44 +1,4 @@
-/* Estilo para el contenedor del header
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #4CAF50; /* Color verde */
-    /* color: white; /* Texto blanco */
-  /* }
-   /* */
-  /* Estilo para el logo */
-  /* .logo h1 {
-    margin: 0;
-    font-size: 24px;
-  } */
-  
-  /* Estilo para la navegación */
-  /* nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  } */
-  
-  /* Estilo para los elementos de la lista de navegación */
-  /* nav ul li {
-    margin: 0 10px;
-  } */
-  
-  /* Estilo para los enlaces de navegación */
-  /* nav ul li a {
-    color: rgb(0, 0, 0); /* Texto blanco */
-    /* text-decoration: none;
-    font-size: 16px;
-  } */
-   /* */
-  /* Estilo para los enlaces al pasar el ratón */
-  /* nav ul li a:hover {
-    text-decoration: underline; /* Subrayar al pasar el ratón 
-  }
-  */
+
 
   .custom-toolbar {
     background-color: #1976d2;

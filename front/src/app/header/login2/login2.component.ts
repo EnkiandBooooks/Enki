@@ -6,11 +6,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { RestService } from '../../rest.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login2',
   standalone: true,
-  imports: [FormsModule,MatButtonModule,MatCardModule,MatInputModule,MatFormFieldModule],
+  imports: [FormsModule,MatButtonModule,MatCardModule,MatInputModule,MatFormFieldModule, CommonModule],
   templateUrl: './login2.component.html',
   styleUrl: './login2.component.css'
 })

@@ -1,0 +1,59 @@
+.custom-toolbar {
+    display: flex;
+    justify-content: flex-end; /* Mantiene el contenedor alineado a la derecha */
+    height: 100vh; 
+    padding: 0;
+    background-color: transparent; /* Fondo transparente para el área principal */
+  }
+  
+  .toolbar-container {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en una columna */
+    align-items: flex-end; /* Alinea el contenido al final (derecha) */
+    padding: 10px;
+    box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
+  }
+  
+  .vertical-nav {
+    display: flex;
+    flex-direction: column; /* Hace que el menú sea vertical */
+    align-items: center; 
+    width: 200px; /* Ajusta el ancho de la barra de navegación */
+    background-color: blue; 
+    padding: 20px 10px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra suave y estética */
+    box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
+  }
+  
+  .toolbar-title {
+    margin-bottom: 20px; /* Espaciado debajo del título */
+    color: rgb(157, 13, 13); /* Color del texto del título */
+    font-size: 24px; 
+    text-align: center; 
+  }
+  
+  .nav-list {
+    list-style-type: none; /* Quita los puntos de la lista */
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Asegura que la lista ocupe todo el ancho del contenedor */
+  }
+  
+  .nav-item {
+    margin-bottom: 10px; 
+    width: 100%; 
+  }
+  
+  a[mat-button] {
+    width: 100%; /* Asegura que el botón ocupe todo el ancho del contenedor */
+    text-align: left; /* Alinea el texto del botón a la izquierda */
+    color: white; /* Color del texto de los botones */
+    border-radius: 5px; 
+    display: block; /* Asegura que los enlaces se comporten como bloques */
+  }
+  
+  a[mat-button]:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo ligeramente más claro al pasar el cursor */
+  }
+  
