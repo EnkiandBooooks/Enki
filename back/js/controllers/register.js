@@ -11,16 +11,16 @@ export class registerController {
         const nombreUsuario = req.body.userName;
         const contraseña = req.body.passWord;
         const token = req.body.cookie;
-        
         const email = jwt.verify(token, process.env.secret_jwt_key).mail;
 
+        try {
             const nuevoUsuario = {
                 userName: nombreUsuario,
                 mail: email,
                 password: contraseña
             };
             
-            console.log(nuevoUsuario)
+            console.log(nuevoUsuario);
             RegisterModel.insertarUsuario(nuevoUsuario);
 
             res.status(200).json({ message: "Datos recibidos correctamente"});
