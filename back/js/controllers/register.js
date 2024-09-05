@@ -7,7 +7,7 @@ export class registerController {
         // TODO Verificación de que las variables estén bien.
 
         const nombreUsuario = req.body.userName;
-        const contraseña = req.body.password;
+        const contraseña = req.body.passWord;
         const email = req.body.mail;
 
         const nuevoUsuario = {

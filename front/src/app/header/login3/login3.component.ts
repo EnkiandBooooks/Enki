@@ -28,13 +28,14 @@ export class Login3Component {
   userName: string = '';
   passWord: string = '';
   confirmPassword: string = '';
+  mail: string = 'gerardacostabazaga@gmail.com';
 
   constructor(private router: Router, private restService:RestService) {}
 
 
-  sendData(userName:string, passWord:string ):void{
-    const body= {'userName':userName, 'passWord':passWord}
-    this.restService.send(body)
+  sendData(userName:string, passWord:string, mail:string ):void{
+    const body= {'userName':userName, 'passWord':passWord, 'mail': mail}
+    this.restService.sendData(body)
     .subscribe(res => console.log(res))
     console.log(passWord,userName)
   }
@@ -42,6 +43,7 @@ export class Login3Component {
 
   onSubmit() {
     if (this.passWord === this.confirmPassword && this.passWord.length >= 8) {
+      this.sendData(this.userName, this.passWord, this.mail);
       this.router.navigate(['/login4']);
     } else {
       alert('Por favor, asegúrese de que las contraseñas coincidan y tengan al menos 8 caracteres.');
