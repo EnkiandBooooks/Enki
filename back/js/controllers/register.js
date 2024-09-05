@@ -14,15 +14,19 @@ export class registerController {
         
         const email = jwt.verify(token, process.env.secret_jwt_key).mail;
 
-        const nuevoUsuario = {
-            userName: nombreUsuario,
-            mail: email,
-            password: contraseña
-        };
-        
-        console.log(nuevoUsuario)
-        RegisterModel.insertarUsuario(nuevoUsuario);
+            const nuevoUsuario = {
+                userName: nombreUsuario,
+                mail: email,
+                password: contraseña
+            };
+            
+            console.log(nuevoUsuario)
+            RegisterModel.insertarUsuario(nuevoUsuario);
 
-        res.status(200).json({ message: "Datos recibidos"});
+            res.status(200).json({ message: "Datos recibidos correctamente"});
+        }catch (error) {
+            console.error("Error con la solicitud", error)
+            res.status(500).json({ message: "Error del servidor" })
+        }
     }
 }
