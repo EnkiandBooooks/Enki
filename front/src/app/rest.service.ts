@@ -22,7 +22,7 @@ export class RestService {
 
   sendData(body: any):Observable<any>{
     console.log(body)
-    return this.http.post(`http://localhost:1234/user/`, body)
+    return this.http.post(`http://localhost:1234/register/`, body)
   }
 }
 
