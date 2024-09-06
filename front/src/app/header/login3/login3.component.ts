@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
@@ -29,10 +29,25 @@ export class Login3Component {
   userName: string = '';
   passWord: string = '';
   confirmPassword: string = '';
-  // mail: string = 'gerardacostabazaga@gmail.com';
 
   constructor(private router: Router, private restService:RestService, private cookieService: CookieService) {}
 
+  ngOnInit(): void {
+    if (!this.cookieService.get("email_sendcode_token")) {  // Verifica si la cookie no existe
+      console.log("No hay cookie de email");
+      this.router.navigate(['/']); //Navega al inicio de la app
+    }
+  }
+
+  @HostListener('window:beforeunload', ['$event'])
+  unloadNotification($event: any): void {
+    // Mostrar el mensaje de confirmación al recargar la página
+    $event.returnValue = '¿Estás seguro de que quieres recargar o salir de esta página? Podrías perder los datos ingresados.';
+    console.log($event.returnValue)
+    if($event.returnValue){
+      this.cookieService.delete("email_sendcode_token"); //Eliminamos la cookie al recargar y evitar mandar el correo de confirmación cada vez
+    }
+  }
 
   sendData(userName:string, passWord:string):void{
     const cookie = this.cookieService.get('access_token');
