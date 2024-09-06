@@ -5,7 +5,7 @@ export const EnviarMail = (mail, random) => {
     transporter.sendMail({ //creamos el operador que enviara el mail
         from: process.env.EMAIL_USER, // el correo que envía
         to: mail, // a quién se lo enviamos
-        subject: `Tu codigo de verificación de TupiTales`, // esto seria el encabezado
+        subject: `Tu codigo de verificación de Enki`, // esto seria el encabezado
         text: `Información verificación`,
         html: ` <div style="width: 100%; max-width: 600px; margin: 0 auto; text-align: center; padding: 20px; border: 1px solid; border-radius: 8px;">
           <img src="cid:logo@enky.com" style="display: block; margin: 0 auto; width: 300px; height: auto; border-radius: 8px ;" />
