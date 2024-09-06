@@ -1,0 +1,16 @@
+<div class="login-container">
+    <mat-card class="login-card">
+      <mat-card-title>Inicio de sesión</mat-card-title>
+      <form (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre de Usuario o correo electrónico</mat-label>
+          <input matInput type="text" id="userName" [(ngModel)]="userName" name="userName" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="passWord" id="passWord" [(ngModel)]="passWord" name="passWord" required minlength="8">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Continuar</button>
+      </form>
+    </mat-card>
+  </div>
