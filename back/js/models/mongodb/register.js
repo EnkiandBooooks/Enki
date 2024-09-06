@@ -11,9 +11,7 @@ export class RegisterModel {
      * @returns {Promise<void>} - Una promesa que se resuelve cuando el usuario ha sido insertado.
      */
     static async insertarUsuario(nuevoUsuario) {
-        // Conecta a la colección 'usuarios' de la base de datos
-        const db = await connect('usuarios');
-
+        const db = await connect('usuarios');       // Conecta a la colección 'usuarios' de la base de datos
         // Inserta el nuevo usuario en la colección
         const create = await db.insertOne(nuevoUsuario); // Equivalente a una operación SQL "INSERT INTO"
     }
