@@ -1,25 +1,20 @@
-import { MongoClient } from 'mongodb';
-import 'dotenv/config';
+import { connect } from "./connectBD.js";
 
-const client = new MongoClient(process.env.MONGO_URI);
-
-async function connect () {
-    try {
-        await client.connect();
-
-        const database = client.db('applibros');
-        console.log("BASE DE DATOS CONECTADA!")
-        return database.collection('usuarios');
-        
-    } catch (error) {
-        console.error('Error al conectar a la base de datos.');
-        console.error(error);
-    }
-}
-
+/**
+ * Clase RegisterModel para gestionar las operaciones de la base de datos relacionadas con el registro de usuarios.
+ */
 export class RegisterModel {
-    static async insertarUsuario (nuevoUsuario){
-        const db = await connect();
-        const create = await db.insertOne(nuevoUsuario);
+    /**
+     * Inserta un nuevo usuario en la colección 'usuarios'.
+     *
+     * @param {Object} nuevoUsuario - Un objeto que representa al nuevo usuario que se va a insertar.
+     * @returns {Promise<void>} - Una promesa que se resuelve cuando el usuario ha sido insertado.
+     */
+    static async insertarUsuario(nuevoUsuario) {
+        // Conecta a la colección 'usuarios' de la base de datos
+        const db = await connect('usuarios');
+
+        // Inserta el nuevo usuario en la colección
+        const create = await db.insertOne(nuevoUsuario); // Equivalente a una operación SQL "INSERT INTO"
     }
 }
