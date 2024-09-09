@@ -21,6 +21,8 @@ export class registerController {
 
         // Extrae el nombre de usuario del cuerpo de la solicitud
         const nombreUsuario = req.body.userName;
+
+        // Hashea la contraseña utilizando el gestor de hash de contraseñas
         const contraseña = await PasswdHashManager.hashPassword(req.body.passWord);
 
         // Extrae el token de la cookie y verifica el correo electrónico contenido en el token JWT
@@ -28,6 +30,20 @@ export class registerController {
         const email = jwt.verify(token, process.env.secret_jwt_key).mail;
 
         try {
+            // Comprueba que los campos pasados no esten vacios 
+            if (!nombreUsuario || !contraseña || !email){
+                return res.status(400).json({
+                    message: "Se deben llenar todos los campos"
+                })
+            }
+
+            //Comprueba que la contraseña tenga almenos 8 caracteres
+            if (contraseña.length < 8){
+                return res.status(400).json({
+                    message: "La contraseña debe conetener al menos 8 caracteres."
+                });
+            }
+
             // Crea un nuevo objeto usuario con el nombre de usuario, correo electrónico y contraseña hasheada
             const nuevoUsuario = {
                 userName: nombreUsuario,
