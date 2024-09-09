@@ -3,6 +3,7 @@ import cors from "cors";
 import 'dotenv/config';
 import { mailRouter } from "./routes/mails.js";
 import { registerRouter } from "./routes/register.js";
+import { RegisterModel } from "./models/mongodb/register.js";
 
 const app = express();
 app.use(cors());
