@@ -10,14 +10,14 @@ export class RestService {
 
   constructor(private http: HttpClient) { }
 
-  send(body: any):Observable<any>{
-    console.log(body)
+  enviarMail(body: any):Observable<any>{
+    console.log("Función para enviar correo.")
     return this.http.post(`http://localhost:1234/mail/`, body)
   }
 
-  receive():Observable<any> {
-    console.log(this.http.get(`http://localhost:1234/mail/codigo/`))
-    return this.http.get(`http://localhost:1234/mail/codigo/`)
+  comprobarCodigo(body: any):Observable<any> {
+    console.log("Función para comprobar codigos.")
+    return this.http.post(`http://localhost:1234/mail/codigo/`, body)
   }
 
   sendData(body: any):Observable<any>{
