@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
+  
+  .login-card {
+    width: 400px;
+    padding: 20px; 
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+
+=======
 /* Estilo para la barra de navegación (mat-toolbar) */
 .custom-toolbar {
     background-color: #003366; /* Color azul oscuro */
@@ -76,3 +94,4 @@
     border-radius: 4px; /* Bordes redondeados */
   }
   
+>>>>>>> 3102035e00e55b4bb998e5b4a0cdec40ed80e302
