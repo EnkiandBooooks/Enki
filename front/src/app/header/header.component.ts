@@ -37,8 +37,8 @@ export class HeaderComponent {
     });
   }
 
-  onClick(path: any) {
-    this.router.navigate(path); // Usar ruta absoluta
+  onClick() {
+    this.router.navigate(['/login0']); // Usar ruta absoluta
   }
 }
 
