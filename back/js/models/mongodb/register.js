@@ -14,9 +14,9 @@ export class RegisterModel {
         // Inserta el nuevo usuario en la colección
         const create = await db.insertOne(nuevoUsuario); // Equivalente a una operación SQL "INSERT INTO"
     }
-    static async buscarUsuario(email){
+    static async buscarUsuario(consulta){
         const db = await connect('usuarios'); 
-        const usuario = await db.findOne({ mail: email });
+        const usuario = await db.findOne(consulta);
         return usuario
     }
 }

@@ -1,16 +1,35 @@
 <div class="login-container">
-    <mat-card class="login-card">
-      <mat-card-title>Inicio de sesión</mat-card-title>
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Iniciar Sesión</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <!-- Formulario de inicio de sesión -->
       <form (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="fill">
-          <mat-label>Nombre de Usuario o correo electrónico</mat-label>
-          <input matInput type="text" id="userName" [(ngModel)]="userName" name="userName" required>
+        <!-- Campo para el nombre de usuario -->
+        <mat-form-field class="full-width">
+          <mat-label>Nombre</mat-label>
+          <input matInput type="text" [(ngModel)]="username" name="username" required>
         </mat-form-field>
-        <mat-form-field appearance="fill">
+
+        <!-- Campo para la contraseña -->
+        <mat-form-field class="full-width">
           <mat-label>Contraseña</mat-label>
-          <input matInput type="passWord" id="passWord" [(ngModel)]="passWord" name="passWord" required minlength="8">
+          <input matInput type="password" [(ngModel)]="password" name="password" required>
         </mat-form-field>
-        <button mat-raised-button color="primary" type="submit">Continuar</button>
+
+        <!-- Botón para iniciar sesión -->
+        <div class="button-container">
+          <button mat-raised-button color="primary" type="submit">Iniciar Sesión</button>
+        </div>
       </form>
-    </mat-card>
-  </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <!-- Opción para registrarse -->
+      <span>¿No tienes cuenta todavía?</span>
+      <button mat-button color="accent" (click)="goToRegister()">Registrarse</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
