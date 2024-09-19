@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms'; // Para trabajar con ngModel
 import { MatCardModule } from '@angular/material/card'; // Importa MatCardModule
 import { MatFormFieldModule } from '@angular/material/form-field'; // Importar MatFormFieldModule
 import { MatFormField } from '@angular/material/form-field';
+import { RestService } from '../../rest.service';
 
 @Component({
   selector: 'app-login0',
@@ -21,12 +22,13 @@ export class Login0Component {
   username: string = '';
   password: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private restService:RestService) {}
 
   onSubmit() {
     // Aquí puedes validar el login o enviar los datos a un servicio
     console.log('Username:', this.username);
     console.log('Password:', this.password);
+    this.sendData(this.username, this.password)
 
     // Si el login es exitoso, puedes redirigir a otra ruta.
   }
@@ -35,4 +37,16 @@ export class Login0Component {
   goToRegister() {
     this.router.navigate(['/login1']);
   }
+
+
+  sendData(username: string, password: string): void {
+    const body = { usr: username, pwd:password  };
+    this.restService.enviarMail(body).subscribe((res) => {
+      
+      console.log(res);
+      this.router.navigate(['/login2']);
+    }); //ejemplo cookie
+  }
+
+
 }
