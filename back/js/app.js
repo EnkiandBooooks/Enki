@@ -8,10 +8,7 @@ import { loginRouter } from "./routes/login.js";
 const app = express();
 app.use(cors());
 app.use(express.json());
-<<<<<<< HEAD
-=======
 
->>>>>>> 93a49cc84b7fd57f21acccc9c510974764a3d26b
 app.use('/mail', mailRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
