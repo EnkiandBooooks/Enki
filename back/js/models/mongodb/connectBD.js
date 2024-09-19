@@ -15,8 +15,7 @@ const client = new MongoClient(process.env.MONGO_URI);
  */
 export async function connect(coleccion) {
     try {
-        // Conecta el cliente a la base de datos
-        await client.connect();
+        await client.connect();     // Conecta el cliente a la base de datos
 
         // Selecciona la base de datos llamada 'applibros'
         const database = client.db('applibros');

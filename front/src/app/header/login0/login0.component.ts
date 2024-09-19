@@ -15,7 +15,7 @@ import { MatFormField } from '@angular/material/form-field';
   standalone: true,
   imports: [MatButtonModule, MatToolbarModule,MatButtonModule, MatIconModule, CommonModule, FormsModule, MatCardModule, MatFormFieldModule, MatFormField,MatInputModule ],
   templateUrl: './login0.component.html',
-  styleUrl: './login0.component.css'
+  styleUrls: ['./login0.component.css']
 })
 export class Login0Component {
   username: string = '';
