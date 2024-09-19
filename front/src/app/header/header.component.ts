@@ -41,3 +41,4 @@ export class HeaderComponent {
     this.router.navigate(['/login0']); // Usar ruta absoluta
   }
 }
+

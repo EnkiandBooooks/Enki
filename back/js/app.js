@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use('/mail', mailRouter);
 app.use('/register', registerRouter);
-app.use('/login', loginRouter)
+app.use('/login', loginRouter);
 
 app.listen(process.env.PORT, () => {
     console.log(`server running on port http://localhost:${process.env.PORT}`);

@@ -10,11 +10,16 @@ import { MatCardModule } from '@angular/material/card'; // Importa MatCardModule
 import { MatFormFieldModule } from '@angular/material/form-field'; // Importar MatFormFieldModule
 import { MatFormField } from '@angular/material/form-field';
 import { RestService } from '../../rest.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login0',
   standalone: true,
-  imports: [MatButtonModule, MatToolbarModule,MatButtonModule, MatIconModule, CommonModule, FormsModule, MatCardModule, MatFormFieldModule, MatFormField,MatInputModule ],
+  imports: [MatButtonModule, 
+    MatToolbarModule,MatButtonModule, 
+    MatIconModule, CommonModule, FormsModule,
+     MatCardModule, MatFormFieldModule, 
+    MatFormField,MatInputModule ],
   templateUrl: './login0.component.html',
   styleUrls: ['./login0.component.css']
 })
@@ -42,10 +47,20 @@ export class Login0Component {
   sendData(username: string, password: string): void {
     const body = { usr: username, pwd:password  };
     this.restService.LogIn(body).subscribe((res) => {
-      
+      if(res.resultado === "Usuario Correcto"){
+        this.router.navigate(['/perfil']);
+        alert(
+          "Sesión iniciada con éxito"
+        );
+      }else{
+
+        alert(
+          "No se encuentra el correo o la contraseña es incorrecta"
+        );
+      }
       console.log(res);
-      this.router.navigate(['/login2']);
-    }); //ejemplo cookie
+      
+    }); 
   }
 
 
