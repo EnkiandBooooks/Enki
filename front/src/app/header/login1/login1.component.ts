@@ -44,7 +44,7 @@ export class Login1Component {
 
   sendData(email: string): void {
     const body = { email: email };
-    this.restService.send(body).subscribe((res) => {
+    this.restService.enviarMail(body).subscribe((res) => {
       this.cookieService.set('email_sendcode_token', res.email_sendcode_token); //Creamos un token de un solo uso para la pantalla siguiente, una vez se recarga login2 se borra para evitar mandar el correo cada vez
       this.cookieService.set('access_token', res.email_sendcode_token);
       console.log(res);
