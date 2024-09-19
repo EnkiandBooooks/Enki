@@ -20,6 +20,7 @@ export const routes: Routes = [
     { path: 'login2', component: Login2Component }, // Ruta para el componente Login2
     { path: 'login3', component: Login3Component }, // Ruta para el component Login3
     { path: 'login0', component: Login0Component }, // Ruta para el component Login0
+   
     {path:'perfil', component:PerfilComponent},// Ruta para el componente perfil
     {path: 'body',component:BodyComponent},
     // { path: '**', redirectTo: '/inicio' } //redirige por defecto al login1
