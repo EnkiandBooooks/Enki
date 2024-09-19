@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .login-container {
     display: flex;
     justify-content: center;
@@ -14,3 +15,83 @@
     width: 100%;
   }
 
+=======
+/* Estilo para la barra de navegación (mat-toolbar) */
+.custom-toolbar {
+    background-color: #003366; /* Color azul oscuro */
+    color: white; /* Color del texto */
+    display: flex;
+    justify-content: space-between; /* Espacio entre el título y la navegación */
+    align-items: center; /* Alinear verticalmente el contenido */
+  }
+  
+  /* Asegurarse de que el título y el menú de navegación se alineen horizontalmente */
+  .toolbar-title {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .nav-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-item {
+    margin: 0 10px; /* Espaciado entre elementos de navegación */
+  }
+  
+  .nav-item a {
+    color: white; /* Color de los enlaces en la barra de navegación */
+    text-decoration: none; /* Eliminar subrayado de enlaces */
+  }
+  
+  /* Alinear la lista de navegación a la izquierda */
+  .custom-toolbar nav {
+    display: flex;
+    justify-content: flex-start; /* Alinea el menú de navegación a la izquierda */
+  }
+  
+  /* Estilo para centrar el formulario */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 64px); /* Ajustar altura para el toolbar */
+    background-color: #f0f0f0; /* Fondo gris claro */
+    margin: 0;
+  }
+  
+  /* Estilo para el contenedor del formulario */
+  .login-card {
+    background: #ffffff; /* Fondo blanco */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 100%;
+    max-width: 400px; /* Ancho máximo */
+  }
+  
+  /* Estilo para el título del card */
+  mat-card-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333; /* Color del texto */
+  }
+  
+  /* Estilo para los campos de entrada */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 15px; /* Espaciado inferior */
+  }
+  
+  /* Estilo para el botón */
+  button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px; /* Bordes redondeados */
+  }
+  
+>>>>>>> 3102035e00e55b4bb998e5b4a0cdec40ed80e302
