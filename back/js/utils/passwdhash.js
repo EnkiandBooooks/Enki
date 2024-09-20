@@ -23,14 +23,3 @@ export class PasswdHashManager {
 }
 
 
-/*
-Ejemplo:
-
-(async () => {
-    const hash = await PasswdHashManager.hashPassword("Hola que tal");
-    console.log("Hash generado:", hash);
-
-    const isMatch = await PasswdHashManager.compareHash("Hola que tal", hash);
-    console.log("Coincide:", isMatch);
-})();
-*/
