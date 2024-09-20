@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { registerController } from "../controllers/register.js";
+import { RegisterController } from "../controllers/register.js";
 
 export const registerRouter = Router();
 
-registerRouter.post('/', registerController.recibirUsrPwd);
+registerRouter.post('/', RegisterController.getUsrPwd);

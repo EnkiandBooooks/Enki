@@ -9,11 +9,11 @@ const client = new MongoClient(process.env.MONGO_URI);
 /**
  * Conecta a la base de datos MongoDB y devuelve una colección específica.
  *
- * @param {string} coleccion - El nombre de la colección a la que se desea conectar.
+ * @param {string} collection - El nombre de la colección a la que se desea conectar.
  * @returns {Promise<Object>} - La colección de la base de datos especificada.
  * @throws {Error} - Si ocurre un error al intentar conectarse a la base de datos.
  */
-export async function connect(coleccion) {
+export async function Connect(collection) {
     try {
         await client.connect();     // Conecta el cliente a la base de datos
 
@@ -22,7 +22,7 @@ export async function connect(coleccion) {
         console.log("BASE DE DATOS CONECTADA!");
 
         // Devuelve la colección especificada por el parámetro 'coleccion'
-        return database.collection(coleccion);
+        return database.collection(collection);
 
     } catch (error) {
         // Manejo de errores: imprime un mensaje de error si la conexión falla
