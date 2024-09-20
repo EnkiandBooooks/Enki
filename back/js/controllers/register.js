@@ -9,7 +9,7 @@ import 'dotenv/config';
  */
 const userSchema = z.object({
     username: z.string().min(1, { message: "El nombre de usuario es requerido" }),
-    password: z.string().min(8, { message: "La contraseña debe contener al menos 8 caracteres" }),
+    passwordUser: z.string().min(8, { message: "La contraseña debe contener al menos 8 caracteres" }),
     cookie: z.string().min(1, { message: "La cookie es requerida" })
 });
 
@@ -31,20 +31,16 @@ export class RegisterController {
 
         if (!validation.success) {
             // Responde con un error si la validación fallaç
-            console.log(validation.error.errors.map(err => err.message).join(', '));
             return res.status(400).json({
                 message: validation.error.errors.map(err => err.message).join(', ')
             });
         }
 
         const { username, passwordUser, cookie } = req.body;
-        console.log(req.body);
         try {
             // Hashea la contraseña utilizando el gestor de hash de contraseñas
-            console.log(passwordUser)
             
             const password = await PasswdHashManager.hashPassword(passwordUser);
-            console.log("HASEADA: ", req.body);
             // Extrae el email del token JWT en la cookie
             const email = jwt.verify(cookie, process.env.secret_jwt_key).mail;
 
