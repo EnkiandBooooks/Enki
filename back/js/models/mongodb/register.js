@@ -22,11 +22,21 @@ export class RegisterModel {
     static async deleteUser(query){
         const db = await Connect('usuarios'); 
         const user = await db.deleteOne(query);
-        return result.deletedCount > 0; //Devuelve true en caso de que se elimine un usuario
+        return user.deletedCount > 0; //Devuelve true en caso de que se elimine un usuario
     }
     static async updateUser(query, updateData) {
         const db = await Connect('usuarios'); 
         const result = await db.updateOne(query, { $set: updateData }); //el updateData es un JSon con los campos del usuario
         return result.modifiedCount > 0; //Igual que con eliminar devuelve true en caso de que funcione
-    }    
+    }
+    static async updateWorkSpace(query, newWorkSpace) {
+        const db = await Connect('usuarios'); 
+        const result = await db.updateOne(query, { $push: { workspacesCreated: newWorkSpace }}); //el newWorkSpace es un JSon con los campos del workSpace $push añade al array el nuevo 
+        return result.modifiedCount > 0; //Devuelve true en caso de que funcione
+    }
+    static async updateGuestWorkSpace(query, newGuestWorkSpace) {
+        const db = await Connect('usuarios'); 
+        const result = await db.updateOne(query, { $push: { guestWorkSpaces: newGuestWorkSpace }}); //el neGuestwWorkSpace es un JSon 
+        return result.modifiedCount > 0;
+    }
 }
