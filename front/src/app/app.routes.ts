@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';    // Importar el m√
 import { AppComponent } from './app.component';
 import { CambioPassComponent } from './usuarios/cambio-pass/cambio-pass.component';
 import { CambioPass2Component } from './usuarios/cambio-pass2/cambio-pass2.component';
+import { CambioPass3Component } from './usuarios/cambio-pass3/cambio-pass3.component';
 
 
 export const routes: Routes = [
@@ -26,6 +27,7 @@ export const routes: Routes = [
     {path:'perfil', component:PerfilComponent},// Ruta para el componente perfil
     { path:'resetPswd', component: CambioPassComponent }, // Ruta para el component cambioPass
     { path:'resetPswd2', component: CambioPass2Component }, // Ruta para el component  cambioPass2
+    { path:'resetPswd3', component: CambioPass3Component }, // Ruta para el component  cambioPass3
     {path: 'body',component:BodyComponent},
     // { path: '**', redirectTo: '/inicio' } //redirige por defecto al login1
   ];

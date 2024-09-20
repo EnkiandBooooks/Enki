@@ -1,0 +1,18 @@
+
+    
+  <div class="password-container">
+    <mat-card class="password-card">
+      <mat-card-title>Cambiar Contraseña</mat-card-title>
+      <form (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Nueva Contraseña</mat-label>
+          <input matInput type="password" id="newPassword" [(ngModel)]="newPassword" name="newPassword" required minlength="8">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Repetir Nueva Contraseña</mat-label>
+          <input matInput type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Cambiar Contraseña</button>
+      </form>
+    </mat-card>
+  </div>
