@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';  // Importar el módulo para la barra de herramientas
 import { MatButtonModule } from '@angular/material/button';    // Importar el módulo para los botones
 import { AppComponent } from './app.component';
+import { CambioPassComponent } from './usuarios/cambio-pass/cambio-pass.component';
+import { CambioPass2Component } from './usuarios/cambio-pass2/cambio-pass2.component';
 
 
 export const routes: Routes = [
@@ -22,6 +24,8 @@ export const routes: Routes = [
     { path: 'login0', component: Login0Component }, // Ruta para el component Login0
    
     {path:'perfil', component:PerfilComponent},// Ruta para el componente perfil
+    { path:'resetPswd', component: CambioPassComponent }, // Ruta para el component cambioPass
+    { path:'resetPswd2', component: CambioPass2Component }, // Ruta para el component  cambioPass2
     {path: 'body',component:BodyComponent},
     // { path: '**', redirectTo: '/inicio' } //redirige por defecto al login1
   ];
