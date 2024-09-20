@@ -5,7 +5,7 @@ export class loginControler{
     static async loginUsuario(req, res){
         const usr = req.body.usr
         const pwd = req.body.pwd
-
+        
         try{
             const user = await RegisterModel.buscarUsuario({userName : usr})
             console.log(user)
