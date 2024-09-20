@@ -29,7 +29,6 @@ export class Login2Component {
   }
 
   
-
   ngOnInit(): void {
     if (!this.cookieService.get("email_sendcode_token")) {  // Verifica si la cookie no existe
       console.log("No hay cookie de email");
@@ -37,8 +36,6 @@ export class Login2Component {
     }
   }
   
-  
-
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any): void {
     // Mostrar el mensaje de confirmación al recargar la página
