@@ -51,7 +51,7 @@ export class Login3Component {
 
   sendData(userName:string, passWord:string):void{
     const cookie = this.cookieService.get('access_token');
-    const body = {'userName':userName, 'passWord':passWord, 'cookie': cookie}
+    const body = {'username':userName, 'passwordUser':passWord, 'cookie': cookie}
     this.restService.sendData(body)
     .subscribe(res => console.log(res))
     console.log(passWord,userName)

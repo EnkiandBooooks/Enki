@@ -1,4 +1,4 @@
-import { connect } from "./connectBD.js";
+import { Connect } from "./connectBD.js";
 
 /**
  * Clase RegisterModel para gestionar las operaciones de la base de datos relacionadas con el registro de usuarios.
@@ -6,18 +6,18 @@ import { connect } from "./connectBD.js";
 export class RegisterModel {
     /**
     Inserta un nuevo usuario en la colección 'usuarios'.
-    @param {Object} nuevoUsuario - Un objeto que representa al nuevo usuario que se va a insertar.
+    @param {Object} newUser - Un objeto que representa al nuevo usuario que se va a insertar.
     @returns {Promise<void>} - Una promesa que se resuelve cuando el usuario ha sido insertado.
      **/
-    static async insertarUsuario(nuevoUsuario) {
-        const db = await connect('usuarios');       // Conecta a la colección 'usuarios' de la base de datos
+    static async insertUser(newUser) {
+        const db = await Connect('usuarios');       // Conecta a la colección 'usuarios' de la base de datos
         // Inserta el nuevo usuario en la colección
-        const create = await db.insertOne(nuevoUsuario); // Equivalente a una operación SQL "INSERT INTO"
+        const create = await db.insertOne(newUser); // Equivalente a una operación SQL "INSERT INTO"
     }
 
-    static async buscarUsuario(consulta){
-        const db = await connect('usuarios'); 
-        const usuario = await db.findOne(consulta);
-        return usuario
+    static async searchUser(query){
+        const db = await Connect('usuarios'); 
+        const user = await db.findOne(query);
+        return user
     }
 }
