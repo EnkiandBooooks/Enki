@@ -14,10 +14,19 @@ export class RegisterModel {
         // Inserta el nuevo usuario en la colección
         const create = await db.insertOne(newUser); // Equivalente a una operación SQL "INSERT INTO"
     }
-
     static async searchUser(query){
         const db = await Connect('usuarios'); 
         const user = await db.findOne(query);
         return user
     }
+    static async deleteUser(query){
+        const db = await Connect('usuarios'); 
+        const user = await db.deleteOne(query);
+        return result.deletedCount > 0; //Devuelve true en caso de que se elimine un usuario
+    }
+    static async updateUser(query, updateData) {
+        const db = await Connect('usuarios'); 
+        const result = await db.updateOne(query, { $set: updateData }); //el updateData es un JSon con los campos del usuario
+        return result.modifiedCount > 0; //Igual que con eliminar devuelve true en caso de que funcione
+    }    
 }
