@@ -3,6 +3,7 @@ import { PasswdHashManager } from "../utils/passwdhash.js";
 import jwt from 'jsonwebtoken';
 import { z } from 'zod';
 import 'dotenv/config';
+import { ObjectId } from "mongodb";
 
 /**
  * Esquema de validación usando zod
@@ -53,16 +54,63 @@ export class RegisterController {
 
             // Crea un nuevo objeto usuario con el nombre de usuario, correo electrónico y contraseña hasheada
             const newUser = {
+                idUser: new ObjectId(),
                 username: username,
                 mail: email,
-                password: password
+                password: password,
+                rol: null,
+                theme: {
+                    themeName: 'default'
+                },
+                icon: {
+                    iconName: 'default'
+                },
+                workSpacesCreated: [],
+                guestWorkSpaces: []
+            };
+            
+            const newWorkSpace = { //Los workspaces van anidadoas en usuarios en el array de workSpacesCreated y solo se añadiran en caso de ser necesario
+                idWorkSpace: new ObjectId(),
+                workSpaceName: "Nombre del workspace",
+                bookId: null,
+                members: [
+                    {
+                        memberId: new ObjectId(),
+                        name: "Miembro 1",
+                        progress: {
+                            percentage: 0
+                        }
+                    }
+                ],
+                timeline: [
+                    {
+                        date: new Date(),
+                        event: "Creación del workspace",
+                        comment: [
+                            {
+                                commentId: new ObjectId(),
+                                text: "Comentario inicial",
+                                user: {
+                                    commentUserId: null,
+                                    userName: "Nombre del usuario"
+                                },
+                                date: new Date()
+                            }
+                        ]
+                    }
+                ]
             };
 
+            const newGuestWorkSpace = { //Los guest workspace se anidan en newUser.guestWorkSpaces
+                guestWorkSpaceId: "null", // El ID del workspace como invitado
+                guestWorkSpaceName: "workSpaceName" // Nombre del workspace donde fue invitado
+            };
+            
             console.log(newUser);
 
             // Inserta el nuevo usuario en la base de datos
             await RegisterModel.insertUser(newUser);
-
+            
             // Envía una respuesta de éxito
             res.status(200).json({ message: "Datos recibidos correctamente" });
         } catch (error) {
