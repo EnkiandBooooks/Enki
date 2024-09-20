@@ -1,0 +1,24 @@
+<div class="login-container">
+ 
+    <mat-card class="login-card">
+    
+      <mat-card-header>
+        <mat-card-title>Pon el email</mat-card-title>
+      </mat-card-header>
+      <!-- MatCardContent para envolver el contenido principal del formulario -->
+      <mat-card-content>
+       
+        <form (ngSubmit)="onSubmit(emailInput.value)">
+          <!-- MatFormField crea un contenedor de campo de formulario que es estilizado por Angular Material -->
+          <mat-form-field class="full-width">
+            <!-- MatLabel define la etiqueta del campo (lo que aparece dentro de la caja) -->
+            <mat-label>Pon aquí el Email</mat-label>
+            <!-- MatInput es la directiva que le da estilo de Material al input. Se une a ngModel -->
+            <input matInput type="email" [(ngModel)]="email" name="email" #emailInput required>
+          </mat-form-field>
+          <!-- MatButton crea un botón estilizado, mat-raised-button añade elevación -->
+          <button mat-raised-button color="primary" type="submit">Continuar</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
