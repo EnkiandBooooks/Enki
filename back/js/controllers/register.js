@@ -1,7 +1,17 @@
 import { RegisterModel } from "../models/mongodb/register.js";
 import { PasswdHashManager } from "../utils/passwdhash.js";
 import jwt from 'jsonwebtoken';
+import { z } from 'zod';
 import 'dotenv/config';
+
+/**
+ * Esquema de validación usando zod
+ */
+const userSchema = z.object({
+    userName: z.string().min(1, { message: "El nombre de usuario es requerido" }),
+    passWord: z.string().min(8, { message: "La contraseña debe contener al menos 8 caracteres" }),
+    cookie: z.string().min(1, { message: "La cookie es requerida" })
+});
 
 /**
  * Clase registerController para gestionar las operaciones de registro de usuarios.
@@ -17,36 +27,35 @@ export class RegisterController {
     static async getUsrPwd(req, res) {
         console.log(req.body);
 
-        // TODO: Verificación de que las variables estén bien.
+        // Validar los datos de la solicitud usando zod
+        const validation = userSchema.safeParse(req.body);
 
-        // Extrae el nombre de usuario del cuerpo de la solicitud
-        const userName = req.body.userName;
+        if (!validation.success) {
+            // Responde con un error si la validación falla
+            return res.status(400).json({
+                message: validation.error.errors.map(err => err.message).join(', ')
+            });
+        }
 
-        // Hashea la contraseña utilizando el gestor de hash de contraseñas
-        const password = await PasswdHashManager.hashPassword(req.body.passWord);
-
-        // Extrae el token de la cookie y verifica el correo electrónico contenido en el token JWT
-        const token = req.body.cookie;
-        const email = jwt.verify(token, process.env.secret_jwt_key).mail;
+        const { userName, passWord, cookie } = req.body;
 
         try {
-            // Comprueba que los campos pasados no esten vacios 
-            if (!userName || !password || !email){
-                return res.status(400).json({
-                    message: "Se deben llenar todos los campos"
-                })
-            }
+            // Hashea la contraseña utilizando el gestor de hash de contraseñas
+            const passWord = await PasswdHashManager.hashPassword(passWord);
 
-            //Comprueba que la contraseña tenga almenos 8 caracteres
-            if (password.length < 8){
+            // Extrae el email del token JWT en la cookie
+            const email = jwt.verify(cookie, process.env.secret_jwt_key).mail;
+
+            // Comprueba que el email no esté vacío
+            if (!email) {
                 return res.status(400).json({
-                    message: "La contraseña debe conetener al menos 8 caracteres."
+                    message: "El token no contiene un correo electrónico válido."
                 });
             }
 
             // Crea un nuevo objeto usuario con el nombre de usuario, correo electrónico y contraseña hasheada
             const newUser = {
-                userName: userName,
+                userName,
                 mail: email,
                 password: password
             };
@@ -54,7 +63,7 @@ export class RegisterController {
             console.log(newUser);
 
             // Inserta el nuevo usuario en la base de datos
-            RegisterModel.insertUser(newUser);
+            await RegisterModel.insertarUsuario(newUser);
 
             // Envía una respuesta de éxito
             res.status(200).json({ message: "Datos recibidos correctamente" });
