@@ -27,13 +27,24 @@ export class Login0Component {
   username: string = '';
   password: string = '';
 
-  constructor(private router: Router, private restService:RestService) {}
+  constructor(private router: Router, private restService:RestService, private cookieService:CookieService) {
+
+    const sessionCookie = this.cookieService.get('userSession');
+    if(sessionCookie){
+      this.router.navigate(['/perfil'])
+     }
+    
+  }
 
   onSubmit() {
     // Aquí puedes validar el login o enviar los datos a un servicio
     console.log('Username:', this.username);
     console.log('Password:', this.password);
-    this.sendData(this.username, this.password)
+    this.sendData(this.username, this.password);
+
+    //Comprobar si ya está la cookie
+
+   
 
     // Si el login es exitoso, puedes redirigir a otra ruta.
   }
@@ -42,12 +53,19 @@ export class Login0Component {
   goToRegister() {
     this.router.navigate(['/login1']);
   }
-
+  //Método para recuperr contraseña
+  recoverPass(){
+    this.router.navigate(['/resetPswd']);
+  }
 
   sendData(username: string, password: string): void {
     const body = { usr: username, pwd:password  };
     this.restService.LogIn(body).subscribe((res) => {
       if(res.resultado === "Usuario Correcto"){
+          
+        //Guardar cookies
+
+        this.cookieService.set('userSession',JSON.stringify({username:username, password: password}))
         this.router.navigate(['/perfil']);
         alert(
           "Sesión iniciada con éxito"
