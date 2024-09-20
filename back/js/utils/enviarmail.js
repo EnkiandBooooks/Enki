@@ -1,6 +1,6 @@
 import transporter from "../config/transporter.js";
 
-export const EnviarMail = (mail, random) => {
+export const sendMail = (mail, random) => {
 
     transporter.sendMail({      //creamos el operador que enviara el mail
         from: process.env.EMAIL_USER,       // el correo que envía

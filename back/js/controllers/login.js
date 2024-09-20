@@ -1,13 +1,13 @@
 import { RegisterModel } from "../models/mongodb/register.js"
 import bcrypt from 'bcrypt';
 
-export class loginControler{
-    static async loginUsuario(req, res){
+export class LoginController{
+    static async loginUser(req, res){
         const usr = req.body.usr
         const pwd = req.body.pwd
 
         try{
-            const user = await RegisterModel.buscarUsuario({userName : usr})
+            const user = await RegisterModel.searchUser({userName : usr})
             console.log(user)
             const isValid = await bcrypt.compare(pwd, user.password)
             console.log("Usuario loggeado.")
