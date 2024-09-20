@@ -23,7 +23,7 @@ export class MailController {
         res.status(200).json({ message: "Email recibido.",email_sendcode_token:token}); // ejemplo cookie
     }
 
-    static async verificarCodigo(req, res) {
+    static async verifyCode(req, res) {
         const token = req.body.cookie;
         const userCode = req.body.codigo;
         const correctCode = jwt.verify(token, process.env.secret_jwt_key).codigo;

@@ -9,7 +9,7 @@ Set-Location (Split-Path $MyInvocation.MyCommand.Path)
 # Variables para las rutas
 $frontPath = "./front"
 $backPath = "./back/js"
-$frontCommand = "npm run ng serve -o"
+$frontCommand = "ng serve -o"
 $backCommand = "npm run dev"
 $frontendUrl = "http://localhost:4200"
 # Función para iniciar el frontend
@@ -50,7 +50,7 @@ if ($b) {
     # Ejecutar frontend en la ventana actual y backend en una nueva ventana
     try {
         Set-Location $frontPath
-        & npm run ng serve -o
+        & ng serve -o
         Write-Host "Servidor frontend iniciado en la ventana actual."
     } catch {
         Write-Host "Error al iniciar el servidor frontend en la ventana actual." -ForegroundColor Red

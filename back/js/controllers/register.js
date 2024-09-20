@@ -8,8 +8,8 @@ import 'dotenv/config';
  * Esquema de validación usando zod
  */
 const userSchema = z.object({
-    userName: z.string().min(1, { message: "El nombre de usuario es requerido" }),
-    passWord: z.string().min(8, { message: "La contraseña debe contener al menos 8 caracteres" }),
+    username: z.string().min(1, { message: "El nombre de usuario es requerido" }),
+    password: z.string().min(8, { message: "La contraseña debe contener al menos 8 caracteres" }),
     cookie: z.string().min(1, { message: "La cookie es requerida" })
 });
 
@@ -25,24 +25,26 @@ export class RegisterController {
      * @returns {Promise<void>} - Responde con un mensaje de éxito o un error del servidor.
      */
     static async getUsrPwd(req, res) {
-        console.log(req.body);
 
         // Validar los datos de la solicitud usando zod
         const validation = userSchema.safeParse(req.body);
 
         if (!validation.success) {
-            // Responde con un error si la validación falla
+            // Responde con un error si la validación fallaç
+            console.log(validation.error.errors.map(err => err.message).join(', '));
             return res.status(400).json({
                 message: validation.error.errors.map(err => err.message).join(', ')
             });
         }
 
-        const { userName, passWord, cookie } = req.body;
-
+        const { username, passwordUser, cookie } = req.body;
+        console.log(req.body);
         try {
             // Hashea la contraseña utilizando el gestor de hash de contraseñas
-            const passWord = await PasswdHashManager.hashPassword(passWord);
-
+            console.log(passwordUser)
+            
+            const password = await PasswdHashManager.hashPassword(passwordUser);
+            console.log("HASEADA: ", req.body);
             // Extrae el email del token JWT en la cookie
             const email = jwt.verify(cookie, process.env.secret_jwt_key).mail;
 
@@ -55,7 +57,7 @@ export class RegisterController {
 
             // Crea un nuevo objeto usuario con el nombre de usuario, correo electrónico y contraseña hasheada
             const newUser = {
-                userName,
+                username: username,
                 mail: email,
                 password: password
             };
@@ -63,7 +65,7 @@ export class RegisterController {
             console.log(newUser);
 
             // Inserta el nuevo usuario en la base de datos
-            await RegisterModel.insertarUsuario(newUser);
+            await RegisterModel.insertUser(newUser);
 
             // Envía una respuesta de éxito
             res.status(200).json({ message: "Datos recibidos correctamente" });
