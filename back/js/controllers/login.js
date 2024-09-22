@@ -1,7 +1,6 @@
 import { RegisterModel } from "../models/mongodb/register.js"
 import { PasswdHashManager } from "../utils/passwdhash.js";
-
-
+import { AccessRefreshToken } from "../utils/refreshAccessToken.js";
 /**
  * Clase que gestiona las operaciones de login.
  */
@@ -25,6 +24,19 @@ export class LoginController{
 
         const isValid = PasswdHashManager.compareHash(pwd, user.password);      // Comprobamos si la contraseña es la misma.
         // Depende de si es la misma contraseña envia un mensaje de error o de confirmación.
-        isValid ? res.status(200).json({resultado: "Usuario Correcto"}) : res.status(200).json({resultado: "Usuario no existe"});
+        if(!isValid){
+            res.status(400).json({resultado: "Contraseña incorrecta."});
+        }
+
+        // Creamos el Access y Refresh Token.
+        const { accessToken, refreshToken } = await AccessRefreshToken.generateAccessAndRefreshTokens(user._id);
+        
+        res
+          .status(200)
+          .json({
+            accessToken,
+            refreshToken,
+            resultado: "Usuario Correcto"
+        })
     }
 }
