@@ -23,7 +23,7 @@ export class RegisterController {
      *
      * @param {Object} req - Objeto de solicitud (Request) de Express, que contiene los datos de usuario y contraseña.
      * @param {Object} res - Objeto de respuesta (Response) de Express.
-     * @returns {Promise<void>} - Responde con un mensaje de éxito o un error del servidor.
+     * @returns {Promise<void>} - Responde con un mensaje de éxito o un error del servidor. 
      */
     static async getUsrPwd(req, res) {
 
