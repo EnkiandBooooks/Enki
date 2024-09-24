@@ -17,7 +17,7 @@ export class LoginController{
         const usr = req.body.usr;
         const pwd = req.body.pwd;
         const user = await RegisterModel.searchUser({username : usr});      // Hacemos una consulta del usuario.
-
+        console.log(user)
         if(user === null){          //Si no existe devolvemosn un 404.
             res.status(404).json({"resultado": "Usuario no existe"});
         }
@@ -30,7 +30,7 @@ export class LoginController{
 
         // Creamos el Access y Refresh Token.
         const { accessToken, refreshToken } = await AccessRefreshToken.generateAccessAndRefreshTokens(user._id);
-        
+        console.log(accessToken)
         res
           .status(200)
           .json({

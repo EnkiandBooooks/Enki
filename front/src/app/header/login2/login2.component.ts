@@ -27,14 +27,6 @@ export class Login2Component {
   constructor(private router: Router, private restService: RestService, private snackBar: MatSnackBar, private cookieService: CookieService) {
      // Llama a la función para recibir el código al inicializar el componente
   }
-
-  
-  ngOnInit(): void {
-    if (!this.cookieService.get("email_sendcode_token")) {  // Verifica si la cookie no existe
-      console.log("No hay cookie de email");
-      this.router.navigate(['/']); //Navega al inicio de la app
-    }
-  }
   
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any): void {
