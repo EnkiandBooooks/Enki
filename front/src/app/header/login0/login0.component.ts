@@ -28,12 +28,6 @@ export class Login0Component {
   password: string = '';
 
   constructor(private router: Router, private restService:RestService, private cookieService:CookieService) {
-
-    const sessionCookie = this.cookieService.get('userSession');
-    if(sessionCookie){
-      this.router.navigate(['/perfil'])
-     }
-    
   }
 
   onSubmit() {
@@ -64,8 +58,9 @@ export class Login0Component {
       if(res.resultado === "Usuario Correcto"){
           
         //Guardar cookies
-
-        this.cookieService.set('userSession',JSON.stringify({username:username, password: password}))
+        console.log(res.accessToken);
+        this.cookieService.set('access_token', res.accessToken);
+        this.cookieService.set('refresh_token', res.refreshToken);
         this.router.navigate(['/perfil']);
         alert(
           "Sesión iniciada con éxito"

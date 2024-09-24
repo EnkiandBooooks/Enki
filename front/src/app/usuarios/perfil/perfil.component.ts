@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NavigationEnd, Router } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -9,6 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RestService } from '../../rest.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-perfil',
   standalone: true,
@@ -19,11 +20,12 @@ import { RouterModule } from '@angular/router';
 export class PerfilComponent {
 
  
-
+  cookieService = inject(CookieService);
 
 
   onClick(){
-     
+    this.cookieService.delete('access_token');
+    this.cookieService.delete('refresh_token');
   }
 
 }

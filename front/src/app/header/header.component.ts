@@ -36,9 +36,5 @@ export class HeaderComponent {
       this.showHeaderAndBody = !['/login1', '/login2', '/login3','/login0'].includes(event.url);
     });
   }
-
-  onClick() {
-    this.router.navigate(['/login0']); // Usar ruta absoluta
-  }
 }
 

@@ -31,7 +31,7 @@ export class RestService {
   }
 
   resetPswd(body: any):Observable<any>{
-    console.log("Función para enviar correo.")
+    console.log("Función para rehacer correo.")
     return this.http.post(`http://localhost:1234/resetPswd/`, body)
   }
 }
