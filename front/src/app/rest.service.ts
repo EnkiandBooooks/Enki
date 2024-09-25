@@ -35,4 +35,3 @@ export class RestService {
     return this.http.post(`http://localhost:1234/resetPswd/`, body)
   }
 }
-

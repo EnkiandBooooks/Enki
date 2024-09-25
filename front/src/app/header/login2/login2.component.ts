@@ -48,7 +48,7 @@ onUnload($event: any): void {
   }
 
   comprobarCodigo(codigo = 1) {
-    const cookie = this.cookieService.get('access_token');
+    const cookie = this.cookieService.get('email_sendcode_token');
     const codigoUsuario = codigo;
     const body = {'cookie': cookie, 'codigo': codigoUsuario}
     this.restService.comprobarCodigo(body).subscribe((res) => {
