@@ -54,7 +54,6 @@ export class RegisterController {
 
             // Crea un nuevo objeto usuario con el nombre de usuario, correo electrónico y contraseña hasheada
             const newUser = {
-                idUser: new ObjectId(),
                 username: username,
                 mail: email,
                 password: password,
@@ -110,7 +109,6 @@ export class RegisterController {
 
             // Inserta el nuevo usuario en la base de datos
             await RegisterModel.insertUser(newUser);
-            
             // Envía una respuesta de éxito
             res.status(200).json({ message: "Datos recibidos correctamente" });
         } catch (error) {
