@@ -13,6 +13,7 @@ import { RestService } from '../../rest.service';
 import { CookieService } from 'ngx-cookie-service';
 import { RouterOutlet } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -34,7 +35,8 @@ export class CambioPassComponent {
   constructor(
     private router: Router,
     private restService: RestService,
-    private cookieService: CookieService
+    private cookieService: CookieService,
+    private snackBar: MatSnackBar // Inyecta MatSnackBar
   ) {}
 
   // Método para validar el formato del correo electrónico
@@ -49,7 +51,10 @@ export class CambioPassComponent {
     this.restService.resetPswd(body).subscribe((res) => {
       this.cookieService.set('email_sendcode_token', res.email_sendcode_token); //Creamos un token de un solo uso para la pantalla siguiente, una vez se recarga login2 se borra para evitar mandar el correo cada vez
       console.log(res);
-      this.router.navigate(['/resetPswd3']);
+      this.snackBar.open('Hemos enviado un correo electrónico con el enlace de recuperación de contraseña', 'Cerrar', {
+        duration: 10000, // 3 segundos
+        panelClass: ['success-snackbar'] // Clase CSS personalizada para error
+      });
     }); //ejemplo cookie
   }
   // Método que se llama al enviar el formulario
