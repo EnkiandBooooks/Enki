@@ -2,13 +2,26 @@ import jwt from 'jsonwebtoken';
 import 'dotenv/config';
 import { sendMail } from "../utils/enviarmail.js"; // Importa la función EnviarMail
 import { getNumRandom } from "../utils/random.js"; // Importa la función getNumRandom
+import { z } from "zod";
 /**
  * Clase mailController para gestionar operaciones relacionadas con el manejo de correos electrónicos.
  */
+
+const getMailSchema = z.object({email: z.string().min(1, "El email es obligatorio").email("El email no está bien formado")});
+const verifyCodeSchema = z.object({
+    cookie: z.string().min(1, "La cookie es obligatoria"),
+    codigo: z.string().min(1,"El código es obligatorio")
+
+});
+
 export class MailController {
     static async getMail(req, res) { 
 
-        const mailUser = req.body.email;       // Asigna el correo electrónico del cuerpo de la solicitud a la variable mailUsuario
+        const validation = getMailSchema.safeParse(req.body);       //Validamos el schema de zod con req.body
+        if(!validation.success){ //Verifica que haya email y esté bien formado
+            return res.status(400).json({ resultado: validation.error.errors[0].message });
+        }
+        const mailUser = req.body.email;
         const numRandom = getNumRandom();       // Genera un número aleatorio
         sendMail(mailUser, numRandom);     // Envía el correo electrónico al usuario con el número aleatorio
 
@@ -26,6 +39,10 @@ export class MailController {
     static async verifyCode(req, res) {
         const token = req.body.cookie;
         const userCode = req.body.codigo;
+        const validation = verifyCodeSchema.safeParse(req.body);       //Validamos el schema de zod con req.body
+        if(!validation.success){ //Comprueba si la verificación es incorrecta
+            return res.status(400).json({ resultado: validation.error.errors[0].message });
+        }
         const correctCode = jwt.verify(token, process.env.secret_jwt_key).codigo;
 
         correctCode == userCode ? res.status(200).json({resultado: "Correcto"}) : res.status(200).json({resultado: "Incorrecto"});
