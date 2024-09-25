@@ -15,10 +15,11 @@ import { ObjectId } from "mongodb";
  */
 export const verifyJWT = async (req, res, next) => {
 
-    if(!req.header('Authorization')) {      // Si no devuelve un mensaje.
+    if(!req.header('Authorization')) {      // Si en la cabeza del request no hay un parametro Authorization...
         return res.status(401).json({ message: "You need the token in the header." });
     }
 
+    // Recogemos el token de la cabecera.
     const token = req.header("Authorization");
     let decodedToken;
 
@@ -29,7 +30,6 @@ export const verifyJWT = async (req, res, next) => {
     }
     
     // Comprobamos que el usuario del que pertenece el AccessToken existe.
-    console.log("En el middleware => ", decodedToken)
     const id = new ObjectId(decodedToken._id);
     const user = await RegisterModel.searchUser({"_id": id});
     console.log(user)
@@ -37,7 +37,7 @@ export const verifyJWT = async (req, res, next) => {
         return res.status(403).json({ message: "User not found" });
     }
     console.log("Hola")
-    // SI todo va bien guardamos en el req al usuario y contuinuamos avanzando.
+    // SI todo va bien guardamos en el req al usuario y continuamos avanzando.
     req.user = user;
     console.log(req.user)
     next();
