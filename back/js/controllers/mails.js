@@ -10,7 +10,7 @@ import { z } from "zod";
 const getMailSchema = z.object({email: z.string().min(1, "El email es obligatorio").email("El email no está bien formado")});
 const verifyCodeSchema = z.object({
     cookie: z.string().min(1, "La cookie es obligatoria"),
-    codigo: z.string().min(1,"El código es obligatorio")
+    codigo: z.number().min(1,"El código es obligatorio")
 
 });
 
@@ -41,6 +41,7 @@ export class MailController {
         const userCode = req.body.codigo;
         const validation = verifyCodeSchema.safeParse(req.body);       //Validamos el schema de zod con req.body
         if(!validation.success){ //Comprueba si la verificación es incorrecta
+            console.log(validation.error.errors);
             return res.status(400).json({ resultado: validation.error.errors[0].message });
         }
         const correctCode = jwt.verify(token, process.env.secret_jwt_key).codigo;
