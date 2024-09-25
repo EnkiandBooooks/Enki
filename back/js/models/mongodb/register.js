@@ -15,7 +15,7 @@ export class RegisterModel {
         const create = await db.insertOne(newUser); // Equivalente a una operación SQL "INSERT INTO"
     }
     static async searchUser(query){
-        const db = await Connect('usuarios'); 
+        const db = await Connect('usuarios');
         const user = await db.findOne(query);
         return user
     }
