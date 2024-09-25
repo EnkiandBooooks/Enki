@@ -30,12 +30,6 @@ export class CambioPass3Component {
 
   constructor(private router: Router, private restService: RestService, private cookieService: CookieService) {}
 
-  ngOnInit(): void {
-    if (!this.cookieService.get("email_sendcode_token")) {  // Verifica si la cookie no existe
-      console.log("No hay cookie de email");
-      this.router.navigate(['/']); // Navega al inicio de la app
-    }
-  }
 
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any): void {
