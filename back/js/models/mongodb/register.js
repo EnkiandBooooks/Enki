@@ -31,7 +31,7 @@ export class RegisterModel {
     }
     static async updateWorkSpace(query, newWorkSpace) {
         const db = await Connect('usuarios'); 
-        const result = await db.updateOne(query, { $push: { workspacesCreated: newWorkSpace }}); //el newWorkSpace es un JSon con los campos del workSpace $push añade al array el nuevo 
+        const result = await db.updateOne(query, { $push: { workSpacesCreated: newWorkSpace }}); //el newWorkSpace es un JSon con los campos del workSpace $push añade al array el nuevo 
         return result.modifiedCount > 0; //Devuelve true en caso de que funcione
     }
     static async updateGuestWorkSpace(query, newGuestWorkSpace) {
