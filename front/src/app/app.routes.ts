@@ -16,14 +16,15 @@ import { CambioPass2Component } from './usuarios/cambio-pass2/cambio-pass2.compo
 import { CambioPass3Component } from './usuarios/cambio-pass3/cambio-pass3.component';
 import { loginGuard } from './guards/login.guard';
 import { registerGuard } from './guards/register.guard';
+import { unsavedGuard } from './guards/unsaved.guard';
 
 
 export const routes: Routes = [
     { path: 'inicio', component : AppComponent }, // Ruta principal que carga el Header
     { path: 'header', component: HeaderComponent }, // Ruta para el componente Login1
     { path: 'login1', component: Login1Component, canActivate: [loginGuard] }, // Ruta para el componente Login2
-    { path: 'login2', component: Login2Component, canActivate: [loginGuard] }, // Ruta para el componente Login2
-    { path: 'login3', component: Login3Component, canActivate: [loginGuard] }, // Ruta para el component Login3
+    { path: 'login2', component: Login2Component, canActivate: [loginGuard]}, // Ruta para el componente Login2
+    { path: 'login3', component: Login3Component, canActivate: [loginGuard], canDeactivate: [unsavedGuard] }, // Ruta para el component Login3
     { path: 'login0', component: Login0Component, canActivate: [loginGuard] }, // Ruta para el component Login0
    
     {path:'perfil', component:PerfilComponent, canActivate: [registerGuard] },// Ruta para el componente perfil
