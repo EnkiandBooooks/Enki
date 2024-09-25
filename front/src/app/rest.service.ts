@@ -41,7 +41,10 @@ export class RestService {
     console.log("Función para rehacer correo.")
     return this.http.post(`http://localhost:1234/resetPswd/`, body)
   }
-
+  resetPswd2(body: any):Observable<any>{
+    console.log("Función cambiar contraseña.")
+    return this.http.post(`http://localhost:1234/resetPswd2/`, body)
+  }
   refreshToken() {
     const refresh_token = this.getRefreshToken();
     const body = {refreshToken: refresh_token};
@@ -56,3 +59,4 @@ export class RestService {
     return this.cookieService.get("refresh_token");
   }
 }
+
