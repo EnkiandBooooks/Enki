@@ -5,7 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { RestService } from '../../rest.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -25,16 +25,25 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./cambio-pass3.component.css']
 })
 export class CambioPass3Component {
- 
+
   newPassword: string = '';
   confirmPassword: string = '';
+  token: string = '';
 
   constructor(
-    private router: Router, 
-    private restService: RestService, 
+    private router: Router,
+    private route: ActivatedRoute,
+    private restService: RestService,
     private cookieService: CookieService,
     private snackBar: MatSnackBar // Inyecta MatSnackBar
   ) {}
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.token = params['tokenPswd']; // Captura el token de la URL
+      console.log('Token capturado:', this.token); // Verifica que el token sea capturado correctamente
+    });
+  }
 
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any): void {
@@ -46,15 +55,20 @@ export class CambioPass3Component {
 
   sendData(newPassword: string): void {
     const cookie = this.cookieService.get('access_token');
-    const body = { newPassword:newPassword, cookie: cookie };
-    this.restService.sendData(body).subscribe(res => console.log(res));
-    console.log(newPassword);
+    const body = { newPassword: newPassword};
+
+    // console.log('Cuerpo del POST:', body);  // Verifica el cuerpo de la solicitud
+    // console.log('Token en la URL:', this.token);  // Verifica que el token es correcto
+    // console.log(newPassword); //Verifica la contraseña enviada por front
+
+    this.restService.resetPswd3(body, this.token).subscribe(res => console.log(res));
   }
+
 
   onSubmit() {
     if (this.newPassword === this.confirmPassword && this.newPassword.length >= 8) {
-      this.sendData( this.newPassword);
-      this.router.navigate(['/perfil']);
+      this.sendData(this.newPassword);
+      this.router.navigate(['/login0']);
       this.snackBar.open('Contraseña cambiada con éxito', 'Cerrar', {
         duration: 3000, // 3 segundos
         panelClass: ['success-snackbar'] // Clase CSS personalizada para éxito

@@ -20,10 +20,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   selector: 'app-cambio-pass',
   standalone: true,
   imports: [ RouterOutlet,
-    MatButtonModule, 
-    MatToolbarModule,MatButtonModule, 
+    MatButtonModule,
+    MatToolbarModule,MatButtonModule,
     MatIconModule, CommonModule, FormsModule,
-     MatCardModule, MatFormFieldModule, 
+     MatCardModule, MatFormFieldModule,
     MatFormField,MatInputModule,ReactiveFormsModule],
   templateUrl: './cambio-pass.component.html',
   styleUrl: './cambio-pass.component.css'
