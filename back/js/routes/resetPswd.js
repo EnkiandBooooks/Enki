@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { resetPswdController } from "../controllers/resetpswd.js";
+import { resetPswdController } from "../controllers/resetPswd.js";
 
 
 export const resetPswdRouter = Router();
