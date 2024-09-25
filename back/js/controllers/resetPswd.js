@@ -19,10 +19,12 @@ export class resetPswdController {
             })
         const temporaryUrl = `http://localhost:4200/resetPwsd2/${tokenPswd}`;
         console.log(tokenPswd);
+        
         // res.status(200).json({ "Token generado." : tokenPswd}); 
         res.send({url: temporaryUrl});
     console.log(temporaryUrl)
+    return temporaryUrl;
     }
 }   
-
+ 
 
