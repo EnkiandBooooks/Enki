@@ -1,5 +1,5 @@
 import transporter from "../config/transporter.js";
-import {  resetPswdController } from '../controllers/resetpswd.js';
+import {  resetPswdController } from '../controllers/resetPswd.js';
 
 
 export const EnviarMailpswd = (mail, temporaryUrl) => {
@@ -27,7 +27,7 @@ export const EnviarMailpswd = (mail, temporaryUrl) => {
     </button>
 </a></p>
                 <div style="border-top: 1px solid #ddd; margin: 5px ;" />
-                <p> En caso de que usted no haya intentado cambiar la contraseña<b> alguien a intentado entrar en tu cuenta de Enki</b>. Te recomendamos restablecer tu contraseña.</p>
+                <p> En caso de que usted no haya intentado cambiar la contraseña<b> alguien ha intentado entrar en tu cuenta de Enki</b>. Te recomendamos restablecer tu contraseña.</p>
 
         </div>
 `,
