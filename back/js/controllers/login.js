@@ -16,9 +16,9 @@ export class LoginController{
     static async loginUser(req, res){
         const usr = req.body.usr;
         const pwd = req.body.pwd;
-        const user = await RegisterModel.searchUser({username : usr});      // Hacemos una consulta del usuario.
-        console.log(user)
-        if(user === null){          //Si no existe devolvemosn un 404.
+        console.log({username : usr})
+        const user = await RegisterModel.searchUser({username: usr});      // Hacemos una consulta del usuario.
+        if(!user){          //Si no existe devolvemosn un 404.
             res.status(404).json({"resultado": "Usuario no existe"});
         }
 

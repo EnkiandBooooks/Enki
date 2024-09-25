@@ -20,7 +20,6 @@ export async function Connect(collection) {
         // Selecciona la base de datos llamada 'applibros'
         const database = client.db('applibros');
         console.log("BASE DE DATOS CONECTADA!");
-
         // Devuelve la colección especificada por el parámetro 'coleccion'
         return database.collection(collection);
 

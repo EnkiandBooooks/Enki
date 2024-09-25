@@ -26,10 +26,11 @@ export class AccessRefreshToken{
      */
     static async generateAccessToken(userId){
         const user = await RegisterModel.searchUser({"_id": userId});
+        console.log("AccessToken regenerado.")
         return jwt.sign(
-            { _id: user._id, email: user.email },
+            { _id: user._id, email: user.mail },
             process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: "15m" }
+            { expiresIn: '5s' }
         )
     }
     /**
