@@ -27,6 +27,8 @@ export class CambioPass2Component {
   }
 
   
+
+  
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any): void {
     // Mostrar el mensaje de confirmación al recargar la página

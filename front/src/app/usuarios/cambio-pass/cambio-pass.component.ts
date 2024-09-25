@@ -49,7 +49,7 @@ export class CambioPassComponent {
     this.restService.resetPswd(body).subscribe((res) => {
       this.cookieService.set('email_sendcode_token', res.email_sendcode_token); //Creamos un token de un solo uso para la pantalla siguiente, una vez se recarga login2 se borra para evitar mandar el correo cada vez
       console.log(res);
-      this.router.navigate(['/resetPswd2']);
+      this.router.navigate(['/resetPswd3']);
     }); //ejemplo cookie
   }
   // Método que se llama al enviar el formulario
