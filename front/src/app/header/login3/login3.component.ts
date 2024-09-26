@@ -32,24 +32,6 @@ export class Login3Component {
 
   constructor(private router: Router, private restService:RestService, private cookieService: CookieService) {}
 
-  // @HostListener('window:beforeunload', ['$event'])
-  // unloadNotification($event: any): void {
-  //   // Mostrar el mensaje de confirmación al recargar la página
-  //   $event.returnValue = '¿Estás seguro de que quieres recargar o salir de esta página? Podrías perder los datos ingresados.';
-  //   console.log($event.returnValue)
-  //   if($event.returnValue){
-  //     this.cookieService.delete("email_sendcode_token"); //Eliminamos la cookie al recargar y evitar mandar el correo de confirmación cada vez
-  //   }
-  // }
-
-  hasUnsavedChanges():boolean {
-    console.log("Hola")
-    if(this.userName === '' && this.passWord === '' && this.confirmPassword === ''){
-      return true;
-    }
-    return false;
-  }
-
   sendData(userName:string, passWord:string):void{
     const cookie = this.cookieService.get('email_sendcode_token');
     const body = {'username':userName, 'passwordUser':passWord, 'cookie': cookie}
@@ -57,7 +39,6 @@ export class Login3Component {
     .subscribe(res => console.log(res))
     console.log(passWord,userName)
   }
-  // 
 
   onSubmit() {
     if (this.passWord === this.confirmPassword && this.passWord.length >= 8) {

@@ -19,28 +19,11 @@ import{CookieService} from 'ngx-cookie-service'
 })
 
 export class Login2Component {
-
   errorMessage: string | null = null; // Mensaje de error para mostrar al usuario
   code: string =''; 
   expectedCode: number | null = null; // Código quee speramos desde el servidor // Elimina espacios al inicio y al final del código ingresado
 
-  constructor(private router: Router, private restService: RestService, private snackBar: MatSnackBar, private cookieService: CookieService) {
-     // Llama a la función para recibir el código al inicializar el componente
-  }
-  
-  @HostListener('window:beforeunload', ['$event'])
-  unloadNotification($event: any): void {
-    // Mostrar el mensaje de confirmación al recargar la página
-    $event.returnValue = '¿Estás seguro de que quieres recargar o salir de esta página? Podrías perder los datos ingresados.';
-    // this.cookieService.delete("email_sendcode_token"); //Eliminamos la cookie al recargar y evitar mandar el correo de confirmación cada vez
-
-  }
-
-  @HostListener('window:unload', ['$event'])
-onUnload($event: any): void {
-  // Eliminar el token cuando el usuario realmente abandona la página
-  this.cookieService.delete("email_sendcode_token");
-}
+  constructor(private router: Router, private restService: RestService, private snackBar: MatSnackBar, private cookieService: CookieService) {}
 
   onSubmit() {
     const codigo = Number(this.code);

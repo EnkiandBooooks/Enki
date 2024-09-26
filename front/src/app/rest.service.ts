@@ -44,7 +44,7 @@ export class RestService {
 
   resetPswd3(body: any, token: string): Observable<any> {
     console.log("Función cambiar contraseña.");
-    return this.http.post(`http://localhost:1234/resetPswd3/${token}`, body);
+    return this.http.post(`http://localhost:1234/resetPswd/${token}`, body);
   }
 
   refreshToken() {
