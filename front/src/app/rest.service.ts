@@ -27,10 +27,10 @@ export class RestService {
     return this.http.post(`http://localhost:1234/register/`, body)
   }
 
-  getData(){
-    return firstValueFrom(
-      this.http.get<any>(`http://localhost:1234/data/`)
-    )
+  getData():Observable<any>{
+
+      return this.http.get(`http://localhost:1234/data/`);
+    
   }
 
   LogIn(body: any):Observable<any>{

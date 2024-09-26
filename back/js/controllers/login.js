@@ -24,6 +24,7 @@ export class LoginController {
    * @returns {Promise<void>} - Responde con un mensaje de éxito o un error del servidor.
    */
   static async loginUser(req, res) {
+    console.log("hola doy error")
     try {
       // Validación de datos de entrada con Zod
       const { usr, pwd } = loginSchema.parse(req.body);
@@ -31,13 +32,13 @@ export class LoginController {
       // Consulta a la base de datos para verificar si el usuario existe
       const user = await RegisterModel.searchUser({ username: usr });
       if (!user) {
-        return res.status(404).json({ resultado: "Usuario no existe" });
+        return res.status(200).json({ resultado: "Usuario no existe" });
       }
 
       // Verificación de la contraseña
       const isValid = await PasswdHashManager.compareHash(pwd, user.password);
       if (!isValid) {
-        return res.status(400).json({ resultado: "Contraseña incorrecta." });
+        return res.status(200).json({ resultado: "Contraseña incorrecta." });
       }
 
       // Generar Access y Refresh Tokens

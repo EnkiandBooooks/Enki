@@ -1,10 +1,12 @@
 <mat-toolbar class="custom-toolbar">
-  <h2>Bienvenido {{arrUsr().User}}</h2>
-  <div class="toolbar-container">
+  <h2>Bienvenido {{arrUsr().user}} Rol:({{arrUsr().rol}})</h2>
+  <div class="toolbar-container" [ngStyle]="{'background-color': (arrUsr().rol === 'superAdmin') ? '#74A14E' : (arrUsr().rol === 'usuario') ? '#e40404' : 'yellow'}"
+  >
     <!-- Título de la barra de herramientas -->
     <span class="toolbar-title">Enki</span>
+    
     <!-- Contenedor del menú de navegación -->
-    <nav class="vertical-nav">
+    <nav class="vertical-nav" >
       <ul class="nav-list">
         <li class="nav-item">
           <a mat-button routerLink="/">Inicio</a>
@@ -20,6 +22,12 @@
         </li>
         <li class="nav-item">
           <a mat-button color="accent" routerLink="/" (click)="onClick()">Salir</a>
+        </li>
+        <li class="nav-item" *ngIf="arrUsr().rol === 'admin' ||arrUsr().rol === 'superAdmin'">
+          <a mat-button color="accent" routerLink="/" (click)="onClick()">Esto solo será visible si eres admin</a>
+        </li>
+        <li class="nav-item" *ngIf="arrUsr().rol === 'superAdmin'">
+          <a mat-button color="accent" routerLink="/" (click)="onClick()">Esto solo será visible si eres superAdmin</a>
         </li>
       </ul>
     </nav>

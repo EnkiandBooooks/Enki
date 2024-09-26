@@ -49,15 +49,14 @@ export class RegisterController {
             if (!email) {
                 return res.status(400).json({
                     message: "El token no contiene un correo electrónico válido."
-                });
+                });   
             }
-
             // Crea un nuevo objeto usuario con el nombre de usuario, correo electrónico y contraseña hasheada
             const newUser = {
                 username: username,
                 mail: email,
                 password: password,
-                rol: null,
+                rol: "usuario",
                 theme: {
                     themeName: 'default'
                 },

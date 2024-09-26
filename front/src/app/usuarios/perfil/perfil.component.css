@@ -14,12 +14,24 @@
     box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
   }
   
-  .vertical-nav {
+  .vertical-nav-admin {
     display: flex;
     flex-direction: column; /* Hace que el menú sea vertical */
     align-items: center; 
     width: 200px; /* Ajusta el ancho de la barra de navegación */
-    background-color: blue; 
+    background-color: #74A14E; 
+    padding: 20px 10px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra suave y estética */
+    box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
+  }
+
+  .vertical-nav-user {
+    display: flex;
+    flex-direction: column; /* Hace que el menú sea vertical */
+    align-items: center; 
+    width: 200px; /* Ajusta el ancho de la barra de navegación */
+    background-color: #e40404; 
     padding: 20px 10px;
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra suave y estética */
@@ -55,5 +67,15 @@
   
   a[mat-button]:hover {
     background-color: rgba(255, 255, 255, 0.1); /* Fondo ligeramente más claro al pasar el cursor */
+  }
+  
+
+
+  .admin-background {
+    background-color: #2196F3; /* Azul, color para el rol de admin */
+  }
+  
+  .user-background {
+    background-color: #e40404; /* Verde Matcha, color para los usuarios normales */
   }
   
