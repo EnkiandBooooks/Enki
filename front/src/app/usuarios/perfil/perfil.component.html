@@ -6,7 +6,7 @@
 
 
 
-  <div class="toolbar-container" [ngStyle]="{'background-color': (arrUsr().rol === 'superAdmin') ? '#74A14E' : (arrUsr().rol === 'usuario') ? '#e40404' : 'yellow'}"
+  <div class="toolbar-container" [ngStyle]="{'background-color': (arrUsr().rol === 'superAdmin') ? '#74A14E' : (arrUsr().rol === 'usuario') ? '#e40404' : (arrUsr().rol === 'admin') ? '#a55d00' : '#777777'}"
   >
   <img src="images/enki.png" alt="Enki Logo" class="toolbar-image">
   <h2>Bienvenido {{arrUsr().user}} Rol:{{arrUsr().rol}}</h2>
