@@ -64,5 +64,3 @@ export class Login1Component {
     }
   }
 }
-
-//

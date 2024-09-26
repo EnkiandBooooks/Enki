@@ -68,9 +68,12 @@ export class CambioPass3Component {
   onSubmit() {
     if (this.newPassword === this.confirmPassword && this.newPassword.length >= 8) {
       this.sendData(this.newPassword);
+      this.cookieService.delete('access_token');
+      this.cookieService.delete('refresh_token');
       this.router.navigate(['/login0']);
       this.snackBar.open('Contraseña cambiada con éxito', 'Cerrar', {
         duration: 3000, // 3 segundos
+        
         panelClass: ['success-snackbar'] // Clase CSS personalizada para éxito
       });
     } else {

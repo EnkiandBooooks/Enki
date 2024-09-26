@@ -9,6 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class RestService {
 
   cookieService = inject(CookieService)
+  private isGuardActive: boolean = true;
   constructor(private http: HttpClient) { }
 
   enviarMail(body: any):Observable<any>{
@@ -44,7 +45,7 @@ export class RestService {
 
   resetPswd3(body: any, token: string): Observable<any> {
     console.log("Función cambiar contraseña.");
-    return this.http.post(`http://localhost:1234/resetPswd3/${token}`, body);
+    return this.http.post(`http://localhost:1234/resetPswd/${token}`, body);
   }
 
   refreshToken() {
@@ -59,6 +60,22 @@ export class RestService {
 
   getRefreshToken() {
     return this.cookieService.get("refresh_token");
+  }
+
+  setGuardStatus(status: boolean) {
+    this.isGuardActive = status;
+  }
+
+  isGuardEnabled(): boolean {
+    return this.isGuardActive;
+  }
+
+  doYouWant() {
+    const conf = confirm("¿Seguro que quieres marchar?");
+    if(conf){
+      this.setGuardStatus(false);
+    }
+    this.setGuardStatus(true);
   }
 }
 
