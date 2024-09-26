@@ -24,6 +24,7 @@ export class LoginController {
    * @returns {Promise<void>} - Responde con un mensaje de éxito o un error del servidor.
    */
   static async loginUser(req, res) {
+    console.log("hola doy error")
     try {
       // Validación de datos de entrada con Zod
       const { usr, pwd } = loginSchema.parse(req.body);

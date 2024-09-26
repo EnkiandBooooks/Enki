@@ -8,7 +8,7 @@ export class DataController{
         console.log(usr)
         // const user = await RegisterModel.searchUser({username: usr});      // Hacemos una consulta del usuario.
         
-        res.json({"User": usr.username, "mail": usr.mail});
+        res.json({"user": usr.username, "mail": usr.mail, "rol": usr.rol});
     }
 
 }

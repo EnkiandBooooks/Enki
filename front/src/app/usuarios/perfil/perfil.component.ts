@@ -10,6 +10,8 @@ import { RestService } from '../../rest.service';
 import { CommonModule, NgFor } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { NgIf } from '@angular/common';
+
 @Component({
   selector: 'app-perfil',
   standalone: true,
@@ -21,11 +23,20 @@ export class PerfilComponent {
 
   arrUsr = signal<any>([])
 
+  //rol = signal<string>('');  // Parte de las vistas
+
   cookieService = inject(CookieService);
   restService = inject(RestService);
+
   async ngOnInit(){
-    const data = await this.restService.getData();
-    this.arrUsr.set(data);
+    const data = this.restService.getData().subscribe((res) => {
+      console.log("MUYIMPORTANTE:"+this.arrUsr+"-------------------------------");
+      //this.rol.set(res.rol);
+      this.arrUsr.set(res);
+    }
+
+    )
+    
     console.log(data);
   }
 
