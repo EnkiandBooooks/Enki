@@ -5,14 +5,14 @@ export const sendMail = (mail, random) => {
     transporter.sendMail({      //creamos el operador que enviara el mail
         from: process.env.EMAIL_USER,       // el correo que envía
         to: mail,       // a quién se lo enviamos
-        subject: `Tu codigo de verificación de Enki`,       // esto seria el encabezado
+        subject: `Su código de verificación de Enki`,       // esto seria el encabezado
         text: `Información verificación`,
         html: ` <div style="width: 100%; max-width: 600px; margin: 0 auto; text-align: center; padding: 20px; border: 1px solid; border-radius: 8px;">
                     <img src="cid:logo@enki.com" style="display: block; margin: 0 auto; width: 300px; height: auto; border-radius: 8px ;" />
                     <h1>Código de verificación</h1>
-                    <p>Esto es el código de verificación que necesitarás para iniciar sesión: <br/><br/> <h1>${random}</h1></p>
+                    <p>Esto es el código de verificación que necesitará para iniciar sesión: <br/><br/> <h1>${random}</h1></p>
                 <div style="border-top: 1px solid #ddd; margin: 5px ;" />
-                <p> En caso de que usted no haya iniciado sesión,<b> alguien a intentado entrar en tu cuenta de Enki</b>. Te recomendamos restablecer tu contraseña.</p>
+                <p> En caso de que usted no haya iniciado sesión,<b> alguien puede haber intentado entrar en su cuenta de Enki</b>. Le recomendamos restablecer su contraseña.</p>
 
         </div>
 `,
