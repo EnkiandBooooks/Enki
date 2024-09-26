@@ -17,7 +17,7 @@
             <input matInput type="email" [(ngModel)]="email" name="email" #emailInput required>
           </mat-form-field>
           <!-- MatButton crea un botón estilizado, mat-raised-button añade elevación -->
-          <button mat-raised-button color="primary" type="submit">Continuar</button>
+          <button mat-raised-button color="primary" type="submit">{{buttonClicked ? "Reenviar Enlace" : "Continuar"}}</button>
         </form>
       </mat-card-content>
     </mat-card>

@@ -11,7 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'; // Importar M
 import { MatFormField } from '@angular/material/form-field';
 import { RestService } from '../../rest.service';
 import { CookieService } from 'ngx-cookie-service';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-login0',
   standalone: true,
@@ -27,7 +27,7 @@ export class Login0Component {
   username: string = '';
   password: string = '';
 
-  constructor(private router: Router, private restService:RestService, private cookieService:CookieService) {
+  constructor(private router: Router, private restService:RestService, private cookieService:CookieService, private snackBar:MatSnackBar) {
   }
 
   onSubmit() {
@@ -62,14 +62,16 @@ export class Login0Component {
         this.cookieService.set('access_token', res.accessToken);
         this.cookieService.set('refresh_token', res.refreshToken);
         this.router.navigate(['/perfil']);
-        alert(
-          "Sesión iniciada con éxito"
-        );
+        this.snackBar.open('Sesión iniciada con éxito', 'Cerrar', {
+          duration: 3000, // 3 segundos
+          panelClass: ['success-snackbar'] // Clase CSS personalizada para error
+        });
       }else{
-
-        alert(
-          "No se encuentra el correo o la contraseña es incorrecta"
-        );
+        this.snackBar.open('No se encuentra el correo o la contraseña es incorrecta', 'Cerrar', {
+          duration: 3000, // 3 segundos
+          panelClass: ['error-snackbar'] // Clase CSS personalizada para error
+        });
+        
       }
       console.log(res);
       
