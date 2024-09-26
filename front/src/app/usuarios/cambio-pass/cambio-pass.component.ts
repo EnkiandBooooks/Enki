@@ -31,7 +31,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class CambioPassComponent {
 
   email: string = '';
-
+  buttonClicked:Boolean = false;
   constructor(
     private router: Router,
     private restService: RestService,
@@ -51,6 +51,7 @@ export class CambioPassComponent {
     this.restService.resetPswd(body).subscribe((res) => {
       this.cookieService.set('email_sendcode_token', res.email_sendcode_token); //Creamos un token de un solo uso para la pantalla siguiente, una vez se recarga login2 se borra para evitar mandar el correo cada vez
       console.log(res);
+      this.buttonClicked = true;
       this.snackBar.open('Hemos enviado un correo electrónico con el enlace de recuperación de contraseña', 'Cerrar', {
         duration: 10000, // 3 segundos
         panelClass: ['success-snackbar'] // Clase CSS personalizada para error
@@ -65,9 +66,11 @@ export class CambioPassComponent {
       this.sendData(email);
     } else {
       // Mostrar un mensaje de error si el email no es válido
-      alert(
-        'Por favor, ingrese un correo electrónico válido que contenga un "@" y un "."'
-      );
+      
+      this.snackBar.open('Por favor, ingrese un correo electrónico válido que contenga un "@" y un "."', 'Cerrar', {
+        duration: 10000, // 3 segundos
+        panelClass: ['error-snackbar'] // Clase CSS personalizada para error
+      });
     }
   }
 }
