@@ -19,8 +19,8 @@ export const routes: Routes = [
   { path: 'inicio', component : AppComponent }, 
   { path: 'header', component: HeaderComponent }, 
   { path: 'login1', component: Login1Component, canActivate: [notLoginGuard] }, 
-  { path: 'login2', component: Login2Component, canActivate: [registerGuard], canDeactivate: [notExitGuard] }, // Eliminado loginGuard
-  { path: 'login3', component: Login3Component, canDeactivate: [notExitGuard] }, // Eliminado registerGuard y loginGuard
+  { path: 'login2', component: Login2Component, canActivate: [registerGuard, notLoginGuard], canDeactivate: [notExitGuard] }, // Eliminado loginGuard
+  { path: 'login3', component: Login3Component, canActivate: [registerGuard, notLoginGuard], canDeactivate: [notExitGuard] }, // Eliminado registerGuard y loginGuard
   { path: 'login0', component: Login0Component, canActivate: [notLoginGuard] }, 
   { path:'perfil', component: PerfilComponent, canActivate: [loginGuard] },
   { path:'resetPswd', component: CambioPassComponent }, 
