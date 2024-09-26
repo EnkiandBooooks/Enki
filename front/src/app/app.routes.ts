@@ -16,16 +16,15 @@ import { notLoginGuard } from './guards/notLogin.guard';
 
 
 export const routes: Routes = [
-    { path: 'inicio', component : AppComponent }, // Ruta principal que carga el Header
-    { path: 'header', component: HeaderComponent }, // Ruta para el componente Login1
-    { path: 'login1', component: Login1Component, canActivate: [notLoginGuard] }, // Ruta para el componente Login2
-    { path: 'login2', component: Login2Component, canActivate: [registerGuard, loginGuard], canDeactivate: [notExitGuard] }, // Ruta para el componente Login2
-    { path: 'login3', component: Login3Component, canActivate: [registerGuard, loginGuard], canDeactivate: [notExitGuard] }, // Ruta para el component Login3
-    { path: 'login0', component: Login0Component, canActivate: [notLoginGuard] }, // Ruta para el component Login0
-
-    { path:'perfil', component:PerfilComponent, canActivate: [loginGuard] },// Ruta para el componente perfil
-    { path:'resetPswd', component: CambioPassComponent }, // Ruta para el component cambioPass
-    { path:'resetPswd3/:tokenPswd', component: CambioPass3Component }, // Ruta para el component  cambioPass3
-    { path: 'body',component:BodyComponent},
-    // { path: '**', redirectTo: '/inicio' } //redirige por defecto al login1
-  ];
+  { path: 'inicio', component : AppComponent }, 
+  { path: 'header', component: HeaderComponent }, 
+  { path: 'login1', component: Login1Component, canActivate: [notLoginGuard] }, 
+  { path: 'login2', component: Login2Component, canActivate: [registerGuard], canDeactivate: [notExitGuard] }, // Eliminado loginGuard
+  { path: 'login3', component: Login3Component, canDeactivate: [notExitGuard] }, // Eliminado registerGuard y loginGuard
+  { path: 'login0', component: Login0Component, canActivate: [notLoginGuard] }, 
+  { path:'perfil', component: PerfilComponent, canActivate: [loginGuard] },
+  { path:'resetPswd', component: CambioPassComponent }, 
+  { path:'resetPswd3/:tokenPswd', component: CambioPass3Component }, 
+  { path: 'body', component: BodyComponent },
+  /*{ path: '**', redirectTo: '/inicio' }*/ // Ruta comodín para redireccionar a inicio
+];
