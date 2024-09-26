@@ -10,7 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RestService } from '../../rest.service';
 import { CookieService } from 'ngx-cookie-service';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-login1',
   standalone: true,
@@ -32,7 +32,8 @@ export class Login1Component {
   constructor(
     private router: Router,
     private restService: RestService,
-    private cookieService: CookieService
+    private cookieService: CookieService,
+    private snackBar:MatSnackBar
   ) {}
 
   // Método para validar el formato del correo electrónico
@@ -58,11 +59,10 @@ export class Login1Component {
       this.sendData(email);
     } else {
       // Mostrar un mensaje de error si el email no es válido
-      alert(
-        'Por favor, ingrese un correo electrónico válido que contenga un "@" y un "."'
-      );
+      this.snackBar.open('Por favor, ingrese un correo electrónico válido que contenga un "@" y un "."', 'Cerrar', {
+        duration: 3000, // 3 segundos
+        panelClass: ['error-snackbar'] // Clase CSS personalizada para error
+      });
     }
   }
 }
-
-//

@@ -18,8 +18,8 @@ export const sendMail = (mail, random) => {
 `,
         attachments: [
             {
-                filename: 'logo.png',
-                path: './img/logo.png',
+                filename: 'logo4.png',
+                path: './img/logo4.png',
                 cid: 'logo@enki.com'
             }
         ]

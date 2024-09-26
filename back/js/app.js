@@ -15,7 +15,7 @@ app.use(express.json());
 app.use('/mail', mailRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
-app.use('/', resetPswdRouter);
+app.use('/resetPswd', resetPswdRouter);
 app.use('/refresh', refreshRouter);
 app.use('/data', dataRouter);
 

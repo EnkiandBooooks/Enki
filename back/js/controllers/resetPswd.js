@@ -5,6 +5,7 @@ import 'dotenv/config';
 import { z } from 'zod'
 import { PasswdHashManager } from "../utils/passwdhash.js";
 import { ObjectId } from "mongodb";
+
 const passwordSchema = z.object({
     newPassword: z.string().min(8, 'La contraseña debe tener al menos 8 caracteres'),
 });

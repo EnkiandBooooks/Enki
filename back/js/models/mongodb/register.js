@@ -39,4 +39,9 @@ export class RegisterModel {
         const result = await db.updateOne(query, { $push: { guestWorkSpaces: newGuestWorkSpace }}); //el neGuestwWorkSpace es un JSon 
         return result.modifiedCount > 0;
     }
+    static async updateSuperRol(query, updateRol) {
+        const db = await Connect('usuarios'); 
+        const result = await db.updateOne(query, { $set: updateRol }); //el updateData es un JSon con los campos del usuario
+        return result.modifiedCount > 0; //Igual que con eliminar devuelve true en caso de que funcione
+    }
 }
