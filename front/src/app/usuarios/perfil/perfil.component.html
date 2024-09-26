@@ -1,10 +1,18 @@
+
+<div class="total">
+
+
 <mat-toolbar class="custom-toolbar">
-  <h2>Bienvenido {{arrUsr().user}} Rol:({{arrUsr().rol}})</h2>
+
+
+
   <div class="toolbar-container" [ngStyle]="{'background-color': (arrUsr().rol === 'superAdmin') ? '#74A14E' : (arrUsr().rol === 'usuario') ? '#e40404' : 'yellow'}"
   >
+  <img src="images/enki.png" alt="Enki Logo" class="toolbar-image">
+  <h2>Bienvenido {{arrUsr().user}} Rol:{{arrUsr().rol}}</h2>
     <!-- Título de la barra de herramientas -->
-    <span class="toolbar-title">Enki</span>
-    
+    <!-- <span class="toolbar-title">Enki</span> -->
+   
     <!-- Contenedor del menú de navegación -->
     <nav class="vertical-nav" >
       <ul class="nav-list">
@@ -32,4 +40,7 @@
       </ul>
     </nav>
   </div>
+
 </mat-toolbar>
+
+</div>

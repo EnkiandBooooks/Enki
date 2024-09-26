@@ -1,81 +1,89 @@
 .custom-toolbar {
-    display: flex;
-    justify-content: flex-end; /* Mantiene el contenedor alineado a la derecha */
-    height: 100vh; 
-    padding: 0;
-    background-color: transparent; /* Fondo transparente para el área principal */
-  }
-  
-  .toolbar-container {
-    display: flex;
-    flex-direction: column; /* Alinea los elementos en una columna */
-    align-items: flex-end; /* Alinea el contenido al final (derecha) */
-    padding: 10px;
-    box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
-  }
-  
-  .vertical-nav-admin {
-    display: flex;
-    flex-direction: column; /* Hace que el menú sea vertical */
-    align-items: center; 
-    width: 200px; /* Ajusta el ancho de la barra de navegación */
-    background-color: #74A14E; 
-    padding: 20px 10px;
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra suave y estética */
-    box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
-  }
+  display: flex;
+  justify-content: center; /* Centra el contenedor horizontalmente */
+  align-items: center; /* Centra el contenedor verticalmente */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  padding: 0;
+  background-color: transparent;
+}
 
-  .vertical-nav-user {
-    display: flex;
-    flex-direction: column; /* Hace que el menú sea vertical */
-    align-items: center; 
-    width: 200px; /* Ajusta el ancho de la barra de navegación */
-    background-color: #e40404; 
-    padding: 20px 10px;
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra suave y estética */
-    box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
-  }
-  
-  .toolbar-title {
-    margin-bottom: 20px; /* Espaciado debajo del título */
-    color: rgb(157, 13, 13); /* Color del texto del título */
-    font-size: 24px; 
-    text-align: center; 
-  }
-  
-  .nav-list {
-    list-style-type: none; /* Quita los puntos de la lista */
-    padding: 0;
-    margin: 0;
-    width: 100%; /* Asegura que la lista ocupe todo el ancho del contenedor */
-  }
-  
-  .nav-item {
-    margin-bottom: 10px; 
-    width: 100%; 
-  }
-  
-  a[mat-button] {
-    width: 100%; /* Asegura que el botón ocupe todo el ancho del contenedor */
-    text-align: left; /* Alinea el texto del botón a la izquierda */
-    color: white; /* Color del texto de los botones */
-    border-radius: 5px; 
-    display: block; /* Asegura que los enlaces se comporten como bloques */
-  }
-  
-  a[mat-button]:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo ligeramente más claro al pasar el cursor */
-  }
-  
+.toolbar-container {
+  display: flex;
+  flex-direction: column; /* Alinea los elementos en una columna */
+  align-items: center; /* Alinea el contenido al centro */
+  padding: 20px;
+  background-color: #f5f5f5; /* Un fondo claro para contrastar */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  min-width: 400px; /* Un ancho mínimo para el contenedor */
+}
 
+.vertical-nav-admin,
+.vertical-nav-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px; /* Ajusta el ancho de la barra de navegación */
+  padding: 20px 10px;
+  border-radius: 15px; /* Bordes más redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añade una sombra más fuerte */
+  box-sizing: border-box;
+}
 
-  .admin-background {
-    background-color: #2196F3; /* Azul, color para el rol de admin */
-  }
-  
-  .user-background {
-    background-color: #e40404; /* Verde Matcha, color para los usuarios normales */
-  }
-  
+.toolbar-title {
+  margin-bottom: 20px; 
+  color: rgb(157, 13, 13); 
+  font-size: 24px; 
+  text-align: center;
+}
+
+.nav-list {
+  list-style-type: none; /* Quita los puntos de la lista */
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.nav-item {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+a[mat-button] {
+  width: 100%;
+  text-align: left;
+  color: white;
+  border-radius: 5px;
+  display: block;
+}
+
+a[mat-button]:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo más claro al pasar el cursor */
+}
+
+.admin-background {
+  background-color: #2196F3; 
+  min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+}
+
+.user-background {
+  background-color: #e40404; 
+  min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+}
+
+.toolbar-image{
+  width: 500px; 
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 15px; 
+
+}
+
+.body{
+  background-color: #e40404;
+}
+
+.total{
+  background-color: #4A4A4A;
+  height: 100vh
+}
