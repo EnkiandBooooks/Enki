@@ -9,7 +9,6 @@ import { CookieService } from 'ngx-cookie-service';
 export class RestService {
 
   cookieService = inject(CookieService)
-  private isGuardActive: boolean = true;
   constructor(private http: HttpClient) { }
 
   enviarMail(body: any):Observable<any>{
@@ -60,22 +59,6 @@ export class RestService {
 
   getRefreshToken() {
     return this.cookieService.get("refresh_token");
-  }
-
-  setGuardStatus(status: boolean) {
-    this.isGuardActive = status;
-  }
-
-  isGuardEnabled(): boolean {
-    return this.isGuardActive;
-  }
-
-  doYouWant() {
-    const conf = confirm("¿Seguro que quieres marchar?");
-    if(conf){
-      this.setGuardStatus(false);
-    }
-    this.setGuardStatus(true);
   }
 }
 
