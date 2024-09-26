@@ -57,7 +57,7 @@ export class RegisterController {
                 username: username,
                 mail: email,
                 password: password,
-                rol: null,
+                rol: "usuario",
                 theme: {
                     themeName: 'default'
                 },
