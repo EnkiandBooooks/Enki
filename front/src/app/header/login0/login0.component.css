@@ -1,28 +1,53 @@
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    background-color: #A5A58D; /* Verde matcha */
-  }
-  
-  .login-card {
-    width: 400px;
-    padding: 20px; 
-  }
-  
-  .full-width {
-    width: 100%;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background-color: #222222; 
+}
 
-  mat-card-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  mat-card-actions span {
-    display: block;
-    margin-bottom: 5px; /* Ajusta el espacio entre los spans si lo deseas */
-  }
+.login-card {
+  width: 400px;
+  padding: 20px; 
+  background-color: #66576C;
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+mat-card-actions span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+mat-card-actions button {
+  color: white;
+}
+
+mat-card-actions button:hover {
+  background-color: rgba(255, 255, 255, 0.1); 
+}
+
+mat-card-content button:button {
+  background-color: rgba(255, 255, 255, 0.1); 
+  color: white;
+}
+
+
+.button-container button {
+  background-color: #dcdbdc; /* Fondo blanco o cualquier color que prefieras */
+  color: black; /* Texto negro */
+}
+
+.button-container button:hover {
+  background-color: #66576C; /* Cambiar el fondo al pasar el cursor */
+}
 
