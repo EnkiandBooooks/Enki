@@ -45,17 +45,29 @@ export class Login1Component {
 
   sendData(email: string): void {
     const body = { email: email };
-    this.restService.enviarMail(body).subscribe((res) => {
-      this.cookieService.set('email_sendcode_token', res.email_sendcode_token); //Creamos un token de un solo uso para la pantalla siguiente, una vez se recarga login2 se borra para evitar mandar el correo cada vez
-      console.log(res);
-      this.router.navigate(['/login2']);
-    }); //ejemplo cookie
+    this.restService.enviarMail(body).subscribe({
+      next: (res) => {
+        // Si el backend responde exitosamente
+        this.cookieService.set('email_sendcode_token', res.email_sendcode_token); // Guardar el token
+        console.log(res);
+        this.router.navigate(['/login2']); // Navegar a login2
+      },
+      error: (err) => {
+        // Manejar el error y mostrar el mensaje en SnackBar
+        console.error('Error desde backend:', err);
+        this.snackBar.open(err.error.resultado || 'Ocurrió un error. Por favor, inténtelo nuevamente.', 'Cerrar', {
+          duration: 3000,
+          panelClass: ['error-snackbar']
+        });
+      }
+    });
   }
   // Método que se llama al enviar el formulario
   onSubmit(email: string) {
     console.log(email);
     if (this.validateEmail(this.email)) {
       // Navega a Login2 si el email es válido
+      
       this.sendData(email);
     } else {
       // Mostrar un mensaje de error si el email no es válido

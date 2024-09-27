@@ -44,19 +44,20 @@ export class RegisterController {
             const password = await PasswdHashManager.hashPassword(passwordUser);
             // Extrae el email del token JWT en la cookie
             const email = jwt.verify(cookie, process.env.secret_jwt_key).mail;
-
+            
             // Comprueba que el email no esté vacío
             if (!email) {
                 return res.status(400).json({
                     message: "El token no contiene un correo electrónico válido."
-                });   
+                });
             }
+            
             // Crea un nuevo objeto usuario con el nombre de usuario, correo electrónico y contraseña hasheada
             const newUser = {
                 username: username,
                 mail: email,
                 password: password,
-                rol: "usuario",
+                rol: null,
                 theme: {
                     themeName: 'default'
                 },
