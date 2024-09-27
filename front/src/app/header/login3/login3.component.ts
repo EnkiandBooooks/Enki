@@ -43,6 +43,7 @@ export class Login3Component {
   onSubmit() {
     if (this.passWord === this.confirmPassword && this.passWord.length >= 8) {
       this.sendData(this.userName, this.passWord);
+      this.cookieService.delete('email_sendcode_token');
       this.router.navigate(['/']);
     } else {
       alert('Por favor, asegúrese de que las contraseñas coincidan y tengan al menos 8 caracteres.');

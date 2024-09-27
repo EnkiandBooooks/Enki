@@ -70,6 +70,7 @@ export class CambioPass3Component {
       this.sendData(this.newPassword);
       this.cookieService.delete('access_token');
       this.cookieService.delete('refresh_token');
+
       this.router.navigate(['/login0']);
       this.snackBar.open('Contraseña cambiada con éxito', 'Cerrar', {
         duration: 3000, // 3 segundos
