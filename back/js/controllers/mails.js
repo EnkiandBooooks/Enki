@@ -3,11 +3,23 @@ import 'dotenv/config';
 import { sendMail } from "../utils/enviarmail.js"; // Importa la función EnviarMail
 import { getNumRandom } from "../utils/random.js"; // Importa la función getNumRandom
 import { z } from "zod";
+import { RegisterModel } from '../models/mongodb/register.js';
 /**
  * Clase mailController para gestionar operaciones relacionadas con el manejo de correos electrónicos.
  */
 
-const getMailSchema = z.object({email: z.string().min(1, "El email es obligatorio").email("El email no está bien formado")});
+const getMailSchema = z.object({
+    email: z.string()
+        .min(1, "El email es obligatorio")
+        .email("El email no está bien formado")
+        .refine(async (email) => {
+            const emailExists = await RegisterModel.searchUser({ mail: email }) === null;
+            return emailExists;
+        }, {
+            message: "El email ya está registrado",
+        })
+});
+
 const verifyCodeSchema = z.object({
     cookie: z.string().min(1, "La cookie es obligatoria"),
     codigo: z.number().min(1,"El código es obligatorio")
@@ -17,11 +29,14 @@ const verifyCodeSchema = z.object({
 export class MailController {
     static async getMail(req, res) { 
 
-        const validation = getMailSchema.safeParse(req.body);       //Validamos el schema de zod con req.body
+        const validation = await getMailSchema.safeParseAsync(req.body);       //Validamos el schema de zod con req.body
         if(!validation.success){ //Verifica que haya email y esté bien formado
             return res.status(400).json({ resultado: validation.error.errors[0].message });
         }
         const mailUser = req.body.email;
+
+        
+
         const numRandom = getNumRandom();       // Genera un número aleatorio
         sendMail(mailUser, numRandom);     // Envía el correo electrónico al usuario con el número aleatorio
 
