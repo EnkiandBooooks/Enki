@@ -6,9 +6,9 @@
 
 
 
-  <div class="toolbar-container" [ngStyle]="{'background-color': (arrUsr().rol === 'superAdmin') ? '#74A14E' : (arrUsr().rol === 'usuario') ? '#e40404' : (arrUsr().rol === 'admin') ? '#a55d00' : '#777777'}"
+  <div class="toolbar-container" [ngStyle]="{'background-color': (arrUsr().rol === 'superAdmin') ? '#66576C' : (arrUsr().rol === 'usuario') ? '#a55d00' : '#777777'}"
   >
-  <img src="images/enki.png" alt="Enki Logo" class="toolbar-image">
+  <img src="images/enki2.png" alt="Enki Logo" class="toolbar-image">
   <h2>Bienvenido {{arrUsr().user}} Rol:{{arrUsr().rol}}</h2>
     <!-- Título de la barra de herramientas -->
     <!-- <span class="toolbar-title">Enki</span> -->
@@ -20,7 +20,7 @@
           <a mat-button routerLink="/">Inicio</a>
         </li>
         <li class="nav-item">
-          <a mat-button routerLink="/resetPswd" (click)="onClick()">Cambiar PassWord</a>
+          <a mat-button routerLink="/resetPswd" (click)="onClick()">Cambiar Password</a>
         </li>
         <li class="nav-item">
           <a mat-button routerLink="/">Tus grupos</a>
@@ -31,9 +31,7 @@
         <li class="nav-item">
           <a mat-button color="accent" routerLink="/" (click)="onClick()">Salir</a>
         </li>
-        <li class="nav-item" *ngIf="arrUsr().rol === 'admin' ||arrUsr().rol === 'superAdmin'">
-          <a mat-button color="accent" routerLink="/" (click)="onClick()">Esto solo será visible si eres admin</a>
-        </li>
+       
         <li class="nav-item" *ngIf="arrUsr().rol === 'superAdmin'">
           <a mat-button color="accent" routerLink="/" (click)="onClick()">Esto solo será visible si eres superAdmin</a>
         </li>
