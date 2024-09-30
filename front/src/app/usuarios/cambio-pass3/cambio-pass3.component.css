@@ -1,64 +1,99 @@
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5; 
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .password-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; 
-  }
-  
+/* Contenedor principal: centrar el formulario de cambio de contraseña */
+.password-container { 
+  display: flex;
+  flex-direction: column; /* Alinear los elementos en columna */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background: linear-gradient(to bottom, #66576C, #1f1d21); /* Fondo en gradiente */
+  padding: 20px; /* Añadir padding para pantallas pequeñas */
+}
+
+/* Estilo para el título "Cambio de contraseña" */
+mat-card-title {
+  font-family: 'Poppins', sans-serif; /* Fuente elegante y geométrica */
+  font-size: 24px; /* Tamaño del texto */
+  color: #e8e8e8; /* Color gris claro para el texto */
+  text-align: center; /* Centrar el texto */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  margin-bottom: 20px; /* Espacio inferior */
+}
+
+.login-card {
+  width: 400px;
+  padding: 20px;
+  background-color: #66576C; /* Color de fondo de la tarjeta */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  border-radius: 12px; /* Bordes redondeados */
+  margin-top: 20px; /* Espacio entre el logo y el formulario */
+}
+.login-logo {
+  display: block;
+  max-width: 700px; /* Tamaño del logo reducido para adaptarse mejor */
+  width: 100%;
+  margin: 0 auto 20px auto; /* Centrar el logo y añadir margen inferior */
+  opacity: 0.85; /* Opacidad del logo */
+}
+
+/* Estilo de la tarjeta del formulario de cambio de contraseña */
+.password-card {
+  width: 400px;
+  padding: 20px;
+  background-color: #66576C; /* Color de fondo de la tarjeta */
+  border-radius: 12px; /* Bordes redondeados */
+  margin-top: 20px; /* Espacio superior */
+}
+
+/* Estilo de los campos del formulario */
+mat-form-field {
+  width: 100%; /* Ocupa todo el ancho */
+  margin-bottom: 20px; /* Espacio entre los campos */
+}
+
+mat-form-field input {
+  padding: 12px; /* Espaciado interno */
+  color: #e8e8e8; /* Texto gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilo de los botones */
+button {
+  background-color: #232223; /* Fondo oscuro */
+  color: #e8e8e8 !important; /* Color del texto en blanco */
+  padding: 12px;
+  width: 100%; /* Ocupa todo el ancho */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Estilo para el hover en el botón */
+button:hover {
+  background-color: #6f5d6f; /* Color del fondo al hacer hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
+}
+.button-container {
+  margin-top: 20px; /* Espacio entre el input y el botón */
+}
+
+.button-container button {
+  background-color: #232223; /* Fondo oscuro */
+  color: #e8e8e8 !important; /* Color del texto (gris casi blanco) */
+  padding: 12px;
+  width: 100%; /* Llenar todo el ancho */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.button-container button:hover {
+  background-color: #6f5d6f; /* Cambiar el fondo al pasar el cursor */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
+}
+/* Estilos responsivos */
+@media (max-width: 480px) {
   .password-card {
-    padding: 20px;
-    width: 350px; 
-    background-color: white;
-    border-radius: 12px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-    transition: box-shadow 0.3s ease;
+    width: 100%; /* Ajustar la tarjeta a pantallas pequeñas */
+    margin: 20px;
+    border-radius: 10px;
   }
   
-  .password-card:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
-  }
-  
-  mat-card-title {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    color: #3f51b5;
-    margin-bottom: 20px;
-  }
-  
-  mat-form-field {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  
-  mat-form-field input {
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  button {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 8px;
-  }
-  
-  .success-snackbar {
-    background-color: #4caf50; /* Verde para éxito */
-    color: white;
-  }
-  
-  .error-snackbar {
-    background-color: #f44336; /* Rojo para error */
-    color: white;
-  }
+}
