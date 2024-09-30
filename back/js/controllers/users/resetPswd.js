@@ -16,8 +16,6 @@ export class resetPswdController {
         if (!userPswd){
             return res.status(404).json({ message: 'Usuario no encontrado'});
         }
-        console.log(userPswd);
-
         
         const tokenPswd = jwt.sign({       
             _id: userPswd._id,
@@ -27,12 +25,14 @@ export class resetPswdController {
             });
         
         const temporaryUrl = `http://localhost:4200/resetPswd3/${tokenPswd}`;
+
         EnviarMailpswd(mailUsuarioPswd, temporaryUrl);
-        // console.log(tokenPswd); 
-        console.log(temporaryUrl);
+
         res.send({url: temporaryUrl});
         
     }
+
+
     static async newPassword(req, res) {
         const validationResult = passwordSchema.safeParse(req.body);
 
@@ -44,10 +44,6 @@ export class resetPswdController {
         const { newPassword } = validationResult.data;
         const token = req.params.tokenPswd;
 
-        // console.log('Token recibido:', token);  
-        // console.log('Nueva contraseña recibida:', newPassword); 
-
-
         try{
             const idUserPswd = jwt.verify(token, process.env.secret_jwt_key)._id;
             const user = await RegisterModel.searchUser(new ObjectId(idUserPswd));
@@ -55,11 +51,13 @@ export class resetPswdController {
             if (!user){
                 return res.status(404).json({ message: 'No se ha econtrado el usuario'});
             }
+
             const hashedPassword = await PasswdHashManager.hashPassword(newPassword);
             await RegisterModel.updateUser(
                 { _id: new ObjectId(idUserPswd)},
                 { password: hashedPassword}
             );
+            
             return res.status(200).json({message: 'Contraseña actualizada'})
         }catch (error) {
             console.error('Error al cambiar la contraseña:', error);
