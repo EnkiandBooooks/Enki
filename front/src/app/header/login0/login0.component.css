@@ -8,7 +8,6 @@
   background: linear-gradient(to bottom,  #66576C, #1f1d21);
   padding: 20px; /* Añadir algo de padding para pantallas pequeñas */
 }
-
 /* Estilo de la tarjeta de login */
 .login-card {
   width: 400px;

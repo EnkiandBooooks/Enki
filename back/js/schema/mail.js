@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { RegisterModel} from '../database/mongodb/register.js'
 export const getMailSchema = z.object({
     email: z.string()
         .min(1, "El email es obligatorio")
