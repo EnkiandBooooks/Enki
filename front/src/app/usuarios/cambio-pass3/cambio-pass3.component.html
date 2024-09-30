@@ -1,6 +1,6 @@
 
-    
   <div class="password-container">
+    <img src="images/enki2.png" alt="Logo" class="login-logo">   
     <mat-card class="password-card">
       <mat-card-title>Cambio de contraseña</mat-card-title>
       <form (ngSubmit)="onSubmit()">
@@ -10,9 +10,11 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Repetir Nueva Contraseña</mat-label>
-          <input matInput type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+          <input matInput type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" #emailInput required>
         </mat-form-field>
+        <div class="button-container">
         <button mat-raised-button color="primary" type="submit">Cambiar Contraseña</button>
-      </form>
+      </div>
+    </form>
     </mat-card>
   </div>
