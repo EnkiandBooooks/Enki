@@ -1,3 +1,4 @@
+
 /* Contenedor principal: Centrar logo y tarjeta de login */
 .login-container { 
   display: flex;
@@ -5,10 +6,10 @@
   justify-content: center;
   align-items: center;
   height: 100vh; /* Ocupa toda la altura de la pantalla */
-  background: linear-gradient(to bottom,  #66576C, #1f1d21);
+  background: linear-gradient(to bottom, #66576C, #1f1d21);
   padding: 20px; /* Añadir algo de padding para pantallas pequeñas */
 }
-
+ 
 /* Estilo de la tarjeta de login */
 .login-card {
   width: 400px;
@@ -71,6 +72,14 @@ mat-card-actions button:hover {
   opacity: 0.85;
 }
 
+.login-letter {
+  display: block;
+  max-width: 300px; /* Tamaño del logo reducido para adaptarse mejor */
+  width: 100%;
+  margin: 0 auto 20px auto; /* Centrar el logo y añadir margen inferior */
+  opacity: 0.85;
+}
+
 /* Estilos responsivos */
 @media (max-width: 480px) {
   .login-card {
@@ -83,5 +92,3 @@ mat-card-actions button:hover {
     max-width: 220px; /* Reducción del tamaño del logo en pantallas pequeñas */
   }
 }
-
-
