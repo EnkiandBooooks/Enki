@@ -13,44 +13,44 @@ export class RestService {
 
   enviarMail(body: any):Observable<any>{
     console.log("Función para enviar correo.")
-    return this.http.post(`http://localhost:1234/mail/`, body)
+    return this.http.post(`http://localhost:1234/users/mail/`, body)
   }
 
   comprobarCodigo(body: any):Observable<any> {
     console.log("Función para comprobar codigos.")
-    return this.http.post(`http://localhost:1234/mail/codigo/`, body)
+    return this.http.post(`http://localhost:1234/users/mail/codigo/`, body)
   }
 
   sendData(body: any):Observable<any>{
     console.log(body)
-    return this.http.post(`http://localhost:1234/register/`, body)
+    return this.http.post(`http://localhost:1234/users/register/`, body)
   }
 
   getData():Observable<any>{
 
-      return this.http.get(`http://localhost:1234/data/`);
+      return this.http.get(`http://localhost:1234/users/data/`);
     
   }
 
   LogIn(body: any):Observable<any>{
     console.log("Función para logearte.")
-    return this.http.post(`http://localhost:1234/login/`, body)
+    return this.http.post(`http://localhost:1234/users/login/`, body)
   }
 
   resetPswd(body: any):Observable<any>{
     console.log("Función para rehacer correo.")
-    return this.http.post(`http://localhost:1234/resetPswd/`, body)
+    return this.http.post(`http://localhost:1234/users/resetPswd/`, body)
   }
 
   resetPswd3(body: any, token: string): Observable<any> {
     console.log("Función cambiar contraseña.");
-    return this.http.post(`http://localhost:1234/resetPswd/${token}`, body);
+    return this.http.post(`http://localhost:1234/users/resetPswd/${token}`, body);
   }
 
   refreshToken() {
     const refresh_token = this.getRefreshToken();
     const body = {refreshToken: refresh_token};
-    return this.http.post<any>(`http://localhost:1234/refresh`, body);
+    return this.http.post<any>(`http://localhost:1234/users/refresh`, body);
   }
 
   getAccesToken() {

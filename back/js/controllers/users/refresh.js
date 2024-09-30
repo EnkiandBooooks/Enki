@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import 'dotenv/config';
-import { AccessRefreshToken } from "../utils/refreshAccessToken.js";
+import { AccessRefreshToken } from "../../utils/refreshAccessToken.js";
 import { ObjectId } from "mongodb";
 
 export class RefreshController{
@@ -16,17 +16,5 @@ export class RefreshController{
         const accessToken = await AccessRefreshToken.generateAccessToken(id);
 
         res.status(200).json({accessToken: accessToken})
-
-
-        // const token = req.header("Authorization");
-        // const decodedToken = jwt.verify(token, process.env.REFRESH_TOKEN_SECRET);
-        // const id = new ObjectId(decodedToken._id);
-
-        // // Regeneramos el AccessToken y lo enviamos.
-        // const accessToken = await AccessRefreshToken.generateAccessToken(id);
-        // res.status(200).json({
-        //     message: "AccessToken generated.",
-        //     accessToken
-        // })
     }
 }

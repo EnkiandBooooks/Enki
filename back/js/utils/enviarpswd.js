@@ -1,5 +1,4 @@
 import transporter from "../config/transporter.js";
-import {  resetPswdController } from '../controllers/resetPswd.js';
 
 
 export const EnviarMailpswd = (mail, temporaryUrl) => {

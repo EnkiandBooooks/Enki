@@ -1,15 +1,8 @@
-import { RegisterModel } from "../models/mongodb/register.js";
-import { PasswdHashManager } from "../utils/passwdhash.js";
-import { AccessRefreshToken } from "../utils/refreshAccessToken.js";
-import { z } from "zod";
+import { RegisterModel } from "../../database/mongodb/register.js";
+import { loginSchema } from "../../schema/login.js";
+import { PasswdHashManager } from "../../utils/passwdhash.js";
+import { AccessRefreshToken } from "../../utils/refreshAccessToken.js";
 
-/**
- * Esquema de validación con Zod para los datos de usuario y contraseña.
- */
-const loginSchema = z.object({
-  usr: z.string().min(1, "El nombre de usuario es obligatorio."),
-  pwd: z.string().min(1, "La contraseña es obligatoria."),
-});
 
 /**
  * Clase que gestiona las operaciones de login.
