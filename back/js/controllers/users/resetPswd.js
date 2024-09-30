@@ -1,14 +1,12 @@
-import { EnviarMailpswd } from "../utils/enviarpswd.js"; // Importa la función EnviarMail
-import { RegisterModel } from "../models/mongodb/register.js";
+import { EnviarMailpswd } from "../../utils/enviarpswd.js"; // Importa la función EnviarMail
+import { RegisterModel } from "../../database/mongodb/register.js";
 import jwt from 'jsonwebtoken'
 import 'dotenv/config';
-import { z } from 'zod'
-import { PasswdHashManager } from "../utils/passwdhash.js";
+import { PasswdHashManager } from "../../utils/passwdhash.js";
 import { ObjectId } from "mongodb";
+import { passwordSchema } from "../../schema/resetPswd.js";
 
-const passwordSchema = z.object({
-    newPassword: z.string().min(8, 'La contraseña debe tener al menos 8 caracteres'),
-});
+
 export class resetPswdController {
     static async recibirMailPswd(req, res) { 
 

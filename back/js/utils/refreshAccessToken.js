@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import 'dotenv/config';
-import { RegisterModel } from "../models/mongodb/register.js";
+import { RegisterModel } from "../database/mongodb/register.js";
 import { ObjectId } from "mongodb";
 
 export class AccessRefreshToken{

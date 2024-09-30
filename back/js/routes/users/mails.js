@@ -1,6 +1,5 @@
 import { Router } from "express";
-import { MailController } from "../controllers/mails.js";
-import { resetPswdController } from "../controllers/resetPswd.js";
+import { MailController } from "../../controllers/users/mails.js";
 
 export const mailRouter = Router();
 

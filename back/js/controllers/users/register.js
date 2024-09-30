@@ -1,18 +1,10 @@
-import { RegisterModel } from "../models/mongodb/register.js";
-import { PasswdHashManager } from "../utils/passwdhash.js";
+import { RegisterModel } from "../../database/mongodb/register.js";
+import { PasswdHashManager } from "../../utils/passwdhash.js";
 import jwt from 'jsonwebtoken';
-import { z } from 'zod';
 import 'dotenv/config';
 import { ObjectId } from "mongodb";
+import { userSchema } from "../../schema/users.js";
 
-/**
- * Esquema de validación usando zod
- */
-const userSchema = z.object({
-    username: z.string().min(1, { message: "El nombre de usuario es requerido" }),
-    passwordUser: z.string().min(8, { message: "La contraseña debe contener al menos 8 caracteres" }),
-    cookie: z.string().min(1, { message: "La cookie es requerida" })
-});
 
 /**
  * Clase registerController para gestionar las operaciones de registro de usuarios.
@@ -40,8 +32,8 @@ export class RegisterController {
         const { username, passwordUser, cookie } = req.body;
         try {
             // Hashea la contraseña utilizando el gestor de hash de contraseñas
-            
             const password = await PasswdHashManager.hashPassword(passwordUser);
+            
             // Extrae el email del token JWT en la cookie
             const email = jwt.verify(cookie, process.env.secret_jwt_key).mail;
             
@@ -104,8 +96,6 @@ export class RegisterController {
                 guestWorkSpaceId: "null", // El ID del workspace como invitado
                 guestWorkSpaceName: "workSpaceName" // Nombre del workspace donde fue invitado
             };
-            
-            console.log(newUser);
 
             // Inserta el nuevo usuario en la base de datos
             await RegisterModel.insertUser(newUser);
