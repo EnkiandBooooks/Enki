@@ -1,40 +1,74 @@
-/* Estilo general para centrar el formulario */
-.login-container {
+/* Contenedor principal: Centrar logo y tarjeta de ingreso de código */
+.login-container { 
   display: flex;
+  flex-direction: column; /* Alinear logo y tarjeta en columna */
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0; /* Fondo gris claro */
-  margin: 0;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background: linear-gradient(to bottom, #66576C, #1f1d21);
+  padding: 20px; /* Añadir algo de padding para pantallas pequeñas */
 }
 
-/* Estilo para el contenedor del formulario */
+/* Estilo de la tarjeta de ingreso de código */
 .login-card {
-  background: #ffffff; /* Fondo blanco */
-  padding: 20px;
-  border-radius: 8px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  width: 100%;
-  max-width: 400px; /* Ancho máximo */
+  width: 400px; 
+  padding: 20px; 
+  background-color: #66576C; /* Color de fondo de la tarjeta */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  border-radius: 12px; /* Bordes redondeados */
+  margin-top: 20px; /* Espacio entre el logo y el formulario */
 }
 
-/* Estilo para el título del card */
+/* Asegurar que los elementos llenen todo el ancho */
+.full-width {
+  width: 100%;
+}
+
+/* Cambiar el color del título en la tarjeta */
 mat-card-title {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333; /* Color del texto */
+  color: #d8d4d4; /* Gris casi blanco */
+  text-align: center; /* Centrar el texto */
+  width: 100%; /* Asegurarse de que ocupa todo el ancho */
 }
 
-/* Estilo para los campos de entrada */
-mat-form-field {
-  width: 100%;
-  margin-bottom: 15px; /* Espaciado inferior */
+/* Estilo para los botones de la tarjeta */
+.button-container {
+  margin-top: 20px; /* Espacio entre el input y el botón */
 }
 
-/* Estilo para el botón */
-button {
-  width: 100%;
-  padding: 10px;
-  border-radius: 4px; /* Bordes redondeados */
+.button-container button {
+  background-color: #232223; /* Fondo oscuro */
+  color: rgb(255, 255, 255); /* Texto blanco */
+  padding: 12px;
+  width: 100%; /* Llenar todo el ancho */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición suave */
 }
+
+.button-container button:hover {
+  background-color: #7d5e7d; /* Cambiar el fondo al pasar el cursor */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
+}
+
+/* Estilo para el logo */
+.login-logo {
+  display: block;
+  max-width: 300px; /* Tamaño del logo reducido para adaptarse mejor */
+  width: 100%;
+  margin: 0 auto 20px auto; /* Centrar el logo y añadir margen inferior */
+  opacity: 0.85; /* Opacidad del logo */
+}
+
+/* Estilos responsivos */
+@media (max-width: 480px) {
+  .login-card {
+    width: 100%; /* Hacer que el formulario se ajuste a pantallas pequeñas */
+    margin: 20px;
+    border-radius: 10px;
+  }
+
+  .login-logo {
+    max-width: 220px; /* Reducción del tamaño del logo en pantallas pequeñas */
+  }
+}
+
