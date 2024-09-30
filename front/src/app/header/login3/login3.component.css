@@ -1,78 +1,147 @@
-/* Estilo para la barra de navegación (mat-toolbar) */
+/* Estilo para la barra de navegación (mat-toolbar) */ 
 .custom-toolbar {
-    background-color: #003366; /* Color azul oscuro */
-    color: white; /* Color del texto */
-    display: flex;
-    justify-content: space-between; /* Espacio entre el título y la navegación */
-    align-items: center; /* Alinear verticalmente el contenido */
+  background-color: #4D4850; /* Color oscuro */
+  color: white; /* Color del texto */
+  display: flex;
+  justify-content: space-between; /* Espacio entre el título y la navegación */
+  align-items: center; /* Alinear verticalmente el contenido */
+  padding: 0 20px; /* Espaciado lateral */
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en pantallas pequeñas */
+}
+
+/* Estilo para el logo */
+.login-logo {
+  max-width: 200px; /* Cambia este valor al tamaño deseado */
+  width: 100%; /* Para que se ajuste al contenedor */
+  height: auto; /* Mantiene la proporción del logo */
+  margin: 0 auto 20px auto; /* Centra el logo y añade margen inferior */
+  opacity: 0.85; /* Opacidad del logo */
+  display: block; /* Para asegurar que el margen auto funcione */
+}
+
+/* Asegurarse de que el título y el menú de navegación se alineen horizontalmente */
+.toolbar-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Lista de navegación */
+.nav-list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Elementos de la lista de navegación */
+.nav-item {
+  margin: 0 10px; /* Espaciado entre elementos de navegación */
+}
+
+.nav-item a {
+  color: white; /* Color de los enlaces en la barra de navegación */
+  text-decoration: none; /* Eliminar subrayado de enlaces */
+}
+
+/* Alinear la lista de navegación a la izquierda */
+.custom-toolbar nav {
+  display: flex;
+  justify-content: flex-start; /* Alinea el menú de navegación a la izquierda */
+}
+
+/* Estilo para centrar el formulario */
+.login-container {
+  display: flex;
+  flex-direction: column; /* Asegura que el logo y el formulario se apilen verticalmente */
+  justify-content: center;
+  align-items: center; /* Centra el contenido */
+  height: calc(100vh - 64px); /* Ajustar altura para el toolbar */
+  background: linear-gradient(to bottom, #66576C, #1f1d21); /* Degradado */
+  padding: 20px; /* Añadir padding */
+  margin: 0;
+}
+
+/* Estilo para el contenedor del formulario */
+.login-card {
+  background: #66576C; /* Fondo consistente con otras pantallas */
+  padding: 20px;
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  width: 100%;
+  max-width: 400px; /* Ancho máximo */
+}
+
+/* Estilo para el título del card */
+mat-card-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #e8e8e8; /* Color del texto similar a otras pantallas */
+}
+
+/* Estilo para los campos de entrada */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px; /* Espaciado inferior */
+}
+
+/* Estilo para los botones de la tarjeta */
+.button-container {
+  margin-top: 20px; /* Espacio entre el input y el botón */
+}
+
+.button-container button {
+  background-color: #232223; /* Fondo oscuro */
+  color: #e8e8e8 !important; /* Color del texto (gris casi blanco) */
+  padding: 12px;
+  width: 100%; /* Llenar todo el ancho */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.button-container button:hover {
+  background-color: #6f5d6f; /* Cambiar el fondo al pasar el cursor */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .custom-toolbar {
+    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    align-items: flex-start; /* Alinear los elementos al inicio */
   }
-  
-  /* Asegurarse de que el título y el menú de navegación se alineen horizontalmente */
+
   .toolbar-title {
-    font-weight: bold;
-    font-size: 20px;
+    font-size: 18px; /* Tamaño del título en pantallas pequeñas */
+    margin-bottom: 10px; /* Espacio inferior */
   }
-  
+
   .nav-list {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
   }
-  
+
   .nav-item {
-    margin: 0 10px; /* Espaciado entre elementos de navegación */
+    margin: 5px 0; /* Espaciado vertical entre elementos de navegación */
   }
-  
-  .nav-item a {
-    color: white; /* Color de los enlaces en la barra de navegación */
-    text-decoration: none; /* Eliminar subrayado de enlaces */
-  }
-  
-  /* Alinear la lista de navegación a la izquierda */
-  .custom-toolbar nav {
-    display: flex;
-    justify-content: flex-start; /* Alinea el menú de navegación a la izquierda */
-  }
-  
-  /* Estilo para centrar el formulario */
+
   .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 64px); /* Ajustar altura para el toolbar */
-    background-color: #f0f0f0; /* Fondo gris claro */
-    margin: 0;
+    height: auto; /* Permitir que el contenedor se ajuste a su contenido */
+    padding: 10px; /* Reducir el padding */
   }
-  
-  /* Estilo para el contenedor del formulario */
+}
+
+@media (max-width: 480px) {
   .login-card {
-    background: #ffffff; /* Fondo blanco */
-    padding: 20px;
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    width: 100%;
-    max-width: 400px; /* Ancho máximo */
+    width: 100%; /* Hacer que el formulario se ajuste a pantallas pequeñas */
+    margin: 20px;
+    border-radius: 10px;
   }
-  
-  /* Estilo para el título del card */
-  mat-card-title {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333; /* Color del texto */
+
+  .nav-item {
+    margin: 0 5px; /* Espaciado más pequeño en pantallas pequeñas */
   }
-  
-  /* Estilo para los campos de entrada */
-  mat-form-field {
-    width: 100%;
-    margin-bottom: 15px; /* Espaciado inferior */
-  }
-  
-  /* Estilo para el botón */
-  button {
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px; /* Bordes redondeados */
-  }
+}
+
+
+
   
