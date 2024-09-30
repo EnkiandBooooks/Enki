@@ -17,7 +17,7 @@ const abecedario = 'abcdefghijklmnopqrstuvwxyz';
 */
 async function recogerLibrosAPI(query,maxResultados) {
   
-  const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=${maxResultados}&langRestrict=es&key=${googleBooksApiKey}`;
+  const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=${maxResultados}&orderBy=relevance&langRestrict=es&key=${googleBooksApiKey}`;
   const response = await axios.get(url);
   return response.data.items ? response.data.items.map(book => ({
     title: book.volumeInfo.title,
@@ -26,6 +26,7 @@ async function recogerLibrosAPI(query,maxResultados) {
     description: book.volumeInfo.description,
     pageCount: book.volumeInfo.pageCount,
     categories: book.volumeInfo.categories,
+    rating: book.volumeInfo.averageRating,
     thumbnail: book.volumeInfo.imageLinks?.thumbnail,
   })) : null;
 }
