@@ -23,7 +23,7 @@ export class resetPswdController {
             _id: userPswd._id,
             }, 
             process.env.secret_jwt_key, {
-            expiresIn: '1h'
+            expiresIn: '15m'
             });
         
         const temporaryUrl = `http://localhost:4200/resetPswd3/${tokenPswd}`;
