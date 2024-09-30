@@ -1,21 +1,34 @@
-.login-container {
+/* Contenedor principal: Centrar logo y tarjeta de login */
+.login-container { 
   display: flex;
+  flex-direction: column; /* Alinear logo y tarjeta en columna */
   justify-content: center;
   align-items: center;
-  height: 100vh; 
-  background-color: #222222; 
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background: linear-gradient(to bottom,  #66576C, #1f1d21);
+  padding: 20px; /* Añadir algo de padding para pantallas pequeñas */
 }
 
+/* Estilo de la tarjeta de login */
 .login-card {
   width: 400px;
-  padding: 20px; 
+  padding: 20px;
   background-color: #66576C;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  border-radius: 12px; /* Bordes redondeados */
+  margin-top: 20px; /* Espacio entre el logo y el formulario */
 }
 
+/* Asegurar que los elementos llenen todo el ancho */
 .full-width {
   width: 100%;
 }
 
+mat-card-title {
+  color: #e8e8e8; /* Gris casi blanco */
+}
+
+/* Estilo para los botones de mat-card-actions */
 mat-card-actions {
   display: flex;
   flex-direction: column;
@@ -27,27 +40,48 @@ mat-card-actions span {
   margin-bottom: 5px;
 }
 
-
 mat-card-actions button {
   color: white;
 }
 
 mat-card-actions button:hover {
-  background-color: rgba(255, 255, 255, 0.1); 
+  background-color: rgba(255, 255, 255, 0.1);
 }
-
-mat-card-content button:button {
-  background-color: rgba(255, 255, 255, 0.1); 
-  color: white;
-}
-
 
 .button-container button {
-  background-color: #dcdbdc; /* Fondo blanco o cualquier color que prefieras */
-  color: black; /* Texto negro */
+  background-color: #232223; /* Fondo oscuro */
+  color: rgb(255, 255, 255); /* Texto blanco */
+  padding: 12px;
+  width: 100%; /* Llenar todo el ancho */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición suave */
 }
 
 .button-container button:hover {
-  background-color: #66576C; /* Cambiar el fondo al pasar el cursor */
+  background-color: #7d5e7d; /* Cambiar el fondo al pasar el cursor */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
 }
+
+/* Estilo para el logo */
+.login-logo {
+  display: block;
+  max-width: 300px; /* Tamaño del logo reducido para adaptarse mejor */
+  width: 100%;
+  margin: 0 auto 20px auto; /* Centrar el logo y añadir margen inferior */
+  opacity: 0.85;
+}
+
+/* Estilos responsivos */
+@media (max-width: 480px) {
+  .login-card {
+    width: 100%; /* Hacer que el formulario se ajuste a pantallas pequeñas */
+    margin: 20px;
+    border-radius: 10px;
+  }
+
+  .login-logo {
+    max-width: 220px; /* Reducción del tamaño del logo en pantallas pequeñas */
+  }
+}
+
 
