@@ -3,7 +3,9 @@ import { BooksModel } from "../../database/mongodb/books.js";
 
 export class getBooksController{
     static async getAll(req, res){
-        const result = await BooksModel.getBooks()
+
+        let bookName = new RegExp(`.*${req.query.searchBy || ''}.*`);
+        const result = await BooksModel.getBooks({"title": {$regex: bookName}})
         res.json(result)
     }
 
