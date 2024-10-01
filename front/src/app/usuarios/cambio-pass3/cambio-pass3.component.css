@@ -2,11 +2,14 @@
 .password-container { 
   display: flex;
   flex-direction: column; /* Alinear los elementos en columna */
-  justify-content: center;
+  justify-content: flex-start; /* Alinear elementos al principio (arriba) */
   align-items: center;
-  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  min-height: 100vh; /* Ocupa al menos toda la altura de la pantalla */
   background: linear-gradient(to bottom, #66576C, #1f1d21); /* Fondo en gradiente */
   padding: 20px; /* Añadir padding para pantallas pequeñas */
+  padding-top: 60px; /* Espacio entre la toolbar y el logo */
+  box-sizing: border-box; /* Asegura que el padding se respete */
+  gap: 20px; /* Espacio entre los elementos */
 }
 
 /* Estilo para el título "Cambio de contraseña" */
@@ -20,28 +23,35 @@ mat-card-title {
 }
 
 .login-card {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   padding: 20px;
   background-color: #66576C; /* Color de fondo de la tarjeta */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
   border-radius: 12px; /* Bordes redondeados */
   margin-top: 20px; /* Espacio entre el logo y el formulario */
+  margin-bottom: 20px; /* Espacio inferior para evitar que se corte en pantallas pequeñas */
 }
+
+/* Estilo del logo */
 .login-logo {
   display: block;
-  max-width: 700px; /* Tamaño del logo reducido para adaptarse mejor */
+  max-width: 400px; /* Tamaño ajustado del logo */
   width: 100%;
-  margin: 0 auto 20px auto; /* Centrar el logo y añadir margen inferior */
   opacity: 0.85; /* Opacidad del logo */
+  margin: 0 auto 10px auto; /* Centrar el logo y añadir margen inferior */
 }
 
 /* Estilo de la tarjeta del formulario de cambio de contraseña */
 .password-card {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   padding: 20px;
   background-color: #66576C; /* Color de fondo de la tarjeta */
   border-radius: 12px; /* Bordes redondeados */
-  margin-top: 20px; /* Espacio superior */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  margin-top: 2px; /* Espacio superior */
+  margin-bottom: 2px; /* Espacio inferior */
 }
 
 /* Estilo de los campos del formulario */
@@ -51,7 +61,7 @@ mat-form-field {
 }
 
 mat-form-field input {
-  padding: 12px; /* Espaciado interno */
+  padding: 0px; /* Espaciado interno */
   color: #e8e8e8; /* Texto gris claro */
   border-radius: 8px; /* Bordes redondeados */
 }
@@ -71,6 +81,7 @@ button:hover {
   background-color: #6f5d6f; /* Color del fondo al hacer hover */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
 }
+
 .button-container {
   margin-top: 20px; /* Espacio entre el input y el botón */
 }
@@ -88,12 +99,27 @@ button:hover {
   background-color: #6f5d6f; /* Cambiar el fondo al pasar el cursor */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
 }
+
 /* Estilos responsivos */
+@media (max-width: 768px) {
+  .login-card, .password-card {
+    width: 95%; /* Hacer que la tarjeta se ajuste mejor a pantallas medianas */
+    margin: 10px; /* Reducir el margen en pantallas pequeñas */
+  }
+
+  .login-logo {
+    max-width: 150px; /* Reducir el tamaño del logo en pantallas medianas */
+  }
+}
+
 @media (max-width: 480px) {
-  .password-card {
+  .login-card, .password-card {
     width: 100%; /* Ajustar la tarjeta a pantallas pequeñas */
     margin: 20px;
     border-radius: 10px;
   }
-  
+
+  .login-logo {
+    max-width: 120px; /* Reducir aún más el tamaño del logo en pantallas pequeñas */
+  }
 }

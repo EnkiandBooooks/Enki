@@ -55,10 +55,11 @@
   flex-direction: column; /* Asegura que el logo y el formulario se apilen verticalmente */
   justify-content: center;
   align-items: center; /* Centra el contenido */
-  height: calc(100vh - 64px); /* Ajustar altura para el toolbar */
+  min-height: calc(100vh - 64px); /* Asegurar que ocupe al menos toda la pantalla menos el toolbar */
   background: linear-gradient(to bottom, #66576C, #1f1d21); /* Degradado */
-  padding: 20px; /* Añadir padding */
-  margin: 0;
+  padding: 20px;
+  gap: 20px; /* Espaciado entre los elementos */
+  box-sizing: border-box;
 }
 
 /* Estilo para el contenedor del formulario */
@@ -69,6 +70,7 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
   width: 100%;
   max-width: 400px; /* Ancho máximo */
+  margin-bottom: 20px; /* Asegurar que haya espacio debajo en pantallas pequeñas */
 }
 
 /* Estilo para el título del card */
@@ -125,8 +127,9 @@ mat-form-field {
   }
 
   .login-container {
-    height: auto; /* Permitir que el contenedor se ajuste a su contenido */
+    min-height: auto; /* Permitir que el contenedor se ajuste a su contenido */
     padding: 10px; /* Reducir el padding */
+    gap: 10px; /* Reducir el espaciado */
   }
 }
 
@@ -141,6 +144,7 @@ mat-form-field {
     margin: 0 5px; /* Espaciado más pequeño en pantallas pequeñas */
   }
 }
+
 
 
 
