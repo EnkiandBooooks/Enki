@@ -1,7 +1,8 @@
-import { RegisterModel } from "../../database/mongodb/register.js";
+// import { RegisterModel } from "../../database/mongodb/register.js";
 import { loginSchema } from "../../schema/login.js";
 import { PasswdHashManager } from "../../utils/passwdhash.js";
 import { AccessRefreshToken } from "../../utils/refreshAccessToken.js";
+import { usuario } from "../../schema/users.js";
 
 
 /**
@@ -23,9 +24,10 @@ export class LoginController {
       const { usr, pwd } = loginSchema.parse(req.body);
 
       // Consulta a la base de datos para verificar si el usuario existe
-      const user = await RegisterModel.searchUser({ username: usr });
+      // const user = await RegisterModel.searchUser({ username: usr });
+      const user = await usuario.findOne({ username: usr });
       if (!user) {
-        return res.status(200).json({ resultado: "Usuario no existe" });
+        return res.status(404).json({ resultado: "Usuario no existe" });
       }
 
       // Verificación de la contraseña
