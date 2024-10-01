@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import 'dotenv/config';
-import { RegisterModel } from "../database/mongodb/register.js";
+// import { RegisterModel } from "../database/mongodb/register.js";
+import { usuario } from "../schema/users.js"
 import { ObjectId } from "mongodb";
 
 export class AccessRefreshToken{
@@ -25,7 +26,9 @@ export class AccessRefreshToken{
      * @returns => Un token que guarda la id y el email del usuario.
      */
     static async generateAccessToken(userId){
-        const user = await RegisterModel.searchUser({"_id": userId});
+        // const user = await RegisterModel.searchUser({"_id": userId});
+        const user = await usuario.findById(userId);
+
         console.log("AccessToken regenerado.")
         return jwt.sign(
             { _id: user._id, email: user.mail },
@@ -39,7 +42,8 @@ export class AccessRefreshToken{
      * @returns => Un token que guarda la id del usuario.
      */
     static async generateRefreshToken(userId){
-        const user = await RegisterModel.searchUser({_id: userId});
+        // const user = await RegisterModel.searchUser({_id: userId});
+        const user = await usuario.findById(userId);
         return jwt.sign(
             { _id: user._id },
             process.env.REFRESH_TOKEN_SECRET,
