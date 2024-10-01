@@ -1,6 +1,6 @@
 import { Schema, z } from 'zod';
 import mongoose from 'mongoose';
-const Schema = mongoose.Schema;
+const mongooseSchema = mongoose.Schema;
 
 export const userSchema = z.object({
     username: z.string().min(1, { message: "El nombre de usuario es requerido" }),
@@ -8,9 +8,9 @@ export const userSchema = z.object({
     cookie: z.string().min(1, { message: "La cookie es requerida" })
 });
 
-const workSpaceSchema = new Schema({
+const workSpaceSchema = new mongooseSchema({
     idWorkSpace: {
-        type: Schema.Types.ObjectId,
+        type: mongooseSchema.Types.ObjectId,
         default: () => new mongoose.Types.ObjectId()
     },
     workSpaceName: {
@@ -18,12 +18,12 @@ const workSpaceSchema = new Schema({
         required: true
     },
     bookId: {
-        type: Schema.Types.ObjectId,
+        type: mongooseSchema.Types.ObjectId,
         default: null
     },
     members: [{
         memberId: {
-            type: Schema.Types.ObjectId,
+            type: mongooseSchema.Types.ObjectId,
             default: () => new mongoose.Types.ObjectId()
         },
         name: {
@@ -50,7 +50,7 @@ const workSpaceSchema = new Schema({
         },
         comment: [{
             commentId: {
-                type: Schema.Types.ObjectId,
+                type: mongooseSchema.Types.ObjectId,
                 default: () => new mongoose.Types.ObjectId()
             },
             text: {
@@ -59,7 +59,7 @@ const workSpaceSchema = new Schema({
             },
             user: {
                 commentUserId: {
-                    type: Schema.Types.ObjectId,
+                    type: mongooseSchema.Types.ObjectId,
                     default: null
                 },
                 userName: {
@@ -76,7 +76,7 @@ const workSpaceSchema = new Schema({
 });
 
 
-const user = new Schema({
+const user = new mongooseSchema({
     username:{
         type: String,
         required: [true, 'Es necesario un nombre de usuario'],
@@ -114,7 +114,7 @@ const user = new Schema({
         default: undefined
     },
     guestWorkSpaces: { //Es un array de referencias
-        type: [Schema.Types.ObjectId],
+        type: [mongooseSchema.Types.ObjectId],
         default: undefined
     } 
 });

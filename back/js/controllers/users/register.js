@@ -1,10 +1,8 @@
-import { RegisterModel } from "../../database/mongodb/register.js";
 import { PasswdHashManager } from "../../utils/passwdhash.js";
 import jwt from 'jsonwebtoken';
 import 'dotenv/config';
 import { userSchema } from "../../schema/users.js";
 import { hash } from "bcrypt";
-
 
 /**
  * Clase registerController para gestionar las operaciones de registro de usuarios.
