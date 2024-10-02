@@ -30,7 +30,7 @@ export class AccessRefreshToken{
         return jwt.sign(
             { _id: user._id, email: user.mail },
             process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: '5s' }
+            { expiresIn: '1h' }
         )
     }
     /**
