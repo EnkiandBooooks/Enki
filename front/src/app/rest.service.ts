@@ -31,6 +31,11 @@ export class RestService {
       return this.http.get(`http://localhost:1234/users/data/`);
     
   }
+  postData(body:any):Observable<any>{
+
+    return this.http.post(`http://localhost:1234/users/data/`,body);
+  
+  }
 
   LogIn(body: any):Observable<any>{
     console.log("Función para logearte.")

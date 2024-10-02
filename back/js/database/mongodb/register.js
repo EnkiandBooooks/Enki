@@ -49,4 +49,12 @@ export class RegisterModel {
         const user = await db.findOne(query);
         return user
     }
+
+    static async findOneAndUpdate(query){
+        const db = await Connect('usuarios');  
+        const result = await db.updateOne({mail: query.mail}, {$set:{username: query.username}}); //el neGuestwWorkSpace es un JSon 
+        return result.modifiedCount > 0;
+
+
+    }
 }
