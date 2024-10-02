@@ -6,16 +6,7 @@
       <!-- Formulario de inicio de sesión -->
       <form (ngSubmit)="onSubmit()">
         <!-- Campo para el nombre de usuario -->
-        <span>Nombre de perfil</span>
-
-        @if (edit){
-        <mat-form-field class="full-width">
-          <mat-label>Nombre</mat-label>
-          <input matInput type="text"  [(ngModel)]="arrUsr().user" name="profilename" required> <!--ngmodel tiene que pillar nombre de perfil "userprofile" no user (nombre de usuario)-->
-        </mat-form-field>
-        }@else{
-          <p>{{arrUsr().user}}</p>
-        }
+        
 
 
         <!-- Campo para la contraseña -->
