@@ -1,12 +1,20 @@
-const axios = require('axios');
-const { MongoClient } = require('mongodb');
-const fs = require('fs');
-const readline = require('readline');
-require('dotenv').config()
+// const bookModel = require('../js/schema/obras/obras');
+// const connectDB = require('../js/database/mongodb/connectBD.js');
+// const axios = require('axios');
+// const { MongoClient } = require('mongodb');
+// const fs = require('fs');
+// const readline = require('readline');
+// require('dotenv').config()
+import { connectDB } from "../js/database/mongodb/connectBD.js";
+import { bookModel } from "../js/schema/obras/obras.js";
+import axios from "axios";
+import fs from "fs";
+import readline from "readline";
+import "dotenv/config";
 
-const mongoUri = process.env.MONGO_URI;
-const googleBooksApiKey = process.env.API_KEY;
-const mongoClient = new MongoClient(mongoUri);
+// const mongoUri = process.env.MONGO_URI;
+// const googleBooksApiKey = process.env.API_KEY;
+// const mongoClient = new MongoClient(mongoUri);
 
 const abecedario = 'abcdefghijklmnopqrstuvwxyz';
 
@@ -17,7 +25,7 @@ const abecedario = 'abcdefghijklmnopqrstuvwxyz';
 */
 async function recogerLibrosAPI(query,maxResultados) {
   
-  const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=${maxResultados}&orderBy=relevance&langRestrict=es&key=${googleBooksApiKey}`;
+  const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=${maxResultados}&orderBy=relevance&langRestrict=es&key=${process.env.API_KEY}`;
   const response = await axios.get(url);
   return response.data.items ? response.data.items.map(book => ({
     title: book.volumeInfo.title,
@@ -37,15 +45,14 @@ async function recogerLibrosAPI(query,maxResultados) {
 */
 async function moverLibroDB(books) {
   try {
-    await mongoClient.connect();
-    const database = mongoClient.db('applibros');
-    const collection = database.collection('obras');
+    await connectDB();
     
     console.log("--------------------------------------------------")
-    for(book of books){
-      let existe = await collection.countDocuments({title:book.title})
-      if (existe < 1){
-        await collection.insertOne(book);
+    for(const book of books){
+      let existe = await bookModel.findOne({title : book.title});
+      
+      if (!existe){
+        await bookModel.create(book);
         console.log("Libro",book.title,"insertado en la base de datos")
       }else{
         console.log("El libro con nombre",book.title,"ya existe en la base de datos")
@@ -56,7 +63,6 @@ async function moverLibroDB(books) {
   } 
   finally {
     console.log("--------------------------------------------------\n")
-    await mongoClient.close();
   }
 }
 
