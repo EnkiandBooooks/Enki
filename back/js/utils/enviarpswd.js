@@ -33,7 +33,7 @@ export const EnviarMailpswd = (mail, temporaryUrl) => {
         attachments: [
             {
                 filename: 'logo5.png',
-                path: './img/logo5.png',
+                path: './img/img_logo/logo5.png',
                 cid: 'logo@enki.com'
             }
         ]

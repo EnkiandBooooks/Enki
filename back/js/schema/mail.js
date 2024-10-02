@@ -1,6 +1,6 @@
 import { z } from "zod";
 // import { RegisterModel} from '../database/mongodb/register.js'
-import { usuario } from "../schema/users.js"
+import { userModel } from "./users.js";
 
 export const getMailSchema = z.object({
     email: z.string()
@@ -8,7 +8,7 @@ export const getMailSchema = z.object({
         .email("El email no está bien formado")
         .refine(async (email) => {
             // const emailExists = await RegisterModel.searchUser({ mail: email }) === null;
-            const emailExists = await usuario.findOne({ email : email});
+            const emailExists = await userModel.findOne({ email : email});
             return emailExists === null;
         }, {
             message: "El email ya está registrado",

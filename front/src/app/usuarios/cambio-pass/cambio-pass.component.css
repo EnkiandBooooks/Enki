@@ -2,11 +2,22 @@
 .login-container { 
   display: flex;
   flex-direction: column; /* Alinear logo y tarjeta en columna */
-  justify-content: center;
+  justify-content: flex-start; /* Alinear elementos al principio (arriba) */
   align-items: center;
   height: 100vh; /* Ocupa toda la altura de la pantalla */
   background: linear-gradient(to bottom, #66576C, #1f1d21);
   padding: 20px; /* Añadir algo de padding para pantallas pequeñas */
+  padding-top: 60px; /* Añadir algo de padding superior para darle espacio bajo la toolbar */
+}
+
+/* Estilo para el logo */
+.login-logo {
+  display: block;
+  max-width: 600px; /* Tamaño del logo reducido para adaptarse mejor */
+  width: 100%;
+  margin: 0 auto 10px auto; /* Reducir el margen inferior del logo */
+  opacity: 0.85; /* Opacidad del logo */
+  margin-top: 0; /* Quitar el espacio superior entre el logo y la toolbar */
 }
 
 /* Estilo para el título de "Cambio de contraseña" */
@@ -19,7 +30,6 @@
   letter-spacing: 1px; /* Espaciado entre letras */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra para darle profundidad */
 }
-
 
 /* Estilo de la tarjeta de ingreso de email */
 .login-card {
@@ -43,7 +53,6 @@ mat-card-title {
   width: 100%; /* Asegurarse de que ocupa todo el ancho */
 }
 
-
 /* Estilo para los botones de la tarjeta */
 .button-container {
   margin-top: 20px; /* Espacio entre el input y el botón */
@@ -61,15 +70,6 @@ mat-card-title {
 .button-container button:hover {
   background-color: #6f5d6f; /* Cambiar el fondo al pasar el cursor */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
-}
-
-/* Estilo para el logo */
-.login-logo {
-  display: block;
-  max-width: 600px; /* Tamaño del logo reducido para adaptarse mejor */
-  width: 100%;
-  margin: 0 auto 20px auto; /* Centrar el logo y añadir margen inferior */
-  opacity: 0.85; /* Opacidad del logo */
 }
 
 /* Estilos responsivos */

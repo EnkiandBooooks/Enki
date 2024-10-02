@@ -119,6 +119,6 @@ const user = new mongooseSchema({
     } 
 });
 const userModel = mongoose.model('usuario', user);
-module.exports = userModel;
+export {userModel};
 
 
