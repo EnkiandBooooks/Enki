@@ -1,11 +1,11 @@
-import { RegisterModel } from "../../database/mongodb/register.js";
 import { downloadImage } from "../../utils/cutter_image.js";
+import { bookModel } from "../../schema/obras/obras.js";
 export class cuttImgController {
     static async recibirImg(req, res) { 
         try {
             // Obtener el título de la imagen desde el cuerpo de la solicitud
             const titlebookImg = req.body.title;
-            const bookImg = await RegisterModel.searchBook({ title: titlebookImg });
+            const bookImg = await bookModel.findOne({ title: titlebookImg });
             if (!bookImg) {
                 return res.status(404).json({ message: 'Error al buscar la obra' });
             }

@@ -18,7 +18,7 @@ app.listen(process.env.PORT, () => {
     console.log(`server running on port http://localhost:${process.env.PORT}`);
 });
 
-connectDB()
+await connectDB()
   .then(() => {
     console.log("Conexión exitosa a MongoDB, iniciando servidor...");
   })
