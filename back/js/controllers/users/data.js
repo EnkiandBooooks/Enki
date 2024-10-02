@@ -1,3 +1,5 @@
+import { ProfileModel } from "../../database/mongodb/profile.js";
+
 
 const multer = require('multer'); // añadido tras instalar las dependencias npm install multer
 
@@ -7,8 +9,9 @@ export class DataController{
         const usr = req.user;
         console.log("----------------------")
         console.log(usr)
-                
-        res.json({"user": usr.username, "mail": usr.mail, "rol": usr.rol});
+        const creationDate = await ProfileModel.getUserCreationDate({mail:usr.mail}); //Mirar query, quizá mejor a partir de la id de usuario?        
+        console.log(creationDate)
+        res.json({"user": usr.username, "mail": usr.mail, "rol": usr.rol, "creationDate":creationDate});
     }
 
     static async modifyUser(req, res){
