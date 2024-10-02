@@ -1,4 +1,6 @@
 
+const multer = require('multer'); // añadido tras instalar las dependencias npm install multer
+
 export class DataController{
     static async getData(req, res){
         console.log("Hola")
@@ -12,7 +14,7 @@ export class DataController{
     static async modifyUser(req, res){
         const img = req.file ? `../../img/${req.file.filename}` : null;
         const username= req.body.user;
-        const mail= req.body.mail;
+        const mail= req.body.mail;cd
         console.log(img,username,mail)
         const result=RegisterModel.updateUser()
         res.status(200).json({'message': "Datos recibidos"})
