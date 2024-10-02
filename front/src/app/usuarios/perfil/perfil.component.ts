@@ -27,7 +27,7 @@ export class PerfilComponent {
 
   cookieService = inject(CookieService);
   restService = inject(RestService);
-
+  edit = true;
   async ngOnInit(){
     const data = this.restService.getData().subscribe((res) => {
       console.log("MUYIMPORTANTE:"+this.arrUsr+"-------------------------------");

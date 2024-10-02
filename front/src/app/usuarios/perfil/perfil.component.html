@@ -1,44 +1,70 @@
+<div class="profile-container">
+  <img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Logo" class="login-logo">
+  
+  <mat-card class="profile-card">
+    <mat-card-content>
+      <!-- Formulario de inicio de sesión -->
+      <form>
+        <!-- Campo para el nombre de usuario -->
+        <span>Nombre de perfil</span>
 
-<div class="total">
+        @if (edit){
+        <mat-form-field class="full-width">
+          <mat-label>Nombre</mat-label>
+          <input matInput type="text"  [(ngModel)]="arrUsr().user" name="profilename" required> <!--ngmodel tiene que pillar nombre de perfil "userprofile" no user (nombre de usuario)-->
+        </mat-form-field>
+        }@else{
+          <p>{{arrUsr().user}}</p>
+        }
 
 
-<mat-toolbar class="custom-toolbar">
+        <!-- Campo para la contraseña -->
+        <span>Nombre de usuario</span>
+        @if (edit){
+        <mat-form-field class="full-width">
+          <mat-label>Usuario</mat-label>
+          <input matInput type="text" [(ngModel)]="arrUsr().user" name="username" required>
+        </mat-form-field>
+        }@else{
+        <p>{{arrUsr().user}}</p>
+        }
 
+        <span>Correo electrónico</span>
+        @if (edit){
+        <mat-form-field class="full-width">
+          <mat-label>Correo</mat-label>
+          <input matInput type="text" [(ngModel)]="arrUsr().mail" name="email" required>
+        </mat-form-field>
+        }@else{
+        <p>{{arrUsr().mail}}</p>
+        }
 
+        <span>Contraseña</span>
+        @if (edit){
+        <mat-form-field class="full-width">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" name="password" required>
+        </mat-form-field>
+        }@else{
+        <p>-----------</p>
+        }
 
-  <div class="toolbar-container" [ngStyle]="{'background-color': (arrUsr().rol === 'superAdmin') ? '#66576C' : (arrUsr().rol === 'usuario') ? '#a55d00' : '#777777'}"
-  >
-  <img src="images/enki2.png" alt="Enki Logo" class="toolbar-image">
-  <h2>Bienvenido {{arrUsr().user}} Rol:{{arrUsr().rol}}</h2>
-    <!-- Título de la barra de herramientas -->
-    <!-- <span class="toolbar-title">Enki</span> -->
-   
-    <!-- Contenedor del menú de navegación -->
-    <nav class="vertical-nav" >
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a mat-button routerLink="/">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a mat-button routerLink="/resetPswd" (click)="onClick()">Cambiar Password</a>
-        </li>
-        <li class="nav-item">
-          <a mat-button routerLink="/">Tus grupos</a>
-        </li>
-        <li class="nav-item">
-          <a mat-button routerLink="/">Opción4</a>
-        </li>
-        <li class="nav-item">
-          <a mat-button color="accent" routerLink="/" (click)="onClick()">Salir</a>
-        </li>
-       
-        <li class="nav-item" *ngIf="arrUsr().rol === 'superAdmin'">
-          <a mat-button color="accent" routerLink="/" (click)="onClick()">Esto solo será visible si eres superAdmin</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+        @if (edit){
+        <!-- Botón para iniciar sesión -->
+        <div class="button-container">
+          <button mat-raised-button color="primary" type="submit">Confirmar cambios</button>
+        </div>
 
-</mat-toolbar>
+        }@else{
+          <span>Se unió a ENKI el</span>
+          <p>{{arrUsr().creationDate}}</p>
 
-</div>
+          <div class="button-container">
+            <button mat-raised-button color="primary" type="submit">Modo Edición</button>
+          </div>
+        } 
+      </form>
+    </mat-card-content>
+
+  </mat-card>
+</div>  
