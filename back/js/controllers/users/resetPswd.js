@@ -1,11 +1,9 @@
-import { EnviarMailpswd } from "../../utils/enviarpswd.js"; // Importa la función EnviarMail
-// import { RegisterModel } from "../../database/mongodb/register.js";
-// import { ObjectId } from "mongodb";
+import { EnviarMailpswd } from "../../utils/enviarpswd.js";
 import jwt from 'jsonwebtoken'
 import 'dotenv/config';
 import { PasswdHashManager } from "../../utils/passwdhash.js";
 import { passwordSchema } from "../../schema/resetPswd.js";
-import { usuario } from "../../schema/users.js"
+import { userModel } from "../../schema/users.js";
 
 
 export class resetPswdController {
@@ -13,26 +11,22 @@ export class resetPswdController {
 
         const mailUsuarioPswd = req.body.email;
         
-        // const userPswd = await RegisterModel.searchUser({mail: mailUsuarioPswd});
-        const userPswd = await usuario.findOne({email : mailUsuarioPswd});
-        
+        const userPswd = await userModel.findOne({email : mailUsuarioPswd});
         if (!userPswd){
             return res.status(404).json({ message: 'Usuario no encontrado'});
         }
         
-        const tokenPswd = jwt.sign({       
-            _id: userPswd._id,
-            }, 
-            process.env.secret_jwt_key, {
-            expiresIn: '15m'
-            });
-        
+        const tokenPswd = jwt.sign(
+            { _id: userPswd._id }, 
+            process.env.secret_jwt_key, 
+            { expiresIn: '15m' }
+        );
+
         const temporaryUrl = `http://localhost:4200/resetPswd3/${tokenPswd}`;
 
         EnviarMailpswd(mailUsuarioPswd, temporaryUrl);
 
-        res.send({url: temporaryUrl});
-        
+        res.json({url: temporaryUrl});
     }
 
 
@@ -49,21 +43,16 @@ export class resetPswdController {
 
         try{
             const idUserPswd = jwt.verify(token, process.env.secret_jwt_key)._id;
-            
-            // const user = await RegisterModel.searchUser(new ObjectId(idUserPswd));
-            const user = await usuario.findById(idUserPswd);
-            
+
+            const user = await userModel.findById(idUserPswd);
+
             if (!user){
                 return res.status(404).json({ message: 'No se ha econtrado el usuario'});
             }
 
             const hashedPassword = await PasswdHashManager.hashPassword(newPassword);
-            
-            // await RegisterModel.updateUser(
-            //     { _id: new ObjectId(idUserPswd)},
-            //     { password: hashedPassword}
-            // );
-            await usuario.findByIdAndUpdate(
+        
+            await userModel.findByIdAndUpdate(
                 idUserPswd,
                 {password: hashedPassword},
                 {new: true}

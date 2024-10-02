@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import 'dotenv/config';
-import { RegisterModel } from "../database/mongodb/register.js";
+import { userModel } from "../schema/users.js";
 import { ObjectId } from "mongodb";
 // TODO: Todavía no esta en uso este middleware
 
@@ -31,7 +31,7 @@ export const verifyJWT = async (req, res, next) => {
     
     // Comprobamos que el usuario del que pertenece el AccessToken existe.
     const id = new ObjectId(decodedToken._id);
-    const user = await RegisterModel.searchUser({"_id": id});
+    const user = await userModel.findById(id);
     console.log(user)
     if(!user){ // Si no devolvemos un mensaje avisando.
         return res.status(403).json({ message: "User not found" });

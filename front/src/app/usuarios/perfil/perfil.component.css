@@ -1,89 +1,78 @@
-.custom-toolbar {
+/* Contenedor principal: Centrar logo y tarjeta de login */
+.profile-container { 
   display: flex;
-  justify-content: center; /* Centra el contenedor horizontalmente */
-  align-items: center; /* Centra el contenedor verticalmente */
-  height: 100vh; /* Ocupa toda la altura de la ventana */
-  padding: 0;
-  background-color: transparent;
-}
-
-.toolbar-container {
-  display: flex;
-  flex-direction: column; /* Alinea los elementos en una columna */
-  align-items: center; /* Alinea el contenido al centro */
-  padding: 20px;
-  background-color: #f5f5f5; /* Un fondo claro para contrastar */
-  border-radius: 15px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  min-width: 400px; /* Un ancho mínimo para el contenedor */
-}
-
-.vertical-nav-admin,
-.vertical-nav-user {
-  display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Alinear logo y tarjeta en columna */
+  justify-content: center;
   align-items: center;
-  width: 300px; /* Ajusta el ancho de la barra de navegación */
-  padding: 20px 10px;
-  border-radius: 15px; /* Bordes más redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añade una sombra más fuerte */
-  box-sizing: border-box;
+  min-height: 100vh; /* Asegurar que ocupe al menos toda la pantalla */
+  background: linear-gradient(to bottom, #66576C, #1f1d21);
+  padding: 20px;
+  gap: 20px; /* Espaciado entre los elementos */
+  box-sizing: border-box; /* Asegura que el padding se respete */
 }
 
-.toolbar-title {
-  margin-bottom: 20px; 
-  color: rgb(157, 13, 13); 
-  font-size: 24px; 
-  text-align: center;
+/* Estilo de la tarjeta de login */
+.profile-card {
+  width: 100%; /* Usar todo el ancho disponible */
+  max-width: 400px; /* Límite máximo de 400px */
+  padding: 20px;
+  background-color: #66576C;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  border-radius: 12px; /* Bordes redondeados */
+  margin-top: 20px;
+  margin-bottom: 20px; /* Asegurar que haya espacio debajo en pantallas pequeñas */
 }
 
-.nav-list {
-  list-style-type: none; /* Quita los puntos de la lista */
-  padding: 0;
-  margin: 0;
+/* Asegurar que los elementos llenen todo el ancho */
+.full-width {
   width: 100%;
 }
 
-.nav-item {
-  margin-bottom: 10px;
-  width: 100%;
+mat-card-title {
+  color: #e8e8e8; /* Gris casi blanco */
 }
 
-a[mat-button] {
-  width: 100%;
-  text-align: left;
-  color: white;
-  border-radius: 5px;
+.button-container button {
+  background-color: #232223; /* Fondo oscuro */
+  color: rgb(255, 255, 255); /* Texto blanco */
+  padding: 12px;
+  width: 100%; /* Llenar todo el ancho */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.button-container button:hover {
+  background-color: #7d5e7d; /* Cambiar el fondo al pasar el cursor */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
+}
+
+/* Estilo para el logo */
+.login-logo, .login-letter {
   display: block;
+  max-width: 240px; /* Ajustamos el tamaño del logo */
+  width: 100%;
+  opacity: 0.85;
 }
 
-a[mat-button]:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Fondo más claro al pasar el cursor */
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .login-card {
+    width: 95%; /* Mantener un ancho casi completo */
+    margin: 10px; /* Reducir margen */
+  }
+
+  .login-logo {
+    max-width: 150px; /* Reducimos el tamaño del logo en pantallas medianas */
+  }
 }
 
-.admin-background {
-  background-color: #2196F3; 
-  min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
-}
+@media (max-width: 480px) {
+  .login-card {
+    width: 100%; /* Usar todo el ancho disponible */
+    margin: 10px;
+  }
 
-.user-background {
-  background-color: #e40404; 
-  min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
-}
-
-.toolbar-image{
-  width: 500px; 
-  height: auto;
-  margin-bottom: 20px;
-  border-radius: 15px; 
-
-}
-
-.body{
-  background-color: #e40404;
-}
-
-.total{
-  background-color: #4D4850;
-  height: 100vh
+  .login-logo {
+    max-width: 120px; /* Reducir aún más el tamaño del logo en pantallas pequeñas */
+  }
 }
