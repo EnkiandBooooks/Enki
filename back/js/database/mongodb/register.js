@@ -44,4 +44,9 @@ export class RegisterModel {
         const result = await db.updateOne(query, { $set: updateRol }); //el updateData es un JSon con los campos del usuario
         return result.modifiedCount > 0; //Igual que con eliminar devuelve true en caso de que funcione
     }
+    static async searchBook(query){
+        const db = await Connect('obras');
+        const user = await db.findOne(query);
+        return user
+    }
 }
