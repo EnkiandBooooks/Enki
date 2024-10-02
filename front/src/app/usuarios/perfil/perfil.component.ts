@@ -56,8 +56,21 @@ export class PerfilComponent {
     
     this.edit = !this.edit;
     
-    if (this.edit){
+    if (!this.edit){
         //Metodo para actualizar datos a BD
+        const body = {username:this.arrUsr().user,mail:this.arrUsr().mail};
+        this.restService.postData(body).subscribe({
+          next: (res) => {
+            console.log("///////////////////////\n"+res+"\n///////////////////////");
+           
+          },
+          error: (err) => {
+            // Manejar el error y mostrar el mensaje en SnackBar
+            console.error('Error desde backend:', err);
+           
+
+        }
+      })
     }
   }
 
