@@ -30,25 +30,21 @@ export class DataController {
 
     static async modifyUser(req, res) {
         try {
-            const img = req.file ? `../../img/${req.file.filename}` : null;
-            const username = req.body.user;
+            //const img = req.file ? `../../img/${req.file.filename}` : null;
+            const username = req.body.username;
             const mail = req.body.mail;
 
-            console.log(img, username, mail);
+            console.log( username, mail);
 
             // Actualizar la información del usuario
             const updateData = {
                 username: username,
                 mail: mail,
-                img: img, // Guarda la URL de la imagen si es necesario
+               // img: img, // Guarda la URL de la imagen si es necesario
             };
 
             // Actualizar el usuario en la base de datos
-            const updatedUser = await RegisterModel.findOneAndUpdate(
-                { username: username }, // Criterio de búsqueda
-                updateData,            // Datos a actualizar
-                { new: true }          // Devolver el documento actualizado
-            );
+            const updatedUser = await RegisterModel.findOneAndUpdate(updateData);
 
             if (!updatedUser) {
                 return res.status(404).json({ message: "Usuario no encontrado" });
