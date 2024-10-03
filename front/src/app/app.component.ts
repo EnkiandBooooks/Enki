@@ -37,7 +37,7 @@ export class AppComponent {
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       // Ocultar header y body en rutas específicas
-      this.showHeaderAndBody = !['/login0','/login1', '/login2','/login3','/perfil'].includes(event.url);
+      this.showHeaderAndBody = !['/login0','/login1', '/login2','/login3','/dashboard'].includes(event.url);
     });
   }
 
