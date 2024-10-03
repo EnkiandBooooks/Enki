@@ -59,6 +59,9 @@
         <div class="avatar">
           <img src="images/icon_default.jpg">
         </div>
+        <span>Subir Imagen de Perfil</span>
+        <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+        
       </form>
     </mat-card-content>
 
