@@ -34,10 +34,11 @@ export class DataController {
             const username = req.body.username;
             const mail = req.body.mail;
 
-            console.log( username, mail);
+            console.log( req.user._id);
 
             // Actualizar la información del usuario
             const updateData = {
+                _id: req.user._id,
                 username: username,
                 mail: mail,
                // img: img, // Guarda la URL de la imagen si es necesario
