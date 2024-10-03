@@ -5,7 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatToolbarModule } from '@angular/material/toolbar'; 
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { RestService } from '../../rest.service';
 import { CommonModule, NgFor } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -42,7 +42,7 @@ export class PerfilComponent {
     }
 
     )
-    
+
     console.log(data);
   }
 
@@ -53,21 +53,21 @@ export class PerfilComponent {
 
    // Método que se actva al activar boton de modo edicion o confirmar cambios
    onSubmit() {
-    
+
     this.edit = !this.edit;
-    
+
     if (!this.edit){
         //Metodo para actualizar datos a BD
         const body = {username:this.arrUsr().user,mail:this.arrUsr().mail};
         this.restService.postData(body).subscribe({
           next: (res) => {
             console.log("///////////////////////\n"+res+"\n///////////////////////");
-           
+
           },
           error: (err) => {
             // Manejar el error y mostrar el mensaje en SnackBar
             console.error('Error desde backend:', err);
-           
+
 
         }
       })
@@ -75,7 +75,7 @@ export class PerfilComponent {
   }
 
   dateFormat(date: string):string {
-  
+
   // Obtén el día, mes y año
   const day = this.datePipe.transform(date, 'd');
   const monthNumber = this.datePipe.transform(date, 'M'); // Esto te da el número del mes (1-12)
@@ -126,7 +126,7 @@ export class PerfilComponent {
   if (day && month && year) {
     return `${day} de ${month} de ${year}`;
   }
-  
+
   return "";
 
 }
