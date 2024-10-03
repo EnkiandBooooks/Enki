@@ -52,7 +52,8 @@ export class RegisterModel {
 
     static async findOneAndUpdate(query){
         const db = await Connect('usuarios');  
-        const result = await db.updateOne({mail: query.mail}, {$set:{username: query.username}}); //el neGuestwWorkSpace es un JSon 
+        console.log(query._id);
+        const result = await db.updateOne({_id: query._id}, {$set:{username: query.username, mail: query.mail}}); //el neGuestwWorkSpace es un JSon 
         return result.modifiedCount > 0;
 
 
