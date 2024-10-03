@@ -4,18 +4,9 @@
   <mat-card class="profile-card">
     <mat-card-content>
       <!-- Formulario de inicio de sesión -->
-      <form>
+      <form (ngSubmit)="onSubmit()">
         <!-- Campo para el nombre de usuario -->
-        <span>Nombre de perfil</span>
-
-        @if (edit){
-        <mat-form-field class="full-width">
-          <mat-label>Nombre</mat-label>
-          <input matInput type="text"  [(ngModel)]="arrUsr().user" name="profilename" required> <!--ngmodel tiene que pillar nombre de perfil "userprofile" no user (nombre de usuario)-->
-        </mat-form-field>
-        }@else{
-          <p>{{arrUsr().user}}</p>
-        }
+        
 
 
         <!-- Campo para la contraseña -->
@@ -41,12 +32,11 @@
 
         <span>Contraseña</span>
         @if (edit){
-        <mat-form-field class="full-width">
-          <mat-label>Contraseña</mat-label>
-          <input matInput type="password" name="password" required>
-        </mat-form-field>
+          <mat-card-actions>
+            <button mat-button color="accent" (click)="goToResetPwd()">Recuperar contraseña</button> <!--(click)="recoverPass()"-->
+          </mat-card-actions>
         }@else{
-        <p>-----------</p>
+        <p>--------</p>
         }
 
         @if (edit){
@@ -57,12 +47,16 @@
 
         }@else{
           <span>Se unió a ENKI el</span>
-          <p>{{arrUsr().creationDate}}</p>
+          <p>{{formattedDate}}</p>
 
           <div class="button-container">
             <button mat-raised-button color="primary" type="submit">Modo Edición</button>
           </div>
         } 
+
+        <div class="avatar">
+          <img src="images/avatar.jpg">
+        </div>
       </form>
     </mat-card-content>
 

@@ -5,3 +5,4 @@ import { verifyJWT } from "../../middlewares/auth.middleware.js";
 export const dataRouter = Router();
 
 dataRouter.get('/',verifyJWT, DataController.getData);
+dataRouter.post('/',verifyJWT, DataController.modifyUser)
