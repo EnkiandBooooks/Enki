@@ -8,6 +8,11 @@ export const userSchema = z.object({
     cookie: z.string().min(1, { message: "La cookie es requerida" })
 });
 
+export const updateUserSchema = z.object({
+    username: z.string().min(1, { message: "El nombre de usuario es requerido" }),
+    mail: z.string().min(1, { message: "El email es requerido" }).email("El email no está bien formado")
+});
+
 const workSpaceSchema = new mongooseSchema({
     idWorkSpace: {
         type: mongooseSchema.Types.ObjectId,

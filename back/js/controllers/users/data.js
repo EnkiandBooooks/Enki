@@ -1,4 +1,4 @@
-import { userModel } from  "../../schema/users.js"// Asegúrate de que RegisterModel esté importado
+import { updateUserSchema, userModel } from  "../../schema/users.js"// Asegúrate de que RegisterModel esté importado
 
 export class DataController {
     static async getData(req, res) {
@@ -22,6 +22,11 @@ export class DataController {
 
     static async modifyUser(req, res) {
         try {
+            const validation = await updateUserSchema.safeParseAsync(req.body);
+            if(!validation.success){ //Verifica que haya email y esté bien formado
+                return res.status(400).json({ resultado: validation.error.errors[0].message });
+            }
+
             const img = req.file ? `../../img/${req.file.filename}` : null;
             const username = req.body.username;
             const email = req.body.mail;
