@@ -1,21 +1,27 @@
-/* Estilo general del sidebar */
+/* Contenedor principal para el sidebar y el contenido */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh; /* Ocupar toda la altura de la ventana */
+}
+
+/* Sidebar: Estilo del menú de navegación lateral */
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 250px;
+  width: 250px; /* Ancho del sidebar */
   height: 100vh; /* Ocupa toda la altura de la pantalla */
-  background: linear-gradient(to bottom, #66576C, #1f1d21);
+  background: linear-gradient(to bottom, #3f3b42, #66576C);   1f1d21    66576C
   padding: 20px;
   box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+  z-index: 1000; /* Mantener el sidebar por encima del contenido */
 }
 
-/* Contenedor del logo, centrado y con un buen margen */
+/* Logo en el sidebar */
 .sidebar-logo {
   width: 100%;
   display: flex;
@@ -23,12 +29,11 @@
   margin-bottom: 40px;
 }
 
-/* Imagen del logo ajustada */
 .sidebar-logo-img {
   max-width: 80%; /* La imagen ocupará el 80% del contenedor */
-  height: auto; /* Mantiene la proporción */
+  height: auto; /* Mantener proporción */
   opacity: 0.85;
-  object-fit: contain; /* Asegura que la imagen no se distorsione */
+  object-fit: contain;
 }
 
 /* Menú del sidebar */
@@ -59,33 +64,41 @@
   transition: background-color 0.3s ease;
 }
 
-/* Hover en los enlaces */
+/* Efecto hover en los enlaces */
 .sidebar-menu li a:hover {
   background-color: #7d5e7d;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el área de contenido a la derecha */
+.content-area {
+  margin-left: 250px;  /* Espacio reservado para el sidebar */
+  padding: 0;          /* Eliminar el padding extra */
+  flex-grow: 1;        /* Asegura que el contenido llene el espacio restante */
+  background-color: #f5f5f5;  /* Color de fondo claro */
+  height: 100vh;       /* Ocupa toda la altura de la ventana */
+  overflow-y: auto;    /* Permite el scroll si el contenido es más grande */
+  z-index: 1;          /* Asegura que no esté cubierto por otros elementos */
 }
 
 /* Estilos responsivos para pantallas pequeñas */
 @media (max-width: 768px) {
-  .sidebar {
-    width: 200px; /* Sidebar más pequeño en pantallas medianas */
-  }
-
-  .sidebar-logo-img {
-    max-width: 70%; /* Reducir tamaño del logo */
+  .content-area {
+    margin-left: 200px; /* Ajustar el espacio para el sidebar en pantallas medianas */
   }
 }
 
 @media (max-width: 480px) {
-  .sidebar {
-    width: 180px; /* Sidebar más pequeño en pantallas pequeñas */
+  .content-area {
+    margin-left: 180px; /* Ajustar el espacio para el sidebar en pantallas pequeñas */
   }
+}
 
-  .sidebar-logo-img {
-    max-width: 60%; /* Reducir tamaño del logo */
-  }
-
-  .sidebar-menu li a {
-    padding: 10px 15px; /* Reducir padding en enlaces */
-  }
+/* Estilos globales */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }

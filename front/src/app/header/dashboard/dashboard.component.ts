@@ -1,26 +1,39 @@
-import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';  // Importa Router y NavigationEnd
-import { filter } from 'rxjs/operators'; // Importa filter
+import { Component, ChangeDetectorRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { PerfilComponent } from '../../usuarios/perfil/perfil.component';
+import { CookieService } from 'ngx-cookie-service';  // Importa CookieService
+import { Router } from '@angular/router';  // Importa Router para la redirección
 
 @Component({
   selector: 'app-dashboard',
-  standalone: true,
-  imports: [],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  styleUrls: ['./dashboard.component.css'],
+  standalone: true,
+  imports: [CommonModule, PerfilComponent]
 })
 export class DashboardComponent {
+  selectedSection: string = 'dashboard';
 
-  showHeader: boolean = true; // Variable para controlar la visibilidad del header y el body
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private cookieService: CookieService,  // Inyectamos CookieService
+    private router: Router  // Inyectamos Router para la redirección
+  ) {}
 
-  constructor(private router: Router) {
-    // Suscribirse a los eventos de navegación del router
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe((event: NavigationEnd) => {
-      // Ocultar el header y body si la ruta es '/login1', '/login2' o '/login3'
-      this.showHeader = !['/header'].includes(event.url); // Cerramos las comillas correctamente
-    });
+  // Método para cambiar la sección mostrada
+  showSection(section: string) {
+    this.selectedSection = section;
+    console.log('Sección seleccionada:', this.selectedSection);
+    this.cdr.detectChanges();
+  }
+
+  // Método para cerrar sesión
+  onLogout() {
+    // Elimina las cookies de autenticación
+    this.cookieService.delete('access_token');
+    this.cookieService.delete('refresh_token');
+
+    // Redirige al usuario a la página de inicio
+    this.router.navigate(['/']);  // Redirige a localhost:4200
   }
 }
-

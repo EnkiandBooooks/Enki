@@ -1,13 +1,30 @@
-<nav class="sidebar">
+<div class="dashboard-container">
+  <!-- Sidebar: Navbar a la izquierda -->
+  <nav class="sidebar">
     <div class="sidebar-logo">
       <img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Logo" class="sidebar-logo-img">
     </div>
     <ul class="sidebar-menu">
-      <li><a href="/dashboard">Dashboard</a></li>
-      <li><a href="/profile">Perfil</a></li>
-      <li><a href="/settings">Ajustes</a></li>
-      <li><a href="/logout">Cerrar Sesión</a></li>
+      <li><a href="#" (click)="showSection('dashboard'); $event.preventDefault()">Dashboard</a></li>
+      <li><a href="#" (click)="showSection('perfil'); $event.preventDefault()">Perfil</a></li>
+      <li><a href="#">Ajustes</a></li>
+      <!-- Llamamos al método onLogout cuando se hace clic en "Cerrar Sesión" -->
+      <li><a href="#" (click)="onLogout(); $event.preventDefault()">Cerrar Sesión</a></li>
     </ul>
   </nav>
-  
-  
+
+  <div class="content-area">
+    <!-- Mostrar contenido del Dashboard -->
+    <ng-container *ngIf="selectedSection === 'dashboard'">
+      <h1>Bienvenido al Dashboard</h1>
+    </ng-container>
+
+    <!-- Mostrar el componente Perfil cuando se haga clic en el botón Perfil -->
+    <ng-container *ngIf="selectedSection === 'perfil'">
+      <app-perfil></app-perfil> <!-- Carga dinámica del componente Perfil -->
+    </ng-container>
+  </div>
+</div>
+
+
+
