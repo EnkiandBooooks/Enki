@@ -1,0 +1,91 @@
+/* Estilo general del sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background: linear-gradient(to bottom, #66576C, #1f1d21);
+  padding: 20px;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+}
+
+/* Contenedor del logo, centrado y con un buen margen */
+.sidebar-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* Imagen del logo ajustada */
+.sidebar-logo-img {
+  max-width: 80%; /* La imagen ocupará el 80% del contenedor */
+  height: auto; /* Mantiene la proporción */
+  opacity: 0.85;
+  object-fit: contain; /* Asegura que la imagen no se distorsione */
+}
+
+/* Menú del sidebar */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Elementos del menú */
+.sidebar-menu li {
+  width: 100%;
+}
+
+/* Enlaces del menú */
+.sidebar-menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover en los enlaces */
+.sidebar-menu li a:hover {
+  background-color: #7d5e7d;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Sidebar más pequeño en pantallas medianas */
+  }
+
+  .sidebar-logo-img {
+    max-width: 70%; /* Reducir tamaño del logo */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 180px; /* Sidebar más pequeño en pantallas pequeñas */
+  }
+
+  .sidebar-logo-img {
+    max-width: 60%; /* Reducir tamaño del logo */
+  }
+
+  .sidebar-menu li a {
+    padding: 10px 15px; /* Reducir padding en enlaces */
+  }
+}
