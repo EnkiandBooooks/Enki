@@ -19,8 +19,28 @@
   background-color: #66576C;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
   border-radius: 12px; /* Bordes redondeados */
-  margin-top: 20px;
+  margin-top: 140px;
   margin-bottom: 20px; /* Asegurar que haya espacio debajo en pantallas pequeñas */
+  padding-top: 35px;
+}
+
+.avatar {
+  position: absolute;
+  top: -85px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #3a3a3a
+}
+
+.avatar img{
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  background-color: black;
 }
 
 /* Asegurar que los elementos llenen todo el ancho */
@@ -30,6 +50,20 @@
 
 mat-card-title {
   color: #e8e8e8; /* Gris casi blanco */
+}
+mat-card-actions  {
+  display: flex;          /* Habilita el uso de Flexbox */
+  justify-content: center; /* Centra horizontalmente los elementos */
+  align-items: center; /* Centra verticalmente si es necesario */
+}
+mat-card-actions button {
+  color: white;
+  background-color:#7d5e7d;
+}
+
+mat-card-actions button:hover {
+  background-color:antiquewhite;
+  color: black;
 }
 
 .button-container button {
@@ -49,8 +83,11 @@ mat-card-title {
 /* Estilo para el logo */
 .login-logo, .login-letter {
   display: block;
-  max-width: 240px; /* Ajustamos el tamaño del logo */
-  width: 100%;
+  position: absolute;
+  top: 20px; /* Ajusta la distancia desde la parte superior */
+  right: 20px; /* Ajusta la distancia desde la parte derecha */
+  max-width: 75px; /* Tamaño reducido del logo */
+  width: auto;
   opacity: 0.85;
 }
 
@@ -75,4 +112,12 @@ mat-card-title {
   .login-logo {
     max-width: 120px; /* Reducir aún más el tamaño del logo en pantallas pequeñas */
   }
+}
+
+p {
+  color: white;
+}
+
+span {
+  font-weight: bold;
 }

@@ -117,7 +117,7 @@ const user = new mongooseSchema({
         type: [mongooseSchema.Types.ObjectId],
         default: undefined
     } 
-});
+}, { timestamps: true });
 const userModel = mongoose.model('usuario', user);
 export {userModel};
 

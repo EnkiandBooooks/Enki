@@ -1,10 +1,3 @@
-// const bookModel = require('../js/schema/obras/obras');
-// const connectDB = require('../js/database/mongodb/connectBD.js');
-// const axios = require('axios');
-// const { MongoClient } = require('mongodb');
-// const fs = require('fs');
-// const readline = require('readline');
-// require('dotenv').config()
 import { connectDB } from "../js/database/mongodb/connectBD.js";
 import { bookModel } from "../js/schema/obras/obras.js";
 import axios from "axios";
@@ -12,9 +5,6 @@ import fs from "fs";
 import readline from "readline";
 import "dotenv/config";
 
-// const mongoUri = process.env.MONGO_URI;
-// const googleBooksApiKey = process.env.API_KEY;
-// const mongoClient = new MongoClient(mongoUri);
 
 const abecedario = 'abcdefghijklmnopqrstuvwxyz';
 
