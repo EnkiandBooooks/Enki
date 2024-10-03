@@ -63,6 +63,7 @@ export class PerfilComponent {
         },
         error: (err) => {
           // Manejar el error y mostrar el mensaje en SnackBar
+          
           console.error('Error desde backend:', err);
         }
       });
