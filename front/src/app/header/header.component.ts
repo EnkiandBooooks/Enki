@@ -33,7 +33,7 @@ export class HeaderComponent {
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       // Ocultar el header y body si la ruta es '/login1', '/login2' o '/login3'
-      this.showHeaderAndBody = !['/login1', '/login2', '/login3','/login0'].includes(event.url);
+      this.showHeaderAndBody = !['/login1', '/login2', '/login3','/login0','/dashboard'].includes(event.url);
     });
   }
 }

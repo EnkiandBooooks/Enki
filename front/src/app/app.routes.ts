@@ -13,6 +13,7 @@ import { loginGuard } from './guards/login.guard';
 import { registerGuard } from './guards/register.guard';
 import { notExitGuard } from './guards/not-exit.guard';
 import { notLoginGuard } from './guards/notLogin.guard';
+import { DashboardComponent } from './header/dashboard/dashboard.component';
 
 
 export const routes: Routes = [
@@ -26,5 +27,7 @@ export const routes: Routes = [
   { path:'resetPswd', component: CambioPassComponent }, 
   { path:'resetPswd3/:tokenPswd', component: CambioPass3Component }, 
   { path: 'body', component: BodyComponent },
+  { path: 'dashboard', component: DashboardComponent },
+
   /*{ path: '**', redirectTo: '/inicio' }*/ // Ruta comodín para redireccionar a inicio
 ];
