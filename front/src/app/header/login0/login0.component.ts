@@ -61,7 +61,7 @@ export class Login0Component {
         console.log(res.accessToken);
         this.cookieService.set('access_token', res.accessToken);
         this.cookieService.set('refresh_token', res.refreshToken);
-        this.router.navigate(['/perfil']);
+        this.router.navigate(['/dashboard']);
         this.snackBar.open('Sesión iniciada con éxito', 'Cerrar', {
           duration: 3000, // 3 segundos
           panelClass: ['success-snackbar'] // Clase CSS personalizada para error
