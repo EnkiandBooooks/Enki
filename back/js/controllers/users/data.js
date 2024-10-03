@@ -1,8 +1,4 @@
 import { userModel } from  "../../schema/users.js"// Asegúrate de que RegisterModel esté importado
-import multer from 'multer'; // Cambia a import
-
-const upload = multer({ dest: 'uploads/' }); // Establece la carpeta de destino para los archivos subidos
-//No se usa, Para un futuro
 
 export class DataController {
     static async getData(req, res) {
@@ -16,6 +12,7 @@ export class DataController {
                 mail: usr.email,
                 rol: usr.rol,
                 creationDate: usr.createdAt,
+                img: usr.img || null,  // Agregar la imagen si existe
             });
         } catch (error) {
             console.error("Error fetching user data:", error);
@@ -25,7 +22,7 @@ export class DataController {
 
     static async modifyUser(req, res) {
         try {
-            //const img = req.file ? `../../img/${req.file.filename}` : null;
+            const img = req.file ? `../../img/${req.file.filename}` : null;
             const username = req.body.username;
             const email = req.body.mail;
             console.log( "ID: ",req.user._id);
@@ -35,11 +32,20 @@ export class DataController {
                 _id: req.user._id,
                 username: username,
                 email: email,
-               // img: img, // Guarda la URL de la imagen si es necesario
+                img: img, // Guarda la URL de la imagen si es necesario
             };
 
+            if (img) {
+                updateData.img = img;  // Agregar la URL de la imagen si se subió
+            }
+
             // Actualizar el usuario en la base de datos
-            const updatedUser = await userModel.findOneAndUpdate(updateData);
+            const updatedUser = await userModel.findOneAndUpdate(
+                { _id: req.user._id },  // Condición de búsqueda
+                updateData,             // Datos a actualizar
+                { new: true }           // Devolver el usuario actualizado
+            );
+
 
             if (!updatedUser) {
                 return res.status(404).json({ message: "Usuario no encontrado" });
