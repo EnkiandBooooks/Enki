@@ -56,11 +56,22 @@
           </div>
         } 
 
-        <div class="avatar">
-          <img src="images/icon_default.jpg">
-        </div>
-        <span>Subir Imagen de Perfil</span>
-        <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+        
+          @if (edit){
+            <div class="avatar">
+              <label for="fileInput">
+                <img [src]="profileImageUrl || 'images/icon_default.jpg'" alt="Imagen de perfil">
+              </label>
+                <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+            </div>
+          }@else{
+            <div class="avatarNoEdit">
+              <label for="fileInput">
+                <img [src]="profileImageUrl || 'images/icon_default.jpg'" alt="Imagen de perfil">
+              </label>
+            </div>
+          }
+        
         
       </form>
     </mat-card-content>

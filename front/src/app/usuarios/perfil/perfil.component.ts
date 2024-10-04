@@ -135,7 +135,7 @@ export class PerfilComponent {
     // Mostrar la imagen seleccionada en la interfaz
     const reader = new FileReader();
     reader.onload = (e) => {
-      this.profileImageUrl = reader.result;
+      this.profileImageUrl = reader.result as string;
     };
     reader.readAsDataURL(file);
 
