@@ -32,14 +32,22 @@ const upload = multer({
       );
     }
   },
-});
+}).single('file'); // Cambiamos el `.single` aquí para usarlo directamente
 
-export const multerMiddleware = async (err, req, res, next) => {
-  upload.single('file')
-  if (err instanceof multer.MulterError || err) {
-    return res.status(400).json({ message: err.message });
-  }
-  next();
+// Middleware modificado para inyectar req.file.filename
+export const multerMiddleware = (req, res, next) => {
+  upload(req, res, (err) => {
+    if (err instanceof multer.MulterError || err) {
+      return res.status(400).json({ message: err.message });
+    }
+    
+    // Si el archivo fue cargado correctamente, inyectamos el filename
+    req.filename = req.file.filename || `${req.user._id}${path.extname(req.file.originalname)}`;
+    if (req.file) {
+        
+    }
+
+    // Continuar con el siguiente middleware
+    next();
+  });
 };
-
-
