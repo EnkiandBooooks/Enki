@@ -34,6 +34,19 @@
   border-radius: 50%;
   overflow: hidden;
   border: 5px solid #3a3a3a
+  cursor pointer;
+}
+
+.avatarNoEdit {
+  position: absolute;
+  top: -85px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #3a3a3a
 }
 
 .avatar img{
@@ -41,6 +54,46 @@
   height: 120px;
   object-fit: cover;
   background-color: black;
+  transition: transform 0.3s ease;
+}
+
+.avatarNoEdit img{
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  background-color: black;
+}
+
+.avatar:hover img {
+  transform: scale(1.25); /* Efecto de zoom al pasar el cursor */
+}
+
+.avatar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* Blanco semitransparente */
+  opacity: 0; /* Capa invisible por defecto */
+  transition: opacity 0.3s ease; /* Animación suave de opacidad */
+  z-index: 1; /* Asegura que la capa esté encima de la imagen */
+}
+
+.avatar:hover::after {
+  opacity: 1; /* Muestra la capa blanca al hacer hover */
+}
+
+.avatar input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Hacer el input invisible */
+  cursor: pointer; /* Asegurar que el cursor cambie a pointer */
+  z-index: 2; /* Colocar el input sobre la imagen */
 }
 
 /* Asegurar que los elementos llenen todo el ancho */
