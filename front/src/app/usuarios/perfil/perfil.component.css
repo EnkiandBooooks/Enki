@@ -70,20 +70,20 @@
 .avatar .editImg {
   position: absolute;
   z-index: 2;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, 30%);
+  transform: translate(-50%, 50%);
   background-color: transparent;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, width .3s ease,height .3s ease;
 }
 
 .avatar:hover .editImg {
   position: absolute;
   z-index: 2;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
