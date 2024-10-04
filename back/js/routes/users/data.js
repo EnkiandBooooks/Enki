@@ -2,15 +2,20 @@ import { Router } from "express";
 import { DataController } from "../../controllers/users/data.js";
 import { verifyJWT } from "../../middlewares/auth.middleware.js";
 import multer from 'multer'; // Importa multer para el manejo de archivos
+import path from "path";
 
 // Configura el almacenamiento personalizado con el nombre original del archivo
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, 'img/img_logo/'); // Carpeta donde se guardarán las imágenes
+      cb(null, 'img/img_profile/'); // Carpeta donde se guardarán las imágenes
     },
     filename: (req, file, cb) => {
+
+      const userId = req.user._id.toString(); //ID de usuario
+
+      const extension = path.extname(file.originalname)
       // Guardar el archivo con su nombre original
-      cb(null, file.originalname);
+      cb(null, `${userId}${extension}`);
     }
   });
   
