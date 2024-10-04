@@ -1,5 +1,5 @@
 import { updateUserSchema, userModel } from  "../../schema/users.js"// Asegúrate de que RegisterModel esté importado
-
+import { cuttImgProfile } from "../profile/cuttImg.js";
 export class DataController {
     static async getData(req, res) {
         try {
@@ -30,7 +30,10 @@ export class DataController {
             const img = req.file ? `../../img/${req.file.filename}` : null;
             const username = req.body.username;
             const email = req.body.mail;
+            const filename = req.file.filename;
+            console.log(filename)
             console.log( "ID: ",req.user._id);
+            cuttImgProfile(img, filename)
 
             // Actualizar la información del usuario
             const updateData = {
@@ -50,8 +53,6 @@ export class DataController {
                 updateData,             // Datos a actualizar
                 { new: true }           // Devolver el usuario actualizado
             );
-
-
             if (!updatedUser) {
                 return res.status(404).json({ message: "Usuario no encontrado" });
             }
