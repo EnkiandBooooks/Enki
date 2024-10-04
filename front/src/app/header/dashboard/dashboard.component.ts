@@ -3,13 +3,26 @@ import { CommonModule } from '@angular/common';
 import { PerfilComponent } from '../../usuarios/perfil/perfil.component';
 import { CookieService } from 'ngx-cookie-service';  // Importa CookieService
 import { Router } from '@angular/router';  // Importa Router para la redirección
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
   standalone: true,
-  imports: [CommonModule, PerfilComponent]
+  imports: [
+    CommonModule, 
+    PerfilComponent,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatListModule
+  ]
 })
 export class DashboardComponent {
   selectedSection: string = 'dashboard';
