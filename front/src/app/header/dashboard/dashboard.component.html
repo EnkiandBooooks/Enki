@@ -1,30 +1,46 @@
 <div class="dashboard-container">
   <!-- Sidebar: Navbar a la izquierda -->
-  <nav class="sidebar">
-    <div class="sidebar-logo">
-      <img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Logo" class="sidebar-logo-img">
-    </div>
-    <ul class="sidebar-menu">
-      <li><a href="#" (click)="showSection('dashboard'); $event.preventDefault()">Dashboard</a></li>
-      <li><a href="#" (click)="showSection('perfil'); $event.preventDefault()">Perfil</a></li>
-      <li><a href="#">Ajustes</a></li>
-      <!-- Llamamos al método onLogout cuando se hace clic en "Cerrar Sesión" -->
-      <li><a href="#" (click)="onLogout(); $event.preventDefault()">Cerrar Sesión</a></li>
-    </ul>
-  </nav>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer mode="side" opened>
+      <div class="sidebar-logo">
+        <img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Logo" class="sidebar-logo-img">
+      </div>
+      <mat-nav-list>
+        <mat-list-item>
+          <a mat-button class="nav-button" href="#" (click)="showSection('dashboard'); $event.preventDefault()">Dashboard</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a mat-button class="nav-button" href="#" (click)="showSection('perfil'); $event.preventDefault()">Perfil</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a mat-button class="nav-button" href="#">Ajustes</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a mat-button class="nav-button" href="#" (click)="onLogout(); $event.preventDefault()">Cerrar Sesión</a>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
 
-  <div class="content-area">
-    <!-- Mostrar contenido del Dashboard -->
-    <ng-container *ngIf="selectedSection === 'dashboard'">
-      <h1>Bienvenido al Dashboard</h1>
-    </ng-container>
+    <!-- Content area -->
+    <mat-sidenav-content class="content-area">
+      <!-- Toolbar -->
+      <mat-toolbar color="primary" class="toolbar">
+        <button mat-icon-button (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </mat-toolbar>
 
-    <!-- Mostrar el componente Perfil cuando se haga clic en el botón Perfil -->
-    <ng-container *ngIf="selectedSection === 'perfil'">
-      <app-perfil></app-perfil> <!-- Carga dinámica del componente Perfil -->
-    </ng-container>
-  </div>
+      <div class="content-wrapper">
+        <!-- Mostrar contenido del Dashboard -->
+        <ng-container *ngIf="selectedSection === 'dashboard'">
+          <h1>Bienvenido al Dashboard</h1>
+        </ng-container>
+
+        <!-- Mostrar el componente Perfil cuando se haga clic en el botón Perfil -->
+        <ng-container *ngIf="selectedSection === 'perfil'">
+          <app-perfil></app-perfil> <!-- Carga dinámica del componente Perfil -->
+        </ng-container>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
-
-
-
