@@ -30,10 +30,10 @@ export class DataController {
             const img = req.file ? `../../img/${req.file.filename}` : null;
             const username = req.body.username;
             const email = req.body.mail;
-            const filename = req.file.filename;
-            console.log(filename)
-            console.log( "ID: ",req.user._id);
-            cuttImgProfile(img, filename)
+            //const filename = req.file.filename;
+            //console.log(filename)
+            //console.log( "ID: ",req.user._id);
+            //cuttImgProfile(img, filename)
 
             // Actualizar la información del usuario
             const updateData = {
