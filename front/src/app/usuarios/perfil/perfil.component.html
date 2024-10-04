@@ -60,7 +60,8 @@
           @if (edit){
             <div class="avatar">
               <label for="fileInput">
-                <img [src]="profileImageUrl || 'images/icon_default.jpg'" alt="Imagen de perfil">
+                <img class="editImg" src="images/edit.png" alt="Editar imagen de perfil">
+                <img class="profilePicture" [src]="profileImageUrl || 'images/icon_default.jpg'" alt="Imagen de perfil">
               </label>
                 <input type="file" (change)="onFileSelected($event)" accept="image/*" />
             </div>
