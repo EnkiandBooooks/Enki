@@ -64,8 +64,31 @@
   background-color: black;
 }
 
-.avatar:hover img {
+.avatar:hover .profilePicture {
   transform: scale(1.25); /* Efecto de zoom al pasar el cursor */
+}
+.avatar .editImg {
+  position: absolute;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 30%);
+  background-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.avatar:hover .editImg {
+  position: absolute;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+
 }
 
 .avatar::after {
