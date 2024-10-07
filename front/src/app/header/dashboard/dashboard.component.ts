@@ -1,6 +1,7 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PerfilComponent } from '../../usuarios/perfil/perfil.component';
+import { HomedashComponent } from '../homedash/homedash.component';
 import { CookieService } from 'ngx-cookie-service';  // Importa CookieService
 import { Router } from '@angular/router';  // Importa Router para la redirección
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -17,6 +18,7 @@ import { MatListModule } from '@angular/material/list';
   imports: [
     CommonModule, 
     PerfilComponent,
+    HomedashComponent,  // Añadido aquí
     MatSidenavModule,
     MatToolbarModule,
     MatButtonModule,
@@ -25,7 +27,7 @@ import { MatListModule } from '@angular/material/list';
   ]
 })
 export class DashboardComponent {
-  selectedSection: string = 'dashboard';
+  selectedSection: string = 'home';
 
   constructor(
     private cdr: ChangeDetectorRef,

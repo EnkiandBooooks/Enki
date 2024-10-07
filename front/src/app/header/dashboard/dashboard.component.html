@@ -1,5 +1,4 @@
 <div class="dashboard-container">
-  <!-- Sidebar: Navbar a la izquierda -->
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer mode="side" opened>
       <div class="sidebar-logo">
@@ -7,7 +6,7 @@
       </div>
       <mat-nav-list>
         <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="showSection('dashboard'); $event.preventDefault()">Dashboard</a>
+          <a mat-button class="nav-button" href="#" (click)="showSection('home'); $event.preventDefault()">Inicio</a>
         </mat-list-item>
         <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('perfil'); $event.preventDefault()">Perfil</a>
@@ -21,9 +20,7 @@
       </mat-nav-list>
     </mat-sidenav>
 
-    <!-- Content area -->
     <mat-sidenav-content class="content-area">
-      <!-- Toolbar -->
       <mat-toolbar color="primary" class="toolbar">
         <button mat-icon-button (click)="drawer.toggle()">
           <mat-icon>menu</mat-icon>
@@ -31,14 +28,14 @@
       </mat-toolbar>
 
       <div class="content-wrapper">
-        <!-- Mostrar contenido del Dashboard -->
-        <ng-container *ngIf="selectedSection === 'dashboard'">
-          <h1>Bienvenido al Dashboard</h1>
+        <ng-container *ngIf="selectedSection === 'home'">
+          <app-homedash></app-homedash>
         </ng-container>
 
-        <!-- Mostrar el componente Perfil cuando se haga clic en el botón Perfil -->
         <ng-container *ngIf="selectedSection === 'perfil'">
-          <app-perfil></app-perfil> <!-- Carga dinámica del componente Perfil -->
+          <div class="profile-content">
+            <app-perfil></app-perfil>
+          </div>
         </ng-container>
       </div>
     </mat-sidenav-content>
