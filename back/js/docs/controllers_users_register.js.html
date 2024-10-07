@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: controllers/users/register.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: controllers/users/register.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { PasswdHashManager } from "../../utils/passwdhash.js";
+import jwt from 'jsonwebtoken';
+import 'dotenv/config';
+import { userSchema, userModel } from "../../schema/users.js";
+import { hash } from "bcrypt";
+
+/**
+ * Clase RegisterController para gestionar las operaciones de registro de usuarios.
+ * 
+ * @class RegisterController
+ */
+export class RegisterController {
+   /**
+     * Procesa el registro de un nuevo usuario, validando los datos de entrada, 
+     * hasheando la contraseña y guardando la información del usuario en la base de datos.
+     *
+     * @static
+     * @async
+     * @param {Object} req - Objeto de solicitud (Request) de Express, que contiene los datos de usuario y contraseña.
+     * @param {Object} req.body - Cuerpo de la solicitud con los datos del usuario.
+     * @param {string} req.body.username - Nombre de usuario.
+     * @param {string} req.body.passwordUser - Contraseña sin hashear.
+     * @param {string} req.body.cookie - Token JWT que contiene el correo electrónico del usuario.
+     * @param {Object} res - Objeto de respuesta (Response) de Express.
+     * @returns {Promise&lt;void>} - Responde con un mensaje de éxito si el registro es exitoso, o un error del servidor.
+     * 
+     * @example
+     * // Ejemplo de solicitud para registrar un nuevo usuario
+     * // POST /api/register
+     * RegisterController.getUsrPwd(req, res);
+     */
+    static async getUsrPwd(req, res) {
+
+        // Validar los datos de la solicitud usando zod
+        const validation = userSchema.safeParse(req.body);
+
+        if (!validation.success) {
+            return res.status(400).json({
+                message: validation.error.errors.map(err => err.message).join(', ')
+            });
+        }
+
+        const { username, passwordUser, cookie } = req.body;
+        try {
+            // Hashea la contraseña utilizando el gestor de hash de contraseñas
+            const password = await PasswdHashManager.hashPassword(passwordUser);
+            
+            // Extrae el email del token JWT en la cookie
+            const email = jwt.verify(cookie, process.env.secret_jwt_key).mail;
+            
+            // Comprueba que el email no esté vacío
+            if (!email) {
+                return res.status(400).json({
+                    message: "El token no contiene un correo electrónico válido."
+                });
+            }
+            //Usamos el Schema creado con mongoose que es el userModel (schema > users.js)
+            const newUser = new userModel({
+                username,
+                email,
+                password
+            });
+            //Inserta en la base de datos usando mongoose
+            await newUser.save();
+            // Envía una respuesta de éxito
+            res.status(200).json({ message: "Datos recibidos correctamente" });
+        } catch (error) {
+            // Manejo de errores: imprime un mensaje de error y responde con un error del servidor
+            console.error("Error con la solicitud", error);
+            res.status(500).json({ message: "Error del servidor" });
+        }
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Server.html">Server</a></li><li><a href="module-booksRouter.html">booksRouter</a></li><li><a href="module-dataRouter.html">dataRouter</a></li><li><a href="module-getBooksRouter.html">getBooksRouter</a></li><li><a href="module-loginRouter.html">loginRouter</a></li><li><a href="module-mailRouter.html">mailRouter</a></li><li><a href="module-refreshRouter.html">refreshRouter</a></li><li><a href="module-registerRouter.html">registerRouter</a></li><li><a href="module-resetPswdRouter.html">resetPswdRouter</a></li><li><a href="module-usersRouter.html">usersRouter</a></li></ul><h3>Classes</h3><ul><li><a href="AccessRefreshToken.html">AccessRefreshToken</a></li><li><a href="BooksModel.html">BooksModel</a></li><li><a href="DataController.html">DataController</a></li><li><a href="LoginController.html">LoginController</a></li><li><a href="MailController.html">MailController</a></li><li><a href="PasswdHashManager.html">PasswdHashManager</a></li><li><a href="RefreshController.html">RefreshController</a></li><li><a href="RegisterController.html">RegisterController</a></li><li><a href="getBooksController.html">getBooksController</a></li><li><a href="resetPswdController.html">resetPswdController</a></li></ul><h3>Global</h3><ul><li><a href="global.html#EnviarMailpswd">EnviarMailpswd</a></li><li><a href="global.html#bookModel">bookModel</a></li><li><a href="global.html#bookSchema">bookSchema</a></li><li><a href="global.html#connectDB">connectDB</a></li><li><a href="global.html#cuttImgProfile">cuttImgProfile</a></li><li><a href="global.html#destination">destination</a></li><li><a href="global.html#fileFilter">fileFilter</a></li><li><a href="global.html#filename">filename</a></li><li><a href="global.html#getMailSchema">getMailSchema</a></li><li><a href="global.html#getNumRandom">getNumRandom</a></li><li><a href="global.html#loginSchema">loginSchema</a></li><li><a href="global.html#multerMiddleware">multerMiddleware</a></li><li><a href="global.html#passwordSchema">passwordSchema</a></li><li><a href="global.html#sendMail">sendMail</a></li><li><a href="global.html#transporter">transporter</a></li><li><a href="global.html#updateRole">updateRole</a></li><li><a href="global.html#updateUserSchema">updateUserSchema</a></li><li><a href="global.html#user">user</a></li><li><a href="global.html#userSchema">userSchema</a></li><li><a href="global.html#verifyCodeSchema">verifyCodeSchema</a></li><li><a href="global.html#verifyJWT">verifyJWT</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Mon Oct 07 2024 12:23:34 GMT+0200 (hora de verano de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

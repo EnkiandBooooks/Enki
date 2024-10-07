@@ -3,7 +3,16 @@ import { DataController } from "../../controllers/users/data.js";
 import { verifyJWT } from "../../middlewares/auth.middleware.js";
 import { multerMiddleware } from "../../middlewares/multer.middleware.js";
 
-  export const dataRouter = Router();
+/**
+ * Router para gestionar las rutas relacionadas con los datos del usuario.
+ * 
+ * - `GET /` - Obtiene los datos del usuario autenticado.
+ * - `POST /` - Modifica los datos del usuario y permite la carga de un archivo de imagen.
+ * 
+ * @module dataRouter
+ * @type {Router}
+ */
+export const dataRouter = Router();
   
   // Ruta para obtener los datos del usuario
   dataRouter.get('/', verifyJWT, DataController.getData);

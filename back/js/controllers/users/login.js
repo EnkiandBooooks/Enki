@@ -6,15 +6,27 @@ import { userModel } from "../../schema/users.js";
 
 /**
  * Clase que gestiona las operaciones de login.
+ * 
+ * @class LoginController
  */
 export class LoginController {
-  /**
-   * Recibe los datos de usuario y contraseña, valida con Zod, comprueba que el usuario existe en la base de datos
-   * y verifica si la contraseña es correcta.
+ /**
+   * Recibe los datos de usuario y contraseña, valida los datos con Zod, comprueba que el usuario existe en la base de datos
+   * y verifica si la contraseña es correcta. Si todo es válido, genera y envía tokens de acceso y de actualización.
    *
+   * @static
+   * @async
    * @param {Object} req - Objeto de solicitud (Request) de Express, que contiene los datos de usuario y contraseña.
+   * @param {Object} req.body - Cuerpo de la solicitud con los datos de login.
+   * @param {string} req.body.usr - Nombre de usuario proporcionado.
+   * @param {string} req.body.pwd - Contraseña proporcionada.
    * @param {Object} res - Objeto de respuesta (Response) de Express.
-   * @returns {Promise<void>} - Responde con un mensaje de éxito o un error del servidor.
+   * @returns {Promise<void>} - Responde con un objeto JSON que contiene el resultado y, si es exitoso, los tokens de acceso.
+   * 
+   * @example
+   * // Ejemplo de solicitud de login
+   * // POST
+   * LoginController.loginUser(req, res);
    */
   static async loginUser(req, res) {
     try {
