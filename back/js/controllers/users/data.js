@@ -1,5 +1,6 @@
 import { updateUserSchema, userModel } from  "../../schema/users.js"// Asegúrate de que RegisterModel esté importado
 import { cuttImgProfile } from "../profile/cuttImg.js";
+// import { deleteFolder } from "../../img/delete.js";
 export class DataController {
     static async getData(req, res) {
         try {
@@ -34,7 +35,6 @@ export class DataController {
             
             console.log( "ID: ",req.user._id);
             cuttImgProfile(img, filename);
-
             // Actualizar la información del usuario
             const updateData = {
                 _id: req.user._id,
@@ -46,7 +46,6 @@ export class DataController {
             if (img) {
                 updateData.img = img;  // Agregar la URL de la imagen si se subió
             }
-
             // Actualizar el usuario en la base de datos
             const updatedUser = await userModel.findOneAndUpdate(
                 { _id: req.user._id },  // Condición de búsqueda

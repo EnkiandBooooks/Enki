@@ -1,4 +1,5 @@
 import sharp from "sharp";
+import { deleteFolder } from "../../img/delete.js";
 // import {userId } from '../../routes/users/data.js'
 
 export function cuttImgProfile(img, find) {
@@ -7,6 +8,7 @@ export function cuttImgProfile(img, find) {
     console.log(typeof(img))
     const imgPath = `img/img_profile/${find}`; 
     const outputPath = `img/img_profile_cut/${find}`; 
+
 
     sharp(imgPath)
     .rotate()
@@ -17,6 +19,8 @@ export function cuttImgProfile(img, find) {
         } else {
             console.log("Image processed successfully:", info);
         }
+        deleteFolder('img/img_profile_cut/')
+
     });
 }
 
