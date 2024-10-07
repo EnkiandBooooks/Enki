@@ -102,6 +102,10 @@ const user = new mongooseSchema({
         type: String,
         default: 'usuario'
     },
+    img:{
+        type: String,
+        default: null
+    },
     theme: {
         themeName: {
             type: String,
