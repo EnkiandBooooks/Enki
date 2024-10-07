@@ -1,22 +1,21 @@
-/* Contenedor principal para el sidebar y el contenido */
+/* Contenedor principal del dashboard */
 .dashboard-container {
   display: flex;
-  height: 100vh; /* Ocupar toda la altura de la ventana */
-  width: 100vw; /* Ocupar toda la anchura de la ventana */
-  overflow: hidden; /* Asegurarse de no mostrar barras de desplazamiento innecesarias */
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
   margin: 0;
   padding: 0;
 }
 
-/* Sidebar: Estilo del menú de navegación lateral */
+/* Contenedor de sidenav */
 .mat-sidenav-container {
-  height: 100%; /* Asegura que ocupe toda la altura */
-  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
-/* Sidebar: Estilo del menú de navegación lateral sin esquinas redondeadas */
 .mat-sidenav {
   width: 250px;
   background: linear-gradient(to bottom, #3f3b42, #66576C);
@@ -24,122 +23,119 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden; /* Evita barras de scroll en el sidenav */
-  border-radius: 0; /* Asegura que no haya esquinas redondeadas */
-  box-shadow: none; /* Elimina cualquier sombra que dé la sensación de redondeado */
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
 }
 
-.mat-sidenav .mat-nav-list {
-  width: 100%; /* Asegura que la lista ocupe todo el ancho del sidenav */
-}
-
-.mat-sidenav-content {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Ocupa el resto del espacio */
-  overflow: hidden; /* Evita scroll innecesario en el área de contenido */
-  background-color: #f5f5f5; /* Color de fondo claro */
-  margin: 0; /* Eliminamos márgenes */
-  padding: 0; /* Eliminamos relleno adicional */
-}
-
-/* Ajuste del logo en el sidenav */
+/* Logo en el Sidebar */
 .sidebar-logo {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  padding: 10px 0; /* Espaciado superior e inferior */
+  padding: 10px 0;
 }
 
 .sidebar-logo-img {
-  max-width: 170px; /* Ajusta el tamaño máximo del logo */
-  height: auto; /* Mantén la proporción del logo */
+  max-width: 170px;
+  height: auto;
   opacity: 0.85;
   object-fit: contain;
 }
 
-/* Estilo de la lista de navegación en el sidenav */
-.mat-nav-list {
+/* Estilo de los botones de navegación */
+.nav-button {
+  color: white !important;
+  text-transform: none;
+  font-size: 18px;
+  padding: 15px 20px;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 10px; /* Espacio entre los elementos */
-  padding: 0 10px; /* Espaciado lateral */
+  align-items: center;
+  justify-content: left;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Estilo para los botones de la navbar: texto en blanco y más grandes */
-.nav-button {
-  color: white !important; /* Asegura que el color del texto sea blanco */
-  text-transform: none; /* Evita que el texto se ponga en mayúsculas si es necesario */
-  font-size: 18px; /* Aumenta el tamaño de la fuente */
-  padding: 15px 20px; /* Aumenta el área de clic, tanto en altura como en ancho */
-  width: 100%; /* Asegura que ocupe todo el ancho disponible */
-  display: flex; /* Usamos flexbox para alinear el texto */
-  align-items: center; /* Centra verticalmente el texto */
-  justify-content: left; /* Alinea el texto a la izquierda */
-  box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total del botón */
-  text-decoration: none; /* Elimina la subrayado en el texto */
-}
-
-/* Estilo para los botones cuando están en estado hover (al pasar el cursor) */
+/* Hover para botones de navegación */
 .nav-button:hover {
-  background-color: #7d5e7d; /* Puedes mantener el color de fondo si lo deseas */
-  color: white; /* Mantén el color blanco incluso al pasar el cursor */
-  width: 100%; /* Asegura que el hover cubra todo el ancho */
-  padding: 15px 20px; /* Mantén el mismo padding en el hover */
-  box-sizing: border-box; /* Asegura que el tamaño se mantenga sin afectar el layout */
+  background-color: #7d5e7d;
+  color: white;
 }
 
-/* Si quieres asegurarte de que el texto de los botones permanezca blanco incluso cuando están en estado activo o enfocado */
-.nav-button:active,
-.nav-button:focus {
-  color: white !important; /* Asegura que el color sea blanco también en estos estados */
-}
-
-/* Opcional: puedes añadir un estilo activo personalizado para marcar la sección actual */
-.nav-button.active {
-  font-weight: bold; /* Resalta el botón activo */
-  color: #fff; /* Texto blanco */
-  background-color: #66576C; /* Fondo diferente para indicar que está activo */
-}
-
-/* Mat-toolbar estilo */
+/* Barra de herramientas */
 .mat-toolbar {
   display: flex;
+  background-color: #c1b5c2;
+  color: white;
   justify-content: space-between;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  padding: 0 15px;
+  height: 64px;
+  align-items: center;
 }
 
-/* Contenedor de contenido principal */
+.mat-toolbar button {
+  margin-left: 10px;
+}
+
+/* Área de contenido principal */
 .content-area {
   display: flex;
-  flex-grow: 1; /* Asegura que ocupe el máximo espacio disponible */
-  height: 100%;
-  width: 100%; /* Asegura que ocupe todo el ancho */
   flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
   background-color: #f5f5f5;
-  box-sizing: border-box; /* Asegura que el padding y el contenido no superen el 100% del espacio */
-  margin: 0; /* Eliminar margen extra */
-  padding: 0; /* Eliminar padding extra */
+  overflow-y: auto;
+  margin: 0; /* Eliminar margen */
+  padding: 0; /* Eliminar padding */
+  box-sizing: border-box;
 }
 
-/* Asegura que el h1 y demás contenido no tengan márgenes innecesarios */
+/* Contenedor para el contenido, ajustado para ocupar todo el espacio */
+.content-wrapper {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: flex-start; /* Alinea el contenido al inicio para que crezca hacia abajo */
+  flex-grow: 1;
+  width: 100%;
+  padding: 0; /* Eliminar padding */
+  margin: 0; /* Eliminar margen */
+  overflow-y: auto; /* Permitir scroll si el contenido es largo */
+  box-sizing: border-box;
+}
+
+/* Contenido del perfil: ocupa todo el espacio disponible */
+.profile-content {
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Asegura que el contenido comience desde arriba */
+  padding: 0; /* Elimina padding extra */
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 0; /* Eliminar borde redondeado */
+  box-shadow: none; /* Eliminar sombra si es necesario */
+  overflow-y: auto; /* Permite scroll interno */
+}
+
+/* h1 estilos */
 h1 {
   margin: 0;
-  padding: 20px;
-  box-sizing: border-box; /* Asegura que el padding no afecte el layout */
+  padding: 20px 0;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-/* Responsividad: Ajustes para pantallas pequeñas */
+/* Responsividad */
 @media (max-width: 768px) {
   .mat-sidenav {
     width: 200px;
   }
-
   .sidebar-logo-img {
-    max-width: 100px; /* Ajusta el tamaño del logo para pantallas más pequeñas */
+    max-width: 100px;
   }
 }
 
@@ -147,9 +143,8 @@ h1 {
   .mat-sidenav {
     width: 180px;
   }
-
   .sidebar-logo-img {
-    max-width: 80px; /* Ajusta el tamaño del logo para pantallas muy pequeñas */
+    max-width: 80px;
   }
 }
 
@@ -160,5 +155,5 @@ html, body {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  overflow: hidden; /* Evita scroll innecesario en el body */
+  overflow: hidden;
 }
