@@ -11,7 +11,6 @@ import { ObjectId } from "mongodb";
  * @param {*} req Objeto de solicitud (Request) de Express, que contiene el header.
  * @param {*} res Objeto de respuesta (Response), con la que devolveremos al front.
  * @param {*} next Paramentro para continuar a la siguiente función de la ruta.
- * @returns 
  */
 export const verifyJWT = async (req, res, next) => {
 
