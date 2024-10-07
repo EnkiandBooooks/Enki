@@ -1,18 +1,33 @@
 import { Schema, z } from 'zod';
 import mongoose from 'mongoose';
 const mongooseSchema = mongoose.Schema;
-
+/**
+ * Esquema de validación para el registro de usuario.
+ * @type {z.ZodSchema}
+ */
 export const userSchema = z.object({
     username: z.string().min(1, { message: "El nombre de usuario es requerido" }),
     passwordUser: z.string().min(8, { message: "La contraseña debe contener al menos 8 caracteres" }),
     cookie: z.string().min(1, { message: "La cookie es requerida" })
 });
-
+/**
+ * Esquema de validación para el registro de usuario.
+ * @type {z.ZodSchema}
+ */
 export const updateUserSchema = z.object({
     username: z.string().min(1, { message: "El nombre de usuario es requerido" }),
     mail: z.string().min(1, { message: "El email es requerido" }).email("El email no está bien formado")
 });
-
+/**
+ * Esquema de Mongoose para la colección de espacios de trabajo.
+ * 
+ * @typedef {Object} WorkSpace
+ * @property {ObjectId} idWorkSpace - ID del espacio de trabajo.
+ * @property {string} workSpaceName - Nombre del espacio de trabajo.
+ * @property {ObjectId} bookId - ID del libro (puede ser nulo).
+ * @property {Array<Object>} members - Miembros del espacio con ID, nombre y progreso.
+ * @property {Array<Object>} timeline - Eventos con fecha, descripción y comentarios.
+ */
 const workSpaceSchema = new mongooseSchema({
     idWorkSpace: {
         type: mongooseSchema.Types.ObjectId,
@@ -80,7 +95,12 @@ const workSpaceSchema = new mongooseSchema({
     }]
 });
 
-
+/**
+ * Modelo de Mongoose para la colección `usuario`.
+ * - Almacena información del usuario, incluyendo `workSpacesCreated` y `guestWorkSpaces`.
+ * 
+ * @type {mongoose.Model}
+ */
 const user = new mongooseSchema({
     username:{
         type: String,

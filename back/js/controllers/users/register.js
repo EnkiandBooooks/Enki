@@ -5,15 +5,29 @@ import { userSchema, userModel } from "../../schema/users.js";
 import { hash } from "bcrypt";
 
 /**
- * Clase registerController para gestionar las operaciones de registro de usuarios.
+ * Clase RegisterController para gestionar las operaciones de registro de usuarios.
+ * 
+ * @class RegisterController
  */
 export class RegisterController {
-    /**
-     * Recibe los datos de usuario y contraseña, procesa el registro de usuario en la base de datos.
+   /**
+     * Procesa el registro de un nuevo usuario, validando los datos de entrada, 
+     * hasheando la contraseña y guardando la información del usuario en la base de datos.
      *
+     * @static
+     * @async
      * @param {Object} req - Objeto de solicitud (Request) de Express, que contiene los datos de usuario y contraseña.
+     * @param {Object} req.body - Cuerpo de la solicitud con los datos del usuario.
+     * @param {string} req.body.username - Nombre de usuario.
+     * @param {string} req.body.passwordUser - Contraseña sin hashear.
+     * @param {string} req.body.cookie - Token JWT que contiene el correo electrónico del usuario.
      * @param {Object} res - Objeto de respuesta (Response) de Express.
-     * @returns {Promise<void>} - Responde con un mensaje de éxito o un error del servidor. 
+     * @returns {Promise<void>} - Responde con un mensaje de éxito si el registro es exitoso, o un error del servidor.
+     * 
+     * @example
+     * // Ejemplo de solicitud para registrar un nuevo usuario
+     * // POST /api/register
+     * RegisterController.getUsrPwd(req, res);
      */
     static async getUsrPwd(req, res) {
 
@@ -21,7 +35,6 @@ export class RegisterController {
         const validation = userSchema.safeParse(req.body);
 
         if (!validation.success) {
-            // Responde con un error si la validación fallaç
             return res.status(400).json({
                 message: validation.error.errors.map(err => err.message).join(', ')
             });
