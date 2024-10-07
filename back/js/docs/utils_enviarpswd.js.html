@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: utils/enviarpswd.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: utils/enviarpswd.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import transporter from "../config/transporter.js";
+
+/**
+ * Envía un correo electrónico con un enlace para restablecer la contraseña.
+ * 
+ * @param {string} mail - Dirección de correo del destinatario.
+ * @param {string} temporaryUrl - URL temporal para realizar el restablecimiento de contraseña.
+ */
+export const EnviarMailpswd = (mail, temporaryUrl) => {
+    transporter.sendMail({      //creamos el operador que enviara el mail
+        from: process.env.EMAIL_USER,       // el correo que envía
+        to: mail,       // a quién se lo enviamos 
+        subject: `Solicitud de cambio de contraseña`,       // esto seria el encabezado
+        text: `Solicitud de cambio de contraseña`,
+        html: ` &lt;div style="width: 100%; max-width: 600px; margin: 0 auto; text-align: center; padding: 20px; border: 1px solid; border-radius: 8px;">
+                    &lt;img src="cid:logo@enki.com" style="display: block; margin: 0 auto; width: 300px; height: auto; border-radius: 8px ;" />
+                    &lt;h1>CAMBIO DE CONTRASEÑA&lt;/h1>
+                    &lt;p>Para hacer el cambio, presione el siguiente &lt;b>ENLACE&lt;/b>: &lt;br/>&lt;br/> &lt;a href="${temporaryUrl}" style="text-decoration: none;">
+    &lt;button style="background-color: #4CAF50; /* Verde */
+                   border: none;
+                   color: white;
+                   padding: 15px 32px;
+                   text-align: center;
+                   text-decoration: none;
+                   display: inline-block;
+                   font-size: 16px;
+                   margin: 4px 2px;
+                   cursor: pointer;
+                   border-radius: 8px;">
+        Cambiar contraseña
+    &lt;/button>
+&lt;/a>&lt;/p>
+                &lt;div style="border-top: 1px solid #ddd; margin: 5px ;" />
+                &lt;p> En caso de que usted no haya intentado cambiar la contraseña&lt;b> alguien puede haber intentado entrar en su cuenta de Enki&lt;/b>. Le recomendamos restablecer su contraseña.&lt;/p>
+
+        &lt;/div>
+`,
+        attachments: [
+            {
+                filename: 'logo5.png',
+                path: './img/img_logo/logo5.png',
+                cid: 'logo@enki.com'
+            }
+        ]
+            }, )
+        }
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Server.html">Server</a></li><li><a href="module-booksRouter.html">booksRouter</a></li><li><a href="module-dataRouter.html">dataRouter</a></li><li><a href="module-getBooksRouter.html">getBooksRouter</a></li><li><a href="module-loginRouter.html">loginRouter</a></li><li><a href="module-mailRouter.html">mailRouter</a></li><li><a href="module-refreshRouter.html">refreshRouter</a></li><li><a href="module-registerRouter.html">registerRouter</a></li><li><a href="module-resetPswdRouter.html">resetPswdRouter</a></li><li><a href="module-usersRouter.html">usersRouter</a></li></ul><h3>Classes</h3><ul><li><a href="AccessRefreshToken.html">AccessRefreshToken</a></li><li><a href="BooksModel.html">BooksModel</a></li><li><a href="DataController.html">DataController</a></li><li><a href="LoginController.html">LoginController</a></li><li><a href="MailController.html">MailController</a></li><li><a href="PasswdHashManager.html">PasswdHashManager</a></li><li><a href="RefreshController.html">RefreshController</a></li><li><a href="RegisterController.html">RegisterController</a></li><li><a href="getBooksController.html">getBooksController</a></li><li><a href="resetPswdController.html">resetPswdController</a></li></ul><h3>Global</h3><ul><li><a href="global.html#EnviarMailpswd">EnviarMailpswd</a></li><li><a href="global.html#bookModel">bookModel</a></li><li><a href="global.html#bookSchema">bookSchema</a></li><li><a href="global.html#connectDB">connectDB</a></li><li><a href="global.html#cuttImgProfile">cuttImgProfile</a></li><li><a href="global.html#destination">destination</a></li><li><a href="global.html#fileFilter">fileFilter</a></li><li><a href="global.html#filename">filename</a></li><li><a href="global.html#getMailSchema">getMailSchema</a></li><li><a href="global.html#getNumRandom">getNumRandom</a></li><li><a href="global.html#loginSchema">loginSchema</a></li><li><a href="global.html#multerMiddleware">multerMiddleware</a></li><li><a href="global.html#passwordSchema">passwordSchema</a></li><li><a href="global.html#sendMail">sendMail</a></li><li><a href="global.html#transporter">transporter</a></li><li><a href="global.html#updateRole">updateRole</a></li><li><a href="global.html#updateUserSchema">updateUserSchema</a></li><li><a href="global.html#user">user</a></li><li><a href="global.html#userSchema">userSchema</a></li><li><a href="global.html#verifyCodeSchema">verifyCodeSchema</a></li><li><a href="global.html#verifyJWT">verifyJWT</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Mon Oct 07 2024 12:23:34 GMT+0200 (hora de verano de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

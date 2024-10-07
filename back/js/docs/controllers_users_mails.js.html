@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: controllers/users/mails.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: controllers/users/mails.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import jwt from 'jsonwebtoken';
+import 'dotenv/config';
+import { sendMail } from "../../utils/enviarmail.js"; // Importa la función EnviarMail
+import { getNumRandom } from "../../utils/random.js"; // Importa la función getNumRandom
+import { getMailSchema, verifyCodeSchema } from '../../schema/mail.js';
+
+/**
+ * Clase MailController para gestionar operaciones relacionadas con el manejo de correos electrónicos.
+ * 
+ * @class MailController
+ */
+export class MailController {
+      /**
+     * Valida la estructura del correo electrónico enviado, genera un código aleatorio, lo envía por correo electrónico 
+     * y devuelve un token JWT que contiene el correo electrónico y el código de verificación.
+     * 
+     * @static
+     * @async
+     * @param {Object} req - Objeto de solicitud HTTP.
+     * @param {Object} req.body - Cuerpo de la solicitud que contiene el correo electrónico del usuario.
+     * @param {string} req.body.email - Correo electrónico al que se enviará el código de verificación.
+     * @param {Object} res - Objeto de respuesta HTTP.
+     * @returns {Promise&lt;void>} - Devuelve un objeto JSON con un mensaje de éxito y el token JWT con el código de verificación.
+     * 
+     * @example
+     * // Ejemplo de solicitud para enviar el correo
+     * // POST
+     * MailController.getMail(req, res);
+     */
+    static async getMail(req, res) { 
+
+        const validation = await getMailSchema.safeParseAsync(req.body);       //Validamos el schema de zod con req.body
+        if(!validation.success){ //Verifica que haya email y esté bien formado
+            return res.status(400).json({ resultado: validation.error.errors[0].message });
+        }
+        const mailUser = req.body.email;
+
+        
+
+        const numRandom = getNumRandom();       // Genera un número aleatorio
+        sendMail(mailUser, numRandom);     // Envía el correo electrónico al usuario con el número aleatorio
+
+        const token = jwt.sign({         // Genera un token JWT con el correo electrónico y una clave secreta, expira en 1 hora
+            mail: mailUser,
+            codigo: numRandom
+            }, 
+            process.env.secret_jwt_key, {
+            expiresIn: '1h'
+            })
+        
+        res.status(200).json({ message: "Email recibido.",email_sendcode_token:token}); // ejemplo cookie
+    }
+    /**
+     * Verifica que el código de verificación proporcionado por el usuario sea correcto.
+     * 
+     * @static
+     * @async
+     * @param {Object} req - Objeto de solicitud HTTP.
+     * @param {Object} req.body - Cuerpo de la solicitud que contiene el token y el código de verificación.
+     * @param {string} req.body.cookie - Token JWT que contiene el código de verificación y el correo electrónico.
+     * @param {string} req.body.codigo - Código de verificación proporcionado por el usuario.
+     * @param {Object} res - Objeto de respuesta HTTP.
+     * @returns {Promise&lt;void>} - Devuelve un objeto JSON indicando si el código es correcto o incorrecto.
+     * 
+     * @example
+     * // Ejemplo de solicitud para verificar el código
+     * // POST
+     * MailController.verifyCode(req, res);
+     */
+    static async verifyCode(req, res) {
+        const token = req.body.cookie;
+        const userCode = req.body.codigo;
+        const validation = verifyCodeSchema.safeParse(req.body);       //Validamos el schema de zod con req.body
+        if(!validation.success){ //Comprueba si la verificación es incorrecta
+            console.log(validation.error.errors);
+            return res.status(400).json({ resultado: validation.error.errors[0].message });
+        }
+        const correctCode = jwt.verify(token, process.env.secret_jwt_key).codigo;
+
+        correctCode == userCode ? res.status(200).json({resultado: "Correcto"}) : res.status(200).json({resultado: "Incorrecto"});
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Server.html">Server</a></li><li><a href="module-booksRouter.html">booksRouter</a></li><li><a href="module-dataRouter.html">dataRouter</a></li><li><a href="module-getBooksRouter.html">getBooksRouter</a></li><li><a href="module-loginRouter.html">loginRouter</a></li><li><a href="module-mailRouter.html">mailRouter</a></li><li><a href="module-refreshRouter.html">refreshRouter</a></li><li><a href="module-registerRouter.html">registerRouter</a></li><li><a href="module-resetPswdRouter.html">resetPswdRouter</a></li><li><a href="module-usersRouter.html">usersRouter</a></li></ul><h3>Classes</h3><ul><li><a href="AccessRefreshToken.html">AccessRefreshToken</a></li><li><a href="BooksModel.html">BooksModel</a></li><li><a href="DataController.html">DataController</a></li><li><a href="LoginController.html">LoginController</a></li><li><a href="MailController.html">MailController</a></li><li><a href="PasswdHashManager.html">PasswdHashManager</a></li><li><a href="RefreshController.html">RefreshController</a></li><li><a href="RegisterController.html">RegisterController</a></li><li><a href="getBooksController.html">getBooksController</a></li><li><a href="resetPswdController.html">resetPswdController</a></li></ul><h3>Global</h3><ul><li><a href="global.html#EnviarMailpswd">EnviarMailpswd</a></li><li><a href="global.html#bookModel">bookModel</a></li><li><a href="global.html#bookSchema">bookSchema</a></li><li><a href="global.html#connectDB">connectDB</a></li><li><a href="global.html#cuttImgProfile">cuttImgProfile</a></li><li><a href="global.html#destination">destination</a></li><li><a href="global.html#fileFilter">fileFilter</a></li><li><a href="global.html#filename">filename</a></li><li><a href="global.html#getMailSchema">getMailSchema</a></li><li><a href="global.html#getNumRandom">getNumRandom</a></li><li><a href="global.html#loginSchema">loginSchema</a></li><li><a href="global.html#multerMiddleware">multerMiddleware</a></li><li><a href="global.html#passwordSchema">passwordSchema</a></li><li><a href="global.html#sendMail">sendMail</a></li><li><a href="global.html#transporter">transporter</a></li><li><a href="global.html#updateRole">updateRole</a></li><li><a href="global.html#updateUserSchema">updateUserSchema</a></li><li><a href="global.html#user">user</a></li><li><a href="global.html#userSchema">userSchema</a></li><li><a href="global.html#verifyCodeSchema">verifyCodeSchema</a></li><li><a href="global.html#verifyJWT">verifyJWT</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Mon Oct 07 2024 12:23:34 GMT+0200 (hora de verano de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

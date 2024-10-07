@@ -1,7 +1,33 @@
 import { updateUserSchema, userModel } from  "../../schema/users.js"// Asegúrate de que RegisterModel esté importado
 import { cuttImgProfile } from "../profile/cuttImg.js";
+
+/**
+ * Controlador para gestionar operaciones relacionadas con los datos de usuario.
+ * 
+ * @class DataController
+ */
 // import { deleteFolder } from "../../img/delete.js";
 export class DataController {
+    /**
+     * Obtiene y devuelve los datos del usuario actual.
+     * 
+     * @static
+     * @async
+     * @param {Object} req - Objeto de solicitud HTTP.
+     * @param {Object} req.user - Objeto del usuario autenticado.
+     * @param {string} req.user.username - Nombre de usuario.
+     * @param {string} req.user.email - Correo electrónico del usuario.
+     * @param {string} req.user.rol - Rol del usuario.
+     * @param {Date} req.user.createdAt - Fecha de creación del usuario.
+     * @param {string} req.user.img - URL de la imagen de perfil del usuario.
+     * @param {Object} res - Objeto de respuesta HTTP.
+     * @returns {Promise<void>} Devuelve un objeto JSON con los datos del usuario.
+     * 
+     * @example
+     * // Ejemplo de solicitud
+     * // GET
+     * DataController.getData(req, res);
+     */
     static async getData(req, res) {
         try {
             const usr = req.user;
@@ -21,6 +47,26 @@ export class DataController {
         }
     }
 
+    /**
+     * Modifica los datos del usuario y actualiza su imagen de perfil si se proporciona una nueva.
+     * 
+     * @static
+     * @async
+     * @param {Object} req - Objeto de solicitud HTTP.
+     * @param {Object} req.body - Datos enviados en la solicitud para actualizar el usuario.
+     * @param {string} req.body.username - Nuevo nombre de usuario.
+     * @param {string} req.body.mail - Nuevo correo electrónico del usuario.
+     * @param {Object} req.file - Objeto que contiene el archivo de imagen cargado.
+     * @param {string} req.file.filename - Nombre del archivo de la imagen cargada.
+     * @param {string} req.user._id - ID del usuario autenticado.
+     * @param {Object} res - Objeto de respuesta HTTP.
+     * @returns {Promise<void>} Devuelve un objeto JSON con el mensaje de éxito o error.
+     * 
+     * @example
+     * // Ejemplo de solicitud
+     * // PUT
+     * DataController.modifyUser(req, res);
+     */
     static async modifyUser(req, res) {
         try {
             /*const validation = await updateUserSchema.safeParseAsync(req.body);
