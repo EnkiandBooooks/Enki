@@ -13,22 +13,36 @@ const abecedario = 'abcdefghijklmnopqrstuvwxyz';
 *Si la api funciona correctamente y hay resultados devuelve un json con los libros, estos se formatean en una lista objetos jsvascript con los datos que interesan.
 *Si la api no funciona correctamente se devuelve null.
 */
-async function recogerLibrosAPI(query,maxResultados) {
+// async function recogerLibrosAPI(query,maxResultados) {
   
-  const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=${maxResultados}&orderBy=relevance&printType=books&filter=ebooks&projection=full&langRestrict=es&key=${process.env.API_KEY}`;
+//   const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=${maxResultados}&orderBy=relevance&printType=books&filter=ebooks&projection=full&langRestrict=es&key=${process.env.API_KEY}`;
+//   const response = await axios.get(url);
+//   return response.data.items ? response.data.items.map(book => ({
+//     title: book.volumeInfo.title,date
+//     authors: book.volumeInfo.authors,
+//     publishedDate: book.volumeInfo.publishedDate,
+//     description: book.volumeInfo.description,
+//     pageCount: book.volumeInfo.pageCount,
+//     categories: book.volumeInfo.categories,
+//     rating: book.volumeInfo.averageRating,
+//     thumbnail: book.volumeInfo.imageLinks?.thumbnail,
+//   })) : null;
+// }
+async function recogerLibrosAPI(query, maxResultados) {
+  const url = `https://openlibrary.org/search.json?q=${query}&limit=${maxResultados}`;
   const response = await axios.get(url);
-  return response.data.items ? response.data.items.map(book => ({
-    title: book.volumeInfo.title,
-    authors: book.volumeInfo.authors,
-    publishedDate: book.volumeInfo.publishedDate,
-    description: book.volumeInfo.description,
-    pageCount: book.volumeInfo.pageCount,
-    categories: book.volumeInfo.categories,
-    rating: book.volumeInfo.averageRating,
-    thumbnail: book.volumeInfo.imageLinks?.thumbnail,
-  })) : null;
-}
-
+  
+  return response.data.docs.map(book => ({
+    title: book.title,
+    authors: book.author_name,
+    publishedDate: book.publish_date[0],
+    description: Array.isArray(book.first_sentence) ? book.first_sentence.join(" ") : book.first_sentence || "Sin descripción",
+    pageCount: book.number_of_pages_median,
+    categories: book.subject.slice(0, 2),
+    rating: book.ratings_average,
+    thumbnail: `https://covers.openlibrary.org/b/olid/${book.lending_edition_s}.jpg`
+  }));
+};
 /**
 * A partir de una lista de objetos de los libros se mueven a la colección obras de la base de datos applibros de mongodb.
 * Se comprueba también antes de añadir un libro si ya existe en la base de dtos para evitar duplicidades
@@ -61,7 +75,7 @@ async function moverLibroDB(books) {
 * Si hay libros se añaden a la base de datos.
 */
 async function anadirLibrosAleatorios(){
-  for(letra of abecedario){
+  for(const letra of abecedario){
     console.log("Letra",letra,":");
     try {
       const book = await recogerLibrosAPI(letra,40);
@@ -145,7 +159,7 @@ async function main() {
     console.log('Añadiendo de forma aleatoria libros...');
     await anadirLibrosAleatorios();
   } else if (modo === '--archivo') {
-    const nombreArchivo = args[1] || 'libros.txt';
+    const nombreArchivo = args[1] || 'libros_traducidos.txt';
     console.log(`Ejecutando modo archivo con el archivo: ${nombreArchivo}`);
     await anadirLibrosDesdeArchivo(nombreArchivo);
   } else if (modo === '--titulo'){
