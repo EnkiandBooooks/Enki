@@ -15,6 +15,8 @@
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.14",
     "sharp": "^0.33.5",
+    "textualization": "^0.6.2",
+    "upscaler": "^1.0.0-beta.19",
     "uuid": "^10.0.0",
     "zod": "^3.23.8"
   },
