@@ -28,7 +28,7 @@ export class DataController {
                 return res.status(400).json({ resultado: validation.error.errors[0].message });
             }*/
             console.log("Aca esta:"+req.file.filename);
-            const img = req.file ? `../../img/${req.file.filename}` : null;
+            const img = req.file ? `${req.file.filename}` : null;
             const username = req.body.username;
             const email = req.body.mail;
             const filename = req.filename;
