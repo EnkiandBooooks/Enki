@@ -115,7 +115,7 @@ export class PerfilComponent {
         this.snackBar.open('Error al subir la imagen o formato desconocido, solo se admiten archivos .jpg, .jpeg y .png', 'Cerrar', {
           duration: 6000, // 3 segundos
           panelClass: ['error-snackbar'] // Clase CSS personalizada para error
-        });
+        }); 
       }
     });
   }
