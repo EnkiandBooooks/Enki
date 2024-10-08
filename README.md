@@ -9,10 +9,12 @@ En este paso pondremos los commits para hacer una pequeña documentación guiada
 
 ### Comando 1: Clonar el repositorio en tu Maquina Local 
 
+**Comando**: 
+```bash
+# git clone https://github.com/GerardAcosta/LDF_Nombre_Provisional.git
+```
 
-Comando: git clone https://github.com/GerardAcosta/LDF_Nombre_Provisional.git
-
-Descripción: Clonación del repositorio en tu maquina local
+**Descripción**: Clonación del repositorio en tu maquina local
 
 
 ### Comando 2: Instalar node.js
@@ -24,16 +26,19 @@ Descripción: Clonación del repositorio en tu maquina local
 - Descarga el instalador correspondiente a tu sistema operativo (Windows y/o macOS).
 - Ejecuta el instalador y sigue las instrucciones para completar la instalación.
 
-Descripción: Instalación de node.js en windows y macOS
+**Descripción**: Instalación de node.js en windows y macOS
 
 ### Comando 3: Instalar Angular 18
 
 
 #### Windows y MacOS:
 
-Comando: npm install -g @angular/cli@18
+**Comando**: 
+```bash
+# npm install -g @angular/cli@18
+```
 
-Descripción: Instalación de Angular 18 en Windows, macOS y LINUX
+**Descripción**: Instalación de Angular 18 en Windows, macOS y LINUX
 
 ### Comando 4: Instalar MongooDB
 
@@ -47,43 +52,66 @@ Descripción: Instalación de Angular 18 en Windows, macOS y LINUX
 #### 4.2 Instalación de MoongoDB tools
 - Ve a la página oficial de Mongoo DB Database Tools.
 - Selecciona el sistema operativo y descarga el archivo .zip
-- Extrae el contenido del arvhivo en una carpeta. La recomendada es 'C:\Program Files\MongoDB\Tools'
-- Dentro de la subcarpeta 100( o numero de version correspondiente), encontraras bin, que contiene los ejecutables de las herramientas
+- Extrae el contenido del arvhivo en una carpeta. La recomendada es:
+```bash
+# C:\Program Files\MongoDB\Tools
+```
+ - Dentro de la subcarpeta 100( o numero de version correspondiente), encontraras bin, que contiene los ejecutables de las herramientas
 
 #### 4.3 Implementación MoongoDB 
 
 - Presionamos la tecla de Windows y seleccionamos 'Variables de entorno del sistema'
 - Seleccionamos path
-- Cambiamos la ruta por la siguiente: ' C:\Program Files\MongoDB\Tools\100\bin '
+- Cambiamos la ruta por la siguiente:
+```bash
+# C:\Program Files\MongoDB\Tools\100\bin
+```
 - Finalmente, entramos al CMD y ejecutamos el siguiente comando:
-  - ' moongorestore --db applibros \tu_ruta\Enki\BackupsMongo\applibrosBackUp '
-
-Descripción: Instalación y implementación de MongooseDB
-
-
-### Prerrequisitos 📋
-
-Lista de software y herramientas, incluyendo versiones, que necesitas para instalar y ejecutar este proyecto:
-
-- Sistema Operativo (por ejemplo, Ubuntu 20.04, Windows 10)
-- Lenguaje de programación (por ejemplo, Python 3.8)
-- Framework (por ejemplo, Django 3.1)
-- Base de datos (por ejemplo, PostgreSQL 12)
-- Otros...
-
-### Instalación 🔧
-
-Una guía paso a paso sobre cómo configurar el entorno de desarrollo e instalar todas las dependencias.
-
 ```bash
-# paso 1
+#  moongorestore --db applibros \tu_ruta\Enki\BackupsMongo\applibrosBackUp 
+```
+**Descripción**: Instalación y implementación de MongooseDB
+
+### Comando 5: Instalar Dependencias
+
+- Entramos en Visual Studio Code
+- Abrimos un terminal y entramos a la carpeta /Enki:
+```bash
+# cd tu_ruta/Enki
+```
+- Nos dirigimos al backend: 
+```bash
+# npm install
+```
+- Instalamos dependencias del backend: 
+```bash
+# npm install
+```
+- Nos redirigimos a la rama principal: 
+```bash
+# cd ../..
+```
+- Y nos movemos al frontend:
+```bash
+# npm install
+```
+- Instalamos dependencias:
+```bash
+# npm install
 ```
 
-Y así sucesivamente...
+### Comando 6: Ejecutar servidor
 
+**Path**: 'tu_ruta/Enki'
+
+**Comando**: 
 ```bash
-# paso 2
+# ./ejecutar.ps1 -b/-f
 ```
+
+**Descripción**: Este script te ejecuta automaticamente el backend, el frontend, y te abre en el navegador automaticamente la pagina. Dependiendo si quieres ejecutar el frontend(-f) o el backend(-b) en este terminal, seleccionaras una función o otra
+
+
 
 ## Ejecutando las Pruebas ⚙️
 
@@ -113,23 +141,13 @@ Instrucciones sobre cómo desplegar esto en un sistema en vivo o ambiente de pro
 
 Explica qué tecnologías usaste para construir este proyecto. Aquí algunos ejemplos:
 
-- [Ruby](https://www.ruby-lang.org/es/) - El lenguaje utilizado
-- [Ruby on Rails](https://rubyonrails.org) - El framework web utilizado
+- [JavaScript]() - El lenguaje de backend utilizado
+- [NodeJs](https://nodejs.org/en) - El framework de backend utilizado
+- [TypeScript]() - El lenguaje de frontend utilizado
+- [Angular 18](https://angular.dev/) - El framework de frontend utilizado
 - [Ruby gems](https://rubygems.org) - Gestión de dependencias
 - [Postgresql](https://www.postgresql.org) - Sistema de base de datos
 - [Bulma IO](https://bulma.io) - Framework de CSS
-
-## Contribuyendo 🖇️
-
-Las contribuciones son lo que hacen a la comunidad de código abierto un lugar increíble para aprender, inspirar y crear. Cualquier contribución que hagas es muy apreciada. Por favor, lee el [CONTRIBUTING.md](https://gist.github.com/brayandiazc/xxxxxx) para detalles sobre nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más sobre cómo usar este proyecto en nuestra [Wiki](https://github.com/your/project/wiki)
-
-## Soporte
-
-Si tienes algún problema o sugerencia, por favor abre un problema [aquí](https://github.com/your/project/issues).
 
 ## Roadmap
 
@@ -137,19 +155,16 @@ Ideas, mejoras planificadas y actualizaciones futuras
 
 para el proyecto actual.
 
-## Versionado 📌
-
-Usamos [Git](https://git-scm.com) para el versionado. Para las versiones disponibles, ve las [etiquetas en este repositorio](https://github.com/your/project/tags).
-
 ## Autores ✒️
 
-- **Brayan Diaz C** - _Trabajo inicial_ - [Brayan Diaz C](https://github.com/brayandiazc)
+- **Gerard Acosta ** - _Trabajo inicial_ - [Gerard Acosta](https://github.com/GerardAcosta)
+- **Cesar Robres ** - _Trabajo inicial_ - [Cesar Robres](https://github.com/CesarRobres)
+- **Arnau Mendez  ** - _Trabajo inicial_ - [Arnau Mendez](https://github.com/ArnauMendez)
+- **Pol Buqueras  ** - _Trabajo inicial_ - [Pol Buqueras](https://github.com/PolBuqueras)
+- **Max Merino  ** - _Trabajo inicial_ - [Max Merino](https://github.com/MaxMerino05)
+- **Pablo Carvalho ** - _Trabajo inicial_ - [Pablo Carvalho](https://github.com/Pablo-inetum)
+- ** Antonio Cobo** - _Trabajo inicial_ - [Antonio Cobo](https://github.com/ToniInetum)
 
-Mira también la lista de [contribuidores](https://github.com/your/project/contributors) que han participado en este proyecto.
-
-## Licencia 📄
-
-Este proyecto está bajo la Licencia XYZ - ve el archivo [LICENSE.md](LICENSE.md) para detalles
 
 ## Expresiones de Gratitud 🎁
 
