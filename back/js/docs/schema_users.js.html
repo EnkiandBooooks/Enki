@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: schema/users.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: schema/users.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { Schema, z } from 'zod';
+import mongoose from 'mongoose';
+const mongooseSchema = mongoose.Schema;
+/**
+ * Esquema de validación para el registro de usuario.
+ * @type {z.ZodSchema}
+ */
+export const userSchema = z.object({
+    username: z.string().min(1, { message: "El nombre de usuario es requerido" }),
+    passwordUser: z.string().min(8, { message: "La contraseña debe contener al menos 8 caracteres" }),
+    cookie: z.string().min(1, { message: "La cookie es requerida" })
+});
+/**
+ * Esquema de validación para el registro de usuario.
+ * @type {z.ZodSchema}
+ */
+export const updateUserSchema = z.object({
+    username: z.string().min(1, { message: "El nombre de usuario es requerido" }),
+    mail: z.string().min(1, { message: "El email es requerido" }).email("El email no está bien formado")
+});
+/**
+ * Esquema de Mongoose para la colección de espacios de trabajo.
+ * 
+ * @typedef {Object} WorkSpace
+ * @property {ObjectId} idWorkSpace - ID del espacio de trabajo.
+ * @property {string} workSpaceName - Nombre del espacio de trabajo.
+ * @property {ObjectId} bookId - ID del libro (puede ser nulo).
+ * @property {Array&lt;Object>} members - Miembros del espacio con ID, nombre y progreso.
+ * @property {Array&lt;Object>} timeline - Eventos con fecha, descripción y comentarios.
+ */
+const workSpaceSchema = new mongooseSchema({
+    idWorkSpace: {
+        type: mongooseSchema.Types.ObjectId,
+        default: () => new mongoose.Types.ObjectId()
+    },
+    workSpaceName: {
+        type: String,
+        required: true
+    },
+    bookId: {
+        type: mongooseSchema.Types.ObjectId,
+        default: null
+    },
+    members: [{
+        memberId: {
+            type: mongooseSchema.Types.ObjectId,
+            default: () => new mongoose.Types.ObjectId()
+        },
+        name: {
+            type: String,
+            required: true
+        },
+        progress: {
+            percentage: {
+                type: Number,
+                default: 0,
+                min: 0,
+                max: 100
+            }
+        }
+    }],
+    timeline: [{
+        date: {
+            type: Date,
+            default: Date.now
+        },
+        event: {
+            type: String,
+            default: 'Primer evento'
+        },
+        comment: [{
+            commentId: {
+                type: mongooseSchema.Types.ObjectId,
+                default: () => new mongoose.Types.ObjectId()
+            },
+            text: {
+                type: String,
+                required: true
+            },
+            user: {
+                commentUserId: {
+                    type: mongooseSchema.Types.ObjectId,
+                    default: null
+                },
+                userName: {
+                    type: String,
+                    required: true
+                }
+            },
+            date: {
+                type: Date,
+                default: Date.now
+            }
+        }]
+    }]
+});
+
+/**
+ * Modelo de Mongoose para la colección `usuario`.
+ * - Almacena información del usuario, incluyendo `workSpacesCreated` y `guestWorkSpaces`.
+ * 
+ * @type {mongoose.Model}
+ */
+const user = new mongooseSchema({
+    username:{
+        type: String,
+        required: [true, 'Es necesario un nombre de usuario'],
+        unique: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        match: [/^\S+@\S+\.\S+$/, 'El correo no es válido']
+    },
+    password:{
+        type: String,
+        required: true,
+        minlength: [8, 'La contraseña debe contener al menos 8 caracteres']
+    },
+    rol: {
+        type: String,
+        default: 'usuario'
+    },
+    img:{
+        type: String,
+        default: null
+    },
+    theme: {
+        themeName: {
+            type: String,
+            default: 'default'
+        }
+    },
+    icon: {
+        iconName: {
+            type: String,
+            default: 'default'
+        }
+    },
+    workSpacesCreated: {
+        type: [workSpaceSchema], //Se le inserta automaticamente el modelo de workspace aqui en caso de haber contenido
+        default: undefined
+    },
+    guestWorkSpaces: { //Es un array de referencias
+        type: [mongooseSchema.Types.ObjectId],
+        default: undefined
+    } 
+}, { timestamps: true });
+const userModel = mongoose.model('usuario', user);
+export {userModel};
+
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Server.html">Server</a></li><li><a href="module-booksRouter.html">booksRouter</a></li><li><a href="module-dataRouter.html">dataRouter</a></li><li><a href="module-getBooksRouter.html">getBooksRouter</a></li><li><a href="module-loginRouter.html">loginRouter</a></li><li><a href="module-mailRouter.html">mailRouter</a></li><li><a href="module-refreshRouter.html">refreshRouter</a></li><li><a href="module-registerRouter.html">registerRouter</a></li><li><a href="module-resetPswdRouter.html">resetPswdRouter</a></li><li><a href="module-usersRouter.html">usersRouter</a></li></ul><h3>Classes</h3><ul><li><a href="AccessRefreshToken.html">AccessRefreshToken</a></li><li><a href="BooksModel.html">BooksModel</a></li><li><a href="DataController.html">DataController</a></li><li><a href="LoginController.html">LoginController</a></li><li><a href="MailController.html">MailController</a></li><li><a href="PasswdHashManager.html">PasswdHashManager</a></li><li><a href="RefreshController.html">RefreshController</a></li><li><a href="RegisterController.html">RegisterController</a></li><li><a href="getBooksController.html">getBooksController</a></li><li><a href="resetPswdController.html">resetPswdController</a></li></ul><h3>Global</h3><ul><li><a href="global.html#EnviarMailpswd">EnviarMailpswd</a></li><li><a href="global.html#bookModel">bookModel</a></li><li><a href="global.html#bookSchema">bookSchema</a></li><li><a href="global.html#connectDB">connectDB</a></li><li><a href="global.html#cuttImgProfile">cuttImgProfile</a></li><li><a href="global.html#destination">destination</a></li><li><a href="global.html#fileFilter">fileFilter</a></li><li><a href="global.html#filename">filename</a></li><li><a href="global.html#getMailSchema">getMailSchema</a></li><li><a href="global.html#getNumRandom">getNumRandom</a></li><li><a href="global.html#loginSchema">loginSchema</a></li><li><a href="global.html#multerMiddleware">multerMiddleware</a></li><li><a href="global.html#passwordSchema">passwordSchema</a></li><li><a href="global.html#sendMail">sendMail</a></li><li><a href="global.html#transporter">transporter</a></li><li><a href="global.html#updateRole">updateRole</a></li><li><a href="global.html#updateUserSchema">updateUserSchema</a></li><li><a href="global.html#user">user</a></li><li><a href="global.html#userSchema">userSchema</a></li><li><a href="global.html#verifyCodeSchema">verifyCodeSchema</a></li><li><a href="global.html#verifyJWT">verifyJWT</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Mon Oct 07 2024 12:23:34 GMT+0200 (hora de verano de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

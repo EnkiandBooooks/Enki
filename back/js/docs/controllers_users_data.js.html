@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: controllers/users/data.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: controllers/users/data.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { updateUserSchema, userModel } from  "../../schema/users.js"// Asegúrate de que RegisterModel esté importado
+import { cuttImgProfile } from "../profile/cuttImg.js";
+
+/**
+ * Controlador para gestionar operaciones relacionadas con los datos de usuario.
+ * 
+ * @class DataController
+ */
+export class DataController {
+    /**
+     * Obtiene y devuelve los datos del usuario actual.
+     * 
+     * @static
+     * @async
+     * @param {Object} req - Objeto de solicitud HTTP.
+     * @param {Object} req.user - Objeto del usuario autenticado.
+     * @param {string} req.user.username - Nombre de usuario.
+     * @param {string} req.user.email - Correo electrónico del usuario.
+     * @param {string} req.user.rol - Rol del usuario.
+     * @param {Date} req.user.createdAt - Fecha de creación del usuario.
+     * @param {string} req.user.img - URL de la imagen de perfil del usuario.
+     * @param {Object} res - Objeto de respuesta HTTP.
+     * @returns {Promise&lt;void>} Devuelve un objeto JSON con los datos del usuario.
+     * 
+     * @example
+     * // Ejemplo de solicitud
+     * // GET
+     * DataController.getData(req, res);
+     */
+    static async getData(req, res) {
+        try {
+            const usr = req.user;
+            console.log("----------------------");
+
+            // Obtener la fecha de creación del usuario usando el correo electrónico
+            res.json({
+                user: usr.username,
+                mail: usr.email,
+                rol: usr.rol,
+                creationDate: usr.createdAt,
+                img: usr.img || null,  // Agregar la imagen si existe
+            });
+        } catch (error) {
+            console.error("Error fetching user data:", error);
+            res.status(500).json({ message: "Error fetching user data" });
+        }
+    }
+
+    /**
+     * Modifica los datos del usuario y actualiza su imagen de perfil si se proporciona una nueva.
+     * 
+     * @static
+     * @async
+     * @param {Object} req - Objeto de solicitud HTTP.
+     * @param {Object} req.body - Datos enviados en la solicitud para actualizar el usuario.
+     * @param {string} req.body.username - Nuevo nombre de usuario.
+     * @param {string} req.body.mail - Nuevo correo electrónico del usuario.
+     * @param {Object} req.file - Objeto que contiene el archivo de imagen cargado.
+     * @param {string} req.file.filename - Nombre del archivo de la imagen cargada.
+     * @param {string} req.user._id - ID del usuario autenticado.
+     * @param {Object} res - Objeto de respuesta HTTP.
+     * @returns {Promise&lt;void>} Devuelve un objeto JSON con el mensaje de éxito o error.
+     * 
+     * @example
+     * // Ejemplo de solicitud
+     * // PUT
+     * DataController.modifyUser(req, res);
+     */
+    static async modifyUser(req, res) {
+        try {
+            /*const validation = await updateUserSchema.safeParseAsync(req.body);
+            if(!validation.success){ //Verifica que haya email y esté bien formado
+                return res.status(400).json({ resultado: validation.error.errors[0].message });
+            }*/
+            console.log("Aca esta:"+req.file.filename);
+            const img = req.file ? `../../img/${req.file.filename}` : null;
+            const username = req.body.username;
+            const email = req.body.mail;
+            const filename = req.filename;
+            
+            console.log( "ID: ",req.user._id);
+            cuttImgProfile(img, filename);
+
+            // Actualizar la información del usuario
+            const updateData = {
+                _id: req.user._id,
+                username: username,
+                email: email,
+                img: img, // Guarda la URL de la imagen si es necesario
+            };
+
+            if (img) {
+                updateData.img = img;  // Agregar la URL de la imagen si se subió
+            }
+
+            // Actualizar el usuario en la base de datos
+            const updatedUser = await userModel.findOneAndUpdate(
+                { _id: req.user._id },  // Condición de búsqueda
+                updateData,             // Datos a actualizar
+                { new: true }           // Devolver el usuario actualizado
+            );
+            if (!updatedUser) {
+                return res.status(404).json({ message: "Usuario no encontrado" });
+            }
+
+            res.status(200).json({
+                message: "Usuario actualizado exitosamente",
+                user: updatedUser,
+            });
+        } catch (error) {
+            console.error("Error updating user data:", error);
+            res.status(500).json({ message: "Error updating user data" });
+        }
+    }
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Server.html">Server</a></li><li><a href="module-booksRouter.html">booksRouter</a></li><li><a href="module-dataRouter.html">dataRouter</a></li><li><a href="module-getBooksRouter.html">getBooksRouter</a></li><li><a href="module-loginRouter.html">loginRouter</a></li><li><a href="module-mailRouter.html">mailRouter</a></li><li><a href="module-refreshRouter.html">refreshRouter</a></li><li><a href="module-registerRouter.html">registerRouter</a></li><li><a href="module-resetPswdRouter.html">resetPswdRouter</a></li><li><a href="module-usersRouter.html">usersRouter</a></li></ul><h3>Classes</h3><ul><li><a href="AccessRefreshToken.html">AccessRefreshToken</a></li><li><a href="BooksModel.html">BooksModel</a></li><li><a href="DataController.html">DataController</a></li><li><a href="LoginController.html">LoginController</a></li><li><a href="MailController.html">MailController</a></li><li><a href="PasswdHashManager.html">PasswdHashManager</a></li><li><a href="RefreshController.html">RefreshController</a></li><li><a href="RegisterController.html">RegisterController</a></li><li><a href="getBooksController.html">getBooksController</a></li><li><a href="resetPswdController.html">resetPswdController</a></li></ul><h3>Global</h3><ul><li><a href="global.html#EnviarMailpswd">EnviarMailpswd</a></li><li><a href="global.html#bookModel">bookModel</a></li><li><a href="global.html#bookSchema">bookSchema</a></li><li><a href="global.html#connectDB">connectDB</a></li><li><a href="global.html#cuttImgProfile">cuttImgProfile</a></li><li><a href="global.html#destination">destination</a></li><li><a href="global.html#fileFilter">fileFilter</a></li><li><a href="global.html#filename">filename</a></li><li><a href="global.html#getMailSchema">getMailSchema</a></li><li><a href="global.html#getNumRandom">getNumRandom</a></li><li><a href="global.html#loginSchema">loginSchema</a></li><li><a href="global.html#multerMiddleware">multerMiddleware</a></li><li><a href="global.html#passwordSchema">passwordSchema</a></li><li><a href="global.html#sendMail">sendMail</a></li><li><a href="global.html#transporter">transporter</a></li><li><a href="global.html#updateRole">updateRole</a></li><li><a href="global.html#updateUserSchema">updateUserSchema</a></li><li><a href="global.html#user">user</a></li><li><a href="global.html#userSchema">userSchema</a></li><li><a href="global.html#verifyCodeSchema">verifyCodeSchema</a></li><li><a href="global.html#verifyJWT">verifyJWT</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Mon Oct 07 2024 12:23:34 GMT+0200 (hora de verano de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

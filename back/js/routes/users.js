@@ -6,6 +6,19 @@ import { refreshRouter } from "./users/refresh.js";
 import { dataRouter } from "./users/data.js";
 import { resetPswdRouter } from "./users/resetPswd.js";
 
+/**
+ * Router principal para gestionar todas las rutas relacionadas con las operaciones de usuario.
+ * 
+ * - `GET /mail` - Rutas relacionadas con el manejo de correos electrónicos.
+ * - `POST /register` - Rutas relacionadas con el registro de nuevos usuarios.
+ * - `POST /login` - Rutas relacionadas con el inicio de sesión.
+ * - `POST /resetPswd` - Rutas relacionadas con el restablecimiento de contraseñas.
+ * - `POST /refresh` - Rutas relacionadas con la regeneración de tokens de acceso.
+ * - `GET/POST /data` - Rutas relacionadas con la obtención y modificación de datos de usuario.
+ * 
+ * @module usersRouter
+ * @type {Router}
+ */
 export const usersRouter = Router();
 
 usersRouter.use('/mail', mailRouter);

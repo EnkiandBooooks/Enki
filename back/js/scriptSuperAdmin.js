@@ -8,6 +8,13 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const query = { email: email };
 
 console.log(query, rol);
+/**
+ * Actualiza el rol de un usuario a "superAdmin" basado en su dirección de correo.
+ * 
+ * @async
+ * @function updateRole
+ * @returns {Promise<void>} - Imprime el resultado del proceso en la consola.
+ */
 
 async function updateRole() {
   if (emailPattern.test(email)) {
