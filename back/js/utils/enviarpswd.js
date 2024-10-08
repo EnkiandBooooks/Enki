@@ -1,6 +1,11 @@
 import transporter from "../config/transporter.js";
 
-
+/**
+ * Envía un correo electrónico con un enlace para restablecer la contraseña.
+ * 
+ * @param {string} mail - Dirección de correo del destinatario.
+ * @param {string} temporaryUrl - URL temporal para realizar el restablecimiento de contraseña.
+ */
 export const EnviarMailpswd = (mail, temporaryUrl) => {
     transporter.sendMail({      //creamos el operador que enviara el mail
         from: process.env.EMAIL_USER,       // el correo que envía

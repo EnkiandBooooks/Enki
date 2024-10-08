@@ -1,5 +1,11 @@
 import transporter from "../config/transporter.js";
 
+/**
+ * Envía un correo electrónico con un código de verificación al usuario.
+ * 
+ * @param {string} mail - Dirección de correo del destinatario.
+ * @param {string|number} random - Código de verificación a enviar en el correo.
+ */
 export const sendMail = (mail, random) => {
 
     transporter.sendMail({      //creamos el operador que enviara el mail

@@ -1,9 +1,13 @@
 import jwt from "jsonwebtoken";
 import 'dotenv/config';
-// import { RegisterModel } from "../database/mongodb/register.js";
 import { userModel } from "../schema/users.js";
 import { ObjectId } from "mongodb";
 
+/**
+ * Clase para gestionar la generación de AccessTokens y RefreshTokens.
+ * 
+ * @class AccessRefreshToken
+ */
 export class AccessRefreshToken{
     /**
      * Función para generar el AccessToken y el RefreshToken
