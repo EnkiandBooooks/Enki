@@ -65,5 +65,9 @@ export class RestService {
   getRefreshToken() {
     return this.cookieService.get("refresh_token");
   }
+
+  getBooks() {
+    return this.http.get<any[]>(`http://localhost:1234/books`)
+  }
 }
 
