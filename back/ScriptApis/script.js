@@ -29,18 +29,33 @@ const abecedario = 'abcdefghijklmnopqrstuvwxyz';
 //   })) : null;
 // }
 async function recogerLibrosAPI(query, maxResultados) {
-  const url = `https://openlibrary.org/search.json?q=${query}&limit=${maxResultados}`;
+  const url = `https://openlibrary.org/search.json?q=${query}&limit=${maxResultados}&language:en`;
   const response = await axios.get(url);
-  
-  return response.data.docs.map(book => ({
+
+  return response.data.docs
+  .filter(book => 
+    book.title && 
+    book.author_name &&
+    Array.isArray(book.publish_date) && 
+    book.publish_date.length > 0 &&
+    book.number_of_pages_median > 0 &&
+    book.ratings_average &&
+    Array.isArray(book.isbn) && 
+    book.isbn.length > 0 &&
+    Array.isArray(book.subject) && 
+    book.subject.length > 0
+  )
+  .map(book => ({
     title: book.title,
     authors: book.author_name,
     publishedDate: book.publish_date[0],
-    description: Array.isArray(book.first_sentence) ? book.first_sentence.join(" ") : book.first_sentence || "Sin descripción",
+    description: Array.isArray(book.first_sentence) ? book.first_sentence.join(" ") : (book.first_sentence || "Sin descripción"),
     pageCount: book.number_of_pages_median,
-    categories: book.subject.slice(0, 2),
+    categories: book.subject.slice(0, 3),
     rating: book.ratings_average,
-    thumbnail: `https://covers.openlibrary.org/b/olid/${book.lending_edition_s}.jpg`
+    isbn: book.isbn[0],
+    thumbnail: `https://covers.openlibrary.org/b/isbn/${book.isbn[0]}-S.jpg`,
+    largeThumbnail: `https://covers.openlibrary.org/b/isbn/${book.isbn[0]}-L.jpg`
   }));
 };
 /**
@@ -53,7 +68,7 @@ async function moverLibroDB(books) {
     
     console.log("--------------------------------------------------")
     for(const book of books){
-      let existe = await bookModel.findOne({title : book.title});
+      let existe = await bookModel.findOne({isbn : book.isbn});
       
       if (!existe){
         await bookModel.create(book);
@@ -78,7 +93,7 @@ async function anadirLibrosAleatorios(){
   for(const letra of abecedario){
     console.log("Letra",letra,":");
     try {
-      const book = await recogerLibrosAPI(letra,40);
+      const book = await recogerLibrosAPI(letra,100);
       if (!book) {
         console.log('No se pudo encontrar un libro.');
       
@@ -112,7 +127,7 @@ async function anadirLibrosDesdeArchivo(archivo) {
     for await (const line of rl) {
       console.log(line);
       try {
-        const book = await recogerLibrosAPI(line, 1);
+        const book = await recogerLibrosAPI(line, 40);
         if (!book) {
           console.log("No se pudo encontrar un libro.");
         } else {
@@ -133,7 +148,7 @@ async function anadirLibrosDesdeArchivo(archivo) {
 async function anadirLibroManual(query){
     console.log(`Buscando libro con título ${query}`);
     try {
-      const book = await recogerLibrosAPI(query,1);
+      const book = await recogerLibrosAPI(query,100);
       if (!book) {
         console.log('No se pudo encontrar un libro.');
       
