@@ -70,16 +70,13 @@ const upload = multer({
  * });
  */
 export const multerMiddleware = (req, res, next) => {
+  console.log(req.file)
   upload(req, res, (err) => {
     if (err instanceof multer.MulterError || err) {
       return res.status(400).json({ message: err.message });
     }
-    
     // Si el archivo fue cargado correctamente, inyectamos el filename
-    req.filename = req.file.filename || `${req.user._id}${path.extname(req.file.originalname)}`;
-    if (req.file) {
-        
-    }
+    req.filename = req.file.filename
 
     // Continuar con el siguiente middleware
     next();

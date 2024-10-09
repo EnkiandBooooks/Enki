@@ -68,7 +68,7 @@
           }@else{
             <div class="avatarNoEdit">
               <label for="fileInput">
-                <img [src]="profileImageUrl || 'images/icon_default.jpg'" alt="Imagen de perfil">
+                <img [src]="'images/${profileImageUrl}' || 'images/icon_default.jpg'" alt="Imagen de perfil">
               </label>
             </div>
           }

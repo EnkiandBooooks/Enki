@@ -32,7 +32,7 @@ export function cuttImgProfile(img, find) {
         } else {
             console.log("Image processed successfully:", info);
         }
-        deleteFolder('img/img_profile_cut/')
+        deleteFolder('img/img_profile/')
 
     });
 }
