@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { CommonModule } from '@angular/common'; // importar siempre
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-header',
@@ -24,10 +25,10 @@ import { CommonModule } from '@angular/common'; // importar siempre
 
 
 export class HeaderComponent {
+  cookieExists : boolean = false
   title = 'enkiweb';
   showHeaderAndBody: boolean = true; // Variable para controlar la visibilidad del header y el body
-
-  constructor(private router: Router) {
+  constructor(private router: Router, private cookieService: CookieService) {
     // Suscribirse a los eventos de navegación del router
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
@@ -36,5 +37,23 @@ export class HeaderComponent {
       this.showHeaderAndBody = !['/login1', '/login2', '/login3','/login0','/dashboard'].includes(event.url);
     });
   }
+
+  async ngOnInit(){
+    
+    this.cookieExists = this.cookieService.check("access_token")|| this.cookieService.check("refresh_token")
+    
+  }
+  onLogout() {
+    
+    // Elimina las cookies de autenticación
+    this.cookieService.delete('access_token');
+    this.cookieService.delete('refresh_token');
+
+    // Redirige al usuario a la página de inicio
+    this.router.navigate(['/']).then(() => {
+      window.location.reload();
+    });  // Redirige a localhost:4200
+  }
+  
 }
 

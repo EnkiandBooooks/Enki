@@ -13,9 +13,16 @@
       <li class="nav-item">
         <a mat-button [routerLink]="['/dashboard']">Dashboard</a>
       </li>
-      <li class="nav-item">
-        <a mat-button [routerLink]="['/login0']">Log In</a>
-      </li>
+      @if(cookieExists){
+        <li  class="nav-item">
+          <a mat-button (click)="onLogout()" >Log Out</a>
+        </li>
+      }@else{
+        <li  class="nav-item">
+          <a mat-button [routerLink]="['/login0']">Log In</a>
+        </li>
+      }
+      
     </ul>
   </nav>
 </mat-toolbar>
