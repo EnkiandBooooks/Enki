@@ -1,6 +1,6 @@
 import { updateUserSchema, userModel } from  "../../schema/users.js"// Asegúrate de que RegisterModel esté importado
 import { cuttImgProfile } from "../profile/cuttImg.js";
-
+import { deleteFolder } from "../../img/delete.js";
 /**
  * Controlador para gestionar operaciones relacionadas con los datos de usuario.
  * 
@@ -101,7 +101,7 @@ export class DataController {
             if (!updatedUser) {
                 return res.status(404).json({ message: "Usuario no encontrado" });
             }
-
+            deleteFolder('../img/img_profile')
             res.status(200).json({
                 message: "Usuario actualizado exitosamente",
                 user: updatedUser,
