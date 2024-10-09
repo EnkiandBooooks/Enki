@@ -95,15 +95,12 @@
 
 /* Contenedor para el contenido, ajustado para ocupar todo el espacio */
 .content-wrapper {
-  display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: flex-start; /* Alinea el contenido al inicio para que crezca hacia abajo */
-  flex-grow: 1;
-  width: 100%;
-  padding: 0; /* Eliminar padding */
-  margin: 0; /* Eliminar margen */
-  overflow-y: auto; /* Permitir scroll si el contenido es largo */
-  box-sizing: border-box;
+
+    display: flex; /* Flexbox para permitir que los hijos se expandan */
+    flex-direction: column; /* Alinea los hijos en una columna */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 100%; /* Ocupa toda la altura del contenedor */
+    /*padding: 20px; /* Espaciado alrededor del contenido */  
 }
 
 /* Contenido del perfil: ocupa todo el espacio disponible */

@@ -29,7 +29,10 @@
 
       <div class="content-wrapper">
         <ng-container *ngIf="selectedSection === 'home'">
-          <app-homedash></app-homedash>
+          <div class="profile-content">
+            <app-homedash></app-homedash>
+            <app-homedash></app-homedash>
+          </div>
         </ng-container>
 
         <ng-container *ngIf="selectedSection === 'perfil'">
