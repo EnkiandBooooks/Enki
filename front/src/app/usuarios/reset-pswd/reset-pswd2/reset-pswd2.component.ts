@@ -7,11 +7,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { RestService } from '../../rest.service';
+import { RestService } from '../../../rest.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-cambio-pass3',
+  selector: 'app-reset-pswd2',
   standalone: true,
   imports: [
     FormsModule,
@@ -21,10 +21,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MatFormFieldModule,
     MatInputModule
   ],
-  templateUrl: './cambio-pass3.component.html',
-  styleUrls: ['./cambio-pass3.component.css']
+  templateUrl: './reset-pswd2.component.html',
+  styleUrls: ['./reset-pswd2.component.css']
 })
-export class CambioPass3Component {
+export class ResetPswd2Component {
 
   newPassword: string = '';
   confirmPassword: string = '';
@@ -71,7 +71,7 @@ export class CambioPass3Component {
       this.cookieService.delete('access_token');
       this.cookieService.delete('refresh_token');
 
-      this.router.navigate(['/login0']);
+      this.router.navigate(['/register0']);
       this.snackBar.open('Contraseña cambiada con éxito', 'Cerrar', {
         duration: 3000, // 3 segundos
         
