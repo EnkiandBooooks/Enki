@@ -31,8 +31,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class PerfilComponent {
   imgFile: any;
-  profileImageUrl: string | ArrayBuffer | null = null;  // URL temporal para mostrar la imagen
-  selectedFile: File | null = null;  // Archivo seleccionado
+  imgUrl: any | undefined;
   arrUsr = signal<any>([]);
   edit = false;
   formattedDate = "";
@@ -42,7 +41,7 @@ export class PerfilComponent {
     this.restService.getData().subscribe((res) => {
       this.arrUsr.set(res);
       this.formattedDate = this.dateFormat(this.arrUsr().creationDate);
-      console.log(res)
+      this.imgUrl = 'data:image/png;base64,' + res.img
     });
   }
 
@@ -52,14 +51,11 @@ export class PerfilComponent {
     
     if (!this.edit) {
       // Método para actualizar datos a BD
-
       const formData = new FormData();
       formData.append('file', this.imgFile);  // 'file' debe coincidir con el nombre del campo en Multer
       formData.append('username', this.arrUsr().user);
       formData.append('mail', this.arrUsr().mail);
-      console.log(formData)
-      // const body = { username: this.arrUsr().user, mail: this.arrUsr().mail, file: this.imgFile};
-      console.log(this.imgFile)
+
       this.restService.postData(formData).subscribe({
         next: (res) => {
           console.log("///////////////////////\n" + res + "\n///////////////////////");
@@ -102,12 +98,10 @@ export class PerfilComponent {
 
   // Método para manejar el archivo seleccionado
   handleFileInput(file: File) {
-    this.selectedFile = file;
-
     // Mostrar la imagen seleccionada en la interfaz
     const reader = new FileReader();
     reader.onload = (e) => {
-      this.profileImageUrl = reader.result as string;
+      this.imgUrl = reader.result as string;
     };
     reader.readAsDataURL(file);
     this.imgFile = file;

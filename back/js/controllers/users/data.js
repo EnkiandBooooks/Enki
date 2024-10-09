@@ -1,12 +1,12 @@
 import { updateUserSchema, userModel } from  "../../schema/users.js"// Asegúrate de que RegisterModel esté importado
 import { cuttImgProfile } from "../profile/cuttImg.js";
 import { deleteFolder } from "../../img/delete.js";
+import fs from 'fs';
 /**
  * Controlador para gestionar operaciones relacionadas con los datos de usuario.
  * 
  * @class DataController
  */
-// import { deleteFolder } from "../../img/delete.js";
 export class DataController {
     /**
      * Obtiene y devuelve los datos del usuario actual.
@@ -32,15 +32,17 @@ export class DataController {
         try {
             const usr = req.user;
             console.log("----------------------");
-
+            const imgPath = "img/img_profile_cut/" + usr.img;
+            const imagen = fs.readFileSync(imgPath);
+            const base64Img = Buffer.from(imagen).toString('base64');
             // Obtener la fecha de creación del usuario usando el correo electrónico
             res.json({
                 user: usr.username,
                 mail: usr.email,
                 rol: usr.rol,
                 creationDate: usr.createdAt,
-                img: usr.img || null,  // Agregar la imagen si existe
-            });
+                img: base64Img || null,  // Agregar la imagen si existe
+            })
         } catch (error) {
             console.error("Error fetching user data:", error);
             res.status(500).json({ message: "Error fetching user data" });
@@ -88,7 +90,7 @@ export class DataController {
                 email: email,
                 img: img, // Guarda la URL de la imagen si es necesario
             };
-
+            console.log(img)
             if (img) {
                 updateData.img = img;  // Agregar la URL de la imagen si se subió
             }
