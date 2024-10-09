@@ -15,6 +15,7 @@ import { registerGuard } from './guards/register.guard';
 import { notExitGuard } from './guards/not-exit.guard';
 import { notLoginGuard } from './guards/notLogin.guard';
 import { DashboardComponent } from './header/dashboard/dashboard.component';
+import { HomedashComponent } from './header/homedash/homedash.component';
 import { PolicyComponent } from './footer/policy/policy.component';
 
 
