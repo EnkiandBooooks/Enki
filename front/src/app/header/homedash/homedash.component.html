@@ -1,15 +1,14 @@
 <div class="home-content">
-  <!--<h2>ENKI</h2>
   
   <!-- Primer Carrusel -->
   <div class="carousel-section">
     <h3>Biblioteca</h3>
 
-    <mat-grid-list cols="6" rowHeight= "100px" gutterSize="100px">
+    <mat-grid-list cols="4" rowHeight= "200px" gutterSize="100px">
       <mat-grid-tile *ngFor="let image of bookImages">  <!-- Usamos *ngFor para iterar sobre bookImages -->
         <div class="bookCard">
           <img [src]="image" alt="Imagen del libro" class="book-image" />
-        <p>pasda</p>
+          <p>Title</p>
         </div>
       </mat-grid-tile>
     </mat-grid-list>    
