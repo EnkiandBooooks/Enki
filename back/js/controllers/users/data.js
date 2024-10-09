@@ -32,7 +32,8 @@ export class DataController {
         try {
             const usr = req.user;
             console.log("----------------------");
-            const imgPath = "img/img_profile_cut/" + usr.img;
+            
+            const imgPath = (usr.img!==null) ? "img/img_profile_cut/"+usr.img : "img/img_profile_cut/icon_default.jpg";
             const imagen = fs.readFileSync(imgPath);
             const base64Img = Buffer.from(imagen).toString('base64');
             // Obtener la fecha de creación del usuario usando el correo electrónico
