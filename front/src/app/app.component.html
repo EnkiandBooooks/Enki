@@ -1,9 +1,10 @@
 
   <!-- Condicional para mostrar header -->
-<app-header *ngIf="showHeaderAndBody"></app-header>
+<app-header *ngIf="showHeaderAndBodyAndFooter"></app-header>
 
 <!-- Condicional para mostrar body  -->
-<app-body *ngIf="showHeaderAndBody"></app-body>
+<app-body *ngIf="showHeaderAndBodyAndFooter"></app-body>
 
+<app-footer *ngIf="showHeaderAndBodyAndFooter"></app-footer>
 <!-- Siempre renderiza el router-outlet para las rutas -->
 <router-outlet></router-outlet>

@@ -7,6 +7,7 @@ import { Login0Component } from './header/login0/login0.component';
 import { BodyComponent } from './body/body.component';
 import { PerfilComponent } from './usuarios/perfil/perfil.component';
 import { AppComponent } from './app.component';
+import { FooterComponent } from './footer/footer.component';
 import { CambioPassComponent } from './usuarios/cambio-pass/cambio-pass.component';
 import { CambioPass3Component } from './usuarios/cambio-pass3/cambio-pass3.component';
 import { loginGuard } from './guards/login.guard';
@@ -15,6 +16,7 @@ import { notExitGuard } from './guards/not-exit.guard';
 import { notLoginGuard } from './guards/notLogin.guard';
 import { DashboardComponent } from './header/dashboard/dashboard.component';
 import { HomedashComponent } from './header/homedash/homedash.component';
+import { PolicyComponent } from './footer/policy/policy.component';
 
 
 export const routes: Routes = [
@@ -29,6 +31,8 @@ export const routes: Routes = [
   { path:'resetPswd3/:tokenPswd', component: CambioPass3Component }, 
   { path: 'body', component: BodyComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'footer', component:FooterComponent},
+  { path: 'policy', component:PolicyComponent}
 
   /*{ path: '**', redirectTo: '/inicio' }*/ // Ruta comodín para redireccionar a inicio
 ];

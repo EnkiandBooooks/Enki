@@ -1,14 +1,54 @@
-<div class="hero-image">
-  <img src="images/enki.png" alt="Grupo de lectura" class="image-full">
-</div>
-
-<div class="carousel">
-  <div class="carousel-container" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
-    <div class="carousel-slide" *ngFor="let slide of slides">
-      <img [src]="slide.image" alt="{{ slide.alt }}" class="carousel-image" />
-      <div class="carousel-text">{{ slide.text }}</div>
+<section class="landing-page">
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>Welcome to Enki</h1>
+      <p>Discover, share, and grow through the power of books</p>
+      <button mat-raised-button (click)="goLogin()" color="primary">Join Now</button>
+    </div>
+    <div class="hero-image">
+      <img src="images/enki.png" alt="Group of people reading" class="image-full">
     </div>
   </div>
-  <button mat-button class="carousel-control prev" (click)="prevSlide()">&#10094;</button>
-  <button mat-button class="carousel-control next" (click)="nextSlide()">&#10095;</button>
-</div>
+
+  <div class="carousel-section">
+    <h2>Featured Books</h2>
+    <div class="carousel">
+      <div class="carousel-container" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
+        <div class="carousel-slide" *ngFor="let slide of slides">
+          <img [src]="slide.image" [alt]="slide.alt" class="carousel-image" />
+          <div class="carousel-text">
+            <h3>{{ slide.title }}</h3>
+            <p>{{ slide.text }}</p>
+          </div>
+        </div>
+      </div>
+      <button mat-icon-button class="carousel-control prev" (click)="prevSlide()">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <button mat-icon-button class="carousel-control next" (click)="nextSlide()">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <h2>Why Join Our Reading Group?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <mat-icon>book</mat-icon>
+        <h3>Diverse Selection</h3>
+        <p>Explore a wide range of genres and authors</p>
+      </div>
+      <div class="feature-card">
+        <mat-icon>group</mat-icon>
+        <h3>Community</h3>
+        <p>Connect with like-minded readers</p>
+      </div>
+      <div class="feature-card">
+        <mat-icon>school</mat-icon>
+        <h3>Learn & Grow</h3>
+        <p>Expand your knowledge and perspectives</p>
+      </div>
+    </div>
+  </div>
+</section>
