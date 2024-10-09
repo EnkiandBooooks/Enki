@@ -1,15 +1,14 @@
-<!-- <div class="products-grid">
-    <mat-card class="product-card" *ngFor="let product of products">
-      <mat-card-header>
-        <mat-card-title>{{ product.name }}</mat-card-title>
-        <mat-card-subtitle>{{ product.price | currency }}</mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image [src]="product.imageUrl" alt="{{ product.name }}">
-      <mat-card-content>
-        <p>{{ product.description }}</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Comprar</button>
-      </mat-card-actions>
-    </mat-card>
-  </div> -->
+<div class="hero-image">
+  <img src="images/enki.png" alt="Grupo de lectura" class="image-full">
+</div>
+
+<div class="carousel">
+  <div class="carousel-container" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
+    <div class="carousel-slide" *ngFor="let slide of slides">
+      <img [src]="slide.image" alt="{{ slide.alt }}" class="carousel-image" />
+      <div class="carousel-text">{{ slide.text }}</div>
+    </div>
+  </div>
+  <button mat-button class="carousel-control prev" (click)="prevSlide()">&#10094;</button>
+  <button mat-button class="carousel-control next" (click)="nextSlide()">&#10095;</button>
+</div>
