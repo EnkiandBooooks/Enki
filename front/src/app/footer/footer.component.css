@@ -1,0 +1,48 @@
+/* footer.component.css */
+.custom-toolbar {
+    background-color: #9a979b;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    margin-top: 300px;
+  }
+  
+  .toolbar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+  }
+  
+  .nav-item a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
+  
+  .mat-button[color="accent"] {
+    background-color: #ff4081;
+    color: white;
+  }
+  
+  .mat-button[color="accent"]:hover {
+    background-color: #ff80ab;
+  }
+  
