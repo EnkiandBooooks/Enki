@@ -30,6 +30,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providers: [DatePipe]
 })
 export class PerfilComponent {
+  imgFile: any;
   profileImageUrl: string | ArrayBuffer | null = null;  // URL temporal para mostrar la imagen
   selectedFile: File | null = null;  // Archivo seleccionado
   arrUsr = signal<any>([]);
@@ -39,25 +40,27 @@ export class PerfilComponent {
 
   async ngOnInit() {
     this.restService.getData().subscribe((res) => {
-      console.log("MUYIMPORTANTE:" + this.arrUsr + "-------------------------------");
       this.arrUsr.set(res);
       this.formattedDate = this.dateFormat(this.arrUsr().creationDate);
+      console.log(res)
     });
-  }
-
-  onClick() {
-    this.cookieService.delete('access_token');
-    this.cookieService.delete('refresh_token');
   }
 
   // Método que se activa al activar botón de modo edición o confirmar cambios
   onSubmit() {
     this.edit = !this.edit;
-
+    
     if (!this.edit) {
       // Método para actualizar datos a BD
-      const body = { username: this.arrUsr().user, mail: this.arrUsr().mail };
-      this.restService.postData(body).subscribe({
+
+      const formData = new FormData();
+      formData.append('file', this.imgFile);  // 'file' debe coincidir con el nombre del campo en Multer
+      formData.append('username', this.arrUsr().user);
+      formData.append('mail', this.arrUsr().mail);
+      console.log(formData)
+      // const body = { username: this.arrUsr().user, mail: this.arrUsr().mail, file: this.imgFile};
+      console.log(this.imgFile)
+      this.restService.postData(formData).subscribe({
         next: (res) => {
           console.log("///////////////////////\n" + res + "\n///////////////////////");
         },
@@ -72,24 +75,11 @@ export class PerfilComponent {
 
   dateFormat(date: string): string {
     const day = this.datePipe.transform(date, 'd');
-    const monthNumber = this.datePipe.transform(date, 'M');
+    const monthNumber = Number(this.datePipe.transform(date, 'M'));
     const year = this.datePipe.transform(date, 'y');
 
-    let month = '';
-    switch (monthNumber) {
-      case '1': month = 'Enero'; break;
-      case '2': month = 'Febrero'; break;
-      case '3': month = 'Marzo'; break;
-      case '4': month = 'Abril'; break;
-      case '5': month = 'Mayo'; break;
-      case '6': month = 'Junio'; break;
-      case '7': month = 'Julio'; break;
-      case '8': month = 'Agosto'; break;
-      case '9': month = 'Septiembre'; break;
-      case '10': month = 'Octubre'; break;
-      case '11': month = 'Noviembre'; break;
-      case '12': month = 'Diciembre'; break;
-    }
+    const monthName = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    const month =  monthName[monthNumber-1];
 
     if (day && month && year) {
       return `${day} de ${month} de ${year}`;
@@ -100,24 +90,6 @@ export class PerfilComponent {
 
   goToResetPwd() {
     this.router.navigate(['/resetPswd']);
-  }
-
-  uploadImage(file: File) {
-    const formData = new FormData();
-    formData.append('file', file);  // 'file' debe coincidir con el nombre del campo en Multer
-
-    this.restService.postData(formData).subscribe({
-      next: (res) => {
-        console.log('Imagen subida correctamente:', res);
-      },
-      error: (err) => {
-        console.error('Error al subir la imagen:', err);
-        this.snackBar.open('Error al subir la imagen o formato desconocido, solo se admiten archivos .jpg, .jpeg y .png', 'Cerrar', {
-          duration: 6000, // 3 segundos
-          panelClass: ['error-snackbar'] // Clase CSS personalizada para error
-        });
-      }
-    });
   }
 
   onFileSelected(event: Event) {
@@ -138,8 +110,6 @@ export class PerfilComponent {
       this.profileImageUrl = reader.result as string;
     };
     reader.readAsDataURL(file);
-
-    // Subir la imagen al servidor
-    this.uploadImage(file);
+    this.imgFile = file;
   }
 }
