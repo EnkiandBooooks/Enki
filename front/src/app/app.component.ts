@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RoutesRecognized } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -22,14 +23,15 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
-    CommonModule
+    CommonModule,
+    FooterComponent
     ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'] 
 })
 export class AppComponent {
   title = 'enkiweb';
-  showHeaderAndBody: boolean = true; // Nueva variable para controlar la visibilidad
+  showHeaderAndBodyAndFooter: boolean = true; // Nueva variable para controlar la visibilidad
 
   constructor(private router: Router) {
     // Suscribirse a los eventos de navegación del router
@@ -37,7 +39,7 @@ export class AppComponent {
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       // Ocultar header y body en rutas específicas
-      this.showHeaderAndBody = !['/login0','/login1', '/login2','/login3','/dashboard'].includes(event.url);
+      this.showHeaderAndBodyAndFooter = !['/login0','/login1', '/login2','/login3','/dashboard','/perfil','/policy'].includes(event.url);
     });
   }
 
