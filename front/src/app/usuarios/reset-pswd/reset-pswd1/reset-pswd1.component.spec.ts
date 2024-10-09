@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Login2Component } from './login2.component';
+import { ResetPswd1Component } from './reset-pswd1.component';
 
-describe('Login2Component', () => {
-  let component: Login2Component;
-  let fixture: ComponentFixture<Login2Component>;
+describe('ResetPswd1Component', () => {
+  let component: ResetPswd1Component;
+  let fixture: ComponentFixture<ResetPswd1Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Login2Component]
+      imports: [ResetPswd1Component]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Login2Component);
+    fixture = TestBed.createComponent(ResetPswd1Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

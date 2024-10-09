@@ -85,7 +85,7 @@ export class PerfilComponent {
   }
 
   goToResetPwd() {
-    this.router.navigate(['/resetPswd']);
+    this.router.navigate(['/resetPswd1']);
   }
 
   onFileSelected(event: Event) {
