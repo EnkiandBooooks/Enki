@@ -11,7 +11,9 @@ const bookSchema = new mongoose.Schema({
     pageCount: { type: Number },
     categories: [{ type: String }],
     rating: {type: Number},
+    isbn: { type: String },
     thumbnail: { type: String },
+    largeThumbnail: { type: String},
 }, { versionKey: false });
 
 /**
