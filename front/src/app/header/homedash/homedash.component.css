@@ -28,8 +28,7 @@ h3 {
 }
 
 .book-image {
-  /* width: 100%; /* Ocupa todo el ancho del tile */
-  height: 100px; /*  altura para la imagen */
+  height: 200px; /*  altura para la imagen */
   object-fit: absolute; /* Mantener la proporción de la imagen y cubrir el área del tile */
 }
 
@@ -44,10 +43,12 @@ mat-grid-tile {
 
 p{
 color: black;
-font-size: large; 
 }
 
 .bookCard{
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
