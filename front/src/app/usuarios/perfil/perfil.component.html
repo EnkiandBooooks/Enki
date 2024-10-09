@@ -56,14 +56,14 @@
             <div class="avatar">
               <label for="fileInput">
                 <img class="editImg" src="images/edit.png" alt="Editar imagen de perfil">
-                <img class="profilePicture" [src]="imgUrl || 'images/icon_default.jpg'" alt="Imagen de perfil">
+                <img class="profilePicture"[src]="imgUrl" alt="Imagen de perfil">
               </label>
                 <input type="file" (change)="onFileSelected($event)" accept="image/*" />
             </div>
           }@else{
             <div class="avatarNoEdit">
               <label for="fileInput">
-                <img [src]="imgUrl || 'images/icon_default.jpg'" alt="Imagen de perfil">
+                <img [src]="imgUrl" alt="Imagen de perfil">
               </label>
             </div>
           }
