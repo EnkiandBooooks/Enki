@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Routes, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '../header.component';
+import { HeaderComponent } from '../../header.component';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -8,11 +8,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RestService } from '../../rest.service';
+import { RestService } from '../../../rest.service';
 import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
-  selector: 'app-login1',
+  selector: 'app-register1',
   standalone: true,
   imports: [
     RouterOutlet,
@@ -23,10 +23,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MatButtonModule,
     MatCardModule,
   ],
-  templateUrl: './login1.component.html',
-  styleUrl: './login1.component.css',
+  templateUrl: './register1.component.html',
+  styleUrl: './register1.component.css',
 })
-export class Login1Component {
+export class Register1Component {
   email: string = '';
 
   constructor(
@@ -50,7 +50,7 @@ export class Login1Component {
         // Si el backend responde exitosamente
         this.cookieService.set('email_sendcode_token', res.email_sendcode_token); // Guardar el token
         console.log(res);
-        this.router.navigate(['/login2']); // Navegar a login2
+        this.router.navigate(['/register2']); // Navegar a login2
       },
       error: (err) => {
         // Manejar el error y mostrar el mensaje en SnackBar

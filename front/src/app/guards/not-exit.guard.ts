@@ -8,9 +8,9 @@ export const notExitGuard: CanDeactivateFn<unknown> = (component, currentRoute, 
   const cookieService = inject(CookieService)
 
   console.log(currentRoute.url[0].path)
-  if((currentRoute.url[0].path === 'login1' && nextState.url === '/login2') ||
-    (currentRoute.url[0].path === 'login2' && nextState.url === '/login3') || 
-    (currentRoute.url[0].path === 'login3' && nextState.url === '/')) {
+  if((currentRoute.url[0].path === 'register1' && nextState.url === '/register2') ||
+    (currentRoute.url[0].path === 'register2' && nextState.url === '/register3') || 
+    (currentRoute.url[0].path === 'register3' && nextState.url === '/')) {
       return true;
   }
 

@@ -9,21 +9,21 @@ import { FormsModule } from '@angular/forms'; // Para trabajar con ngModel
 import { MatCardModule } from '@angular/material/card'; // Importa MatCardModule
 import { MatFormFieldModule } from '@angular/material/form-field'; // Importar MatFormFieldModule
 import { MatFormField } from '@angular/material/form-field';
-import { RestService } from '../../rest.service';
+import { RestService } from '../../../rest.service';
 import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
-  selector: 'app-login0',
+  selector: 'app-register0',
   standalone: true,
   imports: [MatButtonModule, 
     MatToolbarModule,MatButtonModule, 
     MatIconModule, CommonModule, FormsModule,
      MatCardModule, MatFormFieldModule, 
     MatFormField,MatInputModule ],
-  templateUrl: './login0.component.html',
-  styleUrls: ['./login0.component.css']
+  templateUrl: './register0.component.html',
+  styleUrls: ['./register0.component.css']
 })
-export class Login0Component {
+export class Register0Component {
   username: string = '';
   password: string = '';
 
@@ -45,11 +45,11 @@ export class Login0Component {
 
   // Método para navegar al registro
   goToRegister() {
-    this.router.navigate(['/login1']);
+    this.router.navigate(['/register1']);
   }
   //Método para recuperr contraseña
   recoverPass(){
-    this.router.navigate(['/resetPswd']);
+    this.router.navigate(['/resetPswd1']);
   }
 
   sendData(username: string, password: string): void {
