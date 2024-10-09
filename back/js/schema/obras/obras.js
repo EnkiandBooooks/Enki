@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 const mongooseSchema = mongoose.Schema;
 /**
  * Esquema de Mongoose para la colección de libros (obra).
+ * Para consultar libros que tengan un genero: { categories: { $regex: ".*fiction.*", $options: "i" }}
  */ 
 const bookSchema = new mongoose.Schema({
     title: { type: String, required: true },
