@@ -15,6 +15,9 @@ export class HomedashComponent {
   bookImages = [
     '/images/naruto.jpg', // Usando la misma estructura de rutas que el logo
     '/images/vagabond.jpg',
+    '/images/berserk.jpg',
+    '/images/naruto.jpg', // Usando la misma estructura de rutas que el logo
+    '/images/vagabond.jpg',
     '/images/berserk.jpg'
   ];
 }
