@@ -7,11 +7,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RestService } from '../../rest.service';
+import { RestService } from '../../../rest.service';
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({
-  selector: 'app-login3',
+  selector: 'app-register3',
   standalone: true,
   imports: [
     RouterOutlet,
@@ -22,10 +22,10 @@ import { CookieService } from 'ngx-cookie-service';
     MatCardModule,
     MatToolbarModule
   ],
-  templateUrl: './login3.component.html',
-  styleUrls: ['./login3.component.css']
+  templateUrl: './register3.component.html',
+  styleUrls: ['./register3.component.css']
 })
-export class Login3Component {
+export class Register3Component {
   userName: string = '';
   passWord: string = '';
   confirmPassword: string = '';

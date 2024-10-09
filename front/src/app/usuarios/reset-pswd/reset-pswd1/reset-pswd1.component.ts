@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms'; // Para trabajar con ngModel
 import { MatCardModule } from '@angular/material/card'; // Importa MatCardModule
 import { MatFormFieldModule } from '@angular/material/form-field'; // Importar MatFormFieldModule
 import { MatFormField } from '@angular/material/form-field';
-import { RestService } from '../../rest.service';
+import { RestService } from '../../../rest.service';
 import { CookieService } from 'ngx-cookie-service';
 import { RouterOutlet } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -17,7 +17,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
-  selector: 'app-cambio-pass',
+  selector: 'app-reset-pswd1',
   standalone: true,
   imports: [ RouterOutlet,
     MatButtonModule,
@@ -25,10 +25,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MatIconModule, CommonModule, FormsModule,
      MatCardModule, MatFormFieldModule,
     MatFormField,MatInputModule,ReactiveFormsModule],
-  templateUrl: './cambio-pass.component.html',
-  styleUrl: './cambio-pass.component.css'
+  templateUrl: './reset-pswd1.component.html',
+  styleUrl: './reset-pswd1.component.css'
 })
-export class CambioPassComponent {
+export class ResetPswd1Component {
 
   email: string = '';
   buttonClicked:Boolean = false;

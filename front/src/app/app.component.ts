@@ -39,11 +39,11 @@ export class AppComponent {
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       // Ocultar header y body en rutas específicas
-      this.showHeaderAndBodyAndFooter = !['/login0','/login1', '/login2','/login3','/dashboard','/perfil','/policy'].includes(event.url);
+      this.showHeaderAndBodyAndFooter = !['/register0','/register1', '/register2','/register3','/dashboard','/perfil','/policy'].includes(event.url);
     });
   }
 
   onClick() {
-    this.router.navigate(['/login1']); // Usar ruta absoluta
+    this.router.navigate(['/register1']); // Usar ruta absoluta
   }
 }

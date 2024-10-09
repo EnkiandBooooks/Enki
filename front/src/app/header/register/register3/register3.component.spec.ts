@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CambioPass3Component } from './cambio-pass3.component';
+import { Register3Component } from './register3.component';
 
-describe('CambioPass3Component', () => {
-  let component: CambioPass3Component;
-  let fixture: ComponentFixture<CambioPass3Component>;
+describe('Register3Component', () => {
+  let component: Register3Component;
+  let fixture: ComponentFixture<Register3Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CambioPass3Component]
+      imports: [Register3Component]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CambioPass3Component);
+    fixture = TestBed.createComponent(Register3Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

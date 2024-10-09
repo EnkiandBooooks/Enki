@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Login1Component } from './login1/login1.component';
+import { Register1Component } from './register/register1/register1.component';
 import { RouterOutlet} from '@angular/router';
 import { Router } from '@angular/router';
 import { RouterLink } from '@angular/router';
@@ -15,7 +15,7 @@ import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [Login1Component,RouterOutlet,RouterLink,MatButtonModule,MatIconModule,MatDivider,MatToolbarModule,CommonModule
+  imports: [Register1Component,RouterOutlet,RouterLink,MatButtonModule,MatIconModule,MatDivider,MatToolbarModule,CommonModule
     
   ],
   templateUrl: './header.component.html',

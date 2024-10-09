@@ -42,7 +42,7 @@ export class resetPswdController {
             { expiresIn: '15m' }
         );
 
-        const temporaryUrl = `http://localhost:4200/resetPswd3/${tokenPswd}`;
+        const temporaryUrl = `http://localhost:4200/resetPswd2/${tokenPswd}`;
 
         EnviarMailpswd(mailUsuarioPswd, temporaryUrl);
 
