@@ -1,4 +1,6 @@
 **/node_modules
 **/apis.http
-back/js/img_profile/**
-back/js/img_profile_cut/**
+img_profile/**
+!img_profile/.gitkeep
+img_profile_cut/**
+!img_profile_cut/.gitkeep
