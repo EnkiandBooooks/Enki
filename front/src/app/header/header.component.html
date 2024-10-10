@@ -5,21 +5,21 @@
   <nav>
     <ul class="nav-list">
       <li class="nav-item">
-        <a mat-button routerLink="/">Inicio</a>
+        <a mat-button routerLink="/">Start</a>
       </li>
       <li class="nav-item">
-        <a mat-button routerLink="/">Nosotros</a>
+        <a mat-button routerLink="/">About Us</a>
       </li>
       <li class="nav-item">
         <a mat-button [routerLink]="['/dashboard']">Dashboard</a>
       </li>
       @if(cookieExists){
         <li  class="nav-item">
-          <a mat-button (click)="onLogout()" >Log Out</a>
+          <a mat-button (click)="onLogout()" >LogOut</a>
         </li>
       }@else{
         <li  class="nav-item">
-          <a mat-button [routerLink]="['/register0']">Log In</a>
+          <a mat-button [routerLink]="['/register0']">LogIn</a>
         </li>
       }
       
