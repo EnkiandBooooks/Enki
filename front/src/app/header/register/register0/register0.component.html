@@ -8,29 +8,29 @@
         <form (ngSubmit)="onSubmit()">
           <!-- Campo para el nombre de usuario -->
           <mat-form-field class="full-width">
-            <mat-label>Nombre</mat-label>
+            <mat-label>Name</mat-label>
             <input matInput type="text" [(ngModel)]="username" name="username" required>
           </mat-form-field>
   
           <!-- Campo para la contraseña -->
           <mat-form-field class="full-width">
-            <mat-label>Contraseña</mat-label>
+            <mat-label>Password</mat-label>
             <input matInput type="password" [(ngModel)]="password" name="password" required>
           </mat-form-field>
   
           <!-- Botón para iniciar sesión -->
           <div class="button-container">
-            <button mat-raised-button color="primary" type="submit">Iniciar Sesión</button>
+            <button mat-raised-button color="primary" type="submit">Login</button>
           </div>
         </form>
       </mat-card-content>
   
       <mat-card-actions>
         <!-- Opción para registrarse -->
-        <span>¿No tienes cuenta todavía?</span>
-        <button mat-button color="accent" [routerLink]="['/register1']">Registrarse</button>
-        <span>¿Has olvidado la contraseña?</span>
-        <button mat-button color="accent" [routerLink]="['/resetPswd1']">Recuperar contraseña</button>
+        <span>You don't have an account yet?</span>
+        <button mat-button color="accent" [routerLink]="['/register1']">Register</button>
+        <span>Have you forget the password?</span>
+        <button mat-button color="accent" [routerLink]="['/resetPswd1']">Password recover</button>
       </mat-card-actions>
     </mat-card>
   </div>  

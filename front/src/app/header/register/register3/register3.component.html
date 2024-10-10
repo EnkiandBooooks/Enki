@@ -4,16 +4,16 @@
   <nav>
     <ul class="nav-list">
       <li class="nav-item">
-        <a mat-button routerLink="/">Inicio</a>
+        <a mat-button routerLink="/">Start</a>
       </li>
       <li class="nav-item">
-        <a mat-button routerLink="/about">Acerca de</a>
+        <a mat-button routerLink="/about">About</a>
       </li>
       <li class="nav-item">
-        <a mat-button routerLink="/services">Servicios</a>
+        <a mat-button routerLink="/services">Servicies</a>
       </li>
       <li class="nav-item">
-        <a mat-button routerLink="/contact">Contacto</a>
+        <a mat-button routerLink="/contact">Contact</a>
       </li>
       <li class="nav-item">
         <a mat-button routerLink="/faq">FAQ</a>
@@ -25,23 +25,23 @@
 <div class="login-container">
   <img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Logo" class="login-logo">
   <mat-card class="login-card">
-    <mat-card-title>Registro</mat-card-title>
+    <mat-card-title>Register</mat-card-title>
     <form (ngSubmit)="onSubmit()">
       <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Nombre de Usuario</mat-label>
+        <mat-label>User Name</mat-label>
         <input matInput type="text" id="userName" [(ngModel)]="userName" name="userName" required>
       </mat-form-field>
       <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Contraseña</mat-label>
+        <mat-label>Password</mat-label>
         <input matInput type="password" id="passWord" [(ngModel)]="passWord" name="passWord" required minlength="8">
       </mat-form-field>
       <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Repetir Contraseña</mat-label>
+        <mat-label>Repeat password</mat-label>
         <input matInput type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" required>
       </mat-form-field>
       <!-- Contenedor para el botón -->
       <div class="button-container">
-        <button mat-raised-button type="submit">Continuar</button>
+        <button mat-raised-button type="submit">Continue</button>
       </div>
     </form>
   </mat-card>
