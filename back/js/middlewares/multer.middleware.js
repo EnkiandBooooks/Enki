@@ -45,6 +45,7 @@ const upload = multer({
 
     if (allowedTypes.includes(file.mimetype)) {
       cb(null, true); // Acepta el archivo
+      
     } else {
       cb(
         new Error(
@@ -70,15 +71,14 @@ const upload = multer({
  * });
  */
 export const multerMiddleware = (req, res, next) => {
-  console.log(req.file)
   upload(req, res, (err) => {
     if (err instanceof multer.MulterError || err) {
       return res.status(400).json({ message: err.message });
     }
-    // Si el archivo fue cargado correctamente, inyectamos el filename
-    req.filename = req.file.filename
-
-    // Continuar con el siguiente middleware
+    
+    if(!req.file === undefined) {   // Comprobamos si existe una imagen y si existe la guardamos en la request.
+      req.filename = req.file.filename;
+    }
     next();
   });
 };
