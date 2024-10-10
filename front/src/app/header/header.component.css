@@ -1,48 +1,117 @@
+.custom-toolbar {
+  background-color: #4D4850;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
 
+.toolbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
 
-  .custom-toolbar {
-    background-color: #4D4850;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 16px;
-  }
-  
-  .toolbar-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-  }
-  
-  .spacer {
-    flex: 1;
-  }
-  
-  .nav-list {
-    list-style: none;
-    display: flex;
-    gap: 16px;
-    padding: 0;
-    margin: 0;
-    align-items: center;
-  }
-  
-  .nav-item a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-  }
-  
-  .nav-item a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-  }
-  
-  .mat-button[color="accent"] {
-    background-color: #ff4081;
-    color: white;
-  }
-  
-  .mat-button[color="accent"]:hover {
-    background-color: #ff80ab;
-  }
-  
+.spacer {
+  flex: 1;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.nav-item a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.mat-button[color="accent"] {
+  background-color: #ff4081;
+  color: white;
+}
+
+.mat-button[color="accent"]:hover {
+  background-color: #ff80ab;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff33;
+}
+
+button[mat-icon-button] {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0 0 0 16px;
+}
+
+.profile-menu {
+  min-width: 220px;
+  padding: 8px 0;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+
+.user-avatar-large {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 12px;
+  border: 2px solid #e0e0e0;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+.user-email {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+mat-divider {
+  margin: 8px 0;
+}
+
+mat-menu-item {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.logout-button {
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+.logout-button:hover {
+  background-color: #f8d7da;
+}

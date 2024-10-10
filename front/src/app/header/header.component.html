@@ -14,12 +14,29 @@
         <a mat-button [routerLink]="['/dashboard']">Dashboard</a>
       </li>
       @if(cookieExists){
-        <li  class="nav-item">
-          <a mat-button (click)="onLogout()" >LogOut</a>
-        </li>
+        <button mat-icon-button [matMenuTriggerFor]="profileMenu">
+          <img [src]="imgUrl" alt="Perfil" class="user-avatar" />
+        </button>        
+
+        <mat-menu #profileMenu="matMenu" class="profile-menu">
+          <div class="profile-header">
+            <img [src]="imgUrl" alt="Foto del usuario" class="user-avatar-large" />
+            <div class="profile-info">
+              <span class="user-name">{{arrUsr().user}}</span>
+              <span class="user-email">{{arrUsr().mail}}</span>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <button mat-menu-item [routerLink]="['/register1']">My Profile</button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="onLogout()">Logout</button>
+        </mat-menu>
+        
+
+        
       }@else{
         <li  class="nav-item">
-          <a mat-button [routerLink]="['/register0']">LogIn</a>
+          <a mat-button [routerLink]="['/register0']">Login</a>
         </li>
       }
       
