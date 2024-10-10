@@ -5,10 +5,10 @@
   <nav>
     <ul class="nav-list">
       <li class="nav-item">
-        <a mat-button routerLink="/">Inicio</a>
+        <a mat-button routerLink="/">Start</a>
       </li>
       <li class="nav-item">
-        <a mat-button routerLink="/">Nosotros</a>
+        <a mat-button routerLink="/">About Us</a>
       </li>
       <li class="nav-item">
         <a mat-button [routerLink]="['/dashboard']">Dashboard</a>
@@ -27,16 +27,16 @@
             </div>
           </div>
           <mat-divider></mat-divider>
-          <button mat-menu-item [routerLink]="['/register1']">Ir a mi perfil</button>
+          <button mat-menu-item [routerLink]="['/register1']">My Profile</button>
           <mat-divider></mat-divider>
-          <button mat-menu-item (click)="onLogout()">Cerrar sesión</button>
+          <button mat-menu-item (click)="onLogout()">Logout</button>
         </mat-menu>
         
 
         
       }@else{
         <li  class="nav-item">
-          <a mat-button [routerLink]="['/register0']">Log In</a>
+          <a mat-button [routerLink]="['/register0']">Login</a>
         </li>
       }
       
