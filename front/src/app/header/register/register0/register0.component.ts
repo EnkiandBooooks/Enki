@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -19,7 +20,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MatToolbarModule,MatButtonModule, 
     MatIconModule, CommonModule, FormsModule,
      MatCardModule, MatFormFieldModule, 
-    MatFormField,MatInputModule ],
+    MatFormField,MatInputModule, RouterLink ],
   templateUrl: './register0.component.html',
   styleUrls: ['./register0.component.css']
 })
@@ -41,15 +42,6 @@ export class Register0Component {
    
 
     // Si el login es exitoso, puedes redirigir a otra ruta.
-  }
-
-  // Método para navegar al registro
-  goToRegister() {
-    this.router.navigate(['/register1']);
-  }
-  //Método para recuperr contraseña
-  recoverPass(){
-    this.router.navigate(['/resetPswd1']);
   }
 
   sendData(username: string, password: string): void {
