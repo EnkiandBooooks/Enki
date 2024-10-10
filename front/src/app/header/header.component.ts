@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Register1Component } from './register/register1/register1.component';
 import { RouterOutlet} from '@angular/router';
 import { Router } from '@angular/router';
@@ -11,11 +11,14 @@ import { NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { CommonModule } from '@angular/common'; // importar siempre
 import { CookieService } from 'ngx-cookie-service';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
+import { RestService } from '../rest.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [Register1Component,RouterOutlet,RouterLink,MatButtonModule,MatIconModule,MatDivider,MatToolbarModule,CommonModule
+  imports: [Register1Component,RouterOutlet,RouterLink,MatButtonModule,MatIconModule,MatDivider,MatToolbarModule,CommonModule, MatMenuModule, MatCardModule
     
   ],
   templateUrl: './header.component.html',
@@ -25,10 +28,13 @@ import { CookieService } from 'ngx-cookie-service';
 
 
 export class HeaderComponent {
+  imgFile: any;
+  imgUrl: any | undefined;
   cookieExists : boolean = false
   title = 'enkiweb';
+  arrUsr = signal<any>([]);
   showHeaderAndBody: boolean = true; // Variable para controlar la visibilidad del header y el body
-  constructor(private router: Router, private cookieService: CookieService) {
+  constructor(private router: Router, private cookieService: CookieService, private restService :RestService) {
     // Suscribirse a los eventos de navegación del router
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
@@ -41,6 +47,12 @@ export class HeaderComponent {
   async ngOnInit(){
     
     this.cookieExists = this.cookieService.check("access_token")|| this.cookieService.check("refresh_token")
+    if(this.cookieExists){
+      this.restService.getData().subscribe((res) => {
+        this.arrUsr.set(res);
+        this.imgUrl = 'data:image/png;base64,' + res.img
+      });
+    }
     
   }
   onLogout() {
