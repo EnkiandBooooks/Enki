@@ -5,7 +5,7 @@ import { Register2Component } from './header/register/register2/register2.compon
 import { Register3Component } from './header/register/register3/register3.component';
 import { Register0Component } from './header/register/register0/register0.component';
 import { BodyComponent } from './body/body.component';
-import { PerfilComponent } from './usuarios/perfil/perfil.component';
+import { ProfileComponent } from './usuarios/profile/profile.component';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { ResetPswd1Component } from './usuarios/reset-pswd/reset-pswd1/reset-pswd1.component';
@@ -26,7 +26,7 @@ export const routes: Routes = [
   { path: 'register2', component: Register2Component, canActivate: [registerGuard, notLoginGuard], canDeactivate: [notExitGuard] }, // Eliminado loginGuard
   { path: 'register3', component: Register3Component, canActivate: [registerGuard, notLoginGuard], canDeactivate: [notExitGuard] }, // Eliminado registerGuard y loginGuard
   { path: 'register0', component: Register0Component, canActivate: [notLoginGuard] }, 
-  { path:'perfil', component: PerfilComponent, canActivate: [loginGuard] },
+  { path:'perfil', component: ProfileComponent, canActivate: [loginGuard] },
   { path:'resetPswd1', component: ResetPswd1Component }, 
   { path:'resetPswd2/:tokenPswd', component: ResetPswd2Component }, 
   { path: 'body', component: BodyComponent },
