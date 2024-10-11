@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef, signal} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileComponent } from '../../usuarios/profile/profile.component';
 import { HomedashComponent } from '../homedash/homedash.component';
@@ -6,10 +6,13 @@ import { LibraryComponent } from '../library/library.component';
 import { CookieService } from 'ngx-cookie-service';  // Importa CookieService
 import { Router } from '@angular/router';  // Importa Router para la redirección
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
+import { MatDivider } from '@angular/material/divider';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatMenuModule } from '@angular/material/menu';
+import { RestService } from '../../rest.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,19 +27,38 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatListModule,
+    MatListModule, 
+    MatDivider,
+    MatMenuModule,
     LibraryComponent
   ]
 })
 export class DashboardComponent {
   selectedSection: string = 'home';
-
+  imgFile: any;
+  imgUrl: any | undefined;
+  arrUsr = signal<any>([]);
+  cookieExists : boolean = false
   constructor(
     private cdr: ChangeDetectorRef,
     private cookieService: CookieService,  // Inyectamos CookieService
-    private router: Router  // Inyectamos Router para la redirección
+    private router: Router,  // Inyectamos Router para la redirección
+    private restService: RestService
   ) {}
 
+
+
+  async ngOnInit(){
+    
+    this.cookieExists = this.cookieService.check("access_token")|| this.cookieService.check("refresh_token")
+    if(this.cookieExists){
+      this.restService.getData().subscribe((res) => {
+        this.arrUsr.set(res);
+        this.imgUrl = 'data:image/png;base64,' + res.img
+      });
+    }
+    
+  }
   // Método para cambiar la sección mostrada
   showSection(section: string) {
     this.selectedSection = section;
