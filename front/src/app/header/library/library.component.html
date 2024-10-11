@@ -6,7 +6,7 @@
   
       <mat-grid-list cols="4" rowHeight= "200px" gutterSize="100px">
         <mat-grid-tile *ngFor="let image of bookImages">  <!-- Usamos *ngFor para iterar sobre bookImages -->
-            <mat-card class="bookCard">
+            <mat-card>
               <mat-card-content>
                 <img [src]="image" alt="Imagen del libro" class="book-image" />
                 <p>Title</p>

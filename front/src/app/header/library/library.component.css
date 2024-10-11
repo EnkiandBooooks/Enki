@@ -1,54 +1,54 @@
 :host {
-    display: block; /* Hace que el componente ocupe un bloque completo */
-    width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
-    height: 100%; /* Asegúrate de que ocupe toda la altura del contenedor */
-    box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho y la altura */
-    padding: 20px;
-    margin: 0px;
-  }
-  
-  .home-content {
-    width: 100%;
-    height: 100%; 
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: auto; /* Añadir scroll si el contenido es más grande que la ventana */
-    box-sizing: border-box;
-  }
-  
-  .carousel-section {
-    margin: 20px 0;
-  }
-  
-  h3 {
-    margin-bottom: 10px;
-    color: #3f3b42;
-  }
-  
-  .book-image {
-    height: 200px; /*  altura para la imagen */
-    object-fit: absolute; /* Mantener la proporción de la imagen y cubrir el área del tile */
-  }
-  
-  mat-grid-tile {
-    height: 100%;
-    display: flex; /* Usar flex para alinear el contenido dentro del tile */
-    flex-direction: row; /* Colocar elementos en columna */
-    align-items: center; /* Centrar elementos horizontalmente */
-    justify-content: flex-start; /* Alinear al principio verticalmente */
-    padding: 20px;
-  }
-  
-  p{
-    color: black;
-  }
-  
-  mat-card-content{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  display: block; /* Hace que el componente ocupe un bloque completo */
+  width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
+  height: 100%; /* Asegúrate de que ocupe toda la altura del contenedor */
+  box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho y la altura */
+  padding: 20px;
+  margin: 0px;
+}
+
+.home-content {
+  width: 100%;
+  height: 100%; 
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: auto; /* Añadir scroll si el contenido es más grande que la ventana */
+  box-sizing: border-box;
+}
+
+.carousel-section {
+  margin: 20px 0;
+}
+
+h3 {
+  margin-bottom: 10px;
+  color: #3f3b42;
+}
+
+.book-image {
+  height: 200px; /*  altura para la imagen */
+  object-fit: absolute; /* Mantener la proporción de la imagen y cubrir el área del tile */
+}
+
+mat-grid-tile {
+  height: 100%;
+  display: flex; /* Usar flex para alinear el contenido dentro del tile */
+  flex-direction: row; /* Colocar elementos en columna */
+  align-items: center; /* Centrar elementos horizontalmente */
+  justify-content: flex-start; /* Alinear al principio verticalmente */
+  padding: 10px; /* Espaciado interno opcional */
+}
+
+p{
+color: black;
+}
+
+mat-card-content{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
