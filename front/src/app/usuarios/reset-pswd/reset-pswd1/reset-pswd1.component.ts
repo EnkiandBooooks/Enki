@@ -30,6 +30,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ResetPswd1Component {
 
+  showHeaderAndBodyAndFooter: boolean = true; // Nueva variable para controlar la visibilidad
+
   email: string = '';
   buttonClicked:Boolean = false;
   constructor(
@@ -72,6 +74,9 @@ export class ResetPswd1Component {
       });
     }
   }
+
+
+
 }
 
 
