@@ -52,3 +52,61 @@ color: black;
   flex-direction: column;
   align-items: center;
 }
+
+.gallery-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.movies-container {
+  width: calc(100% - 80px);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.movies-slider {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.movie-card {
+  flex: 0 0 auto;
+  width: 200px;
+  margin-right: 16px;
+}
+
+.movie-card img {
+  height: 300px;
+  object-fit: cover;
+}
+
+mat-card-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+mat-card-subtitle {
+  font-size: 14px;
+}
+
+mat-chip {
+  font-size: 12px;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
