@@ -191,3 +191,58 @@
     height: 40px;
     line-height: 40px;
   }
+
+  .BookAndWorkSpace{
+    display: flex;
+  }
+
+
+  .BookAndWorkSpace {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem; /* Espacio entre los carruseles */
+    margin-top: 4rem; 
+  }
+  
+  .carousel-books, .carousel-workspace {
+    flex: 1;
+    max-width: 50%; /* Limita el ancho de cada carrusel */
+  }
+  
+
+.carousel-books h2,
+.carousel-workspace h2 {
+  text-align: center;
+  margin-bottom: 1rem; 
+  margin-top: 0; 
+}
+
+
+.carousel-features{
+  text-align: center;
+  margin-bottom: 1rem; 
+  margin-top: 0; 
+
+}
+
+
+.blue-carousel .carousel {
+  background-color: #add8e6; 
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.blue-carousel .carousel-text {
+  text-align: center;
+}
+
+.blue-carousel .features-grid {
+  display: flex;
+  flex-direction: column; 
+  gap: 1.5rem;
+}
+
+.blue-carousel .feature-card mat-icon {
+  font-size: 2.5rem;
+  color: #333;
+}
