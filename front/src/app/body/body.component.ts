@@ -62,6 +62,6 @@ export class BodyComponent implements OnInit {
     this.currentSlide = (this.currentSlide + 1) % this.slides.length;
   }
   goLogin(){
-    this.router.navigate(['/login0']);
+    this.router.navigate(['/register0']);
   }
 }

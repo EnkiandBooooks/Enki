@@ -2,6 +2,7 @@ import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PerfilComponent } from '../../usuarios/perfil/perfil.component';
 import { HomedashComponent } from '../homedash/homedash.component';
+import { LibraryComponent } from '../library/library.component';
 import { CookieService } from 'ngx-cookie-service';  // Importa CookieService
 import { Router } from '@angular/router';  // Importa Router para la redirección
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -23,7 +24,8 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    LibraryComponent
   ]
 })
 export class DashboardComponent {
