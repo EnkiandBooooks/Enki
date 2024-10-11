@@ -6,10 +6,13 @@
       </div>
       <mat-nav-list>
         <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="showSection('home'); $event.preventDefault()">Start</a>
+          <a mat-button class="nav-button" href="#" (click)="showSection('home'); $event.preventDefault()">Home</a>
         </mat-list-item>
         <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('perfil'); $event.preventDefault()">Profile</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a mat-button class="nav-button" href="#" (click)="showSection('library'); $event.preventDefault()">Library</a>
         </mat-list-item>
         <mat-list-item>
           <a mat-button class="nav-button" href="#">Settings</a>
@@ -23,14 +26,13 @@
     <mat-sidenav-content class="content-area">
       <mat-toolbar color="primary" class="toolbar">
         <button mat-icon-button (click)="drawer.toggle()">
-          <mat-icon>Menu</mat-icon>
+          <mat-icon>menu</mat-icon>
         </button>
       </mat-toolbar>
 
       <div class="content-wrapper">
         <ng-container *ngIf="selectedSection === 'home'">
           <div class="profile-content">
-            <app-homedash></app-homedash>
             <app-homedash></app-homedash>
           </div>
         </ng-container>
@@ -40,6 +42,13 @@
             <app-perfil></app-perfil>
           </div>
         </ng-container>
+
+        <ng-container *ngIf="selectedSection === 'library'">
+          <div class="library-content">
+            <app-library></app-library>
+          </div>
+        </ng-container>
+
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
