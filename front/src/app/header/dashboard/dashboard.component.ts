@@ -1,6 +1,6 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PerfilComponent } from '../../usuarios/perfil/perfil.component';
+import { ProfileComponent } from '../../usuarios/profile/profile.component';
 import { HomedashComponent } from '../homedash/homedash.component';
 import { LibraryComponent } from '../library/library.component';
 import { CookieService } from 'ngx-cookie-service';  // Importa CookieService
@@ -18,7 +18,7 @@ import { MatListModule } from '@angular/material/list';
   standalone: true,
   imports: [
     CommonModule, 
-    PerfilComponent,
+    ProfileComponent,
     HomedashComponent,  // Añadido aquí
     MatSidenavModule,
     MatToolbarModule,
