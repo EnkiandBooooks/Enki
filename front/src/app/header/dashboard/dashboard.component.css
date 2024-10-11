@@ -104,7 +104,7 @@
 }
 
 /* Contenido del perfil: ocupa todo el espacio disponible */
-.profile-content {
+.content-wrapper > div {
   width: 100%; /* Asegura que ocupe todo el ancho disponible */
   height: 100%;
   display: flex;
@@ -117,6 +117,8 @@
   box-shadow: none; /* Eliminar sombra si es necesario */
   overflow-y: auto; /* Permite scroll interno */
 }
+
+
 
 /* h1 estilos */
 h1 {
