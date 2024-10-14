@@ -32,19 +32,6 @@ h3 {
   object-fit: absolute; /* Mantener la proporción de la imagen y cubrir el área del tile */
 }
 
-mat-grid-tile {
-  height: 100%;
-  display: flex; /* Usar flex para alinear el contenido dentro del tile */
-  flex-direction: row; /* Colocar elementos en columna */
-  align-items: center; /* Centrar elementos horizontalmente */
-  justify-content: flex-start; /* Alinear al principio verticalmente */
-  padding: 10px; /* Espaciado interno opcional */
-}
-
-p{
-color: black;
-}
-
 .bookCard{
   height: 100%;
   width: 100%;
@@ -86,10 +73,17 @@ color: black;
 mat-card-title {
   font-size: 24px;
   font-weight: bold;
+  min-height: 15em;
 }
 
 mat-card-subtitle {
   font-size: 14px;
+  min-height: 4em;
+
+}
+
+mat-card {
+  height: 23.5em;
 }
 
 mat-chip {

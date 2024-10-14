@@ -67,7 +67,9 @@ export class RestService {
   }
 
   getBooks() {
-    return this.http.get<any[]>(`http://localhost:1234/books`)
+    return firstValueFrom(
+      this.http.get<any[]>(`http://localhost:1234/books`)
+    )
   }
 }
 
