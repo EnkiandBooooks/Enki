@@ -7,9 +7,11 @@ export function deleteFolder(Path) {try {
 
   // Itera sobre cada archivo y lo elimina
   files.forEach((file) => {
-    const filePath = `${Path}${file}`;
-    fs.unlinkSync(filePath);
-    console.log(`Deleted all the file: ${filePath}`)
+    if (file !== '.gitkeep'){  
+      const filePath = `${Path}${file}`;
+      fs.unlinkSync(filePath);
+      console.log(`Deleted all the file: ${filePath}`)
+    }
   });
 
   console.log(`All files in ${Path} have been deleted.`);
