@@ -1,5 +1,5 @@
 import { updateUserSchema, userModel } from  "../../schema/users.js"// Asegúrate de que RegisterModel esté importado
-import { cuttImgProfile } from "../profile/cuttImg.js";
+import { cuttImgProfile } from "../../utils/cuttProfileImg.js";
 import { deleteFolder } from "../../img/delete.js";
 import fs from 'fs';
 /**
@@ -32,8 +32,7 @@ export class DataController {
         try {
             const usr = req.user;
             console.log("----------------------");
-            
-            const imgPath = (usr.img!==null) ? "img/img_profile_cut/"+usr.img : "img/img_profile_cut/icon_default.jpg";
+            const imgPath = (usr.img===null) ?"img/img_profile_cut/icon_default.png" : "img/img_profile_cut/"+usr.img;
             const imagen = fs.readFileSync(imgPath);
             const base64Img = Buffer.from(imagen).toString('base64');
             // Obtener la fecha de creación del usuario usando el correo electrónico
@@ -79,21 +78,22 @@ export class DataController {
             const username = req.body.username;
             const email = req.body.mail;
             let img;
+            console.log(req.file)
 
+            let filename;
             if(req.file) {      // Si existe imagen en la request guardamos recortamos y formateamos.
                 let img = req.file;
-                const filename = req.file.filename; 
+                console.log('asdasdasd' ,img)
+                filename = req.file.filename; 
                 cuttImgProfile(img, filename);
                }
-
             // Actualizar la información del usuario
             const updateData = {
                 _id: req.user._id,
                 username: username,
                 email: email,
-                img: img, // Guarda la URL de la imagen si es necesario
+                img: filename, // Guarda la URL de la imagen si es necesario
             };
-            // console.log(img)
             if (img) {
                 updateData.img = img;  // Agregar la URL de la imagen si se subió
             }
