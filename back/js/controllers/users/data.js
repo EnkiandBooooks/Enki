@@ -93,7 +93,6 @@ export class DataController {
                 username: username,
                 email: email,
                 img: filename, // Guarda la URL de la imagen si es necesario
-                img: filename, // Guarda la URL de la imagen si es necesario
             };
             if (img) {
                 updateData.img = img;  // Agregar la URL de la imagen si se subió
