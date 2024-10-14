@@ -23,7 +23,9 @@ interface Slide {
   styleUrls: ['./body.component.css']
 })
 export class BodyComponent implements OnInit {
-  currentSlide = 0;
+  topratedSlice = 0;
+  webSlide = 0;
+  workspaceSlide = 0;
   slides: Slide[] = [
     {
       image: 'images/berserk.jpg',
@@ -50,16 +52,35 @@ export class BodyComponent implements OnInit {
   ngOnInit(): void {
     // Auto-rotate carousel every 5 seconds
     setInterval(() => {
-      this.nextSlide();
+      this.nexttopratedSlice();
+    }, 4000);
+    setInterval(() => {
+      this.nextwebSlide();
+    }, 7000);    
+    setInterval(() => {
+      this.nextworkspaceSlide();
     }, 5000);
   }
-
-  prevSlide(): void {
-    this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+  prevwebSlide(): void {
+    this.webSlide = (this.webSlide - 1 + this.slides.length) % this.slides.length;
   }
 
-  nextSlide(): void {
-    this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+  nextwebSlide(): void {
+    this.webSlide = (this.webSlide + 1) % this.slides.length;
+  }
+  prevworkspaceSlide(): void {
+    this.workspaceSlide = (this.workspaceSlide - 1 + this.slides.length) % this.slides.length;
+  }
+
+  nextworkspaceSlide(): void {
+    this.workspaceSlide = (this.workspaceSlide + 1) % this.slides.length;
+  }
+  prevtopratedSlice(): void {
+    this.topratedSlice = (this.topratedSlice - 1 + this.slides.length) % this.slides.length;
+  }
+
+  nexttopratedSlice(): void {
+    this.topratedSlice = (this.topratedSlice + 1) % this.slides.length;
   }
   goLogin(){
     this.router.navigate(['/register0']);
