@@ -3,16 +3,16 @@
   <!-- Primer Carrusel -->
   <div class="carousel-section">
     <h3>Library</h3>
-
-    <mat-grid-list cols="4" rowHeight= "200px" gutterSize="100px">
-      <mat-grid-tile *ngFor="let image of bookImages">  <!-- Usamos *ngFor para iterar sobre bookImages -->
+    <mat-paginator [pageSize]="50" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page"></mat-paginator>
+    <mat-grid-list cols="6" rowHeight= "250px" gutterSize="50px">
+      <mat-grid-tile *ngFor="let arrBook of arrBooks()">  <!-- Usamos *ngFor para iterar sobre bookImages -->
         <div class="bookCard">
-          <img [src]="image" alt="Imagen del libro" class="book-image" />
-          <p>Title</p>
+          <img [src]="'/images/berserk.jpg'" alt="Imagen del libro" class="book-image" />
+          <p>{{arrBook.title}}</p>
         </div>
       </mat-grid-tile>
-    </mat-grid-list>    
-    
+    </mat-grid-list>
+
   </div>
 
  
