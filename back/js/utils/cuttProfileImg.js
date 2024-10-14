@@ -1,5 +1,5 @@
 import sharp from "sharp";
-import { deleteFolder } from "../../img/delete.js";
+import { deleteFolder } from "../img/delete.js";
 // import {userId } from '../../routes/users/data.js'
 
 /**
