@@ -3,6 +3,7 @@ import { bookModel } from "../js/schema/obras/obras.js";
 import axios from "axios";
 import fs from "fs";
 import readline from "readline";
+import { franc } from "franc";
 import "dotenv/config";
 
 
@@ -38,6 +39,8 @@ async function recogerLibrosAPI(query, maxResultados) {
     book.author_name &&
     Array.isArray(book.publish_date) && 
     book.publish_date.length > 0 &&
+    Array.isArray(book.first_sentence)  &&
+    book.first_sentence.length > 0 &&
     book.number_of_pages_median > 0 &&
     book.ratings_average &&
     Array.isArray(book.isbn) && 
@@ -46,18 +49,31 @@ async function recogerLibrosAPI(query, maxResultados) {
     book.subject.length > 0
   )
   .map(book => ({
-    title: book.title,
-    authors: book.author_name,
-    publishedDate: book.publish_date[0],
-    description: Array.isArray(book.first_sentence) ? book.first_sentence.join(" ") : (book.first_sentence || "Sin descripción"),
-    pageCount: book.number_of_pages_median,
-    categories: book.subject.slice(0, 3),
-    rating: book.ratings_average,
-    isbn: book.isbn[0],
-    thumbnail: `https://covers.openlibrary.org/b/isbn/${book.isbn[0]}-S.jpg`,
-    largeThumbnail: `https://covers.openlibrary.org/b/isbn/${book.isbn[0]}-L.jpg`
+      title: book.title,
+      authors: book.author_name,
+      publishedDate: book.publish_date[0],
+      description: enDescription(book.first_sentence),
+      pageCount: book.number_of_pages_median,
+      categories: book.subject.slice(0, 3),
+      rating: book.ratings_average,
+      isbn: book.isbn[0],
+      thumbnail: `https://covers.openlibrary.org/b/isbn/${book.isbn[0]}-S.jpg`,
+      largeThumbnail: `https://covers.openlibrary.org/b/isbn/${book.isbn[0]}-L.jpg`
   }));
 };
+async function enDescription(sentences){
+  let description = "Sin descripción";
+  if (sentences){
+    description = sentences.find(sentence => franc(sentence) === 'eng');
+  }
+  return description;
+}
+// if (Array.isArray(book.first_sentence)) {
+//   englishSentence = book.first_sentence.find(sentence => franc(sentence) === 'eng') || "Sin descripción";
+// } else if (typeof book.first_sentence === "string") {
+//   // Si `first_sentence` es una cadena, se detecta directamente
+//   englishSentence = franc(book.first_sentence) === 'eng' ? book.first_sentence : "Sin descripción";
+// }
 /**
 * A partir de una lista de objetos de los libros se mueven a la colección obras de la base de datos applibros de mongodb.
 * Se comprueba también antes de añadir un libro si ya existe en la base de dtos para evitar duplicidades
