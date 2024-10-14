@@ -76,14 +76,16 @@ export class DataController {
             if(!validation.success){ //Verifica que haya email y esté bien formado
                 return res.status(400).json({ resultado: validation.error.errors[0].message });
             }*/ 
-            console.log("Aca esta:"+req.file.filename);
-            const img = req.file ? `${req.file.filename}` : null;
             const username = req.body.username;
             const email = req.body.mail;
-            const filename = req.filename;
-            
-            console.log( "ID: ",req.user._id);
-            cuttImgProfile(img, filename);
+            let img;
+
+            if(req.file) {      // Si existe imagen en la request guardamos recortamos y formateamos.
+                let img = req.file;
+                const filename = req.file.filename; 
+                cuttImgProfile(img, filename);
+               }
+
             // Actualizar la información del usuario
             const updateData = {
                 _id: req.user._id,
@@ -91,7 +93,7 @@ export class DataController {
                 email: email,
                 img: img, // Guarda la URL de la imagen si es necesario
             };
-            console.log(img)
+            // console.log(img)
             if (img) {
                 updateData.img = img;  // Agregar la URL de la imagen si se subió
             }
@@ -104,7 +106,7 @@ export class DataController {
             if (!updatedUser) {
                 return res.status(404).json({ message: "Usuario no encontrado" });
             }
-            deleteFolder('../img/img_profile')
+            
             res.status(200).json({
                 message: "Usuario actualizado exitosamente",
                 user: updatedUser,

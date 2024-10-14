@@ -8,30 +8,30 @@
       <!-- Formulario de inicio de sesión -->
       <form (ngSubmit)="onSubmit()">
         <!-- Campo para el nombre de usuario -->        
-        <span>Nombre de usuario</span>
+        <span>Username</span>
         @if (edit){
         <mat-form-field class="full-width">
-          <mat-label>Usuario</mat-label>
+          <mat-label>Username</mat-label>
           <input matInput type="text" [(ngModel)]="arrUsr().user" name="username" required>
         </mat-form-field>
         }@else{
         <p>{{arrUsr().user}}</p>
         }
 
-        <span>Correo electrónico</span>
+        <span>Email</span>
         @if (edit){
         <mat-form-field class="full-width">
-          <mat-label>Correo</mat-label>
+          <mat-label>Email</mat-label>
           <input matInput type="text" [(ngModel)]="arrUsr().mail" name="email" required>
         </mat-form-field>
         }@else{
         <p>{{arrUsr().mail}}</p>
         }
         <!-- Campo para la contraseña -->
-        <span>Contraseña</span>
+        <span>Password</span>
         @if (edit){
           <mat-card-actions>
-            <button mat-button color="accent" (click)="goToResetPwd()">Recuperar contraseña</button> <!--(click)="recoverPass()"-->
+            <button mat-button color="accent" (click)="goToResetPwd()">Recover password</button> <!--(click)="recoverPass()"-->
           </mat-card-actions>
         }@else{
         <p>********</p>
@@ -40,15 +40,15 @@
         @if (edit){
         <!-- Botón para iniciar sesión -->
         <div class="button-container">
-          <button mat-raised-button color="primary" type="submit">Confirmar cambios</button>
+          <button mat-raised-button color="primary" type="submit">Confirm changes</button>
         </div>
 
         }@else{
-          <span>Se unió a ENKI el</span>
+          <span>Joined ENKI at</span>
           <p>{{formattedDate}}</p>
 
           <div class="button-container">
-            <button mat-raised-button color="primary" type="submit">Modo Edición</button>
+            <button mat-raised-button color="primary" type="submit">Edit mode</button>
           </div>
         } 
 

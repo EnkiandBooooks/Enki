@@ -104,7 +104,7 @@
 }
 
 /* Contenido del perfil: ocupa todo el espacio disponible */
-.profile-content {
+.content-wrapper > div {
   width: 100%; /* Asegura que ocupe todo el ancho disponible */
   height: 100%;
   display: flex;
@@ -117,6 +117,8 @@
   box-shadow: none; /* Eliminar sombra si es necesario */
   overflow-y: auto; /* Permite scroll interno */
 }
+
+
 
 /* h1 estilos */
 h1 {
@@ -153,4 +155,76 @@ html, body {
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
+}
+
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff33;
+}
+
+button[mat-icon-button] {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0 0 0 16px;
+}
+
+
+.profile-menu {
+  min-width: 220px;
+  padding: 8px 0;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+
+.user-avatar-large {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 12px;
+  border: 2px solid #e0e0e0;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+.user-email {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+mat-divider {
+  margin: 8px 0;
+}
+
+mat-menu-item {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.logout-button {
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+.logout-button:hover {
+  background-color: #f8d7da;
 }

@@ -16,9 +16,6 @@ import { deleteFolder } from "../../img/delete.js";
 
 
 export function cuttImgProfile(img, find) {
-    
-    console.log(find)
-    console.log(typeof(img))
     const imgPath = `img/img_profile/${find}`; 
     const outputPath = `img/img_profile_cut/${find}`; 
 

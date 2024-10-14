@@ -13,7 +13,7 @@ import { DatePipe } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-perfil',
+  selector: 'app-profile',
   standalone: true,
   imports: [
     NgFor,
@@ -25,11 +25,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     CommonModule,
     MatToolbarModule
   ],
-  templateUrl: './perfil.component.html',
-  styleUrls: ['./perfil.component.css'],
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css'],
   providers: [DatePipe]
 })
-export class PerfilComponent {
+export class ProfileComponent {
   imgFile: any;
   imgUrl: any | undefined;
   arrUsr = signal<any>([]);
