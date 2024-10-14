@@ -1,19 +1,27 @@
 <div class="home-content">
   
-  <!-- Primer Carrusel -->
-  <div class="carousel-section">
-    <h3>Biblioteca</h3>
-
-    <mat-grid-list cols="4" rowHeight= "200px" gutterSize="100px">
-      <mat-grid-tile *ngFor="let image of bookImages">  <!-- Usamos *ngFor para iterar sobre bookImages -->
-        <div class="bookCard">
-          <img [src]="image" alt="Imagen del libro" class="book-image" />
-          <p>Title</p>
-        </div>
-      </mat-grid-tile>
-    </mat-grid-list>    
+  <div class="gallery-container">
+    <button mat-icon-button (click)="prevSlide()" class="nav-button prev" [disabled]="currentIndex === 0">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
     
+    <div class="movies-container">
+      <div class="movies-slider" [style.transform]="translateX">
+        <mat-card *ngFor="let book of books; let i = index" class="movie-card">
+          <mat-card-header>
+            <mat-card-title>{{ i + 1 }}</mat-card-title>
+            <mat-card-subtitle>{{ book.title }}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image [src]="book.imageUrl" [alt]="book.title">
+          
+        </mat-card>
+      </div>
+    </div>
+    
+    <button mat-icon-button (click)="nextSlide()" class="nav-button next" [disabled]="currentIndex >= books.length - 5">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
   </div>
 
  
-</div>
+</div>  

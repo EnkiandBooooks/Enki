@@ -10,26 +10,90 @@
     </div>
   </div>
 
-  <div class="carousel-section">
-    <h2>Featured Books</h2>
-    <div class="carousel">
-      <div class="carousel-container" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
-        <div class="carousel-slide" *ngFor="let slide of slides">
-          <img [src]="slide.image" [alt]="slide.alt" class="carousel-image" />
-          <div class="carousel-text">
-            <h3>{{ slide.title }}</h3>
-            <p>{{ slide.text }}</p>
+<div class="carousel-features blue-carousel"> 
+  <h2>Why Join Our Reading Group?Pruebva desde mi casa</h2>
+  <div class="carousel">
+    <div class="carousel-container" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
+      <div class="carousel-slide" *ngFor="let slide of slides">
+        <div class="carousel-text">
+       
+          <div class="features-grid">
+            <div class="feature-card">
+              <mat-icon>book</mat-icon>
+              <h4>Diverse Selection</h4>
+              <p>Explore a wide range of genres and authors</p>
+            </div>
+            <div class="feature-card">
+              <mat-icon>group</mat-icon>
+              <h4>Community</h4>
+              <p>Connect with like-minded readers</p>
+            </div>
+            <div class="feature-card">
+              <mat-icon>school</mat-icon>
+              <h4>Learn & Grow</h4>
+              <p>Expand your knowledge and perspectives</p>
+            </div>
           </div>
         </div>
       </div>
-      <button mat-icon-button class="carousel-control prev" (click)="prevSlide()">
-        <mat-icon>chevron_left</mat-icon>
-      </button>
-      <button mat-icon-button class="carousel-control next" (click)="nextSlide()">
-        <mat-icon>chevron_right</mat-icon>
-      </button>
+    </div>
+    <button mat-icon-button class="carousel-control prev" (click)="prevSlide()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <button mat-icon-button class="carousel-control next" (click)="nextSlide()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</div>
+
+  
+
+
+
+  <div class="BookAndWorkSpace">
+    <div class="carousel-books">
+      <h2>Featured Books</h2>
+      <div class="carousel">
+        <div class="carousel-container" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
+          <div class="carousel-slide" *ngFor="let slide of slides">
+            <img [src]="slide.image" [alt]="slide.alt" class="carousel-image" />
+            <div class="carousel-text">
+              <h3>{{ slide.title }}</h3>
+              <p>{{ slide.text }}</p>
+            </div>
+          </div>
+        </div>
+        <button mat-icon-button class="carousel-control prev" (click)="prevSlide()">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+        <button mat-icon-button class="carousel-control next" (click)="nextSlide()">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
+    </div>
+  
+    <div class="carousel-workspace">
+      <h2>Featured Books</h2>
+      <div class="carousel">
+        <div class="carousel-container" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
+          <div class="carousel-slide" *ngFor="let slide of slides">
+            <img [src]="slide.image" [alt]="slide.alt" class="carousel-image" />
+            <div class="carousel-text">
+              <h3>{{ slide.title }}</h3>
+              <p>{{ slide.text }}</p>
+            </div>
+          </div>
+        </div>
+        <button mat-icon-button class="carousel-control prev" (click)="prevSlide()">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+        <button mat-icon-button class="carousel-control next" (click)="nextSlide()">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
     </div>
   </div>
+
 
   <div class="features-section">
     <h2>Why Join Our Reading Group?</h2>
@@ -51,4 +115,5 @@
       </div>
     </div>
   </div>
+
 </section>

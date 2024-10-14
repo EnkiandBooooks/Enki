@@ -6,17 +6,15 @@
       </div>
       <mat-nav-list>
         <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="showSection('home'); $event.preventDefault()">Inicio</a>
+          <a mat-button class="nav-button" href="#" (click)="showSection('home'); $event.preventDefault()">Home</a>
         </mat-list-item>
         <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="showSection('perfil'); $event.preventDefault()">Perfil</a>
+          <a mat-button class="nav-button" href="#" (click)="showSection('library'); $event.preventDefault()">Library</a>
         </mat-list-item>
         <mat-list-item>
-          <a mat-button class="nav-button" href="#">Ajustes</a>
+          <a mat-button class="nav-button" href="#">Settings</a>
         </mat-list-item>
-        <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="onLogout(); $event.preventDefault()">Cerrar Sesión</a>
-        </mat-list-item>
+        
       </mat-nav-list>
     </mat-sidenav>
 
@@ -25,21 +23,46 @@
         <button mat-icon-button (click)="drawer.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
+        @if(cookieExists){
+          <button mat-icon-button [matMenuTriggerFor]="profileMenu">
+            <img [src]="imgUrl" alt="Perfil" class="user-avatar" />
+          </button>        
+  
+          <mat-menu #profileMenu="matMenu" class="profile-menu">
+            <div class="profile-header">
+              <img [src]="imgUrl" alt="Foto del usuario" class="user-avatar-large" />
+              <div class="profile-info">
+                <span class="user-name">{{arrUsr().user}}</span>
+                <span class="user-email">{{arrUsr().mail}}</span>
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="showSection('perfil')"><mat-icon>person</mat-icon>My Profile</button>
+            <mat-divider></mat-divider>
+            <button style="color: red;" mat-menu-item (click)="onLogout()"><mat-icon style="color: red;">logout</mat-icon>Logout</button>
+          </mat-menu>
+        }
       </mat-toolbar>
 
       <div class="content-wrapper">
         <ng-container *ngIf="selectedSection === 'home'">
-          <div class="profile-content">
-            <app-homedash></app-homedash>
+          <div>
             <app-homedash></app-homedash>
           </div>
         </ng-container>
 
         <ng-container *ngIf="selectedSection === 'perfil'">
-          <div class="profile-content">
-            <app-perfil></app-perfil>
+          <div>
+            <app-profile></app-profile>
           </div>
         </ng-container>
+
+        <ng-container *ngIf="selectedSection === 'library'">
+          <div>
+            <app-library></app-library>
+          </div>
+        </ng-container>
+
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>

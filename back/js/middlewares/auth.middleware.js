@@ -34,7 +34,6 @@ export const verifyJWT = async (req, res, next) => {
     if(!user){ // Si no devolvemos un mensaje avisando.
         return res.status(403).json({ message: "User not found" });
     }
-    console.log("Hola")
     // SI todo va bien guardamos en el req al usuario y continuamos avanzando.
     req.user = user;
     next();
