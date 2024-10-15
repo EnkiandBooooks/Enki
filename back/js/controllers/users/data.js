@@ -31,7 +31,7 @@ export class DataController {
     static async getData(req, res) {
         try {
             const usr = req.user;
-            const imgPath = (usr.img===null) ?"img/img_profile_cut/icon_default.png" : "img/img_profile_cut/"+usr.img;
+            const imgPath = (usr.img===null) ?"img/img_profile_cut/icon_default.jpg" : "img/img_profile_cut/"+usr.img;
             const imagen = fs.readFileSync(imgPath);
             const base64Img = Buffer.from(imagen).toString('base64');
             // Obtener la fecha de creación del usuario usando el correo electrónico

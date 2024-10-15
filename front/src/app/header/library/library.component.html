@@ -5,14 +5,21 @@
     <h3>Library</h3>
     <h6>Categories</h6>
     <div class="categories">
-      <button *ngFor="let category of categories"
-          mat-raised-button
-          [color]="selected.includes(category) ? 'accent' : 'primary'"
-          (click)="toggleCategory(category)">
-        {{ category }}
-      </button>
+      <mat-button-toggle-group [multiple]="true">
+        <mat-button-toggle *ngFor="let category of categories"
+          (change)="toggleCategory($event, category)"
+          color="primary">
+          {{ category }}
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      <button mat-raisedd-button color="accent" (click)="filterBooks()">Filter</button>
     </div>
-        <mat-grid-list cols="6" rowHeight= "250px" gutterSize="50px">
+
+    <mat-form-field>
+      <mat-label>Books</mat-label>
+      <input matInput (keyup)="loadBook()" [(ngModel)]="this.search">
+    </mat-form-field>
+    <mat-grid-list cols="6" rowHeight= "250px" gutterSize="50px">
       <mat-grid-tile *ngFor="let book of books | paginate: {itemsPerPage: 18, currentPage: p} ">  <!-- Usamos *ngFor para iterar sobre bookImages -->
         <div class="bookCard">
           <img [src]="'/images/berserk.jpg'" alt="Imagen del libro" class="book-image" />
@@ -25,8 +32,5 @@
       previousLabel="Previous"
       nextLabel="Next">
     </pagination-controls>
-
   </div>
-
-
 </div>
