@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import { RestService } from '../../rest.service';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-library',
@@ -12,20 +15,34 @@ import { NgxPaginationModule } from 'ngx-pagination';
               CommonModule,
               MatCardModule,
               NgxPaginationModule,
+              MatFormFieldModule,
+              MatInputModule,
+              FormsModule
               ],
-  providers: [],
+  providers: [NgModel],
   templateUrl: './library.component.html',
   styleUrl: './library.component.css'
 })
 export class LibraryComponent{
   p: number = 1;
-  books:any;
+  search: string = '';
+  books: any;
   restService = inject(RestService);
 
   ngOnInit() {
-    this.restService.getBooks()
-      .subscribe((res: any) => {
+    this.loadBook()
+    // this.restService.getBooks()
+    //   .subscribe((res: any) => {
+    //     this.books = res;
+    // })
+  }
+
+  loadBook(){
+    const filter = (typeof this.search == 'string' && this.search.length > 2) ? `?searchBy=${this.search}` : '';
+    this.restService.getBooksFilter(filter).subscribe(
+      (res) => {
         this.books = res;
-    })
+      }
+    ) 
   }
 }

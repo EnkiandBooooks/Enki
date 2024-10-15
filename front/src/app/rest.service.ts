@@ -67,7 +67,11 @@ export class RestService {
   }
 
   getBooks() {
-      return this.http.get(`http://localhost:1234/books`)
+      return this.http.get(`http://localhost:1234/books`);
+  }
+
+  getBooksFilter(filter:string) {
+    return this.http.get(`http://localhost:1234/books${filter}`);
   }
 }
 
