@@ -15,14 +15,17 @@ import { ArrayType } from '@angular/compiler';
 })
 export class HomedashComponent implements OnInit {
   arrBooks = signal<any[]>([])
+  books: any;
   restService = inject(RestService);
 
   currentIndex = 0;
   cardWidth = 216; // 200px width + 16px margin-right
 
-  async ngOnInit() {
-    const allBooks = await this.restService.getBooks();
-    this.arrBooks.set(allBooks);
+  ngOnInit() {
+    this.restService.getBooks()
+      .subscribe((res) => {
+        this.books = res
+      })
   }
 
   get translateX(): string {
