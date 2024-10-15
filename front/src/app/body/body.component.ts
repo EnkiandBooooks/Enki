@@ -82,7 +82,15 @@ export class BodyComponent implements OnInit {
   nexttopratedSlice(): void {
     this.topratedSlice = (this.topratedSlice + 1) % this.slides.length;
   }
+  goDashboard(){
+    this.router.navigate(['/dashboard']);
+  }
   goLogin(){
     this.router.navigate(['/register0']);
   }
+  scrollToSection() {
+    window.location.hash = 'Dashboard';
+    window.location.hash = 'hola';
+  }
+  
 }
