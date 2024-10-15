@@ -1,8 +1,17 @@
 <div class="home-content">
-  
+
   <!-- Primer Carrusel -->
   <div class="carousel-section">
     <h3>Library</h3>
+    <h6>Categories</h6>
+    <div class="categories">
+      <button *ngFor="let category of categories"
+          mat-raised-button
+          [color]="selected.includes(category) ? 'accent' : 'primary'"
+          (click)="toggleCategory(category)">
+        {{ category }}
+      </button>
+    </div>
         <mat-grid-list cols="6" rowHeight= "250px" gutterSize="50px">
       <mat-grid-tile *ngFor="let book of books | paginate: {itemsPerPage: 18, currentPage: p} ">  <!-- Usamos *ngFor para iterar sobre bookImages -->
         <div class="bookCard">
@@ -11,13 +20,13 @@
         </div>
       </mat-grid-tile>
     </mat-grid-list>
-    <pagination-controls 
-      (pageChange)="p = $event" 
-      previousLabel="Previous" 
+    <pagination-controls
+      (pageChange)="p = $event"
+      previousLabel="Previous"
       nextLabel="Next">
     </pagination-controls>
 
   </div>
 
- 
+
 </div>
