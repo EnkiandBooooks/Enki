@@ -16,7 +16,7 @@
       @if(cookieExists){
         <button mat-icon-button [matMenuTriggerFor]="profileMenu">
           <img [src]="imgUrl" alt="Perfil" class="user-avatar" />
-        </button>        
+        </button>
 
         <mat-menu #profileMenu="matMenu" class="profile-menu">
           <div class="profile-header">
@@ -27,17 +27,19 @@
             </div>
           </div>
           <mat-divider></mat-divider>
+          <button mat-menu-item (click)="navigateProfile()"><mat-icon>person</mat-icon>My Profile</button>
+          <mat-divider></mat-divider>
           <button style="color: red;" mat-menu-item (click)="onLogout()"><mat-icon style="color: red;">logout</mat-icon>Logout</button>
         </mat-menu>
-        
 
-        
+
+
       }@else{
         <li  class="nav-item">
           <a mat-button [routerLink]="['/register0']">Login</a>
         </li>
       }
-      
+
     </ul>
   </nav>
 </mat-toolbar>
