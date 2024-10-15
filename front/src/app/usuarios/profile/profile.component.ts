@@ -48,7 +48,7 @@ export class ProfileComponent {
   // Método que se activa al activar botón de modo edición o confirmar cambios
   onSubmit() {
     this.edit = !this.edit;
-    
+
     if (!this.edit) {
       // Método para actualizar datos a BD
       const formData = new FormData();
@@ -59,10 +59,11 @@ export class ProfileComponent {
       this.restService.postData(formData).subscribe({
         next: (res) => {
           console.log("///////////////////////\n" + res + "\n///////////////////////");
+          window.location.reload();
         },
         error: (err) => {
           // Manejar el error y mostrar el mensaje en SnackBar
-          
+
           console.error('Error desde backend:', err);
         }
       });
