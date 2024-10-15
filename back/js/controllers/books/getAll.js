@@ -26,7 +26,7 @@ export class getBooksController{
     static async getAll(req, res){
 
         let bookName = new RegExp(`.*${req.query.searchBy || ''}.*`);
-        const result = await BooksModel.getBooks({"title": {$regex: bookName}})
+        const result = await BooksModel.getBooks({"title": {$regex: bookName, $options: "i"}})
         res.json(result)
     }
     /**
