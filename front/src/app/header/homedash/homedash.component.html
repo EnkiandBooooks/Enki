@@ -7,21 +7,17 @@
     
     <div class="movies-container">
       <div class="movies-slider" [style.transform]="translateX">
-        <mat-card *ngFor="let book of books; let i = index" class="movie-card">
+        <mat-card *ngFor="let arrBook of arrBooks(); let i = index" class="movie-card">
           <mat-card-header>
-            <mat-card-title>{{ i + 1 }}</mat-card-title>
-            <mat-card-subtitle>{{ book.title }}</mat-card-subtitle>
+            <mat-card-subtitle>{{ arrBook.title }}</mat-card-subtitle>
           </mat-card-header>
-          <img mat-card-image [src]="book.imageUrl" [alt]="book.title">
-          
+          <img mat-card-image [src]="'/images/naruto.jpg'" [alt]="arrBook.title">
         </mat-card>
       </div>
     </div>
     
-    <button mat-icon-button (click)="nextSlide()" class="nav-button next" [disabled]="currentIndex >= books.length - 5">
+    <button mat-icon-button (click)="nextSlide()" class="nav-button next" [disabled]="currentIndex >= 100">
       <mat-icon>chevron_right</mat-icon>
     </button>
   </div>
-
- 
 </div>  
