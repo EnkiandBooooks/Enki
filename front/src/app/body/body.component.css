@@ -234,7 +234,7 @@
 }
 
 .blue-carousel .carousel-text {
-  text-align: center;
+  text-align: right;
 }
 
 .blue-carousel .features-grid {
@@ -246,4 +246,55 @@
 .blue-carousel .feature-card mat-icon {
   font-size: 2.5rem;
   color: #333;
+}
+
+/* Dashboard */
+.functionality {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 100px;
+}
+#Dashboard {
+  background-color: #d1c5d6;
+}
+#hola {
+  background-color: #4c474e;
+}
+#adios {
+  background-color: #66576c;
+}
+.functionality > div {
+  flex: 1;
+}
+
+.functionality img {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.functionality h1 {
+  font-size: 2.5rem;
+  margin: 20px;
+  color: #ffffff;
+}
+#Dashboard h1 {
+  color: #000000;
+}
+.functionality p {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 20px ;
+  text-align: left;
+}
+#hola p {
+  color: #ffffff;
+}
+#adios p {
+  color: #ffffff;
+}
+
+.functionality button {
+  display: block;
+  margin: 20px auto;
 }
