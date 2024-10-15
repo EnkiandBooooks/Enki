@@ -3,7 +3,7 @@
     <div class="hero-content">
       <h1>Welcome to Enki</h1>
       <p>Discover, share, and grow through the power of books</p>
-      <button mat-raised-button (click)="goLogin()" color="primary">Join Now</button>
+      <button mat-raised-button (click)="goDashboard()" color="primary">Join Now</button>
     </div>
     <div class="hero-image">
       <img src="images/enki.png"  alt="Group of people reading" class="image-full">
@@ -95,25 +95,60 @@
   </div>
 
 
-  <div class="features-section">
+  <div class="features-section" >
     <h2>Why Join Our Reading Group?</h2>
     <div class="features-grid">
-      <div class="feature-card">
+      <a class="feature-card" href="#Dashboard">
         <mat-icon>book</mat-icon>
         <h3>Diverse Selection</h3>
         <p>Explore a wide range of genres and authors</p>
-      </div>
-      <div class="feature-card">
+      </a>
+      <a class="feature-card" href="#hola">
         <mat-icon>group</mat-icon>
         <h3>Community</h3>
         <p>Connect with like-minded readers</p>
-      </div>
-      <div class="feature-card">
+      </a>
+      <a class="feature-card" href="#adios">
         <mat-icon>school</mat-icon>
         <h3>Learn & Grow</h3>
         <p>Expand your knowledge and perspectives</p>
-      </div>
+      </a>
     </div>
   </div>
 
+</section>
+
+<section id="Dashboard" class="functionality">
+  <div class="">
+    <img src="images/dashboard.png">
+  </div>
+  <div class="">
+    <h1>Dashboard</h1>
+    <p>"In a world where knowledge is power, books become the gateway to unlimited growth and discovery. Through the pages of each book, we step into new worlds, understand different perspectives, and expand our horizons. Whether exploring distant galaxies or the intricacies of human emotion.
+    <br/>
+    <button mat-raised-button (click)="goLogin()" color="primary">Join Now</button>
+  </div>
+</section>
+
+<section id="hola" class="functionality">
+  <div class="">
+    <img src="images/enki2.png">
+  </div>
+  <div class="">
+    <h1>Dashboard</h1>
+    <p>Discover, share, and grow through the power of books</p>
+    <button mat-raised-button (click)="goLogin()" color="primary">Join Now</button>
+  </div>
+</section>
+
+<section id="adios" class="functionality">
+  <div class="">
+    <img src="images/dashboard.png">
+  </div>
+  <div class="">
+    <h1>Dashboard</h1>
+    <p>"In a world where knowledge is power, books become the gateway to unlimited growth and discovery. Through the pages of each book, we step into new worlds, understand different perspectives, and expand our horizons. Whether exploring distant galaxies or the intricacies of human emotion.
+    <br/>
+    <button mat-raised-button (click)="goLogin()" color="primary">Join Now</button>
+  </div>
 </section>
