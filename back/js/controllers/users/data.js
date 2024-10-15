@@ -31,7 +31,6 @@ export class DataController {
     static async getData(req, res) {
         try {
             const usr = req.user;
-            console.log("----------------------");
             const imgPath = (usr.img===null) ?"img/img_profile_cut/icon_default.png" : "img/img_profile_cut/"+usr.img;
             const imagen = fs.readFileSync(imgPath);
             const base64Img = Buffer.from(imagen).toString('base64');
@@ -78,12 +77,10 @@ export class DataController {
             const username = req.body.username;
             const email = req.body.mail;
             let img;
-            console.log(req.file)
 
             let filename;
             if(req.file) {      // Si existe imagen en la request guardamos recortamos y formateamos.
                 let img = req.file;
-                console.log('asdasdasd' ,img)
                 filename = req.file.filename; 
                 cuttImgProfile(img, filename);
                }
@@ -92,7 +89,6 @@ export class DataController {
                 _id: req.user._id,
                 username: username,
                 email: email,
-                img: filename, // Guarda la URL de la imagen si es necesario
                 img: filename, // Guarda la URL de la imagen si es necesario
             };
             if (img) {

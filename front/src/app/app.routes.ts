@@ -33,6 +33,5 @@ export const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'footer', component:FooterComponent},
   { path: 'policy', component:PolicyComponent}
-
   /*{ path: '**', redirectTo: '/inicio' }*/ // Ruta comodín para redireccionar a inicio
 ];
