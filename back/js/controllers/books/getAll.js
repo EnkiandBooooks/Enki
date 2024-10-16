@@ -25,8 +25,19 @@ export class getBooksController{
      */
     static async getAll(req, res){
 
+        console.log("Rquest: ", req.query);
         let bookName = new RegExp(`.*${req.query.searchBy || ''}.*`);
-        const result = await BooksModel.getBooks({"title": {$regex: bookName, $options: "i"}})
+        let categoryName = req.query.categories ? req.query.categories.split(',') : [];
+        let categoryFilter = [];
+        if (categoryName.length < 1){
+            categoryFilter = {"categories": categoryFilter}
+        }else{
+            categoryFilter = categoryName.map(category => ({
+                "categories": {$regex: `.*${category}.*`, $options: "i"}
+            }))
+        };
+
+        const result = await BooksModel.getBooks({"title": {$regex: bookName, $options: "i"}, $and: categoryFilter})
         res.json(result)
     }
     /**
