@@ -11,5 +11,13 @@
 </head>
 <body class="mat-typography">
   <app-root></app-root>
+
+  <script>
+    // Redirigir solo si estamos en la raíz
+    if (window.location.pathname === '/') {
+      window.location.href = '/landingpage/landingpage.html';
+    }
+  </script>
+
 </body>
 </html>
