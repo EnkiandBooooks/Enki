@@ -28,7 +28,7 @@ export class LibraryComponent{
   p: number = 1;
   search: string = '';
   books: any;
-  categories = ['Fantasy', 'Manga', 'History', 'Comic', 'Fiction'];
+  categories = ['Fantasy', 'Manga', 'History', 'Comic', 'Fiction', 'Novels', 'Literature', 'Science'];
   selected: any[] = [];
 
   restService = inject(RestService);
