@@ -24,21 +24,27 @@ export class getBooksController{
      * getBooksController.getAll(req, res);
      */
     static async getAll(req, res){
-
-        console.log("Rquest: ", req.query);
         let bookName = new RegExp(`.*${req.query.searchBy || ''}.*`);
         let categoryName = req.query.categories ? req.query.categories.split(',') : [];
-        let categoryFilter = [];
-        if (categoryName.length < 1){
-            categoryFilter = {"categories": categoryFilter}
-        }else{
-            categoryFilter = categoryName.map(category => ({
-                "categories": {$regex: `.*${category}.*`, $options: "i"}
-            }))
-        };
+        let categoryFilter = categoryName.map(category => ({
+            "categories": { $regex: `.*${category}.*`, $options: "i" }
+        }));
 
-        const result = await BooksModel.getBooks({"title": {$regex: bookName, $options: "i"}, $and: categoryFilter})
-        res.json(result)
+        let filter = {
+            "title": { $regex: bookName, $options: "i" }
+        };    
+        
+        //En caso de que haya alguna categoria seleccioada añade al array fiter la categoria
+        if (categoryFilter.length > 0) {
+            filter.$and = categoryFilter;
+        }
+        try{
+            const result = await BooksModel.getBooks(filter);
+            res.json(result);
+        
+        }catch(error){console.log(error)}
+       
+        
     }
     /**
      * Obtiene un libro específico por su ID.
