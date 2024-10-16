@@ -1,8 +1,20 @@
 <div class="home-content">
-  
+
   <!-- Primer Carrusel -->
   <div class="carousel-section">
     <h3>Library</h3>
+    <h6>Categories</h6>
+    <div class="categories">
+      <mat-button-toggle-group [multiple]="true">
+        <mat-button-toggle *ngFor="let category of categories"
+          (change)="toggleCategory($event, category)"
+          color="primary">
+          {{ category }}
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      <button mat-raisedd-button color="accent" (click)="filterBooks()">Filter</button>
+    </div>
+
     <mat-form-field>
       <mat-label>Books</mat-label>
       <input matInput (keyup)="loadBook()" [(ngModel)]="this.search">
@@ -15,13 +27,10 @@
         </div>
       </mat-grid-tile>
     </mat-grid-list>
-    <pagination-controls 
-      (pageChange)="p = $event" 
-      previousLabel="Previous" 
+    <pagination-controls
+      (pageChange)="p = $event"
+      previousLabel="Previous"
       nextLabel="Next">
     </pagination-controls>
-
   </div>
-
- 
 </div>

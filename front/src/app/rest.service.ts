@@ -29,12 +29,12 @@ export class RestService {
   getData():Observable<any>{
 
       return this.http.get(`http://localhost:1234/users/data/`);
-    
+
   }
   postData(body:any):Observable<any>{
 
     return this.http.post(`http://localhost:1234/users/data/`,body);
-  
+
   }
 
   LogIn(body: any):Observable<any>{
@@ -72,6 +72,9 @@ export class RestService {
 
   getBooksFilter(filter:string) {
     return this.http.get(`http://localhost:1234/books${filter}`);
+  }
+  postCategory(categories: string[]): Observable<any>{
+    return this.http.post<any>(`http://localhost:1234/users/library`, categories);
   }
 }
 
