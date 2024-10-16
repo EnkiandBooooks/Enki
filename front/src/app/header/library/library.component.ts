@@ -28,8 +28,8 @@ export class LibraryComponent{
   p: number = 1;
   search: string = '';
   books: any;
-  categories = ['Fantasy', 'Manga', 'History', 'Comic'];
-  selected: string[] = [];
+  categories = ['Fantasy', 'Manga', 'History', 'Comic', 'Fiction'];
+  selected: any[] = [];
 
   restService = inject(RestService);
 
@@ -42,7 +42,9 @@ export class LibraryComponent{
   }
 
   loadBook(){
-    const filter = (typeof this.search == 'string' && this.search.length > 2) ? `?searchBy=${this.search}` : '';
+    const searchFilter = (typeof this.search == 'string' && this.search.length > 2) ? `?searchBy=${this.search}` : '?searchBy=';
+    const categoryFilter = this.selected.length > 0 ? `&categories=${this.selected.join(',')}` : '&categories=';
+    const filter = `${searchFilter}${categoryFilter}`;
     this.restService.getBooksFilter(filter).subscribe(
       (res) => {
         this.books = res;
@@ -51,17 +53,11 @@ export class LibraryComponent{
   }
 
   toggleCategory(event: any, category: string) {
-    if (event.checked) {
+    if (event.source._checked) {
       this.selected.push(category);
     } else {
       this.selected = this.selected.filter(c => c !== category);
     }
-  }
-
-  filterBooks() {
-    this.restService.postCategory(this.selected).subscribe((response) => {
-      this.books = response; //Actualiza la lista de libros según la respuesta del backend
-      console.log("Libros filtrados por categorías: ", response);
-    });
+    this.loadBook();
   }
 }
