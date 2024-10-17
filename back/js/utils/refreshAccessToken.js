@@ -54,4 +54,10 @@ export class AccessRefreshToken{
             { expiresIn: "15d"}
         )
     }
+    static async signToken(data, key, time){
+        return jwt.sign(data, 
+            key, {
+            expiresIn: time
+            })
+    }
 }
