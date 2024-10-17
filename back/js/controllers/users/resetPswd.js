@@ -35,14 +35,11 @@ export class resetPswdController {
         if (!userPswd){
             return res.status(404).json({ message: 'Usuario no encontrado'});
         }
-        
-        const tokenPswd = jwt.sign(
-            { _id: userPswd._id }, 
-            process.env.secret_jwt_key, 
-            { expiresIn: '15m' }
-        );
 
-        const temporaryUrl = `http://localhost:4200/resetPswd2/${tokenPswd}`;
+        const tokenData = { _id: userPswd._id }
+        const token = AccessRefreshToken.signToken(tokenData, process.env.secret_jwt_key, '15m');        
+
+        const temporaryUrl = `http://localhost:4200/resetPswd2/${token}`;
 
         EnviarMailpswd(mailUsuarioPswd, temporaryUrl);
 
