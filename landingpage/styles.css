@@ -48,10 +48,10 @@
   #Dashboard {
     background-color: #d1c5d6;
   }
-  #hola {
+  #Comunity {
     background-color: #4c474e;
   }
-  #adios {
+  #Learn {
     background-color: #66576c;
   }
   .functionality > div {
@@ -77,14 +77,19 @@
     margin: 20px ;
     text-align: left;
   }
-  #hola p {
+  #Comunity p {
     color: #ffffff;
   }
-  #adios p {
+  #Learn p {
     color: #ffffff;
   }
   
   .functionality button {
     display: block;
     margin: 20px auto;
+  }
+
+  .title{
+    text-align: center;
+    margin-bottom: 2rem;
   }
