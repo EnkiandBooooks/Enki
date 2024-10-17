@@ -30,7 +30,7 @@ export const routes: Routes = [
   { path:'resetPswd1', component: ResetPswd1Component }, 
   { path:'resetPswd2/:tokenPswd', component: ResetPswd2Component }, 
   { path: 'body', component: BodyComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [loginGuard] },
   { path: 'footer', component:FooterComponent},
   { path: 'policy', component:PolicyComponent}
   /*{ path: '**', redirectTo: '/inicio' }*/ // Ruta comodín para redireccionar a inicio
