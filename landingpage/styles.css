@@ -1,0 +1,90 @@
+/* General styles */
+.landing-page {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+/* Hero section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    background-color: #f5f5f5;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    max-width: 50%;
+}
+
+.image-full {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Dashboard */
+.functionality {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 100px;
+  }
+  #Dashboard {
+    background-color: #d1c5d6;
+  }
+  #hola {
+    background-color: #4c474e;
+  }
+  #adios {
+    background-color: #66576c;
+  }
+  .functionality > div {
+    flex: 1;
+  }
+  
+  .functionality img {
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .functionality h1 {
+    font-size: 2.5rem;
+    margin: 20px;
+    color: #ffffff;
+  }
+  #Dashboard h1 {
+    color: #000000;
+  }
+  .functionality p {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 20px ;
+    text-align: left;
+  }
+  #hola p {
+    color: #ffffff;
+  }
+  #adios p {
+    color: #ffffff;
+  }
+  
+  .functionality button {
+    display: block;
+    margin: 20px auto;
+  }
