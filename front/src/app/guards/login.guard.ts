@@ -9,6 +9,6 @@ export const loginGuard: CanActivateFn = (route, state) => {
   if(cookieService.get('access_token')){
     return true;
   }
-  router.navigate(['/perfil']);
+  router.navigate(['/dashboard']);
   return false;
 };
