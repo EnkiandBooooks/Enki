@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';  
 import { FooterComponent } from './footer/footer.component';
@@ -32,7 +32,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'] 
 })
-export class AppComponent {
+export class AppComponent{
   title = 'enkiweb';
   showHeaderAndBodyAndFooter: boolean = true; // Nueva variable para controlar la visibilidad
 
