@@ -23,6 +23,8 @@
         <button mat-icon-button (click)="drawer.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
+
+        <!--empieza aquí-->
         @if(cookieExists){
           <button mat-icon-button [matMenuTriggerFor]="profileMenu">
             <img [src]="imgUrl" alt="Perfil" class="user-avatar" />
@@ -42,6 +44,7 @@
             <button style="color: red;" mat-menu-item (click)="onLogout()"><mat-icon style="color: red;">logout</mat-icon>Logout</button>
           </mat-menu>
         }
+        <!--termina-->
       </mat-toolbar>
 
       <div class="content-wrapper">
