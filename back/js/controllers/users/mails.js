@@ -39,8 +39,13 @@ export class MailController {
         sendMail(mailUser, numRandom);     // Envía el correo electrónico al usuario con el número aleatorio
 
         const tokenData = {mail: mailUser, codigo: numRandom}
-        const token = AccessRefreshToken.signToken(tokenData, process.env.secret_jwt_key, '1h');        // Genera un token JWT con el correo electrónico y una clave secreta, expira en 1 hora
-        
+        const token = 
+            jwt.sign(
+                {mail: mailUser, 
+                codigo: numRandom}, 
+                process.env.secret_jwt_key, {
+                expiresIn: '1h'
+            })        
         res.status(200).json({ message: "Email recibido.",email_sendcode_token:token}); // ejemplo cookie
     }
     /**
