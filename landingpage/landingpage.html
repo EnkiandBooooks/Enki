@@ -115,7 +115,7 @@
 
             <div class="col">
               <div class="card h-100">
-                <a class="feature-card" href="#Dashboard">
+                <a class="feature-card" href="javascript:void(0);" data-section="#Diverse">
                 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-journal-bookmark" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8"/>
                     <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
@@ -137,7 +137,7 @@
 
             <div class="col">
               <div class="card h-100">
-                <a class="feature-card" href="#Comunity">
+                <a class="feature-card" href="javascript:void(0);" data-section="#Comunity">
                 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-journal-bookmark" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8"/>
                     <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
@@ -159,7 +159,7 @@
 
             <div class="col">
               <div class="card h-100" >
-                <a class="feature-card" href="#Learn">
+                <a class="feature-card" href="javascript:void(0);" data-section="#Learn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-journal-bookmark" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8"/>
                     <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
@@ -182,13 +182,14 @@
 
     <br>
     <br>
+
 <div class="three" data-aos="fade-up">
-  <section id="Dashboard" class="functionality" >
+  <section id="Diverse" class="functionality d-none" data-aos="fade-up">
       <div class="">
           <img src="images/dashboard.png" alt="Dashboard Image">
       </div>
       <div class="">
-          <h1>Dashboard</h1>
+          <h1>Diverse Selection</h1>
           <p>"In a world where knowledge is power, books become the gateway to unlimited growth and discovery. Through the pages of each book, we step into new worlds, understand different perspectives, and expand our horizons. Whether exploring distant galaxies or the intricacies of human emotion.
           <br/>
           <div class="d-flex justify-content-center">
@@ -196,32 +197,26 @@
           </div>
         </div>
       </section>
-      
-      <br>
-    <br>
 
-      <section id="Comunity" class="functionality">
+      <section id="Comunity" class="functionality d-none" data-aos="fade-up">
         <div class="">
           <img src="images/enki2.png">
         </div>
         <div class="">
-          <h1>Dashboard</h1>
+          <h1>Community</h1>
           <p>Discover, share, and grow through the power of books</p>
           <div class="d-flex justify-content-center">
             <a href="/register0" class="btn btn-primary btn-lg">Join Now!</a>
         </div>
         </div>
       </section>
-      
-      <br>
-    <br>
 
-      <section id="Learn" class="functionality" >
+      <section id="Learn" class="functionality d-none" data-aos="fade-up">
         <div class="">
           <img src="images/dashboard.png">
         </div>
         <div>
-          <h1>Dashboard</h1>
+          <h1>Learn & Grow</h1>
           <p>"In a world where knowledge is power, books become the gateway to unlimited growth and discovery. Through the pages of each book, we step into new worlds, understand different perspectives, and expand our horizons. Whether exploring distant galaxies or the intricacies of human emotion.
           <br/>
           <div class="d-flex justify-content-center">
@@ -235,13 +230,43 @@
       
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
       <script>
         AOS.init({
           easing:'ease-out-back',
           duration:1000
       
         });
-        duration:1000
+
+        document.addEventListener('DOMContentLoaded', function () {
+        const cards = document.querySelectorAll('.feature-card');
+        let activeSection = null;
+
+        cards.forEach(card => {
+            card.addEventListener('click', function () {
+                const targetSection = document.querySelector(card.getAttribute('data-section'));
+
+                TweenMax.fromTo(targetSection, 1, {opacity: 0, y: 50}, {opacity: 1, y: 0});
+
+                // Oculta la sección activa actual
+                if (activeSection && activeSection !== targetSection) {
+                    activeSection.classList.add('d-none');
+                }
+
+                // Muestra la nueva sección
+                targetSection.classList.remove('d-none');
+
+                // Actualiza la sección activa
+                activeSection = targetSection;
+
+                // Desplázate suavemente hacia la sección
+                targetSection.scrollIntoView({
+                    behavior: 'smooth', // Para un scroll suave
+                    block: 'start' // Opciones de scroll (inicio de la sección)
+                });
+            });
+        });
+    });
       </script>
 </body>
 </html>
