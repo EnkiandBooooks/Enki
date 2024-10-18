@@ -29,12 +29,12 @@ h3 {
 }
 
 mat-grid-tile {
-  height: 100%;
+  height: 110%;
   display: flex; /* Usar flex para alinear el contenido dentro del tile */
   flex-direction: row; /* Colocar elementos en columna */
   align-items: center; /* Centrar elementos horizontalmente */
   justify-content: flex-start; /* Alinear al principio verticalmente */
-  padding: 10px; /* Espaciado interno opcional */
+  padding: 50px; /* Espaciado interno opcional */
 }
 
 p{

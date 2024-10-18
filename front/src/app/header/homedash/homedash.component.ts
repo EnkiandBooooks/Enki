@@ -6,18 +6,20 @@ import { CommonModule } from '@angular/common';
 import { RestService } from '../../rest.service';
 import { ArrayType } from '@angular/compiler';
 
+
 @Component({
   selector: 'app-homedash',
   templateUrl: './homedash.component.html',
   styleUrls: ['./homedash.component.css'],
   standalone: true,
-  imports: [CommonModule, MatCardModule,MatChipsModule,MatIcon]
+  imports: [CommonModule, MatCardModule,MatChipsModule,MatIcon],
 })
+
+
 export class HomedashComponent implements OnInit {
   arrBooks = signal<any[]>([])
   books: any;
   restService = inject(RestService);
-
   currentIndex = 0;
   cardWidth = 216; // 200px width + 16px margin-right
 
@@ -25,6 +27,10 @@ export class HomedashComponent implements OnInit {
     this.restService.getBooks()
       .subscribe((res) => {
         this.books = res
+        this.books = this.books.map((book: any) => {
+          let rating = book.rating % 1 !== 0 ? parseFloat(book.rating.toFixed(1)) : book.rating;
+          return { ...book, rating };
+        });
       })
   }
 

@@ -21,6 +21,7 @@
     <mat-grid-list cols="6" rowHeight= "250px" gutterSize="50px">
       <mat-grid-tile *ngFor="let book of books | paginate: {itemsPerPage: 18, currentPage: p} ">  <!-- Usamos *ngFor para iterar sobre bookImages -->
         <div class="bookCard">
+          <p>⭐   {{ book.rating }} / 5</p>
           <img [src]="'/images/berserk.jpg'" alt="Imagen del libro" class="book-image" />
           <p>{{book.title}}</p>
         </div>

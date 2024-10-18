@@ -42,14 +42,21 @@ export class LibraryComponent{
   }
 
   loadBook(){
+    
     const searchFilter = (typeof this.search == 'string' && this.search.length > 2) ? `?searchBy=${this.search}` : '?searchBy=';
     const categoryFilter = this.selected.length > 0 ? `&categories=${this.selected.join(',')}` : '&categories=';
     const filter = `${searchFilter}${categoryFilter}`;
     this.restService.getBooksFilter(filter).subscribe(
       (res) => {
         this.books = res;
+        this.books = this.books.map((book: any) => {
+          let rating = book.rating % 1 !== 0 ? parseFloat(book.rating.toFixed(1)) : book.rating;
+          return { ...book, rating };
+        });
       }
+      
     )
+    console.log(this.books)
   }
 
   toggleCategory(event: any, category: string) {
