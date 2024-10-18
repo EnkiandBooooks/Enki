@@ -73,6 +73,6 @@ export class DashboardComponent {
     this.cookieService.delete('refresh_token');
 
     // Redirige al usuario a la página de inicio
-    window.location.href = '../landingpage/landing-page.html';
+    window.location.href = '../landingpage/landingpage.html';
   }
 }
