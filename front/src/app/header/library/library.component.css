@@ -21,13 +21,11 @@
 
 .categoryButtons{
   display: flex;
-  align-items: flex-start;
   align-items: center;
   justify-content: center;
   height: max-content;
   width: max-content;
   border: none;
-  margin-right: 3em;
 }
 
 .categoryButton {
