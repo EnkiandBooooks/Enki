@@ -40,12 +40,13 @@
 
 /* Dashboard */
 .functionality {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 100px;
-  }
-  #Dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px; /* Espaciado superior para separar de las cartas */
+  margin-bottom: 50px; /* Espaciado inferior */
+}
+  #Diverse {
     background-color: #d1c5d6;
   }
   #Comunity {
@@ -68,7 +69,7 @@
     margin: 20px;
     color: #ffffff;
   }
-  #Dashboard h1 {
+  #Diverse h1 {
     color: #000000;
   }
   .functionality p {
