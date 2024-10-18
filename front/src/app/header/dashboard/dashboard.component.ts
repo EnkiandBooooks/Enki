@@ -73,6 +73,6 @@ export class DashboardComponent {
     this.cookieService.delete('refresh_token');
 
     // Redirige al usuario a la página de inicio
-    this.router.navigate(['/']);  // Redirige a localhost:4200
+    window.location.href = '../landingpage/landing-page.html';
   }
 }
