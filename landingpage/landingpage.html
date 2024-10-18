@@ -13,13 +13,13 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <section class="landing-page">
-    <div data-aos="zoom-in" data-aos-delay="4000" class="hero-section"> <!-- Espera 4 segundos antes de animar -->
+    <div data-aos="fade-right" data-aos-delay="4000" class="hero-section"> <!-- Espera 4 segundos antes de animar -->
       <div class="hero-content">
         <h1>Welcome to Enki</h1>
         <p>Discover, share, and grow through the power of books</p>
         <a href="/register0" class="btn btn-primary btn-lg">Join Now!</a>
       </div>
-      <div class="hero-image">
+      <div class="hero-image" data-aos="fade-up">
         <img src="images/enki.png" alt="Group of people reading" class="image-full">
       </div>
     </div>
@@ -30,7 +30,7 @@
     <br>
 
     <h2 class="title">Why Join Our Reading Group?</h2>
-      <section class="carousel d-flex justify-content-center" data-aos="fade-up">
+      <section class="carousel d-flex justify-content-center" data-aos="slide-left"> <!-- primer caruousel-->
         <div id="carousel_indv" class="carousel slide w-75" data-bs-touch="false">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -58,7 +58,7 @@
     <br>
 
     <section class="carousel_dobles d-flex justify-content-center flex-row gap-4">
-        <div id="carousel_doble1" class="carousel slide w-75" data-bs-touch="false">
+        <div id="carousel_doble1" class="carousel slide w-75" data-bs-touch="false"  data-aos="zoom-in-left"> <!-- primer carousel doble-->
             <h2 class="title">Featured Books</h2>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -81,7 +81,7 @@
             </button>
         </div>
 
-        <div id="carousel_doble2" class="carousel slide w-75" data-bs-touch="false">
+        <div id="carousel_doble2" class="carousel slide w-75" data-bs-touch="false"   data-aos="flip-right">  <!-- segundo carousel doble-->
             <h2 class="title">Featured Communities</h2>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -158,7 +158,7 @@
             <br>
 
             <div class="col">
-              <div class="card h-100">
+              <div class="card h-100" >
                 <a class="feature-card" href="#Learn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-journal-bookmark" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8"/>
@@ -182,8 +182,8 @@
 
     <br>
     <br>
-
-  <section id="Dashboard" class="functionality">
+<div class="three" data-aos="fade-up">
+  <section id="Dashboard" class="functionality" >
       <div class="">
           <img src="images/dashboard.png" alt="Dashboard Image">
       </div>
@@ -216,7 +216,7 @@
       <br>
     <br>
 
-      <section id="Learn" class="functionality">
+      <section id="Learn" class="functionality" >
         <div class="">
           <img src="images/dashboard.png">
         </div>
@@ -229,7 +229,7 @@
           </div>
         </div>
       </section>
-    
+    </div>
 
       <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> <!--Script para que el carrousel sea animado-->
       
