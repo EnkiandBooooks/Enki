@@ -7,6 +7,38 @@
   margin: 0px;
 }
 
+.findContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.searchBar {
+  width: 40%;
+}
+
+.categoryButtons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: max-content;
+  width: max-content;
+  border: none;
+}
+
+.categoryButton {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.06);
+  border: 1px solid gray;
+  margin: 0 5px;
+}
+
 .home-content {
   width: 100%;
   height: 100%;
@@ -29,16 +61,17 @@ h3 {
 }
 
 mat-grid-tile {
-  height: 110%;
+  width: max-content;
   display: flex; /* Usar flex para alinear el contenido dentro del tile */
   flex-direction: row; /* Colocar elementos en columna */
   align-items: center; /* Centrar elementos horizontalmente */
   justify-content: flex-start; /* Alinear al principio verticalmente */
-  padding: 50px; /* Espaciado interno opcional */
 }
 
-p{
+.tittle{
+  width: 70%;
 color: black;
+text-align: center;
 }
 
 .bookCard{
@@ -47,10 +80,31 @@ color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+}
+img {
+  height: 250px; /*  altura para la imagen */
+  /* object-fit: absolute; Mantener la proporción de la imagen y cubrir el área del tile */
 }
 .categories {
   display: flex;
-  gap: 10px;
+  /* gap: 10px; */
   flex-wrap: wrap;
-  margin: 20px 0;
+  align-items: center;
+  justify-content: center;
+  /* margin: 20px 0; */
+  height: 100%;
+}
+
+.textBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+pagination-controls{
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
 }
