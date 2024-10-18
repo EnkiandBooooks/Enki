@@ -10,6 +10,7 @@
         <mat-card *ngFor="let book of books; let i = index" class="movie-card">
           <mat-card-header>
             <mat-card-subtitle>{{ book.title }}</mat-card-subtitle>
+            <mat-card-subtitle>⭐   {{ book.rating }} / 5</mat-card-subtitle>
           </mat-card-header>
           <img mat-card-image [src]="'/images/naruto.jpg'" [alt]="book.title">
         </mat-card>
