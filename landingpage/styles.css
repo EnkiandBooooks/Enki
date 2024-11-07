@@ -1,8 +1,17 @@
+
+body{
+  overflow-x: hidden;
+ 
+}
+.paddings_lados{
+  padding: 10px;
+}
 /* General styles */
 .landing-page {
     font-family: 'Roboto', sans-serif;
     color: #333;
 }
+
 
 /* Hero section */
 .hero-section {
