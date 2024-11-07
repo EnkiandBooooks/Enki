@@ -151,6 +151,8 @@ mat-card-actions button:hover {
   transition: background-color 0.3s ease; /* Transición suave */
 }
 
+
+
 .button-container button:hover {
   background-color: #7d5e7d; /* Cambiar el fondo al pasar el cursor */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
