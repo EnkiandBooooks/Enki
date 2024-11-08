@@ -10,7 +10,7 @@ export const notExitGuard: CanDeactivateFn<unknown> = (component, currentRoute, 
   console.log(currentRoute.url[0].path)
   if((currentRoute.url[0].path === 'register1' && nextState.url === '/register2') ||
     (currentRoute.url[0].path === 'register2' && nextState.url === '/register3') || 
-    (currentRoute.url[0].path === 'register3' && nextState.url === '/')) {
+    (currentRoute.url[0].path === 'register3' && nextState.url === '/register0')) {
       return true;
   }
 
