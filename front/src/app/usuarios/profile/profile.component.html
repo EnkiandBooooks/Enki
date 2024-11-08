@@ -6,7 +6,7 @@
   <mat-card class="profile-card">
     <mat-card-content>
       <!-- Formulario de inicio de sesión -->
-      <form (ngSubmit)="onSubmit()">
+      <form (ngSubmit)="onSubmit()" ngNativeValidate>
         <!-- Campo para el nombre de usuario -->        
         <span>Username</span>
         @if (edit){
