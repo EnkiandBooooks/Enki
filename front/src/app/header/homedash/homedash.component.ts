@@ -27,6 +27,7 @@ export class HomedashComponent implements OnInit {
     this.restService.getBooks()
       .subscribe((res) => {
         this.books = res
+        console.log(this.books)
         this.books = this.books.map((book: any) => {
           let rating = book.rating % 1 !== 0 ? parseFloat(book.rating.toFixed(1)) : book.rating;
           return { ...book, rating };
