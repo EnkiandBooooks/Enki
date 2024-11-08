@@ -3,7 +3,7 @@
     <img src="images/enki2.png" alt="Logo" class="login-logo">   
     <mat-card class="password-card">
       <mat-card-title>Cambio de contraseña</mat-card-title>
-      <form (ngSubmit)="onSubmit()">
+      <form (ngSubmit)="onSubmit()" ngNativeValidate>
         <mat-form-field appearance="fill">
           <mat-label>Nueva Contraseña</mat-label>
           <input matInput type="password" id="newPassword" [(ngModel)]="newPassword" name="newPassword" required minlength="8">
