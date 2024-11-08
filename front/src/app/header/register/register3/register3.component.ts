@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
@@ -9,18 +9,19 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RestService } from '../../../rest.service';
 import { CookieService } from 'ngx-cookie-service';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-register3',
   standalone: true,
   imports: [
-    RouterOutlet,
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIcon
   ],
   templateUrl: './register3.component.html',
   styleUrls: ['./register3.component.css']
@@ -31,6 +32,19 @@ export class Register3Component {
   confirmPassword: string = '';
 
   constructor(private router: Router, private restService:RestService, private cookieService: CookieService) {}
+  //Código para gestionar botones de mostrar contraseña
+  hide1 = signal(true);
+  clickEvent1(event: MouseEvent) {
+    this.hide1.set(!this.hide1());
+    event.stopPropagation();
+  }
+  hide2 = signal(true);
+  clickEvent2(event: MouseEvent) {
+    this.hide2.set(!this.hide2());
+    event.stopPropagation();
+  }
+
+
 
   sendData(userName:string, passWord:string):void{
     const cookie = this.cookieService.get('email_sendcode_token');

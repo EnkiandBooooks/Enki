@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
@@ -30,7 +30,11 @@ export class Register0Component {
 
   constructor(private router: Router, private restService:RestService, private cookieService:CookieService, private snackBar:MatSnackBar) {
   }
-
+  hide = signal(true);
+  clickEvent(event: MouseEvent) {
+    this.hide.set(!this.hide());
+    event.stopPropagation();
+  }
   onSubmit() {
     // Aquí puedes validar el login o enviar los datos a un servicio
     console.log('Username:', this.username);
@@ -75,7 +79,6 @@ export class Register0Component {
           panelClass: ['error-snackbar'] // Clase CSS personalizada para error
         });
       }
-      
       
       
   }); 

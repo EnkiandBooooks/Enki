@@ -15,7 +15,17 @@
           <!-- Campo para la contraseña -->
           <mat-form-field class="full-width">
             <mat-label>Password</mat-label>
-            <input matInput type="password" [(ngModel)]="password" name="password" required>
+            <input matInput [type]="hide() ? 'password' : 'text'"  [(ngModel)]="password" name="password"  required minlength="8"/>
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="clickEvent($event)"
+              [attr.aria-label]="'Hide password'"
+              type="button"
+              [attr.aria-pressed]="hide()"
+            >
+              <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
           </mat-form-field>
   
           <!-- Botón para iniciar sesión -->
