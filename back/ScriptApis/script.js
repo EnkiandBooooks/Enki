@@ -5,7 +5,7 @@ import fs from "fs";
 import readline from "readline";
 import { franc } from "franc";
 import "dotenv/config";
-
+import sharp from "sharp";
 
 const abecedario = 'abcdefghijklmnopqrstuvwxyz';
 
@@ -14,6 +14,9 @@ const abecedario = 'abcdefghijklmnopqrstuvwxyz';
 *Si la api funciona correctamente y hay resultados devuelve un json con los libros, estos se formatean en una lista objetos jsvascript con los datos que interesan.
 *Si la api no funciona correctamente se devuelve null.
 */
+
+//FUNCION PARA RECOGER LOS LIBROS CON GOOGLE BOOKS
+
 // async function recogerLibrosAPI(query,maxResultados) {
   
 //   const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=${maxResultados}&orderBy=relevance&printType=books&filter=ebooks&projection=full&langRestrict=es&key=${process.env.API_KEY}`;
@@ -33,22 +36,29 @@ async function recogerLibrosAPI(query, maxResultados) {
   const url = `https://openlibrary.org/search.json?q=${query}&limit=${maxResultados}&language:en`;
   const response = await axios.get(url);
 
-  return response.data.docs
-  .filter(book => 
-    book.title && 
-    book.author_name &&
-    Array.isArray(book.publish_date) && 
-    book.publish_date.length > 0 &&
-    Array.isArray(book.first_sentence)  &&
-    enDescription(book.first_sentence) &&
-    book.number_of_pages_median > 0 &&
-    book.ratings_average &&
-    Array.isArray(book.isbn) &&
-    book.isbn.length > 0 &&
-    Array.isArray(book.subject) &&
-    book.subject.length > 0
-  )
-  .map(book => ({
+  const books = await Promise.all(
+    response.data.docs.map(async (book) => {
+      const isValidBook =
+        book.title &&
+        book.author_name &&
+        Array.isArray(book.publish_date) &&
+        book.publish_date.length > 0 &&
+        Array.isArray(book.first_sentence) &&
+        enDescription(book.first_sentence) &&
+        book.number_of_pages_median > 0 &&
+        book.ratings_average &&
+        Array.isArray(book.isbn) &&
+        book.isbn.length > 0 &&
+        Array.isArray(book.subject) &&
+        book.subject.length > 0 &&
+        (await hasImage(book.isbn[0]));
+
+      return isValidBook ? book : null;
+    })
+  );
+  return books
+    .filter(Boolean)
+    .map((book) => ({
       title: book.title,
       authors: book.author_name,
       publishedDate: book.publish_date[0],
@@ -58,26 +68,31 @@ async function recogerLibrosAPI(query, maxResultados) {
       rating: book.ratings_average,
       isbn: book.isbn[0],
       thumbnail: `https://covers.openlibrary.org/b/isbn/${book.isbn[0]}-S.jpg`,
-      largeThumbnail: `https://covers.openlibrary.org/b/isbn/${book.isbn[0]}-L.jpg`
-  }));
+      largeThumbnail: `https://covers.openlibrary.org/b/isbn/${book.isbn[0]}-L.jpg`,
+    }));
 };
 function enDescription(sentences){
   const onlyLanguages = ['sco', 'ulst', 'eng'];
-
   const text = sentences.map(language => franc(language));
-  const enIndex = text.findIndex(sentence => onlyLanguages.includes(sentence));
-  return sentences[enIndex];
+  const enIndex = text.findIndex(lang => onlyLanguages.includes(lang));
+  return enIndex !== -1 ? sentences[enIndex] : null;
 }
-// if (Array.isArray(book.first_sentence)) {
-//   englishSentence = book.first_sentence.find(sentence => franc(sentence) === 'eng') || "Sin descripción";
-// } else if (typeof book.first_sentence === "string") {
-//   // Si `first_sentence` es una cadena, se detecta directamente
-//   englishSentence = franc(book.first_sentence) === 'eng' ? book.first_sentence : "Sin descripción";
-// }
-/**
-* A partir de una lista de objetos de los libros se mueven a la colección obras de la base de datos applibros de mongodb.
-* Se comprueba también antes de añadir un libro si ya existe en la base de dtos para evitar duplicidades
-*/
+async function hasImage(isbn, minWidth = 250, minHeight = 250) {
+  const link = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
+  try {
+    const response = await axios({
+      url: link,
+      responseType: "arraybuffer",
+    });
+    const image = sharp(response.data);
+    const metadata = await image.metadata();
+
+    return metadata.width >= minWidth && metadata.height >= minHeight;
+  } catch (error) {
+    return false;
+  }
+}
+
 async function moverLibroDB(books) {
   try {
     await connectDB();

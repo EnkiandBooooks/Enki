@@ -14,6 +14,7 @@
     "dotenv": "^16.4.5",
     "franc": "^6.2.0",
     "mongodb": "^6.8.0",
-    "scriptapis": "file:"
+    "scriptapis": "file:",
+    "sharp": "^0.33.5"
   }
 }
