@@ -6,3 +6,6 @@ back/js/img/img_profile/**
 
 back/js/img/img_profile_cut/**
 !back/js/img/img_profile_cut/.gitkeep
+!back/js/img/img_profile_cut/icon_default.jpg
+!back/js/img/img_profile_cut/icon_default.png
+!back/js/img/img_profile_cut/icon_default.jpeg
