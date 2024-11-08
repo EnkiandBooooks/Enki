@@ -68,7 +68,7 @@ export class Register0Component {
           
         }
       },
-      error: (err) => {
+      error: () => {
         this.snackBar.open('No se encuentra el nombre de usuario o la contraseña es incorrecta', 'Cerrar', {
           duration: 3000, // 3 segundos
           panelClass: ['error-snackbar'] // Clase CSS personalizada para error
