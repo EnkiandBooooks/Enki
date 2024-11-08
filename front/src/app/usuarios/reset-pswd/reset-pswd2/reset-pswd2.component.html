@@ -4,14 +4,40 @@
     <mat-card class="password-card">
       <mat-card-title>Cambio de contraseña</mat-card-title>
       <form (ngSubmit)="onSubmit()" ngNativeValidate>
+
+
         <mat-form-field appearance="fill">
-          <mat-label>Nueva Contraseña</mat-label>
-          <input matInput type="password" id="newPassword" [(ngModel)]="newPassword" name="newPassword" required minlength="8">
+          <mat-label>New Password</mat-label>
+          <input matInput [type]="hide1() ? 'password' : 'text'" id="newPassword" [(ngModel)]="newPassword" name="newPassword" required  minlength="8"/>
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="clickEvent1($event)"
+            [attr.aria-label]="'Hide password'"
+            type="button"
+            [attr.aria-pressed]="hide1()"
+          >
+            <mat-icon>{{hide1() ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
         </mat-form-field>
+
         <mat-form-field appearance="fill">
-          <mat-label>Repetir Nueva Contraseña</mat-label>
-          <input matInput type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" #emailInput required>
+          <mat-label>Confirm New Password</mat-label>
+          <input matInput [type]="hide2() ? 'password' : 'text'" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" #emailInput required  minlength="8"/>
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="clickEvent2($event)"
+            [attr.aria-label]="'Hide password'"
+            type="button"
+            [attr.aria-pressed]="hide2()"
+          >
+            <mat-icon>{{hide2() ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
         </mat-form-field>
+
+
+
         <div class="button-container">
         <button mat-raised-button color="primary" type="submit">Cambiar Contraseña</button>
       </div>
