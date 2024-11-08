@@ -6,7 +6,7 @@
   <mat-card class="profile-card">
     <mat-card-content>
       <!-- Formulario de inicio de sesión -->
-      <form (ngSubmit)="onSubmit()">
+      <form (ngSubmit)="onSubmit()" ngNativeValidate>
         <!-- Campo para el nombre de usuario -->        
         <span>Username</span>
         @if (edit){
@@ -28,13 +28,12 @@
         <p>{{arrUsr().mail}}</p>
         }
         <!-- Campo para la contraseña -->
-        <span>Password</span>
-        @if (edit){
-          <mat-card-actions>
+        
+        @if (!edit){
+          <span>Password</span>
+          <mat-card-actions style="justify-content: left; margin: 0; padding: 0;">
             <button mat-button color="accent" (click)="goToResetPwd()">Recover password</button> <!--(click)="recoverPass()"-->
           </mat-card-actions>
-        }@else{
-        <p>********</p>
         }
 
         @if (edit){

@@ -40,12 +40,12 @@ async function recogerLibrosAPI(query, maxResultados) {
     Array.isArray(book.publish_date) && 
     book.publish_date.length > 0 &&
     Array.isArray(book.first_sentence)  &&
-    book.first_sentence.length > 0 &&
+    enDescription(book.first_sentence) &&
     book.number_of_pages_median > 0 &&
     book.ratings_average &&
-    Array.isArray(book.isbn) && 
+    Array.isArray(book.isbn) &&
     book.isbn.length > 0 &&
-    Array.isArray(book.subject) && 
+    Array.isArray(book.subject) &&
     book.subject.length > 0
   )
   .map(book => ({
@@ -61,12 +61,12 @@ async function recogerLibrosAPI(query, maxResultados) {
       largeThumbnail: `https://covers.openlibrary.org/b/isbn/${book.isbn[0]}-L.jpg`
   }));
 };
-async function enDescription(sentences){
-  let description = "Sin descripción";
-  if (sentences){
-    description = sentences.find(sentence => franc(sentence) === 'eng');
-  }
-  return description;
+function enDescription(sentences){
+  const onlyLanguages = ['sco', 'ulst', 'eng'];
+
+  const text = sentences.map(language => franc(language));
+  const enIndex = text.findIndex(sentence => onlyLanguages.includes(sentence));
+  return sentences[enIndex];
 }
 // if (Array.isArray(book.first_sentence)) {
 //   englishSentence = book.first_sentence.find(sentence => franc(sentence) === 'eng') || "Sin descripción";
