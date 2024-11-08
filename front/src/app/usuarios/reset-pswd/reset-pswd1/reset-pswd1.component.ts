@@ -19,7 +19,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-reset-pswd1',
   standalone: true,
-  imports: [ RouterOutlet,
+  imports: [ 
     MatButtonModule,
     MatToolbarModule,MatButtonModule,
     MatIconModule, CommonModule, FormsModule,
