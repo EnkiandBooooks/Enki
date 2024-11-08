@@ -5,7 +5,6 @@ import { deleteFolder } from "../img/delete.js";
 /**
  * Recorta y redimensiona una imagen de perfil a 100x100 píxeles y la guarda en una nueva ruta.
  * 
- * @param {string} img - La ruta o el nombre de archivo de la imagen de entrada.
  * @param {string} find - El nombre de archivo de la imagen procesada (para rutas de entrada y salida).
  * @returns {void}
  * 
@@ -15,7 +14,7 @@ import { deleteFolder } from "../img/delete.js";
  */
 
 
-export function cuttImgProfile(img, find) {
+export function cuttImgProfile(find) {
     const imgPath = `img/img_profile/${find}`; 
     const outputPath = `img/img_profile_cut/${find}`; 
 
