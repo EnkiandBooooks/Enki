@@ -57,7 +57,7 @@
                 <img class="editImg" src="images/edit.png" alt="Editar imagen de perfil">
                 <img class="profilePicture"[src]="imgUrl" alt="Imagen de perfil">
               </label>
-                <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+                <input type="file" (change)="onFileSelected($event)" accept="image/png" />
             </div>
           }@else{
             <div class="avatarNoEdit">
