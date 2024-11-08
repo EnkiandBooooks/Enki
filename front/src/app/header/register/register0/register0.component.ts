@@ -49,6 +49,7 @@ export class Register0Component {
     this.restService.LogIn(body).subscribe({
 
       next: (res) => {
+        //TODO: Mirar otra forma más segura si es demasiado vulnerable
         if(res.resultado === "Usuario Correcto"){
           
           //Guardar cookies
