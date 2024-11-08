@@ -46,28 +46,39 @@ export class Register0Component {
 
   sendData(username: string, password: string): void {
     const body = { usr: username, pwd:password  };
-    this.restService.LogIn(body).subscribe((res) => {
-      if(res.resultado === "Usuario Correcto"){
+    this.restService.LogIn(body).subscribe({
+
+      next: (res) => {
+        //TODO: Mirar otra forma más segura si es demasiado vulnerable
+        if(res.resultado === "Usuario Correcto"){
           
-        //Guardar cookies
-        console.log(res.accessToken);
-        this.cookieService.set('access_token', res.accessToken);
-        this.cookieService.set('refresh_token', res.refreshToken);
-        this.router.navigate(['/dashboard']);
-        this.snackBar.open('Sesión iniciada con éxito', 'Cerrar', {
-          duration: 3000, // 3 segundos
-          panelClass: ['success-snackbar'] // Clase CSS personalizada para error
-        });
-      }else{
-        this.snackBar.open('No se encuentra el correo o la contraseña es incorrecta', 'Cerrar', {
+          //Guardar cookies
+          console.log(res.accessToken);
+          this.cookieService.set('access_token', res.accessToken);
+          this.cookieService.set('refresh_token', res.refreshToken);
+          this.router.navigate(['/dashboard']);
+          this.snackBar.open('Sesión iniciada con éxito', 'Cerrar', {
+            duration: 3000, // 3 segundos
+            panelClass: ['success-snackbar'] // Clase CSS personalizada para error
+          });
+        }else{
+          this.snackBar.open('No se encuentra el nombre de usuario o la contraseña es incorrecta', 'Cerrar', {
+            duration: 3000, // 3 segundos
+            panelClass: ['error-snackbar'] // Clase CSS personalizada para error
+          });
+          
+        }
+      },
+      error: () => {
+        this.snackBar.open('No se encuentra el nombre de usuario o la contraseña es incorrecta', 'Cerrar', {
           duration: 3000, // 3 segundos
           panelClass: ['error-snackbar'] // Clase CSS personalizada para error
         });
-        
       }
-      console.log(res);
       
-    }); 
+      
+      
+  }); 
   }
 
 
