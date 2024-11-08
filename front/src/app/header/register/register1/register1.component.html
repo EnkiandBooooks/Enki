@@ -4,7 +4,7 @@
   <mat-card class="login-card">
     <!-- MatCardContent para envolver el contenido principal del formulario -->
     <mat-card-content>
-      <form (ngSubmit)="onSubmit(emailInput.value)">
+      <form (ngSubmit)="onSubmit(emailInput.value)" ngNativeValidate>
         <!-- MatFormField crea un contenedor de campo de formulario que es estilizado por Angular Material -->
         <mat-form-field class="full-width">
           <!-- MatLabel define la etiqueta del campo (lo que aparece dentro de la caja) -->
