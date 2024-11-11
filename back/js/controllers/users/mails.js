@@ -3,6 +3,7 @@ import 'dotenv/config';
 import { sendMail } from "../../utils/enviarmail.js"; // Importa la función EnviarMail
 import { getNumRandom } from "../../utils/random.js"; // Importa la función getNumRandom
 import { getMailSchema, verifyCodeSchema } from '../../schema/mail.js';
+import { AccessRefreshToken } from '../../utils/refreshAccessToken.js';
 
 /**
  * Clase MailController para gestionar operaciones relacionadas con el manejo de correos electrónicos.
@@ -10,7 +11,7 @@ import { getMailSchema, verifyCodeSchema } from '../../schema/mail.js';
  * @class MailController
  */
 export class MailController {
-      /**
+    /**
      * Valida la estructura del correo electrónico enviado, genera un código aleatorio, lo envía por correo electrónico 
      * y devuelve un token JWT que contiene el correo electrónico y el código de verificación.
      * 
@@ -34,20 +35,17 @@ export class MailController {
             return res.status(400).json({ resultado: validation.error.errors[0].message });
         }
         const mailUser = req.body.email;
-
-        
-
         const numRandom = getNumRandom();       // Genera un número aleatorio
         sendMail(mailUser, numRandom);     // Envía el correo electrónico al usuario con el número aleatorio
 
-        const token = jwt.sign({         // Genera un token JWT con el correo electrónico y una clave secreta, expira en 1 hora
-            mail: mailUser,
-            codigo: numRandom
-            }, 
-            process.env.secret_jwt_key, {
-            expiresIn: '1h'
-            })
-        
+        const tokenData = {mail: mailUser, codigo: numRandom}
+        const token = 
+            jwt.sign(
+                {mail: mailUser, 
+                codigo: numRandom}, 
+                process.env.secret_jwt_key, {
+                expiresIn: '1h'
+            })        
         res.status(200).json({ message: "Email recibido.",email_sendcode_token:token}); // ejemplo cookie
     }
     /**

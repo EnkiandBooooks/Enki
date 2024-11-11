@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';  
-import { FooterComponent } from './footer/footer.component';
-import { BodyComponent } from './body/body.component';
+import { HeaderComponent } from './shared/components/header/header.component';  
+import { FooterComponent } from './shared/components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -20,7 +19,6 @@ import { CommonModule } from '@angular/common';
     RouterOutlet,
     HeaderComponent,
     FormsModule,
-    BodyComponent,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
@@ -45,19 +43,19 @@ export class AppComponent {
 
       // Ocultar header y body en rutas específicas o que empiezan con /resetPswd2
       this.showHeaderAndBodyAndFooter = ![
-        '/register0',     // Ruta para el registro inicial
-        '/register1',     // Ruta de registro paso 1
-        '/register2',     // Ruta de registro paso 2
-        '/register3',     // Ruta de registro paso 3
+        '/auth/login',     // Ruta para el registro inicial
+        '/auth/register1',     // Ruta de registro paso 1
+        '/auth/register2',     // Ruta de registro paso 2
+        '/auth/register3',     // Ruta de registro paso 3
         '/dashboard',     // Ruta del dashboard
-        '/perfil',        // Ruta del perfil del usuario
-        '/policy',        // Ruta de la política de privacidad
-        '/resetPswd1'     // Ruta de recuperación de contraseña paso 1
-      ].includes(event.url) && !event.url.startsWith('/resetPswd2'); // Oculta en rutas dinámicas /resetPswd2
+        '/auth/perfil',        // Ruta del perfil del usuario
+        '/shared/footer/policy',        // Ruta de la política de privacidad
+        '/auth/resetPswd1'     // Ruta de recuperación de contraseña paso 1
+      ].includes(event.url) && !event.url.startsWith('/auth/resetPswd2'); // Oculta en rutas dinámicas /resetPswd2
     });
   }
 
   onClick() {
-    this.router.navigate(['/register1']); // Usar ruta absoluta
+    this.router.navigate(['/auth/register1']); // Usar ruta absoluta
   }
 }

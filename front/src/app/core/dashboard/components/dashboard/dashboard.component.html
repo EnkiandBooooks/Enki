@@ -1,0 +1,72 @@
+<div class="dashboard-container">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer mode="side" opened>
+      <div class="sidebar-logo">
+        <img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Logo" class="sidebar-logo-img">
+      </div>
+      <mat-nav-list>
+        <mat-list-item>
+          <a mat-button class="nav-button" href="#" (click)="showSection('home'); $event.preventDefault()">Home</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a mat-button class="nav-button" href="#" (click)="showSection('library'); $event.preventDefault()">Library</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a mat-button class="nav-button" href="#">Settings</a>
+        </mat-list-item>
+        
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content-area">
+      <mat-toolbar color="primary" class="toolbar">
+        <button mat-icon-button (click)="drawer.toggle()">
+          &nbsp;<mat-icon>menu</mat-icon>&nbsp;
+        </button>
+
+        <!--empieza aquí-->
+        @if(cookieExists){
+          <button mat-icon-button [matMenuTriggerFor]="profileMenu">
+            <img [src]="imgUrl" alt="Perfil" class="user-avatar" />
+          </button>        
+  
+          <mat-menu #profileMenu="matMenu" class="profile-menu">
+            <div class="profile-header">
+              <img [src]="imgUrl" alt="Foto del usuario" class="user-avatar-large" />
+              <div class="profile-info">
+                <span class="user-name">{{arrUsr().user}}</span>
+                <span class="user-email">{{arrUsr().mail}}</span>
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="showSection('perfil')"><mat-icon>person</mat-icon>My Profile</button>
+            <mat-divider></mat-divider>
+            <button style="color: red;" mat-menu-item (click)="onLogout()"><mat-icon style="color: red;">logout</mat-icon>Logout</button>
+          </mat-menu>
+        }
+        <!--termina-->
+      </mat-toolbar>
+
+      <div class="content-wrapper">
+        <ng-container *ngIf="selectedSection === 'home'">
+          <div>
+            <app-homedash></app-homedash>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="selectedSection === 'perfil'">
+          <div>
+            <app-profile></app-profile>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="selectedSection === 'library'">
+          <div>
+            <app-library></app-library>
+          </div>
+        </ng-container>
+
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

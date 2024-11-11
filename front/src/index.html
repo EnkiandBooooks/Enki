@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>EnkiWeb</title>
+  <title>EnkiApp</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -11,5 +11,12 @@
 </head>
 <body class="mat-typography">
   <app-root></app-root>
+
+  <script>
+    // Redirigir solo si estamos en la raíz
+    if (window.location.pathname === '/') {
+      window.location.href = '/landingpage/landingpage.html';
+    }
+  </script>
 </body>
 </html>
