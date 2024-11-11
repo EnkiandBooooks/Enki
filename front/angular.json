@@ -23,7 +23,12 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public",
+                "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "../landingpage",
+                "output": "/landingpage"
               }
             ],
             "styles": [

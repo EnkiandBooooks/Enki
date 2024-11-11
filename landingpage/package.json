@@ -1,0 +1,17 @@
+{
+  "name": "landingpage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "boostrap": "^2.0.0",
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {},
+  "description": ""
+}

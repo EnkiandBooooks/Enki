@@ -11,65 +11,65 @@ export class RestService {
   cookieService = inject(CookieService)
   constructor(private http: HttpClient) { }
 
-  enviarMail(body: any):Observable<any>{
-    console.log("Función para enviar correo.")
-    return this.http.post(`http://localhost:1234/users/mail/`, body)
-  }
+  // enviarMail(body: any):Observable<any>{
+  //   console.log("Función para enviar correo.")
+  //   return this.http.post(`http://localhost:1234/users/mail/`, body)
+  // }
 
-  comprobarCodigo(body: any):Observable<any> {
-    console.log("Función para comprobar codigos.")
-    return this.http.post(`http://localhost:1234/users/mail/codigo/`, body)
-  }
+  // comprobarCodigo(body: any):Observable<any> {
+  //   console.log("Función para comprobar codigos.")
+  //   return this.http.post(`http://localhost:1234/users/mail/codigo/`, body)
+  // }
 
-  sendData(body: any):Observable<any>{
-    console.log(body)
-    return this.http.post(`http://localhost:1234/users/register/`, body)
-  }
+  // sendData(body: any):Observable<any>{
+  //   console.log(body)
+  //   return this.http.post(`http://localhost:1234/users/register/`, body)
+  // }
 
-  getData():Observable<any>{
+  // getData():Observable<any>{
 
-      return this.http.get(`http://localhost:1234/users/data/`);
+  //     return this.http.get(`http://localhost:1234/users/data/`);
     
-  }
-  postData(body:any):Observable<any>{
+  // }
+  // postData(body:any):Observable<any>{
 
-    return this.http.post(`http://localhost:1234/users/data/`,body);
+  //   return this.http.post(`http://localhost:1234/users/data/`,body);
   
-  }
+  // }
 
-  LogIn(body: any):Observable<any>{
-    console.log("Función para logearte.")
-    return this.http.post(`http://localhost:1234/users/login/`, body)
-  }
+  // LogIn(body: any):Observable<any>{
+  //   console.log("Función para logearte.")
+  //   return this.http.post(`http://localhost:1234/users/login/`, body)
+  // }
 
-  resetPswd(body: any):Observable<any>{
-    console.log("Función para rehacer correo.")
-    return this.http.post(`http://localhost:1234/users/resetPswd/`, body)
-  }
+  // resetPswd(body: any):Observable<any>{
+  //   console.log("Función para rehacer correo.")
+  //   return this.http.post(`http://localhost:1234/users/resetPswd/`, body)
+  // }
 
-  resetPswd3(body: any, token: string): Observable<any> {
-    console.log("Función cambiar contraseña.");
-    return this.http.post(`http://localhost:1234/users/resetPswd/${token}`, body);
-  }
+  // resetPswd3(body: any, token: string): Observable<any> {
+  //   console.log("Función cambiar contraseña.");
+  //   return this.http.post(`http://localhost:1234/users/resetPswd/${token}`, body);
+  // }
 
-  refreshToken() {
-    const refresh_token = this.getRefreshToken();
-    const body = {refreshToken: refresh_token};
-    return this.http.post<any>(`http://localhost:1234/users/refresh`, body);
-  }
+  // refreshToken() {
+  //   const refresh_token = this.getRefreshToken();
+  //   const body = {refreshToken: refresh_token};
+  //   return this.http.post<any>(`http://localhost:1234/users/refresh`, body);
+  // }
 
-  getAccesToken() {
-    return this.cookieService.get("access_token");
-  }
+  // getAccesToken() {
+  //   return this.cookieService.get("access_token");
+  // }
 
-  getRefreshToken() {
-    return this.cookieService.get("refresh_token");
-  }
+  // getRefreshToken() {
+  //   return this.cookieService.get("refresh_token");
+  // }
 
-  getBooks() {
-    return firstValueFrom(
-      this.http.get<any[]>(`http://localhost:1234/books`)
-    )
-  }
+  // getBooks() {
+  //   return firstValueFrom(
+  //     this.http.get<any[]>(`http://localhost:1234/books`)
+  //   )
+  // }
 }
 
