@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms'; // Para trabajar con ngModel
 import { MatCardModule } from '@angular/material/card'; // Importa MatCardModule
 import { MatFormFieldModule } from '@angular/material/form-field'; // Importar MatFormFieldModule
 import { MatFormField } from '@angular/material/form-field';
-import { RestService } from '../../../../rest.service';
 import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '../../services/auth.service';
@@ -20,7 +19,7 @@ import { AuthService } from '../../services/auth.service';
   imports: [MatButtonModule, 
     MatToolbarModule,MatButtonModule, 
     MatIconModule, CommonModule, FormsModule,
-     MatCardModule, MatFormFieldModule, 
+    MatCardModule, MatFormFieldModule, 
     MatFormField,MatInputModule, RouterLink ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
@@ -31,7 +30,11 @@ export class LoginComponent {
 
   constructor(private router: Router, private authService: AuthService, private cookieService:CookieService, private snackBar:MatSnackBar) {
   }
-
+  hide = signal(true);
+  clickEvent(event: MouseEvent) {
+    this.hide.set(!this.hide());
+    event.stopPropagation();
+  }
   onSubmit() {
     // Aquí puedes validar el login o enviar los datos a un servicio
     console.log('Username:', this.username);

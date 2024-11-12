@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '../../../services/auth.service';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-reset-pswd2',
@@ -19,7 +20,8 @@ import { AuthService } from '../../../services/auth.service';
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatIcon
   ],
   templateUrl: './reset-pswd2.component.html',
   styleUrls: ['./reset-pswd2.component.css']
@@ -37,7 +39,16 @@ export class ResetPswd2Component {
     private cookieService: CookieService,
     private snackBar: MatSnackBar // Inyecta MatSnackBar
   ) {}
-
+  hide1 = signal(true);
+  clickEvent1(event: MouseEvent) {
+    this.hide1.set(!this.hide1());
+    event.stopPropagation();
+  }
+  hide2 = signal(true);
+  clickEvent2(event: MouseEvent) {
+    this.hide2.set(!this.hide2());
+    event.stopPropagation();
+  }
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.token = params['tokenPswd']; // Captura el token de la URL
