@@ -67,7 +67,7 @@ mat-form-field input {
 }
 
 /* Estilo de los botones */
-button {
+.button-container button {
   background-color: #232223; /* Fondo oscuro */
   color: #e8e8e8 !important; /* Color del texto en blanco */
   padding: 12px;

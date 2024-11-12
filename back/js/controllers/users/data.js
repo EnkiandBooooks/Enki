@@ -80,9 +80,8 @@ export class DataController {
 
             let filename;
             if(req.file) {      // Si existe imagen en la request guardamos recortamos y formateamos.
-                let img = req.file;
                 filename = req.file.filename; 
-                cuttImgProfile(img, filename);
+                cuttImgProfile(filename);
                }
             // Actualizar la información del usuario
             const updateData = {
