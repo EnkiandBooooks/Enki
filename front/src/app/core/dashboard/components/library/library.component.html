@@ -1,0 +1,40 @@
+<div class="home-content">
+
+  <div class="carousel-section">
+    <h3>Library</h3>
+    <div class="findContainer">
+      <mat-form-field class="searchBar">
+        <mat-label>Find your book</mat-label>
+        <input matInput (keyup)="loadBook()" [(ngModel)]="this.search">
+      </mat-form-field>
+      <div class="categories">
+        <mat-button-toggle-group [multiple]="true" class="categoryButtons">
+          <mat-button-toggle *ngFor="let category of categories"
+            (change)="toggleCategory($event, category)"
+            color="primary"
+            class="categoryButton">
+            {{ category }}
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </div>
+    
+
+    <mat-grid-list cols="7" rowHeight= "250px" gutterSize="50px">
+      <mat-grid-tile *ngFor="let book of books | paginate: {itemsPerPage: 14, currentPage: p} ">  <!-- Usamos *ngFor para iterar sobre bookImages -->
+        <div class="bookCard">
+          <img [src]="book.largeThumbnail" alt="Imagen del libro" class="book-image" />
+          <div class="textBox">
+            <p class="tittle">{{book.title}}</p>
+            <p>⭐{{ book.rating }}/5</p>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <pagination-controls
+      (pageChange)="p = $event"
+      previousLabel="Previous"
+      nextLabel="Next">
+    </pagination-controls>
+  </div>
+</div>
