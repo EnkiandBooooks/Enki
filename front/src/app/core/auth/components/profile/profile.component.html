@@ -27,20 +27,11 @@
           <p>Confirm Email</p>
           <mat-form-field class="full-width">
             <mat-label>Confirm Email</mat-label>
-            <input matInput type="text" [(ngModel)]="arrUsr().confirmMail" name="confirmEmail" required>
-          </mat-form-field>
-
-        <span></span>
-        @if (edit) {
-          <p>Confirm Email</p>
-          <mat-form-field class="full-width">
-            <mat-label>Confirm Email</mat-label>
             <input matInput type="text" [(ngModel)]="this.confirmMail" name="confirmEmail" required>
           </mat-form-field>
         }
 
-        <!-- Campo para la contraseña -->
-        
+        <!-- Campo para la contraseña --> 
         @if (!edit){
           <span>Password</span>
           <mat-card-actions style="justify-content: left; margin: 0; padding: 0;">
