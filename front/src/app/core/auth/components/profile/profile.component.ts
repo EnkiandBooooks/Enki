@@ -11,6 +11,23 @@ import { CommonModule, NgFor } from '@angular/common';
 import { DatePipe } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+@Component({
+  selector: 'app-profile',
+  standalone: true,
+  imports: [
+    NgFor,
+    FormsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    CommonModule,
+    MatToolbarModule
+  ],
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css'],
+  providers: [DatePipe]
+})
 export class ProfileComponent {
   imgFile: any;
   imgUrl: any | undefined;
