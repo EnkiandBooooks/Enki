@@ -77,10 +77,14 @@ export class ProfileComponent {
     const monthNumber = Number(this.datePipe.transform(date, 'M'));
     const year = this.datePipe.transform(date, 'y');
 
-    const monthName = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-    const month = monthName[monthNumber - 1];
+    const monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const month =  monthName[monthNumber-1];
 
-    return day && month && year ? `${day} de ${month} de ${year}` : "";
+    if (day && month && year) {
+      return `${month} ${day} of ${year}`;
+    }
+
+    return "";
   }
 
   goToResetPwd() {
