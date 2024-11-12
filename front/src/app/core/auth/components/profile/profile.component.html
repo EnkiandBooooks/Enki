@@ -1,30 +1,34 @@
 <div class="profile-container">
-  <!--<img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Logo" class="login-logo"> -->
-  
   <mat-card class="profile-card">
     <mat-card-content>
-      <!-- Formulario de inicio de sesión -->
       <form (ngSubmit)="onSubmit()" ngNativeValidate>
-        <!-- Campo para el nombre de usuario -->        
         <span>Username</span>
-        @if (edit){
+        @if (edit) {
         <mat-form-field class="full-width">
           <mat-label>Username</mat-label>
           <input matInput type="text" [(ngModel)]="arrUsr().user" name="username" required>
         </mat-form-field>
-        }@else{
+        }@else {
         <p>{{arrUsr().user}}</p>
         }
 
         <span>Email</span>
-        @if (edit){
+        @if (edit) {
         <mat-form-field class="full-width">
           <mat-label>Email</mat-label>
           <input matInput type="text" [(ngModel)]="arrUsr().mail" name="email" required>
         </mat-form-field>
-        }@else{
+        }@else {
         <p>{{arrUsr().mail}}</p>
         }
+
+        <span></span>
+        @if (edit) {
+          <p>Confirm Email</p>
+          <mat-form-field class="full-width">
+            <mat-label>Confirm Email</mat-label>
+            <input matInput type="text" [(ngModel)]="arrUsr().confirmMail" name="confirmEmail" required>
+          </mat-form-field>
 
         <span></span>
         @if (edit) {
@@ -44,40 +48,19 @@
           </mat-card-actions>
         }
 
-        @if (edit){
-        <!-- Botón para iniciar sesión -->
-        <div class="button-container">
-          <button mat-raised-button color="primary" type="submit">Confirm changes</button>
-        </div>
-
-        }@else{
+        @if (edit) {
+          <div class="button-container">
+            <button mat-raised-button color="primary" type="submit" [disabled]="!emailsMatch()">Confirm changes</button>
+          </div>
+        }@else {
           <span>Joined ENKI at</span>
           <p>{{formattedDate}}</p>
 
           <div class="button-container">
             <button mat-raised-button color="primary" type="submit">Edit mode</button>
           </div>
-        } 
-
-          @if (edit){
-            <div class="avatar">
-              <label for="fileInput">
-                <img class="editImg" src="images/edit.png" alt="Editar imagen de perfil">
-                <img class="profilePicture"[src]="imgUrl" alt="Imagen de perfil">
-              </label>
-                <input type="file" (change)="onFileSelected($event)" accept="image/png" />
-            </div>
-          }@else{
-            <div class="avatarNoEdit">
-              <label for="fileInput">
-                <img [src]="imgUrl" alt="Imagen de perfil">
-              </label>
-            </div>
-          }
-        
-        
+        }
       </form>
     </mat-card-content>
-
   </mat-card>
-</div>  
+</div>
