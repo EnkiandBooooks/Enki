@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, signal } from '@angular/core';
 import { Register1Component } from '../../../core/auth/components/register/register1/register1.component';
 import { RouterOutlet} from '@angular/router';
 import { Router } from '@angular/router';
@@ -34,7 +34,7 @@ export class HeaderComponent {
   title = 'enkiweb';
   arrUsr = signal<any>([]);
   showHeaderAndBody: boolean = true; // Variable para controlar la visibilidad del header y el body
-  constructor(private router: Router, private cookieService: CookieService, private authService :AuthService) {
+  constructor(private router: Router, private cookieService: CookieService, private authService :AuthService, private cdr: ChangeDetectorRef) {
     // Suscribirse a los eventos de navegación del router
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
@@ -54,6 +54,10 @@ export class HeaderComponent {
       });
     }
     
+  }
+  async navigateProfile(){
+    this.router.navigate(['perfil']);
+    this.cdr.detectChanges();
   }
   onLogout() {
     
