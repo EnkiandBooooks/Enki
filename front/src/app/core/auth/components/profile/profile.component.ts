@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { RedirectCommand, Router } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,23 +11,6 @@ import { CommonModule, NgFor } from '@angular/common';
 import { DatePipe } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-@Component({
-  selector: 'app-profile',
-  standalone: true,
-  imports: [
-    NgFor,
-    FormsModule,
-    MatButtonModule,
-    MatCardModule,
-    MatInputModule,
-    MatFormFieldModule,
-    CommonModule,
-    MatToolbarModule
-  ],
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css'],
-  providers: [DatePipe]
-})
 export class ProfileComponent {
   imgFile: any;
   imgUrl: any | undefined;
@@ -53,8 +36,13 @@ export class ProfileComponent {
     return this.arrUsr().mail === this.confirmMail;
   }
 
-  // Método que se activa al activar botón de modo edición o confirmar cambios
   onSubmit() {
+    // Primero, verifica si los emails coinciden
+    if (!this.emailsMatch()) {
+      this.snackBar.open('Emails do not match. Please verify.', 'Close', { duration: 3000 });
+      return; // Detiene el guardado si los emails no coinciden
+    }
+
     // Primero, verifica si los emails coinciden
     if (!this.emailsMatch()) {
       this.snackBar.open('Emails do not match. Please verify.', 'Close', { duration: 3000 });
@@ -63,8 +51,8 @@ export class ProfileComponent {
 
     this.edit = !this.edit;
 
+    // Procede solo si estamos fuera de modo edición
     if (!this.edit) {
-      // Método para actualizar datos a BD
       const formData = new FormData();
       formData.append('file', this.imgFile);  // 'file' debe coincidir con el nombre del campo en Multer
       formData.append('username', this.arrUsr().user);
@@ -74,10 +62,13 @@ export class ProfileComponent {
         next: (res) => {
           console.log("Data updated successfully");
           this.loadData(); // Actualiza los datos sin recargar la página
+          console.log("Data updated successfully");
+          this.loadData(); // Actualiza los datos sin recargar la página
         },
         error: (err) => {
           // Manejar el error y mostrar el mensaje en SnackBar
           console.error('Error desde backend:', err);
+          this.snackBar.open('Failed to update data. Please try again.', 'Close', { duration: 3000 });
           this.snackBar.open('Failed to update data. Please try again.', 'Close', { duration: 3000 });
         }
       });
@@ -120,9 +111,7 @@ export class ProfileComponent {
     }
   }
 
-  // Método para manejar el archivo seleccionado
   handleFileInput(file: File) {
-    // Mostrar la imagen seleccionada en la interfaz
     const reader = new FileReader();
     reader.onload = (e) => {
       this.imgUrl = reader.result as string;
