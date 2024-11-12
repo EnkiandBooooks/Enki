@@ -8,7 +8,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule, NgFor } from '@angular/common';
-import { CookieService } from 'ngx-cookie-service';
 import { DatePipe } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -34,19 +33,34 @@ export class ProfileComponent {
   imgUrl: any | undefined;
   arrUsr = signal<any>([]);
   edit = false;
+  confirmMail = "";
   formattedDate = "";
-  constructor(private datePipe: DatePipe, private router: Router, private cookieService: CookieService, private authService: AuthService, private snackBar: MatSnackBar) {}
+
+  constructor(
+    private datePipe: DatePipe, 
+    private router: Router, 
+    private authService: AuthService, 
+    private snackBar: MatSnackBar
+  ) {}
 
   async ngOnInit() {
-    this.authService.getData().subscribe((res) => {
-      this.arrUsr.set(res);
-      this.formattedDate = this.dateFormat(this.arrUsr().creationDate);
-      this.imgUrl = 'data:image/png;base64,' + res.img
-    });
+    this.loadData();
+  }
+
+  emailsMatch(): boolean {
+    console.log(this.arrUsr().mail)
+    console.log(this.confirmMail)
+    return this.arrUsr().mail === this.confirmMail;
   }
 
   // Método que se activa al activar botón de modo edición o confirmar cambios
   onSubmit() {
+    // Primero, verifica si los emails coinciden
+    if (!this.emailsMatch()) {
+      this.snackBar.open('Emails do not match. Please verify.', 'Close', { duration: 3000 });
+      return; // Detiene el guardado si los emails no coinciden
+    }
+
     this.edit = !this.edit;
 
     if (!this.edit) {
@@ -58,16 +72,25 @@ export class ProfileComponent {
 
       this.authService.postData(formData).subscribe({
         next: (res) => {
-          console.log("///////////////////////\n" + res + "\n///////////////////////");
-          window.location.reload();
+          console.log("Data updated successfully");
+          this.loadData(); // Actualiza los datos sin recargar la página
         },
         error: (err) => {
           // Manejar el error y mostrar el mensaje en SnackBar
-
           console.error('Error desde backend:', err);
+          this.snackBar.open('Failed to update data. Please try again.', 'Close', { duration: 3000 });
         }
       });
     }
+  }
+
+  loadData() {
+    this.authService.getData().subscribe((res) => {
+      this.arrUsr.set(res);
+      this.formattedDate = this.dateFormat(this.arrUsr().creationDate);
+      this.imgUrl = 'data:image/png;base64,' + res.img
+      this.confirmMail = this.arrUsr().mail;
+    });
   }
 
   dateFormat(date: string): string {

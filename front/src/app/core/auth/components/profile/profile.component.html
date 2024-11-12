@@ -1,12 +1,10 @@
-
-
 <div class="profile-container">
   <!--<img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Logo" class="login-logo"> -->
   
   <mat-card class="profile-card">
     <mat-card-content>
       <!-- Formulario de inicio de sesión -->
-      <form (ngSubmit)="onSubmit()">
+      <form (ngSubmit)="onSubmit()" ngNativeValidate>
         <!-- Campo para el nombre de usuario -->        
         <span>Username</span>
         @if (edit){
@@ -27,14 +25,23 @@
         }@else{
         <p>{{arrUsr().mail}}</p>
         }
+
+        <span></span>
+        @if (edit) {
+          <p>Confirm Email</p>
+          <mat-form-field class="full-width">
+            <mat-label>Confirm Email</mat-label>
+            <input matInput type="text" [(ngModel)]="this.confirmMail" name="confirmEmail" required>
+          </mat-form-field>
+        }
+
         <!-- Campo para la contraseña -->
-        <span>Password</span>
-        @if (edit){
-          <mat-card-actions>
+        
+        @if (!edit){
+          <span>Password</span>
+          <mat-card-actions style="justify-content: left; margin: 0; padding: 0;">
             <button mat-button color="accent" (click)="goToResetPwd()">Recover password</button> <!--(click)="recoverPass()"-->
           </mat-card-actions>
-        }@else{
-        <p>********</p>
         }
 
         @if (edit){
@@ -58,7 +65,7 @@
                 <img class="editImg" src="images/edit.png" alt="Editar imagen de perfil">
                 <img class="profilePicture"[src]="imgUrl" alt="Imagen de perfil">
               </label>
-                <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+                <input type="file" (change)="onFileSelected($event)" accept="image/png" />
             </div>
           }@else{
             <div class="avatarNoEdit">
