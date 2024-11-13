@@ -51,6 +51,21 @@
             <button mat-raised-button color="primary" type="submit">Edit mode</button>
           </div>
         }
+        @if (edit){
+          <div class="avatar">
+            <label for="fileInput">
+              <img class="editImg" src="images/edit.png" alt="Editar imagen de perfil">
+              <img class="profilePicture"[src]="imgUrl" alt="Imagen de perfil">
+            </label>
+              <input type="file" (change)="onFileSelected($event)" accept="image/png" />
+          </div>
+        }@else{
+          <div class="avatarNoEdit">
+            <label for="fileInput">
+              <img [src]="imgUrl" alt="Imagen de perfil">
+            </label>
+          </div>
+        }
       </form>
     </mat-card-content>
   </mat-card>
