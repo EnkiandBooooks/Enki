@@ -6,6 +6,9 @@
       </div>
       <mat-nav-list>
         <mat-list-item>
+          <a mat-button class="nav-button" href="#" (click)="showSection('createcommunity'); $event.preventDefault()">Create Community</a>
+        </mat-list-item>
+        <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('home'); $event.preventDefault()">Home</a>
         </mat-list-item>
         <mat-list-item>
@@ -14,6 +17,7 @@
         <mat-list-item>
           <a mat-button class="nav-button" href="#">Settings</a>
         </mat-list-item>
+        
         
       </mat-nav-list>
     </mat-sidenav>
@@ -63,6 +67,18 @@
         <ng-container *ngIf="selectedSection === 'library'">
           <div>
             <app-library></app-library>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="selectedSection === 'createcommunity'">
+          <div>
+            <app-createcommunity></app-createcommunity>
+          </div>
+        </ng-container>
+        
+        <ng-container *ngIf="selectedSection === 'timeline'">
+          <div>
+            <app-timeline></app-timeline>
           </div>
         </ng-container>
 
