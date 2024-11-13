@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RedirectCommand, Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,6 +20,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     FormsModule,
     MatButtonModule,
     MatCardModule,
+    RouterLink,
     MatInputModule,
     MatFormFieldModule,
     CommonModule,

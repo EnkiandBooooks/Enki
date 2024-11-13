@@ -35,7 +35,7 @@
         @if (!edit){
           <span>Password</span>
           <mat-card-actions style="justify-content: left; margin: 0; padding: 0;">
-            <button mat-button color="accent" (click)="goToResetPwd()">Recover password</button> <!--(click)="recoverPass()"-->
+            <button mat-button color="accent" [routerLink]="['/auth/resetPswd1']">Recover password</button> <!--(click)="recoverPass()"-->
           </mat-card-actions>
         }
 
