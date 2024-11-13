@@ -1,0 +1,49 @@
+.form-container {
+    background-color: #e0b3ff; 
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  
+  .submit-button {
+    background-color: black;
+    color: white; 
+  }
+
+  
+  .community-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-container {
+    background-color: #e0b3ff;
+    border-radius: 8px;
+    width: 80%; 
+    max-width: 500px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  }
+  
+
+  
+  .form-card {
+    background-color: #f0eff1; 
+    box-shadow: none; 
+  }  
+
+  mat-form-field .mat-form-field-infix {
+    background-color: white; 
+}
+
+input.mat-input-element, 
+textarea.mat-input-element, 
+.mat-select-trigger {
+    background-color: white; 
+    color: black; 
+}
+
+mat-form-field .mat-form-field-outline {
+    color: black; 
+}
