@@ -48,6 +48,7 @@ export class LoginComponent {
     // Si el login es exitoso, puedes redirigir a otra ruta.
   }
 
+  
   sendData(username: string, password: string): void {
     const body = { usr: username, pwd:password  };
     this.authService.LogIn(body).subscribe((res) => {
@@ -73,6 +74,34 @@ export class LoginComponent {
       
     }); 
   }
+    
 
-
+  /*
+  sendData(username: string, password: string): void {
+    const body = { usr: username, pwd: password };
+    
+    // Llamada al servicio de autenticación
+    this.authService.LogIn(body).subscribe(
+      (res) => {
+        console.log(res.accessToken);
+        // Si el login es exitoso, guardamos los tokens en las cookies
+        this.cookieService.set('access_token', res.accessToken);
+        this.cookieService.set('refresh_token', res.refreshToken);
+        this.router.navigate(['/dashboard']);
+        this.snackBar.open('Sesión iniciada con éxito', 'Cerrar', {
+          duration: 3000, 
+          panelClass: ['success-snackbar']
+        });
+      },
+      (error) => {
+        // Manejo de errores si el login falla
+        console.error('Error en el login:', error);
+        this.snackBar.open('No se encuentra el correo o la contraseña es incorrecta', 'Cerrar', {
+          duration: 3000,
+          panelClass: ['error-snackbar']
+        });
+      }
+    );
+  }
+*/
 }
