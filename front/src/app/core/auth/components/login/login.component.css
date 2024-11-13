@@ -42,6 +42,7 @@ mat-card-actions {
 mat-card-actions span {
   display: block;
   margin-bottom: 5px;
+  color: white;
 }
 
 mat-card-actions button {
