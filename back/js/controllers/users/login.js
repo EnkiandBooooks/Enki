@@ -36,7 +36,7 @@ export class LoginController {
       // Consulta a la base de datos para verificar si el usuario existe
       const user = await userModel.findOne({ username: usr });
       if (!user) {
-        return res.status(404).json({ resultado: "Usuario no existe" });
+        return res.status(200).json({ resultado: "Usuario no existe" });
       }
 
       // Verificación de la contraseña
