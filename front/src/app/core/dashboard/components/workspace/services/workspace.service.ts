@@ -13,6 +13,10 @@ export class AuthService {
     private url = 'http://localhost:1234/workspace'
 
     createWorkspace(body: any):Observable<any>{
-        return this.http.post(`${this.url}/create/`, body)
+      return this.http.post(`${this.url}/create/`, body)
+    }
+
+    createComment(body: any):Observable<any>{
+      return this.http.post(`${this.url}/comments/create`, body)
     }
 }
