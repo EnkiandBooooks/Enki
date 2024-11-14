@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-timeline',
-  standalone: true,
-  imports: [],
   templateUrl: './timeline.component.html',
-  styleUrl: './timeline.component.css'
+  styleUrls: ['./timeline.component.css'],
+  standalone: true, // Hace que el componente sea standalone
+  imports: [MatProgressBarModule] // Importa Angular Material ProgressBar directamente
 })
 export class TimelineComponent {
-
+  @Input() progress: number = 0; // Recibe el progreso calculado desde DashboardComponent
 }

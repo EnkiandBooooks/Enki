@@ -1,10 +1,10 @@
-import { Component, ChangeDetectorRef, signal} from '@angular/core';
+import { Component, ChangeDetectorRef, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileComponent } from '../../../auth/components/profile/profile.component';
 import { HomedashComponent } from '../homedash/homedash.component';
 import { LibraryComponent } from '../library/library.component';
-import { CookieService } from 'ngx-cookie-service';  // Importa CookieService
-import { Router } from '@angular/router';  // Importa Router para la redirección
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,7 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { AuthService } from '../../services/auth.service';
 import { CreatecommunityComponent } from '../workspace/createcommunity/createcommunity.component';
-import { TimelineComponent } from '../workspace/timeline/timeline.component';
+import { TimelineComponent } from '../workspace/timeline/timeline.component'; // Importa el componente standalone
 
 @Component({
   selector: 'app-dashboard',
@@ -22,16 +22,16 @@ import { TimelineComponent } from '../workspace/timeline/timeline.component';
   styleUrls: ['./dashboard.component.css'],
   standalone: true,
   imports: [
-    CommonModule, 
+    CommonModule,
     ProfileComponent,
-    HomedashComponent,  // Añadido aquí
+    HomedashComponent,
     CreatecommunityComponent,
-    TimelineComponent,
+    TimelineComponent, // Importa el componente standalone directamente
     MatSidenavModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatListModule, 
+    MatListModule,
     MatDivider,
     MatMenuModule,
     LibraryComponent
@@ -42,41 +42,40 @@ export class DashboardComponent {
   imgFile: any;
   imgUrl: any | undefined;
   arrUsr = signal<any>([]);
-  cookieExists : boolean = false
+  cookieExists: boolean = false;
+
+  currentChapter: number = 3;
+  totalChapters: number = 20;
+
+  get progress(): number {
+    return (this.currentChapter / this.totalChapters) * 100;
+  }
+
   constructor(
     private cdr: ChangeDetectorRef,
-    private cookieService: CookieService,  // Inyectamos CookieService
-    private router: Router,  // Inyectamos Router para la redirección
+    private cookieService: CookieService,
+    private router: Router,
     private authService: AuthService
   ) {}
 
-
-
-  async ngOnInit(){
-    
-    this.cookieExists = this.cookieService.check("access_token")|| this.cookieService.check("refresh_token")
-    if(this.cookieExists){
+  async ngOnInit() {
+    this.cookieExists = this.cookieService.check("access_token") || this.cookieService.check("refresh_token");
+    if (this.cookieExists) {
       this.authService.getData().subscribe((res) => {
         this.arrUsr.set(res);
-        this.imgUrl = 'data:image/png;base64,' + res.img
+        this.imgUrl = 'data:image/png;base64,' + res.img;
       });
     }
-    
   }
-  // Método para cambiar la sección mostrada
+
   showSection(section: string) {
     this.selectedSection = section;
-    console.log('Sección seleccionada:', this.selectedSection);
     this.cdr.detectChanges();
   }
 
-  // Método para cerrar sesión
   onLogout() {
-    // Elimina las cookies de autenticación
     this.cookieService.delete('access_token');
     this.cookieService.delete('refresh_token');
-
-    // Redirige al usuario a la página de inicio
     window.location.href = '../landingpage/landingpage.html';
   }
 }
