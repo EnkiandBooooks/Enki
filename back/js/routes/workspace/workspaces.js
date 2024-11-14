@@ -13,4 +13,4 @@ import { WorkspaceController } from "../../controllers/workspaces/workspaces.js"
 export const workspacesRouter = Router();
   
   // Ruta donde recibe los datos para crear 
-  workspacesRouter.post('/create', WorkspaceController.createWorkspace);
+  workspacesRouter.post('/create', verifyJWT, WorkspaceController.createWorkspace);
