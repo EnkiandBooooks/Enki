@@ -1,0 +1,25 @@
+.timeline-progress {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+  
+  .progress-container {
+    width: 50%; /* Ajusta el ancho de la barra según tu preferencia */
+  }
+  
+  .mat-progress-bar {
+    height: 30px !important; /* Grosor del contenedor externo */
+    border-radius: 15px;
+    background-color: #7d5e7d;
+  }
+  
+  /* Modifica el grosor de la línea de progreso */
+  .mat-progress-bar .mat-progress-bar-fill {
+    height: 30px !important; /* Grosor de la línea de progreso */
+    border-radius: 15px;
+    background-color: #c1b5c2 !important; /* Color de la línea de progreso */
+  }
+  
