@@ -29,6 +29,7 @@ export const updateUserSchema = z.object({
  * @property {Array<Object>} timeline - Eventos con fecha, descripción y comentarios.
  */
 const workSpaceSchema = new mongooseSchema({
+    // _id: [{type: mongooseSchema.Types.ObjectId, ref: 'user'}],
     workSpaceName: {
         type: String,
         required: true
