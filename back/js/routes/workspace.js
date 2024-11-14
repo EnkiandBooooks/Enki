@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { workspacesRouter } from "./workspace/workspaces.js";
+import { commentsRouter } from "./workspace/comments.js";
 
 /**
  * Router principal para gestionar todas las rutas relacionadas con los workspaces.
@@ -12,3 +13,4 @@ import { workspacesRouter } from "./workspace/workspaces.js";
 export const workspaceRouter = Router();
 
 workspaceRouter.use('/', workspacesRouter);
+workspaceRouter.use('/comments', commentsRouter);
