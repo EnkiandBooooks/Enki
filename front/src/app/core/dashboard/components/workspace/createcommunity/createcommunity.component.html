@@ -1,37 +1,36 @@
 <div class="community-form">
-    <form [formGroup]="communityForm" (ngSubmit)="onSubmit()">
-      <div class="form-container">
-        <h2>Crear Comunidad</h2>
-  
-        <mat-card class="form-card">
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Nombre de la Comunidad</mat-label>
-            <input matInput formControlName="communityName" placeholder="Introduce el nombre de la comunidad">
-          </mat-form-field>
-  
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Libro</mat-label>
-            <input matInput formControlName="book" placeholder="Introduce el nombre del libro">
-          </mat-form-field>
-  
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Número de Stamps</mat-label>
-            <input matInput type="number" formControlName="stamps" placeholder="Cantidad de stamps">
-          </mat-form-field>
-  
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Privacidad</mat-label>
-            <mat-select formControlName="privacy">
-              <mat-option value="public">Pública</mat-option>
-              <mat-option value="private">Privada</mat-option>
-            </mat-select>
-          </mat-form-field>
-  
-          <button mat-raised-button color="primary" type="submit" class="submit-button">
-            Crear Comunidad
-          </button>
-        </mat-card>
-      </div>
-    </form>
-  </div>
+  <form [formGroup]="communityForm" (ngSubmit)="onSubmit()">
+    <div class="form-container">
+      <h2>Create community</h2>
+      <mat-card class="form-card">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Community's name</mat-label>
+          <input matInput formControlName="communityName" placeholder="Introduce el nombre de la comunidad">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Book</mat-label>
+          <input matInput formControlName="book" placeholder="Introduce el nombre del libro">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Chapters / Pages</mat-label>
+          <input matInput type="number" formControlName="stamps" placeholder="Cantidad de stamps">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Privacy</mat-label>
+          <mat-select formControlName="privacy">
+            <mat-option value="public">Public</mat-option>
+            <mat-option value="private">Private</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" class="submit-button">Create</button>
+      </mat-card>
+    </div>
+  </form>
+</div>
+
+
+
   
