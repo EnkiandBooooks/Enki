@@ -68,6 +68,7 @@ const workSpaceSchema = new mongooseSchema({
             type: String,
             default: 'Primer evento'
         },
+        //commentbox parámetros
         comment: [{
             commentId: {
                 type: mongooseSchema.Types.ObjectId,
