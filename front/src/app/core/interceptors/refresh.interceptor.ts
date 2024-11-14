@@ -7,7 +7,7 @@ import { AuthService } from '../auth/services/auth.service';
 export const refreshInterceptor: HttpInterceptorFn = (req, next) => {
 
   // Guardamos en este array las rutas que queremos interceptar.
-  const especificRoutes = ['/data'];
+  const especificRoutes = ['/data','/workspace'];
   const interceptedRoutes = especificRoutes.some(routes => req.url.includes(routes));
 
   if(!interceptedRoutes){   //Si la ruta actual no esta en la lista continua sin problemas.
