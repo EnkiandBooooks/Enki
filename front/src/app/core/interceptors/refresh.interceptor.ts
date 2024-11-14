@@ -38,7 +38,13 @@ export const refreshInterceptor: HttpInterceptorFn = (req, next) => {
       if (err.status === 401 || err.status === 403){ // Si el código de error es 401 o 403.
         return authService.refreshToken().pipe(   // Hacemos una petición al Backend para que se refresque el Access Token.
           switchMap((res) => { // Hacemos un map de todas las respuestas.
-            cookieService.set("access_token", res.accessToken);   // Guardamos en nuevo token en la cookies.
+              
+            cookieService.set('access_token', res.accessToken, { // Guardamos en nuevo token en la cookies.
+              path: '/',                    // Importante: asegura que la cookie está disponible en toda la app
+              secure: true,                 // Para HTTPS
+              sameSite: 'Strict'           // Protección CSRF
+            });
+            
 
             //Volvemos a clonar la Request y meter el token nuevo.
             const newReq = req.clone({

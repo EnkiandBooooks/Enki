@@ -56,8 +56,17 @@ export class LoginComponent {
           
         //Guardar cookies
         console.log(res.accessToken);
-        this.cookieService.set('access_token', res.accessToken);
-        this.cookieService.set('refresh_token', res.refreshToken);
+        this.cookieService.set('access_token', res.accessToken, {
+          path: '/',                    // Importante: asegura que la cookie está disponible en toda la app
+          secure: true,                 // Para HTTPS
+          sameSite: 'Strict'           // Protección CSRF
+        });
+        
+        this.cookieService.set('refresh_token', res.refreshToken, {
+          path: '/',
+          secure: true,
+          sameSite: 'Strict'
+        });
         this.router.navigate(['/dashboard']);
         this.snackBar.open('Sesión iniciada con éxito', 'Cerrar', {
           duration: 3000, // 3 segundos
