@@ -1,0 +1,22 @@
+<div class="comment-section">
+    <button mat-raised-button color="primary" (click)="addCommentBox()">Añadir Comentario</button>
+    
+    <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+      <div formArrayName="comments">
+        <div *ngFor="let comment of comments.controls; let i = index" [formGroupName]="i">
+          <mat-card>
+            <mat-form-field appearance="outline">
+              <mat-label>Comentario {{ i + 1 }}</mat-label>
+              <input matInput formControlName="text" placeholder="Escribe tu comentario aquí">
+            </mat-form-field>
+<br>
+            <mat-form-field appearance="outline" formGroupName="user">
+              <mat-label>Usuario</mat-label>
+              <input matInput formControlName="userName" placeholder="Nombre de usuario">
+            </mat-form-field>
+          </mat-card>
+        </div>
+      </div>
+      <button mat-raised-button color="accent" type="submit">Enviar Todos los Comentarios</button>
+    </form>
+</div>
