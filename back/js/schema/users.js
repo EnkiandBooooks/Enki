@@ -29,10 +29,6 @@ export const updateUserSchema = z.object({
  * @property {Array<Object>} timeline - Eventos con fecha, descripción y comentarios.
  */
 const workSpaceSchema = new mongooseSchema({
-    idWorkSpace: {
-        type: mongooseSchema.Types.ObjectId,
-        default: () => new mongoose.Types.ObjectId()
-    },
     workSpaceName: {
         type: String,
         required: true
@@ -95,6 +91,8 @@ const workSpaceSchema = new mongooseSchema({
         }]
     }]
 });
+const workspaceModel = mongoose.model('workspace', workSpaceSchema);
+export {workspaceModel}
 
 /**
  * Modelo de Mongoose para la colección `usuario`.
@@ -139,14 +137,10 @@ const user = new mongooseSchema({
             default: 'default'
         }
     },
-    workSpacesCreated: {
+    workSpaces: {
         type: [workSpaceSchema], //Se le inserta automaticamente el modelo de workspace aqui en caso de haber contenido
         default: undefined
-    },
-    guestWorkSpaces: { //Es un array de referencias
-        type: [mongooseSchema.Types.ObjectId],
-        default: undefined
-    } 
+    }
 }, { timestamps: true });
 const userModel = mongoose.model('usuario', user);
 export {userModel};
