@@ -119,6 +119,7 @@ const user = new mongooseSchema({
     },
     rol: {
         type: String,
+        enum: ['user', 'admin'],
         default: 'usuario'
     },
     img:{
@@ -137,10 +138,10 @@ const user = new mongooseSchema({
             default: 'default'
         }
     },
-    workSpaces: {
-        type: [workSpaceSchema], //Se le inserta automaticamente el modelo de workspace aqui en caso de haber contenido
-        default: undefined
-    }
+    workSpaces: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'workspace'
+    }]
 }, { timestamps: true });
 const userModel = mongoose.model('usuario', user);
 export {userModel};

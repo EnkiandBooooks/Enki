@@ -17,8 +17,10 @@ export class WorkspaceController{
             workSpaceName: name,
             bookId: bookBD[0]._id,
         });
-        const newInfo = {"workspace": newWorkspace}
-        userModel.findByIdAndUpdate(user._id, )
+        const newInfo = {"workSpaces": newWorkspace}
+        userModel.findByIdAndUpdate(user._id, { $push: newInfo}, {new: true, upsert: true})
+            .then(usr => console.log('Usuario actualizado'))
+            .catch(err => console.error(err))
         res.status(200).json(newWorkspace);
     }
 }
