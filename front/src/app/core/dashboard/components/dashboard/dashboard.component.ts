@@ -15,6 +15,7 @@ import {MatMenuModule } from '@angular/material/menu';
 import { AuthService } from '../../services/auth.service';
 import { CreatecommunityComponent } from '../workspace/createcommunity/createcommunity.component';
 import { TimelineComponent } from '../workspace/timeline/timeline.component';
+import { CommentboxComponent } from '../workspace/commentbox/commentbox.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -34,7 +35,8 @@ import { TimelineComponent } from '../workspace/timeline/timeline.component';
     MatListModule, 
     MatDivider,
     MatMenuModule,
-    LibraryComponent
+    LibraryComponent,
+    CommentboxComponent
   ]
 })
 export class DashboardComponent {
