@@ -2,38 +2,38 @@
   display: block;
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  overflow: hidden; /* Prevenir el scroll lateral */
+  box-sizing: border-box;
 }
 
-/* Centrado del formulario en la sección */
+/* Contenedor principal centrado */
 .community-form {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Ocupa toda la altura de la pantalla */
-  background-color: #f4f6f9;
-  padding: 0;
-  margin: 0;
+  flex-direction: column; /* Alinea los elementos en columna */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  background: linear-gradient(to bottom, #D1C5D6, #F1F1F1); /* Fondo similar al de profile */
+  padding: 20px;
+  box-sizing: border-box; /* Asegura que el padding se respete */
 }
 
-/* Contenedor del formulario */
+/* Estilo de la tarjeta que contiene el formulario */
 .form-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Alinea los elementos desde arriba */
-  align-items: center; /* Centra los elementos horizontalmente */
-  width: 100%; /* Asegura que ocupe el 100% del ancho disponible */
-  height: 100%; /* Hace que el contenedor ocupe toda la altura disponible */
-  max-width: 1000px; /* Limita el ancho máximo a 1000px */
-  padding: 40px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+  justify-content: flex-start; /* Organiza los elementos de arriba hacia abajo */
+  align-items: center;
+  width: 150%; /* El formulario ocupa todo el ancho disponible */
+  max-width: 800px; /* Limita el ancho máximo del formulario */
+  background-color: #ffffff; /* Fondo blanco para la tarjeta */
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
   border-radius: 12px;
   box-sizing: border-box;
-  overflow-y: auto; /* Permite el desplazamiento vertical si es necesario */
+  overflow: hidden; /* Asegura que no haya desbordes */
 }
 
 /* Estilo del título */
@@ -44,25 +44,24 @@
   color: #333;
 }
 
-/* Tarjeta que contiene los campos del formulario */
+/* Tarjeta que contiene los campos */
 .form-card {
   background-color: #f9fafb;
-  box-shadow: none;
   padding: 20px;
   border-radius: 8px;
-  width: 100%;
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* Campos de entrada de texto */
+/* Estilos para los campos del formulario */
 mat-form-field.full-width {
   width: 100%;
   margin-bottom: 15px;
 }
 
-/* Estilos para campos de entrada */
+/* Estilos para los campos de entrada */
 input.mat-input-element, 
 textarea.mat-input-element, 
 .mat-select-trigger {
@@ -74,12 +73,11 @@ textarea.mat-input-element,
   color: #666;
 }
 
-/* Botón de enviar */
+/* Estilo del botón de envío */
 .submit-button {
-  background-color: #6200ea;
-  color: white;
-  font-weight: bold;
-  width: 100%;
+  background-color: #D1C5D6;
+  color: black !important;
+  width: 100%; /* El botón ocupa el 100% del ancho de la tarjeta */
   padding: 15px 0;
   margin-top: 20px;
   border-radius: 5px;
@@ -87,5 +85,6 @@ textarea.mat-input-element,
 }
 
 .submit-button:hover {
-  background-color: #4500b5;
+  background-color: #D1C5D6;
+  color: #333;
 }
