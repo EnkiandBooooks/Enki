@@ -48,6 +48,7 @@ export class LoginComponent {
     // Si el login es exitoso, puedes redirigir a otra ruta.
   }
 
+  
   sendData(username: string, password: string): void {
     const body = { usr: username, pwd:password  };
     this.authService.LogIn(body).subscribe((res) => {
@@ -73,6 +74,4 @@ export class LoginComponent {
       
     }); 
   }
-
-
 }

@@ -38,9 +38,13 @@
       <mat-card-actions>
         <!-- Opción para registrarse -->
         <span>You don't have an account yet?</span>
+        <div class="button-container">
         <button mat-button color="accent" [routerLink]="['/auth/register1']">Register</button>
+        </div>
         <span>Have you forgotten the password?</span>
+        <div class="button-container">
         <button mat-button color="accent" [routerLink]="['/auth/resetPswd1']">Recover password</button>
+        </div>
       </mat-card-actions>
     </mat-card>
   </div>  
