@@ -35,7 +35,7 @@
         @if (!edit){
           <span>Password</span>
           <mat-card-actions style="justify-content: left; margin: 0; padding: 0;">
-            <button mat-button color="accent" (click)="goToResetPwd()">Recover password</button> <!--(click)="recoverPass()"-->
+            <button mat-button color="accent" [routerLink]="['/auth/resetPswd1']">Recover password</button> <!--(click)="recoverPass()"-->
           </mat-card-actions>
         }
 
@@ -49,6 +49,21 @@
 
           <div class="button-container">
             <button mat-raised-button color="primary" type="submit">Edit mode</button>
+          </div>
+        }
+        @if (edit){
+          <div class="avatar">
+            <label for="fileInput">
+              <img class="editImg" src="images/edit.png" alt="Editar imagen de perfil">
+              <img class="profilePicture"[src]="imgUrl" alt="Imagen de perfil">
+            </label>
+              <input type="file" (change)="onFileSelected($event)" accept="image/png" />
+          </div>
+        }@else{
+          <div class="avatarNoEdit">
+            <label for="fileInput">
+              <img [src]="imgUrl" alt="Imagen de perfil">
+            </label>
           </div>
         }
       </form>
