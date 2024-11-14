@@ -56,10 +56,10 @@ export class LoginController {
         resultado: "Usuario Correcto",
       });
     } catch (error) {
-      if (error instanceof z.ZodError) {
+      // if (error instanceof z.ZodError) {
         // Si la validación falla, devolver un error con los detalles
         return res.status(400).json({ resultado: error.errors[0].message });
-      }
+      // }
       // Manejo de errores generales del servidor
       res
         .status(500)
