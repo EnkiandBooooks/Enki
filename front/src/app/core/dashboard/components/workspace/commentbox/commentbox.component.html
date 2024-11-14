@@ -9,8 +9,8 @@
               <mat-label>Comentario {{ i + 1 }}</mat-label>
               <input matInput formControlName="text" placeholder="Escribe tu comentario aquí">
             </mat-form-field>
-  
-            <mat-form-field appearance="outline">
+<br>
+            <mat-form-field appearance="outline" formGroupName="user">
               <mat-label>Usuario</mat-label>
               <input matInput formControlName="userName" placeholder="Nombre de usuario">
             </mat-form-field>
@@ -19,5 +19,4 @@
       </div>
       <button mat-raised-button color="accent" type="submit">Enviar Todos los Comentarios</button>
     </form>
-  </div>
-  
+</div>
