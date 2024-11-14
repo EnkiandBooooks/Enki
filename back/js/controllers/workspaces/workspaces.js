@@ -8,7 +8,7 @@ export class WorkspaceController{
      * @param {Object} req - Objeto de solicitud (Request) de Express, que contiene los datos de usuario y contraseña.
      * @param {Object} req.user - Objecto con la información del usuario que ha creado la workspace.
      * @param {Object} req.body - Cuerpo de la solicitud con los datos de la workspace.
-     * @param {Object} req.body.comunityName - Nombre de la workspace a crear.
+     * @param {Object} req.body.communityName - Nombre de la workspace a crear.
      * @param {Object} req.body.book - Nombre del libro de la comunidad.
      * @param {Object} req.body.stamps - Número de etapas de la timeline
      * @param {Object} req.body.privacity - Si la workspace es pública o privada.
@@ -17,7 +17,7 @@ export class WorkspaceController{
      */
     static async createWorkspace(req, res) {
         const user = req.user;
-        const name = req.body.comunityName;
+        const name = req.body.communityName;
         const book = req.body.book;
         const stamps = req.body.stamps;
         const privacity = req.body.privacity;
@@ -34,12 +34,14 @@ export class WorkspaceController{
     
             await userModel.findByIdAndUpdate(user._id, { $push: newInfo})
         }catch(err){
-            res.status(400).json({"message": "Error in create workspace."})
+            console.log(err);
+            return res.status(400).json({"message": "Error in create workspace."})
+            
         }
         // Comando para poder buscar todas las workspaces de un usuario.
         // await userModel.findOne({username: 'GerardAB'}).populate('workSpaces');
 
-        res.status(200).json({"message": "Workspace Created"});
+        return res.status(200).json({"message": "Workspace Created"});
     }
 
     static async getInfoWorkspace(req, res) {

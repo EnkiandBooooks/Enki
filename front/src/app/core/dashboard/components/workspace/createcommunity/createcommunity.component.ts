@@ -9,7 +9,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
 import { AuthService } from '../services/workspace.service';
 
-<<<<<<< HEAD
 
 
 interface CommunityData {
@@ -19,8 +18,6 @@ interface CommunityData {
   privacy: string;
 }
 
-=======
->>>>>>> c76a9a7d27822bc640fdab9a24cd24a89f304d5d
 @Component({
   selector: 'app-createcommunity',
   standalone: true,
