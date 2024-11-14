@@ -1,5 +1,6 @@
+import mongoose from "mongoose";
 import { bookModel } from "../../schema/obras/obras.js";
-import { workspaceModel } from "../../schema/users.js";
+import { userModel, workspaceModel } from "../../schema/users.js";
 
 export class WorkspaceController{
 
@@ -11,12 +12,15 @@ export class WorkspaceController{
         const privacity = req.body.privacity;
 
         const bookBD = await bookModel.find({title: book});
-        console.log(bookBD[0]._id)
+        console.log(user._id)
         const newWorkspace = new workspaceModel({
             workSpaceName: name,
             bookId: bookBD[0]._id,
         });
-
+        const newInfo = {"workSpaces": newWorkspace}
+        userModel.findByIdAndUpdate(user._id, { $push: newInfo}, {new: true, upsert: true})
+            .then(usr => console.log('Usuario actualizado'))
+            .catch(err => console.error(err))
         res.status(200).json(newWorkspace);
     }
 }
