@@ -1,5 +1,5 @@
 import { connectDB } from "../js/database/mongodb/connectBD.js";
-import { bookModel } from "../js/schema/obras/obras.js";
+import { bookModel } from "../js/database/models/obras.js"
 import axios from "axios";
 import fs from "fs";
 import readline from "readline";

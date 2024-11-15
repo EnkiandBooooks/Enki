@@ -1,4 +1,4 @@
-import { updateUserSchema, userModel } from  "../../schema/users.js"// Asegúrate de que RegisterModel esté importado
+import { userModel } from "../../database/models/users.js"
 import { cuttImgProfile } from "../../utils/cuttProfileImg.js";
 import { deleteFolder } from "../../img/delete.js";
 import fs from 'fs';
