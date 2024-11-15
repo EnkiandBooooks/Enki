@@ -29,6 +29,7 @@ export const updateUserSchema = z.object({
  * @property {Array<Object>} timeline - Eventos con fecha, descripción y comentarios.
  */
 const workSpaceSchema = new mongooseSchema({
+    // _id: [{type: mongooseSchema.Types.ObjectId, ref: 'user'}],
     workSpaceName: {
         type: String,
         required: true
@@ -64,6 +65,7 @@ const workSpaceSchema = new mongooseSchema({
             type: String,
             default: 'Primer evento'
         },
+        //commentbox parámetros
         comment: [{
             commentId: {
                 type: mongooseSchema.Types.ObjectId,
@@ -118,6 +120,7 @@ const user = new mongooseSchema({
     },
     rol: {
         type: String,
+        enum: ['user', 'admin'],
         default: 'usuario'
     },
     img:{
@@ -136,10 +139,10 @@ const user = new mongooseSchema({
             default: 'default'
         }
     },
-    workSpaces: {
-        type: [workSpaceSchema], //Se le inserta automaticamente el modelo de workspace aqui en caso de haber contenido
-        default: undefined
-    }
+    workSpaces: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'workspace'
+    }]
 }, { timestamps: true });
 const userModel = mongoose.model('usuario', user);
 export {userModel};
