@@ -1,6 +1,6 @@
 import { z } from "zod";
 // import { RegisterModel} from '../database/mongodb/register.js'
-import { userModel } from "./users.js";
+import { userModel } from "../database/models/users.js";
 
 /**
  * Esquema de validación para el correo electrónico de registro.

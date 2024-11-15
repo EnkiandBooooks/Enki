@@ -1,7 +1,8 @@
 import { PasswdHashManager } from "../../utils/passwdhash.js";
 import jwt from 'jsonwebtoken';
 import 'dotenv/config';
-import { userSchema, userModel } from "../../schema/users.js";
+import { userSchema } from "../../schema/users.js";
+import { userModel } from "../../database/models/users.js";
 import { hash } from "bcrypt";
 
 /**

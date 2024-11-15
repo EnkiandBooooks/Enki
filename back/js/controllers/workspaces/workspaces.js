@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import { bookModel } from "../../database/models/obras.js";
-import { userModel, workspaceModel } from "../../schema/users.js";
+import { userModel } from "../../database/models/users.js";
+import { workspaceModel } from "../../database/models/workspaces.js";
 
 export class WorkspaceController{
     /**
@@ -47,12 +48,24 @@ export class WorkspaceController{
         return res.status(200).json({"message": "Workspace Created"});
     }
 
+    /**
+     * 
+     * @param {Object} req - Objeto de solicitud (Request) de Express, que contiene los datos de usuario y contraseña.
+     * @param {Object} req.params.id - Id de la workspace que esta guardada en la url.
+     * @param {Object} res - Objeto de respuesta (Response) de Express.
+     */
     static async getInfoWorkspace(req, res) {
         const workspaceId = req.params.id;
         const workspace = await workspaceModel.findById(workspaceId);
         res.status(200).json(workspace)
     }
 
+    /**
+     * 
+     * @param {Object} req 
+     * @param {Object} req.user - Array con toda la información del usuario.
+     * @param {Object} res 
+     */
     static async deleteWorkspace(req, res) {
         const workspaceId = req.params.id;
         const user = req.user;
