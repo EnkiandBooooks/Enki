@@ -64,9 +64,9 @@ export class DashboardComponent {
     this.cookieExists = this.cookieService.check("access_token") || this.cookieService.check("refresh_token");
     if (this.cookieExists) {
       this.authService.getData().subscribe((res) => {
-        console.log(res)
         this.arrUsr.set(res);
         this.imgUrl = 'data:image/png;base64,' + res.img;
+        console.log(this.arrUsr().userWorkspaces)
       });
     }
   }
