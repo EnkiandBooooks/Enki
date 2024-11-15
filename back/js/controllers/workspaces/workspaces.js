@@ -20,14 +20,17 @@ export class WorkspaceController{
         const name = req.body.communityName;
         const book = req.body.book;
         const stamps = req.body.stamps;
-        const privacity = req.body.privacity;
+        const privacy = req.body.privacy;
 
         const bookBD = await bookModel.find({title: book});
 
         try {
+            console.log("Request: ",req.body.privacy)
             const newWorkspace = new workspaceModel({
                 workSpaceName: name,
                 bookId: bookBD[0]._id,
+                privacy: privacy,
+                stamps: stamps
             });
             const workspace = await newWorkspace.save();
             const newInfo = {"workSpaces": workspace._id};
