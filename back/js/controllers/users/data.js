@@ -2,6 +2,7 @@ import { updateUserSchema, userModel } from  "../../schema/users.js"// Asegúrat
 import { cuttImgProfile } from "../../utils/cuttProfileImg.js";
 import { deleteFolder } from "../../img/delete.js";
 import fs from 'fs';
+
 /**
  * Controlador para gestionar operaciones relacionadas con los datos de usuario.
  * 
@@ -35,12 +36,21 @@ export class DataController {
             const imgPath = (usr.img===null) ?"img/img_profile_cut/icon_default.jpg" : "img/img_profile_cut/"+usr.img;
             const imagen = fs.readFileSync(imgPath);
             const base64Img = Buffer.from(imagen).toString('base64');
+
+            const userWorkspaces = await userModel
+                .findOne({username: usr.username}, "workSpaces")
+                .populate('workSpaces', "_id workSpaceName");
+            
+            
+            console.log(userWorkspaces)
+
             // Obtener la fecha de creación del usuario usando el correo electrónico
             res.json({
                 user: usr.username,
                 mail: usr.email,
                 rol: usr.rol,
                 creationDate: usr.createdAt,
+                userWorkspaces: userWorkspaces.workSpaces || null,
                 img: base64Img || null,  // Agregar la imagen si existe
             })
         } catch (error) {

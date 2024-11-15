@@ -47,6 +47,7 @@ export class ProfileComponent {
 
   async ngOnInit() {
     this.loadData();
+    console.log(this.arrUsr())
   }
 
   emailsMatch(): boolean {
