@@ -14,7 +14,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
 export interface DialogData {
-  comment: string;
+  text: string;
+  page: number;
 }
 
 @Component({
@@ -22,14 +23,15 @@ export interface DialogData {
   standalone: true,
   imports: [MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatDialogActions, MatDialogContent, MatDialogClose],
   templateUrl: './createcomment.component.html',
-  styleUrl: './createcomment.component.css',
+  styleUrls: ['./createcomment.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreatecommentComponent {
   
   readonly dialogRef = inject(MatDialogRef<CreatecommentComponent>);
   readonly data = inject<DialogData>(MAT_DIALOG_DATA);
-  readonly comment = model("");
+  readonly text = model("");
+  readonly page = model<number | null>(null);
 
   onNoClick(): void {
     this.dialogRef.close();
