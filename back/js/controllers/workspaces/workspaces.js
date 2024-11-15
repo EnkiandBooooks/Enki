@@ -45,6 +45,16 @@ export class WorkspaceController{
     }
 
     static async getInfoWorkspace(req, res) {
+        const workspaceId = req.params.id;
+        const workspace = await workspaceModel.findById(workspaceId);
+        res.status(200).json(workspace)
+    }
 
+    static async deleteWorkspace(req, res) {
+        const workspaceId = req.params.id;
+        const user = req.user;
+        await workspaceModel.findByIdAndDelete(workspaceId);
+        await userModel.findByIdAndUpdate(user._id, {$pull: {workSpaces: workspaceId}})
+        res.status(200).json({"message": "Community delete"})
     }
 }

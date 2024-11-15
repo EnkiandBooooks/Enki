@@ -121,7 +121,7 @@ const user = new mongooseSchema({
     rol: {
         type: String,
         enum: ['user', 'admin'],
-        default: 'usuario'
+        default: 'user'
     },
     img:{
         type: String,
