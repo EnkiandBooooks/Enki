@@ -26,7 +26,6 @@ export class WorkspaceController{
         const bookBD = await bookModel.find({title: book});
 
         try {
-            console.log("Request: ",req.body.privacy)
             const newWorkspace = new workspaceModel({
                 workSpaceName: name,
                 bookId: bookBD[0]._id,
@@ -40,7 +39,6 @@ export class WorkspaceController{
         }catch(err){
             console.log(err);
             return res.status(400).json({"message": "Error in create workspace."})
-            
         }
         // Comando para poder buscar todas las workspaces de un usuario.
         // await userModel.findOne({username: 'GerardAB'}).populate('workSpaces');
