@@ -56,12 +56,21 @@ const workSpaceSchema = new mongooseSchema({
             }
         }
     }],
+    stamps: {
+        type: Number,
+        default: 0
+    },
+    privacy: {
+        type: String,
+        enum: ['public', 'private'],
+        default: 'Public'
+    },
     timeline: [{
         date: {
             type: Date,
             default: Date.now
         },
-        event: {
+        event: {    
             type: String,
             default: 'Primer evento'
         },
