@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, FormArray, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -9,6 +9,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
 import { AuthService } from '../services/workspace.service';
+import { CreatecommentComponent } from '../popups/createcomment/createcomment.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-commentbox',
@@ -30,7 +32,8 @@ import { AuthService } from '../services/workspace.service';
 export class CommentboxComponent {
 
   commentForm: FormGroup;
-
+  comment = model('');
+  readonly dialog = inject(MatDialog);
   constructor(private fb: FormBuilder, private snackBar: MatSnackBar, private authService: AuthService) {
     this.commentForm = this.fb.group({
       comments: this.fb.array([]) 
@@ -78,5 +81,19 @@ export class CommentboxComponent {
     } else {
       this.snackBar.open('Por favor, completa todos los comentarios', 'Cerrar', { duration: 3000 });
     }
+  } 
+
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(CreatecommentComponent, {
+      data: {comment: this.comment},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      if (result !== undefined) {
+        this.comment.set(result);
+      }
+    });
   }
 }

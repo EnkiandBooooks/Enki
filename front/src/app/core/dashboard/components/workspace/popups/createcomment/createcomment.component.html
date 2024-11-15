@@ -1,0 +1,11 @@
+<mat-dialog-content ngNativeValidate>
+  <p>Write your comment</p>
+  <mat-form-field>
+    <mat-label>Comment</mat-label>
+    <input matInput [(ngModel)]="comment" required/>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="comment()" cdkFocusInitial>Send</button>
+</mat-dialog-actions>
