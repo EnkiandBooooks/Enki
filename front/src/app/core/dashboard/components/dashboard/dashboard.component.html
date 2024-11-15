@@ -17,6 +17,16 @@
         <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('timeline'); $event.preventDefault()">Community Testing</a>
         </mat-list-item>
+
+
+        <mat-list-item *ngFor="let workspace of arrUsr().userWorkspaces; let i = index">
+          @if(arrUsr().userWorkspaces){
+            <a mat-button class="nav-button" href="#" (click)="showSection('createcommunity'); $event.preventDefault()">{{workspace.workSpaceName}}</a>
+          }@else{
+            <p>El usuario no tiene Comunidades asignadas</p>
+          }
+          
+        </mat-list-item>
       </mat-nav-list>
     </mat-sidenav>
 
