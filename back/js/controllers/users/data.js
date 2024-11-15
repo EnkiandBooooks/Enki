@@ -38,7 +38,7 @@ export class DataController {
             const base64Img = Buffer.from(imagen).toString('base64');
 
             const userWorkspaces = await userModel
-                .findOne({username: 'GerardAB'}, "workSpaces")
+                .findOne({username: usr.username}, "workSpaces")
                 .populate('workSpaces', "_id workSpaceName");
             
             
@@ -50,7 +50,7 @@ export class DataController {
                 mail: usr.email,
                 rol: usr.rol,
                 creationDate: usr.createdAt,
-                userWorkspaces: userWorkspaces.workSpaces,
+                userWorkspaces: userWorkspaces.workSpaces || null,
                 img: base64Img || null,  // Agregar la imagen si existe
             })
         } catch (error) {
