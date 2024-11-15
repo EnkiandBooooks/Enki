@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { bookModel } from "../../schema/obras/obras.js";
+import { bookModel } from "../../database/models/obras.js";
 import { userModel, workspaceModel } from "../../schema/users.js";
 
 export class WorkspaceController{
