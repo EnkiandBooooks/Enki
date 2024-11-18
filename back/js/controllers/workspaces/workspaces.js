@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import { bookModel } from "../../database/models/obras.js";
 import { userModel } from "../../database/models/users.js";
 import { workspaceModel } from "../../database/models/workspaces.js";
+import { workspaceSchema } from "../../schema/workspaces.js";
 
 export class WorkspaceController{
     /**
@@ -18,32 +19,25 @@ export class WorkspaceController{
      */
     static async createWorkspace(req, res) {
         const user = req.user;
-        const name = req.body.communityName;
-        const book = req.body.book;
-        const stamps = req.body.stamps;
-        const privacy = req.body.privacy;
+        const { communityName, book, stamps, privacy } = workspaceSchema.parse(req.body)
 
         const bookBD = await bookModel.find({title: book});
 
         try {
-            console.log("Request: ",req.body.privacy)
             const newWorkspace = new workspaceModel({
-                workSpaceName: name,
+                workSpaceName: communityName,
                 bookId: bookBD[0]._id,
                 privacy: privacy,
                 stamps: stamps
             });
+            
             const workspace = await newWorkspace.save();
             const newInfo = {"workSpaces": workspace._id};
     
             await userModel.findByIdAndUpdate(user._id, { $push: newInfo})
         }catch(err){
-            console.log(err);
             return res.status(400).json({"message": "Error in create workspace."})
-            
         }
-        // Comando para poder buscar todas las workspaces de un usuario.
-        // await userModel.findOne({username: 'GerardAB'}).populate('workSpaces');
 
         return res.status(200).json({"message": "Workspace Created"});
     }
@@ -57,20 +51,23 @@ export class WorkspaceController{
     static async getInfoWorkspace(req, res) {
         const workspaceId = req.params.id;
         const workspace = await workspaceModel.findById(workspaceId);
+
         res.status(200).json(workspace)
     }
 
     /**
-     * 
-     * @param {Object} req 
+     * @param {Object} req - Objeto de solicitud (Request) de Express, que contiene los datos de usuario y contraseña.
+     * @param {Object} req.params.id - Id de la workspace que esta guardada en la url.
      * @param {Object} req.user - Array con toda la información del usuario.
-     * @param {Object} res 
+     * @param {Object} res - Objeto de respuesta (Response) de Express.
      */
     static async deleteWorkspace(req, res) {
         const workspaceId = req.params.id;
         const user = req.user;
+
         await workspaceModel.findByIdAndDelete(workspaceId);
         await userModel.findByIdAndUpdate(user._id, {$pull: {workSpaces: workspaceId}})
+
         res.status(200).json({"message": "Community delete"})
     }
 }
