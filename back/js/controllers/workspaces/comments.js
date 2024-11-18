@@ -1,4 +1,4 @@
-import { userModel, workspaceModel } from "../../schema/users.js";
+import {  workspaceModel } from "../../database/models/workspaces.js";
 export class CommentsController {
     static async createComments(req, res) {
         const comment = req.body.text;
