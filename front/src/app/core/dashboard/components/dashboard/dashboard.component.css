@@ -266,6 +266,11 @@ mat-menu-item {
 
 }
 
+h6 {
+  padding-top: 3em;
+  text-align: center;
+}
+
 .workspace {
   margin-bottom: 8px;
 }
