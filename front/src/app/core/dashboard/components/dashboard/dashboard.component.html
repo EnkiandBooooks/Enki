@@ -17,16 +17,20 @@
         <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('timeline'); $event.preventDefault()">Community Testing</a>
         </mat-list-item>
-
-
-        <mat-list-item *ngFor="let workspace of arrUsr().userWorkspaces; let i = index">
-          @if(arrUsr().userWorkspaces){
-            <a mat-button class="nav-button" href="#" (click)="showSection('createcommunity'); $event.preventDefault()">{{workspace.workSpaceName}}</a>
-          }@else{
+        <h6>My communities</h6>
+        
+        <!-- Contenedor con scroll para las comunidades -->
+        <div class="communities-container">
+          <mat-list-item *ngFor="let workspace of arrUsr().userWorkspaces; let i = index" class="workspace">
+            <a mat-button class="nav-button" href="#" (click)="showSection('createcommunity'); $event.preventDefault()">
+              {{workspace.workSpaceName}}
+            </a>
+          </mat-list-item>
+          <div *ngIf="arrUsr().userWorkspaces.length === 0">
             <p>El usuario no tiene Comunidades asignadas</p>
-          }
-          
-        </mat-list-item>
+          </div>
+        </div>
+        <br>
       </mat-nav-list>
     </mat-sidenav>
 
@@ -36,7 +40,7 @@
           &nbsp;<mat-icon>menu</mat-icon>&nbsp;
         </button>
 
-        <!-- Sección de perfil aquí -->
+        <!-- Sección de perfil -->
         @if(cookieExists){
           <button mat-icon-button [matMenuTriggerFor]="profileMenu">
             <img [src]="imgUrl" alt="Perfil" class="user-avatar" />
