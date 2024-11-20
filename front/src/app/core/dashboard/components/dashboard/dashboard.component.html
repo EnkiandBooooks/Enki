@@ -26,7 +26,7 @@
               {{workspace.workSpaceName}}
             </a>
           </mat-list-item>
-          <div *ngIf="arrUsr().userWorkspaces.length === 0">
+          <div *ngIf="arrUsr()?.userWorkspaces?.length === 0"> <!-- Comprobamos si arrUsr existe (en la carga de la página aún no ha acabado) y si no hay comunidades-->
             <p>El usuario no tiene Comunidades asignadas</p>
           </div>
         </div>
@@ -51,7 +51,7 @@
               <img [src]="imgUrl" alt="Foto del usuario" class="user-avatar-large" />
               <div class="profile-info">
                 <span class="user-name">{{arrUsr().user}}</span>
-                <span class="user-email">{{arrUsr().mail}}</span>
+                <span class="user-email" style="word-break: break-all;">{{arrUsr().mail}}</span>
               </div>
             </div>
             <mat-divider></mat-divider>
