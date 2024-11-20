@@ -51,18 +51,10 @@ export class ProfileComponent {
   }
 
   emailsMatch(): boolean {
-    console.log(this.arrUsr().mail)
-    console.log(this.confirmMail)
     return this.arrUsr().mail === this.confirmMail;
   }
 
   onSubmit() {
-    // Primero, verifica si los emails coinciden
-    if (!this.emailsMatch()) {
-      this.snackBar.open('Emails do not match. Please verify.', 'Close', { duration: 3000 });
-      return; // Detiene el guardado si los emails no coinciden
-    }
-
     // Primero, verifica si los emails coinciden
     if (!this.emailsMatch()) {
       this.snackBar.open('Emails do not match. Please verify.', 'Close', { duration: 3000 });
@@ -81,18 +73,17 @@ export class ProfileComponent {
       this.authService.postData(formData).subscribe({
         next: (res) => {
           console.log("Data updated successfully");
-          this.loadData(); // Actualiza los datos sin recargar la página
-          console.log("Data updated successfully");
-          this.loadData(); // Actualiza los datos sin recargar la página
+
+          window.location.reload()// Actualiza los datos recargando la página
         },
         error: (err) => {
           // Manejar el error y mostrar el mensaje en SnackBar
           console.error('Error desde backend:', err);
           this.snackBar.open('Failed to update data. Please try again.', 'Close', { duration: 3000 });
-          this.snackBar.open('Failed to update data. Please try again.', 'Close', { duration: 3000 });
         }
       });
     }
+
   }
 
   loadData() {
