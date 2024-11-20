@@ -26,12 +26,13 @@
               {{workspace.workSpaceName}}
             </a>
           </mat-list-item>
-          <div *ngIf="arrUsr()?.userWorkspaces?.length === 0"> <!-- Comprobamos si arrUsr existe (en la carga de la página aún no ha acabado) y si no hay comunidades-->
+          <!--Se comprueba si arrUsr existe (en la carga de la página aún no ha acabado de recuperar todos los datos) y si no hay comunidades-->
+          <div *ngIf="arrUsr()?.userWorkspaces?.length === 0"> 
             <p>El usuario no tiene Comunidades asignadas</p>
           </div>
         </div>
         <br>
-      </mat-nav-list>
+      </mat-nav-list> 
     </mat-sidenav>
 
     <mat-sidenav-content class="content-area">
