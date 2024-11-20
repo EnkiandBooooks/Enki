@@ -15,7 +15,7 @@ export const AUTH_ROUTES: Routes = [
     { path: 'login', component: LoginComponent, canActivate: [notLoginGuard] },
     { path: 'register1', component: Register1Component, canActivate: [notLoginGuard] },
     { path: 'register2', component: Register2Component, canActivate: [registerGuard, notLoginGuard], canDeactivate: [notExitGuard]},
-    { path: 'register3', component: Register3Component, canActivate: [registerGuard, notLoginGuard], canDeactivate: [notExitGuard]},
+    { path: 'register3', component: Register3Component, canActivate: [registerGuard, notLoginGuard]},
     { path: 'profile', component: ProfileComponent, canActivate: [loginGuard] },
     { path:'resetPswd1', component: ResetPswd1Component }, 
     { path:'resetPswd2/:tokenPswd', component: ResetPswd2Component }, 
