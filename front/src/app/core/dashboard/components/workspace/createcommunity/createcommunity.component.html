@@ -10,7 +10,19 @@
 
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Book</mat-label>
-          <input matInput formControlName="book" placeholder="Introduce el nombre del libro">
+          <input #input 
+            type="text" 
+            placeholder="Introduce el nombre del libro"
+            matInput
+            formControlName="book"
+            [matAutocomplete]="auto"
+            (input)="filter()"
+            (focus)="filter()">
+          <mat-autocomplete requireSelection #auto="matAutocomplete">
+            @for (option of filteredOptions; track option) {
+              <mat-option [value]="option">{{option}}</mat-option>
+            }
+          </mat-autocomplete>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="full-width">

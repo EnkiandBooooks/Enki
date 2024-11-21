@@ -1,7 +1,7 @@
 import { loginSchema } from "../../schema/login.js";
 import { PasswdHashManager } from "../../utils/passwdhash.js";
 import { AccessRefreshToken } from "../../utils/refreshAccessToken.js";
-import { userModel } from "../../schema/users.js";
+import { userModel } from "../../database/models/users.js";
 
 
 /**

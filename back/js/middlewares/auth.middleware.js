@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import 'dotenv/config';
-import { userModel } from "../schema/users.js";
+import { userModel } from "../database/models/users.js";
 import { ObjectId } from "mongodb";
 // TODO: Todavía no esta en uso este middleware
 

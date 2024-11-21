@@ -9,6 +9,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCard } from '@angular/material/card';
 import { MatDivider } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
@@ -36,7 +37,8 @@ import { CommentboxComponent } from '../workspace/commentbox/commentbox.componen
     MatDivider,
     MatMenuModule,
     LibraryComponent,
-    CommentboxComponent
+    CommentboxComponent,
+    MatCard
   ]
 })
 export class DashboardComponent {
@@ -66,6 +68,7 @@ export class DashboardComponent {
       this.authService.getData().subscribe((res) => {
         this.arrUsr.set(res);
         this.imgUrl = 'data:image/png;base64,' + res.img;
+        console.log(this.arrUsr().userWorkspaces)
       });
     }
   }
