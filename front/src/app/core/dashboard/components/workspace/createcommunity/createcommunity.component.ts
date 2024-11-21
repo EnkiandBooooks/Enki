@@ -75,8 +75,10 @@ export class CreatecommunityComponent {
         (error: any) => this.snackBar.open('Error en la creación', 'Cerrar', { duration: 3000 })
       );
     } else {
+
       this.snackBar.open('Completa todos los campos', 'Cerrar', { duration: 3000 });
     }
+    window.location.reload()
   }
 
   filter(): void {
