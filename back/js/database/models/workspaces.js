@@ -13,7 +13,6 @@ const mongooseSchema = mongoose.Schema;
  * @property {Array<Object>} timeline - Eventos con fecha, descripción y comentarios.
  */
 const workSpaceSchema = new mongooseSchema({
-    // _id: [{type: mongooseSchema.Types.ObjectId, ref: 'user'}],
     workSpaceName: {
         type: String,
         required: true
@@ -49,21 +48,13 @@ const workSpaceSchema = new mongooseSchema({
         enum: ['public', 'private'],
         default: 'Public'
     },
-    timeline: [{
+    timeline: {
         date: {
             type: Date,
             default: Date.now
         },
-        event: {    
-            type: String,
-            default: 'Primer evento'
-        },
         //commentbox parámetros
         comment: [{
-            commentId: {
-                type: mongooseSchema.Types.ObjectId,
-                default: () => new mongoose.Types.ObjectId()
-            },
             text: {
                 type: String,
                 required: true
@@ -81,9 +72,13 @@ const workSpaceSchema = new mongooseSchema({
             date: {
                 type: Date,
                 default: Date.now
+            },
+            event:  {    
+                type: Number,
+                default: 1
             }
         }]
-    }]
+    }
 });
 
 const workspaceModel = mongoose.model('workspace', workSpaceSchema);
