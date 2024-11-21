@@ -3,7 +3,7 @@
     <h1>{{"Pagina:"+dialogresponse.page+" Texto:"+dialogresponse.text}}</h1>
     <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
       <div formArrayName="comments">
-        <div *ngFor="let comment of comments.controls; let i = index" [formGroupName]="i">
+       <!-- <div *ngFor="let comment of arrComments(); let i = index" [formGroupName]="i">
           <mat-card>
             <mat-form-field appearance="outline">
               <mat-label>Comentario {{ i + 1 }}</mat-label>
@@ -15,7 +15,17 @@
               <input matInput formControlName="userName" placeholder="Nombre de usuario">
             </mat-form-field>
           </mat-card>
-        </div>
+        </div> -->
+        @for (item of arrComments(); track $index) {
+          <mat-card>
+            <h6>Comentario {{ $index + 1 }}</h6>
+            <p>{{item.user.userName}}</p>
+            <p>{{item.text}}</p>
+            <button mat-raised-button type="button" (click)="deleteComment(item._id);" color="accent">Delete Comment</button>
+          </mat-card>
+        }
+        
+
       </div>
       <button mat-raised-button color="accent" type="submit">Enviar Todos los Comentarios</button>
     </form>
