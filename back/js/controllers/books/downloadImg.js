@@ -1,4 +1,4 @@
-import { bookModel } from "../../schema/obras/obras.js";
+import { bookModel } from "../../database/models/obras.js";
 import { downloadImage } from "../../utils/downloadImg.js";
 export class downloadImgController {
     static async recibirImg(req, res) { 

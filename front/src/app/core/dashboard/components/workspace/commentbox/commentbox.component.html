@@ -1,6 +1,6 @@
 <div class="comment-section">
-    <button mat-raised-button color="primary" (click)="addCommentBox()">Añadir Comentario</button>
-    
+    <button mat-raised-button color="primary" (click)="openDialog()">Añadir Comentario</button>
+    <h1>{{"Pagina:"+response.page+" Texto:"+response.text}}</h1>
     <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
       <div formArrayName="comments">
         <div *ngFor="let comment of comments.controls; let i = index" [formGroupName]="i">

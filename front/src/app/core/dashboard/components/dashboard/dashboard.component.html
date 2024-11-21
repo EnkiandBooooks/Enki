@@ -18,12 +18,24 @@
           <a mat-button class="nav-button" href="#" (click)="showSection('timeline'); $event.preventDefault()">Community Testing</a>
         </mat-list-item>
         <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="toggleComponentes(); $event.preventDefault()">Mostrar/Ocultar Componentes</a>
-        </mat-list-item>
-        <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('workspace'); $event.preventDefault()">workspace</a>
         </mat-list-item>
-      </mat-nav-list>
+        <h6>My communities</h6>
+        
+        <!-- Contenedor con scroll para las comunidades -->
+        <div class="communities-container">
+          <mat-list-item *ngFor="let workspace of arrUsr().userWorkspaces; let i = index" class="workspace">
+            <a mat-button class="nav-button" href="#" (click)="showSection('createcommunity'); $event.preventDefault()">
+              {{workspace.workSpaceName}}
+            </a>
+          </mat-list-item>
+          <!--Se comprueba si arrUsr existe (en la carga de la página aún no ha acabado de recuperar todos los datos) y si no hay comunidades-->
+          <div *ngIf="arrUsr()?.userWorkspaces?.length === 0"> 
+            <p>El usuario no tiene Comunidades asignadas</p>
+          </div>
+        </div>
+        <br>
+      </mat-nav-list> 
     </mat-sidenav>
     
 
@@ -33,7 +45,7 @@
           &nbsp;<mat-icon>menu</mat-icon>&nbsp;
         </button>
 
-        <!-- Sección de perfil aquí -->
+        <!-- Sección de perfil -->
         @if(cookieExists){
           <button mat-icon-button [matMenuTriggerFor]="profileMenu">
             <img [src]="imgUrl" alt="Perfil" class="user-avatar" />
@@ -44,7 +56,7 @@
               <img [src]="imgUrl" alt="Foto del usuario" class="user-avatar-large" />
               <div class="profile-info">
                 <span class="user-name">{{arrUsr().user}}</span>
-                <span class="user-email">{{arrUsr().mail}}</span>
+                <span class="user-email" style="word-break: break-all;">{{arrUsr().mail}}</span>
               </div>
             </div>
             <mat-divider></mat-divider>
@@ -90,11 +102,10 @@
             <app-timeline [progress]="progress"></app-timeline>
           </div>
         </ng-container>
-        <div *ngIf="mostrarComponentes">
-          <app-homedash></app-homedash>
-          <app-library></app-library>
-        </div> 
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
+
+
+

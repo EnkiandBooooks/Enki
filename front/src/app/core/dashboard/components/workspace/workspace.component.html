@@ -1,1 +1,35 @@
+<!-- workspace.component.html -->
 <p>workspace works!</p>
+<div>
+  <button mat-button (click)="showSectionW('library')">Go to Library</button>
+</div>
+<div>
+  <button mat-button (click)="showSectionW('home')">Go to homedash</button>
+</div>
+<div>
+  <button mat-button (click)="showSectionW('both')">Show Both Components</button>
+</div>
+
+<mat-list-item></mat-list-item>
+
+<div class="content-wrapper">
+  <ng-container *ngIf="selectedSection === 'library'">
+    <div>
+      <app-library></app-library>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="selectedSection === 'home'">
+    <div>
+      <app-homedash></app-homedash>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="selectedSection === 'both'">
+    <div>
+      <app-library></app-library>
+      <app-homedash></app-homedash>
+    </div>
+  </ng-container>
+</div>
+
