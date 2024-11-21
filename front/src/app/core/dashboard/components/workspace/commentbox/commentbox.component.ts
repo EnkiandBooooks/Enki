@@ -30,9 +30,10 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrl: './commentbox.component.css'
 })
 export class CommentboxComponent {
-
+  
   commentForm: FormGroup;
-  response: { text: string; page: number } = { text: '', page: 1};
+
+  dialogresponse: { text: string; page: number } = { text: '', page: 1};
   readonly dialog = inject(MatDialog);
   constructor(private fb: FormBuilder, private snackBar: MatSnackBar, private authService: AuthService) {
     this.commentForm = this.fb.group({
@@ -59,7 +60,7 @@ export class CommentboxComponent {
     this.comments.push(commentGroup);
   }
 
-  sendCommentData(data: any[]): void {
+  sendCommentData(data: any): void {
     this.authService.createComment(data).subscribe(
       (res: any) => {  
         console.log('Respuesta:', res);
@@ -86,19 +87,27 @@ export class CommentboxComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(CreatecommentComponent, {
-      data: { text: this.response.text, page: this.response.page },
+      data: { text: this.dialogresponse.text, page: this.dialogresponse.page },
     });
   
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       if (result !== undefined) {
         // Guarda el resultado en el objeto response
-        this.response = {
+        this.dialogresponse = {
           text: result.text,
           page: result.page,
+        
         };
+
+        const body={
+          'text':this.dialogresponse.text, 
+          'workspace':'673ef4f3de17dca542f5d135'
+         }
+         this.sendCommentData(body);
       }
     });
+   
+   }
   }
   
-}
