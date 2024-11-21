@@ -17,7 +17,7 @@ import { AuthService } from '../../services/auth.service';
 import { CreatecommunityComponent } from '../workspace/createcommunity/createcommunity.component';
 import { TimelineComponent } from '../workspace/timeline/timeline.component';
 import { CommentboxComponent } from '../workspace/commentbox/commentbox.component';
-
+import { WorkspaceComponent } from '../workspace/workspace.component';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -37,12 +37,13 @@ import { CommentboxComponent } from '../workspace/commentbox/commentbox.componen
     MatDivider,
     MatMenuModule,
     LibraryComponent,
+    MatCard,
     CommentboxComponent,
-    MatCard
+    WorkspaceComponent
   ]
 })
 export class DashboardComponent {
-  selectedSection: string = 'home';
+  selectedSection: string = '';
   imgFile: any;
   imgUrl: any | undefined;
   arrUsr = signal<any>([]);
@@ -73,9 +74,11 @@ export class DashboardComponent {
     }
   }
 
+  
   showSection(section: string) {
     this.selectedSection = section;
     this.cdr.detectChanges();
+
   }
 
   onLogout() {
