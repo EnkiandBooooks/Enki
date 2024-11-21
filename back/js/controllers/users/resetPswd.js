@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 import 'dotenv/config';
 import { PasswdHashManager } from "../../utils/passwdhash.js";
 import { passwordSchema } from "../../schema/resetPswd.js";
-import { userModel } from "../../schema/users.js";
+import { userModel } from "../../database/models/users.js";
 
 /**
  * Clase resetPswdController para gestionar las operaciones de restablecimiento de contraseña de los usuarios.

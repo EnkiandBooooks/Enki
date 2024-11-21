@@ -14,3 +14,5 @@ export const workspacesRouter = Router();
   
   // Ruta donde recibe los datos para crear 
   workspacesRouter.post('/create', verifyJWT, WorkspaceController.createWorkspace);
+  workspacesRouter.get('/:id', verifyJWT, WorkspaceController.getInfoWorkspace);
+  workspacesRouter.delete('/:id', verifyJWT, WorkspaceController.deleteWorkspace);
