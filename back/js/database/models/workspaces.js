@@ -55,10 +55,6 @@ const workSpaceSchema = new mongooseSchema({
         },
         //commentbox parámetros
         comment: [{
-            commentId: {
-                type: mongooseSchema.Types.ObjectId,
-                default: () => new mongoose.Types.ObjectId()
-            },
             text: {
                 type: String,
                 required: true
@@ -78,8 +74,8 @@ const workSpaceSchema = new mongooseSchema({
                 default: Date.now
             },
             event:  {    
-                type: String,
-                default: 'Primer evento'
+                type: Number,
+                default: 1
             }
         }]
     }
