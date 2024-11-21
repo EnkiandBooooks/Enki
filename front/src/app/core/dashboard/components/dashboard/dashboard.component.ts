@@ -43,7 +43,7 @@ import { WorkspaceComponent } from '../workspace/workspace.component';
   ]
 })
 export class DashboardComponent {
-  selectedSection: string = '';
+  selectedSection: string = 'home';
   imgFile: any;
   imgUrl: any | undefined;
   arrUsr = signal<any>([]);
@@ -82,8 +82,8 @@ export class DashboardComponent {
   }
 
   onLogout() {
-    this.cookieService.delete('access_token');
-    this.cookieService.delete('refresh_token');
+    this.cookieService.delete('access_token', '/', 'localhost');
+    this.cookieService.delete('refresh_token', '/', 'localhost');
     window.location.href = '../landingpage/landingpage.html';
   }
 }
