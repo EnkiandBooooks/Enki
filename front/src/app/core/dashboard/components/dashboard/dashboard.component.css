@@ -8,6 +8,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+.both-components {
+  display: flex;
+  flex-direction: column; /* Usa 'row' si quieres que estén lado a lado */
+}
+
+.both-components > * {
+  flex: 1;
+}
+
 
 /* Contenedor de sidenav */
 .mat-sidenav-container {

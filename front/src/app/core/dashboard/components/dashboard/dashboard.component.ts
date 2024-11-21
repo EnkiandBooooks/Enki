@@ -16,7 +16,7 @@ import { AuthService } from '../../services/auth.service';
 import { CreatecommunityComponent } from '../workspace/createcommunity/createcommunity.component';
 import { TimelineComponent } from '../workspace/timeline/timeline.component';
 import { CommentboxComponent } from '../workspace/commentbox/commentbox.component';
-
+import { WorkspaceComponent } from '../workspace/workspace.component';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -36,15 +36,17 @@ import { CommentboxComponent } from '../workspace/commentbox/commentbox.componen
     MatDivider,
     MatMenuModule,
     LibraryComponent,
-    CommentboxComponent
+    CommentboxComponent,
+    WorkspaceComponent
   ]
 })
 export class DashboardComponent {
-  selectedSection: string = 'home';
+  selectedSection: string = '';
   imgFile: any;
   imgUrl: any | undefined;
   arrUsr = signal<any>([]);
   cookieExists: boolean = false;
+  mostrarComponentes: boolean = false;
 
   currentChapter: number = 3;
   totalChapters: number = 20;
@@ -69,10 +71,16 @@ export class DashboardComponent {
       });
     }
   }
-
+  toggleComponentes() {
+    this.mostrarComponentes = !this.mostrarComponentes;
+    
+  }
+  
   showSection(section: string) {
     this.selectedSection = section;
     this.cdr.detectChanges();
+    this.mostrarComponentes = false; // Oculta los componentes cuando cambias de sección
+
   }
 
   onLogout() {
