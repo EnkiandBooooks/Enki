@@ -9,6 +9,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCard } from '@angular/material/card';
 import { MatDivider } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
@@ -36,6 +37,7 @@ import { WorkspaceComponent } from '../workspace/workspace.component';
     MatDivider,
     MatMenuModule,
     LibraryComponent,
+    MatCard,
     CommentboxComponent,
     WorkspaceComponent
   ]
@@ -46,7 +48,6 @@ export class DashboardComponent {
   imgUrl: any | undefined;
   arrUsr = signal<any>([]);
   cookieExists: boolean = false;
-  mostrarComponentes: boolean = false;
 
   currentChapter: number = 3;
   totalChapters: number = 20;
@@ -68,18 +69,15 @@ export class DashboardComponent {
       this.authService.getData().subscribe((res) => {
         this.arrUsr.set(res);
         this.imgUrl = 'data:image/png;base64,' + res.img;
+        console.log(this.arrUsr().userWorkspaces)
       });
     }
   }
-  toggleComponentes() {
-    this.mostrarComponentes = !this.mostrarComponentes;
-    
-  }
+
   
   showSection(section: string) {
     this.selectedSection = section;
     this.cdr.detectChanges();
-    this.mostrarComponentes = false; // Oculta los componentes cuando cambias de sección
 
   }
 
