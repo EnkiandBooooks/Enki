@@ -5,7 +5,6 @@ export class CommentsController {
         const userID = req.body.commentUserID;
         const username = req.body.userName;
         const workspace = req.body.workspace
-        console.log("PArametros: ",req.body)
         try {
             const newComment = {
                 "text": comment,
