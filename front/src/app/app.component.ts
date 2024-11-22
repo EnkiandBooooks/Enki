@@ -50,7 +50,7 @@ export class AppComponent{
         '/dashboard',     // Ruta del dashboard
         '/auth/perfil',        // Ruta del perfil del usuario
         '/shared/footer/policy',        // Ruta de la política de privacidad
-        '/auth/resetPswd1'     // Ruta de recuperación de contraseña paso 1
+        '/auth/resetPswd1',     // Ruta de recuperación de contraseña paso 1
       ].includes(event.url) && !event.url.startsWith('/auth/resetPswd2'); // Oculta en rutas dinámicas /resetPswd2
     });
   }
