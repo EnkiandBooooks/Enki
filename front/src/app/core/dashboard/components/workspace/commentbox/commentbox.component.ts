@@ -79,7 +79,7 @@ export class CommentboxComponent {
     );
   }
   deleteComment(id: string ){
-    this.authService.createComment({'workspaceId':this.idWorkspace, 'commentId':id}).subscribe(
+    this.authService.deleteComment({'workspaceId':this.idWorkspace, 'commentId':id}).subscribe(
       (res: any) => {  
         console.log('Respuesta:', res);
         this.snackBar.open('Comentario eliminado', 'Cerrar', { duration: 3000 });
