@@ -3,7 +3,8 @@ export class CommentsController {
     static async createComments(req, res) {
         const comment = req.body.text;
         const user = req.user;
-        const workspace = req.body.workspace
+        const workspace = req.body.workspace;
+        const page = req.body.page;
         console.log("Parametros: ",req.body)
         try {
             const newComment = {
@@ -12,6 +13,7 @@ export class CommentsController {
                     "commentUserId": user._id,
                     "userName": user.username,
                 },
+                "event": page,
             };
             await workspaceModel.findByIdAndUpdate(workspace, { $push: {"timeline.comment": newComment }},{ new: true});   
         }catch(err){
