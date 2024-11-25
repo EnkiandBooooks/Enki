@@ -1,13 +1,13 @@
 <div class="home-content">
- 
-  
+
+
   <!-- Contenedor del buscador y categorías -->
   <div class="findContainer">
     <mat-form-field class="searchBar">
       <mat-label>Find your book</mat-label>
       <input matInput (keyup)="loadBook()" [(ngModel)]="this.search">
     </mat-form-field>
-    
+
     <div class="categories">
       <mat-button-toggle-group [multiple]="true" class="categoryButtons">
         <mat-button-toggle *ngFor="let category of categories"
@@ -19,11 +19,11 @@
       </mat-button-toggle-group>
     </div>
   </div>
-  
+
   <!-- Contenedor con desplazamiento para los libros -->
   <div class="books-scroll-container">
     <div class="books-grid">
-      <div class="bookCard" *ngFor="let book of books | paginate: {itemsPerPage: 14, currentPage: p}">
+      <div class="bookCard" *ngFor="let book of books | paginate: { itemsPerPage: booksPerPage, currentPage: p }">
         <img [src]="book.largeThumbnail" alt="Imagen del libro" class="book-image" />
         <div class="textBox">
           <p class="tittle">{{ book.title }}</p>
@@ -35,7 +35,7 @@
 
   <!-- Controles de paginación siempre visibles debajo del contenedor de los libros -->
   <pagination-controls
-    (pageChange)="p = $event"
+    (pageChange)="pageLoad($event)"
     previousLabel="Previous"
     nextLabel="Next">
   </pagination-controls>
