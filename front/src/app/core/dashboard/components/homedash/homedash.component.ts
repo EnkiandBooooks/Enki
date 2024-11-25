@@ -35,11 +35,14 @@ import { MatMenuModule } from '@angular/material/menu';
 
 
 export class HomedashComponent implements OnInit {
+  totalBooks : number =  0
   arrBooks = signal<any[]>([])
   books: any;
   booksService = inject(BooksService);
   currentIndex = 0;
   cardWidth = 216; // 200px width + 16px margin-right
+  maxVisibleSlides = 5; // Número de libros visibles en el carrusel a la vez
+
 
   constructor(private dashboard: DashboardComponent) {} // Inyecta DashboardComponent
 
@@ -52,16 +55,17 @@ export class HomedashComponent implements OnInit {
           let rating = book.rating % 1 !== 0 ? parseFloat(book.rating.toFixed(1)) : book.rating;
           return { ...book, rating };
         });
+        this.totalBooks = this.books.length; // Actualiza el número de títulos
       })
       
   }
   
   get translateX(): string {
-    return `translateX(${-this.currentIndex * this.cardWidth *5}px)`;
+    return `translateX(${-this.currentIndex * this.cardWidth * this.maxVisibleSlides}px)`;
   }
-
   nextSlide() {
-    if (this.currentIndex < 100) {
+    const maxIndex = Math.ceil(this.totalBooks / this.maxVisibleSlides) - 1;
+    if (this.currentIndex < maxIndex) {
       this.currentIndex++;
     }
   }
@@ -74,4 +78,8 @@ export class HomedashComponent implements OnInit {
   showLibrary() {
     this.dashboard.showSection('library'); // Llama a showSection con 'library'
   }
+  // showWorkspaces() {
+  //   this.dashboard.showSection('workspaces'); // Para un futuro, boton de descubrir workpsaces
+  // }
+
 }

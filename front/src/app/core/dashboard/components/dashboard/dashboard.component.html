@@ -14,9 +14,12 @@
         <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('library'); $event.preventDefault()">Library</a>
         </mat-list-item>
-        <mat-list-item>
+        <!-- <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('timeline'); $event.preventDefault()">Community Testing</a>
         </mat-list-item>
+        <mat-list-item>
+          <a mat-button class="nav-button" href="#" (click)="showSection('workspace'); $event.preventDefault()">workspace</a>
+        </mat-list-item> -->
         <h6>My communities</h6>
         
         <!-- Contenedor con scroll para las comunidades -->
@@ -34,6 +37,7 @@
         <br>
       </mat-nav-list> 
     </mat-sidenav>
+    
 
     <mat-sidenav-content class="content-area">
       <mat-toolbar color="primary" class="toolbar">
@@ -76,6 +80,11 @@
           </div>
         </ng-container>
 
+        <ng-container *ngIf="selectedSection === 'workspace'">
+          <div>
+            <app-workspace></app-workspace>
+          </div>
+        </ng-container>
         <ng-container *ngIf="selectedSection === 'library'">
           <div>
             <app-library></app-library>
@@ -93,8 +102,10 @@
             <app-timeline [progress]="progress"></app-timeline>
           </div>
         </ng-container>
-
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
+
+
+
