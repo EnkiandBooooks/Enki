@@ -16,3 +16,5 @@ export const workspacesRouter = Router();
   workspacesRouter.post('/create', verifyJWT, WorkspaceController.createWorkspace);
   workspacesRouter.get('/:id', verifyJWT, WorkspaceController.getInfoWorkspace);
   workspacesRouter.delete('/:id', verifyJWT, WorkspaceController.deleteWorkspace);
+  workspacesRouter.get('/addUser/:id', verifyJWT, WorkspaceController.addUserWorkspace);
+  workspacesRouter.post('/deleteUser', verifyJWT, WorkspaceController.deleteUserWorkspace);

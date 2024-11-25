@@ -19,4 +19,11 @@ export class AuthService {
     createComment(body: any):Observable<any>{
       return this.http.post(`${this.url}/comments/create`, body)
     }
+    deleteComment(body: any): Observable<any>{
+      return this.http.post(`${this.url}/comments/delete`, body)
+    }
+
+    recoverComments(body:any):Observable<any>{
+      return this.http.post(`${this.url}/comments/get`, body)
+    }
 }
