@@ -1,5 +1,4 @@
 <div class="home-content">
-  
   <div class="gallery-container">
     <button mat-icon-button (click)="prevSlide()" class="nav-button prev" [disabled]="currentIndex === 0">
       <mat-icon>chevron_left</mat-icon>
@@ -17,9 +16,10 @@
       </div>
     </div>
     
-    <button mat-icon-button (click)="nextSlide()" class="nav-button next" [disabled]="currentIndex >= 100">
+    <button mat-icon-button (click)="nextSlide()" class="nav-button next" [disabled]="currentIndex >= (totalBooks / maxVisibleSlides) - 1">
       <mat-icon>chevron_right</mat-icon>
     </button>
   </div>
-    <button mat-button (click)="showLibrary()">Go to Library</button>
-</div>  
+  <button mat-button (click)="showLibrary()">Go to Library</button>
+  <p>Total de títulos hola soy un mensaje nuevo: {{ totalBooks }}</p>
+</div>

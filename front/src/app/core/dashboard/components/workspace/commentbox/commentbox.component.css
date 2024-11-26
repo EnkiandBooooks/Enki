@@ -1,6 +1,89 @@
 .comment-section {
-    padding: 16px;
-  }
-  mat-card {
-    margin-bottom: 16px;
-  }
+  padding: 16px;
+}
+
+mat-card {
+  margin-bottom: 16px;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+mat-card h6 {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  background-color: #D1C5D6; /* Aplica el color de fondo */
+  padding: 8px;
+  border-radius: 6px;
+  color: #333333; /* Ajusta el color del texto para contraste */
+  font-weight: bold;
+  display: inline-block; /* Asegura que el fondo se ajuste solo al texto */
+}
+
+mat-card p {
+  font-size: 0.9em;
+  color: #555555;
+  margin: 4px 0;
+}
+
+mat-card button {
+  margin-top: 10px;
+  align-self: flex-end;
+}
+
+.box{
+  background-color: #F1F1F1;
+  border-radius: 8px;
+
+}
+
+
+.comment-details {
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.comment-text-box {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  margin-top: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment-text-box p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555555;
+}
+
+mat-card h6 {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  background-color: #D1C5D6; 
+  padding: 8px;
+  border-radius: 6px;
+  color: #333333; 
+  font-weight: bold;
+  display: inline-block;
+}
+
+
+.comment-section {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-section > button {
+  align-self: flex-end; 
+  margin-bottom: 16px; 
+}
+
+

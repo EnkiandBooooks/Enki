@@ -3,8 +3,8 @@ export class CommentsController {
     static async createComments(req, res) {
         const comment = req.body.text;
         const user = req.user;
-        const workspace = req.body.workspace
-        console.log("Parametros: ",req.body)
+        const workspace = req.body.workspace;
+        const page = req.body.page;
         try {
             const newComment = {
                 "text": comment,
@@ -12,6 +12,7 @@ export class CommentsController {
                     "commentUserId": user._id,
                     "userName": user.username,
                 },
+                "event": page,
             };
             await workspaceModel.findByIdAndUpdate(workspace, { $push: {"timeline.comment": newComment }},{ new: true});   
         }catch(err){
@@ -22,7 +23,6 @@ export class CommentsController {
     }
     static async getComments(req, res) {
         const workspace = req.body.workspace
-        console.log("Parametros: ",req.body)
         try {
             const comments = await workspaceModel.findById(workspace, { "timeline.comment": 1, _id: 0} ); 
             console.log("Comments: ", comments.timeline)
@@ -38,10 +38,8 @@ export class CommentsController {
     static async deleteComments(req, res) {
         const workspace = req.body.workspaceId;
         const commentId = req.body.commentId;
-        console.log("Parametros: ", workspace);
         try {
-            console.log(await workspaceModel.findByIdAndUpdate(workspace, { $pull: { "timeline.comment": {  commentId: commentId } } }))
-            // await workspaceModel.findByIdAndUpdate(workspace, { $pull: { "timeline.comment": {  commentId } } }) 
+            await workspaceModel.findByIdAndUpdate(workspace, { $pull: { "timeline.comment": {  _id: commentId } } });
             res.status(200).json({ message:"Comments deleted" });
         }catch(err){
             console.log(err);
