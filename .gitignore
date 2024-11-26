@@ -1,5 +1,6 @@
 **/node_modules
 **/apis.http
+**/.env
 
 back/js/img/img_profile/** 
 !back/js/img/img_profile/.gitkeep
