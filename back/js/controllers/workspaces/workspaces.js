@@ -58,8 +58,10 @@ export class WorkspaceController{
         const workspaceId = req.params.id;
         const workspace = await workspaceModel.findById(workspaceId);
 
+        console.log(workspace)
         res.status(200).json(workspace)
     }
+
 
     /**
      * Borrar comunidades.

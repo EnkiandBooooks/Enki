@@ -12,6 +12,9 @@ import { MatDivider } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
+import { TimelineComponent } from './timeline/timeline.component';
+import { CommentboxComponent } from './commentbox/commentbox.component';
+
 @Component({
   selector: 'app-workspace',
   standalone: true,
@@ -27,7 +30,9 @@ import { CommonModule } from '@angular/common';
     MatDivider,
     MatToolbarModule,
     MatMenuModule,
-    CommonModule],
+    CommonModule,
+    TimelineComponent,
+    CommentboxComponent],
   templateUrl: './workspace.component.html',
   styleUrl: './workspace.component.css'
 })

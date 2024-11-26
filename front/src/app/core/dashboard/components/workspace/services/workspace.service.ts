@@ -25,5 +25,11 @@ export class AuthService {
 
     recoverComments(body:any):Observable<any>{
       return this.http.post(`${this.url}/comments/get`, body)
+      
+    }
+    Timelineworkspace(body: any):Observable<any>{
+      console.log("Función para recoger info timeline.")
+      return this.http.post(`${this.url}`, body)
+      console.log(this.url)
     }
 }

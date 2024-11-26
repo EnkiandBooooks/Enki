@@ -92,7 +92,6 @@ export class CommentboxComponent {
     );
     this.recoverComment();
   }
-
   onSubmit(): void {
     if (this.commentForm.valid) {
       const commentData = this.commentForm.value.comments;
