@@ -1,4 +1,4 @@
-import { Component, inject, model } from '@angular/core';
+import { Component, inject, model, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, FormArray, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -30,9 +30,11 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrl: './commentbox.component.css'
 })
 export class CommentboxComponent {
-
+  
   commentForm: FormGroup;
-  response: { text: string; page: number } = { text: '', page: 1};
+  readonly idWorkspace = "673ef4f3de17dca542f5d135";
+  arrComments = signal<any>([]);
+  dialogresponse: { text: string; page: number } = { text: '', page: 1};
   readonly dialog = inject(MatDialog);
   constructor(private fb: FormBuilder, private snackBar: MatSnackBar, private authService: AuthService) {
     this.commentForm = this.fb.group({
@@ -40,9 +42,13 @@ export class CommentboxComponent {
     });
     
     // Agregar la primera caja de comentario al cargar el componente
+    
     this.addCommentBox();
   }
 
+  async ngOnInit() {
+    this.recoverComment();
+  }
   get comments(): FormArray {
     return this.commentForm.get('comments') as FormArray;
   }
@@ -59,7 +65,7 @@ export class CommentboxComponent {
     this.comments.push(commentGroup);
   }
 
-  sendCommentData(data: any[]): void {
+  sendCommentData(data: any): void {
     this.authService.createComment(data).subscribe(
       (res: any) => {  
         console.log('Respuesta:', res);
@@ -71,6 +77,20 @@ export class CommentboxComponent {
         this.snackBar.open('Error al enviar comentarios', 'Cerrar', { duration: 3000 });
       }
     );
+  }
+  deleteComment(id: string ){
+    this.authService.deleteComment({'workspaceId':this.idWorkspace, 'commentId':id}).subscribe(
+      (res: any) => {  
+        console.log('Respuesta:', res);
+        this.snackBar.open('Comentario eliminado', 'Cerrar', { duration: 3000 });
+        this.commentForm.reset();
+      },
+      (error: any) => {  
+        console.error('Error en la solicitud:', error);
+        this.snackBar.open('Error al eliminar comentarios', 'Cerrar', { duration: 3000 });
+      }
+    );
+    this.recoverComment();
   }
 
   onSubmit(): void {
@@ -84,21 +104,44 @@ export class CommentboxComponent {
   } 
 
 
+  recoverComment(){
+    this.authService.recoverComments({'workspace':this.idWorkspace}).subscribe(
+      (res: any) => {  
+        console.log(JSON.stringify(res.response.timeline.comment));
+        this.arrComments.set(res.response.timeline.comment);
+      },
+      (error: any) => {  
+        console.error('Error en la solicitud:', error);
+        this.snackBar.open('Errors', 'Cerrar', { duration: 3000 });
+      }
+    );
+
+  }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(CreatecommentComponent, {
-      data: { text: this.response.text, page: this.response.page },
+      data: { text: this.dialogresponse.text, page: this.dialogresponse.page },
     });
   
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       if (result !== undefined) {
         // Guarda el resultado en el objeto response
-        this.response = {
+        this.dialogresponse = {
           text: result.text,
           page: result.page,
+        
         };
+
+        const body={
+          'text':this.dialogresponse.text, 
+          'workspace':this.idWorkspace
+         }
+         this.sendCommentData(body);
+         this.recoverComment();
       }
     });
+   
+   }
   }
   
-}

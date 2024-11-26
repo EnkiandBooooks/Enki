@@ -1,5 +1,5 @@
 <div class="community-form">
-  <form [formGroup]="communityForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="communityForm" (ngSubmit)="onSubmit()" ngNativeValidate>
     <div class="form-container">
       <h2>Create community</h2>
       <mat-card class="form-card">
@@ -27,7 +27,7 @@
 
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Chapters / Pages</mat-label>
-          <input matInput type="number" formControlName="stamps" placeholder="Cantidad de stamps">
+          <input matInput type="number" formControlName="stamps" placeholder="Cantidad de stamps" min="1" required>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="full-width">

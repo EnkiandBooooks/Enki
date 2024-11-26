@@ -1,22 +1,37 @@
+
+
+<div class="box">
 <div class="comment-section">
-    <button mat-raised-button color="primary" (click)="openDialog()">Añadir Comentario</button>
-    <h1>{{"Pagina:"+response.page+" Texto:"+response.text}}</h1>
+    <button mat-raised-button style="color: #525252;" color="primary" (click)="openDialog()">Añadir Comentario</button>
+    <h1>{{"Pagina:"+dialogresponse.page+" Texto:"+dialogresponse.text}}</h1>
     <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
       <div formArrayName="comments">
-        <div *ngFor="let comment of comments.controls; let i = index" [formGroupName]="i">
+       <!-- <div *ngFor="let comment of arrComments(); let i = index" [formGroupName]="i">
           <mat-card>
             <mat-form-field appearance="outline">
               <mat-label>Comentario {{ i + 1 }}</mat-label>
               <input matInput formControlName="text" placeholder="Escribe tu comentario aquí">
             </mat-form-field>
-<br>
+            <br>
             <mat-form-field appearance="outline" formGroupName="user">
               <mat-label>Usuario</mat-label>
               <input matInput formControlName="userName" placeholder="Nombre de usuario">
             </mat-form-field>
           </mat-card>
-        </div>
+        </div> -->
+        @for (item of arrComments(); track $index) {
+          <mat-card>
+            <h6><strong>Usuario:</strong> {{ item.user.userName }}</h6>
+            <div class="comment-details">
+            
+              <p>{{ item.text }}</p>
+            </div>
+            <button mat-raised-button type="button" style="color: #4C474E;"  (click)="deleteComment(item._id);" color="accent">Delete Comment</button>
+          </mat-card>
+        }
+
       </div>
-      <button mat-raised-button color="accent" type="submit">Enviar Todos los Comentarios</button>
+      <button mat-raised-button color="accent" style="color: #4C474E;" type="submit">Enviar Todos los Comentarios</button>
     </form>
+</div>
 </div>
