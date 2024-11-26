@@ -24,7 +24,7 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Evita scroll dentro del contenedor principal */
+  overflow: hidden; /* Evita scroll en el contenedor principal */
   box-sizing: border-box;
 }
 
@@ -35,10 +35,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
-  box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 0;
+  height: 100%; /* Ocupa toda la altura */
+  overflow: hidden; /* Evita scroll global en la sidenav */
+}
+
+/* Contenido interno de la sidenav (con scroll limitado) */
+.mat-nav-list {
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto; /* Permite scroll en este contenedor */
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Contenedor con scroll para las comunidades */
+.communities-container {
+  max-height: 200px;
+  overflow-y: auto; /* Scroll vertical solo en este contenedor */
+  padding: 8px;
+
+  /* Ocultar la barra de scroll */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.communities-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
 
 /* Logo en el Sidebar */
@@ -241,7 +267,7 @@ mat-menu-item {
   background-color: #f8d7da;
 }
 
-
+/* Botones de las comunidades */
 .workspace {
   background-color: #292929;
   border-radius: 0 !important; 
@@ -256,25 +282,12 @@ mat-menu-item {
 }
 
 .workspace .nav-button:hover {
-
   all: unset; 
   cursor: pointer; 
   color: white; 
 }
 
-.h6{
-  color: #333;
-}
-
-
-.communities-container {
-  max-height: 200px;
-  overflow-y: auto; 
-  padding: 8px;
-  background-color: none; 
-
-}
-
+/* Encabezados */
 h6 {
   padding-top: 3em;
   text-align: center;

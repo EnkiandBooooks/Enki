@@ -49,13 +49,6 @@ export class DashboardComponent {
   arrUsr = signal<any>([]);
   cookieExists: boolean = false;
 
-  currentChapter: number = 3;
-  totalChapters: number = 20;
-
-  get progress(): number {
-    return (this.currentChapter / this.totalChapters) * 100;
-  }
-
   constructor(
     private cdr: ChangeDetectorRef,
     private cookieService: CookieService,
