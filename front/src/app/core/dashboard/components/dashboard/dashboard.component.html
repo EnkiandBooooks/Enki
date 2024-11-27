@@ -25,7 +25,7 @@
         <!-- Contenedor con scroll para las comunidades -->
         <div class="communities-container">
           <mat-list-item *ngFor="let workspace of arrUsr().userWorkspaces; let i = index" class="workspace">
-            <a mat-button class="nav-button" href="#" (click)="showSection('createcommunity'); $event.preventDefault()">
+            <a mat-button class="nav-button" href="#" (click)=" setCurrentWorkspaceId(workspace._id); showSection('workspace'); $event.preventDefault();">
               {{workspace.workSpaceName}}
             </a>
           </mat-list-item>
@@ -82,7 +82,7 @@
 
         <ng-container *ngIf="selectedSection === 'workspace'">
           <div>
-            <app-workspace></app-workspace>
+            <app-workspace [currentWorkspaceId]="currentWorkspaceId"></app-workspace>
           </div>
         </ng-container>
         <ng-container *ngIf="selectedSection === 'library'">
@@ -100,6 +100,11 @@
         <ng-container *ngIf="selectedSection === 'timeline'">
           <div>
             <app-timeline></app-timeline>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="selectedSection === 'commentbox'">
+          <div>
+            <app-commentbox></app-commentbox>
           </div>
         </ng-container>
       </div>
