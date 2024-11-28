@@ -71,6 +71,7 @@ export class CommentboxComponent {
         console.log('Respuesta:', res);
         this.snackBar.open('Comentarios enviados', 'Cerrar', { duration: 3000 });
         this.commentForm.reset();
+        this.recoverComment();
       },
       (error: any) => {  
         console.error('Error en la solicitud:', error);
@@ -139,7 +140,7 @@ export class CommentboxComponent {
           'workspace':this.currentWorkspaceId
          }
          this.sendCommentData(body);
-         this.recoverComment();
+        
       }
     });
    
