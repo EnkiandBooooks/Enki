@@ -1,4 +1,4 @@
-import { Component, inject, Injectable, signal, ViewChild } from '@angular/core';
+import { Component, inject, Injectable, signal, ViewChild, OnInit } from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
@@ -8,6 +8,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, NgModel } from '@angular/forms';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { LoadingService } from '../../../../shared/services/loading.service';
+
 @Component({
   selector: 'app-library',
   standalone: true,
@@ -25,6 +27,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
   styleUrl: './library.component.css'
 })
 export class LibraryComponent{
+  constructor(private loadingService: LoadingService) {}
   p: number = 1;
   booksPerPage: number = 14;
   search: string = '';
@@ -35,7 +38,8 @@ export class LibraryComponent{
 
   booksService = inject(BooksService);
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.loadingService.show();
     this.loadBook();
   }
 
@@ -54,6 +58,7 @@ export class LibraryComponent{
           return { ...book, rating };
         });
         this.updateBooks();
+        this.loadingService.hide();
       },
       (error) => {
         console.log('Error al cargar los libros de la pagina: ', error);
