@@ -51,7 +51,7 @@ export class WorkspaceComponent {
   }
 
   async ngOnInit(){
-    alert("Llegó la id:"+this.currentWorkspaceId)
+    //alert("Llegó la id:"+this.currentWorkspaceId)
 
     
   }

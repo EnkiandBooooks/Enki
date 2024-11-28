@@ -84,13 +84,14 @@ export class CommentboxComponent {
         console.log('Respuesta:', res);
         this.snackBar.open('Comentario eliminado', 'Cerrar', { duration: 3000 });
         this.commentForm.reset();
+        this.recoverComment();
       },
       (error: any) => {  
         console.error('Error en la solicitud:', error);
         this.snackBar.open('Error al eliminar comentarios', 'Cerrar', { duration: 3000 });
       }
     );
-    this.recoverComment();
+    
   }
 
   onSubmit(): void {
