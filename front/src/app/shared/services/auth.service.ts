@@ -2,14 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
+import { finalize } from 'rxjs';
+import { LoadingService } from './loading.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
   private http = inject(HttpClient);
-  private cookieService = inject(CookieService)
+  private cookieService = inject(CookieService);
+  private loadingService = inject(LoadingService);
 
   private url = 'http://localhost:1234/users';
 
@@ -23,19 +25,19 @@ export class AuthService {
   }
 
   sendData(body: any):Observable<any>{
-    console.log(body)
+    console.log(body);
     return this.http.post(`${this.url}/register/`, body)
   }
 
   getData():Observable<any>{
 
       return this.http.get(`${this.url}/data/`);
-    
+
   }
   postData(body:any):Observable<any>{
 
     return this.http.post(`${this.url}/data/`,body);
-  
+
   }
 
   LogIn(body: any):Observable<any>{
