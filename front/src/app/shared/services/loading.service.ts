@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class LoadingService {
   private loadingSubject = new BehaviorSubject<boolean>(false);
-  private timeoutDuration =  5000;
+  private timeoutDuration =  1000;
 
   isLoading$ = this.loadingSubject.asObservable();
 
