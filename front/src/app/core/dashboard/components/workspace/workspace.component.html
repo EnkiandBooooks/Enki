@@ -33,23 +33,18 @@
     </div>
   </ng-container>
 </div> -->
-<app-timeline></app-timeline>
-<app-commentbox [currentWorkspaceId]="currentWorkspaceId"></app-commentbox>
-<!-- <div class="custom-grid">
-  <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile class="timeline">
-      <app-timeline></app-timeline>
-    </mat-grid-tile>
-    <mat-grid-tile class="libro">
-      libro
-    </mat-grid-tile>
-    <mat-grid-tile class="commentbox">
-      <app-commentbox [currentWorkspaceId]="currentWorkspaceId"></app-commentbox>
-    </mat-grid-tile>
-    <mat-grid-tile class="users">
-      users
-    </mat-grid-tile>
-  </mat-grid-list>
-</div> -->
 
-
+<mat-grid-list cols="4" rows="4"rowHeight="1:1">
+  <mat-grid-tile class="timeline-tile" colspan="3" rowspan="1">
+    <app-timeline></app-timeline>
+  </mat-grid-tile>
+  <mat-grid-tile class="book-tile" colspan="1" rowspan="1" >
+    libro
+  </mat-grid-tile>
+  <mat-grid-tile class="commentbox-tile" colspan="3" rowspan="1">
+    <app-commentbox style="overflow: scroll;" [currentWorkspaceId]="currentWorkspaceId"></app-commentbox>
+  </mat-grid-tile>
+  <mat-grid-tile class="users-tile" colspan="1" rowspan="1">
+    users
+  </mat-grid-tile>
+</mat-grid-list>
