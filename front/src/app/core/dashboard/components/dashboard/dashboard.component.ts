@@ -49,6 +49,7 @@ export class DashboardComponent {
   imgUrl: any | undefined;
   arrUsr = signal<any>([]);
   cookieExists: boolean = false;
+  currentWorkspaceId: string ='';
 
   constructor(
     private cdr: ChangeDetectorRef,
@@ -89,4 +90,10 @@ export class DashboardComponent {
     this.cookieService.delete('refresh_token', '/', 'localhost');
     window.location.href = '../landingpage/landingpage.html';
   }
+  setCurrentWorkspaceId(id:string){
+    this.currentWorkspaceId = id;
+  }
+  
 }
+
+

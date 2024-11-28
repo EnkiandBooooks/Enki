@@ -1,5 +1,5 @@
 <!-- workspace.component.html -->
-<p>workspace works!</p>
+<!-- <p>workspace works!</p>
 <div>
   <button mat-button (click)="showSectionW('library')">Go to Library</button>
 </div>
@@ -10,8 +10,9 @@
   <button mat-button (click)="showSectionW('both')">Show Both Components</button>
 </div>
 
-<mat-list-item></mat-list-item>
+<mat-list-item></mat-list-item> -->
 
+<!-- <app-commentbox></app-commentbox>
 <div class="content-wrapper">
   <ng-container *ngIf="selectedSection === 'library'">
     <div>
@@ -31,5 +32,24 @@
       <app-homedash></app-homedash>
     </div>
   </ng-container>
-</div>
+</div> -->
+<app-timeline></app-timeline>
+<app-commentbox [currentWorkspaceId]="currentWorkspaceId"></app-commentbox>
+<!-- <div class="custom-grid">
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile class="timeline">
+      <app-timeline></app-timeline>
+    </mat-grid-tile>
+    <mat-grid-tile class="libro">
+      libro
+    </mat-grid-tile>
+    <mat-grid-tile class="commentbox">
+      <app-commentbox [currentWorkspaceId]="currentWorkspaceId"></app-commentbox>
+    </mat-grid-tile>
+    <mat-grid-tile class="users">
+      users
+    </mat-grid-tile>
+  </mat-grid-list>
+</div> -->
+
 

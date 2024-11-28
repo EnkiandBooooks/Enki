@@ -52,6 +52,7 @@ export class LibraryComponent{
 
     this.booksService.getBooksFilter(filter).subscribe(
       (res) => {
+        this.p = 1;
         this.books = res;
         this.books = this.books.map((book: any) => {
           let rating = book.rating % 1 !== 0 ? parseFloat(book.rating.toFixed(1)) : book.rating;

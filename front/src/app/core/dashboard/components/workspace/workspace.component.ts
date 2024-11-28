@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatGridList } from '@angular/material/grid-list';
+import { Component, Input } from '@angular/core';
+import { MatGridList, MatGridTile } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { LibraryComponent } from '../library/library.component';
@@ -12,13 +12,17 @@ import { MatDivider } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
+import { CommentboxComponent } from './commentbox/commentbox.component';
+import { TimelineComponent } from "./timeline/timeline.component";
+
 @Component({
   selector: 'app-workspace',
   standalone: true,
-  imports: [MatGridList, 
-    MatListModule, 
-    DashboardComponent, 
-    LibraryComponent, 
+  imports: [MatGridList,
+    MatListModule,
+    DashboardComponent,
+    LibraryComponent,
     HomedashComponent,
     MatSidenavModule,
     MatButtonModule,
@@ -27,19 +31,29 @@ import { CommonModule } from '@angular/common';
     MatDivider,
     MatToolbarModule,
     MatMenuModule,
-    CommonModule],
+    CommonModule,
+    CommentboxComponent,
+    MatGridList,
+    MatGridTile, TimelineComponent],
   templateUrl: './workspace.component.html',
   styleUrl: './workspace.component.css'
 })
 export class WorkspaceComponent {
   selectedSection: string = ''; // Inicialmente ninguna sección está seleccionada
   mostrarComponentes: boolean = false;
-  constructor() {}
+  @Input() currentWorkspaceId : string = '';
+  constructor(private authService:AuthService, private dashboard: DashboardComponent) {}
 
   showSectionW(section: string) {
     this.selectedSection = section;
     console.log('Sección seleccionada:', this.selectedSection); 
   this.mostrarComponentes = false;
+  }
+
+  async ngOnInit(){
+    //alert("Llegó la id:"+this.currentWorkspaceId)
+
+    
   }
 }
 

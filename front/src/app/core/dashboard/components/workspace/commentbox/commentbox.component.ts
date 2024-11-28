@@ -1,4 +1,4 @@
-import { Component, inject, model, signal } from '@angular/core';
+import { Component, inject, Input, model, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, FormArray, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -32,7 +32,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class CommentboxComponent {
   
   commentForm: FormGroup;
-  readonly idWorkspace = "673ef4f3de17dca542f5d135";
+  @Input() currentWorkspaceId = "";
   arrComments = signal<any>([]);
   dialogresponse: { text: string; page: number } = { text: '', page: 1};
   readonly dialog = inject(MatDialog);
@@ -79,18 +79,19 @@ export class CommentboxComponent {
     );
   }
   deleteComment(id: string ){
-    this.authService.deleteComment({'workspaceId':this.idWorkspace, 'commentId':id}).subscribe(
+    this.authService.deleteComment({'workspaceId':this.currentWorkspaceId, 'commentId':id}).subscribe(
       (res: any) => {  
         console.log('Respuesta:', res);
         this.snackBar.open('Comentario eliminado', 'Cerrar', { duration: 3000 });
         this.commentForm.reset();
+        this.recoverComment();
       },
       (error: any) => {  
         console.error('Error en la solicitud:', error);
         this.snackBar.open('Error al eliminar comentarios', 'Cerrar', { duration: 3000 });
       }
     );
-    this.recoverComment();
+    
   }
 
   onSubmit(): void {
@@ -105,7 +106,7 @@ export class CommentboxComponent {
 
 
   recoverComment(){
-    this.authService.recoverComments({'workspace':this.idWorkspace}).subscribe(
+    this.authService.recoverComments({'workspace':this.currentWorkspaceId}).subscribe(
       (res: any) => {  
         console.log(JSON.stringify(res.response.timeline.comment));
         this.arrComments.set(res.response.timeline.comment);
@@ -135,7 +136,7 @@ export class CommentboxComponent {
 
         const body={
           'text':this.dialogresponse.text, 
-          'workspace':this.idWorkspace
+          'workspace':this.currentWorkspaceId
          }
          this.sendCommentData(body);
          this.recoverComment();
