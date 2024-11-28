@@ -1,0 +1,56 @@
+
+
+.mat-grid-list{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows: repeat(4,1fr);
+}
+
+
+/* Estilo para la caja de comentarios */
+.commentbox-tile {
+  padding: 10px;
+}
+
+.commentbox-tile app-commentbox {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: blueviolet;
+  margin-top: -10px; /* Ajuste para reducir espacio entre timeline y commentbox */
+}
+
+
+.commentbox-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Estilo para la celda de timeline */
+.timeline-tile {
+  padding: 10px; 
+  background-color: black;
+}
+
+.timeline-tile app-timeline {
+  width: 100%; 
+  height: 100%; 
+  display: block;
+  margin-bottom: 10px; 
+}
+
+.book-tile {
+  padding: 10px; /* Reducir padding para ajustar mejor al layout */
+  background-color: blue;
+  text-align: center; /* Centrar el contenido del libro */
+}
+
+/* Estilo para la celda de usuarios */
+.users-tile {
+  background-color: pink;
+  padding: 10px; /* Añadir padding para consistencia */
+}
+
+/* Ajustes generales para el mat-grid */
+.mat-grid-tile {
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Opcional: Bordes ligeros para mejor separación */
+}
