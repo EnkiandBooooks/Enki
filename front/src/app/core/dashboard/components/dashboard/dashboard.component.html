@@ -31,7 +31,7 @@
           </mat-list-item>
           <!--Se comprueba si arrUsr existe (en la carga de la página aún no ha acabado de recuperar todos los datos) y si no hay comunidades-->
           <div *ngIf="arrUsr()?.userWorkspaces?.length === 0"> 
-            <p>El usuario no tiene Comunidades asignadas</p>
+            <p>User doesn't have any communities assigned</p>
           </div>
         </div>
         <br>
@@ -111,6 +111,3 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
-
-
-
