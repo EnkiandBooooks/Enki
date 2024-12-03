@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
-import { AuthService } from '../services/workspace.service';
+import { workspaceService } from '../services/workspace.service';
 import { CreatecommentComponent } from '../popups/createcomment/createcomment.component';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -36,7 +36,7 @@ export class CommentboxComponent {
   arrComments = signal<any>([]);
   dialogresponse: { text: string; page: number } = { text: '', page: 1};
   readonly dialog = inject(MatDialog);
-  constructor(private fb: FormBuilder, private snackBar: MatSnackBar, private authService: AuthService) {
+  constructor(private fb: FormBuilder, private snackBar: MatSnackBar, private workspaceService: workspaceService) {
     this.commentForm = this.fb.group({
       comments: this.fb.array([]) 
     });
@@ -66,7 +66,7 @@ export class CommentboxComponent {
   }
 
   sendCommentData(data: any): void {
-    this.authService.createComment(data).subscribe(
+    this.workspaceService.createComment(data).subscribe(
       (res: any) => {  
         console.log('Respuesta:', res);
         this.snackBar.open('Comentarios enviados', 'Cerrar', { duration: 3000 });
@@ -80,7 +80,7 @@ export class CommentboxComponent {
     );
   }
   deleteComment(id: string ){
-    this.authService.deleteComment({'workspaceId':this.currentWorkspaceId, 'commentId':id}).subscribe(
+    this.workspaceService.deleteComment({'workspaceId':this.currentWorkspaceId, 'commentId':id}).subscribe(
       (res: any) => {  
         console.log('Respuesta:', res);
         this.snackBar.open('Comentario eliminado', 'Cerrar', { duration: 3000 });
@@ -107,7 +107,7 @@ export class CommentboxComponent {
 
 
   recoverComment(){
-    this.authService.recoverComments({'workspace':this.currentWorkspaceId}).subscribe(
+    this.workspaceService.recoverComments({'workspace':this.currentWorkspaceId}).subscribe(
       (res: any) => {  
         console.log(JSON.stringify(res.response.timeline.comment));
         this.arrComments.set(res.response.timeline.comment);
