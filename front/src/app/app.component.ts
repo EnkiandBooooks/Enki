@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './shared/components/header/header.component';  
+import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { LoadingScreenComponent } from './shared/components/loading/loading.component';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -11,6 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-root',
@@ -25,10 +27,11 @@ import { CommonModule } from '@angular/common';
     MatCardModule,
     MatToolbarModule,
     CommonModule,
-    FooterComponent
+    FooterComponent,
+    LoadingScreenComponent
   ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'] 
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent{
   title = 'enkiweb';

@@ -57,7 +57,7 @@ export class WorkspaceController{
     static async getInfoWorkspace(req, res) {
         const workspaceId = req.params.id;
         const workspace = await workspaceModel.findById(workspaceId);
-
+        
         res.status(200).json(workspace)
     }
 
@@ -72,7 +72,7 @@ export class WorkspaceController{
     static async deleteWorkspace(req, res) {
         const workspaceId = req.params.id;
         const user = req.user;
-
+        // Esto lo hago para probar en github.
         await workspaceModel.findByIdAndDelete(workspaceId);
         await userModel.findByIdAndUpdate(user._id, {$pull: {workSpaces: workspaceId}})
 

@@ -9,7 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSelectModule } from '@angular/material/select';
-import { AuthService } from '../services/workspace.service';
+import { workspaceService } from '../services/workspace.service';
 import { BooksService } from '../services/books.service';
 
 
@@ -48,7 +48,7 @@ export class CreatecommunityComponent {
   constructor(
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
-    private authService: AuthService,
+    private workspaceService: workspaceService,
     private booksService: BooksService,
   ) {
     this.communityForm = this.fb.group({
@@ -70,7 +70,7 @@ export class CreatecommunityComponent {
 
   onSubmit(): void {
     if (this.communityForm.valid) {
-      this.authService.createWorkspace(this.communityForm.value).subscribe(
+      this.workspaceService.createWorkspace(this.communityForm.value).subscribe(
         () => this.snackBar.open('Comunidad creada', 'Cerrar', { duration: 3000 }),
         (error: any) => this.snackBar.open('Error en la creación', 'Cerrar', { duration: 3000 })
       );

@@ -43,7 +43,6 @@ export class LoginComponent {
 
     //Comprobar si ya está la cookie
 
-   
 
     // Si el login es exitoso, puedes redirigir a otra ruta.
   }
