@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { CommentboxComponent } from './commentbox/commentbox.component';
 import { TimelineComponent } from "./timeline/timeline.component";
+import { UsersComponent } from './users/users.component';
 
 @Component({
   selector: 'app-workspace',
@@ -34,7 +35,7 @@ import { TimelineComponent } from "./timeline/timeline.component";
     CommonModule,
     CommentboxComponent,
     MatGridList,
-    MatGridTile, TimelineComponent],
+    MatGridTile, TimelineComponent, UsersComponent],
   templateUrl: './workspace.component.html',
   styleUrl: './workspace.component.css'
 })

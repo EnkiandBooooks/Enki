@@ -41,11 +41,15 @@
   <mat-grid-tile class="timeline-tile" colspan="5" rowspan="1">
     <app-timeline></app-timeline>
   </mat-grid-tile>
- 
+
   <mat-grid-tile class="commentbox-tile" colspan="5" rowspan="2">
-    <app-commentbox style="overflow: scroll;" [currentWorkspaceId]="currentWorkspaceId"></app-commentbox>
+    <app-commentbox style="overflow: scroll;" [currentWorkspaceId]="currentWorkspaceId"></app-commentbox> 
   </mat-grid-tile>
   <mat-grid-tile class="users-tile" colspan="1" rowspan="2">
-    users
+   
+  <app-users/>
+   
+
+
   </mat-grid-tile>
 </mat-grid-list>
