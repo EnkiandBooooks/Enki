@@ -12,10 +12,12 @@ import { WorkspaceController } from "../../controllers/workspaces/workspaces.js"
  */
 export const workspacesRouter = Router();
   
-  // Ruta donde recibe los datos para crear 
-  workspacesRouter.post('/create', verifyJWT, WorkspaceController.createWorkspace);
-  workspacesRouter.get('/:id', verifyJWT, WorkspaceController.getInfoWorkspace);
-  workspacesRouter.delete('/:id', verifyJWT, WorkspaceController.deleteWorkspace);
-  workspacesRouter.get('/addUser/:id', verifyJWT, WorkspaceController.addUserWorkspace);
-  workspacesRouter.post('/deleteUser', verifyJWT, WorkspaceController.deleteUserWorkspace);
-  workspacesRouter.get('/listUsers/:id', verifyJWT,WorkspaceController.showUsersWorkspace) ;
+
+workspacesRouter.get('/listUsers/:id', verifyJWT, WorkspaceController.showUsersWorkspace);
+workspacesRouter.post('/create', verifyJWT, WorkspaceController.createWorkspace);
+workspacesRouter.get('/get/:id', verifyJWT, WorkspaceController.getInfoWorkspace);
+workspacesRouter.delete('/delete/:id', verifyJWT, WorkspaceController.deleteWorkspace);
+workspacesRouter.get('/addUser/:id', verifyJWT, WorkspaceController.addUserWorkspace);
+workspacesRouter.post('/deleteUser', verifyJWT, WorkspaceController.deleteUserWorkspace);
+
+  

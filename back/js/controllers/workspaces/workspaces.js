@@ -56,6 +56,7 @@ export class WorkspaceController{
      */
     static async getInfoWorkspace(req, res) {
         const workspaceId = req.params.id;
+        console.log("##########\n"+workspaceId+"##########\n");
         const workspace = await workspaceModel.findById(workspaceId);
         
         res.status(200).json(workspace)
@@ -133,7 +134,7 @@ export class WorkspaceController{
 
     static async showUsersWorkspace(req, res) {
         const workspaceId = req.params.id;
-        
+        console.log("##########\n"+workspaceId+"##########\n");
 
         try {
 

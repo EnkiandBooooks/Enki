@@ -1,2 +1,5 @@
-<p>users works!</p>
-texto texto aqui van los usuaruios
+<mat-list-item *ngFor="let user of userNames; let i = index" class="users">
+    <div mat-card class="nav-button">
+      {{user.name}}
+    </div>
+</mat-list-item>
