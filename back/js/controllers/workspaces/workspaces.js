@@ -130,4 +130,23 @@ export class WorkspaceController{
 
         return res.status(200).json({"message": "User delete"})
     }
+
+    static async showUsersWorkspace(req, res) {
+        const workspaceId = req.params.id;
+        
+
+        try {
+
+           const workspaceUsers= await workspaceModel.findById(workspaceId,{"members":1 })
+           return res.status(200).json(workspaceUsers)
+            
+        } catch (error) {
+            return res.status(300).json({"message": "Error deleting user of a comunity."})
+        }
+        
+
+       
+
+    }
+
 }
