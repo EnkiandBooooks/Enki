@@ -4,7 +4,7 @@ import { ProfileComponent } from '../../../auth/components/profile/profile.compo
 import { HomedashComponent } from '../homedash/homedash.component';
 import { LibraryComponent } from '../library/library.component';
 import { CookieService } from 'ngx-cookie-service';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,6 +19,8 @@ import { TimelineComponent } from '../workspace/timeline/timeline.component';
 import { CommentboxComponent } from '../workspace/commentbox/commentbox.component';
 import { WorkspaceComponent } from '../workspace/workspace.component';
 import { LoadingService } from '../../../../shared/services/loading.service';
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -40,7 +42,9 @@ import { LoadingService } from '../../../../shared/services/loading.service';
     LibraryComponent,
     MatCard,
     CommentboxComponent,
-    WorkspaceComponent
+    WorkspaceComponent,
+    RouterLink,
+    RouterOutlet
   ]
 })
 export class DashboardComponent {
@@ -82,8 +86,15 @@ export class DashboardComponent {
   showSection(section: string) {
     this.selectedSection = section;
     this.cdr.detectChanges();
+    
+    if(section === "workspace"){
 
-  }
+      this.router.navigate(['/']).then(() => { this.router.navigate(['/dashboard/workspace', this.currentWorkspaceId ])});
+    }else{
+      this.router.navigate(["/dashboard/"+section])
+    }
+  
+}
 
   onLogout() {
     this.cookieService.delete('access_token', '/', 'localhost');

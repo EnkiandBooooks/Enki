@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { CommentboxComponent } from './commentbox/commentbox.component';
 import { TimelineComponent } from "./timeline/timeline.component";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-workspace',
@@ -41,9 +42,11 @@ import { TimelineComponent } from "./timeline/timeline.component";
 export class WorkspaceComponent {
   selectedSection: string = ''; // Inicialmente ninguna sección está seleccionada
   mostrarComponentes: boolean = false;
-  @Input() currentWorkspaceId : string = '';
-  constructor(private authService:AuthService, private dashboard: DashboardComponent) {}
+  currentWorkspaceId : string = '';
+  constructor(private authService:AuthService, private dashboard: DashboardComponent, private route: ActivatedRoute) {}
 
+
+  
   showSectionW(section: string) {
     this.selectedSection = section;
     console.log('Sección seleccionada:', this.selectedSection); 
@@ -52,7 +55,10 @@ export class WorkspaceComponent {
 
   async ngOnInit(){
     //alert("Llegó la id:"+this.currentWorkspaceId)
-
+    this.route.params.subscribe(params => {
+      this.currentWorkspaceId = params['workspaceId'];  // 'idWorkspace' es el nombre del parámetro de la ruta
+      console.log('Workspace ID:', this.currentWorkspaceId);
+    });
     
   }
 }
