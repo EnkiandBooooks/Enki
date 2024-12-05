@@ -6,13 +6,13 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatCard } from '@angular/material/card';
 import { MatDivider } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../services/auth.service';
 import { workspaceService } from '../services/workspace.service';
+import { MatCardModule } from '@angular/material/card';
 
 interface Member {
   name: string;
@@ -29,11 +29,10 @@ interface Member {
   imports: [
     MatGridList,
     MatListModule,
-   
+    MatCardModule,
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
-    MatCard,
     MatDivider,
     MatToolbarModule,
     MatMenuModule,
