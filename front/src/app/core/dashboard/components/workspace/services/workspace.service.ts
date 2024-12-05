@@ -23,6 +23,11 @@ export class workspaceService {
       return this.http.post(`${this.url}/comments/delete`, body)
     }
 
+    getInfoWorkspace(body: any):Observable<any>{
+      console.log("RUta: ", `${this.url}/get/${body}`)
+      return this.http.get(`${this.url}/get/${body}`)
+    }
+
     recoverComments(body:any):Observable<any>{
       return this.http.post(`${this.url}/comments/get`, body)
     }
