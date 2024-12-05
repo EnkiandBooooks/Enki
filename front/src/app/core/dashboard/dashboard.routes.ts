@@ -7,11 +7,13 @@ import { ProfileComponent } from "../auth/components/profile/profile.component";
 import { LibraryComponent } from "./components/library/library.component";
 import { CreatecommunityComponent } from "./components/workspace/createcommunity/createcommunity.component";
 import { TimelineComponent } from "./components/workspace/timeline/timeline.component";
+import { dashboardGuard } from "./guards/dashboard.guard";
 
 export const DASHBOARD_ROUTES: Routes = [
     { 
         path: '', 
         component: DashboardComponent,
+        canActivate: [dashboardGuard],
         children: [
             
             { path:'home',component:HomedashComponent } ,
@@ -25,5 +27,5 @@ export const DASHBOARD_ROUTES: Routes = [
     
     { path:'timeline',component:TimelineComponent } ,
     { path:'commentbox',component:CommentboxComponent } ,
-    //{ path:'workspace/:workspaceId',component:WorkspaceComponent } 
+    { path: '**', redirectTo: '/dashboard/home', pathMatch: 'full' }
 ];
