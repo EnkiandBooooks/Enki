@@ -1,0 +1,58 @@
+:host {
+    display: flex;
+    flex-direction: column; /* Organiza los usuarios en columna */
+    align-items: center; /* Centra los usuarios horizontalmente */
+    justify-content: flex-start; /* Alinea los elementos al inicio verticalmente */
+    height: 100%; /* Usa todo el espacio disponible */
+    width: 100%;
+    overflow-y: auto; /* Habilita el scroll si es necesario */
+    padding: 1rem; /* Espaciado interno */
+    background-color: #f9f9f9; /* Color de fondo suave */
+  }
+  
+  .user-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 90%; /* Ajusta el ancho de los cards */
+    padding: 0.5rem;
+    border: 1px solid #ddd; /* Borde ligero */
+    border-radius: 8px;
+    background-size: 200% auto;
+    background-image: linear-gradient(to right, #ffffff 0%, #ffffff 51%, rgb(230, 215, 250) 100%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+  }
+  .user-card:hover{
+    width: 95%;
+    background-position: right top;
+  }
+  
+  .user-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Tamaño del contenedor de la imagen */
+    height: 40px;
+    border-radius: 50%; /* Hace la imagen circular */
+    overflow: hidden; /* Recorta cualquier contenido que exceda los bordes redondeados */
+    margin-right: 1rem; /* Espaciado entre la imagen y el nombre */
+  }
+  
+  .user-avatar img {
+    width: 100%; /* Escala la imagen al contenedor */
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+  }
+  
+  .user-info {
+    flex-grow: 1;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .remove-user {
+    color: #f44336; /* Botón rojo */
+  }
+  
