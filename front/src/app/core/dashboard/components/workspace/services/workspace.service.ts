@@ -26,4 +26,8 @@ export class workspaceService {
     recoverComments(body:any):Observable<any>{
       return this.http.post(`${this.url}/comments/get`, body)
     }
+    getWorkspaceUsers(id:string):Observable<any>{
+      console.log("Holi"+`${this.url}/listUsers/${id}`+"Adiosi");
+      return this.http.get(`${this.url}/listUsers/${id}`);
+    }
 }
