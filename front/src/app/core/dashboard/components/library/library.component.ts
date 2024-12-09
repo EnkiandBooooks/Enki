@@ -32,6 +32,7 @@ export class LibraryComponent{
   booksPerPage: number = 14;
   search: string = '';
   books: any;
+  key: string = '';
   displayedBooks: any;
   categories = ['Fantasy', 'Manga', 'History', 'Comic', 'Fiction', 'Novels', 'Literature', 'Science'];
   selected: any[] = [];

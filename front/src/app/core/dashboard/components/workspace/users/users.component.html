@@ -1,0 +1,14 @@
+<h6>Users</h6>
+<div class="user-card" *ngFor="let user of userNames; let i = index">
+  <!-- Imagen de usuario -->
+  <div class="user-avatar">
+    <img src="images/icon_default.jpg" alt="User Avatar" />
+  </div>
+  <!-- Información del usuario -->
+  <div class="user-info">{{ user.name }}</div>
+  <!-- Botón para eliminar usuario -->
+  <button mat-icon-button class="remove-user">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+

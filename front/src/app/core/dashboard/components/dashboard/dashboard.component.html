@@ -61,7 +61,7 @@
               </div>
             </div>
             <mat-divider></mat-divider>
-            <button mat-menu-item (click)="showSection('perfil')"><mat-icon>person</mat-icon>My Profile</button>
+            <button mat-menu-item (click)="showSection('profile')"><mat-icon>person</mat-icon>My Profile</button>
             <mat-divider></mat-divider>
             <button style="color: red;" mat-menu-item (click)="onLogout()"><mat-icon style="color: red;">logout</mat-icon>Logout</button>
           </mat-menu>
@@ -69,43 +69,9 @@
       </mat-toolbar>
 
       <div class="content-wrapper">
-        <ng-container *ngIf="selectedSection === 'home'">
+        <ng-container>
           <div>
-            <app-homedash></app-homedash>
-          </div>
-        </ng-container>
-
-        <ng-container *ngIf="selectedSection === 'perfil'">
-          <div>
-            <app-profile></app-profile>
-          </div>
-        </ng-container>
-
-        <ng-container *ngIf="selectedSection === 'workspace'">
-          <div>
-            <app-workspace [currentWorkspaceId]="currentWorkspaceId"></app-workspace>
-          </div>
-        </ng-container>
-        <ng-container *ngIf="selectedSection === 'library'">
-          <div>
-            <app-library></app-library>
-          </div>
-        </ng-container>
-
-        <ng-container *ngIf="selectedSection === 'createcommunity'">
-          <div>
-            <app-createcommunity></app-createcommunity>
-          </div>
-        </ng-container>
-        
-        <ng-container *ngIf="selectedSection === 'timeline'">
-          <div>
-            <app-timeline></app-timeline>
-          </div>
-        </ng-container>
-        <ng-container *ngIf="selectedSection === 'commentbox'">
-          <div>
-            <app-commentbox></app-commentbox>
+            <router-outlet></router-outlet>
           </div>
         </ng-container>
       </div>

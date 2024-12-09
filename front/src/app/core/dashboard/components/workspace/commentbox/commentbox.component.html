@@ -1,37 +1,37 @@
-
-
 <div class="box">
-<div class="comment-section">
-    <button mat-raised-button style="color: #525252;" color="primary" (click)="openDialog()">Añadir Comentario</button>
-    <h6>{{"Pagina:"+dialogresponse.page+" Texto:"+dialogresponse.text}}</h6>
+  <div class="comment-section">
+    <div class="sticky-button">
+      <button
+        mat-raised-button
+        style="color: #525252;"
+        color="primary"
+        (click)="openDialog()"
+      >
+        Añadir Comentario
+      </button>
+    </div>
+    
     <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
       <div formArrayName="comments">
-       <!-- <div *ngFor="let comment of arrComments(); let i = index" [formGroupName]="i">
+        <!-- Renderizado dinámico de comentarios -->
+        <ng-container *ngFor="let item of arrComments(); let i = index">
           <mat-card>
-            <mat-form-field appearance="outline">
-              <mat-label>Comentario {{ i + 1 }}</mat-label>
-              <input matInput formControlName="text" placeholder="Escribe tu comentario aquí">
-            </mat-form-field>
-            <br>
-            <mat-form-field appearance="outline" formGroupName="user">
-              <mat-label>Usuario</mat-label>
-              <input matInput formControlName="userName" placeholder="Nombre de usuario">
-            </mat-form-field>
-          </mat-card>
-        </div> -->
-        @for (item of arrComments(); track $index) {
-          <mat-card>
-            <h6><strong>{{ item.user.userName }}</strong> </h6>
+            <h6><strong>{{ item.user.userName }}</strong></h6>
             <div class="comment-details">
-            
               <p>{{ item.text }}</p>
             </div>
-            <button mat-raised-button type="button" style="color: #4C474E;"  (click)="deleteComment(item._id);" color="accent">Delete Comment</button>
+            <button
+              mat-raised-button
+              type="button"
+              style="color: #4C474E;"
+              (click)="deleteComment(item._id);"
+              color="accent"
+            >
+              Delete Comment
+            </button>
           </mat-card>
-        }
-
+        </ng-container>
       </div>
-      <!-- <button mat-raised-button color="accent" style="color: #4C474E;" type="submit">Enviar Todos los Comentarios</button> -->
     </form>
-</div>
+  </div>
 </div>
