@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, Renderer2, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
@@ -13,73 +13,90 @@ import { MatFormField } from '@angular/material/form-field';
 import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '../../services/auth.service';
+
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MatButtonModule, 
-    MatToolbarModule,MatButtonModule, 
-    MatIconModule, CommonModule, FormsModule,
-    MatCardModule, MatFormFieldModule, 
-    MatFormField,MatInputModule, RouterLink ],
+  imports: [
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    CommonModule,
+    FormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatFormField,
+    MatInputModule,
+    RouterLink,
+  ],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
-
-  constructor(private router: Router, private authService: AuthService, private cookieService:CookieService, private snackBar:MatSnackBar) {
-  }
   hide = signal(true);
+
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private cookieService: CookieService,
+    private snackBar: MatSnackBar,
+    private renderer: Renderer2
+  ) {}
+
+  ngOnInit(): void {
+    // Cargar dinámicamente el script de reCAPTCHA
+    const script = this.renderer.createElement('script');
+    script.src = 'https://www.google.com/recaptcha/api.js';
+    script.async = true;
+    script.defer = true;
+    this.renderer.appendChild(document.body, script)
+    console.log(script)
+  }
+
   clickEvent(event: MouseEvent) {
     this.hide.set(!this.hide());
     event.stopPropagation();
   }
+
   onSubmit() {
-    // Aquí puedes validar el login o enviar los datos a un servicio
     console.log('Username:', this.username);
     console.log('Password:', this.password);
     this.sendData(this.username, this.password);
-
-    //Comprobar si ya está la cookie
-
-
-    // Si el login es exitoso, puedes redirigir a otra ruta.
   }
 
-  
   sendData(username: string, password: string): void {
-    const body = { usr: username, pwd:password  };
+    const body = { usr: username, pwd: password };
     this.authService.LogIn(body).subscribe((res) => {
-      if(res.resultado === "Usuario Correcto"){
-          
-        //Guardar cookies
-        console.log(res.accessToken);
+      if (res.resultado === 'Usuario Correcto') {
+        // Guardar cookies
         this.cookieService.set('access_token', res.accessToken, {
-          path: '/',                    // Importante: asegura que la cookie está disponible en toda la app
-          secure: true,                 // Para HTTPS
-          sameSite: 'Strict'           // Protección CSRF
+          path: '/',
+          secure: true,
+          sameSite: 'Strict',
         });
-        
         this.cookieService.set('refresh_token', res.refreshToken, {
           path: '/',
           secure: true,
-          sameSite: 'Strict'
+          sameSite: 'Strict',
         });
         this.router.navigate(['/dashboard']);
         this.snackBar.open('Sesión iniciada con éxito', 'Cerrar', {
-          duration: 3000, // 3 segundos
-          panelClass: ['success-snackbar'] // Clase CSS personalizada para error
+          duration: 3000,
+          panelClass: ['success-snackbar'],
         });
-      }else{
-        this.snackBar.open('No se encuentra el correo o la contraseña es incorrecta', 'Cerrar', {
-          duration: 3000, // 3 segundos
-          panelClass: ['error-snackbar'] // Clase CSS personalizada para error
-        });
-        
+      } else {
+        this.snackBar.open(
+          'No se encuentra el correo o la contraseña es incorrecta',
+          'Cerrar',
+          {
+            duration: 3000,
+            panelClass: ['error-snackbar'],
+          }
+        );
       }
       console.log(res);
-      
-    }); 
+    });
   }
 }
