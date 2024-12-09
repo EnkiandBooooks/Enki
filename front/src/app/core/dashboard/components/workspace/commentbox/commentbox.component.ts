@@ -107,7 +107,7 @@ export class CommentboxComponent {
 
 
   recoverComment(){
-    this.workspaceService.recoverComments({'workspace':this.currentWorkspaceId}).subscribe(
+    this.workspaceService.recoverComments({'workspace':this.currentWorkspaceId}, this.currentWorkspaceId).subscribe(
       (res: any) => {  
         console.log(JSON.stringify(res.response.timeline.comment));
         this.arrComments.set(res.response.timeline.comment);

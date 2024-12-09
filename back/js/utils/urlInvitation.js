@@ -1,24 +1,19 @@
 import { getNumRandom } from "./random.js";
-export class InvitationWorkspace {
-    constructor(idWorkspace) {
-        this.idWorkspace = idWorkspace;
-        this.baseUrl = 'http://localhost:4200/invitation';
+
+/**
+ * Genera una URL de invitación para un workspace.
+ * @param {number|string} idWorkspace - El ID del workspace.
+ * @returns {string} - La URL de invitación generada.
+ */
+export function generateInvitationUrl(idWorkspace) {
+    console.log(idWorkspace)
+    const baseUrl = 'http://localhost:4200/invitation';
+    const numRandom = getNumRandom();
+    return `${baseUrl}/${idWorkspace}${numRandom}`;
     }
-    numRandom = getNumRandom();
-    generateInvitationUrl() {
-        return `${this.baseUrl}/${this.idWorkspace}${this.numRandom}`;
-        
-    }
-}
 
-// Ejecutar en otro archivo
-// import { InvitationWorkspace } from './urlInvitation.js';
 
-// Crear una instancia de la clase InvitationWorkspace
-
-const idWorkspace = 123456;
-const invitationWorkspace = new InvitationWorkspace(idWorkspace);
-
-// Ejecutar el método de la instancia
-const invitationUrl = invitationWorkspace.generateInvitationUrl();
-console.log(invitationUrl);
+// Ejemplo de uso
+// const idWorkspace = 123456;
+// const invitationUrl = generateInvitationUrl(idWorkspace);
+// console.log(invitationUrl);
