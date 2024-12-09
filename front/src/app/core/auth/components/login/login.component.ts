@@ -14,6 +14,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '../../services/auth.service';
 
+declare var grecaptcha: any;
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -52,7 +54,7 @@ export class LoginComponent implements OnInit {
     script.async = true;
     script.defer = true;
     this.renderer.appendChild(document.body, script)
-    console.log(script)
+    console.log("Recaptcha cargado correctamente")
   }
 
   clickEvent(event: MouseEvent) {
@@ -63,13 +65,22 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     console.log('Username:', this.username);
     console.log('Password:', this.password);
-    this.sendData(this.username, this.password);
+    const recaptchaResponse = grecaptcha.getResponse();
+
+    if (!recaptchaResponse) {
+      this.snackBar.open('Por favor, verifica el reCAPTCHA.', 'Cerrar', {
+        duration: 3000,
+        panelClass: ['error-snackbar'],
+      });
+      return;
+    }
+    this.sendData(this.username, this.password, recaptchaResponse);
   }
 
-  sendData(username: string, password: string): void {
-    const body = { usr: username, pwd: password };
+  sendData(username: string, password: string, recaptchaResponse: string): void {
+    const body = { usr: username, pwd: password, recaptcha: recaptchaResponse };
     this.authService.LogIn(body).subscribe((res) => {
-      if (res.resultado === 'Usuario Correcto') {
+      if (res.resultado === 'Usuario Correcto' && res.recaptcha === true) {
         // Guardar cookies
         this.cookieService.set('access_token', res.accessToken, {
           path: '/',
