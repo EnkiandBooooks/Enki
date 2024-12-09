@@ -23,7 +23,12 @@ export class workspaceService {
       return this.http.post(`${this.url}/comments/delete`, body)
     }
 
-    recoverComments(body:any):Observable<any>{
-      return this.http.post(`${this.url}/comments/get`, body)
+    recoverComments(body:any, id:string):Observable<any>{
+      return this.http.post(`${this.url}/comments/get/${id}`, body)
+    }
+
+    getInfoWorkspace(body: any, id: string): Observable<any>{
+      return this.http.post(`${this.url}/${id}`, body)
+
     }
 }

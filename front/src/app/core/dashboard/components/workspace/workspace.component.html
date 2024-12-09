@@ -39,7 +39,7 @@
     libro
   </mat-grid-tile>
   <mat-grid-tile class="timeline-tile" colspan="5" rowspan="1">
-    <app-timeline></app-timeline>
+    <app-timeline [currentWorkspaceId]="currentWorkspaceId"></app-timeline>
   </mat-grid-tile>
  
   <mat-grid-tile class="commentbox-tile" colspan="5" rowspan="2">
@@ -49,3 +49,4 @@
     users
   </mat-grid-tile>
 </mat-grid-list>
+
