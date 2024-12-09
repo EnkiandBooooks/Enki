@@ -17,4 +17,3 @@ export function generateInvitationUrl(idWorkspace) {
 // const idWorkspace = 123456;
 // const invitationUrl = generateInvitationUrl(idWorkspace);
 // console.log(invitationUrl);
-
