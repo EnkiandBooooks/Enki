@@ -5,16 +5,17 @@ param (
 
 # Cambia al directorio del script
 Set-Location (Split-Path $MyInvocation.MyCommand.Path)
-
 # Variables para las rutas
 $frontPath = "./front"
 $backPath = "./back/js"
 $frontCommand = "ng serve -o"
 $backCommand = "npm run dev"
+$dockerCommand = "docker compose up"
 $frontendUrl = "http://localhost:4200"
 # Función para iniciar el frontend
 function Start-Frontend {
     try {
+        # Start-Process powershell -ArgumentList "-Exit", "-Command", $dockerCommand
         Start-Process powershell -ArgumentList "-NoExit", "-Command", "Set-Location $frontPath; $frontCommand"
         Write-Host "Servidor frontend iniciado en nueva ventana."
     } catch {
@@ -25,7 +26,24 @@ function Start-Frontend {
 # Función para iniciar el backend
 function Start-Backend {
     try {
-        Start-Process powershell -ArgumentList "-NoExit", "-Command", "Set-Location $backPath; $backCommand"
+        Start-Process wt -ArgumentList @(
+            "-w", "0",
+            "nt",
+            "-p", "Windows PowerShell",
+            "-d", "./BackupsMongo/applibrosBackUp/docker",
+            ";", $dockerCommand
+        )
+
+        Start-Process wt -ArgumentList @(
+            "-w", "0",
+            "nt",
+            "-p", "Windows PowerShell",
+            "-d", "$backPath",
+            ";", $backCommand
+        )
+
+        # Start-Process powershell -ArgumentList "-NoExit", "-Command", $dockerCommand
+        # Start-Process powershell -ArgumentList "-NoExit", "-Command", "Set-Location $backPath; $backCommand"
         Write-Host "Servidor backend iniciado en nueva ventana."
     } catch {
         Write-Host "Error al iniciar el servidor backend en una nueva ventana." -ForegroundColor Red
@@ -37,7 +55,7 @@ if ($b) {
     Write-Host "Modo backend seleccionado (-b)"
     Start-Frontend
     # Ejecutar backend en la ventana actual y frontend en una nueva ventana
-    try {
+    try {        
         Set-Location $backPath
         & npm run dev
         Write-Host "Servidor backend iniciado en la ventana actual."
