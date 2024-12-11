@@ -42,6 +42,10 @@ const workSpaceSchema = new mongooseSchema({
             type: String,
             required: true
         },
+        image:{
+            type: String,
+            required: true
+        },
         progress: {
             percentage: {
                 type: Number,
