@@ -1,0 +1,11 @@
+services:
+  mongoDB:
+    container_name: mongoDB
+    image: mongo
+    ports:
+      - "32768:27017"
+    volumes:
+      - ./script/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - ./script/obras.json:/docker-entrypoint-initdb.d/obras.json
+      - ./script/usuarios.json:/docker-entrypoint-initdb.d/usuarios.json
+      - ./script/workspaces.json:/docker-entrypoint-initdb.d/workspaces.json

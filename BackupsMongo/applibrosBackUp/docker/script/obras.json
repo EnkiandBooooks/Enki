@@ -1,0 +1,5892 @@
+[{
+	"_id": {
+		"$oid": "672dc909829027268b4a425b"
+	},
+	"title": "Harry Potter and the Philosopher's Stone",
+	"authors": [
+		"J. K. Rowling"
+	],
+	"publishedDate": "2006",
+	"description": "Mr. and Mrs. Dursley, of number four, Privet Drive, were proud to say that they were perfectly normal, thank\r\nyou very much.",
+	"pageCount": 302,
+	"categories": [
+		"Ghosts",
+		"Monsters",
+		"Vampires"
+	],
+	"rating": 4.241787,
+	"isbn": "9781855499843",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781855499843-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781855499843-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc909829027268b4a425e"
+	},
+	"title": "Harry Potter and the Prisoner of Azkaban",
+	"authors": [
+		"J. K. Rowling"
+	],
+	"publishedDate": "Nov 09, 2016",
+	"description": "Harry Potter was a highly unusual boy in many ways.",
+	"pageCount": 416,
+	"categories": [
+		"Fantasy fiction",
+		"orphans",
+		"foster homes"
+	],
+	"rating": 4.288425,
+	"isbn": "8380082370",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/8380082370-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/8380082370-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc909829027268b4a4261"
+	},
+	"title": "Harry Potter and the Half-Blood Prince",
+	"authors": [
+		"J. K. Rowling",
+		"Mary GrandPré"
+	],
+	"publishedDate": "2006-09",
+	"description": "It was nearing midnight and the Prime Minister was sitting alone in his office, reading a long memo that was slipping through his brain without leaving the slightest trace of meaning behind.",
+	"pageCount": 652,
+	"categories": [
+		"orphans",
+		"foster homes",
+		"romans"
+	],
+	"rating": 4.4142013,
+	"isbn": "8478889906",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/8478889906-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/8478889906-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc909829027268b4a4264"
+	},
+	"title": "Harry Potter and philosophy",
+	"authors": [
+		"David Baggett",
+		"Shawn E. Klein"
+	],
+	"publishedDate": "September 10, 2004",
+	"description": "Harry Potter is certainly one of the most popular characters in the world.",
+	"pageCount": 250,
+	"categories": [
+		"English Fantasy fiction",
+		"Philosophy in literature",
+		"Harry Potter"
+	],
+	"rating": 3,
+	"isbn": "9780812694550",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780812694550-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780812694550-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc911829027268b4a4267"
+	},
+	"title": "The Lord of the Rings",
+	"authors": [
+		"J.R.R. Tolkien"
+	],
+	"publishedDate": "Jun 30, 2000",
+	"description": "When Mr. Bilbo Baggins of Bag End announced that he would shortly be celebrating his eleventy-first birthday with a party of special magnificence, there was much talk and excitement in Hobbiton.",
+	"pageCount": 1193,
+	"categories": [
+		"The Lord of the Rings",
+		"Fiction",
+		"Ficción"
+	],
+	"rating": 4.556962,
+	"isbn": "9781611748864",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781611748864-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781611748864-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc911829027268b4a426a"
+	},
+	"title": "The fellowship of the ring",
+	"authors": [
+		"J.R.R. Tolkien"
+	],
+	"publishedDate": "2014",
+	"description": "This book is largely concerned with Hobbits, and from its pages a reader may discover much of their character and a little of their history.",
+	"pageCount": 498,
+	"categories": [
+		"Elves",
+		"Dwarves",
+		"evil"
+	],
+	"rating": 4.3636365,
+	"isbn": "9783608955361",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9783608955361-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9783608955361-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc911829027268b4a426d"
+	},
+	"title": "The Two Towers",
+	"authors": [
+		"J.R.R. Tolkien"
+	],
+	"publishedDate": "February 2, 1999",
+	"description": "ARAGORN sped on up the hill.",
+	"pageCount": 436,
+	"categories": [
+		"Ents",
+		"Orcs",
+		"hobbits"
+	],
+	"rating": 4.3608246,
+	"isbn": "0345248287",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0345248287-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0345248287-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc911829027268b4a4270"
+	},
+	"title": "The Hobbit",
+	"authors": [
+		"J.R.R. Tolkien"
+	],
+	"publishedDate": "1971",
+	"description": "In a hole in the ground there lived a hobbit. Not a nasty diry wet hole, filled with ends of worms and an oozy smell...",
+	"pageCount": 310,
+	"categories": [
+		"Arkenstone",
+		"Battle of Five Armies",
+		"invisibility"
+	],
+	"rating": 4.290993,
+	"isbn": "0345534832",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0345534832-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0345534832-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc93c829027268b4a4273"
+	},
+	"title": "Book of common prayer",
+	"authors": [
+		"Church of England",
+		"J. A. Maurault"
+	],
+	"publishedDate": "1710",
+	"description": "Where at the Death of our late Sovereign Lord King Edward the Sixth, there remained one uniform order of Common Service, and Prayer , and of the Adminiftration of Sacriments, Rites and Ceremonies of the Church of England, which was fet forth on one book, entitled, The Book of Common Prayer, and Adminiftration of Sacriments, and other Rites and Ceremonies in the Church of England, Authorized by Act of Parliament holden in the fifth and sixth years of our faid late Sovereign Lord King, Edward the fixth, Institued, An Act for the Uniformity of Common Prayer, and Adminiftration of the Sacriments; The which was repealed, and taken away by Act of Parliment, in the firft year of the Reign of our late Sovereign Lady Queen Mary, to the great decay of the due honour of God, and difcomfort to the profeffors of the truth of Chrifts Religion:\r\nBe it therefore Enacted, by the Authority of this prefent Parliament, That the faid Statute of Repeal, and every thing therein contained, only concerning the faid Book, and the Service, Adminiftration of Sacriments, Rites and Ceremonies contained or appointed in or by the faid Book, fhall be void and of one effect, from and after the Feaft of Saint John Baptift next coming: And, That the faid Book, with the order of Service, and of the Adminiftration of Sacriment, Rites and Cermonies, with the alterations and additions therein added and appointed by this Statute, fhall ftand and be, from and after the faid Feaft of the Nativity of Saint John Baptift, in full force and effect, according to the tenor and effect of this Statute; Any thing in the forefaid Statute of Repeal to thecontrary notwithstanding.",
+	"pageCount": 271,
+	"categories": [
+		"Anglican Communion",
+		"Bible",
+		"Book of Common Prayer"
+	],
+	"rating": 3.6666667,
+	"isbn": "0665011164",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0665011164-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0665011164-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc93c829027268b4a4276"
+	},
+	"title": "Robinson Crusoe",
+	"authors": [
+		"Daniel Defoe"
+	],
+	"publishedDate": "1818",
+	"description": "I WAS born in the year 1632, in the city of York, of a good family, though not of that country, my father being a foreigner of Bremen, who settled first at Hull.",
+	"pageCount": 288,
+	"categories": [
+		"Robinson Cusoe",
+		"Imaginary Voyages",
+		"Fiction in Spanish"
+	],
+	"rating": 3.9285715,
+	"isbn": "0192833421",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0192833421-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0192833421-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc93c829027268b4a4279"
+	},
+	"title": "The Art of War",
+	"authors": [
+		"Sun Tzu"
+	],
+	"publishedDate": "1998",
+	"description": "Sun-tzu is the earliest extant strategic book in human history.",
+	"pageCount": 95,
+	"categories": [
+		"Open Library Staff Picks",
+		"Early works to 1800",
+		"Military art and science"
+	],
+	"rating": 3.9807692,
+	"isbn": "1545211957",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1545211957-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1545211957-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc93c829027268b4a427c"
+	},
+	"title": "Metamorphoses",
+	"authors": [
+		"Ovid"
+	],
+	"publishedDate": "1953",
+	"description": "Publius Ovidius Naso (the last name, \"Nose,\" was a family inheritance from an ancestor who presumably had a big one), though admired by Shakespeare, was distrusted in the nineteenth century as an immoralist and dismissed for most of the twentieth as a lightweight, but is now back in favor.",
+	"pageCount": 391,
+	"categories": [
+		"Poetry",
+		"Classical Mythology",
+		"Metamorphosis"
+	],
+	"rating": 4.071429,
+	"isbn": "0141937335",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0141937335-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0141937335-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc93c829027268b4a427f"
+	},
+	"title": "A Clockwork Orange",
+	"authors": [
+		"Anthony Burgess"
+	],
+	"publishedDate": "1999",
+	"description": "'WHAT'S it going to be then, eh?'",
+	"pageCount": 192,
+	"categories": [
+		"bible",
+		"aversion therapy",
+		"unintended consequences"
+	],
+	"rating": 4.04,
+	"isbn": "8576571366",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/8576571366-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/8576571366-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc93c829027268b4a4282"
+	},
+	"title": "Salomé",
+	"authors": [
+		"Oscar Wilde"
+	],
+	"publishedDate": "1953",
+	"description": "SCENE -A great terrace in the Palace of Herod, set above the banqueting-hall.",
+	"pageCount": 66,
+	"categories": [
+		"Drama",
+		"English Bible plays",
+		"Fiction"
+	],
+	"rating": 3.25,
+	"isbn": "9781895837988",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781895837988-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781895837988-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc93c829027268b4a4285"
+	},
+	"title": "'Salem’s Lot",
+	"authors": [
+		"Stephen King"
+	],
+	"publishedDate": "Oct 18, 2000",
+	"description": "Almost everyone thought the man and the boy were father and son.",
+	"pageCount": 519,
+	"categories": [
+		"Catholic Church",
+		"arson",
+		"Great Depression"
+	],
+	"rating": 4.0933332,
+	"isbn": "9780881037203",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780881037203-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780881037203-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc93c829027268b4a4288"
+	},
+	"title": "Summa Theologica",
+	"authors": [
+		"Thomas Aquinas",
+		"Kennedy, Daniel Joseph, 1862-1930"
+	],
+	"publishedDate": "1949",
+	"description": "THE FIRST POINT: 1. Prophecy is apparently not a form of knowledge, for we read of Elisha, when he was dead his body prophesied, and a little further on it is said of Joseph, his bones were visited and they prophesied.",
+	"pageCount": 227,
+	"categories": [
+		"Anthropology",
+		"Attributes",
+		"Catholic Church"
+	],
+	"rating": 4.375,
+	"isbn": "0413356108",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0413356108-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0413356108-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc93d829027268b4a428b"
+	},
+	"title": "Cato",
+	"authors": [
+		"Joseph Addison",
+		"Christine Dunn Henderson",
+		"Mark E. Yellin"
+	],
+	"publishedDate": "1749",
+	"description": "THE dawn is over-caft, the morning low'rs,",
+	"pageCount": 69,
+	"categories": [
+		"Drama",
+		"Early works to 1800",
+		"Elocution"
+	],
+	"rating": 4.8,
+	"isbn": "9781417947126",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781417947126-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781417947126-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc93d829027268b4a428e"
+	},
+	"title": "The Book of the Dead",
+	"authors": [
+		"Ernest Alfred Wallis Budge",
+		"David Lorimer",
+		"Foy Scalf",
+		"Paul Mirecki"
+	],
+	"publishedDate": "1953",
+	"description": "The Recensions of the great body of religious compositions, which were drawn up for the use of dead kings, nobles, priests, and others, and which form the Book of the Dead of the Ancient Egyptians may be thus summarized :-I. The Heliopolitan Recension, i.e., that which was edited by the priests of the College of Anu (the On of the Bible, and the Heliopolis of the Greeks), and which was based upon a series of texts now lost.",
+	"pageCount": 377,
+	"categories": [
+		"Funeral rites and ceremonies",
+		"Cults",
+		"Religion"
+	],
+	"rating": 3,
+	"isbn": "1402185995",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1402185995-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1402185995-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc93d829027268b4a4291"
+	},
+	"title": "Ben Hur",
+	"authors": [
+		"Lew Wallace"
+	],
+	"publishedDate": "February 24, 2002",
+	"description": "The Jebel es Zubleh is a mountain fifty miles and more in length, and so narrow that its tracery on the map gives it a likeness to a caterpillar crawling from the south to the north.",
+	"pageCount": 505,
+	"categories": [
+		"Fiction",
+		"Historical fiction",
+		"Fiction, christian, historical"
+	],
+	"rating": 3.5714285,
+	"isbn": "1934648205",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1934648205-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1934648205-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc93d829027268b4a4294"
+	},
+	"title": "The holy war",
+	"authors": [
+		"John Bunyan",
+		"Daniel V. Runyon",
+		"Derek Perkins"
+	],
+	"publishedDate": "February 9, 2003",
+	"description": "IN my travels, as I walked through many regions and countries, it was my chance to happen into that famous continent of Universe.",
+	"pageCount": 298,
+	"categories": [
+		"Fiction",
+		"Spiritual warfare",
+		"Soul"
+	],
+	"rating": 3.857143,
+	"isbn": "0198118872",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0198118872-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0198118872-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc93d829027268b4a4297"
+	},
+	"title": "An essay on man",
+	"authors": [
+		"Alexander Pope"
+	],
+	"publishedDate": "1809",
+	"description": "HAVING proposed to write some pieces on human life and manners, such as (to use my lord Bacon's expression) came home to men's business and bosoms, I thought it more satisfactory to begin with considering Man in the abstract, his nature and his state; since, to prove any moral duty, to enforce any moral precept, or to examine the perfection or imperfection of any creature whatsoever, it is necessary first to know what condition and relation it is placed in, and what is the proper end and purpose of its being.",
+	"pageCount": 72,
+	"categories": [
+		"Poetry",
+		"Human beings",
+		"English Philosophy"
+	],
+	"rating": 4,
+	"isbn": "9781385481295",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781385481295-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781385481295-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc93d829027268b4a429a"
+	},
+	"title": "The Prime of Miss Jean Brodie",
+	"authors": [
+		"Muriel Spark"
+	],
+	"publishedDate": "2004",
+	"description": "THE boys, as they talked to the girls from Marcia Blaine School, stood on the far side of their bicycles holding the handlebars, which established a protective fence of bicycle between the sexes, and the impression that at any moment the boys were likely to be away.",
+	"pageCount": 164,
+	"categories": [
+		"Teacher-student relationships",
+		"Women teachers",
+		"Girls"
+	],
+	"rating": 3.3333333,
+	"isbn": "9782213028347",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9782213028347-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9782213028347-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc946829027268b4a429d"
+	},
+	"title": "A Little Princess",
+	"authors": [
+		"Frances Hodgson Burnett",
+		"Johanna Ward",
+		"Oxford University Press Staff",
+		"Jennifer Bassett",
+		"Justine Eyre",
+		"Nancy Bond"
+	],
+	"publishedDate": "July 1996",
+	"description": "Once on a dark winter's day, when the yellow fog hung so thick and heavy in the streets of London that the lamps were lighted and the shop windows blazed with gas as they do at night.",
+	"pageCount": 223,
+	"categories": [
+		"Children's fiction",
+		"Orphans, fiction",
+		"London (england), fiction"
+	],
+	"rating": 4.4545455,
+	"isbn": "1499679319",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1499679319-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1499679319-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc946829027268b4a42a0"
+	},
+	"title": "The Taming of the Shrew",
+	"authors": [
+		"William Shakespeare"
+	],
+	"publishedDate": "October 1994",
+	"description": "Why, Bellman is as good as he, my lord.",
+	"pageCount": 148,
+	"categories": [
+		"Drama",
+		"Married people",
+		"Sex role"
+	],
+	"rating": 3.32,
+	"isbn": "9781580495219",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781580495219-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781580495219-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc946829027268b4a42a3"
+	},
+	"title": "Ὀδύσσεια",
+	"authors": [
+		"Όμηρος"
+	],
+	"publishedDate": "1956",
+	"description": "Tell me, Muse, the story of that resourceful man who was driven to wander far and wide after he had sacked the holy citadel of Troy.",
+	"pageCount": 373,
+	"categories": [
+		"great_books_of_the_western_world",
+		"Poetry",
+		"Fiction"
+	],
+	"rating": 4.0076923,
+	"isbn": "9780679728139",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780679728139-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780679728139-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc946829027268b4a42a6"
+	},
+	"title": "Ἰλιάς",
+	"authors": [
+		"Όμηρος"
+	],
+	"publishedDate": "June 1994",
+	"description": "1-7 Poem: invocation of the Muse and statement of the poet's theme - Akhilleus' wrath and its disastrous consequences",
+	"pageCount": 431,
+	"categories": [
+		"Odysseus (Greek mythology)",
+		"Juvenile poetry",
+		"Readers"
+	],
+	"rating": 3.971831,
+	"isbn": "9780521312097",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780521312097-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780521312097-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc946829027268b4a42aa"
+	},
+	"title": "Utopia",
+	"authors": [
+		"Thomas More"
+	],
+	"publishedDate": "April 29, 2003",
+	"description": "UPON a time when tidings came to the City of Corinth that King Philip, father to Alexander surnamed the Great, was coming thitherward with an army royal to lay siege to the city, the Corinthians being forthwith stricken with great fear, began busily and earnestly to look about them and to fall to work on all hands.",
+	"pageCount": 176,
+	"categories": [
+		"Utopias",
+		"Proverbs",
+		"Bibliography"
+	],
+	"rating": 3.2222223,
+	"isbn": "9780460104616",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780460104616-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780460104616-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc946829027268b4a42ad"
+	},
+	"title": "Anne of Green Gables",
+	"authors": [
+		"Lucy Maud Montgomery"
+	],
+	"publishedDate": "April 1, 2003",
+	"description": "MRS. RACHEL LYNDE lived just where the Avonlea main road dipped down into a little hollow, fringed with alders and ladies' eardrops and traversed by a brook that had its source away back in the woods of the old Cuthbert place; it was reputed to be an intricate, headlong brook in its earlier course through those woods, with dark secrets of pool and cascade; but by the time it reached Lynde's Hollow it was quiet, well-conducted little stream, for not even a brook could run past Mrs. Rachel Lynde's door without due regard for decency and decorum; it probably was conscious that Mrs. Rachel was sitting at her window, keeping a sharp eye on everything that passed, from brooks and children up, and that if she noticed anything odd or out of place she would never rest until she had ferreted out the whys and wherefores thereof.",
+	"pageCount": 310,
+	"categories": [
+		"Fiction",
+		"Juvenile fiction",
+		"Country life"
+	],
+	"rating": 4.24,
+	"isbn": "9787546104836",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9787546104836-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9787546104836-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc946829027268b4a42b0"
+	},
+	"title": "Anne of Avonlea",
+	"authors": [
+		"Lucy Maud Montgomery"
+	],
+	"publishedDate": "1949",
+	"description": "A TALL, SLIM girl, \"half-past sixteen,\" with serious gray eyes and hair which her friends called auburn, had sat down on the broad red sandstone doorstep of a Prince Edward Island farmhouse one ripe afternoon in August, firmly resolved to construe so many lines of Virgil.",
+	"pageCount": 302,
+	"categories": [
+		"Fiction",
+		"History",
+		"Juvenile fiction"
+	],
+	"rating": 4.318182,
+	"isbn": "9780816704668",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780816704668-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780816704668-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc946829027268b4a42b3"
+	},
+	"title": "It",
+	"authors": [
+		"Stephen King"
+	],
+	"publishedDate": "Oct 07, 2021",
+	"description": "The terror, which would not end for another twenty-eight years-if it ever did end-began, so far as I know or can tell, with a boat made from a sheet of newspaper floating down a gutter swollen with rain.",
+	"pageCount": 1176,
+	"categories": [
+		"coming of age",
+		"thrillers",
+		"suspense"
+	],
+	"rating": 4.09447,
+	"isbn": "9784167148102",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9784167148102-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9784167148102-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc94d829027268b4a42b6"
+	},
+	"title": "Pride and Prejudice",
+	"authors": [
+		"Donald Gray",
+		"Jane Austen"
+	],
+	"publishedDate": "2016",
+	"description": "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+	"pageCount": 441,
+	"categories": [
+		"British and irish fiction (fictional works by one author)",
+		"Brothers and sisters",
+		"Children's fiction"
+	],
+	"rating": 3.6470587,
+	"isbn": "039304274X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/039304274X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/039304274X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc953829027268b4a42b9"
+	},
+	"title": "Alice's Adventures in Wonderland / Through the Looking Glass",
+	"authors": [
+		"Lewis Carroll"
+	],
+	"publishedDate": "February 28, 2006",
+	"description": "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, \"and what is the use of a book,\" thought Alice, \"without pictures or conversations?\"",
+	"pageCount": 277,
+	"categories": [
+		"adventure and adventurers",
+		"adventure and adventurers, fiction",
+		"adventure stories"
+	],
+	"rating": 4.0215054,
+	"isbn": "9780805205947",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780805205947-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780805205947-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc958829027268b4a42bc"
+	},
+	"title": "The Hunger Games",
+	"authors": [
+		"Suzanne Collins"
+	],
+	"publishedDate": "Mar 17, 2008",
+	"description": "When I wake up, the other side of the bed is cold.",
+	"pageCount": 399,
+	"categories": [
+		"severe poverty",
+		"starvation",
+		"oppression"
+	],
+	"rating": 4.0925,
+	"isbn": "9780545114073",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780545114073-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780545114073-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc96a829027268b4a42bf"
+	},
+	"title": "To Kill a Mockingbird",
+	"authors": [
+		"Harper Lee"
+	],
+	"publishedDate": "2006",
+	"description": "When he was nearly thirteen, my brother Jem got his arm badly broken at the elbow.",
+	"pageCount": 321,
+	"categories": [
+		"fiction",
+		"fiction classics",
+		"contemporary fiction"
+	],
+	"rating": 4.082353,
+	"isbn": "9788490701218",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9788490701218-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9788490701218-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc98e829027268b4a42c2"
+	},
+	"title": "Nineteen Eighty-Four",
+	"authors": [
+		"George Orwell"
+	],
+	"publishedDate": "1973-09",
+	"description": "IT was a bright cold day in April, and the clocks were striking thirteen.",
+	"pageCount": 320,
+	"categories": [
+		"futurology",
+		"censorship",
+		"surveillance"
+	],
+	"rating": 4.293919,
+	"isbn": "014027877X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/014027877X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/014027877X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc98e829027268b4a42c5"
+	},
+	"title": "Bambi (First Colouring Tall)",
+	"authors": [
+		"Felix Salten",
+		"Walt Disney",
+		"Benjamin Lacombe",
+		"Nicolas Waquet",
+		"Christine Palluy",
+		"Carine Hinder",
+		"Jack Zipes",
+		"Weise Kurt",
+		"Whittaker Chambers",
+		"Begoña G. Arce",
+		"María Alonso Seisdedos"
+	],
+	"publishedDate": "1953",
+	"description": "He came into the world in the middle of the thicket, in one of those little, hidden forest glades which seem to be entirely open but are really screened in on all sides.",
+	"pageCount": 192,
+	"categories": [
+		"Deer",
+		"Fiction",
+		"Juvenile fiction"
+	],
+	"rating": 3.875,
+	"isbn": "9785040087358",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9785040087358-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9785040087358-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc98e829027268b4a42c8"
+	},
+	"title": "Mémoires d'Hadrien",
+	"authors": [
+		"Marguerite Yourcenar"
+	],
+	"publishedDate": "2004",
+	"description": "My dear Mark, Today I went to see my physician Hermogenes, who has just returned to the Villa from a rather long journey in Asia.",
+	"pageCount": 321,
+	"categories": [
+		"Love",
+		"Fiction",
+		"Romans"
+	],
+	"rating": 3,
+	"isbn": "8501154083",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/8501154083-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/8501154083-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc98e829027268b4a42cb"
+	},
+	"title": "Мастер и Маргарита",
+	"authors": [
+		"Михаил Афанасьевич Булгаков"
+	],
+	"publishedDate": "Jan 14, 2017",
+	"description": "At the hour of the hot spring sunset two citizens appeared at the Patriarch's Ponds.",
+	"pageCount": 432,
+	"categories": [
+		"satire",
+		"humor",
+		"Politicians"
+	],
+	"rating": 4.2027025,
+	"isbn": "9788880494508",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9788880494508-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9788880494508-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc98e829027268b4a42ce"
+	},
+	"title": "Voyage au Centre de la Terre",
+	"authors": [
+		"Jules Verne"
+	],
+	"publishedDate": "June 2003",
+	"description": "Looking back on everything that happened, I can hardly believe it wasn't all a dream!",
+	"pageCount": 243,
+	"categories": [
+		"Fiction",
+		"Science fiction",
+		"Imaginary Voyages"
+	],
+	"rating": 4,
+	"isbn": "9780192829009",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780192829009-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780192829009-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc98e829027268b4a42d1"
+	},
+	"title": "Of Human Bondage",
+	"authors": [
+		"William Somerset Maugham"
+	],
+	"publishedDate": "Feb 04, 2013",
+	"description": "The day broke gray and dull.",
+	"pageCount": 588,
+	"categories": [
+		"People with disabilities, fiction",
+		"Orphans, fiction",
+		"Physically handicapped, fiction"
+	],
+	"rating": 4.5555553,
+	"isbn": "9781544225692",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781544225692-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781544225692-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc98e829027268b4a42d4"
+	},
+	"title": "As You Like It",
+	"authors": [
+		"William Shakespeare"
+	],
+	"publishedDate": "March 5, 2006",
+	"description": "IN the eighteenth century Samuel Johnson declared, 'Of this play the fable is wild and pleasing'.",
+	"pageCount": 148,
+	"categories": [
+		"Drama",
+		"Fathers and daughters",
+		"Exiles"
+	],
+	"rating": 3.5,
+	"isbn": "9780497253387",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780497253387-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780497253387-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc98e829027268b4a42d7"
+	},
+	"title": "The Sayings of Lao Tzü",
+	"authors": [
+		"Laozi"
+	],
+	"publishedDate": "1998",
+	"description": "Laozi opens with a creation myth.",
+	"pageCount": 165,
+	"categories": [
+		"Taoism",
+		"Chinese Philosophy",
+		"Asian Philosophy"
+	],
+	"rating": 4.4,
+	"isbn": "0911714200",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0911714200-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0911714200-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc98e829027268b4a42db"
+	},
+	"title": "Hamlet",
+	"authors": [
+		"William Shakespeare"
+	],
+	"publishedDate": "Jan 05, 2016",
+	"description": "UP to the end of the First World War and for some time thereafter, Hamlet was generally regarded as the greatest of all Shakespeare's plays, the most exciting, absorbing, and profound drama ever written.",
+	"pageCount": 202,
+	"categories": [
+		"performing arts",
+		"nonfiction classics",
+		"Shakespeare plays, texts"
+	],
+	"rating": 3.9647887,
+	"isbn": "9788382223729",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9788382223729-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9788382223729-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc98e829027268b4a42df"
+	},
+	"title": "Faust",
+	"authors": [
+		"Johann Wolfgang von Goethe"
+	],
+	"publishedDate": "1910",
+	"description": "Uncertain shapes, visitors from the past",
+	"pageCount": 306,
+	"categories": [
+		"Good and evil",
+		"Drama",
+		"Redemption"
+	],
+	"rating": 4.064516,
+	"isbn": "3257204396",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/3257204396-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/3257204396-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc994829027268b4a42e2"
+	},
+	"title": "Brave New World",
+	"authors": [
+		"Aldous Huxley"
+	],
+	"publishedDate": "June 9, 2005",
+	"description": "In 1931, when Brave New World was being written, I was convinced that there was still plenty of time.",
+	"pageCount": 254,
+	"categories": [
+		"Utopias",
+		"Brainwashing",
+		"Moral and ethical aspects of Science"
+	],
+	"rating": 3.9254498,
+	"isbn": "0099518473",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0099518473-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0099518473-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc994829027268b4a42e5"
+	},
+	"title": "Brave New World Revisited",
+	"authors": [
+		"Aldous Huxley"
+	],
+	"publishedDate": "1960",
+	"description": "In 1931, when Brave New World was being written, I was convinced that there was still plenty of time.",
+	"pageCount": 155,
+	"categories": [
+		"Brainwashing",
+		"Science Fiction & Fantasy",
+		"Modern History"
+	],
+	"rating": 3.142857,
+	"isbn": "1407020919",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1407020919-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1407020919-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc994829027268b4a42e8"
+	},
+	"title": "Brave New World",
+	"authors": [
+		"Aldous Huxley"
+	],
+	"publishedDate": "1932",
+	"description": "\"A squat grey building of only thirty-four stories.\"",
+	"pageCount": 281,
+	"categories": [
+		"Utopias",
+		"Brainwashing",
+		"Moral and ethical aspects of science"
+	],
+	"rating": 4.6,
+	"isbn": "0060850523",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0060850523-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0060850523-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9a1829027268b4a42eb"
+	},
+	"title": "The Great Gatsby",
+	"authors": [
+		"F. Scott Fitzgerald"
+	],
+	"publishedDate": "1953",
+	"description": "In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.",
+	"pageCount": 186,
+	"categories": [
+		"Married people, fiction",
+		"American fiction (fictional works by one author)",
+		"Fiction, psychological"
+	],
+	"rating": 3.9666667,
+	"isbn": "0785839992",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0785839992-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0785839992-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9a1829027268b4a42ee"
+	},
+	"title": "The Beautiful and Damned",
+	"authors": [
+		"F. Scott Fitzgerald"
+	],
+	"publishedDate": "1950-01-01",
+	"description": "IN 1913, when Anthony Patch was twenty-five, two years were already gone since irony, the Holy Ghost of this later day, had, theoretically at least, descended upon him.",
+	"pageCount": 442,
+	"categories": [
+		"Fiction",
+		"Inheritance and succession, fiction",
+		"Married people, fiction"
+	],
+	"rating": 4.111111,
+	"isbn": "1940849950",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1940849950-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1940849950-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9b2829027268b4a42f1"
+	},
+	"title": "War and Peace",
+	"authors": [
+		"Лев Толстой"
+	],
+	"publishedDate": "2014",
+	"description": "'WELL, PRINCE, so Genoa and Lucca are now just family estates of the Buonapartes.",
+	"pageCount": 696,
+	"categories": [
+		"Classic",
+		"History",
+		"Russian Empire"
+	],
+	"rating": 4.521739,
+	"isbn": "1853260622",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1853260622-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1853260622-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9b2829027268b4a42f5"
+	},
+	"title": "Le Morte d'Arthur",
+	"authors": [
+		"Thomas Malory"
+	],
+	"publishedDate": "1953",
+	"description": "'And if so be ye can descrive what ye bear, ye are worthy to bear the arms.'",
+	"pageCount": 415,
+	"categories": [
+		"Arthurian romances",
+		"Fiction",
+		"Knights and knighthood"
+	],
+	"rating": 3.4705882,
+	"isbn": "0451625676",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0451625676-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0451625676-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9b2829027268b4a42f8"
+	},
+	"title": "Ab urbe condita",
+	"authors": [
+		"Titus Livius"
+	],
+	"publishedDate": "1953",
+	"description": "I consider myself at liberty to commence what is only a section of my history with a prefatory remark such as most writers have placed at the very beginning of their works, namely, that the war I am about to describe is the most memorable of any that have ever been waged, I mean the war which the Carthaginians, under Hannibal's leadership, waged with Rome.",
+	"pageCount": 261,
+	"categories": [
+		"Antiquities",
+		"Bibliography",
+		"Biography"
+	],
+	"rating": 4.1666665,
+	"isbn": "1419166298",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1419166298-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1419166298-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9b2829027268b4a42fb"
+	},
+	"title": "The Complete Sherlock Holmes [4 novels, 56 stories]",
+	"authors": [
+		"Arthur Conan Doyle"
+	],
+	"publishedDate": "1953",
+	"description": "IN THE YEAR 1878 I took my degree of Doctor of Medicine of the University of London, and proceeded to Netley to go through the course prescribed for surgeons in the Army.",
+	"pageCount": 1122,
+	"categories": [
+		"Action & Adventure Fiction",
+		"Adventure stories",
+		"air guns"
+	],
+	"rating": 4.4883723,
+	"isbn": "1979587388",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1979587388-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1979587388-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9b6829027268b4a4300"
+	},
+	"title": "Anna Karenina",
+	"authors": [
+		"Лев Толстой"
+	],
+	"publishedDate": "1999",
+	"description": "ALL happy families are alike but an unhappy family is unhappy after its own fashion.",
+	"pageCount": 837,
+	"categories": [
+		"Fiction",
+		"Adultery",
+		"Married women"
+	],
+	"rating": 4.1621623,
+	"isbn": "055352559X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/055352559X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/055352559X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9be829027268b4a4303"
+	},
+	"title": "Преступление и наказание",
+	"authors": [
+		"Фёдор Михайлович Достоевский"
+	],
+	"publishedDate": "January 30, 1952",
+	"description": "Early one evening, during an exceptional heat wave in the beginning of July, a young man walked out into the street from the closetlike room he rented on Stoliarny Place.",
+	"pageCount": 535,
+	"categories": [
+		"English Translations",
+		"Russian literature",
+		"Novela psicológica"
+	],
+	"rating": 4.2,
+	"isbn": "9780486415871",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780486415871-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780486415871-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9be829027268b4a4306"
+	},
+	"title": "Crime and Punishment Notes",
+	"authors": [
+		"James Lamar Roberts",
+		"Roberts, James L."
+	],
+	"publishedDate": "1963",
+	"description": "Fyodor Mikhailovich Dostoevsky was born in 1821, the second of seven children, and lived until 1881.",
+	"pageCount": 84,
+	"categories": [
+		"Examinations",
+		"Literary Criticism",
+		"Criticism and interpretation"
+	],
+	"rating": 2,
+	"isbn": "0822003287",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0822003287-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0822003287-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9c5829027268b4a4309"
+	},
+	"title": "The Miserable Mill",
+	"authors": [
+		"Lemony Snicket"
+	],
+	"publishedDate": "June 9, 2003",
+	"description": "Sometime during your life-in fact, very soon-you may find yourself reading a book, and you may notice that a book's first sentence can often tell you what sort of story your book contains.",
+	"pageCount": 202,
+	"categories": [
+		"Children's fiction",
+		"Orphans, fiction",
+		"Brothers and sisters, fiction"
+	],
+	"rating": 3.7741935,
+	"isbn": "0060283157",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0060283157-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0060283157-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9ec829027268b4a430e"
+	},
+	"title": "Essays",
+	"authors": [
+		"Francis Bacon"
+	],
+	"publishedDate": "1999",
+	"description": "What is truth? said jesting Pilate; and would not stay for an answer.",
+	"pageCount": 270,
+	"categories": [
+		"Aphorisms and apothegms",
+		"Classical Mythology",
+		"Early works to 1800"
+	],
+	"rating": 3.6363637,
+	"isbn": "9781573920322",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781573920322-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781573920322-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9ec829027268b4a4311"
+	},
+	"title": "Macbeth",
+	"authors": [
+		"William Shakespeare"
+	],
+	"publishedDate": "Apr 15, 2014",
+	"description": "This short scene establishes the supernatural element in the play and introduces the three witches (or weird sisters).",
+	"pageCount": 140,
+	"categories": [
+		"Drama",
+		"Regicides",
+		"Kings and rulers"
+	],
+	"rating": 3.9304347,
+	"isbn": "9780934048033",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780934048033-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780934048033-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9ec829027268b4a4315"
+	},
+	"title": "Lolita",
+	"authors": [
+		"Vladimir Nabokov"
+	],
+	"publishedDate": "Jan 07, 1980",
+	"description": "Lolita, light of my life, fire of my loins.",
+	"pageCount": 364,
+	"categories": [
+		"erotic fiction",
+		"romance fiction",
+		"fiction"
+	],
+	"rating": 3.952381,
+	"isbn": "3499106353",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/3499106353-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/3499106353-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9ec829027268b4a4318"
+	},
+	"title": "La Poetica",
+	"authors": [
+		"Aristotle"
+	],
+	"publishedDate": "1949",
+	"description": "We speak in many ways of what is, i.e. the ways distinguished earlier in our work on the several ways in which things are spoken of.",
+	"pageCount": 312,
+	"categories": [
+		"Metaphysics",
+		"Early works to 1800",
+		"Metaphysica (Aristoteles)"
+	],
+	"rating": 3.6666667,
+	"isbn": "9788424921767",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9788424921767-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9788424921767-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9ec829027268b4a431b"
+	},
+	"title": "Lady Chatterley's Lover",
+	"authors": [
+		"David Herbert Lawrence"
+	],
+	"publishedDate": "October 2002",
+	"description": "OURS is essentially a tragic age but we refuse emphatically to be tragic about it.",
+	"pageCount": 364,
+	"categories": [
+		"Sexual behavior",
+		"Married women",
+		"Adultery"
+	],
+	"rating": 2.75,
+	"isbn": "9780899663753",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780899663753-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780899663753-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9ec829027268b4a431e"
+	},
+	"title": "2010, odyssey two",
+	"authors": [
+		"Arthur C. Clarke"
+	],
+	"publishedDate": "November 3, 1997",
+	"description": "EVEN IN THIS METRIC AGE, IT WAS STILL THE THOUSAND-FOOT TELEscope, not the three-hundred-meter one.",
+	"pageCount": 303,
+	"categories": [
+		"English Science fiction",
+		"Interplanetary voyages",
+		"Fiction"
+	],
+	"rating": 3.7142856,
+	"isbn": "9789721039278",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9789721039278-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9789721039278-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9ec829027268b4a4321"
+	},
+	"title": "2061",
+	"authors": [
+		"Arthur C. Clarke"
+	],
+	"publishedDate": "November 3, 1997",
+	"description": "\"For a man of seventy, you're in extremely good shape,\" remarked Dr. Glazunov, looking up from the Medcom's final printout.",
+	"pageCount": 284,
+	"categories": [
+		"Science fiction",
+		"Extraterrestrial beings",
+		"Fiction"
+	],
+	"rating": 3.590909,
+	"isbn": "9782290314098",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9782290314098-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9782290314098-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9ec829027268b4a4324"
+	},
+	"title": "Little Dorrit",
+	"authors": [
+		"Charles Dickens",
+		"Mary Sebag-Montefiore",
+		"Marco PEDULLA",
+		"Adam EVE",
+		"Adam Leverton"
+	],
+	"publishedDate": "Dec 19, 2013",
+	"description": "THIRTY years ago, Marseilles lay burning in the sun, one day.",
+	"pageCount": 785,
+	"categories": [
+		"Social life and customs",
+		"Children of prisoners",
+		"Marshalsea Prison (Southwark, London, England)"
+	],
+	"rating": 1,
+	"isbn": "9780460876827",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780460876827-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780460876827-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dc9ec829027268b4a4327"
+	},
+	"title": "3001",
+	"authors": [
+		"Arthur C. Clarke"
+	],
+	"publishedDate": "December 31, 1997",
+	"description": "Captain Dimitri Chandler [M2973.04.21/93.106//Mars//Space-Acad3005]-or \"Dim\" to his very best friends-was understandably annoyed.",
+	"pageCount": 276,
+	"categories": [
+		"Fiction",
+		"Thirty-first century in fiction",
+		"Outer space in fiction"
+	],
+	"rating": 3.625,
+	"isbn": "3802525590",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/3802525590-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/3802525590-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca01829027268b4a432c"
+	},
+	"title": "The water-babies",
+	"authors": [
+		"Charles Kingsley",
+		"Charles Kingsley"
+	],
+	"publishedDate": "1907",
+	"description": "ONCE upon a time there was a little chimney-sweep, and his was Tom.",
+	"pageCount": 270,
+	"categories": [
+		"Chimney sweeps",
+		"Open Library Staff Picks",
+		"Fiction in English"
+	],
+	"rating": 4,
+	"isbn": "068814831X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/068814831X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/068814831X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca07829027268b4a432f"
+	},
+	"title": "The Grapes of Wrath",
+	"authors": [
+		"John Steinbeck"
+	],
+	"publishedDate": "1965",
+	"description": "To the red country and part of the gray country of Oklahoma, the last rains came gently, and they did not cut the scarred earth.",
+	"pageCount": 553,
+	"categories": [
+		"Labor camps",
+		"Depressions",
+		"Labor camps in literature"
+	],
+	"rating": 3.9512196,
+	"isbn": "1522609830",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1522609830-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1522609830-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca1b829027268b4a4332"
+	},
+	"title": "The Strange Case of Dr. Jekyll and Mr. Hyde",
+	"authors": [
+		"Robert Louis Stevenson"
+	],
+	"publishedDate": "Nov 25, 2011",
+	"description": "Since its publication in 1886, The Strange Case of Dr. Jekyll and Mr. Hyde has remained continuously in print and has been translated over eighty times and into more than thirty languages.",
+	"pageCount": 128,
+	"categories": [
+		"Fiction",
+		"Physicians",
+		"Physicians in fiction"
+	],
+	"rating": 3.9115045,
+	"isbn": "8475250084",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/8475250084-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/8475250084-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca1b829027268b4a4336"
+	},
+	"title": "Danse Macabre",
+	"authors": [
+		"Stephen King"
+	],
+	"publishedDate": "1989",
+	"description": "FOR ME, the terror-the real terror, as opposed to whatever demons and boogeys which might have been living in my own mind-began on an afternoon in October of 1957.",
+	"pageCount": 479,
+	"categories": [
+		"The Fog",
+		"The Stand",
+		"Ghost Story"
+	],
+	"rating": 3.8660715,
+	"isbn": "0425099350",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0425099350-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0425099350-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca1b829027268b4a4339"
+	},
+	"title": "Cleopatra and Frankenstein",
+	"authors": [
+		"Coco Mellors"
+	],
+	"publishedDate": "2023",
+	"description": "She was already inside the elevator when he entered.",
+	"pageCount": 370,
+	"categories": [
+		"romance",
+		"relationships"
+	],
+	"rating": 2.3333333,
+	"isbn": "000842179X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/000842179X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/000842179X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca22829027268b4a433c"
+	},
+	"title": "Dracula",
+	"authors": [
+		"Bram Stoker"
+	],
+	"publishedDate": "1947",
+	"description": "3 May. Bistritz. - Left Munich at 8.35 p.m. on 1st May, arriving at Vienna early next morning; should have arrived at 6.46, but train was an hour late.",
+	"pageCount": 407,
+	"categories": [
+		"Count Dracula (Fictitious character)",
+		"Dracula, Conde (Personaje literario)",
+		"Dracula, Count (Fictitious character)"
+	],
+	"rating": 4.030075,
+	"isbn": "9780593438497",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780593438497-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780593438497-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca22829027268b4a433f"
+	},
+	"title": "Carmilla",
+	"authors": [
+		"Joseph Sheridan Le Fanu"
+	],
+	"publishedDate": "Aug 01, 2004",
+	"description": "Upon a paper attached to the Narrative which follows, Doctor Hesselius has written a rather elaborate note, which he accompanies with a reference to his Essay on the strange subject which the MS. illuminates.",
+	"pageCount": 117,
+	"categories": [
+		"English Fantasy fiction",
+		"Fantasy fiction, English",
+		"Fiction"
+	],
+	"rating": 3.9166667,
+	"isbn": "6052956402",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/6052956402-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/6052956402-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca22829027268b4a4343"
+	},
+	"title": "Film art",
+	"authors": [
+		"David Bordwell",
+		"Kristin Thompson",
+		"D. & THOMPSON BORDWELL",
+		"David Bordwell"
+	],
+	"publishedDate": "1996",
+	"description": "Motion pictures are so much a part of our lives that it's hard to imagine a world without them.",
+	"pageCount": 512,
+	"categories": [
+		"Aesthetics",
+		"Motion pictures",
+		"Moving-pictures"
+	],
+	"rating": 3.75,
+	"isbn": "1260056082",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1260056082-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1260056082-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca22829027268b4a4347"
+	},
+	"title": "Dracula's Guest and Other Weird Stories",
+	"authors": [
+		"Bram Stoker"
+	],
+	"publishedDate": "October 7, 2006",
+	"description": "When we started for our drive the sun was shining brightly on Munich, and the air was full of the joyousness of early summer.",
+	"pageCount": 150,
+	"categories": [
+		"English Horror tales",
+		"short stories",
+		"Fiction, horror"
+	],
+	"rating": 3.3333333,
+	"isbn": "9781466347908",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781466347908-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781466347908-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca38829027268b4a434c"
+	},
+	"title": "The Old Man and the Sea",
+	"authors": [
+		"Ernest Hemingway"
+	],
+	"publishedDate": "1999",
+	"description": "He was an old man who fished alone in a skiff in the Gulf Stream and he had gone eighty-four days now without taking a fish.",
+	"pageCount": 134,
+	"categories": [
+		"American Sea stories",
+		"Male friendship",
+		"Fishers"
+	],
+	"rating": 3.8969073,
+	"isbn": "9788466346849",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9788466346849-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9788466346849-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca38829027268b4a434f"
+	},
+	"title": "For Whom the Bell Tolls",
+	"authors": [
+		"Ernest Hemingway"
+	],
+	"publishedDate": "1953",
+	"description": "In his earlier years Hemingway relished the nickname \"Champ,\" which exemplified his roistering, hard-fisted outdoor life of adventure.",
+	"pageCount": 479,
+	"categories": [
+		"Spain in fiction",
+		"Fiction",
+		"History"
+	],
+	"rating": 3.4375,
+	"isbn": "0684717980",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0684717980-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0684717980-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca56829027268b4a4354"
+	},
+	"title": "The Very Hungry Caterpillar",
+	"authors": [
+		"Eric Carle"
+	],
+	"publishedDate": "2013",
+	"description": "In the light of the moon a little egg lay on a leaf.",
+	"pageCount": 26,
+	"categories": [
+		"Children's fiction",
+		"Caterpillars, fiction",
+		"Toy and movable books"
+	],
+	"rating": 3.965909,
+	"isbn": "9025754627",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9025754627-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9025754627-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca56829027268b4a4358"
+	},
+	"title": "The Velveteen Rabbit",
+	"authors": [
+		"Margery Williams Bianco",
+		"Wendy Cheyette Lewison",
+		"Juan Gonzalez Alvaro"
+	],
+	"publishedDate": "February 9, 1998",
+	"description": "t. He had floppy ears and a pink The Boy took him everywhere use, to the Boy, the rabbit was real.",
+	"pageCount": 40,
+	"categories": [
+		"Children's stories, American",
+		"Conejos",
+		"Ficción juvenil"
+	],
+	"rating": 4,
+	"isbn": "0836249100",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0836249100-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0836249100-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca56829027268b4a435b"
+	},
+	"title": "The Satanic Verses",
+	"authors": [
+		"Salman Rushdie"
+	],
+	"publishedDate": "1989",
+	"description": "'To be born again,' sang Gibreel Farishta tumbling from the heavens, 'first you have to die.",
+	"pageCount": 560,
+	"categories": [
+		"General & Literary Fiction",
+		"East Indians",
+		"Didactic fiction"
+	],
+	"rating": 3.625,
+	"isbn": "9782724249439",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9782724249439-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9782724249439-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca60829027268b4a435e"
+	},
+	"title": "Heart of Darkness",
+	"authors": [
+		"Joseph Conrad"
+	],
+	"publishedDate": "Sep 14, 2019",
+	"description": "The Nellie, a cruising yawl, swung to her anchor without a flutter of the sails, and was at rest.",
+	"pageCount": 132,
+	"categories": [
+		"Fiction",
+		"Romance",
+		"Degeneration"
+	],
+	"rating": 3.5045044,
+	"isbn": "9781598958553",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781598958553-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781598958553-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca60829027268b4a4362"
+	},
+	"title": "Youth",
+	"authors": [
+		"Joseph Conrad"
+	],
+	"publishedDate": "March 9, 1972",
+	"description": "This could have occurred nowhere but in England, where men and sea interpenetrate, so to speak - the sea entering into the life of most men, and the men knowing something or everything about the sea, in the way of amusement, of travel, or breadwinning.",
+	"pageCount": 339,
+	"categories": [
+		"Classic Literature",
+		"Fiction",
+		"Classic fiction"
+	],
+	"rating": 2.5,
+	"isbn": "0141958707",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0141958707-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0141958707-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca6a829027268b4a4369"
+	},
+	"title": "The Silmarillion",
+	"authors": [
+		"J.R.R. Tolkien"
+	],
+	"publishedDate": "Aug 31, 2004",
+	"description": "There was Eru, the One, who in Arda is called Ilúvatar; and he made first the Ainur, the Holy Ones, that were the offspring of his thought, and they were with him before aught else was made.",
+	"pageCount": 432,
+	"categories": [
+		"Fantasy fiction",
+		"Short stories",
+		"Middle Earth (Imaginary place)"
+	],
+	"rating": 3.9693878,
+	"isbn": "9780618126989",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780618126989-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780618126989-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca7f829027268b4a436d"
+	},
+	"title": "The Invisible Man",
+	"authors": [
+		"H. G. Wells"
+	],
+	"publishedDate": "September 15, 1986",
+	"description": "THE stranger came early in February, one wintry day, through a biting wind and a driving snow, the last snowfall of the year, over the down, walking as it seemed from Bramblehurst railway station, and carrying a little black portmanteau in his thickly gloved hand.",
+	"pageCount": 182,
+	"categories": [
+		"Ciencia-ficción",
+		"Classic Literature",
+		"Fiction"
+	],
+	"rating": 3.8444445,
+	"isbn": "9786050827170",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9786050827170-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9786050827170-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dca7f829027268b4a4370"
+	},
+	"title": "How to live on 24 hours a day",
+	"authors": [
+		"Arnold Bennett",
+		"Jim Roberts"
+	],
+	"publishedDate": "2015",
+	"description": "Yes, he's one of those men that don't know how to manage.",
+	"pageCount": 95,
+	"categories": [
+		"Conduct of life",
+		"Nonfiction",
+		"Self-Improvement"
+	],
+	"rating": 3.5,
+	"isbn": "9780353016781",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780353016781-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780353016781-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcaa1829027268b4a4374"
+	},
+	"title": "Five Little Pigs",
+	"authors": [
+		"Agatha Christie"
+	],
+	"publishedDate": "1998",
+	"description": "Hercule Poirot looked with interest and appreciation at the young woman who was being ushered into the room.",
+	"pageCount": 234,
+	"categories": [
+		"Hercule Poirot (Fictitious character)",
+		"Private investigators",
+		"Detective and mystery stories"
+	],
+	"rating": 4,
+	"isbn": "0006163726",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0006163726-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0006163726-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcaa1829027268b4a4377"
+	},
+	"title": "Rebecca",
+	"authors": [
+		"Daphne du Maurier"
+	],
+	"publishedDate": "December 1, 1999",
+	"description": "LAST NIGHT I dreamt I went to Manderley again.",
+	"pageCount": 397,
+	"categories": [
+		"Married women",
+		"Cornwall (England : County)",
+		"Remarriage"
+	],
+	"rating": 4.15,
+	"isbn": "9780380730407",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780380730407-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780380730407-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcaa1829027268b4a437a"
+	},
+	"title": "The Poems of Emily Dickinson Volume II",
+	"authors": [
+		"Emily Dickinson"
+	],
+	"publishedDate": "1999",
+	"description": "Success is counted sweetest By those who ne'er succeed.",
+	"pageCount": 256,
+	"categories": [
+		"American poetry",
+		"Translations into Spanish",
+		"Criticism and interpretation"
+	],
+	"rating": 4.428571,
+	"isbn": "9781595400161",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781595400161-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781595400161-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcaa1829027268b4a437e"
+	},
+	"title": "Middlemarch",
+	"authors": [
+		"George Eliot"
+	],
+	"publishedDate": "April 1, 2003",
+	"description": "Miss Brooke had that kind of beauty which seems to be thrown into relief by poor dress.",
+	"pageCount": 800,
+	"categories": [
+		"Young women",
+		"Married people",
+		"City and town life"
+	],
+	"rating": 4.05,
+	"isbn": "9780307291561",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780307291561-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780307291561-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcaa1829027268b4a4381"
+	},
+	"title": "Charlotte's Web",
+	"authors": [
+		"E. B. White"
+	],
+	"publishedDate": "Jan 10, 2017",
+	"description": "WHERE'S Papa going with that ax?\" said Fern to her mother as they were setting the table for breakfast.",
+	"pageCount": 184,
+	"categories": [
+		"Farm life",
+		"Animals",
+		"Juvenile fiction"
+	],
+	"rating": 4.0116277,
+	"isbn": "9788427933880",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9788427933880-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9788427933880-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcaa1829027268b4a4386"
+	},
+	"title": "Sonnets",
+	"authors": [
+		"William Shakespeare"
+	],
+	"publishedDate": "1953",
+	"description": "Shakespeare's England often seems far removed from our modern, 21st Century lives.",
+	"pageCount": 174,
+	"categories": [
+		"English Sonnets",
+		"History and criticism",
+		"Bibliography"
+	],
+	"rating": 4,
+	"isbn": "9781929142033",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781929142033-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781929142033-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcaac829027268b4a438a"
+	},
+	"title": "The Lost Symbol",
+	"authors": [
+		"Dan Brown"
+	],
+	"publishedDate": "2014",
+	"description": "The studio was filled with the rich odour of roses, and when the light summer wind stirred amidst the trees of the garden, there came through the open door the heavy scent of the lilac, or the more delicate perfume of the pink-flowering thorn.",
+	"pageCount": 604,
+	"categories": [
+		"Suspense & Thriller",
+		"Historical Fiction",
+		"Aventures"
+	],
+	"rating": 3.5949366,
+	"isbn": "9789955132431",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9789955132431-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9789955132431-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcaac829027268b4a438f"
+	},
+	"title": "Four Past Midnight",
+	"authors": [
+		"Stephen King"
+	],
+	"publishedDate": "March 2, 2004",
+	"description": "Brian Engle rolled the American Pride L1011 to a stop at Gate 22 and flicked off the FASTEN SEATBELT light at exactly 10:14 P.M.",
+	"pageCount": 774,
+	"categories": [
+		"paranormal",
+		"nightmares",
+		"cuckoo clocks"
+	],
+	"rating": 3.9473684,
+	"isbn": "3453438418",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/3453438418-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/3453438418-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcaac829027268b4a4392"
+	},
+	"title": "Garden of Shadows",
+	"authors": [
+		"V. C. Andrews"
+	],
+	"publishedDate": "1999",
+	"description": "WHEN I WAS A LITTLE GIRL, MY FATHER BOUGHT ME A priceless handcrafted dollhouse.",
+	"pageCount": 376,
+	"categories": [
+		"series:dollanganger",
+		"car accidents",
+		"stroke"
+	],
+	"rating": 4.6363635,
+	"isbn": "144482810X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/144482810X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/144482810X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcab9829027268b4a4396"
+	},
+	"title": "Lord of Flies",
+	"authors": [
+		"William Golding"
+	],
+	"publishedDate": "1999",
+	"description": "Lord of the Flies remains as provocative today as when it was first published in 1954, igniting passionate debate with its startling, brutal portrait of human nature.",
+	"pageCount": 244,
+	"categories": [
+		"fiction",
+		"relationships",
+		"adventure"
+	],
+	"rating": 3.642012,
+	"isbn": "3125738091",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/3125738091-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/3125738091-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcac3829027268b4a4399"
+	},
+	"title": "The Call of the Wild",
+	"authors": [
+		"Jack London"
+	],
+	"publishedDate": "August 10, 2003",
+	"description": "Buck did not read the newspapers, or he would have known that trouble was brewing, not alone for himself, but for every tide-water dog, strong of muscle and with warm, lone hair, from Puget Sound to San Diego.",
+	"pageCount": 128,
+	"categories": [
+		"Gold discoveries",
+		"Bienestar",
+		"Lobos"
+	],
+	"rating": 3.8412697,
+	"isbn": "1613828144",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1613828144-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1613828144-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcac3829027268b4a439c"
+	},
+	"title": "Novels (The Call of the Wild / White Fang)",
+	"authors": [
+		"Jack London"
+	],
+	"publishedDate": "November 2006",
+	"description": "Buck did not read the newspaper, or he would have known that trouble was brewing, not alone for himself, but for every tide-water dog, strong of muscle and with warm, long hair, from Puget Sound to San Diego.",
+	"pageCount": 304,
+	"categories": [
+		"Fiction",
+		"Wolfdogs",
+		"Feral dogs"
+	],
+	"rating": 4.1,
+	"isbn": "1853260266",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1853260266-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1853260266-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcac3829027268b4a439f"
+	},
+	"title": "Where the Wild Things Are",
+	"authors": [
+		"Maurice Sendak"
+	],
+	"publishedDate": "September 1998",
+	"description": "The night Max wore his wolf suit and made mischief of one kind and another his mother called him \"WILD THING!\"",
+	"pageCount": 42,
+	"categories": [
+		"Caldecott Medal",
+		"Dreams",
+		"Fantasy"
+	],
+	"rating": 4.164835,
+	"isbn": "9788883620072",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9788883620072-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9788883620072-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcac3829027268b4a43a2"
+	},
+	"title": "Lives",
+	"authors": [
+		"Plutarch"
+	],
+	"publishedDate": "May 06, 2016",
+	"description": "As geographers, Sosius, crowd into the edges of their maps parts of the world which they do not know about, adding notes in the margin to the effect, that beyond this lies nothing but sandy deserts full of wild beasts, unapproachable bogs, Scythian ice, or a frozen sea, so in this work of mine, in which I have compared the lives of the greatest men with another, after passing through those periods which probable reasoning can reach to and real history find a footing in, I might very well say of those that are farther off: \"Beyond this there is nothing but prodigies and fictions, the only inhabitants are the poets and inventors of fables; there is no credit, or certainty any farther.\"",
+	"pageCount": 479,
+	"categories": [
+		"Biography",
+		"Classical biography",
+		"Early works to 1800"
+	],
+	"rating": 2.6,
+	"isbn": "9780140449341",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780140449341-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780140449341-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcae0829027268b4a43a5"
+	},
+	"title": "L’étranger",
+	"authors": [
+		"Albert Camus"
+	],
+	"publishedDate": "1949",
+	"description": "The Stranger demanded of Camus the creation of a style at once literary and profoundly popular, an artistic sleight of hand that would make the complexities of a man’s life appear simple.",
+	"pageCount": 155,
+	"categories": [
+		"Murder",
+		"Fiction",
+		"Medicine in Literature"
+	],
+	"rating": 3.939759,
+	"isbn": "9780423846102",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780423846102-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780423846102-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcae0829027268b4a43a9"
+	},
+	"title": "James and the Giant Peach",
+	"authors": [
+		"Roald Dahl"
+	],
+	"publishedDate": "1999",
+	"description": "My father's troops wait on their horses just outside our front door.",
+	"pageCount": 144,
+	"categories": [
+		"Christian Books",
+		"Roald Dahl",
+		"children"
+	],
+	"rating": 3.9495797,
+	"isbn": "9780141378534",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780141378534-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780141378534-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcae0829027268b4a43ac"
+	},
+	"title": "Decamerone",
+	"authors": [
+		"Giovanni Boccaccio"
+	],
+	"publishedDate": "January 1, 1991",
+	"description": "Every time I stop to consider your natural inclination to pity, most gracious ladies, I recognize that you will find the opening of this present work abhorrent and distressing; for so is the painful recapitulation of the recent deadly plague, which occasioned hardship and grief to everyone who witnessed it or had some experience of it, and which marks the introduction of my work.",
+	"pageCount": 574,
+	"categories": [
+		"Fiction, historical, general",
+		"Europe, fiction",
+		"Fiction"
+	],
+	"rating": 4,
+	"isbn": "0451531736",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0451531736-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0451531736-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcae0829027268b4a43af"
+	},
+	"title": "Leaves of Grass",
+	"authors": [
+		"Walt Whitman"
+	],
+	"publishedDate": "March 29, 2005",
+	"description": "AMERICA does not repel the past or what it has produced under its forms or amid other politics or the idea of castes or the old religious . . . . accepts the lesson with calmness . . . is not so impatient as has been supposed that the slough still sticks to opinions and manners and literature while the life which served its requirements has passed into the new life of the new forms . . . perceives that the corpse is slowly borne from the eating and sleeping rooms of the house. . . perceives that it waits a little while in the door . . . that it was fittest for its days . . . that its action has descended to the stalwart and wellshaped heir who approaches . . . and that he shall be fittest for his days.",
+	"pageCount": 384,
+	"categories": [
+		"Manuscripts",
+		"United States Civil War, 1861-1865",
+		"Gay poets"
+	],
+	"rating": 3.5,
+	"isbn": "9781513263335",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781513263335-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781513263335-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcae3829027268b4a43b4"
+	},
+	"title": "The Bell Jar",
+	"authors": [
+		"Sylvia Plath"
+	],
+	"publishedDate": "2016 February 2",
+	"description": "IT WAS A QUEER, sultry summer, the summer they electrocuted the Rosenbergs, and I didn't know what I was doing in New York.",
+	"pageCount": 258,
+	"categories": [
+		"women college students",
+		"summer",
+		"Classics"
+	],
+	"rating": 4.233333,
+	"isbn": "9780571248209",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780571248209-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780571248209-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcaf3829027268b4a43b7"
+	},
+	"title": "On Liberty",
+	"authors": [
+		"John Stuart Mill"
+	],
+	"publishedDate": "1949",
+	"description": "John Stuart Mill said in his Autobiography that his father, James Mill, was \"the last of the eighteenth century.\"",
+	"pageCount": 176,
+	"categories": [
+		"Liberté",
+		"Morale",
+		"Politique"
+	],
+	"rating": 4.142857,
+	"isbn": "9783150034910",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9783150034910-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9783150034910-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcaf3829027268b4a43bb"
+	},
+	"title": "Walden",
+	"authors": [
+		"Henry David Thoreau"
+	],
+	"publishedDate": "1949",
+	"description": "When I wrote the following pages, or rather the bulk of them, I lived alone, in the woods, a mile from any neighbor, in a house which I had built myself, on the shore of Walden Pond, in Concord, Massachusetts, and earned my living by the labor of my hands only.",
+	"pageCount": 336,
+	"categories": [
+		"Biography",
+		"Homes and haunts",
+		"American Authors"
+	],
+	"rating": 4,
+	"isbn": "161382971X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/161382971X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/161382971X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcaf3829027268b4a43be"
+	},
+	"title": "The Age of Innocence",
+	"authors": [
+		"Edith Wharton"
+	],
+	"publishedDate": "March 2, 2007",
+	"description": "ON A January evening of the early seventies, Christine Nilsson was singing in Faust at the Academy of Music in New York.",
+	"pageCount": 348,
+	"categories": [
+		"Fiction",
+		"Triangles (Interpersonal relations)",
+		"Upper class"
+	],
+	"rating": 3.4761906,
+	"isbn": "9781572701168",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781572701168-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781572701168-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcaf3829027268b4a43c1"
+	},
+	"title": "कामसूत्र",
+	"authors": [
+		"Mallanaga Vātsyāyana"
+	],
+	"publishedDate": "1964-11",
+	"description": "Hindu love manuals are full of advice at a practical level - although the positions described in some of them are practical only for the double-jointed or professional gymnasts - but there is a far more important message common to all the teachings.",
+	"pageCount": 206,
+	"categories": [
+		"Sex customs",
+		"Love",
+		"Sexual intercourse"
+	],
+	"rating": 3.6923077,
+	"isbn": "2724204824",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/2724204824-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/2724204824-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcafa829027268b4a43c7"
+	},
+	"title": "One Flew Over the Cuckoo's Nest",
+	"authors": [
+		"Ken Kesey"
+	],
+	"publishedDate": "1999",
+	"description": "They're out there.",
+	"pageCount": 311,
+	"categories": [
+		"Allegories",
+		"psychiatric nursing",
+		"medical novels"
+	],
+	"rating": 4.111111,
+	"isbn": "1429535962",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1429535962-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1429535962-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb0f829027268b4a43cb"
+	},
+	"title": "The Shining",
+	"authors": [
+		"Stephen King"
+	],
+	"publishedDate": "1978-01",
+	"description": "Jack Torrance thought: Officious little prick.",
+	"pageCount": 512,
+	"categories": [
+		"Fiction",
+		"horror fiction",
+		"demonology"
+	],
+	"rating": 4.174274,
+	"isbn": "9788376488097",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9788376488097-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9788376488097-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb0f829027268b4a43ce"
+	},
+	"title": "The Big Sleep",
+	"authors": [
+		"Raymond Chandler"
+	],
+	"publishedDate": "June 4, 2001",
+	"description": "It was about eleven o'clock in the morning, mid October, with the sun not shining and a look of hard wet rain in the clearness of the foothills.",
+	"pageCount": 227,
+	"categories": [
+		"Fiction",
+		"Philip Marlowe (Fictitious character)",
+		"Private investigators"
+	],
+	"rating": 4.2,
+	"isbn": "1978666020",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1978666020-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1978666020-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb0f829027268b4a43d1"
+	},
+	"title": "The Cat in the Hat",
+	"authors": [
+		"Dr. Seuss",
+		"Simon Mugford"
+	],
+	"publishedDate": "September 1999",
+	"description": "The sun did not shine.",
+	"pageCount": 63,
+	"categories": [
+		"Nonsense verses",
+		"Children's stories",
+		"American"
+	],
+	"rating": 4.097826,
+	"isbn": "9780001713031",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780001713031-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780001713031-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb0f829027268b4a43d4"
+	},
+	"title": "Novels (Carrie / Salem's Lot / Shining)",
+	"authors": [
+		"Stephen King"
+	],
+	"publishedDate": "1987",
+	"description": "It was reliably reported by several persons that a rain of stones fell from a clear blue sky on Carlin Street in the town of Chamberlain on August 17th.",
+	"pageCount": 1104,
+	"categories": [
+		"Ghost",
+		"Fiction",
+		"Horror"
+	],
+	"rating": 1,
+	"isbn": "9780525616016",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780525616016-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780525616016-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb25829027268b4a43d9"
+	},
+	"title": "Kritik der reinen Vernunft",
+	"authors": [
+		"Immanuel Kant"
+	],
+	"publishedDate": "1965",
+	"description": "That all our knowledge begins with experience there can be no doubt.",
+	"pageCount": 615,
+	"categories": [
+		"Reason",
+		"Causation",
+		"Theory of Knowledge"
+	],
+	"rating": 3,
+	"isbn": "9781404301269",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781404301269-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781404301269-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb25829027268b4a43dc"
+	},
+	"title": "Meditations",
+	"authors": [
+		"Marcus Aurelius"
+	],
+	"publishedDate": "1949",
+	"description": "1. From my grandfather Verus [I learned] good morals and the government of my temper.",
+	"pageCount": 210,
+	"categories": [
+		"Early works to 1800",
+		"Philosophy",
+		"Stoics"
+	],
+	"rating": 3.972477,
+	"isbn": "9781404357655",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781404357655-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781404357655-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb25829027268b4a43e5"
+	},
+	"title": "The Merchant of Venice",
+	"authors": [
+		"William Shakespeare"
+	],
+	"publishedDate": "June 1964",
+	"description": "ANY approach to understanding Shakespeare's The Merchant of Venice inevitably includes a discussion of the vexed question of its alleged anti-Semitism.",
+	"pageCount": 152,
+	"categories": [
+		"Drama",
+		"Jews",
+		"Moneylenders"
+	],
+	"rating": 3.8809524,
+	"isbn": "9780340073223",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780340073223-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780340073223-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb35829027268b4a43eb"
+	},
+	"title": "The Witches",
+	"authors": [
+		"Roald Dahl"
+	],
+	"publishedDate": "May 24, 2016",
+	"description": "I myself had two separate encounters with witches before I was eight years old.",
+	"pageCount": 208,
+	"categories": [
+		"Fiction",
+		"Witches",
+		"Grandmothers"
+	],
+	"rating": 4.1707315,
+	"isbn": "9780141349947",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780141349947-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780141349947-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb35829027268b4a43ee"
+	},
+	"title": "Tempest",
+	"authors": [
+		"William Shakespeare"
+	],
+	"publishedDate": "January 1991",
+	"description": "William Shakespeare, or the \"Bard\" as people fondly call him, permeates almost all aspects of our society.",
+	"pageCount": 144,
+	"categories": [
+		"English literature: Shakespeare criticism",
+		"English literature: Shakespeare texts",
+		"Plays / Drama"
+	],
+	"rating": 4,
+	"isbn": "9781466218611",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781466218611-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781466218611-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb35829027268b4a43f3"
+	},
+	"title": "Poirot investigates",
+	"authors": [
+		"Agatha Christie"
+	],
+	"publishedDate": "1993",
+	"description": "I was standing at the window of Poirot's rooms looking out idly on the street below.",
+	"pageCount": 192,
+	"categories": [
+		"Hercule Poirot (Fictitious character)",
+		"Private investigators",
+		"Chief Inspector Japp (Fictitious character)"
+	],
+	"rating": 4.090909,
+	"isbn": "1609425685",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1609425685-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1609425685-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb35829027268b4a43f7"
+	},
+	"title": "Black Boy",
+	"authors": [
+		"Richard Wright"
+	],
+	"publishedDate": "April 29, 2008",
+	"description": "One winter morning in the long-ago, four-year-old days of my life I found myself standing before a fireplace, warming my hands over a mound of glowing coals, listening to the wind whistle past the house outside.",
+	"pageCount": 293,
+	"categories": [
+		"Social life and customs",
+		"African American authors",
+		"Biographies"
+	],
+	"rating": 4.117647,
+	"isbn": "1784876135",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1784876135-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1784876135-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb35829027268b4a43fa"
+	},
+	"title": "Giovanni's Room",
+	"authors": [
+		"James Baldwin"
+	],
+	"publishedDate": "2008",
+	"description": "I stand at the window of this great house in the south of France as night falls, the night which is leading me to the most terrible morning of my life.",
+	"pageCount": 224,
+	"categories": [
+		"Race relations",
+		"African Americans",
+		"Psychology"
+	],
+	"rating": 4.193548,
+	"isbn": "0718104757",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0718104757-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0718104757-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb35829027268b4a43fd"
+	},
+	"title": "Last Man Standing",
+	"authors": [
+		"David Baldacci"
+	],
+	"publishedDate": "Nov 03, 2015",
+	"description": "Web London held a semiautomatic SR75 rifle custom built for him by a legendary gunsmith.",
+	"pageCount": 616,
+	"categories": [
+		"Federal Bureau of Investigation",
+		"Open Library Staff Picks",
+		"Government investigators"
+	],
+	"rating": 3.8333333,
+	"isbn": "044667883X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/044667883X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/044667883X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb35829027268b4a4401"
+	},
+	"title": "The Great Divorce",
+	"authors": [
+		"C.S. Lewis"
+	],
+	"publishedDate": "1996",
+	"description": "I seemed to be standing in a busy queue by the side of a long, mean street.",
+	"pageCount": 128,
+	"categories": [
+		"Good and evil"
+	],
+	"rating": 3.7142856,
+	"isbn": "0805420487",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0805420487-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0805420487-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb35829027268b4a4404"
+	},
+	"title": "Xenocide",
+	"authors": [
+		"Orson Scott Card"
+	],
+	"publishedDate": "Sep 04, 1991",
+	"description": "Han Fei-tzu sat in lotus position on the bare wooden floor beside his wife's sicked.",
+	"pageCount": 562,
+	"categories": [
+		"Space warfare",
+		"Fiction",
+		"Fiction, science fiction, hard science fiction"
+	],
+	"rating": 3.8481014,
+	"isbn": "9781574535433",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781574535433-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781574535433-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb35829027268b4a4407"
+	},
+	"title": "Witches Abroad",
+	"authors": [
+		"Terry Pratchett"
+	],
+	"publishedDate": "July 30, 2002",
+	"description": "This is the Discworld, which travels through space on the back of four elephants which themselves stand on the shell of Great A'Tuin, the sky turtle.",
+	"pageCount": 319,
+	"categories": [
+		"English Fantasy fiction",
+		"Discworld (Imaginary place)",
+		"Fiction"
+	],
+	"rating": 4.3095236,
+	"isbn": "0061020613",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0061020613-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0061020613-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb35829027268b4a440a"
+	},
+	"title": "Mr. Standfast",
+	"authors": [
+		"John Buchan"
+	],
+	"publishedDate": "2019",
+	"description": "I spent one-third of my journey looking out of the window of a first-class carriage, the next in a local motor-car following the course of a trout stream in a shallow valley, and the last tramping over a ridge of downland through great beech-woods to my quarters for the night.",
+	"pageCount": 336,
+	"categories": [
+		"Fiction",
+		"World War, 1914-1918",
+		"Richard Hannay (Fictitious character)"
+	],
+	"rating": 3.5,
+	"isbn": "140682108X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/140682108X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/140682108X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb35829027268b4a440d"
+	},
+	"title": "El Buen Nombre (Lingua Franca)",
+	"authors": [
+		"Jhumpa Lahiri"
+	],
+	"publishedDate": "2003",
+	"description": "ON A STICKY AUGUST EVENING two weeks before her due date, Ashima Ganguli stands in the kitchen of a Central Square apartment, combining Rice Krispies and Planters peanuts and chopped red onion in a bowl.",
+	"pageCount": 301,
+	"categories": [
+		"Alienación (Psicología social)",
+		"Alienation (Social psychology)",
+		"Appreciation"
+	],
+	"rating": 3.1904762,
+	"isbn": "9780618485222",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780618485222-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780618485222-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb4a829027268b4a4410"
+	},
+	"title": "Carrie",
+	"authors": [
+		"Stephen King"
+	],
+	"publishedDate": "1976",
+	"description": "It was reliably reported by several persons that a rain of stones fell from a clear blue sky on Carlin Street in the town of Chamberlain on August 17th.",
+	"pageCount": 256,
+	"categories": [
+		"occult & supernatural fiction",
+		"horror fiction",
+		"psychological thrillers"
+	],
+	"rating": 4,
+	"isbn": "0340951419",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0340951419-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0340951419-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb4a829027268b4a4418"
+	},
+	"title": "Sister Carrie",
+	"authors": [
+		"Theodore Dreiser"
+	],
+	"publishedDate": "1949",
+	"description": "When Caroline Meeber boarded the afternoon train for Chicago, her total outfit consisted of a small trunk, a cheap imitation alligator-skin satchel, a small lunch in a paper box, and a yellow leather snap purse, containing her ticket, a scrap of paper with her sister's address in Van Buren Street, and four dollars in money.",
+	"pageCount": 489,
+	"categories": [
+		"American fiction (fictional works by one author)",
+		"Chicago (ill.), fiction",
+		"New york (n.y.), fiction"
+	],
+	"rating": 3,
+	"isbn": "1101077832",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1101077832-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1101077832-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb4b829027268b4a441c"
+	},
+	"title": "El filibusterismo",
+	"authors": [
+		"José Rizal"
+	],
+	"publishedDate": "February 1, 2007",
+	"description": "One morning in December the steamer Tabo was laboriously ascending the tortuous course of the Pasig, carrying a large crowd of passengers toward the province of La Laguna.",
+	"pageCount": 335,
+	"categories": [
+		"Facsimiles",
+		"Manuscripts",
+		"Spanish Manuscripts"
+	],
+	"rating": 4.2,
+	"isbn": "9789719201892",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9789719201892-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9789719201892-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb4b829027268b4a441f"
+	},
+	"title": "Absalom, Absalom!",
+	"authors": [
+		"William Faulkner"
+	],
+	"publishedDate": "1990-11",
+	"description": "From a little after two weeks oclock until almost sundown of the long still hot weary dead September afternoon they sat in what Miss Coldfield still called the office because her father had called it that-a dim hot airless room with the blinds all closed and fastened for forty-three summers because when she was a girl someone had believed that light and moving air carried heat and that dark was always cooler, and which (as the sun shone fuller and fuller on that side of the house) became latticed with yellow slashes full of dust motes which Quentin thought of as being flecks of the dead old dried paint itself blown inward from the scaling blinds as wind might have blown them.",
+	"pageCount": 378,
+	"categories": [
+		"Fiction",
+		"Plantation life",
+		"Sutpen family (Fictitious characters)"
+	],
+	"rating": 4.4444447,
+	"isbn": "3941004719",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/3941004719-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/3941004719-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb4b829027268b4a4422"
+	},
+	"title": "The Renaissance, Studies in Art and Poetry",
+	"authors": [
+		"Walter Pater"
+	],
+	"publishedDate": "October 2002",
+	"description": "The history of the Renaissance ends in France, and carries us away from Italy to the beautiful cities of the country of the Loire.",
+	"pageCount": 225,
+	"categories": [
+		"Renaissance Arts",
+		"Ut pictura poesis (Aesthetics)",
+		"Renaissance"
+	],
+	"rating": 5,
+	"isbn": "1859585299",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1859585299-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1859585299-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb4b829027268b4a4425"
+	},
+	"title": "The Death and Life of Great American Cities",
+	"authors": [
+		"Jane Jacobs",
+		"Gerd Albers"
+	],
+	"publishedDate": "2000",
+	"description": "This book is an attack on current city planning and rebuilding.",
+	"pageCount": 468,
+	"categories": [
+		"City planning",
+		"Urban renewal",
+		"Urban policy"
+	],
+	"rating": 4.3076925,
+	"isbn": "0712665838",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0712665838-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0712665838-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb4b829027268b4a4428"
+	},
+	"title": "Grace abounding to the chief of sinners",
+	"authors": [
+		"John Bunyan"
+	],
+	"publishedDate": "1794",
+	"description": "In this my relation of the merciful working of God upon my soul, it will not be amiss, if in the first place I do in a few words give you a hint of my pedigree, and manner of bringing up; that thereby the goodness and bounty of God towards me, may be the more advanced and magnified before the sons of men.",
+	"pageCount": 150,
+	"categories": [
+		"Biography",
+		"Grace (Theology)",
+		"Christian biography"
+	],
+	"rating": 4.5,
+	"isbn": "9781406822946",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781406822946-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781406822946-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb50829027268b4a442c"
+	},
+	"title": "Dei delitte e delle pene",
+	"authors": [
+		"Cesare Beccaria"
+	],
+	"publishedDate": "1879",
+	"description": "Cesare Beccaria (1738-1794) is known almost exclusively as the author of On Crimes and Punishments, a short book on criminal law reform that excited keen interest and great controversy when it was first published in 1764 and that still commands attention both for some of the issues it raises and for the answers it suggests.",
+	"pageCount": 218,
+	"categories": [
+		"Punishment",
+		"Crime and criminals",
+		"Capital punishment"
+	],
+	"rating": 5,
+	"isbn": "9782730702324",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9782730702324-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9782730702324-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb50829027268b4a442f"
+	},
+	"title": "Sketches by Boz",
+	"authors": [
+		"Charles Dickens",
+		"Marcus Stone",
+		"George Cruikshank"
+	],
+	"publishedDate": "1910",
+	"description": "DAMON and Pythias were undoubtedly very good fellows in their way: the former for his extreme readiness to put in special bail for a friend, and the latter for a certain trump-like punctuality in turning up just in the very nick of time, scarcely less remarkable.",
+	"pageCount": 526,
+	"categories": [
+		"Social life and customs",
+		"Fiction",
+		"Classic Literature"
+	],
+	"rating": 3.5,
+	"isbn": "1404332960",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1404332960-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1404332960-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb50829027268b4a4432"
+	},
+	"title": "Lies In a Mirror",
+	"authors": [
+		"Peter Charleton"
+	],
+	"publishedDate": "31, May, 2006",
+	"description": "There is a lie behind every crime. In order to cheat people of their money, fraudsters first dispossess them of their prudence by lying to them. Greed does the rest. When someone goes out to rape or kill another person, they will ensure that their victim is disarmed into a false sense of security by pretending, up to the critical moment, that they mean no harm.",
+	"pageCount": 304,
+	"categories": [
+		"Good and evil",
+		"Deception"
+	],
+	"rating": 3.3333333,
+	"isbn": "9781842181010",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781842181010-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781842181010-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb57829027268b4a4435"
+	},
+	"title": "The Haunting of Hill House",
+	"authors": [
+		"Shirley Jackson"
+	],
+	"publishedDate": "2021",
+	"description": "NO LIVE organism can continue for long to exist sanely under conditions of absolute reality; even larks and katydids are supposed, by some, to dream.",
+	"pageCount": 246,
+	"categories": [
+		"Haunted houses",
+		"Fiction",
+		"Large type books"
+	],
+	"rating": 4.031746,
+	"isbn": "1841190977",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1841190977-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1841190977-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcb57829027268b4a4438"
+	},
+	"title": "The complete poetical works",
+	"authors": [
+		"Robert Burns"
+	],
+	"publishedDate": "1906",
+	"description": "MY loved, my honoured, much respected friend!",
+	"pageCount": 366,
+	"categories": [
+		"Biography",
+		"Children's poetry, Scottish",
+		"Correspondence"
+	],
+	"rating": 4,
+	"isbn": "1859580602",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1859580602-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1859580602-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbaf829027268b4a443c"
+	},
+	"title": "Dune",
+	"authors": [
+		"Frank Herbert"
+	],
+	"publishedDate": "Sep 21, 2021",
+	"description": "IN THE week before their departure to Arrakis, when all the final scurrying about had reached a nearly unbearable frenzy, an old crone came to visit the mother of the boy, Paul.",
+	"pageCount": 554,
+	"categories": [
+		"Dune (Imaginary place)",
+		"Fiction",
+		"Fiction, science fiction, general"
+	],
+	"rating": 4.281609,
+	"isbn": "9780450000898",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780450000898-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780450000898-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbaf829027268b4a443f"
+	},
+	"title": "Dune Messiah",
+	"authors": [
+		"Frank Herbert",
+		"Michel Demuth"
+	],
+	"publishedDate": "February 5, 2008",
+	"description": "IN THE week before their departure to Arrakis, when all the final scurrying about had reached a nearly unbearable frenzy, an old crone came to visit the mother of the boy, Paul.",
+	"pageCount": 267,
+	"categories": [
+		"American Science fiction",
+		"Dune (Imaginary place)",
+		"Fiction"
+	],
+	"rating": 3.902655,
+	"isbn": "0425061736",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0425061736-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0425061736-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbaf829027268b4a4444"
+	},
+	"title": "Children of Dune",
+	"authors": [
+		"Frank Herbert"
+	],
+	"publishedDate": "May 15, 1987",
+	"description": "A SPOT of light appeared on the deep red rug which covered the raw rock of the cave floor.",
+	"pageCount": 444,
+	"categories": [
+		"Dune (Imaginary place)",
+		"Fiction",
+		"Fiction in English"
+	],
+	"rating": 4,
+	"isbn": "0450050750",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0450050750-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0450050750-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbaf829027268b4a4449"
+	},
+	"title": "Du contrat social",
+	"authors": [
+		"Jean-Jacques Rousseau"
+	],
+	"publishedDate": "1998",
+	"description": "MAN was born free, and he is everywhere in chains.",
+	"pageCount": 249,
+	"categories": [
+		"Peace",
+		"The State",
+		"Science politique"
+	],
+	"rating": 4.6666665,
+	"isbn": "8467023791",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/8467023791-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/8467023791-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbaf829027268b4a444e"
+	},
+	"title": "Discours de la méthode",
+	"authors": [
+		"René Descartes"
+	],
+	"publishedDate": "1910",
+	"description": "Good sense is, of all things among men, the most equally distributed; for every one thinks himself so abundantly provided with it, that those even who are the most difficult to satisfy in everything else, do not usually desire a larger measure of this quality than they already possess.",
+	"pageCount": 185,
+	"categories": [
+		"Methodology",
+		"Science",
+		"Modern Philosophy"
+	],
+	"rating": 4,
+	"isbn": "9780023671609",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780023671609-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780023671609-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbaf829027268b4a4453"
+	},
+	"title": "Идіотъ",
+	"authors": [
+		"Фёдор Михайлович Достоевский"
+	],
+	"publishedDate": "Nov 04, 2011",
+	"description": "In late November, during a thaw, around nine in the morning, a train on the Petersburg-Warsaw railway line was approaching Petersburg at full blast.",
+	"pageCount": 620,
+	"categories": [
+		"Russia in fiction",
+		"Fiction",
+		"Social conditions"
+	],
+	"rating": 4.09375,
+	"isbn": "9781432526870",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781432526870-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781432526870-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbaf829027268b4a4456"
+	},
+	"title": "Πολιτικά (Politiká)",
+	"authors": [
+		"Aristotle"
+	],
+	"publishedDate": "April 1991",
+	"description": "The citizen is whoever has a right to take part in deliberative and judicial office in a city.",
+	"pageCount": 347,
+	"categories": [
+		"Politics and government",
+		"Incunabula",
+		"Aesthetics"
+	],
+	"rating": 3.7142856,
+	"isbn": "9780548158845",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780548158845-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780548158845-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbaf829027268b4a4459"
+	},
+	"title": "Gone With the Wind",
+	"authors": [
+		"Margaret Mitchell"
+	],
+	"publishedDate": "1999",
+	"description": "booted to the knee and thick with saddle muscles, crossed negligently. Nineteen years old, six feet two inches tall, long of bone and hard of muscle, with sunburned faces and deep auburn hair, their eyes merry and arrogant, their bodies clothed in identical blue coats and mustard-colored breeches they were as much alike as two bolls cotton.",
+	"pageCount": 949,
+	"categories": [
+		"survival",
+		"slavery",
+		"Bildungsroman"
+	],
+	"rating": 3.475,
+	"isbn": "0380426978",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0380426978-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0380426978-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbb4829027268b4a445c"
+	},
+	"title": "The Exorcist",
+	"authors": [
+		"William Peter Blatty"
+	],
+	"publishedDate": "April 1995",
+	"description": "The blaze of sun wrung pops of sweat from the old man's brow, yet he cupped his hands around the glass of hot sweet tea as if to warm them.",
+	"pageCount": 400,
+	"categories": [
+		"Fiction",
+		"Horror",
+		"horror fiction"
+	],
+	"rating": 4,
+	"isbn": "8412198867",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/8412198867-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/8412198867-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbbd829027268b4a4460"
+	},
+	"title": "Neuromancer",
+	"authors": [
+		"William Gibson"
+	],
+	"publishedDate": "2023",
+	"description": "The sky above the port was the color of television, tuned to a dead channel.",
+	"pageCount": 318,
+	"categories": [
+		"Information superhighway",
+		"Computer hackers",
+		"Conspiracies"
+	],
+	"rating": 3.9701493,
+	"isbn": "0007491522",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0007491522-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0007491522-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbbd829027268b4a4463"
+	},
+	"title": "All Tomorrow's Parties",
+	"authors": [
+		"William Gibson"
+	],
+	"publishedDate": "2011",
+	"description": "THROUGH THIS EVENING'S tide of faces unregistered, unrecognized, amid hurrying black shoes, furled umbrellas, the crowd descending like a single organism into the-station's airless heart, comes Shinya Yamazaki, his notebook clasped beneath his arm like the egg case of some modest but moderately successful marine species.",
+	"pageCount": 288,
+	"categories": [
+		"Cyberspace",
+		"Space and time",
+		"Fiction"
+	],
+	"rating": 3.8235295,
+	"isbn": "9780425190449",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780425190449-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780425190449-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbc1829027268b4a4466"
+	},
+	"title": "Ender's Game",
+	"authors": [
+		"Orson Scott Card"
+	],
+	"publishedDate": "2004",
+	"description": "I've watched through his eyes, I've listened through his ears, and I tell you he's the one.",
+	"pageCount": 330,
+	"categories": [
+		"New York Times bestseller",
+		"nyt:mass_market_paperback=2011-07-30",
+		"military education"
+	],
+	"rating": 4.3516483,
+	"isbn": "229007182X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/229007182X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/229007182X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbc1829027268b4a4469"
+	},
+	"title": "Ender's Shadow",
+	"authors": [
+		"Orson Scott Card"
+	],
+	"publishedDate": "1999",
+	"description": "\"You think you've found somebody, so suddenly my program gets the ax?\"",
+	"pageCount": 454,
+	"categories": [
+		"Child soldiers",
+		"Child soldiers in fiction",
+		"Bean (Ficticious Character)"
+	],
+	"rating": 4.030303,
+	"isbn": "9780312873318",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780312873318-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780312873318-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbd8829027268b4a446f"
+	},
+	"title": "The Yearling",
+	"authors": [
+		"Marjorie Kinnan Rawlings"
+	],
+	"publishedDate": "1998",
+	"description": "A COLUMN of smoke rose thin and straight from the cabin chimney.",
+	"pageCount": 428,
+	"categories": [
+		"3rd Grade",
+		"4th Grade",
+		"5th Grade"
+	],
+	"rating": 3.75,
+	"isbn": "9781405850773",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781405850773-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781405850773-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbd8829027268b4a4472"
+	},
+	"title": "The Austere Academy",
+	"authors": [
+		"Lemony Snicket",
+		"Brett Helquist",
+		"Michael Kupperman"
+	],
+	"publishedDate": "2000",
+	"description": "If you were going to give a gold medal to the least delightful person on Earth, you would have to give that medal to a person named Carmelita Spats, and if you didn't give it to her, Carmelita Spats was the sort of person who would snatch it from your hands anyway.",
+	"pageCount": 235,
+	"categories": [
+		"Humour",
+		"Steampunk",
+		"Mystery"
+	],
+	"rating": 4.0588236,
+	"isbn": "0307209369",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0307209369-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0307209369-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbd8829027268b4a4475"
+	},
+	"title": "The song of Hiawatha",
+	"authors": [
+		"Henry Wadsworth Longfellow",
+		"Jeff Ulmer",
+		"Alex A. Blum"
+	],
+	"publishedDate": "1890",
+	"description": "Dark behind it rose the forest,",
+	"pageCount": 214,
+	"categories": [
+		"American poetry",
+		"American poetry .",
+		"Children's poetry, American"
+	],
+	"rating": 3,
+	"isbn": "1426444230",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1426444230-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1426444230-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbd8829027268b4a4478"
+	},
+	"title": "The Tale of Peter Rabbit",
+	"authors": [
+		"Beatrix Potter"
+	],
+	"publishedDate": "February 1, 1992",
+	"description": "ONCE upon a time there were four little Rabbits, and their names were-Flopsy, Mopsy, Cotton-tail, and Peter.",
+	"pageCount": 55,
+	"categories": [
+		"Rabbits",
+		"Fiction",
+		"Juvenile fiction"
+	],
+	"rating": 4,
+	"isbn": "9780486285412",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780486285412-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780486285412-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbf7829027268b4a447c"
+	},
+	"title": "A Bend In The Road",
+	"authors": [
+		"Nicholas Sparks"
+	],
+	"publishedDate": "2003",
+	"description": "On the morning of August 29, 1988, a little more than two years after his wife had passed away, Miles Ryan stood on the back porch of his house, smoking a cigarette, watching as the rising sun slowly changed the morning sky from dusky gray to orange.",
+	"pageCount": 352,
+	"categories": [
+		"Hit-and-run drivers",
+		"Widowers",
+		"Literature"
+	],
+	"rating": 3.25,
+	"isbn": "0759565503",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0759565503-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0759565503-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbf7829027268b4a4484"
+	},
+	"title": "The Good Earth",
+	"authors": [
+		"Pearl S. Buck",
+		"Nick Bertozzi",
+		"Ruth Goode",
+		"Donald F. Roden",
+		"Ernst Simon",
+		"Stephen Colbourn"
+	],
+	"publishedDate": "1949",
+	"description": "In The Good Earth (1931), Pearl Buck tells a timeless story about a farmer struggling to eke out a living from the earth.",
+	"pageCount": 313,
+	"categories": [
+		"China, fiction",
+		"Fiction, historical, general",
+		"Social life and customs"
+	],
+	"rating": 3.9375,
+	"isbn": "9780785795285",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780785795285-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780785795285-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbf7829027268b4a4487"
+	},
+	"title": "Narrative of the life of Frederick Douglass",
+	"authors": [
+		"Frederick Douglass"
+	],
+	"publishedDate": "Apr 15, 2014",
+	"description": "Frederick Douglass was the most important African American leader and intellectual of the nineteenth century.",
+	"pageCount": 127,
+	"categories": [
+		"Douglass, frederick, 1818-1895",
+		"Biography",
+		"African American abolitionists"
+	],
+	"rating": 4.4,
+	"isbn": "9781425060701",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781425060701-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781425060701-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcbfa829027268b4a448a"
+	},
+	"title": "The Godfather",
+	"authors": [
+		"Mario Puzo"
+	],
+	"publishedDate": "1998",
+	"description": "Amerigo Bonasera sat in New York Criminal Court Number 3 and waited for justice; vengeance on the men who had so cruelly hurt his daughter, who had tried to dishonor her.",
+	"pageCount": 450,
+	"categories": [
+		"Detective and mystery stories",
+		"Organized crime",
+		"Criminals"
+	],
+	"rating": 4.3714285,
+	"isbn": "1101043113",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1101043113-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1101043113-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc02829027268b4a448d"
+	},
+	"title": "Riders of the Purple Sage",
+	"authors": [
+		"Zane Grey"
+	],
+	"publishedDate": "Mar 26, 2019",
+	"description": "A SHARP clip-clop of iron-shod hoofs deadened and died away, and clouds of yellow dust drifted from under the cottonwoods out over the sage.",
+	"pageCount": 311,
+	"categories": [
+		"Fiction",
+		"Mormon women",
+		"Polygamy"
+	],
+	"rating": 4,
+	"isbn": "9780192833259",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780192833259-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780192833259-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc12829027268b4a4490"
+	},
+	"title": "Orthodoxy",
+	"authors": [
+		"Gilbert Keith Chesterton"
+	],
+	"publishedDate": "Jul 16, 2010",
+	"description": "Thoroughly worldly people never understand even the world; they rely altogether on a few cynical maxims which are not true.",
+	"pageCount": 176,
+	"categories": [
+		"Apologetics",
+		"Christianity",
+		"History"
+	],
+	"rating": 4,
+	"isbn": "0837174384",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0837174384-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0837174384-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc12829027268b4a4495"
+	},
+	"title": "Flowers for Algernon",
+	"authors": [
+		"Daniel Keyes"
+	],
+	"publishedDate": "2004",
+	"description": "Dr Strauss says I shoud rite down what I think and remembir and evrey thing that happins to me from now on.",
+	"pageCount": 259,
+	"categories": [
+		"institutionalization",
+		"dementia",
+		"phenylketonuria"
+	],
+	"rating": 4.25641,
+	"isbn": "1474605737",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1474605737-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1474605737-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc12829027268b4a4498"
+	},
+	"title": "The well-beloved",
+	"authors": [
+		"Thomas Hardy"
+	],
+	"publishedDate": "1975",
+	"description": "A person who differed from the local wayfarers was climbing the steep road which leads through the sea-skirted townlet definable as the Street of Wells, and forms a pass into that Gibraltar of Wessex, the singular peninsula once an island, and still called such, that stretches out like the head of a bird into the English Channel.",
+	"pageCount": 238,
+	"categories": [
+		"Fiction",
+		"Man-woman relationships",
+		"Sculptors"
+	],
+	"rating": 3,
+	"isbn": "9781414211893",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781414211893-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781414211893-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc12829027268b4a449b"
+	},
+	"title": "Kometen kommer (Kometjakten)",
+	"authors": [
+		"Tove Jansson"
+	],
+	"publishedDate": "1999",
+	"description": "The Moomin family had been living for some weeks in the valley where they had found their house after the dreadful flood (which is another story).",
+	"pageCount": 175,
+	"categories": [
+		"Children's stories, Swedish",
+		"Comets",
+		"Fiction"
+	],
+	"rating": 4.8461537,
+	"isbn": "8478449795",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/8478449795-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/8478449795-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc12829027268b4a449e"
+	},
+	"title": "Just so stories for little children. Stalky & Co.",
+	"authors": [
+		"Rudyard Kipling"
+	],
+	"publishedDate": "1971",
+	"description": "IN THE SEA, once upon a time, O my Best Beloved, there was a Whale, and he ate fishes.",
+	"pageCount": 237,
+	"categories": [
+		"Animals",
+		"Children's stories, English",
+		"Fiction"
+	],
+	"rating": 4.4,
+	"isbn": "9782070537174",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9782070537174-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9782070537174-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc12829027268b4a44a1"
+	},
+	"title": "The Beloved Invader",
+	"authors": [
+		"Eugenia Price"
+	],
+	"publishedDate": "1979",
+	"description": "When he swung into the saddle on the borrowed mare at daybreak on a December morning in the year 1879, young Anson Dodge could think of nothing except that he hated his father.",
+	"pageCount": 284,
+	"categories": [
+		"Eugenia Price",
+		"Southern History",
+		"Southern social life & customs"
+	],
+	"rating": 5,
+	"isbn": "9780553136821",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780553136821-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780553136821-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc15829027268b4a44a5"
+	},
+	"title": "The Handmaid's Tale--The Graphic Novel",
+	"authors": [
+		"Renee Nault"
+	],
+	"publishedDate": "2021",
+	"description": "The Red Center.",
+	"pageCount": 240,
+	"categories": [
+		"Comics & graphic novels, fantasy",
+		"Comics & graphic novels, literary",
+		"Comics & graphic novels, adaptations"
+	],
+	"rating": 5,
+	"isbn": "9786050968651",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9786050968651-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9786050968651-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc20829027268b4a44a8"
+	},
+	"title": "A Prayer for Owen Meany",
+	"authors": [
+		"John Irving"
+	],
+	"publishedDate": "1989",
+	"description": "I am doomed to remember a boy with a wrecked voice-not because of his voice, or because he was the smallest person I ever knew, or even because he was the instrument of my mother's death, but because he is the reason I believe in God; I am a Christian because of Owen Meany.",
+	"pageCount": 544,
+	"categories": [
+		"Friendship in fiction",
+		"Friendship",
+		"Fiction"
+	],
+	"rating": 3.7407408,
+	"isbn": "9783257224917",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9783257224917-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9783257224917-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc26829027268b4a44ab"
+	},
+	"title": "Poems",
+	"authors": [
+		"William Wordsworth"
+	],
+	"publishedDate": "1999",
+	"description": "Was it for this",
+	"pageCount": 368,
+	"categories": [
+		"Gift books",
+		"Specimens",
+		"Facsimiles"
+	],
+	"rating": 3.5714285,
+	"isbn": "0951061658",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0951061658-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0951061658-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc26829027268b4a44ae"
+	},
+	"title": "Blind Date",
+	"authors": [
+		"R. L. Stine"
+	],
+	"publishedDate": "1986",
+	"description": "At first, when Kerry heard the sound of the bone breaking, he thought it was his.",
+	"pageCount": 200,
+	"categories": [
+		"Juvenile fiction",
+		"Detective and mystery stories",
+		"Mystery and detective stories"
+	],
+	"rating": 4,
+	"isbn": "0590403265",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0590403265-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0590403265-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc3c829027268b4a44b1"
+	},
+	"title": "Life of Pi",
+	"authors": [
+		"Yann Martel"
+	],
+	"publishedDate": "May 29, 2003",
+	"description": "This book was born as I was hungry.",
+	"pageCount": 342,
+	"categories": [
+		"Teenage boys",
+		"Zoo animals",
+		"Fiction"
+	],
+	"rating": 3.946565,
+	"isbn": "1841952451",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1841952451-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1841952451-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc3c829027268b4a44b6"
+	},
+	"title": "King Richard III",
+	"authors": [
+		"William Shakespeare"
+	],
+	"publishedDate": "March 5, 2006",
+	"description": "Now is the Winter of our Discontent,",
+	"pageCount": 192,
+	"categories": [
+		"Drama",
+		"History",
+		"Kings and rulers in literature"
+	],
+	"rating": 3.625,
+	"isbn": "9780671489120",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780671489120-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780671489120-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc46829027268b4a44b9"
+	},
+	"title": "The Lightning Thief",
+	"authors": [
+		"Rick Riordan"
+	],
+	"publishedDate": "April 1, 2006",
+	"description": "Look, I didn't want to be a half-blood.",
+	"pageCount": 381,
+	"categories": [
+		"Fiction",
+		"Greek Mythology",
+		"Zeus (Greek deity)"
+	],
+	"rating": 4.332226,
+	"isbn": "9780141329994",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780141329994-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780141329994-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc46829027268b4a44bc"
+	},
+	"title": "The Thief",
+	"authors": [
+		"Megan Whalen Turner"
+	],
+	"publishedDate": "January 2006",
+	"description": "I DIDN'T KNOW HOW LONG I had been in the king's prison.",
+	"pageCount": 224,
+	"categories": [
+		"Fiction",
+		"Robbers and outlaws",
+		"Adventure and adventurers"
+	],
+	"rating": 4.368421,
+	"isbn": "9780688146276",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780688146276-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780688146276-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc46829027268b4a44bf"
+	},
+	"title": "The Tale of the Body Thief",
+	"authors": [
+		"Anne Rice"
+	],
+	"publishedDate": "October 4, 1992",
+	"description": "THE Vampire Lestat here.",
+	"pageCount": 474,
+	"categories": [
+		"Horror fiction",
+		"Horror tales",
+		"Fiction"
+	],
+	"rating": 4.0555553,
+	"isbn": "9780140132045",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780140132045-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780140132045-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc46829027268b4a44c2"
+	},
+	"title": "Moll Flanders",
+	"authors": [
+		"Daniel Defoe"
+	],
+	"publishedDate": "February 1973",
+	"description": "My true name is so well known in the records, or registers, at Newgate and in the Old Bailey, and there are some things of such consequence still depending there relating to my particular conduct, that it is not to be expected I should set my name or the account of my family to this work; perhaps after my death it may be better known; at present it would not be proper, no, not though a general pardon should be issued, even without exceptions of persons or crimes.",
+	"pageCount": 347,
+	"categories": [
+		"Fiction",
+		"Social life and customs",
+		"Criminals"
+	],
+	"rating": 3.75,
+	"isbn": "9780393094121",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780393094121-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780393094121-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc46829027268b4a44c5"
+	},
+	"title": "The Lies of Locke Lamora",
+	"authors": [
+		"Scott Lynch"
+	],
+	"publishedDate": "2006",
+	"description": "At the height of the long wet summer of the Seventy-seventh Year of Sendovani, the Thief-maker of Camorr paid a sudden and unannounced visit to the Eyeless Priest at the Temple of Perelandro, desperately hoping to sell him the Lamora boy.",
+	"pageCount": 544,
+	"categories": [
+		"Fiction, fantasy, general",
+		"Fantasy",
+		"Fiction"
+	],
+	"rating": 4.1153846,
+	"isbn": "9780553902716",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780553902716-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780553902716-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc80829027268b4a44c8"
+	},
+	"title": "The Power of Your Subconscious Mind",
+	"authors": [
+		"Joseph Murphy"
+	],
+	"publishedDate": "2013",
+	"description": "You have infinite riches within your reach.",
+	"pageCount": 222,
+	"categories": [
+		"Mental discipline",
+		"Subconsciousness",
+		"Disciplina mental"
+	],
+	"rating": 4.0526314,
+	"isbn": "0735201684",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0735201684-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0735201684-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc80829027268b4a44cc"
+	},
+	"title": "The Woman in White",
+	"authors": [
+		"Wilkie Collins"
+	],
+	"publishedDate": "1953",
+	"description": "THIS is the story of what a Woman's patience can denture, and what a Man's resolution can achieve.",
+	"pageCount": 573,
+	"categories": [
+		"Fiction",
+		"mystery & detective",
+		"general"
+	],
+	"rating": 3.8823528,
+	"isbn": "9782752905666",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9782752905666-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9782752905666-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc80829027268b4a44d2"
+	},
+	"title": "Think and Grow Rich",
+	"authors": [
+		"Napoleon Hill"
+	],
+	"publishedDate": "June 18, 2007",
+	"description": "\"TRULY, \"\"THOUGHTS ARE THINGS,\"\" and powerful things at that, when they are mixed with definiteness of purpose, persistence, and a burning desire for their translation into riches, or other material objects.\"",
+	"pageCount": 256,
+	"categories": [
+		"Wealth",
+		"Success",
+		"Filosofía"
+	],
+	"rating": 4.0255103,
+	"isbn": "9780685221365",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780685221365-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780685221365-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc80829027268b4a44d6"
+	},
+	"title": "The art of money getting, or, Golden rules for money getting",
+	"authors": [
+		"P. T. Barnum"
+	],
+	"publishedDate": "2019",
+	"description": "In the United States, where we have more land than people, it is not at all difficult for persons in good health to make money.",
+	"pageCount": 64,
+	"categories": [
+		"Success",
+		"Finance",
+		"Nonfiction"
+	],
+	"rating": 4.75,
+	"isbn": "9781419107726",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781419107726-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781419107726-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc80829027268b4a44d9"
+	},
+	"title": "Amerika",
+	"authors": [
+		"Franz Kafka",
+		"Ritchie Robertson"
+	],
+	"publishedDate": "2004",
+	"description": "As Karl Rossmann, a poor boy of sixteen who had been packed off to America by his parents because a servant girl had seduced him and got herself a child by him, stood on the liner slowly entering the harbour of New York, a sudden burst of sunshine seemed to illumine the Statue of Liberty, so that he saw it in a new light, although he had sighted it long before.",
+	"pageCount": 299,
+	"categories": [
+		"German fiction",
+		"Translations into English",
+		"Immigrants in fiction"
+	],
+	"rating": 4.071429,
+	"isbn": "3899191668",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/3899191668-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/3899191668-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc80829027268b4a44dc"
+	},
+	"title": "The Power of Positive Thinking",
+	"authors": [
+		"Norman Vincent Peale"
+	],
+	"publishedDate": "1982",
+	"description": "Believe in yourself!",
+	"pageCount": 252,
+	"categories": [
+		"Applied Psychology",
+		"Aspectos religiosos",
+		"Christianity"
+	],
+	"rating": 4.1165047,
+	"isbn": "9781400084708",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781400084708-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781400084708-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc80829027268b4a44df"
+	},
+	"title": "Hallowe'en Party",
+	"authors": [
+		"Agatha Christie"
+	],
+	"publishedDate": "1997",
+	"description": "MRS. Ariadne Oliver had gone with the friend with whom she was staying, Judith Butler, to help with the preparations for a children's party which was to take place that same evening.",
+	"pageCount": 244,
+	"categories": [
+		"Fiction",
+		"Mystery",
+		"Murder"
+	],
+	"rating": 3.5,
+	"isbn": "157270330X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/157270330X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/157270330X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc80829027268b4a44e2"
+	},
+	"title": "The Fault in Our Stars",
+	"authors": [
+		"John Green"
+	],
+	"publishedDate": "Jan 03, 2017",
+	"description": "Late in the winter of my seventeenth year, my mother decided I was depressed, presumably because I rarely left the house, spent quite a lot of time in bed, read the same book over a over, ate infrequently, and devoted quite a bit of my abundant free time to thinking about death.",
+	"pageCount": 317,
+	"categories": [
+		"Young Adult Fiction",
+		"Cancer—Fiction",
+		"Terminally ill—Fiction"
+	],
+	"rating": 4.304348,
+	"isbn": "0143571621",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0143571621-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0143571621-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc80829027268b4a44e6"
+	},
+	"title": "Cyropaedia",
+	"authors": [
+		"Xenophon"
+	],
+	"publishedDate": "1767",
+	"description": "Xenophon's Education of Cyrus offers its own introduction, one that helps turn the reader's attention to the core issues of the book.",
+	"pageCount": 326,
+	"categories": [
+		"Biography",
+		"Cyrus, King of Persia, d. 529 B.C.",
+		"Cyrus, in fiction"
+	],
+	"rating": 3.2631578,
+	"isbn": "9781419114854",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781419114854-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781419114854-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc80829027268b4a44e9"
+	},
+	"title": "Naked Lunch",
+	"authors": [
+		"William S. Burroughs"
+	],
+	"publishedDate": "2003",
+	"description": "I can feel the heat closing in, feel them out there making their moves, setting up their devil doll stool pigeons, crooning over my spoon and dropper I throw away at Washington Square Station, vault a turnstile and two flights down the iron stairs, catch an uptown A train...",
+	"pageCount": 255,
+	"categories": [
+		"Drug Use",
+		"Heroin",
+		"Drug addicts"
+	],
+	"rating": 3.7368422,
+	"isbn": "0007320906",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0007320906-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0007320906-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc80829027268b4a44ec"
+	},
+	"title": "The 48 Laws of Power",
+	"authors": [
+		"Robert Greene",
+		"Joost Elffers"
+	],
+	"publishedDate": "Oct 30, 2000",
+	"description": "Nicolas Fouquet, Louis XIV's finance minister in the first years of his reign, was a generous man who loved lavish parties, pretty women, and poetry.",
+	"pageCount": 452,
+	"categories": [
+		"Business",
+		"Control (Psychology)",
+		"Contrôle (Psychologie)"
+	],
+	"rating": 4.107056,
+	"isbn": "1861971346",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1861971346-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1861971346-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc80829027268b4a44ef"
+	},
+	"title": "Barbie Horse Trouble Barbie Look Look",
+	"authors": [
+		"Golden Books"
+	],
+	"publishedDate": "January 22, 2002",
+	"description": "The Owl and the Pussycat went to sea",
+	"pageCount": 32,
+	"categories": [
+		"Horses",
+		"Juvenile fiction",
+		"Children: Kindergarten"
+	],
+	"rating": 3.6,
+	"isbn": "0307120627",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0307120627-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0307120627-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcc9d829027268b4a44f3"
+	},
+	"title": "A la recherche du temps perdu",
+	"authors": [
+		"Marcel Proust"
+	],
+	"publishedDate": "January 1, 2000",
+	"description": "FOR a long time I used to go to bed early.",
+	"pageCount": 442,
+	"categories": [
+		"Fiction",
+		"Social life and customs",
+		"Villages"
+	],
+	"rating": 4.133333,
+	"isbn": "9780394711829",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780394711829-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780394711829-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcca5829027268b4a44f8"
+	},
+	"title": "The Maze Runner",
+	"authors": [
+		"James Dashner"
+	],
+	"publishedDate": "2009",
+	"description": "He began his new life standing up, surrounded by cold darkness and stale, dusty air.",
+	"pageCount": 377,
+	"categories": [
+		"Fiction",
+		"Science fiction",
+		"Amnesia"
+	],
+	"rating": 3.9920635,
+	"isbn": "0375893776",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0375893776-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0375893776-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcca5829027268b4a44fb"
+	},
+	"title": "The Death Cure",
+	"authors": [
+		"James Dashner",
+		"James Dashner"
+	],
+	"publishedDate": "2014",
+	"description": "It was the smell that began to drive Thomas slightly mad.",
+	"pageCount": 358,
+	"categories": [
+		"Science fiction",
+		"Survival",
+		"Fiction"
+	],
+	"rating": 3.6363637,
+	"isbn": "9781910655917",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781910655917-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781910655917-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccaa829027268b4a44ff"
+	},
+	"title": "Measure for Measure",
+	"authors": [
+		"William Shakespeare"
+	],
+	"publishedDate": "1947",
+	"description": "Measure for Measure has been strikingly popular for more than thirty years, both on the stage and in the study, and there have been wide divergences of theatrical and critical interpretation.",
+	"pageCount": 176,
+	"categories": [
+		"Drama",
+		"Chastity",
+		"Brothers and sisters"
+	],
+	"rating": 3.8,
+	"isbn": "1434609979",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1434609979-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1434609979-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccaa829027268b4a4502"
+	},
+	"title": "Feminism Is for Everybody",
+	"authors": [
+		"Bell Hooks",
+		"Amaia Apalauza Ollo"
+	],
+	"publishedDate": "2014",
+	"description": "Simply put, feminism is a movement to end sexist exploitation, and oppression.",
+	"pageCount": 138,
+	"categories": [
+		"Feminist theory",
+		"Feminisme",
+		"Sex discrimination against women"
+	],
+	"rating": 3.8888888,
+	"isbn": "8416946213",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/8416946213-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/8416946213-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccb4829027268b4a4505"
+	},
+	"title": "Twilight",
+	"authors": [
+		"Stephenie Meyer"
+	],
+	"publishedDate": "Jul 01, 2010",
+	"description": "I'd never given much thought to how I would die--though I had reason enough in the last few months--but even if I had, I would not have imagined it like this.",
+	"pageCount": 498,
+	"categories": [
+		"New York Times bestseller",
+		"nyt:series_books=2008-03-15",
+		"School & Education"
+	],
+	"rating": 3.642202,
+	"isbn": "9789895572700",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9789895572700-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9789895572700-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccb4829027268b4a4508"
+	},
+	"title": "New Moon",
+	"authors": [
+		"Stephenie Meyer"
+	],
+	"publishedDate": "2006",
+	"description": "MY MOTHER DROVE ME TO THE AIRPORT WITH THE windows rolled down.",
+	"pageCount": 563,
+	"categories": [
+		"Vampires",
+		"Juvenile fiction",
+		"Werewolves"
+	],
+	"rating": 4.1355934,
+	"isbn": "9789870406785",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9789870406785-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9789870406785-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccb4829027268b4a450b"
+	},
+	"title": "Jamaica Inn",
+	"authors": [
+		"Daphne du Maurier"
+	],
+	"publishedDate": "1937",
+	"description": "IT WAS a cold grey day in late November.",
+	"pageCount": 309,
+	"categories": [
+		"Fiction",
+		"Smugglers",
+		"Detective and mystery stories"
+	],
+	"rating": 4,
+	"isbn": "2724230116",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/2724230116-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/2724230116-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccb4829027268b4a450e"
+	},
+	"title": "Dragons of Autumn Twilight",
+	"authors": [
+		"Margaret Weis",
+		"Tracy Hickman",
+		"Paul Boehmer",
+		"Andrew Dabb",
+		"Steve Kurth",
+		"Stefano Raffaele",
+		"Margarett Weiss"
+	],
+	"publishedDate": "1989-01-01",
+	"description": "Flint Fireforge collapsed on a moss-covered boulder.",
+	"pageCount": 447,
+	"categories": [
+		"Fiction",
+		"Dragons",
+		"Fantasy"
+	],
+	"rating": 4.625,
+	"isbn": "8448032608",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/8448032608-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/8448032608-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccb4829027268b4a4511"
+	},
+	"title": "The October Country",
+	"authors": [
+		"Ray Bradbury"
+	],
+	"publishedDate": "April 12, 1985",
+	"description": "... that country where it is always turning late in the year. That country where the hills are fog and the rivers are mist; where noons go quickly, dusks and twilights linger, and midnights stay.",
+	"pageCount": 306,
+	"categories": [
+		"Fantasy fiction, American",
+		"Horror tales, American",
+		"American Science fiction"
+	],
+	"rating": 4.6,
+	"isbn": "9780380973873",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780380973873-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780380973873-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccb4829027268b4a4515"
+	},
+	"title": "Twilight's Child",
+	"authors": [
+		"V. C. Andrews"
+	],
+	"publishedDate": "1992",
+	"description": "THE VIRGINIA COUNTRYSIDE FLEW BY AS JIMMY AND I DROVE toward Saddle Creek, a suburb of Richmond.",
+	"pageCount": 431,
+	"categories": [
+		"fiction",
+		"Families",
+		"Large type books"
+	],
+	"rating": 4.25,
+	"isbn": "0745175449",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0745175449-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0745175449-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccb4829027268b4a4518"
+	},
+	"title": "Twilight Eyes",
+	"authors": [
+		"Dean Koontz"
+	],
+	"publishedDate": "April 2, 1999",
+	"description": "That was the year they murdered our president in Dallas.",
+	"pageCount": 478,
+	"categories": [
+		"Accessible book",
+		"Protected DAISY",
+		"Romans"
+	],
+	"rating": 3.75,
+	"isbn": "2277230723",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/2277230723-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/2277230723-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccb4829027268b4a451b"
+	},
+	"title": "Tigers at Twilight",
+	"authors": [
+		"Mary Pope Osborne",
+		"Sal Murdocca",
+		"Marcela Brovelli"
+	],
+	"publishedDate": "1999",
+	"description": "Jack and Annie walked past the Frog Creek woods on their way home from the library.",
+	"pageCount": 76,
+	"categories": [
+		"nyt:series_books=2007-03-10",
+		"Jungle animals",
+		"Magic"
+	],
+	"rating": 4.6666665,
+	"isbn": "0679990658",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0679990658-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0679990658-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccb4829027268b4a451e"
+	},
+	"title": "The twilight before Christmas",
+	"authors": [
+		"Christine Feehan",
+		"Teri Clark Linden"
+	],
+	"publishedDate": "Jul 04, 2015",
+	"description": "\"DON'T SAY IT. DON'T SAY IT. DON'T SAY IT,\" Danny Granite muttered the mantra under his breath as he sat in the truck watching his older brother carefully selecting hydro-organic tomatoes from Old Man Mars's fruit stand.",
+	"pageCount": 299,
+	"categories": [
+		"Christmas stories",
+		"Fiction",
+		"Occult fiction"
+	],
+	"rating": 5,
+	"isbn": "074347628X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/074347628X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/074347628X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccb4829027268b4a4521"
+	},
+	"title": "Alexander's bridge",
+	"authors": [
+		"Willa Cather"
+	],
+	"publishedDate": "Jun 27, 2017",
+	"description": "LATE one brilliant April afternoon Professor Lucius Wilson stood at the head of Chestnut Street, looking about him with the pleased air of a man of taste who does not very often get to Boston.",
+	"pageCount": 122,
+	"categories": [
+		"Mistresses",
+		"Bridges",
+		"Married people"
+	],
+	"rating": 4,
+	"isbn": "9781441784780",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781441784780-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781441784780-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccc2829027268b4a4526"
+	},
+	"title": "The Martian Chronicles",
+	"authors": [
+		"Ray Bradbury"
+	],
+	"publishedDate": "2019",
+	"description": "One minute it was Ohio winter, with doors closed, windows locked, the panes blind with frost, icicles fringing every roof, children skiing on slopes, housewives lumbering like great black bears in their furs along the icy streets.",
+	"pageCount": 256,
+	"categories": [
+		"American Science fiction",
+		"Ciencia-ficción",
+		"Drama"
+	],
+	"rating": 4.061856,
+	"isbn": "2207246388",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/2207246388-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/2207246388-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccc2829027268b4a4529"
+	},
+	"title": "Vingt mille lieues sous les mers",
+	"authors": [
+		"Jules Verne"
+	],
+	"publishedDate": "Apr 03, 2018",
+	"description": "THE YEAR 1866 was signalized by a remarkable incident, a mysterious and inexplicable phenomenon, which doubtless no one has yet forgotten.",
+	"pageCount": 324,
+	"categories": [
+		"Toy and movable books",
+		"Fiction",
+		"Specimens"
+	],
+	"rating": 4.135135,
+	"isbn": "9780141937687",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780141937687-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780141937687-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccc2829027268b4a452c"
+	},
+	"title": "Plays (36)",
+	"authors": [
+		"William Shakespeare"
+	],
+	"publishedDate": "1953",
+	"description": "Late in 1621 or early in 1622 two men brought to the son of a somewhat disreputable printer an idea that was to change the face of literature and theatre forever.",
+	"pageCount": 889,
+	"categories": [
+		"sources",
+		"English Manuscripts",
+		"English literature: Shakespeare texts"
+	],
+	"rating": 3.5714285,
+	"isbn": "1010581406",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1010581406-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1010581406-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccc2829027268b4a4532"
+	},
+	"title": "Owl Moon",
+	"authors": [
+		"Jane Yolen"
+	],
+	"publishedDate": "1988",
+	"description": "It was late one winter night, long past my bedtime, when Pa and I went owling.",
+	"pageCount": 32,
+	"categories": [
+		"Juvenile fiction",
+		"Fathers and daughters",
+		"Owls"
+	],
+	"rating": 4.3333335,
+	"isbn": "0399238514",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0399238514-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0399238514-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcccd829027268b4a4537"
+	},
+	"title": "Eclipse Bay",
+	"authors": [
+		"Jayne Ann Krentz"
+	],
+	"publishedDate": "2001",
+	"description": "The long, pearl-studded train of the creamy candlelight-satin wedding gown cascaded in graceful folds behind the bride as she glided to a halt in front of the altar.",
+	"pageCount": 346,
+	"categories": [
+		"Families",
+		"Family",
+		"Fiction"
+	],
+	"rating": 3.4285715,
+	"isbn": "9781423335870",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781423335870-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781423335870-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcccd829027268b4a453a"
+	},
+	"title": "Dark Lover",
+	"authors": [
+		"J. R. Ward"
+	],
+	"publishedDate": "October 2, 2007",
+	"description": "Darius looked around the club, taking in the teeming, half-naked bodies on the dance floor.",
+	"pageCount": 405,
+	"categories": [
+		"Fiction",
+		"Paranormal Romance",
+		"Fantasy"
+	],
+	"rating": 4.142857,
+	"isbn": "9780451216953",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780451216953-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780451216953-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccd2829027268b4a453d"
+	},
+	"title": "Angels & Demons",
+	"authors": [
+		"Dan Brown"
+	],
+	"publishedDate": "Oct 18, 2005",
+	"description": "High atop the steps of the Great Pyramid of Giza a young woman laughed and called down to him.",
+	"pageCount": 578,
+	"categories": [
+		"heparin",
+		"ambigrams",
+		"antimatter"
+	],
+	"rating": 3.6111112,
+	"isbn": "8375081728",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/8375081728-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/8375081728-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccd6829027268b4a4540"
+	},
+	"title": "Digital Fortress",
+	"authors": [
+		"Dan Brown"
+	],
+	"publishedDate": "1998",
+	"description": "They were in the smoky mountains at their favorite bed-and-breakfast.",
+	"pageCount": 447,
+	"categories": [
+		"techno-thriller",
+		"supercomputers",
+		"Se curite  informatique"
+	],
+	"rating": 3.5,
+	"isbn": "1427271283",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1427271283-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1427271283-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcce2829027268b4a4544"
+	},
+	"title": "Hell House",
+	"authors": [
+		"Richard Matheson"
+	],
+	"publishedDate": "Jun 01, 2009",
+	"description": "It had been raining hard since five o'clock that morning.",
+	"pageCount": 268,
+	"categories": [
+		"Demoniac possession",
+		"Fiction",
+		"Haunted houses"
+	],
+	"rating": 4.090909,
+	"isbn": "9782290309728",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9782290309728-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9782290309728-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcce2829027268b4a4547"
+	},
+	"title": "From hell",
+	"authors": [
+		"Alan Moore",
+		"Eddie Campbell"
+	],
+	"publishedDate": "Oct 04, 2016",
+	"description": "There, two pennorth on the nail.",
+	"pageCount": 28,
+	"categories": [
+		"Comic books, strips",
+		"Horror comic books, strips",
+		"Serial murders"
+	],
+	"rating": 4.1666665,
+	"isbn": "9780878163380",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780878163380-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780878163380-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcce7829027268b4a454a"
+	},
+	"title": "The Girl on the Train",
+	"authors": [
+		"Paula Hawkins",
+		"Pocket"
+	],
+	"publishedDate": "Jul 12, 2016",
+	"description": "She's buried benaeth a silver birch tree, down towards the old train tracks, her grave marked with a cairn.",
+	"pageCount": 360,
+	"categories": [
+		"Witnesses",
+		"Murder victims",
+		"Alcoholics"
+	],
+	"rating": 3.6197183,
+	"isbn": "9781524734107",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781524734107-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781524734107-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccfa829027268b4a4550"
+	},
+	"title": "The secret of childhood",
+	"authors": [
+		"Maria Montessori"
+	],
+	"publishedDate": "1936",
+	"description": "The progress made in recent years in the care and education of children has been so amazingly rapid that it is more to be attributed to a general awakening of conscience than to a rise in the standard of living.",
+	"pageCount": 239,
+	"categories": [
+		"Education",
+		"Child psychology",
+		"Child development"
+	],
+	"rating": 4.6666665,
+	"isbn": "9780345305831",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780345305831-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780345305831-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccfa829027268b4a4554"
+	},
+	"title": "The Secret History",
+	"authors": [
+		"Donna Tartt"
+	],
+	"publishedDate": "1999",
+	"description": "DOES SUCH a thing as \"the fatal flaw,\" that show dark crack running down the middle of a life, exist outside literature?",
+	"pageCount": 607,
+	"categories": [
+		"Fiction",
+		"College students",
+		"Teacher-student relationships"
+	],
+	"rating": 4.046875,
+	"isbn": "9786052994016",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9786052994016-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9786052994016-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccfa829027268b4a4559"
+	},
+	"title": "The secret life of bees",
+	"authors": [
+		"Sue Monk Kidd",
+		"Sue Kidd"
+	],
+	"publishedDate": "January 2003",
+	"description": "At night I would lie in bed and watch the show, how bees squeezed through the cracks of my bedroom wall and flew circles around the room, making that propeller sound, a high-pitched zzzzzz that hummed along my skin.",
+	"pageCount": 303,
+	"categories": [
+		"Teenage girls",
+		"Fiction",
+		"South Carolina in fiction"
+	],
+	"rating": 4.0555553,
+	"isbn": "9780143036401",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780143036401-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780143036401-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccfa829027268b4a4561"
+	},
+	"title": "The Story of the Amulet",
+	"authors": [
+		"Edith Nesbit"
+	],
+	"publishedDate": "1996",
+	"description": "There were once four children who spent their summer holidays in a white house, happily situated between a sandpit and a chalkpit.",
+	"pageCount": 248,
+	"categories": [
+		"Roman pour la jeunesse",
+		"Litterature fantastique",
+		"Classic Literature"
+	],
+	"rating": 3.6666667,
+	"isbn": "184749790X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/184749790X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/184749790X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccfa829027268b4a4565"
+	},
+	"title": "Bridge to Terabithia",
+	"authors": [
+		"Katherine Paterson"
+	],
+	"publishedDate": "1989",
+	"description": "\"Ba-room, ba-room, ba-room, baripity, baripity, bariptity, bariptity-Good. His dad had the pickup going.\"",
+	"pageCount": 152,
+	"categories": [
+		"Amistad",
+		"Children's stories",
+		"Death"
+	],
+	"rating": 4.021739,
+	"isbn": "0758700032",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0758700032-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0758700032-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dccfa829027268b4a4568"
+	},
+	"title": "Crooked House",
+	"authors": [
+		"Agatha Christie"
+	],
+	"publishedDate": "April 16, 2004",
+	"description": "I first came to know Sophia Leonides in Egypt towards the end of the war.",
+	"pageCount": 223,
+	"categories": [
+		"Mystery",
+		"Fiction",
+		"Jane Marple (Fictitious character)"
+	],
+	"rating": 4.5,
+	"isbn": "0008288585",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0008288585-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0008288585-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd0a829027268b4a4570"
+	},
+	"title": "Practicing the Power of Now",
+	"authors": [
+		"Eckhart Tolle"
+	],
+	"publishedDate": "1999",
+	"description": "There is an eternal, ever-present One Life beyond the myriad forms of life that are subject to birth and death.",
+	"pageCount": 142,
+	"categories": [
+		"Spiritual life",
+		"Vida espiritual",
+		"Self-actualization (psychology)"
+	],
+	"rating": 3.8,
+	"isbn": "1577312155",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1577312155-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1577312155-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd0a829027268b4a4576"
+	},
+	"title": "Twelfth Night",
+	"authors": [
+		"William Shakespeare"
+	],
+	"publishedDate": "2014",
+	"description": "Enter Orsino Duke of Illyria, Curio, and other Lords.",
+	"pageCount": 154,
+	"categories": [
+		"Drama",
+		"Brothers and sisters",
+		"Twins"
+	],
+	"rating": 3.6785715,
+	"isbn": "0230243843",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0230243843-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0230243843-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd1e829027268b4a457c"
+	},
+	"title": "The Hound of the Baskervilles",
+	"authors": [
+		"Arthur Conan Doyle"
+	],
+	"publishedDate": "Jan 01, 2010",
+	"description": "MR. SHERLOCK HOLMES, who was usually very late in the mornings, save upon those not infrequent occasions when he was up all night, was seated at the breakfast table.",
+	"pageCount": 204,
+	"categories": [
+		"crime novel",
+		"English Civil War",
+		"mires"
+	],
+	"rating": 3.9333334,
+	"isbn": "8393759714",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/8393759714-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/8393759714-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd1e829027268b4a4584"
+	},
+	"title": "Het Achterhuis",
+	"authors": [
+		"Anne Frank"
+	],
+	"publishedDate": "1999",
+	"description": "On August 16, 1933, the following entry was made at the Amsterdam Public Registration Office: \"Frank, Otto Heinrich, originally from Frankfurt-am-Main.\"",
+	"pageCount": 285,
+	"categories": [
+		"autobiographies",
+		"ethnic relations",
+		"Dutch literature"
+	],
+	"rating": 4.2201834,
+	"isbn": "1681653656",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1681653656-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1681653656-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd1e829027268b4a4589"
+	},
+	"title": "Finnegans Wake",
+	"authors": [
+		"James Joyce"
+	],
+	"publishedDate": "1999",
+	"description": "riverrun,past Eve and Adam's, from swerve of shore to bend if bay, brings us by a commodius vicus of recirculation back to Howth Castle and Environs. Sir Tristram, violer d'amores, fr' over the short sea,had passencore rearrived from North Armorica on this side the scraggy isthmus of Europe Minor to wielderfight his penisolate war: nor had topsawyer's rocks by the stream Oconee exaggerated themselse to Laurens Country's gorgios while they went doublin their mumper all the time: nor avoice from afire bellowsed mishe mishe to tauftauf thuartpeatrick: not yet, though venissoon after, had a kidscad buttended a bland old isaac: not yet, though all's fair in vanessy, were sosie sesthers wroth with twone nathandjoe.",
+	"pageCount": 446,
+	"categories": [
+		"Facsimiles",
+		"Manuscripts",
+		"English Manuscripts"
+	],
+	"rating": 3.4,
+	"isbn": "9780141192291",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780141192291-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780141192291-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd2a829027268b4a4591"
+	},
+	"title": "Matilda",
+	"authors": [
+		"Roald Dahl"
+	],
+	"publishedDate": "1998",
+	"description": "It's a funny thing about mothers and fathers.",
+	"pageCount": 240,
+	"categories": [
+		"juvenile fiction",
+		"Schools",
+		"Girls"
+	],
+	"rating": 4.3891215,
+	"isbn": "753325953X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/753325953X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/753325953X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd2a829027268b4a4594"
+	},
+	"title": "El Libro de la selva / The Jungle Book",
+	"authors": [
+		"Rudyard Kipling",
+		"Carl Bowen",
+		"Gerardo Sandoval",
+		"Benny Fuentes",
+		"John Lockwood Kipling",
+		"Stéphane Mourgues",
+		"Geneviève Debeuré-De Jongh",
+		"Jean-Claude Henryot",
+		"Brigitte Zaugg",
+		"Maurice Wilson",
+		"Rafael Mayani",
+		"Virginie Clauzel",
+		"Nicola Butler",
+		"Clapton Commons Clapton Commons Publishing",
+		"Alex Fabrizio",
+		"Aberdeen Press",
+		"Karl Simrock",
+		"Jessica Swale",
+		"Joe Stilgoe",
+		"Janice Greene",
+		"Brigitte Juanals",
+		"Gwen Keraval",
+		"Michael Page",
+		"Norman Nodel",
+		"Classic Reads",
+		"Francisca Marquez",
+		"Stéphane Mourgues",
+		"Geneviève Debeuré-De Jongh",
+		"Jean-Claude Henryot",
+		"Liz Miles",
+		"Giovanni Pota",
+		"Dave Gibbons",
+		"Nik Marcel",
+		"Louis Fabulet",
+		"Robert d'Humieres"
+	],
+	"publishedDate": "1996",
+	"description": "It was seven o'clock of a very warm evening in the Seeonee hills when Father Wolf woke up from his day's rest, scratched himself, yawned, and spread out his paws one after the other to get rid of the sleepy feeling in their tips.",
+	"pageCount": 173,
+	"categories": [
+		"Novela inglesa",
+		"Traducciones al español",
+		"Jungles"
+	],
+	"rating": 3.9583333,
+	"isbn": "9780789449443",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780789449443-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780789449443-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd2a829027268b4a459a"
+	},
+	"title": "Death on the Nile",
+	"authors": [
+		"Agatha Christie"
+	],
+	"publishedDate": "September 2004",
+	"description": "\"Linnet Ridgeway!\" \"That's her!\" said Mr. Burnaby, the landlord of the Three Crowns.",
+	"pageCount": 287,
+	"categories": [
+		"Belgians",
+		"Fiction",
+		"Hercule Poirot (Fictitious character)"
+	],
+	"rating": 4.1578946,
+	"isbn": "9787100173605",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9787100173605-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9787100173605-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd2a829027268b4a459d"
+	},
+	"title": "Of Mice and Men",
+	"authors": [
+		"John Steinbeck"
+	],
+	"publishedDate": "2010 September 10",
+	"description": "A Few miles south of Soledad, the Salinas River drops in close to the hillside bank and runs deep and green.",
+	"pageCount": 124,
+	"categories": [
+		"contemporary fiction",
+		"literary fiction",
+		"classics"
+	],
+	"rating": 3.954357,
+	"isbn": "055327824X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/055327824X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/055327824X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd32829027268b4a45a4"
+	},
+	"title": "Do Androids Dream of Electric Sheep?",
+	"authors": [
+		"Philip K. Dick"
+	],
+	"publishedDate": "1999",
+	"description": "irritability had risen, now; had become outright hostility. Iran said,\"Just those poor andys.\"",
+	"pageCount": 224,
+	"categories": [
+		"Androids",
+		"Fiction",
+		"Rick Deckard (Fictitious character)"
+	],
+	"rating": 4.0347223,
+	"isbn": "8375101311",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/8375101311-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/8375101311-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd32829027268b4a45a7"
+	},
+	"title": "Rosemary's Baby",
+	"authors": [
+		"Ira Levin"
+	],
+	"publishedDate": "1993-04-19",
+	"description": "Rosemary and Guy Woodhouse had signed a lease on a five-room apartment in a geometric white house on First Avenue when they received word, from a woman named Mrs. Cortez, that a four-room apartment in the Bramford had become available.",
+	"pageCount": 245,
+	"categories": [
+		"Fiction",
+		"Satanism",
+		"Occult fiction"
+	],
+	"rating": 4,
+	"isbn": "2277123420",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/2277123420-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/2277123420-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd32829027268b4a45aa"
+	},
+	"title": "Wrecking Ball",
+	"authors": [
+		"Jeff Kinney"
+	],
+	"publishedDate": "Nov 06, 2019",
+	"description": "I've read that in ancient times they used to bury kings and pharaohs with all their possessions.",
+	"pageCount": 220,
+	"categories": [
+		"Wrecking Ball (Diary of a Wimpy Kid Book 14)",
+		"Gregs dream of becoming rich",
+		"Children's fiction"
+	],
+	"rating": 3.92,
+	"isbn": "8427216742",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/8427216742-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/8427216742-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd32829027268b4a45ad"
+	},
+	"title": "The Velveteen Rabbit",
+	"authors": [
+		"Margery Williams Bianco"
+	],
+	"publishedDate": "December 2003",
+	"description": "There was once a velveteen rabbit, and in the beginning he was really splendid.",
+	"pageCount": 28,
+	"categories": [
+		"Fiction",
+		"Juvenile Fiction",
+		"Toys"
+	],
+	"rating": 4,
+	"isbn": "9780762429356",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780762429356-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780762429356-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd32829027268b4a45b0"
+	},
+	"title": "The Shadow Rising",
+	"authors": [
+		"Robert Jordan"
+	],
+	"publishedDate": "Oct 08, 1993",
+	"description": "The Wheel of Time turns, and Ages come and pass, leaving memories that become legend.",
+	"pageCount": 984,
+	"categories": [
+		"Fiction",
+		"Good and evil",
+		"Rand Al'Thor (Fictitious character)"
+	],
+	"rating": 4.147059,
+	"isbn": "9789752730441",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9789752730441-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9789752730441-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd32829027268b4a45b3"
+	},
+	"title": "The Wind's Twelve Quarters",
+	"authors": [
+		"Ursula K. Le Guin"
+	],
+	"publishedDate": "2017",
+	"description": "How can you tell the legend from the fact on these worlds that lie so many years away?-planets without names, called by their people simply The World, planets without history, where the past is the matter of myth, and a returning explorer finds his own doings of a few years back have become the gestures of a god.",
+	"pageCount": 320,
+	"categories": [
+		"American Science fiction",
+		"English Short stories",
+		"Short stories"
+	],
+	"rating": 4,
+	"isbn": "0553128426",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0553128426-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0553128426-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd3b829027268b4a45b6"
+	},
+	"title": "The 7 Habits of Highly Effective People",
+	"authors": [
+		"Stephen R. Covey",
+		"Sean Covey"
+	],
+	"publishedDate": "2015",
+	"description": "IN MORE THAN 25 YEARS of working with people in business, university, and marriage and family settings, I have come in contact with many individuals who have achieved an incredible degree of outward success, but have found themselves struggling with an inner hunger, a deep need for personal congruency and effectiveness and for healthy, growing relationships with other people.",
+	"pageCount": 374,
+	"categories": [
+		"Success- Psychological aspects",
+		"Character",
+		"Success"
+	],
+	"rating": 3.9440994,
+	"isbn": "9576214610",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9576214610-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9576214610-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd3f829027268b4a45b9"
+	},
+	"title": "Cashflow Quadrant",
+	"authors": [
+		"Robert T. Kiyosaki"
+	],
+	"publishedDate": "2000",
+	"description": "In 1985, my wife, Kim, and I were homeless.",
+	"pageCount": 271,
+	"categories": [
+		"Personal Finance",
+		"Rich people",
+		"Investments"
+	],
+	"rating": 3.9285715,
+	"isbn": "9787505382978",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9787505382978-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9787505382978-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd51829027268b4a45bc"
+	},
+	"title": "Good to Great",
+	"authors": [
+		"Jim Collins"
+	],
+	"publishedDate": "2001",
+	"description": "Good is the enemy of great.",
+	"pageCount": 320,
+	"categories": [
+		"business",
+		"Leadership",
+		"Technological innovations"
+	],
+	"rating": 3.7222223,
+	"isbn": "069452607X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/069452607X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/069452607X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd51829027268b4a45c5"
+	},
+	"title": "The Last Battle",
+	"authors": [
+		"C.S. Lewis"
+	],
+	"publishedDate": "1986",
+	"description": "IN THE LAST DAYS OF NARNIA, FAR UP to the west beyond Lantern Waste and close beside the great waterfall, there lived an Ape.",
+	"pageCount": 192,
+	"categories": [
+		"Juvenile Fiction",
+		"Science Fiction & Fantasy",
+		"Fiction"
+	],
+	"rating": 3.8461537,
+	"isbn": "9780027579000",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780027579000-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780027579000-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd51829027268b4a45c9"
+	},
+	"title": "The history of the great plague in London in the year 1665",
+	"authors": [
+		"Daniel Defoe"
+	],
+	"publishedDate": "1835",
+	"description": "IT was about the beginning of September, 1664, that I, among the rest of my neighbours, heard, in ordinary discourse, that the plague was returned again in Holland; for it had been very violent there, and particularly at Amsterdam and Rotterdam, in the year 1663, whither they say, it was brought, some said from Italy, others from the Levant, among some goods which were brought home by their Turkey fleet; others said it was brought from Candia; others from Cyprus.",
+	"pageCount": 294,
+	"categories": [
+		"Early works to 1800",
+		"Plague",
+		"History"
+	],
+	"rating": 3.3333333,
+	"isbn": "9781385526224",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781385526224-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781385526224-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd51829027268b4a45cc"
+	},
+	"title": "Diary",
+	"authors": [
+		"Samuel Pepys"
+	],
+	"publishedDate": "1938",
+	"description": "Blessed be God, at the end of the last year I was in very good health, without any sense of my old pain, but upon taking of cold.",
+	"pageCount": 223,
+	"categories": [
+		"Sources",
+		"History",
+		"Social life and customs"
+	],
+	"rating": 4,
+	"isbn": "9781343644076",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781343644076-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781343644076-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd62829027268b4a45d2"
+	},
+	"title": "How to Stop Worrying and Start Living",
+	"authors": [
+		"Dale Carnegie",
+		"Kaneiji Dale"
+	],
+	"publishedDate": "1989",
+	"description": "PREFACE:\r\nHOW THIS BOOK WAS WRITTEN—ANT) WHY\r\nThirty-five years ago, I was one of the unhappiest lads in New York. I was selling motor trucks for a living. I didn't know what made a motor truck run. That wasn't all: I didn't want to know. I despised my job. I despised living in a cheap furnished room on West Fifty-sixth Street—a room infested with cockroaches'. I still remember that I had a bunch of neckties hanging on the walls; and when I reached out of a morning to get a fresh necktie, the cockroaches scattered in all directions. I despised having to eat in cheap, dirty restaurants that were also probably infested with cockroaches.\r\nI came home to my lonely room each night with a sick headache—a headache bred and fed by disappointment, worry, bitterness, and rebellion. I was rebelling because the dreams I had nourished back in my college days had turned into nightmares. Was this life? Was this the vital adventure to which I had looked forward so eagerly? Was this all life would ever mean to me—working at a job I despised, living with cockroaches, eating vile food—and with no hope for the future? ... I longed for leisure to read, and to write the books I had. dreamed of writing back in my college days;\r\nI knew I had everything to gain and nothing to lose by giving up the job I despised. I wasn't interested in making a lot of money, but I was interested in making a lot of living. In short, I had come to the Rubicon—to that moment of decision which faces most young people when they start out in life. So I made my decision—and that decision completely altered my future. It has made the last thirty-five...",
+	"pageCount": 348,
+	"categories": [
+		"Success",
+		"Worry",
+		"Conduct of life"
+	],
+	"rating": 4.5,
+	"isbn": "0749307234",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0749307234-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0749307234-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd6c829027268b4a45d6"
+	},
+	"title": "Poetics",
+	"authors": [
+		"Aristotle",
+		"Leon Golden",
+		"O. B. Hardison"
+	],
+	"publishedDate": "1967",
+	"description": "Our subject being Poetry, I propose to speak not only of the art in general but also of its species and their respective capacities; of the structure of plot required for a good poem; of the number and nature of the constituent parts of a poem; and likewise of any other matters in the same line of inquiry.",
+	"pageCount": 128,
+	"categories": [
+		"Early works to 1800",
+		"Aesthetics",
+		"Poetry"
+	],
+	"rating": 3.857143,
+	"isbn": "1559361700",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1559361700-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1559361700-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd6c829027268b4a45e2"
+	},
+	"title": "Le Tour du Monde en Quatre-Vingts Jours",
+	"authors": [
+		"Jules Verne"
+	],
+	"publishedDate": "April 2004",
+	"description": "MR. PHILEAS FOGG LIVED, IN 1872, AT NO. 7, SAVILLE Row, Burlington Gardens, the house in which Sheridan died in 1814.",
+	"pageCount": 224,
+	"categories": [
+		"Viajes alrededor del mundo",
+		"Translations into Gujarati",
+		"Fiction"
+	],
+	"rating": 3.9571428,
+	"isbn": "753425390X",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/753425390X-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/753425390X-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcd9f829027268b4a45f1"
+	},
+	"title": "Bleachers",
+	"authors": [
+		"John Grisham"
+	],
+	"publishedDate": "first edition (2003)",
+	"description": "The road to Rake Field ran beside the school, past the old band hall and the tennis courts, through a tunnel of two perfect rows of red and yellow maples planted and paid for by the boosters, then over a small hill to a lower area covered with enough asphalt for a thousand cars.",
+	"pageCount": 190,
+	"categories": [
+		"Death",
+		"Teacher-student relationships",
+		"Funeral rites and ceremonies"
+	],
+	"rating": 3.6666667,
+	"isbn": "0385511612",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0385511612-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0385511612-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcdc3829027268b4a45f6"
+	},
+	"title": "The Wealth of Nations",
+	"authors": [
+		"Adam Smith"
+	],
+	"publishedDate": "1887",
+	"description": "The greatest improvement in the productive powers of labour, and the greater part of the skill, dexterity, and judgment with which it is any where directed, or applied, seem to have been the effects of the division of labour.",
+	"pageCount": 570,
+	"categories": [
+		"Economische filosofie",
+		"Communism",
+		"Finance"
+	],
+	"rating": 4.107143,
+	"isbn": "0192817965",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0192817965-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0192817965-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcdcd829027268b4a45fb"
+	},
+	"title": "Have Spacesuit--Will Travel",
+	"authors": [
+		"Robert A. Heinlein"
+	],
+	"publishedDate": "1977",
+	"description": "You see, I had this space suit.",
+	"pageCount": 256,
+	"categories": [
+		"Interplanetary voyages",
+		"Fiction",
+		"Science fiction"
+	],
+	"rating": 3.8888888,
+	"isbn": "9753421702",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9753421702-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9753421702-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcdcd829027268b4a45fe"
+	},
+	"title": "Vagabond (The Grail Quest #2)",
+	"authors": [
+		"Bernard Cornwell"
+	],
+	"publishedDate": "2002",
+	"description": "It was October, the time of the year's dying when cattle were being slaughtered before winter and when the northern winds brought a promise of ice.",
+	"pageCount": 460,
+	"categories": [
+		"Historical Fiction",
+		"Fiction",
+		"Hundred years' war, 1339-1453, fiction"
+	],
+	"rating": 3.5,
+	"isbn": "9780060517434",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780060517434-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780060517434-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcdcd829027268b4a4601"
+	},
+	"title": "The Road",
+	"authors": [
+		"Jack London"
+	],
+	"publishedDate": "1926",
+	"description": "There is a woman in the state of Nevada to whom I once lied continuously, consistently, and shamelessly, for the matter of a couple of hours.",
+	"pageCount": 152,
+	"categories": [
+		"American Authors",
+		"Biography",
+		"Classic Literature"
+	],
+	"rating": 3.75,
+	"isbn": "9780813538075",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780813538075-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780813538075-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcdd3829027268b4a4604"
+	},
+	"title": "A Kingdom of Dreams",
+	"authors": [
+		"Judith McNaught"
+	],
+	"publishedDate": "July 2003",
+	"description": "A toast to the duke of Claymore and his bride!",
+	"pageCount": 440,
+	"categories": [
+		"collectionID:Mbodice_ripper",
+		"Historical fiction",
+		"Love stories"
+	],
+	"rating": 4.48,
+	"isbn": "9780552151979",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780552151979-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780552151979-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcde5829027268b4a4607"
+	},
+	"title": "Guns, germs, and steel",
+	"authors": [
+		"Jared Diamond",
+		"Fabián Chueca",
+		"(MEI )DAI MENG DE (Diamond J. ) XIE YAN GUANG YI"
+	],
+	"publishedDate": "June 30, 2004",
+	"description": "A suitable starting point from which to compare historical developments on the different continents is around 11,000 B.C.",
+	"pageCount": 528,
+	"categories": [
+		"prize:pulitzer=1998",
+		"Ethnology",
+		"Criticism and interpretation"
+	],
+	"rating": 4.149254,
+	"isbn": "9780393317558",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780393317558-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780393317558-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcde5829027268b4a460b"
+	},
+	"title": "Rashomon and other stories",
+	"authors": [
+		"Ryūnosuke Akutagawa",
+		"Akira Kurosawa",
+		"agustin leiva",
+		"Jay Rubin",
+		"村上春樹",
+		"Alejandro lucas matias sanchez alonso",
+		"Ryunosuke Akutagawa",
+		"Leonor arcija",
+		"José Kozer",
+		"Albert Nolla Cabellos",
+		". mkdeville",
+		"Philippe Nicloux"
+	],
+	"publishedDate": "2012",
+	"description": "YES, SIR. Certainly, it was I who found the body.",
+	"pageCount": 173,
+	"categories": [
+		"Fiction",
+		"Social life and customs",
+		"Addresses, essays, lectures"
+	],
+	"rating": 3,
+	"isbn": "0871402149",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0871402149-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0871402149-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcde5829027268b4a460f"
+	},
+	"title": "Akira 2",
+	"authors": [
+		"Katsuhiro Ōtomo"
+	],
+	"publishedDate": "March 28, 2001",
+	"description": "Thirty-eight years after a cataclysmic explosion of unknown origin levels Tokyo and triggers World War III, the world is rebuilding from the ashes.",
+	"pageCount": 304,
+	"categories": [
+		"Teenagers",
+		"Comic books, strips",
+		"Science fiction"
+	],
+	"rating": 4.428571,
+	"isbn": "9781569714997",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781569714997-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781569714997-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcde5829027268b4a4612"
+	},
+	"title": "Akira",
+	"authors": [
+		"Katsuhiro Ōtomo"
+	],
+	"publishedDate": "1900",
+	"description": "IS THE AMERICAN ARMY REALLY ATTACKING?",
+	"pageCount": 440,
+	"categories": [
+		"Science fiction comic books, strips",
+		"Fantasy",
+		"Graphic Novels"
+	],
+	"rating": 4.3333335,
+	"isbn": "1569715289",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1569715289-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1569715289-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dcde5829027268b4a4615"
+	},
+	"title": "Rising Sun",
+	"authors": [
+		"Michael Crichton"
+	],
+	"publishedDate": "1999",
+	"description": "Actually, I was sitting on my bed in my apartment in Culver City, watching the Lakers game with the sound turned off, while I tried to study vocabulary for my introductory Japanese class.",
+	"pageCount": 399,
+	"categories": [
+		"Japanese culture",
+		"Yakuza",
+		"Los Angeles Police Department"
+	],
+	"rating": 3,
+	"isbn": "9780780735095",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780780735095-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780780735095-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce0e829027268b4a4618"
+	},
+	"title": "The Mystery of the Blue Train",
+	"authors": [
+		"Agatha Christie"
+	],
+	"publishedDate": "1973-01-01",
+	"description": "IT was close on midnight when a man crossed the Place de la Concorde.",
+	"pageCount": 258,
+	"categories": [
+		"Crimes against",
+		"Detective and mystery stories",
+		"Divorce"
+	],
+	"rating": 4.071429,
+	"isbn": "8371840799",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/8371840799-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/8371840799-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce0e829027268b4a461b"
+	},
+	"title": "Island of the Blue Dolphins",
+	"authors": [
+		"Scott O'Dell"
+	],
+	"publishedDate": "1960",
+	"description": "I REMEMBER the day the Aleut ship came to our island.",
+	"pageCount": 184,
+	"categories": [
+		"Fiction",
+		"Indians of North America",
+		"Islands"
+	],
+	"rating": 4.162791,
+	"isbn": "0786272546",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0786272546-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0786272546-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce0e829027268b4a4626"
+	},
+	"title": "The Hollow",
+	"authors": [
+		"Agatha Christie"
+	],
+	"publishedDate": "1953-01-01",
+	"description": "AT 6:13 A.M. on a Friday morning Lucy Angkatell's big blue eyes opened upon another day, and as always, she was at once wide awake and began immediately to deal with the problems conjured up by her incredibly active mind.",
+	"pageCount": 251,
+	"categories": [
+		"Fiction",
+		"Hercule Poirot (Fictitious character)",
+		"Private investigators"
+	],
+	"rating": 3.75,
+	"isbn": "9780008129583",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780008129583-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780008129583-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce0e829027268b4a4629"
+	},
+	"title": "ノルウェイの森",
+	"authors": [
+		"村上春樹"
+	],
+	"publishedDate": "Jan 01, 2008",
+	"description": "I WAS THIRTY-SEVEN THEN, STRAPPED IN MY SEAT AS THE HUGE 747 plunged through dense cloud cover on approach to the Hamburg airport.",
+	"pageCount": 389,
+	"categories": [
+		"Student",
+		"Theaterwissenschaft",
+		"Liebesbeziehung"
+	],
+	"rating": 3.89,
+	"isbn": "9871210728",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9871210728-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9871210728-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce0e829027268b4a462c"
+	},
+	"title": "The Tommyknockers",
+	"authors": [
+		"Stephen King"
+	],
+	"publishedDate": "1988-01-01",
+	"description": "For want of a nail the kingdom was lost-that's how the catechism goes when you boil it down.",
+	"pageCount": 747,
+	"categories": [
+		"aliens",
+		"paranormal fiction",
+		"American horror tales"
+	],
+	"rating": 4.2941175,
+	"isbn": "9781501144288",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781501144288-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781501144288-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce1d829027268b4a4631"
+	},
+	"title": "The Chronicles of Narnia",
+	"authors": [
+		"C.S. Lewis"
+	],
+	"publishedDate": "August 30, 1991",
+	"description": "ONCE THERE WERE FOUR CHILDREN whose names were Peter, Susan, Edmund, and Lucy, and it has been told in another book called The Lion, the Witch and the Wardrobe how they had a remarkable adventure.",
+	"pageCount": 768,
+	"categories": [
+		"Fantasy fiction",
+		"Fiction",
+		"Juvenile works"
+	],
+	"rating": 4.2028985,
+	"isbn": "9780060820428",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780060820428-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780060820428-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce51829027268b4a4637"
+	},
+	"title": "Der Proceß",
+	"authors": [
+		"Franz Kafka"
+	],
+	"publishedDate": "December 1, 2006",
+	"description": "SOMEONE must have been telling lies about Joseph K., for without having done anything wrong he was arrested one fine morning.",
+	"pageCount": 275,
+	"categories": [
+		"Fiction",
+		"Alegorical fiction",
+		"Manuscripts"
+	],
+	"rating": 4.2040815,
+	"isbn": "1413514936",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1413514936-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1413514936-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce51829027268b4a4642"
+	},
+	"title": "Moralia",
+	"authors": [
+		"Plutarch"
+	],
+	"publishedDate": "1910",
+	"description": "PLUTARCH'S knowledge of Egyptology was not profound.",
+	"pageCount": 306,
+	"categories": [
+		"Ancient Ethics",
+		"Ancient Philosophy",
+		"Animals (Philosophy)"
+	],
+	"rating": 4.0833335,
+	"isbn": "9782251004990",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9782251004990-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9782251004990-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce59829027268b4a4646"
+	},
+	"title": "Overlord",
+	"authors": [
+		"Max Hastings"
+	],
+	"publishedDate": "1989",
+	"description": "Not the least remarkable aspect of the Second World War was the manner in which the United States, which might have been expected to regard the campaign in Europe as a diversion from the struggle against her principal aggressor, Japan, was persuaded to commit her chief strength in the west.",
+	"pageCount": 431,
+	"categories": [
+		"Operation Overlord",
+		"Campaigns",
+		"Second World War"
+	],
+	"rating": 3.25,
+	"isbn": "9780330390125",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780330390125-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780330390125-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce75829027268b4a464f"
+	},
+	"title": "The Sea of Monsters",
+	"authors": [
+		"Rick Riordan"
+	],
+	"publishedDate": "Jul 02, 2013",
+	"description": "My nightmare started like this.",
+	"pageCount": 279,
+	"categories": [
+		"Fiction",
+		"Fantasy",
+		"Identity"
+	],
+	"rating": 4.4714284,
+	"isbn": "0141319143",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/0141319143-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/0141319143-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce75829027268b4a4652"
+	},
+	"title": "A Wonder Book for Girls and Boys",
+	"authors": [
+		"Nathaniel Hawthorne"
+	],
+	"publishedDate": "1996",
+	"description": "Beneath the porch of the country-seat called Tangle-wood, one fine autumnal morning, was assembled a merry party of little folks, with a tall youth in the midst of them.",
+	"pageCount": 206,
+	"categories": [
+		"Classical Mythology",
+		"Juvenile literature",
+		"Greek Mythology"
+	],
+	"rating": 3.857143,
+	"isbn": "9781432607463",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9781432607463-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9781432607463-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce75829027268b4a4655"
+	},
+	"title": "The Eye of the World (The Wheel of Time Book 1)",
+	"authors": [
+		"Robert Jordan"
+	],
+	"publishedDate": "Nov 01, 2011",
+	"description": "The palace still shook occasionally as the earth rumbled in memory, groaned as if it would deny what had happened.",
+	"pageCount": 782,
+	"categories": [
+		"Fantasy fiction",
+		"Rand al'Thor (Fictitious character)",
+		"Fiction"
+	],
+	"rating": 3.887218,
+	"isbn": "9780812511819",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780812511819-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780812511819-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce75829027268b4a4658"
+	},
+	"title": "Goosebumps - How to Kill a Monster",
+	"authors": [
+		"R. L. Stine"
+	],
+	"publishedDate": "1997",
+	"description": "\"Why do we have to go there?\"",
+	"pageCount": 125,
+	"categories": [
+		"Horror tales",
+		"Horror stories",
+		"Swamps"
+	],
+	"rating": 3.75,
+	"isbn": "9780439670524",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780439670524-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780439670524-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce75829027268b4a465b"
+	},
+	"title": "Monster",
+	"authors": [
+		"Sanyika Shakur"
+	],
+	"publishedDate": "1994",
+	"description": "June 15, 1975. I proudly strolled across the waxed hardwood stage of the auditorium at the Fifty-fourth Street elementary school under the beaming stares of my mother, aunt, and Uncle Clarence.",
+	"pageCount": 383,
+	"categories": [
+		"Crips (Gang)",
+		"Biography",
+		"Gang members"
+	],
+	"rating": 4.6,
+	"isbn": "1417683074",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1417683074-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1417683074-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce75829027268b4a465f"
+	},
+	"title": "The Last Olympian",
+	"authors": [
+		"Rick Riordan"
+	],
+	"publishedDate": "2010-09",
+	"description": "The end of the world started when a pegasus landed on the hood of my car.",
+	"pageCount": 381,
+	"categories": [
+		"Fiction",
+		"Greek Mythology",
+		"Fate and fatalism"
+	],
+	"rating": 4.448598,
+	"isbn": "9780141382944",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9780141382944-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9780141382944-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce75829027268b4a4662"
+	},
+	"title": "The Lost Hero",
+	"authors": [
+		"Rick Riordan"
+	],
+	"publishedDate": "2017",
+	"description": "Even before he got electrocuted, Jason was having a rotten day",
+	"pageCount": 553,
+	"categories": [
+		"nyt:chapter_books=2010-11-06",
+		"New York Times bestseller",
+		"percy jackson (fictional character)"
+	],
+	"rating": 4.43609,
+	"isbn": "8415580495",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/8415580495-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/8415580495-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce75829027268b4a4665"
+	},
+	"title": "Shrek!",
+	"authors": [
+		"William Steig"
+	],
+	"publishedDate": "January 1999",
+	"description": "His mother was ugly and his father was ugly, but Shrek was uglier than the two of them put together.",
+	"pageCount": 32,
+	"categories": [
+		"Monsters",
+		"Fiction",
+		"Children's fiction"
+	],
+	"rating": 4,
+	"isbn": "9789129656459",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/9789129656459-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/9789129656459-L.jpg"
+},
+{
+	"_id": {
+		"$oid": "672dce75829027268b4a4668"
+	},
+	"title": "Captain Underpants and the Wrath of the Wicked Wedgie Woman",
+	"authors": [
+		"Dav Pilkey"
+	],
+	"publishedDate": "2014",
+	"description": "This is George Beard and Harold Hutchins.",
+	"pageCount": 176,
+	"categories": [
+		"Humorous stories",
+		"Juvenile fiction",
+		"Elementary schools"
+	],
+	"rating": 4.5,
+	"isbn": "1338132393",
+	"thumbnail": "https://covers.openlibrary.org/b/isbn/1338132393-S.jpg",
+	"largeThumbnail": "https://covers.openlibrary.org/b/isbn/1338132393-L.jpg"
+}]
+
