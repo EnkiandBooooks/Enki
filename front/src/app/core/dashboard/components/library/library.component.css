@@ -57,7 +57,7 @@
 .books-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste automático del número de columnas */
-  gap: 20px;
+  gap: 40px;
   width: 100%;
   max-width: 100%; /* Asegura que el grid no se salga del ancho disponible */
   box-sizing: border-box;

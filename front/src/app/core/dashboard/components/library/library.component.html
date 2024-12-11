@@ -1,27 +1,26 @@
 <div class="home-content">
-
-
-  <!-- Contenedor del buscador y categorías -->
-  <div class="findContainer">
-    <mat-form-field class="searchBar">
-      <mat-label>Find your book</mat-label>
-      <input matInput (keyup)="loadBook()" [(ngModel)]="this.search">
-    </mat-form-field>
-
-    <div class="categories">
-      <mat-button-toggle-group [multiple]="true" class="categoryButtons">
-        <mat-button-toggle *ngFor="let category of categories"
-          (change)="toggleCategory($event, category)"
-          color="primary"
-          class="categoryButton">
-          {{ category }}
-        </mat-button-toggle>
-      </mat-button-toggle-group>
-    </div>
-  </div>
-
-  <!-- Contenedor con desplazamiento para los libros -->
+  <!-- Contenedor desplazable para el buscador y los libros -->
   <div class="books-scroll-container">
+    <!-- Contenedor del buscador y categorías -->
+    <div class="findContainer">
+      <mat-form-field class="searchBar">
+        <mat-label>Find your book</mat-label>
+        <input matInput (keyup)="loadBook()" [(ngModel)]="this.search">
+      </mat-form-field>
+
+      <div class="categories">
+        <mat-button-toggle-group [multiple]="true" class="categoryButtons">
+          <mat-button-toggle *ngFor="let category of categories"
+            (change)="toggleCategory($event, category)"
+            color="primary"
+            class="categoryButton">
+            {{ category }}
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </div>
+
+    <!-- Contenedor con desplazamiento para los libros -->
     <div class="books-grid">
       <div class="bookCard" *ngFor="let book of books | paginate: { itemsPerPage: booksPerPage, currentPage: p }">
         <img [src]="book.largeThumbnail" alt="Imagen del libro" class="book-image" />
@@ -33,10 +32,11 @@
     </div>
   </div>
 
-  <!-- Controles de paginación siempre visibles debajo del contenedor de los libros -->
+  <!-- Controles de paginación siempre visibles -->
   <pagination-controls
     (pageChange)="pageLoad($event)"
     previousLabel="Previous"
-    nextLabel="Next">
+    nextLabel="Next"
+    class="pagination-controls">
   </pagination-controls>
 </div>
