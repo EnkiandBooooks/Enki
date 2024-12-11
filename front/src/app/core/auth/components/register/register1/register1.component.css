@@ -5,8 +5,8 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh; /* Asegurar que ocupe al menos toda la pantalla */
-  background: linear-gradient(to bottom, #5b5661, #c6b3ce);
   padding: 20px;
+  background: linear-gradient(to bottom, #66576C, #292929);
   gap: 20px; /* Espaciado entre los elementos */
   box-sizing: border-box; /* Asegura que el padding se respete */
 }
