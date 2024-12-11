@@ -4,19 +4,22 @@ body {
   background: #2a2a2a;
 }
 
+input[matInput] {
+  width: 20px !important; /* Más estrecho */
+
+}
 .container {
-  margin: 60px auto;
-  width: 400px;
+  margin: 10px ;
+  width: 700px;
   text-align: center;
 }
 
 .container .progress {
-  margin: 0 auto;
-  width: 400px;
+  width: 40px;
 }
 
 .progress {
-  padding: 4px;
+  padding: 7px;
   background: rgba(0, 0, 0, 0.25);
   border-radius: 6px;
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
@@ -24,8 +27,9 @@ body {
 }
 
 .progress-bar {
-  height: 16px;
-  border-radius: 4px;
+  height: 20px;
+  width: 40px;
+  border-radius: 10px;
   background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
   background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
   background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
@@ -54,7 +58,7 @@ body {
 }
 
 input[matInput] {
-  width: calc(100% - 20px);
+  width: calc(100% - 40px);
   margin: 15px auto;
   padding: 10px;
   border: 1px solid #ccc;
@@ -83,30 +87,4 @@ button.mat-raised-button {
 
 button.mat-raised-button:hover {
   background-color: #4500a5;
-}
-
-/* Estilos de colores para valores fijos (opcional) */
-#five:checked ~ .progress > .progress-bar {
-  width: 5%;
-  background-color: #000000;
-}
-
-#twentyfive:checked ~ .progress > .progress-bar {
-  width: 25%;
-  background-color: #352d3b;
-}
-
-#fifty:checked ~ .progress > .progress-bar {
-  width: 50%;
-  background-color: #4c4052;
-}
-
-#seventyfive:checked ~ .progress > .progress-bar {
-  width: 75%;
-  background-color: #6b5165;
-}
-
-#onehundred:checked ~ .progress > .progress-bar {
-  width: 100%;
-  background-color: #967ca1;
 }
