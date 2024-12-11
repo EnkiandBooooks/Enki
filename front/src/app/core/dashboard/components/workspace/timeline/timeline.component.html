@@ -1,22 +1,11 @@
-
 <div class="container">
-  <input type="radio" class="radio" name="progress" value="five" id="five">
-  <label for="five" class="label">5%</label>
+  <!-- Radio buttons para seleccionar valores predefinidos -->
 
-  <input type="radio" class="radio" name="progress" value="twentyfive" id="twentyfive" checked>
-  <label for="twentyfive" class="label">25%</label>
-
-  <input type="radio" class="radio" name="progress" value="fifty" id="fifty">
-  <label for="fifty" class="label">50%</label>
-
-  <input type="radio" class="radio" name="progress" value="seventyfive" id="seventyfive">
-  <label for="seventyfive" class="label">75%</label>
-
-  <input type="radio" class="radio" name="progress" value="onehundred" id="onehundred">
-  <label for="onehundred" class="label">100%</label>
-
-  <div class="progress">
-    <div class="progress-bar"></div>
+  <input matInput [(ngModel)]="customProgress" placeholder="Introduce tu progreso: " />
+  <button mat-raised-button color="primary" (click)="updateProgress()">Actualizar Progreso</button>
   </div>
-<!-- <div>{{currentWorkspaceId}}</div> -->
+
+  <!-- Barra de progreso -->
+  <div class="progress">
+    <div class="progress-bar" [style.width.%]="progressValue" [style.backgroundColor]="progressColor"></div>
 </div>

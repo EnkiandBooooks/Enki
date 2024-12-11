@@ -1,31 +1,18 @@
+
 /* Contenedor principal del dashboard */
-.dashboard-container {
+.dashboard-container {  
   display: flex;
   height: 100%;
   width: 100%;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
-.both-components {
-  display: flex;
-  flex-direction: column; /* Usa 'row' si quieres que estén lado a lado */
-}
-
-.both-components > * {
-  flex: 1;
-}
-
 
 /* Contenedor de sidenav */
 .mat-sidenav-container {
   height: 100%;
   width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden; /* Evita scroll en el contenedor principal */
   box-sizing: border-box;
+  
 }
 
 .mat-sidenav {
@@ -33,35 +20,27 @@
   background: linear-gradient(to bottom, #3f3b42, #66576C);
   color: white;
   display: flex;
-  flex-direction: column;
   align-items: center;
   box-sizing: border-box;
   border-radius: 0;
   height: 100%; /* Ocupa toda la altura */
-  overflow: hidden; /* Evita scroll global en la sidenav */
 }
 
-/* Contenido interno de la sidenav (con scroll limitado) */
-.mat-nav-list {
-  width: 100%;
-  flex-grow: 1;
-  overflow-y: auto; /* Permite scroll en este contenedor */
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 /* Contenedor con scroll para las comunidades */
 .communities-container {
-  max-height: 200px;
-  overflow-y: auto; /* Scroll vertical solo en este contenedor */
-  padding: 8px;
+  display: block;
+  border-radius: 30%; /* Redondeo completo para hacerlo ovalado */
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-y: auto; /* Scroll para muchas comunidades */
 
-  /* Ocultar la barra de scroll */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  max-height: 300px; /* Ajusta según necesidad */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 
 .communities-container::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge */
@@ -72,29 +51,27 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  padding: 10px 0;
+  padding: 15px ;
 }
 
 .sidebar-logo-img {
-  max-width: 170px;
+  max-width: 140px;
   height: auto;
+  width: auto;
   opacity: 0.85;
-  object-fit: contain;
 }
 
 /* Estilo de los botones de navegación */
 .nav-button {
+  
   color: white !important;
-  text-transform: none;
   font-size: 18px;
   padding: 15px 20px;
   width: 100%;
-  display: flex;
   align-items: center;
   justify-content: left;
   box-sizing: border-box;
-  text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.6s ease, color 0.3s ease;
 }
 
 /* Hover para botones de navegación */
@@ -285,6 +262,24 @@ mat-menu-item {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
+.workspace:hover {
+  transition: background-color 0.6s ease, color 0.3s ease;
+  transform: scale(1.03); /* Efecto de zoom al pasar el mouse */
+  box-shadow: 0 6px 8px #66576C; /* Sombra más intensa */
+  background-color: #7d5e7d; /* Color de fondo ligeramente más claro */
+}
+.workspace .nav-button {
+  font-size: 1rem; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Texto más destacado */
+  text-decoration: none;
+  color: #555; /* Color de texto */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between; /* Separación del contenido */
+}
+
+
 .workspace .nav-button:hover {
   all: unset; 
   cursor: pointer; 
@@ -298,5 +293,14 @@ h6 {
 }
 
 .workspace {
-  margin-bottom: 8px;
-}
+    border-radius: 30px !important;  /* Redondeo completo para hacerlo ovalado */
+    margin-bottom: 10px; 
+    padding: 10px 20px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; /* Centrar el contenido */
+    height: 50px; /* Ajusta la altura para un diseño ovalado */
+    color: #333; /* Color del texto */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efecto de hover */
+    cursor: pointer; /* Cambia el cursor para parecer interactivo */
+  }
