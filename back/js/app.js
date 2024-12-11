@@ -6,6 +6,7 @@ import { booksRouter } from "./routes/books.js";
 import { connectDB } from "./database/mongodb/connectBD.js";
 import { downloadImgRouter } from "./routes/books/downloadImg.js";
 import { workspaceRouter } from "./routes/workspace.js";
+import { urlInvitationRoute } from "./routes/workspace/urlInvitation.js";
 
 
 const app = express();
@@ -31,6 +32,7 @@ app.use('/users', usersRouter);
 app.use('/books', booksRouter);
 app.use('/workspace',workspaceRouter)
 app.use('/', downloadImgRouter);
+app.use('/urlInvitation', urlInvitationRoute)
 app.listen(process.env.PORT, () => {
     console.log(`server running on port http://localhost:${process.env.PORT}`);
 });

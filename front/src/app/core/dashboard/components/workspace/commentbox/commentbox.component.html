@@ -10,7 +10,7 @@
         Añadir Comentario
       </button>
     </div>
-    <h6>{{"Pagina:" + dialogresponse.page + " Texto:" + dialogresponse.text}}</h6>
+    
     <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
       <div formArrayName="comments">
         <!-- Renderizado dinámico de comentarios -->

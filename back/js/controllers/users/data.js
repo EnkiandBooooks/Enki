@@ -31,7 +31,6 @@ export class DataController {
      */
     static async getData(req, res) {
         try {
-            console.log("Hola")
             const usr = req.user;
             const imgPath = (usr.img===null) ?"img/img_profile_cut/icon_default.jpg" : "img/img_profile_cut/"+usr.img;
             const imagen = fs.readFileSync(imgPath);
@@ -42,7 +41,6 @@ export class DataController {
                 .populate('workSpaces', "_id workSpaceName");
             
             
-            console.log(userWorkspaces)
 
             // Obtener la fecha de creación del usuario usando el correo electrónico
             res.json({

@@ -29,9 +29,10 @@ import { LoadingService } from '../../../../shared/services/loading.service';
 export class LibraryComponent{
   constructor(private loadingService: LoadingService) {}
   p: number = 1;
-  booksPerPage: number = 14;
+  booksPerPage: number = 18;
   search: string = '';
   books: any;
+  key: string = '';
   displayedBooks: any;
   categories = ['Fantasy', 'Manga', 'History', 'Comic', 'Fiction', 'Novels', 'Literature', 'Science'];
   selected: any[] = [];

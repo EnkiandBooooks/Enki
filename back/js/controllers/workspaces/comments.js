@@ -25,7 +25,6 @@ export class CommentsController {
         const workspace = req.body.workspace
         try {
             const comments = await workspaceModel.findById(workspace, { "timeline.comment": 1, _id: 0} ); 
-            console.log("Comments: ", comments.timeline)
             res.status(200).json({
                 message:"Comments ok",
                 response: comments

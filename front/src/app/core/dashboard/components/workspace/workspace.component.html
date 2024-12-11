@@ -36,10 +36,15 @@
 
 <mat-grid-list cols="6" rows="6"rowHeight="1:1">
   <mat-grid-tile class="book-tile" colspan="1" rowspan="1" >
-    libro
+    <img [src]="book.bookImage" alt="Imagen del libro" class="book-image" />
   </mat-grid-tile>
+
+
+
+
+
   <mat-grid-tile class="timeline-tile" colspan="5" rowspan="1">
-    <app-timeline></app-timeline>
+    <app-timeline [currentWorkspaceId]="currentWorkspaceId"></app-timeline>
   </mat-grid-tile>
 
   <mat-grid-tile class="commentbox-tile" colspan="5" rowspan="2">
@@ -47,9 +52,7 @@
   </mat-grid-tile>
   <mat-grid-tile class="users-tile" colspan="1" rowspan="2">
    
-  <app-users/>
-   
-
-
+  <app-users [currentWorkspaceId]="currentWorkspaceId"/>
   </mat-grid-tile>
 </mat-grid-list>
+

@@ -1,0 +1,146 @@
+[{
+	"_id": {
+		"$oid": "674d8a803f744316964d2bdd"
+	},
+	"workSpaceName": "community1",
+	"bookId": {
+		"$oid": "672dc909829027268b4a425b"
+	},
+	"members": [
+		{
+			"memberId": {
+				"$oid": "674d7b11b4e8224119aeee83"
+			},
+			"name": "user1",
+			"progress": {
+				"percentage": 0
+			}
+		}
+	],
+	"stamps": 175,
+	"privacy": "private",
+	"timeline": {
+		"date": {
+			"$date": "2024-12-02T10:22:56.298Z"
+		},
+		"comment": []
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "674d934fb7e0451442e5a28a"
+	},
+	"workSpaceName": "community2",
+	"bookId": {
+		"$oid": "672dc909829027268b4a4261"
+	},
+	"members": [
+		{
+			"memberId": {
+				"$oid": "674d7b11b4e8224119aeee83"
+			},
+			"name": "user1",
+			"progress": {
+				"percentage": 0
+			}
+		}
+	],
+	"stamps": 234,
+	"privacy": "private",
+	"timeline": {
+		"date": {
+			"$date": "2024-12-02T11:00:31.276Z"
+		},
+		"comment": []
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "674d9363b7e0451442e5a292"
+	},
+	"workSpaceName": "community3",
+	"bookId": {
+		"$oid": "672dc9b2829027268b4a42f1"
+	},
+	"members": [
+		{
+			"memberId": {
+				"$oid": "674d7b11b4e8224119aeee83"
+			},
+			"name": "user1",
+			"progress": {
+				"percentage": 0
+			}
+		}
+	],
+	"stamps": 173,
+	"privacy": "public",
+	"timeline": {
+		"date": {
+			"$date": "2024-12-02T11:00:51.389Z"
+		},
+		"comment": []
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "674d9375b7e0451442e5a29a"
+	},
+	"workSpaceName": "community4",
+	"bookId": {
+		"$oid": "672dca22829027268b4a433c"
+	},
+	"members": [
+		{
+			"memberId": {
+				"$oid": "674d7b11b4e8224119aeee83"
+			},
+			"name": "user1",
+			"progress": {
+				"percentage": 0
+			}
+		}
+	],
+	"stamps": 264,
+	"privacy": "public",
+	"timeline": {
+		"date": {
+			"$date": "2024-12-02T11:01:09.102Z"
+		},
+		"comment": []
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "674d938cb7e0451442e5a2a2"
+	},
+	"workSpaceName": "community5",
+	"bookId": {
+		"$oid": "672dcde5829027268b4a4612"
+	},
+	"members": [
+		{
+			"memberId": {
+				"$oid": "674d7b11b4e8224119aeee83"
+			},
+			"name": "user1",
+			"progress": {
+				"percentage": 0
+			}
+		}
+	],
+	"stamps": 542,
+	"privacy": "private",
+	"timeline": {
+		"date": {
+			"$date": "2024-12-02T11:01:32.551Z"
+		},
+		"comment": []
+	},
+	"__v": 0
+}]
+
