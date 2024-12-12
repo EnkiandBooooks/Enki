@@ -281,8 +281,6 @@ mat-menu-item {
 
 
 .workspace .nav-button:hover {
-  all: unset; 
-  cursor: pointer; 
   color: white; 
 }
 
