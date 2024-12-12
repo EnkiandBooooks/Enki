@@ -4,7 +4,6 @@ import 'dotenv/config';
 import { usersRouter } from "./routes/users.js";
 import { booksRouter } from "./routes/books.js";
 import { connectDB } from "./database/mongodb/connectBD.js";
-import { downloadImgRouter } from "./routes/books/downloadImg.js";
 import { workspaceRouter } from "./routes/workspace.js";
 
 
@@ -30,7 +29,6 @@ app.use(express.json());
 app.use('/users', usersRouter);
 app.use('/books', booksRouter);
 app.use('/workspace',workspaceRouter)
-app.use('/', downloadImgRouter);
 app.listen(process.env.PORT, () => {
     console.log(`server running on port http://localhost:${process.env.PORT}`);
 });

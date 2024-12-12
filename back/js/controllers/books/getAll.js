@@ -1,4 +1,5 @@
 import { BooksModel } from "../../database/mongodb/books.js";
+import { getByIdSchema } from "../../schema/getAll.js";
 
 /**
  * Controlador para gestionar operaciones relacionadas con libros.
@@ -38,13 +39,19 @@ export class getBooksController{
         if (categoryFilter.length > 0) {
             filter.$and = categoryFilter;
         }
+
         try{
             const result = await BooksModel.getBooks(filter);
-            res.json(result);
+
+            if (!result || result.length === 0) {
+                return res.status(404).json({ message: 'No se han recibido libros' });
+            }
+            return res.status(200).json(result);
         
-        }catch(error){console.log(error)}
-       
-        
+        } catch(error){
+            console.error('Error obteniendo libros: ', error);
+            return res.status(500).json({ message: 'Error obteniendo libros: ', message: error.message });
+        }     
     }
     /**
      * Obtiene un libro específico por su ID.
@@ -63,9 +70,17 @@ export class getBooksController{
      * getBooksController.getById(req, res);
      */
     static async getById(req, res){
-        const id = req.params.id;
-        const idBook = id;
-        const result = await BooksModel.searchById(id);
-        res.json(result); 
+        const { id } = getByIdSchema.parse(req.params);
+        console.log("PRUEBA: ", req.params)
+        try {
+            const result = await BooksModel.searchById(id);
+            if (!result) {
+                return res.status(404).json({message: 'Cannot find books'})
+            }
+            return res.status(200).json(result);
+        } catch  (error) {
+            console.error('Error: ', error);
+            return res.status(500).json({ message: 'Error finding books: ', error: error.message });
+        }      
     }
 }

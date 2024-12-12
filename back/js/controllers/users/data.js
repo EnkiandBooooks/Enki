@@ -2,6 +2,7 @@ import { userModel } from "../../database/models/users.js"
 import { cuttImgProfile } from "../../utils/cuttProfileImg.js";
 import { deleteFolder } from "../../img/delete.js";
 import fs from 'fs';
+import { getUserSchema } from "../../schema/data.js";
 
 /**
  * Controlador para gestionar operaciones relacionadas con los datos de usuario.
@@ -31,8 +32,8 @@ export class DataController {
      */
     static async getData(req, res) {
         try {
-            console.log("Hola")
-            const usr = req.user;
+            const  usr = getUserSchema.parse(req.user);
+            // const  usr  = req.user;
             const imgPath = (usr.img===null) ?"img/img_profile_cut/icon_default.jpg" : "img/img_profile_cut/"+usr.img;
             const imagen = fs.readFileSync(imgPath);
             const base64Img = Buffer.from(imagen).toString('base64');
@@ -41,11 +42,7 @@ export class DataController {
                 .findOne({username: usr.username}, "workSpaces")
                 .populate('workSpaces', "_id workSpaceName");
             
-            
-            console.log(userWorkspaces)
-
-            // Obtener la fecha de creación del usuario usando el correo electrónico
-            res.json({
+            res.status(200).json({
                 user: usr.username,
                 mail: usr.email,
                 rol: usr.rol,
@@ -54,8 +51,8 @@ export class DataController {
                 img: base64Img || null,  // Agregar la imagen si existe
             })
         } catch (error) {
-            console.error("Error fetching user data:", error);
-            res.status(500).json({ message: "Error fetching user data" });
+            console.error("Error getting user data from database:", error);
+            res.status(500).json({ message: "Error fetching user data from database" });
         }
     }
 
@@ -81,10 +78,6 @@ export class DataController {
      */
     static async modifyUser(req, res) {
         try {
-            /*const validation = await updateUserSchema.safeParseAsync(req.body);
-            if(!validation.success){ //Verifica que haya email y esté bien formado
-                return res.status(400).json({ resultado: validation.error.errors[0].message });
-            }*/ 
             const username = req.body.username;
             const email = req.body.mail;
             let img;
@@ -93,7 +86,7 @@ export class DataController {
             if(req.file) {      // Si existe imagen en la request guardamos recortamos y formateamos.
                 filename = req.file.filename; 
                 cuttImgProfile(filename);
-               }
+            }
             // Actualizar la información del usuario
             const updateData = {
                 _id: req.user._id,

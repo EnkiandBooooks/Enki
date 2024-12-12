@@ -36,13 +36,13 @@ export class LoginController {
       // Consulta a la base de datos para verificar si el usuario existe
       const user = await userModel.findOne({ username: usr });
       if (!user) {
-        return res.status(200).json({ resultado: "Usuario no existe" });
+        return res.status(404).json({ success: false, message: "Usuario no encontrado" });
       }
 
       // Verificación de la contraseña
       const isValid = await PasswdHashManager.compareHash(pwd, user.password);
       if (!isValid) {
-        return res.status(200).json({ resultado: "Contraseña incorrecta." });
+        return res.status(401).json({ success: false, message: "Contraseña incorrecta." });
       }
 
       // Generar Access y Refresh Tokens
@@ -51,14 +51,15 @@ export class LoginController {
 
       // Respuesta exitosa con los tokens
       res.status(200).json({
+        success: true,
         accessToken,
         refreshToken,
         resultado: "Usuario Correcto",
       });
     } catch (error) {
-      // if (error instanceof z.ZodError) {
+      if (error instanceof ZodError) {
         // Si la validación falla, devolver un error con los detalles
-        return res.status(400).json({ resultado: error.errors[0].message });
+        return res.status(400).json({ success: false, message: "Datos invalidos", details: error.errors  });
       // }
       // Manejo de errores generales del servidor
       res
@@ -66,4 +67,4 @@ export class LoginController {
         .json({ resultado: "Error del servidor", error: error.message });
     }
   }
-}
+}}

@@ -22,6 +22,7 @@ const workSpaceSchema = new mongooseSchema({
         default: null
     },
     members: [{
+        _id: false,
         memberId: {
             type: mongooseSchema.Types.ObjectId,
             default: () => new mongoose.Types.ObjectId()
