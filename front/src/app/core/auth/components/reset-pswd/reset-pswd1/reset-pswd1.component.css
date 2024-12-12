@@ -5,21 +5,32 @@
   justify-content: flex-start; /* Alinear elementos al principio (arriba) */
   align-items: center;
   height: 100vh; /* Ocupa toda la altura de la pantalla */
-  background: linear-gradient(to bottom, #66576C, #1f1d21);
+  background: linear-gradient(to bottom, #66576C, #292929);
   padding: 20px; /* Añadir algo de padding para pantallas pequeñas */
   padding-top: 60px; /* Añadir algo de padding superior para darle espacio bajo la toolbar */
 }
 
-/* Estilo para el logo */
-.login-logo {
-  display: block;
-  max-width: 600px; /* Tamaño del logo reducido para adaptarse mejor */
-  width: 100%;
-  margin: 0 auto 10px auto; /* Reducir el margen inferior del logo */
-  opacity: 0.85; /* Opacidad del logo */
-  margin-top: 0; /* Quitar el espacio superior entre el logo y la toolbar */
+
+.login-logo-container {
+  display: flex;
+  flex-direction: row; /* Alinear logo y tarjeta en fila */
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
 }
 
+/* Estilo para el logo */
+.login-logo{
+  max-width: 12%; /* Ajustamos el tamaño del logo */
+  width: 100%;
+  opacity: 0.80;
+}
+
+.login-letter {
+  max-width: 30%; /* Ajustamos el tamaño del logo */
+  width: 100%;
+  opacity: 0.80;
+}
 /* Estilo para el título de "Cambio de contraseña" */
 .login-title {
   font-family: 'Poppins', sans-serif; /* Fuente elegante y geométrica */

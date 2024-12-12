@@ -1,13 +1,4 @@
-/* Estilo para la barra de navegación (mat-toolbar) */ 
-.custom-toolbar {
-  background-color: #4D4850; /* Color oscuro */
-  color: white; /* Color del texto */
-  display: flex;
-  justify-content: space-between; /* Espacio entre el título y la navegación */
-  align-items: center; /* Alinear verticalmente el contenido */
-  padding: 0 20px; /* Espaciado lateral */
-  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en pantallas pequeñas */
-}
+
 
 /* Estilo para el logo */
 .login-logo {
@@ -56,7 +47,7 @@
   justify-content: center;
   align-items: center; /* Centra el contenido */
   min-height: calc(100vh); /* Asegurar que ocupe al menos toda la pantalla menos el toolbar */
-  background: linear-gradient(to bottom, #5b5661, #c6b3ce);
+  background: linear-gradient(to bottom, #66576C, #292929);
   padding: 20px;
   gap: 20px; /* Espaciado entre los elementos */
   box-sizing: border-box;

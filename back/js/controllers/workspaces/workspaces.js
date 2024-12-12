@@ -3,6 +3,7 @@ import { bookModel } from "../../database/models/obras.js";
 import { userModel } from "../../database/models/users.js";
 import { workspaceModel } from "../../database/models/workspaces.js";
 import { workspaceSchema } from "../../schema/workspaces.js";
+import fs from 'fs';
 
 export class WorkspaceController{
     /**
@@ -19,6 +20,10 @@ export class WorkspaceController{
      * 
      */
     static async createWorkspace(req, res) {
+        const usr = req.user;
+        const imgPath = (usr.img===null) ?"img/img_profile_cut/icon_default.jpg" : "img/img_profile_cut/"+usr.img;
+        const imagen = fs.readFileSync(imgPath);
+        const base64Img = Buffer.from(imagen).toString('base64');
         const user = req.user;
         const { communityName, book, stamps, privacy } = workspaceSchema.parse(req.body)
 
@@ -36,6 +41,7 @@ export class WorkspaceController{
                 members: {
                     memberId: user._id,
                     name: user.username,
+                    image: base64Img
                 }
             });
             const workspace = await newWorkspace.save();

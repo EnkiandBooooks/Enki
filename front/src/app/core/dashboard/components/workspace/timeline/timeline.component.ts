@@ -21,8 +21,8 @@ export class TimelineComponent {
 
   @Input() currentWorkspaceId = "";
   constructor( private snackBar: MatSnackBar, private workspaceService: workspaceService) {}
-  customProgress: number = 25; // 
-  progressValue: number = 25; // Valor para la barra de progreso
+  customProgress: number = 0; // 
+  progressValue: number = 0; // Valor para la barra de progreso
   progressColor: string = '#352d3b'; // Color inicial de la barra
 
   updateProgress(): void {

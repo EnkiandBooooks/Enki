@@ -17,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
 interface Member {
   name: string;
   memberId: string;
+  image: string;
   progress: {
     percentage: number;
   };
@@ -46,11 +47,12 @@ interface Member {
   styleUrl: './users.component.css'
 })
 export class UsersComponent {
- 
+
     selectedSection: string = ''; // Inicialmente ninguna sección está seleccionada
     mostrarComponentes: boolean = false;
     @Input() currentWorkspaceId : string = '';
     userNames: any = [];
+    images: any |undefined  = []
     constructor(private authService:AuthService, private workspaceService: workspaceService) {}
   
     showUsersWorkspace(section: string) {
@@ -64,6 +66,8 @@ export class UsersComponent {
       this.workspaceService.getWorkspaceUsers(this.currentWorkspaceId).subscribe((res) => {
         //console.log(JSON.stringify(res));
         this.userNames = res.members.map((member:Member) => ({ name: member.name }));
+        this.images = res.members.map((member:Member) => member.image);
+        console.log("Images:"+this.images.length+" "+this.images)
       },
       (err) => {
         console.log("Error"+JSON.stringify(err));
