@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class workspaceService {
 
     private http = inject(HttpClient)
 
@@ -23,7 +23,17 @@ export class AuthService {
       return this.http.post(`${this.url}/comments/delete`, body)
     }
 
-    recoverComments(body:any):Observable<any>{
-      return this.http.post(`${this.url}/comments/get`, body)
+    getInfoWorkspace(body: any):Observable<any>{
+      console.log("RUta: ", `${this.url}/get/${body}`)
+      return this.http.get(`${this.url}/get/${body}`)
+    }
+
+    recoverComments(body:any, id:string):Observable<any>{
+      return this.http.post(`${this.url}/comments/get/${id}`, body)
+    }
+
+    getWorkspaceUsers(id:string):Observable<any>{
+      console.log("Holi"+`${this.url}/listUsers/${id}`+"Adiosi");
+      return this.http.get(`${this.url}/listUsers/${id}`);
     }
 }

@@ -22,30 +22,31 @@ mat-card-title {
   margin-bottom: 20px; /* Espacio inferior */
 }
 
-.login-card {
-  width: 100%;
-  max-width: 400px;
-  padding: 20px;
-  background-color: #66576C; /* Color de fondo de la tarjeta */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  border-radius: 12px; /* Bordes redondeados */
-  margin-top: 20px; /* Espacio entre el logo y el formulario */
-  margin-bottom: 20px; /* Espacio inferior para evitar que se corte en pantallas pequeñas */
+.logo-container {
+  display: flex;
+  flex-direction: row; /* Alinear logo y tarjeta en fila */
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
 }
 
-/* Estilo del logo */
-.login-logo {
-  display: block;
-  max-width: 400px; /* Tamaño ajustado del logo */
+/* Estilo para el logo */
+.login-logo{
+  max-width: 12%; /* Ajustamos el tamaño del logo */
   width: 100%;
-  opacity: 0.85; /* Opacidad del logo */
-  margin: 0 auto 10px auto; /* Centrar el logo y añadir margen inferior */
+  opacity: 0.80;
+}
+
+.login-letter {
+  max-width: 30%; /* Ajustamos el tamaño del logo */
+  width: 100%;
+  opacity: 0.80;
 }
 
 /* Estilo de la tarjeta del formulario de cambio de contraseña */
 .password-card {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   padding: 20px;
   background-color: #66576C; /* Color de fondo de la tarjeta */
   border-radius: 12px; /* Bordes redondeados */

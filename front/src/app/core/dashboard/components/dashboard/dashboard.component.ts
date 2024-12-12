@@ -4,7 +4,7 @@ import { ProfileComponent } from '../../../auth/components/profile/profile.compo
 import { HomedashComponent } from '../homedash/homedash.component';
 import { LibraryComponent } from '../library/library.component';
 import { CookieService } from 'ngx-cookie-service';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,6 +18,9 @@ import { CreatecommunityComponent } from '../workspace/createcommunity/createcom
 import { TimelineComponent } from '../workspace/timeline/timeline.component';
 import { CommentboxComponent } from '../workspace/commentbox/commentbox.component';
 import { WorkspaceComponent } from '../workspace/workspace.component';
+import { LoadingService } from '../../../../shared/services/loading.service';
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -39,7 +42,9 @@ import { WorkspaceComponent } from '../workspace/workspace.component';
     LibraryComponent,
     MatCard,
     CommentboxComponent,
-    WorkspaceComponent
+    WorkspaceComponent,
+    RouterLink,
+    RouterOutlet
   ]
 })
 export class DashboardComponent {
@@ -48,35 +53,58 @@ export class DashboardComponent {
   imgUrl: any | undefined;
   arrUsr = signal<any>([]);
   cookieExists: boolean = false;
+  currentWorkspaceId: string ='';
 
   constructor(
     private cdr: ChangeDetectorRef,
     private cookieService: CookieService,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private loadingService: LoadingService
   ) {}
 
   async ngOnInit() {
+    this.loadingService.show();
     this.cookieExists = this.cookieService.check("access_token") || this.cookieService.check("refresh_token");
     if (this.cookieExists) {
       this.authService.getData().subscribe((res) => {
         this.arrUsr.set(res);
         this.imgUrl = 'data:image/png;base64,' + res.img;
         console.log(this.arrUsr().userWorkspaces)
+
+        this.loadingService.hide();
+      }, (error) => {
+        console.log("Error al cargar los datos del usuario", error);
+          this.loadingService.hide();
       });
+    }else {
+      this.loadingService.hide();
     }
   }
 
-  
+
   showSection(section: string) {
     this.selectedSection = section;
     this.cdr.detectChanges();
+    
+    if(section === "workspace"){
 
-  }
+      this.router.navigate(['/']).then(() => { this.router.navigate(['/dashboard/workspace', this.currentWorkspaceId ])});
+    }else{
+      this.router.navigate(["/dashboard/"+section])
+    }
+  
+}
 
   onLogout() {
     this.cookieService.delete('access_token', '/', 'localhost');
     this.cookieService.delete('refresh_token', '/', 'localhost');
     window.location.href = '../landingpage/landingpage.html';
   }
+  setCurrentWorkspaceId(id:string){
+    this.currentWorkspaceId = id;
+  }
+  
 }
+
+

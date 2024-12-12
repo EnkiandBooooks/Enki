@@ -17,9 +17,21 @@ const workSpaceSchema = new mongooseSchema({
         type: String,
         required: true
     },
-    bookId: {
-        type: mongooseSchema.Types.ObjectId,
-        default: null
+  
+    book: {
+        bookId: {
+            type: mongooseSchema.Types.ObjectId,
+            default: null
+        },
+        bookName: {
+            type: String,
+            required: true
+        },
+        bookImage:{
+            type: String,
+            required: true
+        }
+
     },
     members: [{
         memberId: {
@@ -27,6 +39,10 @@ const workSpaceSchema = new mongooseSchema({
             default: () => new mongoose.Types.ObjectId()
         },
         name: {
+            type: String,
+            required: true
+        },
+        image:{
             type: String,
             required: true
         },

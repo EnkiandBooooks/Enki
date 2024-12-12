@@ -3,6 +3,7 @@ import { bookModel } from "../../database/models/obras.js";
 import { userModel } from "../../database/models/users.js";
 import { workspaceModel } from "../../database/models/workspaces.js";
 import { workspaceSchema } from "../../schema/workspaces.js";
+import fs from 'fs';
 
 export class WorkspaceController{
     /**
@@ -19,28 +20,36 @@ export class WorkspaceController{
      * 
      */
     static async createWorkspace(req, res) {
+        const usr = req.user;
+        const imgPath = (usr.img===null) ?"img/img_profile_cut/icon_default.jpg" : "img/img_profile_cut/"+usr.img;
+        const imagen = fs.readFileSync(imgPath);
+        const base64Img = Buffer.from(imagen).toString('base64');
         const user = req.user;
         const { communityName, book, stamps, privacy } = workspaceSchema.parse(req.body)
 
         const bookBD = await bookModel.find({title: book});
-
         try {
             const newWorkspace = new workspaceModel({
                 workSpaceName: communityName,
-                bookId: bookBD[0]._id,
+                book:{
+                    bookId: bookBD[0]._id,
+                    bookName: bookBD[0].title,
+                    bookImage: bookBD[0].largeThumbnail,
+                },
                 privacy: privacy,
                 stamps: stamps,
                 members: {
                     memberId: user._id,
                     name: user.username,
+                    image: base64Img
                 }
             });
-            
             const workspace = await newWorkspace.save();
             const newInfo = {"workSpaces": workspace._id};
     
             await userModel.findByIdAndUpdate(user._id, { $push: newInfo})
         }catch(err){
+            console.log("No funciono")
             return res.status(400).json({"message": "Error in create workspace."})
         }
 
@@ -54,10 +63,11 @@ export class WorkspaceController{
      * @param {Object} req.params.id - Id de la workspace que esta guardada en la url.
      * @param {Object} res - Objeto de respuesta (Response) de Express.
      */
+    
     static async getInfoWorkspace(req, res) {
         const workspaceId = req.params.id;
+        // console.log("##########\n"+workspaceId+"##########\n");
         const workspace = await workspaceModel.findById(workspaceId);
-
         res.status(200).json(workspace)
     }
 
@@ -72,7 +82,7 @@ export class WorkspaceController{
     static async deleteWorkspace(req, res) {
         const workspaceId = req.params.id;
         const user = req.user;
-
+        // Esto lo hago para probar en github.
         await workspaceModel.findByIdAndDelete(workspaceId);
         await userModel.findByIdAndUpdate(user._id, {$pull: {workSpaces: workspaceId}})
 
@@ -130,4 +140,19 @@ export class WorkspaceController{
 
         return res.status(200).json({"message": "User delete"})
     }
+
+    static async showUsersWorkspace(req, res) {
+        const workspaceId = req.params.id;
+
+        try {
+
+           const workspaceUsers= await workspaceModel.findById(workspaceId,{"members":1 })
+         
+           return res.status(200).json(workspaceUsers)
+            
+        } catch (error) {
+            return res.status(300).json({"message": "Error deleting user of a comunity."})
+        }
+    }
+
 }

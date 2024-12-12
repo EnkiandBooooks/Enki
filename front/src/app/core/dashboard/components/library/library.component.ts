@@ -1,4 +1,4 @@
-import { Component, inject, Injectable, signal, ViewChild } from '@angular/core';
+import { Component, inject, Injectable, signal, ViewChild, OnInit } from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
@@ -8,6 +8,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, NgModel } from '@angular/forms';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { LoadingService } from '../../../../shared/services/loading.service';
+
 @Component({
   selector: 'app-library',
   standalone: true,
@@ -25,17 +27,20 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
   styleUrl: './library.component.css'
 })
 export class LibraryComponent{
+  constructor(private loadingService: LoadingService) {}
   p: number = 1;
-  booksPerPage: number = 14;
+  booksPerPage: number = 18;
   search: string = '';
   books: any;
+  key: string = '';
   displayedBooks: any;
   categories = ['Fantasy', 'Manga', 'History', 'Comic', 'Fiction', 'Novels', 'Literature', 'Science'];
   selected: any[] = [];
 
   booksService = inject(BooksService);
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.loadingService.show();
     this.loadBook();
   }
 
@@ -48,12 +53,14 @@ export class LibraryComponent{
 
     this.booksService.getBooksFilter(filter).subscribe(
       (res) => {
+        this.p = 1;
         this.books = res;
         this.books = this.books.map((book: any) => {
           let rating = book.rating % 1 !== 0 ? parseFloat(book.rating.toFixed(1)) : book.rating;
           return { ...book, rating };
         });
         this.updateBooks();
+        this.loadingService.hide();
       },
       (error) => {
         console.log('Error al cargar los libros de la pagina: ', error);

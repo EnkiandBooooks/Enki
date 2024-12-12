@@ -1,13 +1,4 @@
-/* Estilo para la barra de navegación (mat-toolbar) */ 
-.custom-toolbar {
-  background-color: #4D4850; /* Color oscuro */
-  color: white; /* Color del texto */
-  display: flex;
-  justify-content: space-between; /* Espacio entre el título y la navegación */
-  align-items: center; /* Alinear verticalmente el contenido */
-  padding: 0 20px; /* Espaciado lateral */
-  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en pantallas pequeñas */
-}
+
 
 /* Estilo para el logo */
 .login-logo {
@@ -55,8 +46,8 @@
   flex-direction: column; /* Asegura que el logo y el formulario se apilen verticalmente */
   justify-content: center;
   align-items: center; /* Centra el contenido */
-  min-height: calc(100vh - 64px); /* Asegurar que ocupe al menos toda la pantalla menos el toolbar */
-  background: linear-gradient(to bottom, #66576C, #1f1d21); /* Degradado */
+  min-height: calc(100vh); /* Asegurar que ocupe al menos toda la pantalla menos el toolbar */
+  background: linear-gradient(to bottom, #66576C, #292929);
   padding: 20px;
   gap: 20px; /* Espaciado entre los elementos */
   box-sizing: border-box;
@@ -93,7 +84,7 @@ mat-form-field {
 }
 
 .button-container button {
-  background-color: #232223; /* Fondo oscuro */
+  background-color: #353535; /* Fondo oscuro */
   color: #e8e8e8 !important; /* Color del texto (gris casi blanco) */
   padding: 12px;
   width: 100%; /* Llenar todo el ancho */
