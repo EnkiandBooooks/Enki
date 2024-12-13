@@ -6,8 +6,12 @@
       </div>
       <mat-nav-list>
         <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="showSection('createcommunity'); $event.preventDefault()">Create Community</a>
+          <a mat-button class="nav-button-createcommunity" href="#" (click)="showSection('createcommunity'); $event.preventDefault()">
+            <mat-icon aria-hidden="true">add</mat-icon>
+            Create Community
+          </a>
         </mat-list-item>
+        
         <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('home'); $event.preventDefault()">Home</a>
         </mat-list-item>
@@ -20,6 +24,7 @@
         <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('workspace'); $event.preventDefault()">workspace</a>
         </mat-list-item> -->
+        <br>
         <h6>My Communities</h6>
         
         <!-- Contenedor con scroll para las comunidades -->

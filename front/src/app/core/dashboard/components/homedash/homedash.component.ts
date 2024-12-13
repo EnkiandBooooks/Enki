@@ -4,7 +4,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { CommonModule } from '@angular/common';
 import { BooksService } from '../../services/books.service';
-import { ArrayType } from '@angular/compiler';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -13,6 +12,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDivider } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { workspaceService } from '../workspace/services/workspace.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-homedash',
@@ -30,7 +32,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatIconModule,
     MatListModule, 
     MatDivider,
-    MatMenuModule],
+    MatMenuModule,],
 })
 
 
@@ -39,15 +41,26 @@ export class HomedashComponent implements OnInit {
   arrBooks = signal<any[]>([])
   books: any;
   booksService = inject(BooksService);
+  currentWorkspaceId : string = '';
   currentIndex = 0;
   cardWidth = 216; // 200px width + 16px margin-right
   maxVisibleSlides = 5; // Número de libros visibles en el carrusel a la vez
 
 
-  constructor(private dashboard: DashboardComponent) {} // Inyecta DashboardComponent
+  constructor(private dashboard: DashboardComponent,  private route: ActivatedRoute, private workspaceservice: workspaceService) {}
 
 
   ngOnInit() {
+
+    this.route.params.subscribe(params => {
+      this.currentWorkspaceId = params['workspaceId'];  // 'idWorkspace' es el nombre del parámetro de la ruta
+      console.log('Workspace ID:', this.currentWorkspaceId);
+    });
+
+
+    // this.workspaceservice.getInfoWorkspace(this.currentWorkspaceId)
+    // .subscribe((res)=>{})
+
     this.booksService.getBooks()
       .subscribe((res) => {
         this.books = res
@@ -56,6 +69,7 @@ export class HomedashComponent implements OnInit {
           return { ...book, rating };
         });
         this.totalBooks = this.books.length; // Actualiza el número de títulos
+        
       })
       
   }

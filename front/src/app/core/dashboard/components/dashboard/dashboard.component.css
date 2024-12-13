@@ -1,6 +1,5 @@
-
 /* Contenedor principal del dashboard */
-.dashboard-container {  
+.dashboard-container {
   display: flex;
   height: 100%;
   width: 100%;
@@ -12,7 +11,6 @@
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  
 }
 
 .mat-sidenav {
@@ -21,56 +19,58 @@
   color: white;
   display: flex;
   align-items: center;
-  box-sizing: border-box;
+  height: 100%;
   border-radius: 0;
-  height: 100%; /* Ocupa toda la altura */
+  overflow-y: auto;
 }
-
 
 /* Contenedor con scroll para las comunidades */
 .communities-container {
   display: block;
-  border-radius: 30%; /* Redondeo completo para hacerlo ovalado */
   align-items: center;
   justify-content: flex-start;
   padding: 1rem;
   border-radius: 8px;
-  overflow-y: auto; /* Scroll para muchas comunidades */
-
-  max-height: 300px; /* Ajusta según necesidad */
+  max-height: 300px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
 }
 
+h6 {
+  padding-top: 3em;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 
+/* Importante para quitar el scroll */
 .communities-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
+  display: none;
 }
+
 
 /* Logo en el Sidebar */
 .sidebar-logo {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  padding: 15px ;
+  padding: 15px;
 }
 
 .sidebar-logo-img {
   max-width: 140px;
-  height: auto;
-  width: auto;
   opacity: 0.85;
 }
 
 /* Estilo de los botones de navegación */
 .nav-button {
-  
   color: white !important;
   font-size: 18px;
-  padding: 15px 20px;
+  padding: 20px 30px;
   width: 100%;
   align-items: center;
   justify-content: left;
-  box-sizing: border-box;
   transition: background-color 0.6s ease, color 0.3s ease;
 }
 
@@ -80,13 +80,31 @@
   color: white;
 }
 
+
+.nav-button-createcommunity{
+  color: #3f3b42 !important;
+  background-color: white;
+  height: 100px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  font-size: 15px;
+  border-radius: 100%;
+  padding: 40px 30px;
+  align-items: right;
+  justify-content: right;
+  transition: background-color 0.6s ease, color 0.3s ease;
+}
+
+.nav-button-createcommunity mat-icon {
+  margin-right: 8px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
 /* Barra de herramientas */
 .mat-toolbar {
-  display: flex;
   background-color: #c1b5c2;
   color: white;
   justify-content: space-between;
-  padding: 0 15px;
   height: 64px;
   align-items: center;
 }
@@ -102,74 +120,41 @@
   flex-grow: 1;
   height: 100%;
   background-color: #f5f5f5;
-  overflow-y: auto;
-  overflow-x: hidden; /* Oculta el scroll horizontal */
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-/* Contenedor para el contenido, ajustado para ocupar todo el espacio */
+/* Contenedor para el contenido */
 .content-wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* Evita scroll dentro de este contenedor */
+  overflow: hidden;
   box-sizing: border-box;
 }
 
-/* Contenido del perfil: ocupa todo el espacio disponible */
+/* Contenido del perfil */
 .content-wrapper > div {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 0;
-  box-sizing: border-box;
   background-color: #ffffff;
-  border-radius: 0;
-  box-shadow: none;
-  overflow-y: auto; /* Permite scroll vertical interno */
-  overflow-x: hidden; /* Evita el scroll horizontal */
 }
 
 /* h1 estilos */
 h1 {
   margin: 0;
   padding: 20px 0;
-  box-sizing: border-box;
   text-align: center;
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-  .mat-sidenav {
-    width: 200px;
-  }
-  .sidebar-logo-img {
-    max-width: 100px;
-  }
-}
 
-@media (max-width: 480px) {
-  .mat-sidenav {
-    width: 180px;
-  }
-  .sidebar-logo-img {
-    max-width: 80px;
-  }
-}
 
 /* Estilos globales */
 html, body {
-  margin: 0;
-  padding: 0;
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  overflow: hidden; /* Evita scroll en el body */
+  overflow: hidden;
 }
 
 /* Avatar de usuario */
@@ -184,17 +169,17 @@ html, body {
 button[mat-icon-button] {
   display: flex;
   align-items: center;
-  padding: 0;
-  margin: 0 0 0 16px;
+  margin-left: 16px;
+  font-size: 1.5rem;
+  width: 48px;
+  height: 48px;
 }
+
 
 /* Menú de perfil */
 .profile-menu {
-  min-width: 220px;
+  min-width: 20px;
   padding: 8px 0;
-  width: 500px;
-  color: #000;
-
 }
 
 .profile-header {
@@ -208,13 +193,11 @@ button[mat-icon-button] {
   height: 60px;
   border-radius: 50%;
   margin-right: 12px;
-  border: 2px solid #e0e0e0;
 }
 
 .profile-info {
   display: flex;
   flex-direction: column;
-  font-size: 10;
 }
 
 .user-name {
@@ -224,7 +207,7 @@ button[mat-icon-button] {
 }
 
 .user-email {
-  font-size: 0.70rem;
+  font-size: 0.7rem;
   color: #666;
   margin-top: 2px;
 }
@@ -249,58 +232,33 @@ mat-menu-item {
 }
 
 /* Botones de las comunidades */
+
 .workspace {
   background-color: #292929;
-  border-radius: 0 !important; 
-  margin-bottom: 10px; 
-  padding: 10px 20px; 
-  display: flex; 
-  align-items: center; 
-  height: 50px; 
-  color: white; 
-  text-decoration: none; 
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
-}
-
-.workspace:hover {
-  transition: background-color 0.6s ease, color 0.3s ease;
-  transform: scale(1.03); /* Efecto de zoom al pasar el mouse */
-  box-shadow: 0 6px 8px #66576C; /* Sombra más intensa */
-  background-color: #7d5e7d; /* Color de fondo ligeramente más claro */
-}
-.workspace .nav-button {
-  font-size: 1rem; /* Tamaño de fuente más grande */
-  font-weight: bold; /* Texto más destacado */
-  text-decoration: none;
-  color: #555; /* Color de texto */
+  border-radius: 30px !important;
+  margin-bottom: 10px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  width: 100%;
-  justify-content: space-between; /* Separación del contenido */
+  height: 50px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
 }
 
 
-.workspace .nav-button:hover {
-  all: unset; 
-  cursor: pointer; 
-  color: white; 
+.workspace:hover {
+  transform: scale(1.03);
+  background-color: #7d5e7d; /* Resalta el fondo del botón */
+  color: white; /* Asegura que el texto siga siendo visible */
 }
 
-/* Encabezados */
-h6 {
-  padding-top: 3em;
-  text-align: center;
+.workspace a {
+  all: unset; /* Elimina cualquier estilo interno que interfiera */
+  width: 100%; /* Asegura que todo el botón sea interactivo */
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
-
-.workspace {
-    border-radius: 30px !important;  /* Redondeo completo para hacerlo ovalado */
-    margin-bottom: 10px; 
-    padding: 10px 20px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; /* Centrar el contenido */
-    height: 50px; /* Ajusta la altura para un diseño ovalado */
-    color: #333; /* Color del texto */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efecto de hover */
-    cursor: pointer; /* Cambia el cursor para parecer interactivo */
-  }

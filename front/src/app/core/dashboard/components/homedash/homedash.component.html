@@ -1,4 +1,5 @@
 <div class="home-content">
+  <button mat-button (click)="showLibrary()">Go to Library</button>
   <div class="gallery-container">
     <button mat-icon-button (click)="prevSlide()" class="nav-button prev" [disabled]="currentIndex === 0">
       <mat-icon>chevron_left</mat-icon>
@@ -20,6 +21,29 @@
       <mat-icon>chevron_right</mat-icon>
     </button>
   </div>
-  <button mat-button (click)="showLibrary()">Go to Library</button>
-  <p>Total books: {{ totalBooks }}</p>
+
+  <button mat-button (click)="showLibrary()">Go to Workspaces</button>
+  <div class="gallery-container">
+    <button mat-icon-button (click)="prevSlide()" class="nav-button prev" [disabled]="currentIndex === 0">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    
+    <div class="movies-container">
+      <div class="movies-slider" [style.transform]="translateX">
+        <mat-card *ngFor="let book of books; let i = index" class="movie-card">
+          <mat-card-header>
+            <mat-card-subtitle>{{ book.title }}</mat-card-subtitle>
+            <mat-card-subtitle>⭐   {{ book.rating }} / 5</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image [src]="book.largeThumbnail" [alt]="book.title">
+        </mat-card>
+      </div>
+    </div>
+    
+    <button mat-icon-button (click)="nextSlide()" class="nav-button next" [disabled]="currentIndex >= (totalBooks / maxVisibleSlides) - 1">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
 </div>
+
+
