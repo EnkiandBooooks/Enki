@@ -1,26 +1,14 @@
 body, html {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden; /* Evita el desplazamiento */
 }
 
-#animation-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-}
-
-.frame {
-  position: absolute;
-  top: 0;
-  left: 0;
+#gradient-wrapper {
+  position: relative;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
+  height: 100vh;
+  display: flex; /* Coloca los canvas uno al lado del otro o apilados */
 }
 
 #canvas1 {
@@ -31,8 +19,8 @@ body, html {
 }
 
 #canvas2 {
-  --gradient-color-1: #00ffff;
-  --gradient-color-2: #ff00ff;
-  --gradient-color-3: #ffffff;
-  --gradient-color-4: #000000;
+  --gradient-color-1: #525252;
+  --gradient-color-2: #66576c;
+  --gradient-color-3: #d89df0;
+  --gradient-color-4: #36dce7;
 }

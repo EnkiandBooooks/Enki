@@ -10,17 +10,17 @@ const canvas = document.getElementById('canvas1');
 
 // Establecemos dos configuraciones de colores como objetos
 const gradient1 = {
-  '--gradient-color-1': '#8e44ad', // Morado oscuro
-  '--gradient-color-2': '#9b59b6', // Morado claro
-  '--gradient-color-3': '#76448a', // Morado intermedio
-  '--gradient-color-4': '#5b2c6f', // Morado muy oscuro
+  '--gradient-color-1': '#1F9EA3', // Morado oscuro
+  '--gradient-color-2': '#F8BD97', // Morado claro
+  '--gradient-color-3': '#9E5428', // Morado intermedio
+  '--gradient-color-4': '#3B0102', // Morado muy oscuro
 };
 
 const gradient2 = {
-  '--gradient-color-1': '#27ae60', // Verde oscuro
-  '--gradient-color-2': '#2ecc71', // Verde claro
-  '--gradient-color-3': '#1e8449', // Verde intermedio
-  '--gradient-color-4': '#145a32', // Verde muy oscuro
+  '--gradient-color-1': '#525252', // Verde oscuro
+  '--gradient-color-2': '#66576c', // Verde claro
+  '--gradient-color-3': '#d89df0', // Verde intermedio
+  '--gradient-color-4': '#36dce7', // Verde muy oscuro
 };
 
 // Función para aplicar un gradiente al elemento
