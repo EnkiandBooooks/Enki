@@ -22,3 +22,17 @@ body, html {
   object-fit: cover;
   opacity: 0;
 }
+
+#canvas1 {
+  --gradient-color-1: #ff0000;
+  --gradient-color-2: #00ff00;
+  --gradient-color-3: #0000ff;
+  --gradient-color-4: #ffff00;
+}
+
+#canvas2 {
+  --gradient-color-1: #00ffff;
+  --gradient-color-2: #ff00ff;
+  --gradient-color-3: #ffffff;
+  --gradient-color-4: #000000;
+}
