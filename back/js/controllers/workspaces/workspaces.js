@@ -4,6 +4,7 @@ import { userModel } from "../../database/models/users.js";
 import { workspaceModel } from "../../database/models/workspaces.js";
 import { workspaceSchema } from "../../schema/workspaces.js";
 import fs from 'fs';
+import { log } from "console";
 
 export class WorkspaceController{
     /**
@@ -81,6 +82,7 @@ export class WorkspaceController{
      */
     static async deleteWorkspace(req, res) {
         const workspaceId = req.params.id;
+        console.log("Mira esto =>", workspaceId)
         const user = req.user;
         // Esto lo hago para probar en github.
         await workspaceModel.findByIdAndDelete(workspaceId);

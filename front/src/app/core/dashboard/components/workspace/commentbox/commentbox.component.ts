@@ -144,6 +144,22 @@ export class CommentboxComponent {
       }
     });
    
-   }
   }
+    deleteCommunity(): void {
+      this.workspaceService.deleteCommunity({'workspaceId':this.currentWorkspaceId}).subscribe(
+        (res: any) => {  
+          console.log('Respuesta:', res);
+          this.snackBar.open('comunidad eliminada', 'Cerrar', { duration: 3000 });
+          
+        },
+        (error: any) => {  
+          console.error('Error en la solicitud:', error);
+          this.snackBar.open('Error al eliminar comentarios', 'Cerrar', { duration: 3000 });
+        }
+      );
+
+      
+    }
+   }
+  
   

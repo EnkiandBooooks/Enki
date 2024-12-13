@@ -9,6 +9,16 @@
       >
         Añadir Comentario
       </button>
+
+      <button
+        mat-raised-button
+        style="color: #525252;"
+        color="primary"
+        (click)="deleteCommunity()"
+        >
+        Eliminar grupo
+       
+      </button>
     </div>
     
     <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
