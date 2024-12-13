@@ -24,3 +24,40 @@ body, html {
   --gradient-color-3: #d89df0;
   --gradient-color-4: #36dce7;
 }
+
+.title{
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  animation: move-title 10s linear infinite; /* Ahora 10 segundos */
+  overflow: hidden;
+}
+
+@keyframes move-title {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  20% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+  80% {
+      transform: translateX(100vw);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+}
