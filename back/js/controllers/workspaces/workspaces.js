@@ -156,5 +156,27 @@ export class WorkspaceController{
             return res.status(300).json({"message": "Error deleting user of a comunity."})
         }
     }
+    static async showWorkspaceHomeDash(req, res) {
+        const { privacy } = req.body; // Cambia a `privacy` para coincidir con el esquema
+    
+        try {
+            const workspaces = await workspaceModel.find({ privacy: privacy },
+                { _id: 1, 'book.bookImage': 1, workSpaceName: 1 } 
+
+            );
+            
+    
+            if (!workspaces || workspaces.length === 0) {
+                return res.status(404).json({ message: "No public workspaces found." });
+            }
+    
+            console.log(workspaces);
+            return res.status(200).json(workspaces);
+        } catch (error) {
+            console.error(error); // Log para depuración
+            return res.status(500).json({ message: "Error showing the public workspaces." });
+        }
+    }
+    
 
 }
