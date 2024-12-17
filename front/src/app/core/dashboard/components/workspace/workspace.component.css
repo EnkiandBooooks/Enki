@@ -13,9 +13,10 @@
 }
 
 
+
 /* Estilo para la caja de comentarios */
 .commentbox-tile {
-  padding: 10px;
+  padding: 11px;
 }
 
 .commentbox-tile app-commentbox {
