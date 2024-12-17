@@ -8,6 +8,7 @@
 
 /* Contenedor de sidenav */
 .mat-sidenav-container {
+  
   height: 100%;
   width: 100%;
   box-sizing: border-box;
@@ -59,7 +60,7 @@ h6 {
 }
 
 .sidebar-logo-img {
-  max-width: 140px;
+  max-width: 50%;
   opacity: 0.85;
 }
 
