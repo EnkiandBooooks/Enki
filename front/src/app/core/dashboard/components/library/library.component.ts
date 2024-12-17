@@ -29,7 +29,7 @@ import { LoadingService } from '../../../../shared/services/loading.service';
 export class LibraryComponent{
   constructor(private loadingService: LoadingService) {}
   p: number = 1;
-  booksPerPage: number = 18;
+  booksPerPage: number = 15;
   search: string = '';
   books: any;
   key: string = '';
@@ -48,7 +48,7 @@ export class LibraryComponent{
 
     const searchFilter = (typeof this.search == 'string' && this.search.length > 2) ? `?searchBy=${this.search}` : '?searchBy=';
     const categoryFilter = this.selected.length > 0 ? `&categories=${this.selected.join(',')}` : '&categories=';
-    const pageFilter = `&page=${this.p}&itemsPerPage=14`;
+    const pageFilter = `&page=${this.p}&itemsPerPage=15`;
     const filter = `${searchFilter}${categoryFilter}${pageFilter}`;
 
     this.booksService.getBooksFilter(filter).subscribe(

@@ -1,103 +1,89 @@
 :host {
-  width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
-  height: 100%; /* Asegúrate de que ocupe toda la altura del contenedor */
-  box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho y la altura */
-  margin: 0px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .home-content {
   width: 100%;
-  height: 100%; 
-  padding: 20px;
-  background-color: #a29ea5;
-  overflow: auto; /* Añadir scroll si el contenido es más grande que la ventana */
-}
-
-.carousel-section {
-  margin: 20px ;
-}
-
-h3 {
-  margin-bottom: 10px;
-  color: #3f3b42;
-}
-
-.book-image {
-  height: 200px; /*  altura para la imagen */
-  object-fit: absolute; /* Mantener la proporción de la imagen y cubrir el área del tile */
-}
-
-.bookCard{
   height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  overflow: auto;
 }
 
 .gallery-container {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 16px;
   overflow: hidden;
+  padding: 10px 0;
 }
 
 .movies-container {
-  width: calc(100% - 80px);
+  width: 90%; /* Optimiza el ancho visible */
   margin: 0 auto;
   overflow: hidden;
 }
 
 .movies-slider {
   display: flex;
-  transition: transform 0.3s ease;
+  gap: 16px; /* Espaciado entre las tarjetas */
+  transition: transform 0.3s ease-in-out;
 }
 
 .movie-card {
   flex: 0 0 auto;
   width: 200px;
-  margin-right: 16px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Evita que la imagen se salga */
+  text-align: center;
+  margin-bottom: 40px;
 }
 
+
 .movie-card img {
-  height: 300px;
-  object-fit: absolute;
+  width: 100%;
+  height: 250px;
+  object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsión */
 }
 
 mat-card-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
-  min-height: 15em;
 }
 
 mat-card-subtitle {
   font-size: 14px;
-  min-height: 4em;
-
-}
-
-mat-card {
-  height: movie-card img;
-}
-
-mat-chip {
-  font-size: 12px;
+  color: #555;
 }
 
 .nav-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  background: transparent; /* Sin fondo */
+  border: none; /* Sin borde */
+  box-shadow: none; /* Sin sombra */
   z-index: 10;
+  cursor: pointer;
+  color: #ffffff; /* Color blanco para las flechas */
+  font-size: 32px; /* Ajusta el tamaño de la flecha */
+  opacity: 0.8; /* Opcional: flecha ligeramente transparente */
+  transition: opacity 0.2s ease-in-out;
+}
+
+.nav-button:hover {
+  opacity: 1; /* La flecha se hace opaca al pasar el ratón */
 }
 
 .prev {
-
-  left: 0;
-  
+  left: 10px; /* Espacio desde el borde izquierdo */
 }
 
 .next {
-  right: 0;
+  right: 10px; /* Espacio desde el borde derecho */
 }

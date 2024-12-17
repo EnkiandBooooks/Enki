@@ -25,8 +25,10 @@
       <div class="bookCard" *ngFor="let book of books | paginate: { itemsPerPage: booksPerPage, currentPage: p }">
         <img [src]="book.largeThumbnail" alt="Imagen del libro" class="book-image" />
         <div class="textBox">
-          <p class="tittle">{{ book.title }}</p>
-          <p>⭐{{ book.rating }}/5</p>
+          <p class="tittle"><b> {{book.title}} </b></p>
+          <p class="pages">{{book.pageCount}} pages</p>
+          <p class="authors">{{book.authors}}</p>
+          <p class="rating">⭐{{ book.rating }}/5</p>
         </div>
       </div>
     </div>

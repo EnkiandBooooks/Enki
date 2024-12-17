@@ -46,7 +46,7 @@ export class HomedashComponent implements OnInit {
   currentWorkspaceIndex = 0;
   currentBookIndex = 0;
   cardWidth = 216; // 200px width + 16px margin-right
-  maxVisibleSlides = 5; // Número de libros visibles en el carrusel a la vez
+  maxVisibleSlides = 4; // Número de libros visibles en el carrusel a la vez
 
 
   constructor(private dashboard: DashboardComponent,  private route: ActivatedRoute, private workspaceservice: workspaceService) {}

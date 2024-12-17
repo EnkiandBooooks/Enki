@@ -4,6 +4,7 @@
   height: 100%;
   padding: 0px;
   overflow: hidden; /* Previene el scroll lateral en el componente principal */
+  
 }
 
 .findContainer {
@@ -14,6 +15,7 @@
   margin-bottom: 1em;
   width: 100%;
   max-width: 100%; /* Asegura que el contenedor del buscador no se salga del ancho disponible */
+  
 }
 
 .searchBar {
@@ -29,6 +31,7 @@
   gap: 5px;
   width: 100%;
   max-width: 100%; /* Asegura que las categorías no se salgan del contenedor */
+  background-color: #d1c5d6;
 }
 
 .home-content {
@@ -36,7 +39,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: antiquewhite;
+  background-color: ffffff;
   overflow: hidden;
 }
 
@@ -50,10 +53,9 @@
 /* Configuración de CSS Grid en el contenedor de libros */
 .books-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste automático del número de columnas */
-  gap: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 60px; /* Más espacio entre las cartas */
   width: 100%;
-  max-width: 100%; /* Asegura que el grid no se salga del ancho disponible */
   box-sizing: border-box;
 }
 
@@ -62,10 +64,15 @@
   flex-direction: column;
   align-items: center;
   border-radius: 8px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco semitransparente */
+  backdrop-filter: blur(50px); /* Efecto difuminado */
   box-sizing: border-box;
+  padding: 10px;
   width: 100%;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  margin-bottom: 30px;
+  
 }
 
 .book-image {
@@ -77,7 +84,7 @@
 
 .tittle {
   color: black;
-  text-align: center;
+  text-align: left;
   font-size: 1em;
   margin: 10px 0 5px 0;
   width: 100%;
@@ -85,7 +92,8 @@
 
 .textBox {
   width: 100%;
-  text-align: center;
+  text-align: left;
+  font-size: 12px;
 }
 
 .pagination-controls {
