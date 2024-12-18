@@ -27,6 +27,8 @@
 }
 
 
+
+
 /* Contenedor con scroll para las comunidades */
 .communities-container {
   display: block;
@@ -302,3 +304,4 @@ h6 {
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efecto de hover */
     cursor: pointer; /* Cambia el cursor para parecer interactivo */
   }
+
