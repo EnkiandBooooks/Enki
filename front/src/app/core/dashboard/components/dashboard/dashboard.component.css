@@ -24,6 +24,12 @@
   overflow-y: auto;
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> CommunityList
 /* Contenedor con scroll para las comunidades */
 .communities-container {
   display: block;
@@ -249,10 +255,15 @@ mat-menu-item {
 }
 
 
+<<<<<<< HEAD
 .workspace:hover {
   transform: scale(1.03);
   background-color: #7d5e7d; /* Resalta el fondo del botón */
   color: white; /* Asegura que el texto siga siendo visible */
+=======
+.workspace .nav-button:hover {
+  color: white; 
+>>>>>>> CommunityList
 }
 
 .workspace a {
@@ -262,3 +273,20 @@ mat-menu-item {
   display: flex;
   align-items: center;
 }
+<<<<<<< HEAD
+=======
+
+.workspace {
+    border-radius: 30px !important;  /* Redondeo completo para hacerlo ovalado */
+    margin-bottom: 10px; 
+    padding: 10px 20px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; /* Centrar el contenido */
+    height: 50px; /* Ajusta la altura para un diseño ovalado */
+    color: #333; /* Color del texto */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efecto de hover */
+    cursor: pointer; /* Cambia el cursor para parecer interactivo */
+  }
+
+>>>>>>> CommunityList

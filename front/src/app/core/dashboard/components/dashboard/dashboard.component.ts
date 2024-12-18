@@ -19,6 +19,7 @@ import { TimelineComponent } from '../workspace/timeline/timeline.component';
 import { CommentboxComponent } from '../workspace/commentbox/commentbox.component';
 import { WorkspaceComponent } from '../workspace/workspace.component';
 import { LoadingService } from '../../../../shared/services/loading.service';
+import { CommunitylistComponent } from '../communitylist/communitylist.component';
 
 
 @Component({
@@ -44,7 +45,8 @@ import { LoadingService } from '../../../../shared/services/loading.service';
     CommentboxComponent,
     WorkspaceComponent,
     RouterLink,
-    RouterOutlet
+    RouterOutlet,
+    CommunitylistComponent
   ]
 })
 export class DashboardComponent {
