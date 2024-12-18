@@ -1,7 +1,7 @@
 body, html {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Evita el desplazamiento */
+  overflow: auto;
 }
 
 #gradient-wrapper {
@@ -129,4 +129,18 @@ body, html {
 canvas{
   min-width: 100%; 
   margin: 0;
+}
+
+.video-background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+#container {
+  height: 500vh;
 }
