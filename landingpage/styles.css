@@ -1,19 +1,9 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow: auto;
-}
-
 #gradient-wrapper {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   display: flex;
-  margin: 0;
-  z-index: 1; /* Asegura que el gradiente esté detrás del texto */
 }
-
-/* NAV */
 
 #main-nav {
   position: fixed;
@@ -108,7 +98,6 @@ body, html {
   animation: move-title 10s linear infinite; /* Ahora 10 segundos */
   overflow: hidden;
   color: white;
-  z-index: 2;
 }
 
 @keyframes move-title {
@@ -130,28 +119,6 @@ body, html {
   }
 }
 
-canvas {
-  min-width: 100%; 
-  margin: 0;
-  z-index: 1; /* Asegura que el canvas esté detrás del texto */
-  position: relative;
-}
-
-.video-background {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  display: block;
-  z-index: 0; /* El video se encuentra al fondo */
-}
-
-#container {
-  height: 500vh;
-}
-
 .split_text {
   position: absolute;
   z-index: 2; /* Asegura que el texto esté encima del canvas */
@@ -168,4 +135,3 @@ canvas {
   border-radius: 10px;
   line-height: 1.5;
 }
-
