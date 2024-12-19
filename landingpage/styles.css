@@ -108,6 +108,7 @@ body, html {
   animation: move-title 10s linear infinite; /* Ahora 10 segundos */
   overflow: hidden;
   color: white;
+  z-index: 2;
 }
 
 @keyframes move-title {
@@ -154,14 +155,17 @@ canvas {
 .split_text {
   position: absolute;
   z-index: 2; /* Asegura que el texto esté encima del canvas */
+  font-family: 'Playfair Display', serif;
   color: white;
-  font-size: 1.2rem;
+  font-size: 3rem;
   width: 80%;
   margin: auto;
   left: 10%;
   top: 75%;
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
+  padding: 40px;
   border-radius: 10px;
+  line-height: 1.5;
 }
+
