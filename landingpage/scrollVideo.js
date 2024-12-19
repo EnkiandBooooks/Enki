@@ -71,13 +71,48 @@ setTimeout(function () {
 }, 1000);
 
 /* ---------------------------------- */
+/*TEXT ANIMATION*/
 
-// Initialize Lenis
-const lenis = new Lenis({
-  autoRaf: true,
+const text = document.querySelector('.split_text');
+
+// Escuchar cuando el video termine
+video.addEventListener('ended', () => {
+  // Cuando el video termine, agregar la clase que hace visible el texto sobre el gradiente
+  text.classList.add('visible-text');
 });
 
-// Listen for the scroll event and log the event data
-lenis.on('scroll', (e) => {
-  console.log(e);
+// Escuchar el scroll para asegurar que el texto aparece solo al final del video
+window.addEventListener('scroll', () => {
+  // Si el video ha terminado y el scroll ha llegado al final del video
+  const videoEnd = video.getBoundingClientRect().top + video.offsetHeight <= 0;
+  
+  // Mostrar el texto si hemos llegado al final del video
+  if (videoEnd) {
+    text.classList.add('visible-text');
+  } else {
+    text.classList.remove('visible-text');  // Ocultar el texto si no hemos llegado al final
+  }
 });
+
+
+
+const splitTypes = document.querySelectorAll('.split_text')
+
+splitTypes.forEach((char,i)=> {
+
+      const text = new SplitType(char, {types: 'chars'})
+
+      gsap.from(text.chars, {
+        scrollTrigger: {
+          trigger: char,
+          start: 'top 70%',
+          end: 'top 30%',
+          scrub: true,
+          markers: false
+        },
+        opacity: 0.2,
+        stagger: 0.1,
+      })
+
+      console.log(text)
+})

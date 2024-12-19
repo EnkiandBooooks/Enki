@@ -10,6 +10,7 @@ body, html {
   height: 100%;
   display: flex;
   margin: 0;
+  z-index: 1; /* Asegura que el gradiente esté detrás del texto */
 }
 
 /* NAV */
@@ -34,11 +35,12 @@ body, html {
   padding: 0 20px;
 }
 
-.logo_name{
+.logo_name {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .nav-container img {
   width: 40px; /* Limita el tamaño de la imagen */
   height: auto;
@@ -127,9 +129,11 @@ body, html {
   }
 }
 
-canvas{
+canvas {
   min-width: 100%; 
   margin: 0;
+  z-index: 1; /* Asegura que el canvas esté detrás del texto */
+  position: relative;
 }
 
 .video-background {
@@ -140,8 +144,24 @@ canvas{
   min-height: 100%;
   transform: translate(-50%, -50%);
   display: block;
+  z-index: 0; /* El video se encuentra al fondo */
 }
 
 #container {
   height: 500vh;
+}
+
+.split_text {
+  position: absolute;
+  z-index: 2; /* Asegura que el texto esté encima del canvas */
+  color: white;
+  font-size: 1.2rem;
+  width: 80%;
+  margin: auto;
+  left: 10%;
+  top: 75%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
 }
