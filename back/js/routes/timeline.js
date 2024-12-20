@@ -4,4 +4,4 @@ import { TimelineController } from "../controllers/workspaces/timeline.js";
 
 export const timelineRouter = Router();
 
-timelineRouter.post('/timelineInfo', verifyJWT, TimelineController.getInfoTimeline)
+timelineRouter.get('/timelineInfo/:id', verifyJWT, TimelineController.getInfoTimeline)
