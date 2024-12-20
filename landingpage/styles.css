@@ -1,21 +1,12 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow: hidden; /* Evita el desplazamiento */
-}
-
 #gradient-wrapper {
   position: absolute;
   width: 100%;
   height: 100%;
   display: flex;
-  margin: 0;
 }
 
-/* NAV */
-
 #main-nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
@@ -34,11 +25,12 @@ body, html {
   padding: 0 20px;
 }
 
-.logo_name{
+.logo_name {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .nav-container img {
   width: 40px; /* Limita el tamaño de la imagen */
   height: auto;
@@ -49,6 +41,7 @@ body, html {
 
 .name,
 .nav-links a {
+  align-items: center;
   text-decoration: none;
   color: white;
   font-size: 16px;
@@ -89,7 +82,7 @@ body, html {
 }
 
 .nav-links li {
-  display: inline;
+  display: flex;
   align-items: center;
 }
 
@@ -126,7 +119,19 @@ body, html {
   }
 }
 
-canvas{
-  min-width: 100%; 
-  margin: 0;
+.split_text {
+  position: absolute;
+  z-index: 2; /* Asegura que el texto esté encima del canvas */
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-size: 3rem;
+  width: 80%;
+  margin: auto;
+  left: 10%;
+  top: 75%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 10px;
+  line-height: 1.5;
 }
