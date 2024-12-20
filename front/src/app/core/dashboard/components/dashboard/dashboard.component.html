@@ -24,8 +24,11 @@
         <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('workspace'); $event.preventDefault()">workspace</a>
         </mat-list-item> -->
-      <app-communitylist/>
+   
+        <app-communitylist/>
+      
       </mat-nav-list> 
+      
     </mat-sidenav>
     
 
@@ -58,10 +61,8 @@
       </mat-toolbar>
 
       <div class="content-wrapper">
-        <ng-container>
-          <div>
+        <ng-container class="nav-community-list">
             <router-outlet></router-outlet>
-          </div>
         </ng-container>
       </div>
     </mat-sidenav-content>

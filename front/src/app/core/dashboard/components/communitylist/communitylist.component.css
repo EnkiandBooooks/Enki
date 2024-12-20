@@ -1,22 +1,31 @@
-/* Contenedor con scroll para las comunidades */
-.communities-container {
-    display: block;
-    padding: 1rem;
-    border-radius: 8px;
-    overflow-y: auto; /* Scroll para muchas comunidades */
-    max-height: calc(25px * 3 + 8px * 2); /* 3 elementos de 50px de altura + 2 espacios de margen */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 0;
-  }
-  
+.communities-container{
+  display: block;
+  padding: 1rem;
+  overflow-y: auto; /* Scroll para muchas comunidades */
+  width: 200px; 
+  margin: 0 auto; /* Centrar horizontalmente */
+  position: fixed;
+  padding-bottom: 50px;
+  scrollbar-gutter: stable;
+}
+
+@media (min-width: 100px) {
+.communities-container{
+  height: 10vh;
+}}
+
+@media (min-width: 1500px) {
+  .communities-container{
+    height: 40vh;
+  }}
+
   .communities-container::-webkit-scrollbar {
     display: none; /* Oculta el scrollbar */
   }
   
   /* Botones de las comunidades */
   .workspace {
-    background-color: #292929;
-    border-radius: 30px; /* Redondeo completo */
+    background-color: #F1F1F1; /* Color del fondo */
     margin-bottom: 10px; 
     padding: 10px 20px; 
     display: flex; 
@@ -26,14 +35,18 @@
     color: white; 
     cursor: pointer; /* Interacción visual */
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efectos de hover */
+    border: 1px solid #555; /* Agregar borde */
+    border-radius: 0; /* Sin bordes redondeados */
   }
   
+  /* Efecto hover */
   .workspace:hover {
     transform: scale(1.03); /* Efecto de zoom */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
     background-color: #7d5e7d; /* Fondo más claro */
   }
   
+  /* Botón de navegación */
   .workspace .nav-button {
     font-size: 1rem; /* Tamaño de fuente */
     font-weight: bold; /* Texto destacado */
@@ -54,5 +67,6 @@
     padding-top: 3em;
     text-align: center;
     font-weight: bold;
+    color: #66576c
   }
   

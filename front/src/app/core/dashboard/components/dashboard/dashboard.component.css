@@ -15,7 +15,7 @@
 
 .mat-sidenav {
   width: 250px;
-  background: linear-gradient(to bottom, #3f3b42, #66576C);
+  background: linear-gradient(to bottom, #fefcff, #ffffff);
   color: white;
   display: flex;
   align-items: center;
@@ -24,12 +24,6 @@
   overflow-y: auto;
 }
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> CommunityList
 /* Contenedor con scroll para las comunidades */
 .communities-container {
   display: block;
@@ -71,7 +65,7 @@ h6 {
 
 /* Estilo de los botones de navegación */
 .nav-button {
-  color: white !important;
+  color: #66576c !important;
   font-size: 18px;
   padding: 20px 30px;
   width: 100%;
@@ -125,7 +119,7 @@ h6 {
   flex-direction: column;
   flex-grow: 1;
   height: 100%;
-  background-color: #f5f5f5;
+  background-color: red;
   box-sizing: border-box;
 }
 
@@ -255,15 +249,10 @@ mat-menu-item {
 }
 
 
-<<<<<<< HEAD
 .workspace:hover {
   transform: scale(1.03);
   background-color: #7d5e7d; /* Resalta el fondo del botón */
   color: white; /* Asegura que el texto siga siendo visible */
-=======
-.workspace .nav-button:hover {
-  color: white; 
->>>>>>> CommunityList
 }
 
 .workspace a {
@@ -273,20 +262,36 @@ mat-menu-item {
   display: flex;
   align-items: center;
 }
-<<<<<<< HEAD
-=======
 
-.workspace {
-    border-radius: 30px !important;  /* Redondeo completo para hacerlo ovalado */
-    margin-bottom: 10px; 
-    padding: 10px 20px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; /* Centrar el contenido */
-    height: 50px; /* Ajusta la altura para un diseño ovalado */
-    color: #333; /* Color del texto */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efecto de hover */
-    cursor: pointer; /* Cambia el cursor para parecer interactivo */
-  }
+.dashboard-content {
+  display: flex;
+  flex-direction: column; /* Estructura vertical */
+  height: 100%; /* Ocupa todo el alto disponible */
+}
 
->>>>>>> CommunityList
+.community-list {
+  flex: 0 0 33.33%; /* Un tercio del alto total */
+  background-color: #f8f8f8;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Por si el contenido es demasiado */
+  border-radius: 8px;
+}
+
+.main-content {
+  flex: 1; /* Ocupa el resto del espacio */
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.nav-community-list{
+  background-color: pink;
+  padding: 10em;
+  margin: 0;
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: column;  
+}
