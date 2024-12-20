@@ -69,7 +69,7 @@ mat-card-actions button:hover {
 
 /* Botones principales */
 .button-container button {
-  background-color: #353535; /* Fondo oscuro */
+  background-color: #292929; /* Fondo oscuro */
   color: white; /* Texto blanco */
   padding: 12px;
   width: 100%; /* Llenar todo el ancho */

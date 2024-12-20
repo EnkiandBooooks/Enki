@@ -7,6 +7,7 @@ import { connectDB } from "./database/mongodb/connectBD.js";
 import { downloadImgRouter } from "./routes/books/downloadImg.js";
 import { workspaceRouter } from "./routes/workspace.js";
 import { urlInvitationRoute } from "./routes/workspace/urlInvitation.js";
+import { timelineRouter } from "./routes/timeline.js";
 
 
 const app = express();
@@ -31,6 +32,7 @@ app.use(express.json());
 app.use('/users', usersRouter);
 app.use('/books', booksRouter);
 app.use('/workspace',workspaceRouter)
+app.use('/timeline', timelineRouter)
 app.use('/', downloadImgRouter);
 app.use('/urlInvitation', urlInvitationRoute)
 app.listen(process.env.PORT, () => {
