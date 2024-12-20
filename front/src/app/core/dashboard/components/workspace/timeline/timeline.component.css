@@ -19,11 +19,43 @@ input[matInput] {
 }
 
 .progress {
+  position: relative;
   padding: 7px;
   background: rgba(0, 0, 0, 0.25);
   border-radius: 6px;
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Centra el marcador en vertical y horizontal */
+  width: 13px;
+  height: 13px;
+  background-color: #ff5722;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.marker-count {
+  position: absolute;
+  top: -8px; /* Eleva el contador encima del marcador */
+  left: 50%;
+  transform: translateX(-50%);
+  /* background-color: black; */
+  color: rgb(0, 0, 0);
+  border-radius: 50%;
+  padding: 2px 5px;
+  font-size: 10px;
+  font-weight: bold;
+  z-index: 20;
+}
+
+.marker:hover {
+  background-color: #ff7043;
 }
 
 .progress-bar {

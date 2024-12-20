@@ -7,5 +7,15 @@
 
   <!-- Barra de progreso -->
   <div class="progress">
-    <div class="progress-bar" [style.width.%]="progressValue" [style.backgroundColor]="progressColor"></div>
+    <div class="progress-bar"
+      [style.width.%]="progressValue"
+      [style.backgroundColor]="progressColor">
+    </div>
+    <div
+      *ngFor="let marker of groupedMarkers"
+      class="marker"
+      [style.left.%]="marker.position"
+      [matTooltip]="marker.comments?.length ? marker.comments.join(', ') : 'Sin comentarios'">
+      <span *ngIf="marker.count > 1" class="marker-count">{{ marker.count }}</span>
+  </div>
 </div>
