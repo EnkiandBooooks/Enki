@@ -1,8 +1,9 @@
 #gradient-wrapper {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   display: flex;
+  z-index: -1;
 }
 
 #main-nav {
@@ -98,6 +99,24 @@
   animation: move-title 10s linear infinite; /* Ahora 10 segundos */
   overflow: hidden;
   color: white;
+}
+
+/* Contenedor principal para centrar todo */
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  margin-top: 100px; /* Ajusta la distancia desde la parte superior */
+}
+
+/* Estilo para la imagen */
+.center-content img {
+  max-width: 100px; /* Reduce el tamaño de la imagen */
+  height: auto;
+  margin-bottom: 20px; /* Espacio entre la imagen y el título */
 }
 
 @keyframes move-title {
