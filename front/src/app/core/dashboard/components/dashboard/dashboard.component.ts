@@ -20,6 +20,7 @@ import { CommentboxComponent } from '../workspace/commentbox/commentbox.componen
 import { WorkspaceComponent } from '../workspace/workspace.component';
 import { LoadingService } from '../../../../shared/services/loading.service';
 import { CommunitylistComponent } from '../communitylist/communitylist.component';
+import { ToolbarComponent } from '../toolbar/toolbar.component';
 
 
 @Component({
@@ -46,7 +47,8 @@ import { CommunitylistComponent } from '../communitylist/communitylist.component
     WorkspaceComponent,
     RouterLink,
     RouterOutlet,
-    CommunitylistComponent
+    CommunitylistComponent,
+    ToolbarComponent
   ]
 })
 export class DashboardComponent {
