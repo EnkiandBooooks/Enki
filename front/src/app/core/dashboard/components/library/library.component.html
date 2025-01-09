@@ -23,11 +23,12 @@
     <!-- Contenedor con desplazamiento para los libros -->
     <div class="books-grid">
       <div class="bookCard" *ngFor="let book of books | paginate: { itemsPerPage: booksPerPage, currentPage: p }">
-        <img [src]="book.largeThumbnail" alt="Imagen del libro" class="book-image" />
-        <div class="textBox">
+        <div class="text">
           <p class="tittle">{{ book.title }}</p>
-          <p>⭐{{ book.rating }}/5</p>
+          <!--<p class="description">{{ book.description }}</p>-->
         </div>
+        <img [src]="book.largeThumbnail" alt="Imagen del libro" class="book-image" />
+          <p class="rating">⭐{{ book.rating }}/5</p>
       </div>
     </div>
   </div>

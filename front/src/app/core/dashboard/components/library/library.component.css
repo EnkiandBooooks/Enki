@@ -8,14 +8,30 @@
   overflow: hidden; /* Previene el scroll lateral en el componente principal */
 }
 
+.home-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #bf99f1;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.books-scroll-container {
+  flex: 1; /* Toma el espacio restante disponible */
+  overflow-y: auto; /* Solo el contenedor de libros tiene desplazamiento vertical */
+  margin-top: 1em;
+}
+
 .findContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 1em;
-  width: 100%;
-  max-width: 100%; /* Asegura que el contenedor del buscador no se salga del ancho disponible */
 }
 
 .searchBar {
@@ -33,65 +49,63 @@
   max-width: 100%; /* Asegura que las categorías no se salgan del contenedor */
 }
 
-.home-content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.books-scroll-container {
-  flex: 1; /* Toma el espacio restante disponible */
-  overflow-y: auto; /* Solo el contenedor de libros tiene desplazamiento vertical */
-  margin-top: 1em;
-  width: 100%; /* Asegura que el contenedor de libros use el 100% del ancho disponible */
-}
-
 /* Configuración de CSS Grid en el contenedor de libros */
 .books-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste automático del número de columnas */
-  gap: 40px;
-  width: 100%;
-  max-width: 100%; /* Asegura que el grid no se salga del ancho disponible */
+  gap: 45px;
+  margin-left: 20px;
+  margin-right: 20px;
   box-sizing: border-box;
+  height: 100%;
+  justify-content: flex-end
+
 }
 
 .bookCard {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
+  background-color: rgb(118, 224, 231);
   box-sizing: border-box;
   width: 100%;
+  height: 100%;
 }
 
-.book-image {
-  width: 100%;
-  height: 180%; /* Altura fija para uniformidad */
-  object-fit: absolute; /* Asegura que la imagen cubra el área sin distorsionarse */
-  border-radius: 4px;
+.text {
+  margin: 5%;
+height:100px;
+display: flex; /* Habilita flexbox */
+justify-content: center; /* Alinea horizontalmente al centro */
+align-items: center; /* Alinea verticalmente al centro */
 }
 
 .tittle {
   color: black;
-  text-align: center;
-  font-size: 1em;
-  margin: 10px 0 5px 0;
-  width: 100%;
+  font-size: 1.5em;
+  box-sizing: border-box;
 }
 
-.textBox {
-  width: 100%;
-  text-align: center;
+.description {
+  color: black;
+  text-align: left;
+  font-size: 1em;
+}
+
+.book-image {
+  width: 90%;
+  height: 70%;
+  border-radius: 4px;
+  margin:5%;
+}
+
+.rating {
+  color: black;
+  text-align: left;
+  font-size: 1em;
+
 }
 
 .pagination-controls {
