@@ -2,7 +2,7 @@
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer mode="side" opened>
       <div class="sidebar-logo">
-        <img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Logo" class="sidebar-logo-img">
+        <img src="images/LOGOGHOST_ONLYPNG_BLACK.png" alt="Logo" class="sidebar-logo-img">
       </div>
       <mat-nav-list>
         <mat-list-item>
@@ -13,10 +13,10 @@
         </mat-list-item>
         
         <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="showSection('home'); $event.preventDefault()">Home</a>
+          <a mat-button class="nav-button" href="#" (click)="showSection('home'); $event.preventDefault()"><mat-icon>home</mat-icon>Home</a>
         </mat-list-item>
         <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="showSection('library'); $event.preventDefault()">Library</a>
+          <a mat-button class="nav-button" href="#" (click)="showSection('library'); $event.preventDefault()"><mat-icon> local_library</mat-icon>Library</a>
         </mat-list-item>
         <!-- <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('timeline'); $event.preventDefault()">Community Testing</a>
