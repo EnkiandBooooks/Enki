@@ -26,8 +26,9 @@ import { LoadingService } from '../../../../shared/services/loading.service';
   templateUrl: './library.component.html',
   styleUrl: './library.component.css'
 })
-export class LibraryComponent{
+export class LibraryComponent implements OnInit {
   constructor(private loadingService: LoadingService) {}
+  
   p: number = 1;
   booksPerPage: number = 18;
   search: string = '';
@@ -36,7 +37,7 @@ export class LibraryComponent{
   displayedBooks: any;
   categories = ['Fantasy', 'Manga', 'History', 'Comic', 'Fiction', 'Novels', 'Literature', 'Science'];
   selected: any[] = [];
-
+  
   booksService = inject(BooksService);
 
   ngOnInit(): void {
@@ -45,7 +46,6 @@ export class LibraryComponent{
   }
 
   loadBook(){
-
     const searchFilter = (typeof this.search == 'string' && this.search.length > 2) ? `?searchBy=${this.search}` : '?searchBy=';
     const categoryFilter = this.selected.length > 0 ? `&categories=${this.selected.join(',')}` : '&categories=';
     const pageFilter = `&page=${this.p}&itemsPerPage=14`;
@@ -73,7 +73,6 @@ export class LibraryComponent{
     const endIndex = startIndex + this.booksPerPage;
     this.displayedBooks = this.books.slice(startIndex, endIndex);
     console.log("Libros pagina: ", this.displayedBooks);
-
   }
 
   pageLoad(page : number){
