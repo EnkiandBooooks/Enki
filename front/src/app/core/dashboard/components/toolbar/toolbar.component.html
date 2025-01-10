@@ -1,5 +1,5 @@
-<p>Toolbar works!</p>
-<div class="categories">
+
+<div *ngIf="currentSection === 'library'" class="categories">
   <mat-button-toggle-group [multiple]="true" class="categoryButtons">
     <mat-button-toggle
       *ngFor="let category of categories"
@@ -10,3 +10,5 @@
     </mat-button-toggle>
   </mat-button-toggle-group>
 </div>
+
+<!-- <p>estamos en {{currentSection}}</p> -->

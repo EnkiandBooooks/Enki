@@ -90,13 +90,8 @@ export class DashboardComponent {
   showSection(section: string) {
     this.selectedSection = section;
     this.cdr.detectChanges();
+    this.router.navigate(["/dashboard/"+section])
     
-    if(section === "workspace"){
-
-      this.router.navigate(['/']).then(() => { this.router.navigate(['/dashboard/workspace', this.currentWorkspaceId ])});
-    }else{
-      this.router.navigate(["/dashboard/"+section])
-    }
   
 }
 
@@ -109,6 +104,11 @@ export class DashboardComponent {
     this.currentWorkspaceId = id;
   }
   
+
+  onSectionChange(event: {section: string, workspaceId: string}) {
+    this.selectedSection = event.section;
+    this.currentWorkspaceId = event.workspaceId;
+  }
 }
 
 

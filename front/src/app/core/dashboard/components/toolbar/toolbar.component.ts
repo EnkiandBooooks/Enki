@@ -57,6 +57,7 @@ import { CategoryService } from '../../../../shared/services/category.service';
 export class ToolbarComponent {
   categories = ['Fantasy', 'Manga', 'History', 'Comic', 'Fiction', 'Novels', 'Literature', 'Science'];
   selected: string[] = [];
+  @Input() currentSection = "";
 
   constructor(private categoryService: CategoryService) {}
 

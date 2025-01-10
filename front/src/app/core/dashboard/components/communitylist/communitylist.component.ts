@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
@@ -23,7 +23,7 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrl: './communitylist.component.css'
 })
 export class CommunitylistComponent {
-    selectedSection: string = 'home';
+    @Output() sectionChange = new EventEmitter<{section: string, workspaceId: string}>();    
     imgFile: any;
     imgUrl: any | undefined;
     arrUsr = signal<any>([]);
@@ -58,10 +58,10 @@ export class CommunitylistComponent {
     }
   
   
-    showSection(section: string) {
-      this.selectedSection = section;
+    showSection(section: string, workspaceId: string) {
+      this.sectionChange.emit({section, workspaceId});
       this.cdr.detectChanges();
-      this.router.navigate(['/']).then(() => { this.router.navigate(['/dashboard/workspace', this.currentWorkspaceId ])});
+      this.router.navigate(['/dashboard/workspace', this.currentWorkspaceId ]);
     
   }
 

@@ -25,7 +25,7 @@
           <a mat-button class="nav-button" href="#" (click)="showSection('workspace'); $event.preventDefault()">workspace</a>
         </mat-list-item> -->
    
-        <app-communitylist/>
+        <app-communitylist (sectionChange)="onSectionChange($event)" />
       
       </mat-nav-list> 
       
@@ -37,7 +37,7 @@
         <button mat-icon-button (click)="drawer.toggle()">
           &nbsp;<mat-icon>menu</mat-icon>&nbsp;
         </button>
-        <app-toolbar/>
+        <app-toolbar currentSection={{selectedSection}}/>
         <!-- Sección de perfil -->
         @if(cookieExists){
           <button mat-icon-button [matMenuTriggerFor]="profileMenu">
