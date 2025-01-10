@@ -21,6 +21,10 @@ import { CommentboxComponent } from '../workspace/commentbox/commentbox.componen
 import { WorkspaceComponent } from '../workspace/workspace.component';
 import { LoadingService } from '../../../../shared/services/loading.service';
 import { CommunitylistComponent } from '../communitylist/communitylist.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CategoryService } from '../../../../shared/services/category.service';
+
 
 @Component({
   selector: 'app-toolbar',
@@ -45,11 +49,27 @@ import { CommunitylistComponent } from '../communitylist/communitylist.component
     RouterLink,
     RouterOutlet,
     CommunitylistComponent,
+    MatButtonToggleModule,
   ],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.css'
 })
 export class ToolbarComponent {
   categories = ['Fantasy', 'Manga', 'History', 'Comic', 'Fiction', 'Novels', 'Literature', 'Science'];
-  selected: any[] = [];
+  selected: string[] = [];
+
+  constructor(private categoryService: CategoryService) {}
+
+  toggleCategory(event: any, category: string): void {
+    if (event.source._checked) {
+      this.selected.push(category);
+    } else {
+      this.selected = this.selected.filter((c) => c !== category);
+    }
+    this.categoryService.updateCategories(this.selected); // Actualiza las categorías en el servicio
+  }
 }
+
+
+
+

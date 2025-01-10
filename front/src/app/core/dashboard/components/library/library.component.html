@@ -8,7 +8,7 @@
         <input matInput (keyup)="loadBook()" [(ngModel)]="this.search">
       </mat-form-field>
 
-      <div class="categories">
+      <div class="categories"> 
         <mat-button-toggle-group [multiple]="true" class="categoryButtons">
           <mat-button-toggle *ngFor="let category of categories"
             (change)="toggleCategory($event, category)"

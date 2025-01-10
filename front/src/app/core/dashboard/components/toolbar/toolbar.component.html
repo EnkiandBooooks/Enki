@@ -1,12 +1,12 @@
-<!-- <p>toolbar works!</p>
+<p>Toolbar works!</p>
 <div class="categories">
-    <mat-button-toggle-group [multiple]="true" class="categoryButtons">
-      <mat-button-toggle *ngFor="let category of categories"
-        (change)="toggleCategory($event, category)"
-        color="primary"
-        class="categoryButton">
-        {{ category }}
-      </mat-button-toggle>
-    </mat-button-toggle-group>
-  </div>
-</div> -->
+  <mat-button-toggle-group [multiple]="true" class="categoryButtons">
+    <mat-button-toggle
+      *ngFor="let category of categories"
+      (change)="toggleCategory($event, category)"
+      color="primary"
+      class="categoryButton">
+      {{ category }}
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>

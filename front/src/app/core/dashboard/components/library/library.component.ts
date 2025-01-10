@@ -9,6 +9,9 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, NgModel } from '@angular/forms';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { LoadingService } from '../../../../shared/services/loading.service';
+import { CategoryService } from '../../../../shared/services/category.service';
+
+
 
 @Component({
   selector: 'app-library',
@@ -27,7 +30,7 @@ import { LoadingService } from '../../../../shared/services/loading.service';
   styleUrl: './library.component.css'
 })
 export class LibraryComponent{
-  constructor(private loadingService: LoadingService) {}
+  constructor(private loadingService: LoadingService, private categoryService: CategoryService) {}
   p: number = 1;
   booksPerPage: number = 18;
   search: string = '';
@@ -39,9 +42,18 @@ export class LibraryComponent{
 
   booksService = inject(BooksService);
 
+  
+
   ngOnInit(): void {
     this.loadingService.show();
-    this.loadBook();
+
+    // Suscribirse a los cambios en las categorías seleccionadas
+    this.categoryService.selectedCategories$.subscribe((categories) => {
+      this.selected = categories; // Actualiza las categorías seleccionadas
+      this.loadBook(); // Recarga los libros con el filtro actualizado
+    });
+
+    this.loadBook(); // Cargar libros inicialmente
   }
 
   loadBook(){
