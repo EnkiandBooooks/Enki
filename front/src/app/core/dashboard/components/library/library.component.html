@@ -28,7 +28,10 @@
           <!--<p class="description">{{ book.description }}</p>-->
         </div>
         <img [src]="book.largeThumbnail" alt="Imagen del libro" class="book-image" />
+        <div class="book-details">
+          <p class="author">{{ book.authors }}</p>
           <p class="rating">⭐{{ book.rating }}/5</p>
+        </div>
       </div>
     </div>
   </div>
