@@ -62,7 +62,7 @@
   align-items: center;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: rgb(241, 239, 239) 40%;
+  background-color: rgb(250, 249, 249);
   box-sizing: border-box;
   width: 100%;
   max-height: 400px;
@@ -72,7 +72,7 @@
 
 .bookCard:hover {
   background:  
-    linear-gradient(-45deg, #8c7496, 10%, rgb(233, 231, 231) 40%);
+    linear-gradient(-45deg, #bc9dc9, 10%, rgb(250, 249, 249) 40%);
   transform: scale(1.05);
 }
 
