@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, NgModel } from '@angular/forms';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { LoadingService } from '../../../../shared/services/loading.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-library',
@@ -20,7 +21,8 @@ import { LoadingService } from '../../../../shared/services/loading.service';
               MatFormFieldModule,
               MatInputModule,
               FormsModule,
-              MatButtonToggleModule
+              MatButtonToggleModule,
+              MatIconModule
               ],
   providers: [NgModel],
   templateUrl: './library.component.html',
@@ -57,7 +59,7 @@ export class LibraryComponent implements OnInit {
         this.books = res;
         this.books = this.books.map((book: any) => {
           let rating = book.rating % 1 !== 0 ? parseFloat(book.rating.toFixed(1)) : book.rating;
-          return { ...book, rating };
+          return { ...book, rating, isHovered: false };
         });
         this.updateBooks();
         this.loadingService.hide();
@@ -87,5 +89,13 @@ export class LibraryComponent implements OnInit {
       this.selected = this.selected.filter(c => c !== category);
     }
     this.loadBook();
+  }
+
+  onMouseEnter(book: any) {
+    book.isHovered = true;
+  }
+
+  onMouseLeave(book: any) {
+    book.isHovered = false;
   }
 }

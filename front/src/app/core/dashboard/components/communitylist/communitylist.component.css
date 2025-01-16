@@ -1,9 +1,9 @@
 .communities-container{
   display: block;
   padding: 1rem;
-  overflow-y: auto; /* Scroll para muchas comunidades */
+  overflow-y: auto; 
   width: 200px; 
-  margin: 0 auto; /* Centrar horizontalmente */
+  margin: 0 auto;
   position: fixed;
   padding-bottom: 50px;
   scrollbar-gutter: stable;
@@ -20,46 +20,42 @@
   }}
 
   .communities-container::-webkit-scrollbar {
-    display: none; /* Oculta el scrollbar */
+    display: none; 
   }
   
-  /* Botones de las comunidades */
   .workspace {
-    background-color: #F1F1F1; /* Color del fondo */
+    background-color: #F1F1F1; 
     margin-bottom: 10px; 
     padding: 10px 20px; 
     display: flex; 
     align-items: center; 
-    justify-content: center; /* Centrar el contenido */
+    justify-content: center;
     height: 50px; 
     color: white; 
-    cursor: pointer; /* Interacción visual */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efectos de hover */
-    border: 1px solid #555; /* Agregar borde */
-    border-radius: 0; /* Sin bordes redondeados */
+    cursor: pointer; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #555; 
+    border-radius: 0;
   }
   
-  /* Efecto hover */
   .workspace:hover {
-    transform: scale(1.03); /* Efecto de zoom */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+    transform: scale(1.03); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
     background-color: #7d5e7d;
   }
   
-  /* Botón de navegación */
   .workspace .nav-button {
-    font-size: 1rem; /* Tamaño de fuente */
-    font-weight: bold; /* Texto destacado */
+    font-size: 1rem; 
+    font-weight: bold; 
     text-decoration: none;
-    color: #555; /* Color de texto */
+    color: #555; 
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Separación del contenido */
+    justify-content: space-between;
   }
 
   
-  /* Encabezado */
   h6 {
     padding-top: 3em;
     text-align: center;
