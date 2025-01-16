@@ -24,9 +24,6 @@
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   overflow: hidden;
-
-  background:  
-  radial-gradient(circle at top left, rgba(179, 245, 239, 0.863) 5%, transparent 30%)
 }
 
 .books-scroll-container {
@@ -75,9 +72,7 @@
 
 .bookCard:hover {
   background:  
-    linear-gradient(135deg, rgba(225, 240, 238, 0.863) 10%, rgba(180, 120, 255, 0.5) 100%),
     linear-gradient(-135deg, rgba(214, 186, 248, 0.5) 10%, rgba(212, 211, 214, 1) 40%);
-    transition: background 3s ease-in-out;
 }
 
 .bookCard:hover .book-image {

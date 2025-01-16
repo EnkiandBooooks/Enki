@@ -76,14 +76,17 @@ h6 {
 
 /* Hover para botones de navegación */
 .nav-button:hover {
-  background-color: #7d5e7d;
-  color: white;
+  background:  
+    linear-gradient(135deg, rgba(225, 240, 238, 0.863) 10%, rgba(180, 120, 255, 0.5) 100%),
+    linear-gradient(-135deg, rgba(214, 186, 248, 0.5) 10%, rgba(212, 211, 214, 1) 40%);
 }
 
 
 .nav-button-createcommunity{
   color: #66576c !important;
-  background-color: white;
+  background:  
+  linear-gradient(135deg, rgba(225, 240, 238, 0.863) 10%, rgba(216, 188, 250, 0.5) 100%),
+  linear-gradient(-135deg, rgba(231, 222, 241, 0.5) 10%, rgba(212, 211, 214, 1) 40%);
   height: 100px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   font-size: 15px;
