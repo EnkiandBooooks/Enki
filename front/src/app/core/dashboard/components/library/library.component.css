@@ -26,28 +26,16 @@
   overflow: hidden;
 
   background:  
-  linear-gradient(45deg, rgb(200, 229, 233) 60%, rgba(180, 120, 255, 0.5) 100%),
-  linear-gradient(225deg, rgba(141, 235, 219, 0.7) 10%, rgba(255, 255, 255, 0) 80%); /* Nuevo gradiente desde la esquina inferior derecha */
-transition: background 3s ease-in-out;
+  radial-gradient(circle at top left, rgba(179, 245, 239, 0.863) 5%, transparent 30%)
 }
 
 .books-scroll-container {
   flex: 1; /* Toma el espacio restante disponible */
   overflow-y: auto; /* Solo el contenedor de libros tiene desplazamiento vertical */
   margin-top: 1em;
-}
 
-.findContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1em;
-}
-
-.searchBar {
-  width: 40%;
-  max-width: 100%; /* Limita el ancho máximo al contenedor */
+  background:  
+  radial-gradient(circle at bottom right, rgb(185, 155, 223) 5%, transparent 30%);
 }
 
 .categoryButtons {
@@ -69,8 +57,7 @@ transition: background 3s ease-in-out;
   margin-right: 20px;
   box-sizing: border-box;
   height: 100%;
-  justify-content: flex-end
-
+  justify-content: flex-end;
 }
 
 .bookCard {
@@ -88,8 +75,8 @@ transition: background 3s ease-in-out;
 
 .bookCard:hover {
   background:  
-    linear-gradient(135deg, rgb(217, 224, 184) 60%, rgba(180, 120, 255, 0.5) 100%),
-    linear-gradient(-135deg, rgba(180, 120, 255, 0.5) 10%, rgba(212, 211, 214, 1) 40%);
+    linear-gradient(135deg, rgba(225, 240, 238, 0.863) 10%, rgba(180, 120, 255, 0.5) 100%),
+    linear-gradient(-135deg, rgba(214, 186, 248, 0.5) 10%, rgba(212, 211, 214, 1) 40%);
     transition: background 3s ease-in-out;
 }
 
@@ -195,20 +182,21 @@ transition: background 3s ease-in-out;
 }
 
 .text-and-image {
-  display: flex; /* Usamos flexbox para alinear los elementos */
-  justify-content: space-between; /* Asegura que el texto esté a la izquierda y la imagen a la derecha */
-  align-items: center; /* Alinea los elementos verticalmente */
-  width: 100%; /* Asegura que ocupe todo el ancho de la página */
-  margin-bottom: 3%;
+  display: flex;
+  justify-content: flex-start; /* Alinea todo el contenido a la izquierda */
+  align-items: center; /* Centra verticalmente */
+  width: 100%;
+  gap: 20px; /* Espaciado entre los elementos */
 }
 
-.text-and-image p {
-  flex: 1; /* Hace que el texto ocupe todo el espacio disponible */
-  margin: 0; /* Elimina márgenes por defecto */
-  padding-right: 10px; /* Añade algo de espacio entre el texto y la imagen */
+.searchBar {
+  flex-grow: 1; /* Hace que la barra ocupe más espacio hacia la izquierda */
+  max-width: 100%;
+  text-align: center;
 }
 
 .sidebar-logo-img {
-  width: auto; /* Mantiene las proporciones de la imagen */
-  height: 40px; /* Ajusta el tamaño de la imagen (ajustable según tus necesidades) */
+  height: 40px; /* Ajusta el tamaño de la imagen según necesidad */
+  width: auto; /* Mantiene la proporción */
 }
+
