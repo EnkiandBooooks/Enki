@@ -3,7 +3,6 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  padding: 20px;
   margin: 0;
   overflow: hidden; /* Previene el scroll lateral en el componente principal */
   
@@ -12,6 +11,9 @@
 .base_elements {
   margin-left: 2%;
   margin-right: 2%;
+  color: #6C566D;
+  font-style: bold;
+  font-weight: 500;
 }
 
 .home-content {
@@ -19,7 +21,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: #f8f7fa;
+  background-color: #f0eeee;
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
@@ -30,9 +32,6 @@
   flex: 1; /* Toma el espacio restante disponible */
   overflow-y: auto; /* Solo el contenedor de libros tiene desplazamiento vertical */
   margin-top: 1em;
-
-  background:  
-  radial-gradient(circle at bottom right, rgb(185, 155, 223) 5%, transparent 30%);
 }
 
 .categoryButtons {
@@ -62,8 +61,8 @@
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  background-color: rgb(212, 211, 214);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgb(241, 239, 239) 40%;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -72,13 +71,7 @@
 
 .bookCard:hover {
   background:  
-    linear-gradient(-135deg, rgba(214, 186, 248, 0.5) 10%, rgba(212, 211, 214, 1) 40%);
-}
-
-.bookCard:hover .book-image {
-  border: 4px solid rgb(110, 189, 235); /* Marco del mismo color que el fondo */
-  border-radius: 10px; /* Bordes redondeados */
-  transition: border 0.3s ease-in-out; /* Transición suave */
+    linear-gradient(-45deg, #8c7496, 10%, rgb(233, 231, 231) 40%);
 }
 
 .text {
@@ -102,10 +95,13 @@
   transform: translateX(0);
   justify-content: center; /* Centrado horizontal */
   align-items: center; /* Centrado vertical */
+  color: #6C566D;
+  font-style: bold;
+  font-weight: 500;
 }
 
 .bookCard:hover .tittle {
-  animation: scrollText 10s linear forwards; 
+  animation: scrollText 10s linear forwards;
 }
 
 .bookCard .tittle {
@@ -133,7 +129,6 @@
   border-radius: 4px;
   margin:5%;
 
-  border: 4px solid rgb(176, 187, 126); /* Marco del mismo color que el fondo */
   border-radius: 10px; /* Bordes redondeados */
   transition: border 0.3s ease-in-out; /* Transición suave */
 }
@@ -150,21 +145,25 @@
 }
 
 .author {
-  color: black;
+  color: #6C566D;
   text-align: left;
   flex: 1; /* Ocupa el espacio disponible */
   overflow: hidden;
   text-overflow: ellipsis; /* Muestra "..." si el texto es muy largo */
   white-space: nowrap;
   padding-right: 4px;
-  font-size: 0.8em;  
+  font-size: 0.8em;
+  font-style: bold;  
+  font-weight: 400;
 }
 
 .rating {
-  color: black;
+  color: #6C566D;
   text-align: right;
   flex-shrink: 0; /* Evita que el rating se reduzca */
   margin-left: 10px; /* Espaciado entre el autor y el rating */
+  font-style: bold;
+  font-weight: 400;
 }
 
 
@@ -181,7 +180,7 @@
   justify-content: flex-start; /* Alinea todo el contenido a la izquierda */
   align-items: center; /* Centra verticalmente */
   width: 100%;
-  gap: 20px; /* Espaciado entre los elementos */
+  margin-bottom: 10px;
 }
 
 .searchBar {

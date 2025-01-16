@@ -43,9 +43,7 @@
   .workspace:hover {
     transform: scale(1.03); /* Efecto de zoom */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
-    background:  
-    linear-gradient(-135deg, rgba(225, 240, 238, 0.863) 10%, rgba(180, 120, 255, 0.5) 100%),
-    linear-gradient(135deg, rgba(214, 186, 248, 0.5) 10%, rgba(212, 211, 214, 1) 40%);
+    background-color: #7d5e7d;
   }
   
   /* Botón de navegación */
