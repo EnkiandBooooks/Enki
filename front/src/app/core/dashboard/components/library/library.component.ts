@@ -50,7 +50,12 @@ export class LibraryComponent{
     // Suscribirse a los cambios en las categorías seleccionadas
     this.categoryService.selectedCategories$.subscribe((categories) => {
       this.selected = categories; // Actualiza las categorías seleccionadas
-      this.loadBook(); // Recarga los libros con el filtro actualizado
+      this.loadBook();// Recarga los libros con el filtro actualizado
+    });
+
+    this.categoryService.search$.subscribe((search) =>{
+      this.search = search;
+      this.loadBook();
     });
 
     this.loadBook(); // Cargar libros inicialmente

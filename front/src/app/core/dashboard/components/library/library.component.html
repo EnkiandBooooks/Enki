@@ -2,23 +2,7 @@
   <!-- Contenedor desplazable para el buscador y los libros -->
   <div class="books-scroll-container">
     <!-- Contenedor del buscador y categorías -->
-    <div class="findContainer">
-      <mat-form-field class="searchBar">
-        <mat-label>Find your book</mat-label>
-        <input matInput (keyup)="loadBook()" [(ngModel)]="this.search">
-      </mat-form-field>
-
-      <div class="categories"> 
-        <mat-button-toggle-group [multiple]="true" class="categoryButtons">
-          <mat-button-toggle *ngFor="let category of categories"
-            (change)="toggleCategory($event, category)"
-            color="primary"
-            class="categoryButton">
-            {{ category }}
-          </mat-button-toggle>
-        </mat-button-toggle-group>
-      </div>
-    </div>
+    
 
     <!-- Contenedor con desplazamiento para los libros -->
     <div class="books-grid">

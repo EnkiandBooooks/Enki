@@ -1,18 +1,23 @@
 /* Contenedor de los botones */
+.toolscontainer{
+  display: flex;
+}
 .categoryButtons {
     display: flex; 
     flex-wrap: wrap;
-    gap: 5px; 
+    gap: 1px; 
     justify-content: flex-end;
     border: none; 
-    padding: 0; 
+    padding: 10px; 
+    box-shadow: none !important;
+    
   }
   
   /* Estilo para cada botón (ahora cuadro con borde redondeado) */
   .categoryButton {
     border-radius: 12px; 
     margin: 2px; 
-    padding: 6px 12px; 
+    
     font-size: 12px; 
     transition: background-color 0.3s ease; 
     height: 36px; 
@@ -25,13 +30,14 @@
     border: 1px solid #ccc;
     background-color: #66576c; 
     color: white; 
+
+    
   }
   
   /* Fondo blanco al pasar el cursor */
   .categoryButton:hover {
     background-color: white; 
     transform: scale(1.05); 
-    border-color: #007bff; 
+    border-color:white; 
     color: black; 
   }
-  

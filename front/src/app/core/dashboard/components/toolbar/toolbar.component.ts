@@ -24,7 +24,9 @@ import { CommunitylistComponent } from '../communitylist/communitylist.component
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CategoryService } from '../../../../shared/services/category.service';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-toolbar',
@@ -50,6 +52,9 @@ import { CategoryService } from '../../../../shared/services/category.service';
     RouterOutlet,
     CommunitylistComponent,
     MatButtonToggleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule
   ],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.css'
@@ -58,6 +63,7 @@ export class ToolbarComponent {
   categories = ['Fantasy', 'Manga', 'History', 'Comic', 'Fiction', 'Novels', 'Literature', 'Science'];
   selected: string[] = [];
   @Input() currentSection = "";
+  search: string = '';
 
   constructor(private categoryService: CategoryService) {}
 
@@ -68,6 +74,9 @@ export class ToolbarComponent {
       this.selected = this.selected.filter((c) => c !== category);
     }
     this.categoryService.updateCategories(this.selected); // Actualiza las categorías en el servicio
+  }
+  updateSearchValue(search: string): void {
+    this.categoryService.updateSearch(search);
   }
 }
 

@@ -1,13 +1,25 @@
-<div *ngIf="currentSection === 'library'" class="categories">
-  <mat-button-toggle-group [multiple]="true" class="categoryButtons">
-    <mat-button-toggle
-      *ngFor="let category of categories"
-      (change)="toggleCategory($event, category)"
-      color="primary"
-      class="categoryButton">
-      {{ category }}
-    </mat-button-toggle>
-  </mat-button-toggle-group>
+<div *ngIf="currentSection === 'library'" class="toolscontainer">
+  <div  class="categories">
+    <mat-button-toggle-group
+      appearance="legacy"
+      [multiple]="true"
+      class="categoryButtons"
+    >
+      <mat-button-toggle
+        *ngFor="let category of categories"
+        (change)="toggleCategory($event, category)"
+        color="primary"
+        class="categoryButton"
+      >
+        {{ category }}
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <mat-form-field class="searchBar">
+    <mat-label>Find your book</mat-label>
+    <input matInput [(ngModel)]="this.search" (keyup)="updateSearchValue(search)"/>
+  </mat-form-field>
 </div>
 
 <!-- <p>estamos en {{currentSection}}</p> -->
