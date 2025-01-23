@@ -116,3 +116,27 @@
   border-radius: 10px;
   line-height: 1.5;
 }
+
+.waviy {
+  position: relative;
+  margin: 40px auto; /* Agrega margen arriba y abajo, y centra el div horizontalmente */
+  text-align: center; /* Centra el contenido dentro del div */
+  width: fit-content;
+}
+
+.waviy span {
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  display: inline-block;
+  font-size: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  animation: flip 5s infinite;
+  animation-delay: calc(.2s * var(--i));
+}
+
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}
