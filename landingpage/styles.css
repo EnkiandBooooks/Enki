@@ -141,3 +141,48 @@
     transform: rotateY(360deg) 
   }
 }
+
+
+.scroll-horizontal-container {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden; /* Evita desbordamiento horizontal fuera de este contenedor */
+}
+
+.scroll-inner {
+  width: 100%; /* Dependerá del número de secciones */
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.scroll-section {
+  flex: 0 0 100%; /* Cada sección ocupa el 100% del viewport */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  background-color: rgba(0, 0, 0, 0.5);
+  flex-direction: column;
+  gap: 20%;
+}
+
+.scroll-section img {
+  width: 50%; /* Ajusta el tamaño de la imagen */
+  max-width: 400px; /* Establece un tamaño máximo */
+  height: auto; /* Mantén las proporciones de la imagen */
+  margin-top: 20px; /* Espacio superior */
+  border-radius: 10px; /* Opcional: añade bordes redondeados */
+  box-shadow: 0 4px 8px rgba(161, 238, 219, 0.5); /* Opcional: añade un efecto de sombra */
+}
+
+.firstContainer img{
+  border-radius: 10px; /* Opcional: añade bordes redondeados */
+  box-shadow: 0 4px 8px rgba(216, 161, 238, 0.5); /* Opcional: añade un efecto de sombra */
+}
+
+.lastContainer img {
+  border-radius: 10px; /* Opcional: añade bordes redondeados */
+  box-shadow: 0 4px 8px rgba(216, 161, 238, 0.5); /* Opcional: añade un efecto de sombra */
+}
