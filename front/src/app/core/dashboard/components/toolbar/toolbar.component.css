@@ -1,6 +1,8 @@
 /* Contenedor de los botones */
 .toolscontainer{
   display: flex;
+  max-height: 100%;
+  align-items: center;
 }
 .categoryButtons {
     display: flex; 
@@ -8,16 +10,16 @@
     gap: 1px; 
     justify-content: flex-end;
     border: none; 
-    padding: 10px; 
+    padding: 1px 0px; 
     box-shadow: none !important;
-    
+    min-height: 100%;
+    align-items: center;
   }
   
   /* Estilo para cada botón (ahora cuadro con borde redondeado) */
   .categoryButton {
     border-radius: 12px; 
     margin: 2px; 
-    
     font-size: 12px; 
     transition: background-color 0.3s ease; 
     height: 36px; 
@@ -41,3 +43,14 @@
     border-color:white; 
     color: black; 
   }
+
+  .searchBar{
+    margin-bottom: -1.25em;
+  }
+  .toolscontainer-left{
+    /*align it to left */
+    margin-left: 1em;
+    
+
+  }
+ 

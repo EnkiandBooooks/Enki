@@ -16,11 +16,35 @@
     </mat-button-toggle-group>
   </div>
 
-  <mat-form-field class="searchBar">
+  <mat-form-field class="searchBar" >
     <mat-label>Find your book</mat-label>
     <mat-icon matSuffix>search</mat-icon>
-    <input matInput [(ngModel)]="this.search" (keyup)="updateSearchValue(search)"/>
+    <input matInput [(ngModel)]="this.search" (keyup)="updateSearchValue(search)" />
   </mat-form-field>
+</div>
+
+
+<div *ngIf="currentSection === 'workspace'" class="toolscontainer-left" >
+  <button
+        mat-raised-button
+        style="color: #525252;"
+        color="primary"
+        
+        >
+        Delete community
+       
+      </button>
+      <button
+        mat-raised-button
+        style="color: #525252;"
+        color="primary"
+        
+        >
+        Share
+       
+      </button>
+      
+      
 </div>
 
 <!-- <p>estamos en {{currentSection}}</p> -->
