@@ -7,14 +7,14 @@
 }
 
 #main-nav {
-   position: relative;
+  position: relative;
   top: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  color: white;
+  color: rgb(252, 0, 0);
   z-index: 1000; /* Mantiene el nav encima de todo */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  padding: 30px 0;
+  padding: 30px 0; 
 }
 
 .nav-container {
@@ -98,6 +98,7 @@
 }
 
 .text-container {
+  margin-top: 10%;
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
 }
@@ -132,7 +133,7 @@
   color: #fff;
   text-transform: uppercase;
   animation: flip 5s infinite;
-  animation-delay: calc(.2s * var(--i));
+  animation-delay: calc(.3s * var(--i));
 }
 
 @keyframes flip {
