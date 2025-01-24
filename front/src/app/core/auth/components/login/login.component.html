@@ -1,9 +1,7 @@
 <div class="login-container">
   <!-- Contenedor para el logo y el lettering -->
-  <div class="login-logo-container">
-    <img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Logo" class="login-logo">
-    <img src="images/LETTERING_FINAL_WHITE.png" alt="Letter" class="login-letter">
-  </div>
+  <div class="left-side"></div>
+  <div class = "right-side">
 
   <!-- Formulario de inicio de sesión -->
   <mat-card class="login-card">
@@ -13,30 +11,34 @@
           <mat-label>Name</mat-label>
           <input matInput type="text" [(ngModel)]="username" name="username" required>
         </mat-form-field>
+        <a class="forgot" href="/auth/register1">Forgot password?</a>
         <mat-form-field class="full-width">
           <mat-label>Password</mat-label>
+          
           <input matInput [type]="hide() ? 'password' : 'text'" [(ngModel)]="password" name="password" required minlength="8" />
           <button mat-icon-button matSuffix (click)="clickEvent($event)" type="button">
             <mat-icon>{{ hide() ? 'visibility_off' : 'visibility' }}</mat-icon>
           </button>
         </mat-form-field>
+        <br>
+        <div class="g-recaptcha" data-sitekey="6LftFJEqAAAAAMsugjoDFn7ZhLQVdu5cuEzyHAOR"></div>
         <div class="button-container">
           <button mat-raised-button color="primary" type="submit">Login</button>
         </div>
-        <br>
-        <div class="g-recaptcha" data-sitekey="6LftFJEqAAAAAMsugjoDFn7ZhLQVdu5cuEzyHAOR"></div>
       </form>
     </mat-card-content>
     <mat-card-actions>
-      <span>You don't have an account yet?</span>
+      <div class="register">
+      <span class="noaccount">You don't have an account yet?</span>
+      <a class="newaccount" href="/auth/register1">Register now</a>
       <div class="button-container">
-        <button mat-button color="accent" [routerLink]="['/auth/register1']">Register</button>
+      </div>
+        <!-- <button mat-button color="accent" [routerLink]="['/auth/register1']">Create new account</button> -->
+        <!-- <button mat-button color="accent" [routerLink]="['/auth/resetPswd1']">Recover your password</button> -->
       </div>
       <br>
-      <span>Have you forgotten the password?</span>
-      <div class="button-container">
-        <button mat-button color="accent" [routerLink]="['/auth/resetPswd1']">Recover</button>
-      </div>
+      <!-- <span>Have you forgotten the password?</span> -->
     </mat-card-actions>
   </mat-card>
+</div>
 </div>

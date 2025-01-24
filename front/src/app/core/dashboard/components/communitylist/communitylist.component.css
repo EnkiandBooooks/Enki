@@ -1,0 +1,65 @@
+.communities-container{
+  display: block;
+  padding: 1rem;
+  overflow-y: auto; 
+  width: 200px; 
+  margin: 0 auto;
+  position: fixed;
+  padding-bottom: 50px;
+  scrollbar-gutter: stable;
+}
+
+@media (min-width: 100px) {
+.communities-container{
+  height: 10vh;
+}}
+
+@media (min-width: 1500px) {
+  .communities-container{
+    height: 40vh;
+  }}
+
+  .communities-container::-webkit-scrollbar {
+    display: none; 
+  }
+  
+  .workspace {
+    background-color: #F1F1F1; 
+    margin-bottom: 10px; 
+    padding: 10px 20px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    height: 50px; 
+    color: white; 
+    cursor: pointer; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #555; 
+    border-radius: 0;
+  }
+  
+  .workspace:hover {
+    transform: scale(1.03); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+    background-color: #7d5e7d;
+  }
+  
+  .workspace .nav-button {
+    font-size: 1rem; 
+    font-weight: bold; 
+    text-decoration: none;
+    color: #555; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  
+  h6 {
+    padding-top: 3em;
+    text-align: center;
+    font-weight: bold;
+    color: #66576c
+  }
+  

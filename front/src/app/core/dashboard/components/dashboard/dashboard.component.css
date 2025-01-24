@@ -16,7 +16,7 @@
 
 .mat-sidenav {
   width: 250px;
-  background: linear-gradient(to bottom, #3f3b42, #66576C);
+  background: linear-gradient(to bottom, #fefcff, #ffffff);
   color: white;
   display: flex;
   align-items: center;
@@ -66,7 +66,7 @@ h6 {
 
 /* Estilo de los botones de navegación */
 .nav-button {
-  color: white !important;
+  color: #66576c !important;
   font-size: 18px;
   padding: 20px 30px;
   width: 100%;
@@ -83,8 +83,8 @@ h6 {
 
 
 .nav-button-createcommunity{
-  color: #3f3b42 !important;
-  background-color: white;
+  color: #66576c !important;
+  background: white;
   height: 100px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   font-size: 15px;
@@ -103,7 +103,7 @@ h6 {
 
 /* Barra de herramientas */
 .mat-toolbar {
-  background-color: #c1b5c2;
+  background-color:#9C7AAA;
   color: white;
   justify-content: space-between;
   height: 64px;
@@ -120,7 +120,7 @@ h6 {
   flex-direction: column;
   flex-grow: 1;
   height: 100%;
-  background-color: #f5f5f5;
+  background-color: rgb(255, 255, 255);
   box-sizing: border-box;
 }
 
@@ -225,7 +225,7 @@ mat-menu-item {
 
 .logout-button {
   font-weight: bold;
-  color: #d32f2f;
+  color: #dfdfdf;
 }
 
 .logout-button:hover {
@@ -262,4 +262,37 @@ mat-menu-item {
   height: 100%;
   display: flex;
   align-items: center;
+}
+
+.dashboard-content {
+  display: flex;
+  flex-direction: column; /* Estructura vertical */
+  height: 100%; /* Ocupa todo el alto disponible */
+}
+
+.community-list {
+  flex: 0 0 33.33%; /* Un tercio del alto total */
+  background-color: #f8f8f8;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Por si el contenido es demasiado */
+  border-radius: 8px;
+}
+
+.main-content {
+  flex: 1; /* Ocupa el resto del espacio */
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.nav-community-list{
+  background-color: pink;
+  padding: 10em;
+  margin: 0;
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: column;  
 }

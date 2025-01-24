@@ -27,6 +27,7 @@
   justify-content: flex-start; /* Organiza los elementos de arriba hacia abajo */
   align-items: center;
   width: 150%; /* El formulario ocupa todo el ancho disponible */
+  
   max-width: 800px; /* Limita el ancho máximo del formulario */
   background-color: #ffffff; /* Fondo blanco para la tarjeta */
   padding: 20px;
