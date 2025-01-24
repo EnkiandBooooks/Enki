@@ -46,3 +46,19 @@ setInterval(() => {
 // Aplicamos inicialmente el primer gradiente
 applyGradient(canvas, gradient1);
 });
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault(); // Evita el salto directo
+    const target = document.querySelector(this.getAttribute('href')); // Selecciona la sección objetivo
+
+    if (target) {
+      const top = target.getBoundingClientRect().top + window.scrollY; // Calcula la posición absoluta
+      window.scrollTo({
+        top: top,
+        behavior: 'smooth' // Comportamiento de desplazamiento suave
+      });
+    }
+  });
+});
