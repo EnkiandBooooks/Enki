@@ -36,4 +36,11 @@ export class workspaceService {
       console.log("Holi"+`${this.url}/listUsers/${id}`+"Adiosi");
       return this.http.get(`${this.url}/listUsers/${id}`);
     }
+    deleteCommunity(id:any):Observable<any>{
+      return this.http.delete(`${this.url}/delete/${id.workspaceId}`);
+    }
+    getPublicWorkspaces(privacy: "public"): Observable<any> {
+      return this.http.post(`${this.url}/homedashInfo`, { privacy });
+    }
+    
 }

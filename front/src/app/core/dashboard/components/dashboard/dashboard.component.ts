@@ -4,7 +4,7 @@ import { ProfileComponent } from '../../../auth/components/profile/profile.compo
 import { HomedashComponent } from '../homedash/homedash.component';
 import { LibraryComponent } from '../library/library.component';
 import { CookieService } from 'ngx-cookie-service';
-import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,6 +19,8 @@ import { TimelineComponent } from '../workspace/timeline/timeline.component';
 import { CommentboxComponent } from '../workspace/commentbox/commentbox.component';
 import { WorkspaceComponent } from '../workspace/workspace.component';
 import { LoadingService } from '../../../../shared/services/loading.service';
+import { CommunitylistComponent } from '../communitylist/communitylist.component';
+import { ToolbarComponent } from '../toolbar/toolbar.component';
 
 
 @Component({
@@ -44,7 +46,9 @@ import { LoadingService } from '../../../../shared/services/loading.service';
     CommentboxComponent,
     WorkspaceComponent,
     RouterLink,
-    RouterOutlet
+    RouterOutlet,
+    CommunitylistComponent,
+    ToolbarComponent
   ]
 })
 export class DashboardComponent {
@@ -60,10 +64,14 @@ export class DashboardComponent {
     private cookieService: CookieService,
     private router: Router,
     private authService: AuthService,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private route: ActivatedRoute
   ) {}
 
   async ngOnInit() {
+    
+    this.selectedSection = this.router.url.split("/")[2] || "home"; //Para soportar recarga de página
+
     this.loadingService.show();
     this.cookieExists = this.cookieService.check("access_token") || this.cookieService.check("refresh_token");
     if (this.cookieExists) {
@@ -80,31 +88,29 @@ export class DashboardComponent {
     }else {
       this.loadingService.hide();
     }
+    
   }
 
 
   showSection(section: string) {
     this.selectedSection = section;
     this.cdr.detectChanges();
+    this.router.navigate(["/dashboard/"+section])
     
-    if(section === "workspace"){
-
-      this.router.navigate(['/']).then(() => { this.router.navigate(['/dashboard/workspace', this.currentWorkspaceId ])});
-    }else{
-      this.router.navigate(["/dashboard/"+section])
-    }
-  
-}
+  }
 
   onLogout() {
     this.cookieService.delete('access_token', '/', 'localhost');
     this.cookieService.delete('refresh_token', '/', 'localhost');
     window.location.href = '../landingpage/landingpage.html';
   }
+
   setCurrentWorkspaceId(id:string){
     this.currentWorkspaceId = id;
   }
-  
+
+  onSectionChange(event: {section: string, workspaceId: string}) {
+    this.selectedSection = event.section;
+    this.currentWorkspaceId = event.workspaceId;
+  }
 }
-
-

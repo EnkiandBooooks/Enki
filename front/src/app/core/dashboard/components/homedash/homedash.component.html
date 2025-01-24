@@ -1,25 +1,50 @@
 <div class="home-content">
+
+  <!-- Carrusel de libros -->
+  <button mat-button (click)="showLibrary()">Go to Library</button>
   <div class="gallery-container">
-    <button mat-icon-button (click)="prevSlide()" class="nav-button prev" [disabled]="currentIndex === 0">
+    <button mat-icon-button (click)="prevSlideBooks()" class="nav-button prev" [disabled]="currentBookIndex === 0">
       <mat-icon>chevron_left</mat-icon>
     </button>
     
     <div class="movies-container">
-      <div class="movies-slider" [style.transform]="translateX">
+      <div class="movies-slider" [style.transform]="translateXBooks">
         <mat-card *ngFor="let book of books; let i = index" class="movie-card">
           <mat-card-header>
             <mat-card-subtitle>{{ book.title }}</mat-card-subtitle>
-            <mat-card-subtitle>⭐   {{ book.rating }} / 5</mat-card-subtitle>
+            <mat-card-subtitle>⭐ {{ book.rating }} / 5</mat-card-subtitle>
           </mat-card-header>
-          <img mat-card-image [src]="book.largeThumbnail" [alt]="book.title">
+          <img mat-card-image [src]="book.largeThumbnail" [alt]="book.title" />
         </mat-card>
       </div>
     </div>
     
-    <button mat-icon-button (click)="nextSlide()" class="nav-button next" [disabled]="currentIndex >= (totalBooks / maxVisibleSlides) - 1">
+    <button mat-icon-button (click)="nextSlideBooks()" class="nav-button next" [disabled]="currentBookIndex >= (totalBooks / maxVisibleSlides) - 1">
       <mat-icon>chevron_right</mat-icon>
     </button>
   </div>
-  <button mat-button (click)="showLibrary()">Go to Library</button>
-  <p>Total books: {{ totalBooks }}</p>
+  
+
+  <!-- Carrusel de workspaces -->
+  <button mat-button (click)="showLibrary()">Go to Workspaces</button>
+  <div class="gallery-container">
+    <button mat-icon-button (click)="prevSlideWorkspaces()" class="nav-button prev" [disabled]="currentWorkspaceIndex === 0">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    
+    <div class="movies-container">
+      <div class="movies-slider" [style.transform]="translateXWorkspaces">
+        <mat-card *ngFor="let workspace of workspaces; let i = index" class="movie-card">
+          <mat-card-header>
+            <mat-card-subtitle>{{ workspace.workSpaceName }}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image [src]="workspace.book?.bookImage" [alt]="workspace.workSpaceName" />
+        </mat-card>
+      </div>
+    </div>
+    
+    <button mat-icon-button (click)="nextSlideWorkspaces()" class="nav-button next" [disabled]="currentWorkspaceIndex >= (workspaces.length / maxVisibleSlides) - 1">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
 </div>

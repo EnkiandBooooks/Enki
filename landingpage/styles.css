@@ -7,14 +7,14 @@
 }
 
 #main-nav {
-  position: absolute;
+  position: relative;
   top: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  z-index: 1000;
+  color: rgb(252, 0, 0);
+  z-index: 1000; /* Mantiene el nav encima de todo */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  padding: 30px 0;
+  padding: 30px 0; 
 }
 
 .nav-container {
@@ -87,70 +87,102 @@
   align-items: center;
 }
 
-.title {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  white-space: nowrap;
-  animation: move-title 10s linear infinite; /* Ahora 10 segundos */
-  overflow: hidden;
-  color: white;
+.main_content img {
+  display: block; /* Comportamiento de bloque estándar */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  width: 80%; /* Escala la imagen de manera responsiva */
+  max-width: 80%; /* Limita el ancho máximo */
+  height: auto; /* Mantiene las proporciones */
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
-/* Contenedor principal para centrar todo */
-.center-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  margin-top: 100px; /* Ajusta la distancia desde la parte superior */
-}
-
-/* Estilo para la imagen */
-.center-content img {
-  max-width: 100px; /* Reduce el tamaño de la imagen */
-  height: auto;
-  margin-bottom: 20px; /* Espacio entre la imagen y el título */
-}
-
-@keyframes move-title {
-  0% {
-      transform: translateX(-100%);
-      opacity: 0;
-  }
-  20% {
-      transform: translateX(0);
-      opacity: 1;
-  }
-  80% {
-      transform: translateX(100vw);
-      opacity: 0;
-  }
-  100% {
-      transform: translateX(-100%);
-      opacity: 0;
-  }
+.text-container {
+  margin-top: 10%;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
 }
 
 .split_text {
-  position: absolute;
-  z-index: 2; /* Asegura que el texto esté encima del canvas */
+  z-index: 2; /* Asegura que esté debajo de la imagen */
   font-family: 'Playfair Display', serif;
   color: white;
   font-size: 3rem;
   width: 80%;
   margin: auto;
-  left: 10%;
-  top: 75%;
+  top: 50px; /* Ajusta el espacio entre el texto y la imagen */
+  bottom: 50px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.5);
   padding: 40px;
   border-radius: 10px;
   line-height: 1.5;
+}
+
+.waviy {
+  position: relative;
+  margin: 40px auto; /* Agrega margen arriba y abajo, y centra el div horizontalmente */
+  text-align: center; /* Centra el contenido dentro del div */
+  width: fit-content;
+}
+
+.waviy span {
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  display: inline-block;
+  font-size: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  animation: flip 5s infinite;
+  animation-delay: calc(.3s * var(--i));
+}
+
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}
+
+
+.scroll-horizontal-container {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden; /* Evita desbordamiento horizontal fuera de este contenedor */
+}
+
+.scroll-inner {
+  width: 100%; /* Dependerá del número de secciones */
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.scroll-section {
+  flex: 0 0 100%; /* Cada sección ocupa el 100% del viewport */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  background-color: rgba(0, 0, 0, 0.5);
+  flex-direction: column;
+  gap: 20%;
+}
+
+.scroll-section img {
+  width: 50%; /* Ajusta el tamaño de la imagen */
+  max-width: 400px; /* Establece un tamaño máximo */
+  height: auto; /* Mantén las proporciones de la imagen */
+  margin-top: 20px; /* Espacio superior */
+  border-radius: 10px; /* Opcional: añade bordes redondeados */
+  box-shadow: 0 4px 8px rgba(161, 238, 219, 0.5); /* Opcional: añade un efecto de sombra */
+}
+
+.firstContainer img{
+  border-radius: 10px; /* Opcional: añade bordes redondeados */
+  box-shadow: 0 4px 8px rgba(216, 161, 238, 0.5); /* Opcional: añade un efecto de sombra */
+}
+
+.lastContainer img {
+  border-radius: 10px; /* Opcional: añade bordes redondeados */
+  box-shadow: 0 4px 8px rgba(216, 161, 238, 0.5); /* Opcional: añade un efecto de sombra */
 }

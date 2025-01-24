@@ -19,5 +19,7 @@ workspacesRouter.get('/get/:id', verifyJWT, WorkspaceController.getInfoWorkspace
 workspacesRouter.delete('/delete/:id', verifyJWT, WorkspaceController.deleteWorkspace);
 workspacesRouter.get('/addUser/:id', verifyJWT, WorkspaceController.addUserWorkspace);
 workspacesRouter.post('/deleteUser', verifyJWT, WorkspaceController.deleteUserWorkspace);
+workspacesRouter.post('/homedashInfo', verifyJWT, WorkspaceController.showWorkspaceHomeDash);
+
 
   
