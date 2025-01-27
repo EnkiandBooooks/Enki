@@ -59,10 +59,7 @@
 mat-form-field {
   width: 100%;
 }
-mat-label{
-  color: #525252;
-  opacity: 40%;
-}
+
 
 /* Estilos para los botones */
 .button-container {

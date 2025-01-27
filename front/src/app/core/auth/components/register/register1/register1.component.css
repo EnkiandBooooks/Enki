@@ -1,4 +1,4 @@
-/* Contenedor principal: Centrar logo y tarjeta de login */
+/* Contenedor principal: Dividir en dos secciones */
 .login-container { 
   display: flex;
   justify-content: center;
@@ -6,8 +6,9 @@
   box-sizing: border-box; /* Asegura que el padding se respete */
 }
 
+/* Lado Izquierdo: Imagen de Fondo */
 .left-side{
-  width: 70%;
+  width: 60%; /* Ajustado para que sumen 100% con el lado derecho */
   background-image: url('../../../../../../../public/images/prueba1.png');
   background-color: black;
   background-size: cover;
@@ -15,15 +16,18 @@
   background-repeat: no-repeat;
 }
 
+/* Lado Derecho: Fondo de Color, Dirección de Flexbox en Columna */
 .right-side{
-  width: 50%;
+  width: 40%; /* Ajustado para que sumen 100% con el lado izquierdo */
   background-color: #f1f1f1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* Cambiar la dirección a columna */
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
   padding: 20px;
   box-sizing: border-box;
 }
+
 /* Estilo de la tarjeta de login */
 .login-card {
   width: 100%; /* Usar todo el ancho disponible */
@@ -43,8 +47,8 @@
 }
 
 .youremail{
-color: black;
-padding-left: 20px;
+  color: black;
+  padding-left: 20px;
 }
 
 mat-card-title {
@@ -71,6 +75,7 @@ mat-card-actions button:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Estilo para los botones */
 .button-container button {
   background-color: #66576c; /* Fondo oscuro */
   color: rgb(255, 255, 255); /* Texto blanco */
@@ -87,18 +92,32 @@ mat-card-actions button:hover {
 
 /* Estilo para el logo */
 .login-logo, .login-letter {
-flex-direction: column;
-  max-width: 450px; /* Ajustamos el tamaño del logo */
+  display: block;
+  max-width: 240px; /* Ajustamos el tamaño del logo */
   width: 100%;
   opacity: 0.85;
 }
 
+.login-letter{
+  margin: 30px;
+}
+
 /* Estilos responsivos */
 @media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .left-side, .right-side {
+    width: 100%;
+    height: auto;
+  }
+
   .login-card {
     width: 95%; /* Mantener un ancho casi completo */
     margin: 10px; /* Reducir margen */
   }
+  
 
   .login-logo, .login-letter {
     max-width: 150px; /* Reducimos el tamaño del logo en pantallas medianas */
