@@ -32,7 +32,7 @@
   max-width: 450px;
   padding: 15px; /* Aumenta el padding para mejor estética */
   background-color: #f1f1f1;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   color: #e8e8e8; /* Color de texto */
 }
