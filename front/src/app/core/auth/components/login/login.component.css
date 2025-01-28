@@ -42,13 +42,15 @@
 }
 
 .login-letter {
-  margin-top: 10px; /* Espacio entre el logo y el lettering */
+  margin: 10px; /* Espacio entre el logo y el lettering */
+
 }
 
 /* Estilo de la tarjeta de login */
 .login-card {
   width: 100%;
-  max-width: 450px;
+  max-width: 100%;
+  width: 525px;
   padding: 15px; /* Aumenta el padding para mejor estética */
   background-color: #f1f1f1;
   box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.2);

@@ -10,12 +10,12 @@
 
     <!-- Tarjeta de Login -->
     <mat-card class="login-card">
-      <p class="youremail">Enter your email:</p>
+      <!-- <p class="youremail">Enter your email:</p> -->
       
       <mat-card-content>
         <form (ngSubmit)="onSubmit(emailInput.value)" ngNativeValidate>
           <mat-form-field class="full-width">
-            <mat-label>email</mat-label>
+            <mat-label>Enter your email </mat-label>
             <input matInput type="email" [(ngModel)]="email" name="email" #emailInput required>
           </mat-form-field>
           

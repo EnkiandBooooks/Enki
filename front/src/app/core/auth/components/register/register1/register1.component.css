@@ -33,7 +33,7 @@
   width: 100%; /* Usar todo el ancho disponible */
   max-width: 550px; 
   padding: 20px;
-  padding-top: 40px;
+  padding-top: 20px;
   background-color: #f1f1f1;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
   border-radius: 12px; /* Bordes redondeados */
