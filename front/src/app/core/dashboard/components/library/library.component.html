@@ -2,31 +2,34 @@
   <!-- Contenedor desplazable para el buscador y los libros -->
   <div class="books-scroll-container">
     <!-- Contenedor del buscador y categorías -->
-    <div class="findContainer">
-      <mat-form-field class="searchBar">
-        <mat-label>Find your book</mat-label>
-        <input matInput (keyup)="loadBook()" [(ngModel)]="this.search">
-      </mat-form-field>
+     <div class="base_elements">
+     <h2>Library</h2>
+     <div class="text-and-image">
+      <p>In this section you will be able to find for what you're searching, go ahead!</p>
 
-      <div class="categories">
-        <mat-button-toggle-group [multiple]="true" class="categoryButtons">
-          <mat-button-toggle *ngFor="let category of categories"
-            (change)="toggleCategory($event, category)"
-            color="primary"
-            class="categoryButton">
-            {{ category }}
-          </mat-button-toggle>
-        </mat-button-toggle-group>
-      </div>
+      
+
+     </div>
     </div>
 
     <!-- Contenedor con desplazamiento para los libros -->
     <div class="books-grid">
-      <div class="bookCard" *ngFor="let book of books | paginate: { itemsPerPage: booksPerPage, currentPage: p }">
+      <div class="bookCard" *ngFor="let book of books | paginate: { itemsPerPage: booksPerPage, currentPage: p }"
+                  (mouseenter)="onMouseEnter(book)"
+                  (mouseleave)="onMouseLeave(book)">
+        <div class="text">
+          
+          @if (!book.isHovered && !book.isOverflow) {
+            <p class="tittle">{{ book.title }}</p>
+            }@else {
+              <marquee class="tittle">{{ book.title }}</marquee>
+            }
+
+        </div>
         <img [src]="book.largeThumbnail" alt="Imagen del libro" class="book-image" />
-        <div class="textBox">
-          <p class="tittle">{{ book.title }}</p>
-          <p>⭐{{ book.rating }}/5</p>
+        <div class="book-details">
+          <p class="author">{{ book.authors }}</p>
+          <p class="rating">⭐{{ book.rating }}/5</p>
         </div>
       </div>
     </div>

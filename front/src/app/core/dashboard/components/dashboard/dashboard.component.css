@@ -8,6 +8,7 @@
 
 /* Contenedor de sidenav */
 .mat-sidenav-container {
+  
   height: 100%;
   width: 100%;
   box-sizing: border-box;
@@ -59,7 +60,7 @@ h6 {
 }
 
 .sidebar-logo-img {
-  max-width: 140px;
+  max-width: 50%;
   opacity: 0.85;
 }
 
@@ -83,7 +84,7 @@ h6 {
 
 .nav-button-createcommunity{
   color: #66576c !important;
-  background-color: white;
+  background: white;
   height: 100px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   font-size: 15px;
@@ -102,7 +103,7 @@ h6 {
 
 /* Barra de herramientas */
 .mat-toolbar {
-  background-color: #c1b5c2;
+  background-color:#9C7AAA;
   color: white;
   justify-content: space-between;
   height: 64px;

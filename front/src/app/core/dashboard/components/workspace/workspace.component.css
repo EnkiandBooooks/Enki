@@ -1,7 +1,9 @@
 .book-image {
-  width: 80%; 
+  max-width: 90%;
   height: auto;
-  max-height: 80%; 
+  max-height: 90%;
+  margin-top: 5%;
+  margin-bottom: 10%;
 }
 
 .mat-grid-list{

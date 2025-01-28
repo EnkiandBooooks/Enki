@@ -1,12 +1,13 @@
 #gradient-wrapper {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   display: flex;
+  z-index: -1;
 }
 
 #main-nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
