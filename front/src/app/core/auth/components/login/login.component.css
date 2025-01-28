@@ -20,10 +20,29 @@
   width: 50%;
   background-color: #f1f1f1; /* Color deseado para el lado derecho */
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+  flex-direction: column; /* Apilar logo y formulario en columna */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
   padding: 20px;
   box-sizing: border-box;
+}
+
+/* Nuevo contenedor para logo y lettering */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px; /* Espacio debajo del logo */
+}
+
+.login-logo, .login-letter {
+  display: block;
+  max-width: 200px; /* Ajustamos el tamaño del logo */
+  width: 100%;
+  margin: 0 auto; /* Centramos horizontalmente */
+  opacity: 0.85;
+}
+
+.login-letter {
+  margin-top: 10px; /* Espacio entre el logo y el lettering */
 }
 
 /* Estilo de la tarjeta de login */
@@ -35,11 +54,6 @@
   box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   color: #e8e8e8; /* Color de texto */
-}
-
-.login-logo{
-  display: fl;
-  max-width: 100px;
 }
 
 /* Estilos para los campos del formulario */
@@ -56,10 +70,10 @@
 .forgot:hover {
   text-decoration: underline; /* Añade subrayado al pasar el cursor */
 }
+
 mat-form-field {
   width: 100%;
 }
-
 
 /* Estilos para los botones */
 .button-container {
@@ -67,16 +81,24 @@ mat-form-field {
   margin-top: 30px;
 }
 
-.noaccount{
+.noaccount {
   color: #050505 !important;
   font-size: 80%;
   margin-right: 2%;
 }
 
-
 .button-container button {
   width: 100%;
   margin-bottom: 2%;
+  background-color: #66576c; /* Fondo oscuro */
+  color: white; /* Texto blanco */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.button-container button:hover {
+  background-color: #7d5e7d; /* Cambiar el fondo al pasar el cursor */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
 }
 
 /* Estilos para las acciones de la tarjeta */
@@ -106,19 +128,6 @@ mat-card-actions button:hover {
   display: flex;
   justify-content: center; /* Centra horizontalmente */   
   margin-bottom: 10px; 
-}
-
-/* Botones principales */
-.button-container button {
-  background-color: #66576c; /* Fondo oscuro */
-  color: white; /* Texto blanco */
-  border-radius: 8px; /* Bordes redondeados */
-  transition: background-color 0.3s ease; /* Transición suave */
-}
-
-.button-container button:hover {
-  background-color: #7d5e7d; /* Cambiar el fondo al pasar el cursor */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
 }
 
 /* Estilos responsivos */

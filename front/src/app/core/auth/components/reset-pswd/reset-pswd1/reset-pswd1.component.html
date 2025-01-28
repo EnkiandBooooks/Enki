@@ -1,30 +1,32 @@
 <div class="login-container">
-  <div class="login-logo-container">
-    <img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Logo" class="login-logo" >
-    <img src="images/LETTERING_FINAL_WHITE.png" alt="Letter" class="login-letter">
-  </div>
+  <!-- Lado Izquierdo: Imagen de Fondo -->
+  <div class="left-side"></div>
+
+  <!-- Lado Derecho: Logo, Lettering y Formulario -->
+  <div class="right-side">
+    <!-- Contenedor para el logo y lettering -->
+    <div class="logo-container">
+      <img src="images/LOGOGHOST_ONLYPNG_PURPLE.png" alt="Logo" class="login-logo">
+      <img src="images/LETTERING_FINAL_PURPLE.png" alt="Lettering" class="login-letter">
+    </div>
+
+    <!-- Tarjeta de Recuperación -->
     <mat-card class="login-card">
-    
-      <!-- <mat-card-header>
-        <mat-card-title>Pon el email</mat-card-title>
-      </mat-card-header> -->
-      <!-- MatCardContent para envolver el contenido principal del formulario -->
-      <h4 class="login-title">Password Recovery </h4>
+      <p class="youremail">Password Recovery:</p>
       <mat-card-content>
         <form (ngSubmit)="onSubmit(emailInput.value)" ngNativeValidate>
-          <!-- MatFormField crea un contenedor de campo de formulario que es estilizado por Angular Material -->
+          <!-- Campo de Email -->
           <mat-form-field class="full-width">
-            <!-- MatLabel define la etiqueta del campo (lo que aparece dentro de la caja) -->
             <mat-label>Your e-mail</mat-label>
-            <!-- MatInput es la directiva que le da estilo de Material al input. Se une a ngModel -->
             <input matInput type="email" [(ngModel)]="email" name="email" #emailInput required>
           </mat-form-field>
-          <!-- MatButton crea un botón estilizado, mat-raised-button añade elevación -->
+
+          <!-- Botón de Continuar -->
           <div class="button-container">
-            <!-- MatButton crea un botón estilizado, mat-raised-button añade elevación -->
-            <button mat-raised-button type="submit">Continuar</button>
+            <button mat-raised-button type="submit">Continue</button>
           </div>
         </form>
       </mat-card-content>
     </mat-card>
   </div>
+</div>

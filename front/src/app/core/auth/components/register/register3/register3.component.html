@@ -1,72 +1,63 @@
-<!-- <mat-toolbar class="custom-toolbar">
-  <span class="toolbar-title">Enki</span>
-  <span class="spacer"></span>
-  <nav>
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a mat-button routerLink="/">Start</a>
-      </li>
-      <li class="nav-item">
-        <a mat-button routerLink="/about">About</a>
-      </li>
-      <li class="nav-item">
-        <a mat-button routerLink="/services">Servicies</a>
-      </li>
-      <li class="nav-item">
-        <a mat-button routerLink="/contact">Contact</a>
-      </li>
-      <li class="nav-item">
-        <a mat-button routerLink="/faq">FAQ</a>
-      </li>
-    </ul>
-  </nav>
-</mat-toolbar> -->
-
 <div class="login-container">
-  <img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Logo" class="login-logo">
-  <mat-card class="login-card">
-    <mat-card-title>Register</mat-card-title>
-    <form (ngSubmit)="onSubmit()">
-      <mat-form-field class="full-width" appearance="fill">
-        <mat-label>User Name</mat-label>
-        <input matInput type="text" id="userName" [(ngModel)]="userName" name="userName" required>
-      </mat-form-field>
+  <!-- Lado Izquierdo: Imagen de Fondo -->
+  <div class="left-side"></div>
 
-      <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Password</mat-label>
-        <input matInput [type]="hide1() ? 'password' : 'text'"  [(ngModel)]="passWord" name="passWord" required  minlength="8"/>
-        <button
-          mat-icon-button
-          matSuffix
-          (click)="clickEvent1($event)"
-          [attr.aria-label]="'Hide password'"
-          type="button"
-          [attr.aria-pressed]="hide1()"
-        >
-          <mat-icon>{{hide1() ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-      </mat-form-field>
+  <!-- Lado Derecho: Logo y Formulario -->
+  <div class="right-side">
+    <!-- Imagen del Logo -->
+    <img src="images/LOGOGHOST_ONLYPNG_PURPLE.png" alt="Logo" class="login-logo">
+    <img src="images/LETTERING_FINAL_PURPLE.png" alt="Logo" class="login-letter">
 
+    <!-- Tarjeta de Login -->
+    <mat-card class="login-card">
+      <p class="youremail">Register your account:</p>
 
-      <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Confirm Password</mat-label>
-        <input matInput [type]="hide2() ? 'password' : 'text'"  id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword"  minlength="8"/>
-        <button
-          mat-icon-button
-          matSuffix
-          (click)="clickEvent2($event)"
-          [attr.aria-label]="'Hide password'"
-          type="button"
-          [attr.aria-pressed]="hide2()"
-        >
-          <mat-icon>{{hide2() ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-      </mat-form-field>
+      <mat-card-content>
+        <form (ngSubmit)="onSubmit()" ngNativeValidate>
+          <!-- Campo User Name -->
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>User Name</mat-label>
+            <input matInput type="text" id="userName" [(ngModel)]="userName" name="userName" required>
+          </mat-form-field>
 
-      <!-- Contenedor para el botón -->
-      <div class="button-container">
-        <button mat-raised-button type="submit">Continue</button>
-      </div>
-    </form>
-  </mat-card>
+          <!-- Campo Password -->
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide1() ? 'password' : 'text'" [(ngModel)]="passWord" name="passWord" required minlength="8">
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="clickEvent1($event)"
+              [attr.aria-label]="'Hide password'"
+              type="button"
+              [attr.aria-pressed]="hide1()"
+            >
+              <mat-icon>{{hide1() ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <!-- Campo Confirm Password -->
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput [type]="hide2() ? 'password' : 'text'" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" minlength="8">
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="clickEvent2($event)"
+              [attr.aria-label]="'Hide password'"
+              type="button"
+              [attr.aria-pressed]="hide2()"
+            >
+              <mat-icon>{{hide2() ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <!-- Contenedor para el botón -->
+          <div class="button-container">
+            <button mat-raised-button type="submit">Continue</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
