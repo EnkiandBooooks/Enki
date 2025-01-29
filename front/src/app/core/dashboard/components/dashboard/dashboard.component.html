@@ -2,8 +2,12 @@
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer mode="side" opened>
       <div class="sidebar-logo">
-        <img src="images/LOGOGHOST_ONLYPNG_BLACK.png" alt="Logo" class="sidebar-logo-img">
+        <img src="images/LOGOGHOST_ONLYPNG_PURPLE.png" alt="Logo" class="sidebar-logo-img">
+        <img src="images/LETTERING_FINAL_PURPLE.png" alt="letter" class="sidebar-letter">
       </div>
+
+      <div class="sidebar-divider"></div>
+
       <mat-nav-list>
         <mat-list-item>
           <a mat-button class="nav-button-createcommunity" href="#" (click)="showSection('createcommunity'); $event.preventDefault()">
@@ -24,10 +28,12 @@
         <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('workspace'); $event.preventDefault()">workspace</a>
         </mat-list-item> -->
-   
+        <div class="sidebar-divider"></div>
+
         <app-communitylist (sectionChange)="onSectionChange($event)" />
-      
+
       </mat-nav-list> 
+
       
     </mat-sidenav>
     

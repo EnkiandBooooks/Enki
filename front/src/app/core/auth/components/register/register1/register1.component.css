@@ -95,7 +95,7 @@ mat-card-actions button:hover {
   display: block;
   max-width: 240px; /* Ajustamos el tamaño del logo */
   width: 100%;
-  opacity: 0.85;
+  /* opacity: 0.85; */
 }
 
 .login-letter{

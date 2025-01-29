@@ -9,7 +9,7 @@
   width: 100%;
   height: 100%; 
   padding: 20px;
-  background-color: #a29ea5;
+  background-color: #ffffff;
   overflow: auto; /* Añadir scroll si el contenido es más grande que la ventana */
 }
 
