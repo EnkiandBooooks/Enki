@@ -35,3 +35,72 @@ gsap.to(sections, {
     end: () => "+=" + document.querySelector(".scroll-inner").offsetWidth // Cambia aquí también
   }
 });
+
+
+gsap.to(".pContent", {
+  yPercent: -50, // Se mueve hacia arriba al hacer scroll
+  opacity: 1,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".pSection",
+    start: "top 80%",
+    end: "bottom 20%",
+    scrub: true
+  },
+});
+
+gsap.to(".pImage", {
+  yPercent: 30, // Imagen se mueve en sentido contrario para efecto de profundidad
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".pSection",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true
+  },
+});
+
+ScrollTrigger.create({
+  trigger: ".red",
+  start: "top top",
+  pin: true,
+  pinSpacing: false
+});
+
+
+ScrollTrigger.create({
+  trigger: "#orange",
+  start: "top top",
+  end: "bottom 150px",
+  pin: "#orange-content"
+});
+
+ScrollTrigger.create({
+  trigger: "#red",
+  start: "top center",
+  end: "+=200", // 200px past the start 
+  pin: "#red-content"
+});
+
+
+const SCROLL_CONTAINER = '.scroll-container'
+if (document.querySelector(SCROLL_CONTAINER)) {
+  document.querySelectorAll(SCROLL_CONTAINER).forEach((container) => {
+    const SCROLL_TEXT = container.querySelector("#scroll-text");
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "25px",
+        end: "+=300%",
+        pin: true,
+        scrub: 1,
+        invalidateOnRefresh: true
+      }
+    })
+
+    tl.to(SCROLL_TEXT, {
+      y: () => SCROLL_TEXT.offsetHeight - container.offsetHeight - 100,
+      ease: "none",
+    }, "+=0.1")
+  })
+}
