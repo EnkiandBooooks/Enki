@@ -1,78 +1,95 @@
-.g-recaptcha {
-  display: flex; /* Activamos flexbox */
-  justify-content: center; /* Centra horizontalmente */
-  margin-bottom: 10px;
-}
-
-/* Contenedor principal: Alinear logo a la izquierda y formulario a la derecha */
+/* Contenedor principal: Dividir en dos secciones */
 .login-container {
   display: flex;
-  flex-direction: row; /* Alinear logo y tarjeta en fila */
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Asegurar que ocupe al menos toda la pantalla */
-  background: linear-gradient(to bottom, #66576C, #292929);
-  padding: 20px;
-  gap: 10%; /* Espaciado entre logo y formulario */
-  box-sizing: border-box; /* Asegura que el padding se respete */
+  min-height: 100vh; /* Ocupa al menos toda la altura de la pantalla */
+  box-sizing: border-box;
 }
 
-/* Contenedor del logo y el lettering */
-.login-logo-container {
+/* Lado Izquierdo: Imagen de Fondo */
+.left-side {
+  width: 70%;
+  background-image: url('../../../../../../public/images/prueba1.png'); /* Ruta a tu imagen */
+  background-color: #421442;
+  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat;
+}
+
+/* Lado Derecho: Fondo de Color y Centrado del Contenido */
+.right-side {
+  width: 50%;
+  background-color: #f1f1f1; /* Color deseado para el lado derecho */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px; /* Espaciado entre logo y lettering */
+  flex-direction: column; /* Apilar logo y formulario en columna */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Estilo para el logo */
+/* Nuevo contenedor para logo y lettering */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px; /* Espacio debajo del logo */
+}
+
 .login-logo, .login-letter {
-  max-width: 250px; /* Ajustamos el tamaño del logo */
+  display: block;
+  max-width: 135px; /* Ajustamos el tamaño del logo */
   width: 100%;
-  opacity: 0.80;
+  margin: 0 auto; /* Centramos horizontalmente */
+  /* opacity: 0.85; */
 }
 
 
 /* Estilo de la tarjeta de login */
 .login-card {
-  width: 100%;
-  max-width: 600px;
-  max-height: 420px;
-  padding: 20px;
-  background-color: #66576C;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  width: 475px;
+  padding: 10px;
+; /* Aumenta el padding para mejor estética */
+  background-color: #f1f1f1;
+  box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
+  color: #e8e8e8; /* Color de texto */
 }
 
-/* Estilo para los títulos y textos */
-mat-card-title,
-mat-card-actions span {
-  color: #e8e8e8; /* Gris claro para las letras */
+/* Estilos para los campos del formulario */
+.full-width {
+  width: 100%;
 }
 
-mat-card-actions {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 20px;
-  margin-bottom: 20px;
+.forgot {
+  display: block;            /* Convierte el enlace en un elemento de bloque */
+  width: 100%;               /* Hace que el enlace ocupe todo el ancho disponible */
+  text-align: right;         /* Alinea el texto a la derecha */
 }
 
-mat-card-actions button {
-  color: white; /* Color del texto */
-  background-color: transparent; /* Fondo transparente para botones secundarios */
+.forgot:hover {
+  text-decoration: underline; /* Añade subrayado al pasar el cursor */
 }
 
-mat-card-actions button:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente al pasar el cursor */
+mat-form-field {
+  width: 100%;
 }
 
-/* Botones principales */
+/* Estilos para los botones */
+.button-container {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.noaccount {
+  color: #050505 !important;
+  font-size: 92%;
+  margin-right: 2%;
+}
+
 .button-container button {
-  background-color: #353535; /* Fondo oscuro */
+  width: 100%;
+  margin-bottom: 2%;
+  background-color: #66576c; /* Fondo oscuro */
   color: white; /* Texto blanco */
-  padding: 12px;
-  width: 100%; /* Llenar todo el ancho */
   border-radius: 8px; /* Bordes redondeados */
   transition: background-color 0.3s ease; /* Transición suave */
 }
@@ -82,36 +99,68 @@ mat-card-actions button:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
 }
 
+/* Estilos para las acciones de la tarjeta */
+mat-card-actions {
+  text-align: center;
+  display:block;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
 
-/* Asegurar que los elementos llenen todo el ancho */
-.full-width {
-  width: 100%;
+mat-card-actions span {
+  color: #e8e8e8; /* Color de texto */
+}
+
+mat-card-actions button {
+  color: #f1f1f1;
+  background-color: transparent;
+}
+
+mat-card-actions button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ReCAPTCHA */
+.g-recaptcha {   
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */   
+  margin-bottom: 10px; 
 }
 
 /* Estilos responsivos */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .login-container {
-    flex-direction: column; /* Volvemos a columna en pantallas pequeñas */
-    gap: 20px;
+    flex-direction: column;
   }
 
-  .login-logo, .login-letter {
-    max-width: 150px;
+  .left-side, .right-side {
+    width: 100%;
+    height: 50vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .left-side {
+    height: 30vh;
+  }
+
+  .right-side {
+    height: auto;
+    padding: 10px;
   }
 
   .login-card {
-    width: 95%;
-    margin: 10px;
+    padding: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .login-logo, .login-letter {
-    max-width: 120px;
+  .left-side {
+    height: 20vh;
   }
 
   .login-card {
-    width: 100%;
-    margin: 10px;
+    padding: 15px;
   }
 }

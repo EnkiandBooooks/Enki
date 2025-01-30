@@ -18,8 +18,6 @@ import { TimelineComponent } from "./timeline/timeline.component";
 import { UsersComponent } from './users/users.component';
 import { ActivatedRoute } from '@angular/router';
 import { workspaceService } from '../workspace/services/workspace.service';
-
-
 @Component({
   selector: 'app-workspace',
   standalone: true,

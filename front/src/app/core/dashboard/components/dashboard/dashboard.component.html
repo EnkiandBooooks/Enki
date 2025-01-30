@@ -2,17 +2,25 @@
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer mode="side" opened>
       <div class="sidebar-logo">
-        <img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Logo" class="sidebar-logo-img">
+        <img src="images/LOGOGHOST_ONLYPNG_PURPLE.png" alt="Logo" class="sidebar-logo-img">
+        <img src="images/LETTERING_FINAL_PURPLE.png" alt="letter" class="sidebar-letter">
       </div>
+
+      <div class="sidebar-divider"></div>
+
       <mat-nav-list>
         <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="showSection('createcommunity'); $event.preventDefault()">Create Community</a>
+          <a mat-button class="nav-button-createcommunity" href="#" (click)="showSection('createcommunity'); $event.preventDefault()">
+            <mat-icon aria-hidden="true">add</mat-icon>
+            Create Community
+          </a>
+        </mat-list-item>
+        
+        <mat-list-item>
+          <a mat-button class="nav-button" href="#" (click)="showSection('home'); $event.preventDefault()"><mat-icon>home</mat-icon>Home</a>
         </mat-list-item>
         <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="showSection('home'); $event.preventDefault()">Home</a>
-        </mat-list-item>
-        <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="showSection('library'); $event.preventDefault()">Library</a>
+          <a mat-button class="nav-button" href="#" (click)="showSection('library'); $event.preventDefault()"><mat-icon> local_library</mat-icon>Library</a>
         </mat-list-item>
         <!-- <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('timeline'); $event.preventDefault()">Community Testing</a>
@@ -20,23 +28,13 @@
         <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('workspace'); $event.preventDefault()">workspace</a>
         </mat-list-item> -->
-        <h6>My Communities</h6>
-        
-        <!-- Contenedor con scroll para las comunidades -->
-        <div class="communities-container">
-          <mat-list-item *ngFor="let workspace of arrUsr().userWorkspaces; let i = index" class="workspace">
-            <a mat-button class="nav-button" href="#" (click)=" setCurrentWorkspaceId(workspace._id); showSection('workspace'); $event.preventDefault();">
-              {{workspace.workSpaceName}}
+        <div class="sidebar-divider"></div>
 
-            </a>
-          </mat-list-item>
-          <!--Se comprueba si arrUsr existe (en la carga de la página aún no ha acabado de recuperar todos los datos) y si no hay comunidades-->
-          <div *ngIf="arrUsr()?.userWorkspaces?.length === 0"> 
-            <p>User doesn't have any communities assigned</p>
-          </div>
-        </div>
-        <br>
+        <app-communitylist (sectionChange)="onSectionChange($event)" />
+
       </mat-nav-list> 
+
+      
     </mat-sidenav>
     
 
@@ -45,7 +43,7 @@
         <button mat-icon-button (click)="drawer.toggle()">
           &nbsp;<mat-icon>menu</mat-icon>&nbsp;
         </button>
-
+        <app-toolbar currentSection={{selectedSection}}/>
         <!-- Sección de perfil -->
         @if(cookieExists){
           <button mat-icon-button [matMenuTriggerFor]="profileMenu">
@@ -67,12 +65,11 @@
           </mat-menu>
         }
       </mat-toolbar>
+      
 
       <div class="content-wrapper">
-        <ng-container>
-          <div>
+        <ng-container class="nav-community-list">
             <router-outlet></router-outlet>
-          </div>
         </ng-container>
       </div>
     </mat-sidenav-content>

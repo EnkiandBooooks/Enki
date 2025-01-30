@@ -1,9 +1,7 @@
 :host {
-  display: block; /* Hace que el componente ocupe un bloque completo */
   width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
   height: 100%; /* Asegúrate de que ocupe toda la altura del contenedor */
   box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho y la altura */
-  padding: 20px;
   margin: 0px;
 }
 
@@ -12,14 +10,11 @@
   height: 100%; 
   padding: 20px;
   background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   overflow: auto; /* Añadir scroll si el contenido es más grande que la ventana */
-  box-sizing: border-box;
 }
 
 .carousel-section {
-  margin: 20px 0;
+  margin: 20px ;
 }
 
 h3 {
@@ -98,7 +93,9 @@ mat-chip {
 }
 
 .prev {
+
   left: 0;
+  
 }
 
 .next {

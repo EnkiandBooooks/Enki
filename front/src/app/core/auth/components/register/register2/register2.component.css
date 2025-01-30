@@ -1,22 +1,40 @@
-/* Contenedor principal: Centrar logo y tarjeta de login */
+/* Contenedor principal: Dividir en dos secciones */
 .login-container { 
   display: flex;
-  flex-direction: column; /* Alinear logo y tarjeta en columna */
   justify-content: center;
-  align-items: center;
   min-height: 100vh; /* Asegurar que ocupe al menos toda la pantalla */
-  background: linear-gradient(to bottom, #66576C, #292929);
-  padding: 20px;
-  gap: 20px; /* Espaciado entre los elementos */
   box-sizing: border-box; /* Asegura que el padding se respete */
+}
+
+/* Lado Izquierdo: Imagen de Fondo */
+.left-side {
+  width: 60%; /* Ajustado para que sumen 100% con el lado derecho */
+  background-image: url('../../../../../../../public/images/prueba1.png'); /* Cambiar imagen si es necesario */
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Lado Derecho: Fondo de Color, Dirección de Flexbox en Columna */
+.right-side {
+  width: 40%; /* Ajustado para que sumen 100% con el lado izquierdo */
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column; /* Cambiar la dirección a columna */
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Estilo de la tarjeta de login */
 .login-card {
   width: 100%; /* Usar todo el ancho disponible */
-  max-width: 400px; /* Límite máximo de 400px */
+  max-width: 550px; 
   padding: 20px;
-  background-color: #66576C;
+  padding-top: 40px;
+  background-color: #f1f1f1;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
   border-radius: 12px; /* Bordes redondeados */
   margin-top: 20px;
@@ -26,6 +44,11 @@
 /* Asegurar que los elementos llenen todo el ancho */
 .full-width {
   width: 100%;
+}
+
+.youremail {
+  color: black;
+  padding-left: 20px;
 }
 
 mat-card-title {
@@ -52,8 +75,9 @@ mat-card-actions button:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Estilo para los botones */
 .button-container button {
-  background-color: #353535; /* Fondo oscuro */
+  background-color: #66576c; /* Fondo oscuro */
   color: rgb(255, 255, 255); /* Texto blanco */
   padding: 12px;
   width: 100%; /* Llenar todo el ancho */
@@ -71,16 +95,29 @@ mat-card-actions button:hover {
   display: block;
   max-width: 240px; /* Ajustamos el tamaño del logo */
   width: 100%;
-  opacity: 0.85;
+  /* opacity: 0.85; */
+}
+
+.login-letter {
+  margin: 30px;
 }
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .left-side, .right-side {
+    width: 100%;
+    height: auto;
+  }
+
   .login-card {
     width: 95%; /* Mantener un ancho casi completo */
     margin: 10px; /* Reducir margen */
   }
-
+  
   .login-logo, .login-letter {
     max-width: 150px; /* Reducimos el tamaño del logo en pantallas medianas */
   }
@@ -96,4 +133,3 @@ mat-card-actions button:hover {
     max-width: 120px; /* Reducir aún más el tamaño del logo en pantallas pequeñas */
   }
 }
-

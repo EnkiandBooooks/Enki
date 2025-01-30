@@ -1,96 +1,138 @@
-/* General styles */
-.landing-page {
-    font-family: 'Roboto', sans-serif;
-    color: #333;
+#gradient-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -1;
 }
 
-/* Hero section */
-.hero-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 4rem 2rem;
-    background-color: #f5f5f5;
+#main-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  padding: 30px 0;
 }
 
-.hero-content {
-    max-width: 50%;
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.hero-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.logo_name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+.nav-container img {
+  width: 40px; /* Limita el tamaño de la imagen */
+  height: auto;
+  margin-right: 40px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.hero-image {
-    max-width: 50%;
+.name,
+.nav-links a {
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
 }
 
-.image-full {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
+.name::before, 
+.nav-links a::before {
+  content: attr(data-text); /* Usa el texto del enlace como contenido */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -100%; /* Comienza fuera de la vista, debajo */
+  color: #ff9800; /* Cambia el color al reaparecer */
+  transition: transform 0.3s, color 0.3s;
 }
 
-/* Dashboard */
-.functionality {
+.name:hover::before, 
+.nav-links a:hover::before {
+  transform: translateY(-100%); /* Sube el texto hacia la vista */
+}
+
+.name:hover,
+.nav-links a:hover {
+  color: transparent;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 30px; /* Espaciado superior para separar de las cartas */
-  margin-bottom: 50px; /* Espaciado inferior */
 }
-  #Diverse {
-    background-color: #d1c5d6;
-  }
-  #Comunity {
-    background-color: #4c474e;
-  }
-  #Learn {
-    background-color: #66576c;
-  }
-  .functionality > div {
-    flex: 1;
-  }
-  
-  .functionality img {
-    width: 100%;
-    max-width: 1200px;
-  }
-  
-  .functionality h1 {
-    font-size: 2.5rem;
-    margin: 20px;
-    color: #ffffff;
-  }
-  #Diverse h1 {
-    color: #000000;
-  }
-  .functionality p {
-    font-size: 1.2rem;
-    color: #666;
-    margin: 20px ;
-    text-align: left;
-  }
-  #Comunity p {
-    color: #ffffff;
-  }
-  #Learn p {
-    color: #ffffff;
-  }
-  
-  .functionality button {
-    display: block;
-    margin: 20px auto;
-  }
 
-  .title{
-    text-align: center;
-    margin-bottom: 2rem;
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  animation: move-title 10s linear infinite; /* Ahora 10 segundos */
+  overflow: hidden;
+  color: white;
+}
+
+@keyframes move-title {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
   }
+  20% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+  80% {
+      transform: translateX(100vw);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+}
+
+.split_text {
+  position: absolute;
+  z-index: 2; /* Asegura que el texto esté encima del canvas */
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-size: 3rem;
+  width: 80%;
+  margin: auto;
+  left: 10%;
+  top: 75%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 10px;
+  line-height: 1.5;
+}

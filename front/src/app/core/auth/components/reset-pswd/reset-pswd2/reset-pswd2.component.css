@@ -1,95 +1,88 @@
-/* Contenedor principal: centrar el formulario de cambio de contraseña */
-.password-container { 
+/* Contenedor principal: Dividir en dos secciones */
+.login-container {
   display: flex;
-  flex-direction: column; /* Alinear los elementos en columna */
-  justify-content: flex-start; /* Alinear elementos al principio (arriba) */
-  align-items: center;
-  min-height: 100vh; /* Ocupa al menos toda la altura de la pantalla */
-  background: linear-gradient(to bottom, #66576C, #1f1d21); /* Fondo en gradiente */
-  padding: 20px; /* Añadir padding para pantallas pequeñas */
-  padding-top: 60px; /* Espacio entre la toolbar y el logo */
-  box-sizing: border-box; /* Asegura que el padding se respete */
-  gap: 20px; /* Espacio entre los elementos */
-}
-
-/* Estilo para el título "Cambio de contraseña" */
-mat-card-title {
-  font-family: 'Poppins', sans-serif; /* Fuente elegante y geométrica */
-  font-size: 24px; /* Tamaño del texto */
-  color: #e8e8e8; /* Color gris claro para el texto */
-  text-align: center; /* Centrar el texto */
-  letter-spacing: 1px; /* Espaciado entre letras */
-  margin-bottom: 20px; /* Espacio inferior */
-}
-
-.logo-container {
-  display: flex;
-  flex-direction: row; /* Alinear logo y tarjeta en fila */
   justify-content: center;
-  align-items: center;
-  padding: 15px;
+  min-height: 100vh; /* Asegurar que ocupe al menos toda la pantalla */
+  box-sizing: border-box; /* Asegura que el padding se respete */
 }
 
-/* Estilo para el logo */
-.login-logo{
-  max-width: 12%; /* Ajustamos el tamaño del logo */
+/* Lado Izquierdo: Imagen de Fondo */
+.left-side {
+  width: 60%; /* Ajustado para que sumen 100% con el lado derecho */
+  background-image: url('../../../../../../../public/images/prueba1.png');
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Lado Derecho: Fondo de Color, Dirección de Flexbox en Columna */
+.right-side {
+  width: 40%; /* Ajustado para que sumen 100% con el lado izquierdo */
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column; /* Cambiar la dirección a columna */
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Contenedor del logo y lettering */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px; /* Espacio debajo del logo */
+}
+
+.login-logo, .login-letter {
+  display: block;
+  max-width: 240px; /* Ajustamos el tamaño del logo */
   width: 100%;
-  opacity: 0.80;
+  opacity: 0.85;
 }
 
 .login-letter {
-  max-width: 30%; /* Ajustamos el tamaño del logo */
-  width: 100%;
-  opacity: 0.80;
+  margin-top: 10px; /* Espacio entre el logo y el lettering */
 }
 
-/* Estilo de la tarjeta del formulario de cambio de contraseña */
-.password-card {
-  width: 100%;
-  max-width: 600px;
+/* Estilo de la tarjeta */
+.login-card {
+  width: 100%; /* Usar todo el ancho disponible */
+  max-width: 550px; 
   padding: 20px;
-  background-color: #66576C; /* Color de fondo de la tarjeta */
-  border-radius: 12px; /* Bordes redondeados */
+  padding-top: 40px;
+  background-color: #f1f1f1;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  margin-top: 2px; /* Espacio superior */
-  margin-bottom: 2px; /* Espacio inferior */
+  border-radius: 12px; /* Bordes redondeados */
+  margin-top: 20px;
+  margin-bottom: 20px; /* Asegurar que haya espacio debajo en pantallas pequeñas */
 }
 
-/* Estilo de los campos del formulario */
+/* Título del formulario */
+.form-title {
+  text-align: center;
+  color: #421442; /* Color morado oscuro */
+  margin-bottom: 20px;
+}
+
+/* Estilos para los campos del formulario */
+.full-width {
+  width: 100%;
+}
+
 mat-form-field {
-  width: 100%; /* Ocupa todo el ancho */
-  margin-bottom: 20px; /* Espacio entre los campos */
+  width: 100%;
 }
 
-mat-form-field input {
-  padding: 0px; /* Espaciado interno */
-  color: #e8e8e8; /* Texto gris claro */
-  border-radius: 8px; /* Bordes redondeados */
-}
-
-/* Estilo de los botones */
-.button-container button {
-  background-color: #232223; /* Fondo oscuro */
-  color: #e8e8e8 !important; /* Color del texto en blanco */
-  padding: 12px;
-  width: 100%; /* Ocupa todo el ancho */
-  border-radius: 8px; /* Bordes redondeados */
-  transition: background-color 0.3s ease; /* Transición suave */
-}
-
-/* Estilo para el hover en el botón */
-button:hover {
-  background-color: #6f5d6f; /* Color del fondo al hacer hover */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
-}
-
+/* Estilos para los botones */
 .button-container {
-  margin-top: 20px; /* Espacio entre el input y el botón */
+  width: 100%;
+  margin-top: 30px;
 }
 
 .button-container button {
-  background-color: #232223; /* Fondo oscuro */
-  color: #e8e8e8 !important; /* Color del texto (gris casi blanco) */
+  background-color: #66576c; /* Fondo oscuro */
+  color: rgb(255, 255, 255); /* Texto blanco */
   padding: 12px;
   width: 100%; /* Llenar todo el ancho */
   border-radius: 8px; /* Bordes redondeados */
@@ -97,30 +90,38 @@ button:hover {
 }
 
 .button-container button:hover {
-  background-color: #6f5d6f; /* Cambiar el fondo al pasar el cursor */
+  background-color: #7d5e7d; /* Cambiar el fondo al pasar el cursor */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
 }
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
-  .login-card, .password-card {
-    width: 95%; /* Hacer que la tarjeta se ajuste mejor a pantallas medianas */
-    margin: 10px; /* Reducir el margen en pantallas pequeñas */
+  .login-container {
+    flex-direction: column;
   }
 
-  .login-logo {
-    max-width: 150px; /* Reducir el tamaño del logo en pantallas medianas */
+  .left-side, .right-side {
+    width: 100%;
+    height: auto;
+  }
+
+  .login-card {
+    width: 95%; /* Mantener un ancho casi completo */
+    margin: 10px; /* Reducir margen */
+  }
+
+  .login-logo, .login-letter {
+    max-width: 150px; /* Reducimos el tamaño del logo en pantallas medianas */
   }
 }
 
 @media (max-width: 480px) {
-  .login-card, .password-card {
-    width: 100%; /* Ajustar la tarjeta a pantallas pequeñas */
-    margin: 20px;
-    border-radius: 10px;
+  .login-card {
+    width: 100%; /* Usar todo el ancho disponible */
+    margin: 10px;
   }
 
-  .login-logo {
+  .login-logo, .login-letter {
     max-width: 120px; /* Reducir aún más el tamaño del logo en pantallas pequeñas */
   }
 }

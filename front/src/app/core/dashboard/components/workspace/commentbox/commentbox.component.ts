@@ -11,6 +11,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { workspaceService } from '../services/workspace.service';
 import { CreatecommentComponent } from '../popups/createcomment/createcomment.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-commentbox',
@@ -24,6 +25,7 @@ import { MatDialog } from '@angular/material/dialog';
     MatFormFieldModule,
     MatToolbarModule,
     MatSelectModule,
+
     
   ],
   templateUrl: './commentbox.component.html',
@@ -36,7 +38,7 @@ export class CommentboxComponent {
   arrComments = signal<any>([]);
   dialogresponse: { text: string; page: number } = { text: '', page: 1};
   readonly dialog = inject(MatDialog);
-  constructor(private fb: FormBuilder, private snackBar: MatSnackBar, private workspaceService: workspaceService) {
+  constructor(private fb: FormBuilder, private snackBar: MatSnackBar, private workspaceService: workspaceService, private router:Router) {
     this.commentForm = this.fb.group({
       comments: this.fb.array([]) 
     });
@@ -144,6 +146,26 @@ export class CommentboxComponent {
       }
     });
    
-   }
   }
+    deleteCommunity(): void {
+      this.workspaceService.deleteCommunity({'workspaceId':this.currentWorkspaceId}).subscribe(
+        (res: any) => {  
+          console.log('Respuesta:', res);
+          this.snackBar.open('comunidad eliminada', 'Cerrar', { duration: 3000 });
+          this.router.navigate(["dashboard/home"]).then(() => {
+            window.location.reload();
+            });
+          
+          
+        },
+        (error: any) => {  
+          console.error('Error en la solicitud:', error);
+          this.snackBar.open('Error al eliminar comunidad', 'Cerrar', { duration: 3000 });
+        }
+      );
+
+      
+    }
+   }
+  
   
