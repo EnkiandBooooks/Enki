@@ -8,7 +8,6 @@
 
 /* Contenedor de sidenav */
 .mat-sidenav-container {
-  
   height: 100%;
   width: 100%;
   box-sizing: border-box;
@@ -23,6 +22,7 @@
   height: 100%;
   border-radius: 0;
   overflow-y: auto;
+  border-right: 3px solid #9C7AAA; /* Borde morado en el lado derecho */
 }
 
 /* Contenedor con scroll para las comunidades */
@@ -54,15 +54,30 @@ h6 {
 /* Logo en el Sidebar */
 .sidebar-logo {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 20px;
+  gap: 7px;
   padding: 15px;
 }
 
 .sidebar-logo-img {
   max-width: 50%;
-  opacity: 0.85;
+  /* opacity: 0.85; */
 }
+
+.sidebar-letter {
+  max-width: 60%;
+  /* opacity: 0.85; */
+}
+
+.sidebar-divider {
+  width: 80%; /* Ajusta la anchura */
+  margin: 10px auto; /* Centra la línea */
+  border-top: 2px solid #66576c; /* Color morado y grosor */
+  opacity: 0.9;
+}
+
 
 /* Estilo de los botones de navegación */
 .nav-button {
