@@ -1,5 +1,5 @@
 
-import { Component, ChangeDetectorRef, signal,Input  } from '@angular/core';
+import { Component, ChangeDetectorRef, signal,Input, ViewChild, ElementRef, HostListener  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileComponent } from '../../../auth/components/profile/profile.component';
 import { HomedashComponent } from '../homedash/homedash.component';
@@ -77,6 +77,47 @@ export class ToolbarComponent {
   }
   updateSearchValue(search: string): void {
     this.categoryService.updateSearch(search);
+  }
+
+  showArrows: boolean = false;
+  ngAfterViewInit(): void {
+    // Se usa setTimeout para asegurarse de que se hayan aplicado los estilos
+    setTimeout(() => {
+      this.checkOverflow();
+    });
+  }
+
+  // Detecta cambios en el tamaño de la ventana
+  @HostListener('window:resize')
+  onResize(): void {
+    this.checkOverflow();
+  }
+
+  // Método para comprobar si el contenedor de categorías tiene overflow
+  checkOverflow(): void {
+    if (this.categoriesContainer && this.categoriesContainer.nativeElement) {
+      const container = this.categoriesContainer.nativeElement;
+      this.showArrows = container.scrollWidth > container.clientWidth;
+    }
+  }
+
+
+  @ViewChild('categoriesContainer', { static: false })
+  categoriesContainer!: ElementRef;
+  // Método para desplazar a la izquierda
+  scrollLeft(): void {
+    this.categoriesContainer.nativeElement.scrollBy({
+      left: -150, // Ajusta la cantidad de desplazamiento según sea necesario
+      behavior: 'smooth'
+    });
+  }
+
+  // Método para desplazar a la derecha
+  scrollRight(): void {
+    this.categoriesContainer.nativeElement.scrollBy({
+      left: 150, // Ajusta la cantidad de desplazamiento según sea necesario
+      behavior: 'smooth'
+    });
   }
 }
 
