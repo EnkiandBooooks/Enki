@@ -6,30 +6,31 @@ import { AuthService } from '../../../auth/services/auth.service';
 import { LoadingService } from '../../../../shared/services/loading.service';
 import { MatListModule, MatNavList } from '@angular/material/list';
 import { MatSidenav } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { Input } from '@angular/core';
 @Component({
   selector: 'app-communitylist',
   standalone: true,
   imports: [
-       CommonModule,
-         // Importa el componente standalone directamente
-         MatListModule,
-        CommunitylistComponent,
+        CommonModule,
+        MatListModule,
+        MatIconModule,
         MatNavList,
         MatSidenav
-
-
   ],
   templateUrl: './communitylist.component.html',
   styleUrl: './communitylist.component.css'
 })
 export class CommunitylistComponent {
-    @Output() sectionChange = new EventEmitter<{section: string, workspaceId: string}>();    
+    @Input() isCollapsed: boolean = false;
+    @Output() sectionChange = new EventEmitter<{section: string, workspaceId: string}>();
+
     imgFile: any;
     imgUrl: any | undefined;
     arrUsr = signal<any>([]);
     cookieExists: boolean = false;
     currentWorkspaceId: string ='';
-  
+
     constructor(
       private cdr: ChangeDetectorRef,
       private cookieService: CookieService,
@@ -37,7 +38,7 @@ export class CommunitylistComponent {
       private authService: AuthService,
       private loadingService: LoadingService
     ) {}
-  
+
     async ngOnInit() {
       this.loadingService.show();
       this.cookieExists = this.cookieService.check("access_token") || this.cookieService.check("refresh_token");
@@ -46,7 +47,7 @@ export class CommunitylistComponent {
           this.arrUsr.set(res);
           this.imgUrl = 'data:image/png;base64,' + res.img;
           console.log(this.arrUsr().userWorkspaces)
-  
+
           this.loadingService.hide();
         }, (error) => {
           console.log("Error al cargar los datos del usuario", error);
@@ -56,13 +57,13 @@ export class CommunitylistComponent {
         this.loadingService.hide();
       }
     }
-  
-  
+
+
     showSection(section: string, workspaceId: string) {
       this.sectionChange.emit({section, workspaceId});
       this.cdr.detectChanges();
       this.router.navigate(['/dashboard/workspace', this.currentWorkspaceId ]);
-    
+
   }
 
     setCurrentWorkspaceId(id:string){

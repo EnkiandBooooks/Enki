@@ -1,14 +1,17 @@
-<h6>My Communities</h6>
+<h6 [ngClass]="{'collapsed-header': isCollapsed}">My Communities</h6>
 
 
-<div  class="communities-container">
+<div class="communities-container" [ngClass]="{'collapsed-container': isCollapsed}">
   <mat-list-item *ngFor="let workspace of arrUsr().userWorkspaces; let i = index" class="workspace">
     <a mat-button class="nav-button" href="#" (click)="setCurrentWorkspaceId(workspace._id); showSection('workspace', workspace._id); $event.preventDefault();">
-      {{ workspace.workSpaceName }}
+      <mat-icon class="workspace-icon">public</mat-icon>
+      <span class="workspace-text" [ngClass]="{'collapsed-text': isCollapsed}">
+        {{ workspace.workSpaceName }}
+      </span>
     </a>
   </mat-list-item>
 
-  <div *ngIf="arrUsr()?.userWorkspaces?.length === 0"> 
+  <div *ngIf="arrUsr()?.userWorkspaces?.length === 0">
     <p>User doesn't have any communities assigned</p>
   </div>
 </div>

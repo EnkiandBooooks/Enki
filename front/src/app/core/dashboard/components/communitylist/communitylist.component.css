@@ -1,8 +1,8 @@
 .communities-container{
   display: block;
   padding: 1rem;
-  overflow-y: auto; 
-  width: 200px; 
+  overflow-y: auto;
+  width: 200px;
   margin: 0 auto;
   position: fixed;
   padding-bottom: 50px;
@@ -20,46 +20,77 @@
   }}
 
   .communities-container::-webkit-scrollbar {
-    display: none; 
+    display: none;
   }
-  
+  /* .workspace.collapsed {
+
+  } */
+
   .workspace {
-    background-color: #F1F1F1; 
-    margin-bottom: 10px; 
-    padding: 10px 20px; 
-    display: flex; 
-    align-items: center; 
+    background-color: #F1F1F1;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    height: 50px; 
-    color: white; 
-    cursor: pointer; 
+    height: 50px;
+    color: white;
+    cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid #555; 
+    border: 1px solid #555;
     border-radius: 0;
   }
-  
+  .collapsed-header {
+    display: none;
+  }
+
+  .collapsed-container .workspace-text {
+    display: none;
+  }
+
+  .collapsed-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+    padding-left: 0.3%;
+  }
+
+  .collapsed-text {
+    display: none;
+  }
+
+  button[mat-icon-button] {
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
+  }
+
   .workspace:hover {
-    transform: scale(1.03); 
+    transform: scale(1.03);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
     background-color: #7d5e7d;
   }
-  
+
   .workspace .nav-button {
-    font-size: 1rem; 
-    font-weight: bold; 
+    font-size: 1rem;
+    font-weight: bold;
     text-decoration: none;
-    color: #555; 
+    color: #555;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  
+
   h6 {
-    padding-top: 3em;
+    padding-top: 1em;
     text-align: center;
     font-weight: bold;
     color: #66576c
   }
-  

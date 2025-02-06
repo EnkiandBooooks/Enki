@@ -1,26 +1,31 @@
 <div class="dashboard-container">
   <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer mode="side" opened>
+    <mat-sidenav mode="side" [opened]="true" [ngClass]="{'collapsed': isCollapsed}">
       <div class="sidebar-logo">
         <img src="images/LOGOGHOST_ONLYPNG_PURPLE.png" alt="Logo" class="sidebar-logo-img">
         <img src="images/LETTERING_FINAL_PURPLE.png" alt="letter" class="sidebar-letter">
       </div>
-
       <div class="sidebar-divider"></div>
-
+      <h6>My APP</h6>
       <mat-nav-list>
         <mat-list-item>
-          <a mat-button class="nav-button-createcommunity" href="#" (click)="showSection('createcommunity'); $event.preventDefault()">
+          <a mat-button class="nav-button" href="#" (click)="showSection('createcommunity'); $event.preventDefault()">
             <mat-icon aria-hidden="true">add</mat-icon>
-            Create Community
+            <span class="nav-text">Create Community</span>
           </a>
         </mat-list-item>
-        
+
         <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="showSection('home'); $event.preventDefault()"><mat-icon>home</mat-icon>Home</a>
+          <a mat-button class="nav-button" href="#" (click)="showSection('home'); $event.preventDefault()">
+            <mat-icon>home</mat-icon>
+            <span class="nav-text">Home</span>
+          </a>
         </mat-list-item>
         <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="showSection('library'); $event.preventDefault()"><mat-icon> local_library</mat-icon>Library</a>
+          <a mat-button class="nav-button" href="#" (click)="showSection('library'); $event.preventDefault()">
+            <mat-icon>local_library</mat-icon>
+            <span class="nav-text">Library</span>
+          </a>
         </mat-list-item>
         <!-- <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('timeline'); $event.preventDefault()">Community Testing</a>
@@ -30,26 +35,27 @@
         </mat-list-item> -->
         <div class="sidebar-divider"></div>
 
-        <app-communitylist (sectionChange)="onSectionChange($event)" />
+        <app-communitylist [isCollapsed]="isCollapsed" (sectionChange)="onSectionChange($event)"></app-communitylist>
 
-      </mat-nav-list> 
+      </mat-nav-list>
 
-      
+
     </mat-sidenav>
-    
 
-    <mat-sidenav-content class="content-area">
+
+    <mat-sidenav-content class="content-area" [ngClass]="{'collapsed-content': isCollapsed}">
       <mat-toolbar color="primary" class="toolbar">
-        <button mat-icon-button (click)="drawer.toggle()">
+        <button mat-icon-button (click)="toggleNavbar()">
           &nbsp;<mat-icon>menu</mat-icon>&nbsp;
         </button>
-        <app-toolbar currentSection={{selectedSection}}/>
+        <app-toolbar [currentSection]="selectedSection"></app-toolbar>
+
         <!-- Sección de perfil -->
-        @if(cookieExists){
+        <ng-container *ngIf="cookieExists">
           <button mat-icon-button [matMenuTriggerFor]="profileMenu">
             <img [src]="imgUrl" alt="Perfil" class="user-avatar" />
-          </button>        
-  
+          </button>
+
           <mat-menu #profileMenu="matMenu" class="profile-menu">
             <div class="profile-header">
               <img [src]="imgUrl" alt="Foto del usuario" class="user-avatar-large" />
@@ -63,9 +69,9 @@
             <mat-divider></mat-divider>
             <button style="color: red;" mat-menu-item (click)="onLogout()"><mat-icon style="color: red;">logout</mat-icon>Logout</button>
           </mat-menu>
-        }
+        </ng-container>
       </mat-toolbar>
-      
+
 
       <div class="content-wrapper">
         <ng-container class="nav-community-list">
