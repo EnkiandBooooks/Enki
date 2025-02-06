@@ -110,11 +110,12 @@
   display: block;
   text-align: center;
   hyphens: auto;
+  padding-top: 5%;
 }
 
 .split_text {
   z-index: 2;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Merriweather', serif;
   color: white;
   font-size: 3rem;
   width: 80%;
@@ -122,22 +123,22 @@
   top: 50px;
   bottom: 50px;
   text-align: center;
-  padding: 40px;
   border-radius: 10px;
   line-height: 1.5;
   word-break: normal;
   white-space: normal;
+  padding-bottom: 10%;
 }
 
 .waviy {
   position: relative;
-  margin: 40px auto;
+  margin: 60px auto;
   text-align: center;
   width: fit-content;
 }
 
 .waviy span {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Merriweather', serif;
   position: relative;
   display: inline-block;
   font-size: 40px;
@@ -157,6 +158,7 @@
   width: 100%;
   height: 100vh;
   overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .scroll-inner {
@@ -173,7 +175,6 @@
   justify-content: center;
   align-items: center;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
   flex-direction: column;
   gap: 20%;
 }
@@ -197,12 +198,18 @@
   box-shadow: 0 4px 8px rgba(216, 161, 238, 0.5);
 }
 
+.text_animation {
+  margin: 0;
+  padding-bottom: 3%;
+  color: white;
+  
+}
+
 .hero-section {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: 100%;
-  padding: 40px;
   padding: var(--spacing-xxl) var(--spacing-l);
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -210,7 +217,7 @@
 .card-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-gap: 20px;
+  grid-gap: 50px;
   max-width: var(--width-container);
   width: 100%;
   margin: 20px;
@@ -257,7 +264,7 @@
   transform: scale(1.05);
 }
 
-.card-grid:hover>.card:not(:hover) .card__background {
+.card-grid:hover .card:not(:hover) .card__background {
   filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
 }
 
@@ -276,14 +283,14 @@
 
 .card__category {
   color: white;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   margin-bottom: var(--spacing-s);
   text-transform: uppercase;
 }
 
 .card__heading {
   color: white;
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
   line-height: 1.4;
 }

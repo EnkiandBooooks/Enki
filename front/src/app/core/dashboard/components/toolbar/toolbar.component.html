@@ -1,50 +1,35 @@
-<div *ngIf="currentSection === 'library'" class="toolscontainer">
-  <div  class="categories">
-    <mat-button-toggle-group
-      appearance="legacy"
-      [multiple]="true"
-      class="categoryButtons"
-    >
-      <mat-button-toggle
-        *ngFor="let category of categories"
-        (change)="toggleCategory($event, category)"
-        color="primary"
-        class="categoryButton"
-      >
-        {{ category }}
-      </mat-button-toggle>
-    </mat-button-toggle-group>
+<!-- Sección Library: Carrusel de categorías y barra de búsqueda -->
+<div *ngIf="currentSection === 'library'" class="toolbar-container">
+  <div class="carousel-wrapper">
+    <button *ngIf="showArrows" class="arrow left" (click)="scrollLeft()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+
+    <div class="scrollable-categories" #categoriesContainer>
+      <mat-button-toggle-group appearance="legacy" [multiple]="true" class="categoryButtons">
+        <mat-button-toggle *ngFor="let category of categories"
+                           (change)="toggleCategory($event, category)"
+                           color="primary"
+                           class="categoryButton">
+          {{ category }}
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+    <button *ngIf="showArrows" class="arrow right" (click)="scrollRight()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
   </div>
 
-  <mat-form-field class="searchBar" >
+  <mat-form-field class="searchBar">
     <mat-label>Find your book</mat-label>
     <mat-icon matSuffix>search</mat-icon>
-    <input matInput [(ngModel)]="this.search" (keyup)="updateSearchValue(search)" />
+    <input matInput [(ngModel)]="search" (keyup)="updateSearchValue(search)" />
   </mat-form-field>
 </div>
 
-
-<div *ngIf="currentSection === 'workspace'" class="toolscontainer-left" >
-  <button
-        mat-raised-button
-        style="color: #525252;"
-        color="primary"
-        
-        >
-        Delete community
-       
-      </button>
-      <button
-        mat-raised-button
-        style="color: #525252;"
-        color="primary"
-        
-        >
-        Share
-       
-      </button>
-      
-      
+<!-- Sección Workspace: Botones de acción -->
+<div *ngIf="currentSection === 'workspace'" class="toolscontainer-left">
+  <button mat-raised-button color="primary" style="color: #525252;">Delete community</button>
+  <button mat-raised-button color="primary" style="color: #525252;">Share</button>
 </div>
-
-<!-- <p>estamos en {{currentSection}}</p> -->
