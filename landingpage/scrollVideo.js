@@ -60,23 +60,6 @@ gsap.to(".pImage", {
 });
 
 
-// Animación de entrada para el título "Hola" cuando aparece en la vista
-gsap.set("#section2", { opacity: 0, x: -500 }); // Inicializa fuera de la vista
-
-gsap.to("#section2", {
-  opacity: 1,
-  x: 0,  // Hace que entre desde la izquierda
-  duration: 3,
-  ease: "sine",
-  scrollTrigger: {
-    trigger: ".text_animation", // Se activa cuando el elemento con la clase .hola entra en la vista
-    start: "top 80%",  // Empieza la animación cuando el top de .hola esté al 80% de la ventana
-    end: "top 20%",    // Termina la animación cuando el top de .hola llegue al 20% de la ventana
-    toggleActions: "play none none none",  // Activar animación una sola vez
-  }
-});
-
-
 ScrollTrigger.create({
   trigger: ".red",
   start: "top top",
@@ -121,3 +104,20 @@ if (document.querySelector(SCROLL_CONTAINER)) {
     }, "+=0.1")
   })
 }
+
+AOS.init({
+  duration: 1200, // Duración de la animación en milisegundos
+  easing: 'ease-in-out', // Tipo de suavizado de la animación
+});
+
+gsap.to("#animated-text", {
+  duration: 2,
+  text: "DISCOVER",
+  ease: "power2.out",
+  delay: 4,
+  scrollTrigger: {
+    trigger: "#animated-text", // Activa la animación cuando este elemento sea visible
+    start: "top 80%", // Inicia cuando el elemento esté en el 80% de la pantalla
+    toggleActions: "play none none none" // La animación solo se ejecuta una vez
+  }
+});

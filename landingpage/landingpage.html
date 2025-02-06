@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -34,7 +35,7 @@
   </nav>
 
   <div class="main_content" id="home">
-    <img src="images/enki2.png" alt="Central Image" />
+    <img data-aos="zoom-in" data-aos-delay="4000" src="images/enki2.png" alt="Central Image" />
     <div class="waviy">
       <span style="--i:1">D</span>
       <span style="--i:2">O</span>
@@ -73,7 +74,7 @@
 
     <section class="hero-section">
       <div class="card-grid">
-        <a class="card" href="#">
+        <a class="card" data-aos="fade-down-right" href="#">
           <div class="card__background"
           style="background-image: url('images/Img1.jpg');">
           </div>
@@ -82,7 +83,7 @@
             <h3 class="card__heading">Harry Potter and the Half-Blood Prince</h3>
           </div>
         </a>
-        <a class="card" href="#">
+        <a class="card" data-aos="fade-down" href="#">
           <div class="card__background"
             style="background-image: url('images/Img2.jpg')">
           </div>
@@ -91,7 +92,7 @@
             <h3 class="card__heading">Harry Potter and the Prisoner of Azkaban</h3>
           </div>
         </a>
-        <a class="card" href="#">
+        <a class="card" data-aos="fade-down" href="#">
           <div class="card__background"
             style="background-image: url('images/Img3.jpg')">
           </div>
@@ -100,7 +101,7 @@
             <h3 class="card__heading">The Hobbit</h3>
           </div>
           </li>
-          <a class="card" href="#">
+          <a class="card" data-aos="fade-down-left" href="#">
             <div class="card__background"
               style="background-image: url('images/Img4.jpg')">
             </div>
@@ -110,7 +111,7 @@
             </div>
           </a>
 
-          <a class="card" href="#">
+          <a class="card" data-aos="fade-up-right" href="#">
             <div class="card__background"
               style="background-image: url('images/Img5.jpg')">
             </div>
@@ -119,7 +120,7 @@
               <h3 class="card__heading">Hamlet</h3>
             </div>
           </a>
-          <a class="card" href="#">
+          <a class="card" data-aos="fade-up" href="#">
             <div class="card__background"
               style="background-image: url('images/Img6.jpg')">
             </div>
@@ -128,7 +129,7 @@
               <h3 class="card__heading">The Great Gatsby</h3>
             </div>
           </a>
-          <a class="card" href="#">
+          <a class="card" data-aos="fade-up" href="#">
             <div class="card__background"
               style="background-image: url('images/Img7.jpg')">
             </div>
@@ -137,7 +138,7 @@
               <h3 class="card__heading">How to live on 24 hours a day</h3>
             </div>
             </li>
-            <a class="card" href="#">
+            <a class="card" data-aos="fade-up-left" href="#">
               <div class="card__background"
                 style="background-image: url('images/Img8.jpg')">
               </div>
@@ -153,19 +154,19 @@
     <div class="scroll-horizontal-container" id="section3">
       <div class="scroll-inner">
         <div class="scroll-section firstContainer">
-          <h1>Característica 1</h1>
+          <h1 id="animated-text">DO</h1>
           <img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Característica" />
         </div>
         <div class="scroll-section">
-          <h1>Característica 2</h1>
+          <h1 id="animated-text2">YOU</h1>
           <img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Característica" />
         </div>
         <div class="scroll-section">
-          <h1>Característica 3</h1>
+          <h1 id="animated-text3">DARE</h1>
           <img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Característica" />
         </div>
         <div class="scroll-section lastContainer">
-          <h1>Característica 4</h1>
+          <h1 id="animated-text4">TO READ?</h1>
           <img src="images/LOGOGHOST_ONLYPNG_WHITE.png" alt="Característica" />
         </div>
       </div>
@@ -174,7 +175,7 @@
     <div id="section4">
       <section class="pSection">
         <div class="pContent">
-          <p>Discover it on big screen...</p>
+          <p data-aos="zoom-out-up">Discover it on big screen...</p>
         </div>
 
         <!-- PARALLAX IMAGE SECTION -->
@@ -185,7 +186,7 @@
         <img class="pImage" src="images/MOCKUP_Phone.png" alt="Mockup Phone">
 
         <div class="pContent">
-          <p>... Or make it wearable</p>
+          <p data-aos="zoom-out-up">... Or make it wearable</p>
         </div>
       </section>
 
@@ -240,6 +241,8 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="https://unpkg.com/split-type"></script>
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="Gradient.js"></script>

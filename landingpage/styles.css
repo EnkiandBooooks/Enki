@@ -6,6 +6,10 @@
   z-index: -1;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 #main-nav {
   position: relative;
   top: 0;
@@ -202,7 +206,6 @@
   margin: 0;
   padding-bottom: 3%;
   color: white;
-  
 }
 
 .hero-section {
