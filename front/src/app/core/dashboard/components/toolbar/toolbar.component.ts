@@ -79,7 +79,7 @@ export class ToolbarComponent {
     this.categoryService.updateSearch(search);
   }
 
-  showArrows: boolean = false;
+  showArrows: boolean = true;
   ngAfterViewInit(): void {
     // Se usa setTimeout para asegurarse de que se hayan aplicado los estilos
     setTimeout(() => {
