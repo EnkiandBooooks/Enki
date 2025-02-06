@@ -1,3 +1,11 @@
+/* Reinicio global y configuración base */
+html, body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
 /* Contenedor principal del dashboard */
 .dashboard-container {
   display: flex;
@@ -6,52 +14,28 @@
   box-sizing: border-box;
 }
 
-/* Contenedor de sidenav */
-.mat-sidenav-container {
+/* Contenedor de la sidenav */
+.sidenav-container {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
 }
 
-.mat-sidenav {
+/* Sidenav con estilo original */
+.sidenav {
   width: 250px;
   background: linear-gradient(to bottom, #fefcff, #ffffff);
   color: white;
   display: flex;
+  flex-direction: column;
   align-items: center;
   height: 100%;
   border-radius: 0;
   overflow-y: auto;
-  border-right: 3px solid #9C7AAA; /* Borde morado en el lado derecho */
+  border-right: 3px solid #9C7AAA;
 }
 
-/* Contenedor con scroll para las comunidades */
-.communities-container {
-  display: block;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 1rem;
-  border-radius: 8px;
-  max-height: 300px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-}
-
-h6 {
-  padding-top: 3em;
-  text-align: center;
-  margin: 0 auto;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-/* Importante para quitar el scroll */
-.communities-container::-webkit-scrollbar {
-  display: none;
-}
-
-
-/* Logo en el Sidebar */
+/* Logo y separador en el sidebar */
 .sidebar-logo {
   display: flex;
   flex-direction: column;
@@ -63,41 +47,38 @@ h6 {
 
 .sidebar-logo-img {
   max-width: 50%;
-  /* opacity: 0.85; */
 }
 
 .sidebar-letter {
   max-width: 60%;
-  /* opacity: 0.85; */
 }
 
 .sidebar-divider {
-  width: 80%; /* Ajusta la anchura */
-  margin: 10px auto; /* Centra la línea */
-  border-top: 2px solid #66576c; /* Color morado y grosor */
+  width: 80%;
+  margin: 10px auto;
+  border-top: 2px solid #66576c;
   opacity: 0.9;
 }
 
+/* Botones de navegación */
+.nav-button, .nav-button-createcommunity {
+  transition: background-color 0.6s ease, color 0.3s ease;
+}
 
-/* Estilo de los botones de navegación */
 .nav-button {
   color: #66576c !important;
   font-size: 18px;
   padding: 20px 30px;
   width: 100%;
-  align-items: center;
-  justify-content: left;
-  transition: background-color 0.6s ease, color 0.3s ease;
+  text-align: left;
 }
 
-/* Hover para botones de navegación */
 .nav-button:hover {
   background-color: #7d5e7d;
   color: white;
 }
 
-
-.nav-button-createcommunity{
+.nav-button-createcommunity {
   color: #66576c !important;
   background: white;
   height: 100px;
@@ -105,9 +86,7 @@ h6 {
   font-size: 15px;
   border-radius: 100%;
   padding: 40px 30px;
-  align-items: right;
-  justify-content: right;
-  transition: background-color 0.6s ease, color 0.3s ease;
+  text-align: right;
 }
 
 .nav-button-createcommunity mat-icon {
@@ -117,84 +96,44 @@ h6 {
 }
 
 /* Barra de herramientas */
-.mat-toolbar {
-  background-color:#9C7AAA;
-  color: white;
-  justify-content: space-between;
-  height: 64px;
+.toolbar {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  background-color: #9C7AAA;
+  color: white;
+  height: 64px;
 }
 
-.mat-toolbar button {
-  margin-left: 10px;
+/* Contenedor flexible para el app-toolbar */
+.toolbar-center {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0 8px;
 }
 
-/* Área de contenido principal */
-.content-area {
+/* Botón de perfil: centrado verticalmente */
+.profile-button {
   display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  height: 100%;
-  background-color: rgb(255, 255, 255);
-  box-sizing: border-box;
-}
-
-/* Contenedor para el contenido */
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-/* Contenido del perfil */
-.content-wrapper > div {
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-}
-
-/* h1 estilos */
-h1 {
+  align-items: center;
+  justify-content: center;
   margin: 0;
-  padding: 20px 0;
-  text-align: center;
+  padding: 0;
 }
 
-
-
-/* Estilos globales */
-html, body {
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-/* Avatar de usuario */
+/* Imagen de perfil (avatar) */
 .user-avatar {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #ffffff33;
+  display: block;
 }
 
-button[mat-icon-button] {
-  display: flex;
-  align-items: center;
-  margin-left: 16px;
-  font-size: 1.5rem;
-  width: 48px;
-  height: 48px;
-}
-
-
-/* Menú de perfil */
+/* Menú de perfil y sus estilos */
 .profile-menu {
-  min-width: 20px;
+  min-width: 200px;
   padding: 8px 0;
 }
 
@@ -238,76 +177,22 @@ mat-menu-item {
   color: #333;
 }
 
-.logout-button {
-  font-weight: bold;
-  color: #dfdfdf;
-}
-
-.logout-button:hover {
-  background-color: #f8d7da;
-}
-
-/* Botones de las comunidades */
-
-.workspace {
-  background-color: #292929;
-  border-radius: 30px !important;
-  margin-bottom: 10px;
-  padding: 10px 20px;
+/* Área de contenido principal */
+.content-area {
   display: flex;
-  align-items: center;
-  height: 50px;
-  color: white;
-  text-decoration: none;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
-  cursor: pointer;
-}
-
-
-.workspace:hover {
-  transform: scale(1.03);
-  background-color: #7d5e7d; /* Resalta el fondo del botón */
-  color: white; /* Asegura que el texto siga siendo visible */
-}
-
-.workspace a {
-  all: unset; /* Elimina cualquier estilo interno que interfiera */
-  width: 100%; /* Asegura que todo el botón sea interactivo */
+  flex-direction: column;
+  flex-grow: 1;
   height: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+/* Contenedor para el contenido */
+.content-wrapper {
   display: flex;
-  align-items: center;
-}
-
-.dashboard-content {
-  display: flex;
-  flex-direction: column; /* Estructura vertical */
-  height: 100%; /* Ocupa todo el alto disponible */
-}
-
-.community-list {
-  flex: 0 0 33.33%; /* Un tercio del alto total */
-  background-color: #f8f8f8;
-  padding: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; /* Por si el contenido es demasiado */
-  border-radius: 8px;
-}
-
-.main-content {
-  flex: 1; /* Ocupa el resto del espacio */
-  background-color: #ffffff;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-}
-
-.nav-community-list{
-  background-color: pink;
-  padding: 10em;
-  margin: 0;
-  /* overflow: hidden; */
-  display: flex;
-  flex-direction: column;  
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }

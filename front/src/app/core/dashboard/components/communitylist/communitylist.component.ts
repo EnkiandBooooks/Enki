@@ -61,8 +61,9 @@ export class CommunitylistComponent {
     showSection(section: string, workspaceId: string) {
       this.sectionChange.emit({section, workspaceId});
       this.cdr.detectChanges();
-      this.router.navigate(['/dashboard/workspace', this.currentWorkspaceId ]);
-    
+      this.router.navigate(['/dashboard/home']).then(() => {
+        this.router.navigate(['/dashboard/workspace', this.currentWorkspaceId]);
+      });          
   }
 
     setCurrentWorkspaceId(id:string){
