@@ -9,7 +9,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDivider } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { workspaceService } from '../workspace/services/workspace.service';
@@ -25,13 +24,11 @@ import { ActivatedRoute } from '@angular/router';
     CommonModule, 
     MatCardModule,
     MatChipsModule,MatIcon, 
-    DashboardComponent,
     MatSidenavModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
     MatListModule, 
-    MatDivider,
     MatMenuModule,],
 })
 

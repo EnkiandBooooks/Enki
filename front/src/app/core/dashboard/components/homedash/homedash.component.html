@@ -1,70 +1,69 @@
+<!-- Carrusel de libros -->
+<header class="headers">
+  <h3 class="title" (click)="showLibrary()">Library</h3>
+  <p class="subtitle" >In this section, you will be able to choose.</p>
+</header>
+<section class="gallery-container">
+  <button mat-icon-button (click)="prevSlideBooks()" class="nav-button prev" [disabled]="currentBookIndex === 0">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  
+  <span class="carrusel-container">
+    <div class="slider" [style.transform]="translateXBooks">
+      <div class="bookCard" *ngFor="let book of books"
+                (mouseenter)="onMouseEnter(book)"
+                (mouseleave)="onMouseLeave(book)">
+        <div class="text">
+          @if (!book.isHovered && !book.isOverflow) {
+            <p class="tittle">{{ book.title }}</p>
+            }@else {
+              <marquee class="tittle">{{ book.title }}</marquee>
+            }
+        </div>
+        <img [src]="book.largeThumbnail" alt="Imagen del libro" class="book-image" />
+        <div class="book-details">
+          <p class="author">{{ book.authors }}</p>
+          <p class="rating">⭐{{ book.rating }}/5</p>
+        </div>
+      </div>
+    </div>
+  </span>
+  
+  <button mat-icon-button (click)="nextSlideBooks()" class="nav-button next" [disabled]="currentBookIndex >= (totalBooks / maxVisibleSlides) - 1">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</section>
 
-  <!-- Carrusel de libros -->
-  <div class="headers">
-    <h3 class="title" (click)="showLibrary()">Library</h3>
-    <p class="subtitle" >In this section, you will be able to choose.</p>
-  </div>
+<!-- Carrusel de workspaces -->
+<section class="comunityCarrusel">
+  <header class="headers">
+    <h3 class="title" (click)="showLibrary()">Workspaces</h3>
+    <p class="subtitle" >Here you can see the different workspaces.</p>    
+  </header>
   <div class="gallery-container">
-    <button mat-icon-button (click)="prevSlideBooks()" class="nav-button prev" [disabled]="currentBookIndex === 0">
+    <button mat-icon-button (click)="prevSlideWorkspaces()" class="nav-button prev" [disabled]="currentWorkspaceIndex === 0">
       <mat-icon>chevron_left</mat-icon>
     </button>
     
-    <div class="movies-container">
-      <div class="books-slider" [style.transform]="translateXBooks">
-        <div class="bookCard" *ngFor="let book of books"
-                  (mouseenter)="onMouseEnter(book)"
-                  (mouseleave)="onMouseLeave(book)">
+    <span class="carrusel-container">
+      <span class="slider" [style.transform]="translateXWorkspaces">
+        <div class="bookCard" *ngFor="let workspace of workspaces"
+                (mouseenter)="onMouseEnter(workspace)"
+                (mouseleave)="onMouseLeave(workspace)">
           <div class="text">
-            @if (!book.isHovered && !book.isOverflow) {
-              <p class="tittle">{{ book.title }}</p>
+            @if (!workspace.isHovered && !workspace.isOverflow) {
+              <p class="tittle">{{ workspace.workSpaceName }}</p>
               }@else {
-                <marquee class="tittle">{{ book.title }}</marquee>
+                <marquee class="tittle">{{ workspace.workSpaceName }}</marquee>
               }
           </div>
-          <img [src]="book.largeThumbnail" alt="Imagen del libro" class="book-image" />
-          <div class="book-details">
-            <p class="author">{{ book.authors }}</p>
-            <p class="rating">⭐{{ book.rating }}/5</p>
-          </div>
+          <img [src]="workspace.book?.bookImage" alt="Imagen del libro" class="book-image" />
         </div>
-      </div>
-    </div>
+      </span>
+    </span>
     
-    <button mat-icon-button (click)="nextSlideBooks()" class="nav-button next" [disabled]="currentBookIndex >= (totalBooks / maxVisibleSlides) - 1">
+    <button mat-icon-button (click)="nextSlideWorkspaces()" class="nav-button next" [disabled]="currentWorkspaceIndex >= (workspaces.length / maxVisibleSlides) - 1">
       <mat-icon>chevron_right</mat-icon>
     </button>
   </div>
-  
-  <!-- Carrusel de workspaces -->
-  <div class="comunityCarrusel">
-    <div class="headers">
-      <h3 class="title" (click)="showLibrary()">Workspaces</h3>
-      <p class="subtitle" >Here you can see the different workspaces.</p>    
-    </div>
-    <div class="gallery-container">
-      <button mat-icon-button (click)="prevSlideWorkspaces()" class="nav-button prev" [disabled]="currentWorkspaceIndex === 0">
-        <mat-icon>chevron_left</mat-icon>
-      </button>
-      
-      <div class="movies-container">
-        <div class="comunities-slider" [style.transform]="translateXWorkspaces">
-          <div class="bookCard" *ngFor="let workspace of workspaces"
-                  (mouseenter)="onMouseEnter(workspace)"
-                  (mouseleave)="onMouseLeave(workspace)">
-            <div class="text">
-              @if (!workspace.isHovered && !workspace.isOverflow) {
-                <p class="tittle">{{ workspace.workSpaceName }}</p>
-                }@else {
-                  <marquee class="tittle">{{ workspace.workSpaceName }}</marquee>
-                }
-            </div>
-            <img [src]="workspace.book?.bookImage" alt="Imagen del libro" class="book-image" />
-          </div>
-        </div>
-      </div>
-      
-      <button mat-icon-button (click)="nextSlideWorkspaces()" class="nav-button next" [disabled]="currentWorkspaceIndex >= (workspaces.length / maxVisibleSlides) - 1">
-        <mat-icon>chevron_right</mat-icon>
-      </button>
-    </div>
-  </div>
+</section>
