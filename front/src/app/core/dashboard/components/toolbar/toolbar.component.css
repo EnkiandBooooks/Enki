@@ -82,10 +82,10 @@
   font-size: 24px;
 }
 .arrow.left {
-  margin-right: 8px;
+  margin-right: 4px;
 }
 .arrow.right {
-  margin-left: 8px;
+  margin-left: 4px;
 }
 
 /* Barra de búsqueda: ancho fijo */
@@ -93,6 +93,7 @@
   flex: 0 0 300px;
   max-width: 300px;
   margin-left: 16px;
+  margin-bottom: -1.25em;
 }
 
 /* Opcional: estilos para la sección Workspace */
