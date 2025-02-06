@@ -3,12 +3,6 @@
   height: 100%; /* Asegúrate de que ocupe toda la altura del contenedor */
   box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho y la altura */
   margin: 0px;
-}
-
-.home-content {
-  width: 100%;
-  height: 100%; 
-  padding: 20px;
   background-color: #ffffff;
   overflow: auto; /* Añadir scroll si el contenido es más grande que la ventana */
 }
@@ -18,8 +12,16 @@
 }
 
 h3 {
-  margin-bottom: 10px;
+  margin-bottom: -5px;
   color: #3f3b42;
+  width: fit-content;
+  transition: transform 0.3s ease-in-out;
+}
+
+h3:hover {
+  color: #9C7AAA;
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .book-image {
@@ -39,7 +41,6 @@ h3 {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 16px;
   overflow: hidden;
 }
 
@@ -49,10 +50,18 @@ h3 {
   overflow: hidden;
 }
 
-.movies-slider {
+.comunities-slider {
   display: flex;
+  gap: 1em;
   transition: transform 0.3s ease;
 }
+
+.books-slider {
+  display: flex;
+  gap: 1em;
+  transition: transform 0.3s ease;
+}
+
 
 .movie-card {
   flex: 0 0 auto;
@@ -100,4 +109,118 @@ mat-chip {
 
 .next {
   right: 0;
+}
+
+/* Pruebas */
+.bookCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgb(250, 249, 249);
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 400px;
+  padding: 10px; /* Agregamos un poco de espacio interno */
+  transition: transform 0.3s ease-in-out;
+}
+
+.bookCard:hover {
+  background:  
+    linear-gradient(-45deg, #bc9dc9, 10%, rgb(250, 249, 249) 40%);
+  transform: scale(1.05);
+}
+
+.text {
+  width: 90%;
+  height: 50px; /* Ajusta la altura según tu diseño */
+  display: flex;
+  overflow: hidden; /* Oculta el texto que se desborda */
+  position: relative;
+}
+
+.headers {
+  padding-left: 2.5em;
+  padding-top: 1em;
+  margin: 0;
+}
+
+.tittle {
+  color: black;
+  bottom: -45%;
+  text-align: left;
+  font-size: 1.2em;
+  box-sizing: border-box;
+  margin: 0 0;
+  position: absolute;
+  left: 0;
+  white-space: nowrap;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  color: #6C566D;
+  font-style: bold;
+  font-weight: 500;
+}
+.subtitle {
+  margin: 0 0;
+
+}
+
+.bookCard .tittle {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  margin: 5%;
+  border-radius: 10px;
+}
+
+.book-image {
+
+  border-radius: 4px;
+  margin:5%;
+
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.book-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 5px;
+  font-size: 1em;
+  box-sizing: border-box;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.author {
+  color: #6C566D;
+  text-align: left;
+  width: 5em;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Muestra "..." si el texto es muy largo */
+  white-space: nowrap;
+  padding-right: 4px;
+  font-size: 0.8em;
+  font-style: bold;  
+  font-weight: 400;
+}
+
+.rating {
+  color: #6C566D;
+  text-align: right;
+  flex-shrink: 0; /* Evita que el rating se reduzca */
+  margin-left: 10px; /* Espaciado entre el autor y el rating */
+  font-style: bold;
+  font-weight: 400;
+}
+
+.comunityCarrusel {
+  background-color: #ffffff;
+  border-top: 2px solid #9C7AAA;
+}
+
+.title {
+  color: #6C566D;
 }

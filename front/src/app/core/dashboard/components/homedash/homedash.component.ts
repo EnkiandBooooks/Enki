@@ -140,4 +140,12 @@ export class HomedashComponent implements OnInit {
   //   this.dashboard.showSection('workspaces'); // Para un futuro, boton de descubrir workpsaces
   // }
 
+  onMouseEnter(book: any) {
+    book.isHovered = true;
+  }
+
+  onMouseLeave(book: any) {
+    book.isHovered = false;
+  }
+
 }
