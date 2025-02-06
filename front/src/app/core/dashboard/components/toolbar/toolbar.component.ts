@@ -79,7 +79,7 @@ export class ToolbarComponent {
     this.categoryService.updateSearch(search);
   }
 
-  showArrows: boolean = true;
+  showArrows: boolean = false;
   ngAfterViewInit(): void {
     // Se usa setTimeout para asegurarse de que se hayan aplicado los estilos
     setTimeout(() => {
@@ -87,6 +87,10 @@ export class ToolbarComponent {
     });
   }
 
+  ngAfterViewChecked(): void {
+    // Se llama en cada ciclo de detección de cambios
+    this.checkOverflow();
+  }
   // Detecta cambios en el tamaño de la ventana
   @HostListener('window:resize')
   onResize(): void {
@@ -94,7 +98,7 @@ export class ToolbarComponent {
   }
 
   // Método para comprobar si el contenedor de categorías tiene overflow
-  checkOverflow(): void {
+  public checkOverflow(): void {
     if (this.categoriesContainer && this.categoriesContainer.nativeElement) {
       const container = this.categoriesContainer.nativeElement;
       this.showArrows = container.scrollWidth > container.clientWidth;
@@ -107,7 +111,7 @@ export class ToolbarComponent {
   // Método para desplazar a la izquierda
   scrollLeft(): void {
     this.categoriesContainer.nativeElement.scrollBy({
-      left: -150, // Ajusta la cantidad de desplazamiento según sea necesario
+      left: -150,
       behavior: 'smooth'
     });
   }
@@ -115,7 +119,7 @@ export class ToolbarComponent {
   // Método para desplazar a la derecha
   scrollRight(): void {
     this.categoriesContainer.nativeElement.scrollBy({
-      left: 150, // Ajusta la cantidad de desplazamiento según sea necesario
+      left: 150,
       behavior: 'smooth'
     });
   }
