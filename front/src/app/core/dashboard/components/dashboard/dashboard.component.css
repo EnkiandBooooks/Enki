@@ -1,3 +1,8 @@
+.mdc-list-item {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 /* Contenedor principal del dashboard */
 .dashboard-container {
   display: flex;
@@ -13,52 +18,65 @@
   box-sizing: border-box;
 }
 
+/* Sidenav principal */
 .mat-sidenav {
   width: 250px;
   background: linear-gradient(to bottom, #fefcff, #ffffff);
-  color: white;
+  color: #66576c;
   display: flex;
   align-items: center;
   height: 100%;
   border-radius: 0;
   overflow-y: auto;
-  border-right: 3px solid #9C7AAA; /* Borde morado en el lado derecho */
+  border-right: 3px solid #9C7AAA;
   transition: width 0.3s ease;
 }
 
+/* Estado collapsed */
 .mat-sidenav.collapsed {
-  width: 5%;
+  width: 70px;
   align-items: center;
-  justify-content: center;
-  padding-left: 0;
-  padding-right: 0;
+  justify-content: flex-start;
+  padding: 0;
 }
 
+/* Ocultar elementos innecesarios en modo collapsed */
+.mat-sidenav.collapsed h6,
+.mat-sidenav.collapsed .sidebar-letter,
 .mat-sidenav.collapsed .nav-text {
   display: none;
 }
 
-.mat-sidenav-content.collapsed-content {
-  margin-left: 4.5% !important;
-  transition: margin-left 0.3s ease;
-}
-
-.mat-sidenav.mat-sidenav.collapsed h6 {
-  display: none;
-}
-
-.mat-sidenav.mat-sidenav.collapsed .sidebar-logo-img {
+.mat-sidenav.collapsed .sidebar-logo-img {
   max-width: 100%;
 }
 
-.mat-sidenav.mat-sidenav.collapsed .sidebar-letter {
-  display: none;
+/* Centrar los iconos en el sidebar colapsado */
+.mat-sidenav.collapsed .nav-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0;
 }
 
+.mat-sidenav.collapsed .nav-button .mat-icon {
+  margin: 0 auto;
+}
+
+/* Contenido principal */
 .mat-sidenav-content {
   margin-left: 250px;
   transition: margin-left 0.3s ease;
 }
+
+/* Ajustamos el margen del contenido principal al colapsar */
+.mat-sidenav-content.collapsed-content {
+  margin-left: 70px !important;
+}
+
+/* ============================================================
+   Componentes Internos y Utilidades
+   ============================================================ */
 
 /* Contenedor con scroll para las comunidades */
 .communities-container {
@@ -72,21 +90,19 @@
   overflow-y: auto;
 }
 
-h6 {
-  padding-top: 1em;
-  text-align: center;
-  justify-content: left;
-  font-weight: bold;
-  color: #66576c
-}
-
-/* Importante para quitar el scroll */
 .communities-container::-webkit-scrollbar {
   display: none;
 }
 
+/* Títulos secundarios */
+h6 {
+  padding-top: 1em;
+  text-align: center;
+  font-weight: bold;
+  color: #66576c;
+}
 
-/* Logo en el Sidebar */
+/* Logo del Sidebar */
 .sidebar-logo {
   display: flex;
   flex-direction: column;
@@ -98,64 +114,62 @@ h6 {
 
 .sidebar-logo-img {
   max-width: 50%;
-  /* opacity: 0.85; */
 }
 
 .sidebar-letter {
   max-width: 60%;
-  /* opacity: 0.85; */
 }
 
+/* Divisor del Sidebar */
 .sidebar-divider {
-  width: 80%; /* Ajusta la anchura */
-  margin: 10px auto; /* Centra la línea */
-  border-top: 2px solid #66576c; /* Color morado y grosor */
+  width: 80%;
+  margin: 10px auto;
+  border-top: 2px solid #66576c;
   opacity: 0.9;
 }
 
-
-/* Estilo de los botones de navegación */
+/* ============================================================
+   Botones de Navegación
+   ============================================================ */
 .nav-button {
   color: #66576c !important;
   font-size: 18px;
   padding: 20px 30px;
   width: 100%;
+  display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: flex-start;
   transition: background-color 0.6s ease, color 0.3s ease;
 }
 
-
-/* Hover para botones de navegación */
-.nav-button:hover {
+.nav-button:hover,
+.nav-button:focus {
   background-color: #7d5e7d;
-  color: white;
+  color: #ffffff;
+  outline: 2px solid #9C7AAA;
 }
 
-
-.nav-button-createcommunity{
+/* Botón especial para crear comunidad */
+.nav-button-createcommunity {
   color: #66576c !important;
-  background: white;
+  background: #ffffff;
   height: 100px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   font-size: 15px;
   border-radius: 100%;
   padding: 40px 30px;
-  align-items: right;
-  justify-content: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   transition: background-color 0.6s ease, color 0.3s ease;
 }
 
-/* .nav-button-createcommunity mat-icon {
-  margin-right: 8px;
-  font-size: 20px;
-  vertical-align: middle;
-} */
-
-/* Barra de herramientas */
+/* ============================================================
+   Barra de Herramientas y Perfil
+   ============================================================ */
 .mat-toolbar {
-  background-color:#9C7AAA;
-  color: white;
+  background-color: #9C7AAA;
+  color: #ffffff;
   justify-content: space-between;
   height: 64px;
   align-items: center;
@@ -165,59 +179,16 @@ h6 {
   margin-left: 10px;
 }
 
-/* Área de contenido principal */
-.content-area {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  height: 100%;
-  background-color: rgb(255, 255, 255);
-  box-sizing: border-box;
-}
-
-/* Contenedor para el contenido */
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-/* Contenido del perfil */
-.content-wrapper > div {
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-}
-
-/* h1 estilos */
-h1 {
-  margin: 0;
-  padding: 20px 0;
-  text-align: center;
-}
-
-
-
-/* Estilos globales */
-html, body {
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
 /* Avatar de usuario */
 .user-avatar {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #ffffff33;
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Botones de iconos */
 button[mat-icon-button] {
   display: flex;
   align-items: center;
@@ -226,7 +197,6 @@ button[mat-icon-button] {
   width: 48px;
   height: 48px;
 }
-
 
 /* Menú de perfil */
 .profile-menu {
@@ -274,17 +244,70 @@ mat-menu-item {
   color: #333;
 }
 
+mat-menu-item:hover,
+mat-menu-item:focus {
+  outline: 2px solid #9C7AAA;
+}
+
+/* Botón de Logout */
 .logout-button {
   font-weight: bold;
   color: #dfdfdf;
 }
 
-.logout-button:hover {
+.logout-button:hover,
+.logout-button:focus {
   background-color: #f8d7da;
+  outline: 2px solid #9C7AAA;
 }
 
-/* Botones de las comunidades */
+/* ============================================================
+   Área de Contenido Principal
+   ============================================================ */
+.content-area {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
 
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.content-wrapper > div {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+h1 {
+  margin: 0;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* ============================================================
+   Estilos Globales
+   ============================================================ */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* ============================================================
+   Botones y Secciones de Comunidades
+   ============================================================ */
 .workspace {
   background-color: #292929;
   border-radius: 30px !important;
@@ -293,32 +316,36 @@ mat-menu-item {
   display: flex;
   align-items: center;
   height: 50px;
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
 }
 
-
-.workspace:hover {
+.workspace:hover,
+.workspace:focus {
   transform: scale(1.03);
-  background-color: #7d5e7d; /* Resalta el fondo del botón */
-  color: white; /* Asegura que el texto siga siendo visible */
+  background-color: #7d5e7d;
+  color: #ffffff;
+  outline: 2px solid #9C7AAA;
 }
 
 .workspace a {
-  all: unset; /* Elimina cualquier estilo interno que interfiera */
-  width: 100%; /* Asegura que todo el botón sea interactivo */
+  all: unset;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
 }
 
+/* ============================================================
+   Otras Secciones del Dashboard
+   ============================================================ */
 .dashboard-content {
   display: flex;
-  flex-direction: column; /* Estructura vertical */
-  height: 100%; /* Ocupa todo el alto disponible */
+  flex-direction: column;
+  height: 100%;
 }
 
 .community-list {
@@ -331,7 +358,7 @@ mat-menu-item {
 }
 
 .main-content {
-  flex: 1; /* Ocupa el resto del espacio */
+  flex: 1;
   background-color: #ffffff;
   padding: 16px;
   border-radius: 8px;
@@ -339,11 +366,13 @@ mat-menu-item {
   overflow-y: auto;
 }
 
-.nav-community-list{
+/* Contenedor de la lista de comunidades */
+.nav-community-list {
   background-color: pink;
   padding: 10em;
   margin: 0;
-  /* overflow: hidden; */
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
+

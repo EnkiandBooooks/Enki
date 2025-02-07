@@ -61,14 +61,7 @@
     display: none;
   }
 
-  button[mat-icon-button] {
-    display: flex;
-    align-items: center;
-    margin-left: 16px;
-    font-size: 1.5rem;
-    width: 48px;
-    height: 48px;
-  }
+
 
   .workspace:hover {
     transform: scale(1.03);
