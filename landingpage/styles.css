@@ -180,26 +180,26 @@ body {
   align-items: center;
   color: white;
   flex-direction: column;
-  gap: 20%;
+  gap: 5%;
 }
 
 .scroll-section img {
-  width: 50%;
-  max-width: 400px;
-  height: auto;
-  margin-top: 20px;
+  width: 80%;
+  height: 80%;
+  position: contain;
+  margin-top: 5px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(161, 238, 219, 0.5);
+  box-shadow: 0 32px 40px rgba(161, 238, 219, 0.5);
 }
 
 .firstContainer img {
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(216, 161, 238, 0.5);
+  box-shadow: 0 32px 40px rgba(216, 161, 238, 0.5);
 }
 
 .lastContainer img {
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(216, 161, 238, 0.5);
+  box-shadow: 0 32px 40px rgba(216, 161, 238, 0.5);
 }
 
 .text_animation {

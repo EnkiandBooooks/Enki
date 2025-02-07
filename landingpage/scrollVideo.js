@@ -48,15 +48,27 @@ gsap.to(".pContent", {
   },
 });
 
-gsap.to(".pImage", {
-  yPercent: 30, // Imagen se mueve en sentido contrario para efecto de profundidad
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".pSection",
-    start: "top bottom",
-    end: "bottom top",
-    scrub: true
-  },
+gsap.utils.toArray(".pImage").forEach((image) => {
+  image.addEventListener("mouseenter", () => {
+    let xMove = image.src.includes("MOCKUP_Phone") ? -30 : 30; 
+    let yMove = -30;
+
+    gsap.to(image, {
+      x: xMove,
+      y: yMove,
+      duration: 0.3,
+      ease: "power2.out"
+    });
+  });
+
+  image.addEventListener("mouseleave", () => {
+    gsap.to(image, {
+      x: 0,
+      y: 0,
+      duration: 0.3,
+      ease: "power2.out"
+    });
+  });
 });
 
 
@@ -120,4 +132,12 @@ gsap.to("#animated-text", {
     start: "top 80%", // Inicia cuando el elemento esté en el 80% de la pantalla
     toggleActions: "play none none none" // La animación solo se ejecuta una vez
   }
+});
+
+gsap.to(".car", {
+  y: 20, // Mueve la imagen 10px arriba y abajo
+  duration: 2, // Duración del movimiento
+  repeat: -1, // Repetir infinito
+  yoyo: true, // Hace que vuelva al punto original
+  ease: "power1.inOut" // Suaviza la animación
 });
