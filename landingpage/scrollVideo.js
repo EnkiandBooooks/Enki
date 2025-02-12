@@ -32,8 +32,8 @@ splitTypes.forEach((charEl) => {
 let sections = gsap.utils.toArray(".scroll-section");
 
 // Definimos las duraciones para el "hold" (pausa) y el "move" (transición)
-const holdDuration = 1; // Tiempo en el que el panel se queda estático
-const moveDuration = 1; // Tiempo de transición al siguiente panel
+const holdDuration = 20; // Tiempo en el que el panel se queda estático
+const moveDuration = 10; // Tiempo de transición al siguiente panel
 
 // Calculamos un factor para aumentar el scroll total.
 // El scroll total original se basaba en el ancho del contenedor interno, pero ahora
@@ -185,7 +185,7 @@ sections.forEach((section, index) => {
   // Para este ejemplo, usamos el mismo parámetro de inicio y delay para cada sección.
   // Puedes ajustar estos valores si deseas que el primero se comporte distinto.
   let startValue = "left center";
-  let delayTime = 1; // 1 segundo de retraso antes de ejecutar la transformación
+  let delayTime = 1.5; // 1 segundo de retraso antes de ejecutar la transformación
 
   // Creamos un ScrollTrigger que usa containerAnimation para "escuchar" el progreso del timeline horizontal.
   ScrollTrigger.create({
@@ -353,7 +353,7 @@ gsap.to("#animated-text", {
 });
 
 gsap.to(".car", {
-  y: 20, // Mueve la imagen 10px arriba y abajo
+  y: 10, // Mueve la imagen 10px arriba y abajo
   duration: 2, // Duración del movimiento
   repeat: -1, // Repetir infinito
   yoyo: true, // Hace que vuelva al punto original

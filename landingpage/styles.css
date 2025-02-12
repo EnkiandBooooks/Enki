@@ -450,9 +450,9 @@ body {
 
 
 .added-letter {
-  color: blue; /* Color para letras que se agregan */
+  color: red; /* Color para letras que se agregan */
 }
 
 .common-letter {
-  color: black; /* Color para letras que permanecen (o el que desees) */
+  color: white; /* Color para letras que permanecen (o el que desees) */
 }
