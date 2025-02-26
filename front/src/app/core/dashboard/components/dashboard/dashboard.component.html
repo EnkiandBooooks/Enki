@@ -61,7 +61,12 @@
               <span class="user-email">{{ arrUsr().mail }}</span>
             </div>
           </div>
-          <mat-divider></mat-divider>
+
+          <div class="divider-container">
+            <mat-divider></mat-divider>
+            <img [src]="imgUrl" alt="Perfil" class="divider-avatar">
+          </div>ç
+          
           <button mat-menu-item (click)="showSection('profile')">
             <mat-icon>person</mat-icon>
             My Profile

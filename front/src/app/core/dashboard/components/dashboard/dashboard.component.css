@@ -196,3 +196,27 @@ mat-menu-item {
   overflow: hidden;
   box-sizing: border-box;
 }
+
+.divider-container {
+  position: relative;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.divider-container mat-divider {
+  position: relative;
+  z-index: 1;
+}
+
+.divider-avatar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;  /* Ajusta el tamaño según necesites */
+  height: 50px;
+  border-radius: 50%;
+  background: white; /* Para que no se mezcle con el divider */
+  z-index: 2;
+  border: 2px solid #ccc; /* Borde opcional */
+}
