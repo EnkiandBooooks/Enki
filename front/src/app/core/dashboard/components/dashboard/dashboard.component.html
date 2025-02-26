@@ -54,19 +54,16 @@
 
         <!-- Menú de perfil -->
         <mat-menu #profileMenu="matMenu" class="profile-menu">
-          <div class="profile-header">
-            <img [src]="imgUrl" alt="Perfil" class="user-avatar-large">
             <div class="profile-info">
               <span class="user-name">{{ arrUsr().user }}</span>
               <span class="user-email">{{ arrUsr().mail }}</span>
             </div>
-          </div>
 
           <div class="divider-container">
             <mat-divider></mat-divider>
             <img [src]="imgUrl" alt="Perfil" class="divider-avatar">
-          </div>ç
-          
+          </div>
+
           <button mat-menu-item (click)="showSection('profile')">
             <mat-icon>person</mat-icon>
             My Profile
