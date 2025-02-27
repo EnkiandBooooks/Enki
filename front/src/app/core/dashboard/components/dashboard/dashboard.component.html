@@ -53,7 +53,7 @@
         </button>
 
         <!-- Menú de perfil -->
-        <mat-menu #profileMenu="matMenu" class="profile-menu">
+        <mat-menu #profileMenu="matMenu" class="general-menu">
             <div class="profile-info">
               <span class="user-name">{{ arrUsr().user }}</span>
               <span class="user-email">{{ arrUsr().mail }}</span>
@@ -64,13 +64,14 @@
             <img [src]="imgUrl" alt="Perfil" class="divider-avatar">
           </div>
 
+          
           <button mat-menu-item (click)="showSection('profile')">
-            <mat-icon>person</mat-icon>
+            <mat-icon class="menu-button">person</mat-icon>
             My Profile
           </button>
           <mat-divider></mat-divider>
           <button mat-menu-item (click)="onLogout()">
-            <mat-icon style="color: red;">logout</mat-icon>
+            <mat-icon style="color: red;" class="menu-button">logout</mat-icon>
             <span style="color: red;">Logout</span>
           </button>
         </mat-menu>
