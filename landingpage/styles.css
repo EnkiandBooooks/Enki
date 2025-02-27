@@ -456,3 +456,11 @@ body {
 .common-letter {
   color: white; /* Color para letras que permanecen (o el que desees) */
 }
+
+
+#canvas1{
+    --gradient-color-1: #525252; 
+    --gradient-color-2: #66576c; 
+    --gradient-color-3: #d89df0;  
+    --gradient-color-4: #36dce7;
+}
