@@ -195,8 +195,8 @@ sections.forEach((section, index) => {
   // Para este ejemplo, usamos el mismo parámetro de inicio y delay para cada sección.
   // Puedes ajustar estos valores si deseas que el primero se comporte distinto.
   let startValue = "left center";
-  let delayTime = 1.5; // 1 segundo de retraso antes de ejecutar la transformación
-
+  let delayTime = index == 0 ? 0 : 0.5; // 1 segundo de retraso antes de ejecutar la transformación
+  
   // Creamos un ScrollTrigger que usa containerAnimation para "escuchar" el progreso del timeline horizontal.
   ScrollTrigger.create({
     trigger: section,
