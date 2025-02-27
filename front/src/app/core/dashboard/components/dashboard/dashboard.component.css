@@ -204,7 +204,7 @@ html, body {
 
 .divider-avatar {
   position: absolute;
-  top: -30px; /* Sube la imagen por encima del divisor */
+  top: -30px;
   left: 50%;
   transform: translateX(-50%);
   width: 60px;
@@ -215,7 +215,6 @@ html, body {
 }
 
 mat-menu-item {
-  /* Un poco de separación vertical */
   padding: 12px 16px;
   font-size: 0.95rem;
   color: #333;
@@ -224,16 +223,15 @@ mat-menu-item {
 
 }
 
-::ng-deep button[mat-menu-item] {
+::ng-deep button[mat-menu-item] > * {
   transition: transform 0.3s ease !important;
 }
 
-/* Si quieres un hueco entre los items y el borde inferior del menú */
 .general-menu button:last-of-type {
   margin-bottom: 16px;
 }
 
-::ng-deep button[mat-menu-item]:hover {
+::ng-deep button[mat-menu-item]:hover > * {
   transform: translateX(20px) !important;
 }
 
