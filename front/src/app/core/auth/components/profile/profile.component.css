@@ -4,11 +4,12 @@
   flex-direction: column; /* Alinear logo y tarjeta en columna */
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Asegurar que ocupe al menos toda la pantalla */
-  background: linear-gradient(to bottom, #5b5661, #c6b3ce);
+  background: #f1f1f1;
+  min-height: calc(100vh - 60px);
   padding: 20px;
   gap: 20px; /* Espaciado entre los elementos */
   box-sizing: border-box; /* Asegura que el padding se respete */
+  overflow-y: auto;
 }
 
 /* Estilo de la tarjeta de login */
@@ -16,12 +17,13 @@
   width: 100%; /* Usar todo el ancho disponible */
   max-width: 400px; /* Límite máximo de 400px */
   padding: 20px;
-  background-color: #66576C;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  border-radius: 12px; /* Bordes redondeados */
+  background-color: #f1f1f1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 8px 15px;
+  border-radius: 12px;
   margin-top: 140px;
   margin-bottom: 20px; /* Asegurar que haya espacio debajo en pantallas pequeñas */
   padding-top: 35px;
+  
 }
 
 .avatar {
@@ -193,11 +195,11 @@ mat-card-actions button:hover {
 }
 
 p {
-  color: white;
+  color: #66576c;
 }
 
 span {
-  color: rgb(216, 216, 216);
+  color: #66576c;
   font-weight: normal;
   text-shadow: #232223;
 }
