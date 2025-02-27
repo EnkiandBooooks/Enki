@@ -1,3 +1,7 @@
+
+
+
+
 :host {
   display: flex;
   flex-direction: row;
@@ -14,6 +18,18 @@
   width: 100%;
   box-sizing: border-box;
 }
+
+
+@media (min-width: 100px) {
+  .toolbar-container{
+    height: 10vh;
+  }}
+  
+@media (min-width: 1500px) {
+  .toolbar-container{
+      height: 40vh;
+    }}
+
 
 /* Contenedor del carrusel: se adapta al espacio disponible */
 .carousel-wrapper {
@@ -61,15 +77,23 @@
   justify-content: center;
   text-align: center;
   box-sizing: border-box;
-  border: 1px solid #ccc;
-  background-color: #66576c;
-  color: white;
+  border: 1px solid #ffffff;
+  background-color: #F1F1F1;
+  color: #292929;
 }
 .categoryButton:hover {
   background-color: white;
   transform: scale(1.05);
   border-color: white;
   color: black;
+}
+
+
+/* Estilos para el botón de categoría activo */
+.categoryButton.mat-button-toggle-checked { 
+  background-color: #D1C5D6 !important;
+  border-color: #D1C5D6 !important;
+  color: black !important;
 }
 
 /* Flechas para el carrusel */
@@ -96,7 +120,11 @@
   margin-bottom: -1.25em;
 }
 
-/* Opcional: estilos para la sección Workspace */
+
 .toolscontainer-left {
   margin-left: 1em;
+}
+
+.toolscontainer-left button {
+  margin-right: 16px; 
 }
