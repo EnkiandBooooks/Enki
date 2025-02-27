@@ -132,15 +132,14 @@ html, body {
 }
 
 /* Menú de perfil y sus estilos */
-.profile-menu {
-  min-width: 200px;
-  padding: 8px 0;
-}
-
-.profile-header {
+.general-menu {
+  /* Un pelín de esquinas redondeás */
+  border-radius: 8px;
+  /* Sombrita pa’ que quede elegante */
+  box-shadow: 0 2px 8px rgba(0,0,0,1);
   display: flex;
-  align-items: center;
-  padding: 10px;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .user-avatar-large {
@@ -151,30 +150,30 @@ html, body {
 }
 
 .profile-info {
+  
+  background-color: rgba(125, 94, 125, 0.8);
+
+  border-radius: 12px;
+  border: 4px solid rgba(76, 71, 78, 0.8);
+
+
+  color: #fff;
+  text-align: center;
+  padding: 16px; 
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .user-name {
-  font-weight: bold;
-  font-size: 1rem;
-  color: #333;
+  font-size: 1.5rem;
 }
 
 .user-email {
-  font-size: 0.7rem;
-  color: #666;
-  margin-top: 2px;
-}
-
-mat-divider {
-  margin: 8px 0;
-}
-
-mat-menu-item {
-  padding: 10px 20px;
-  font-size: 0.9rem;
-  color: #333;
+  font-size: 1rem;
 }
 
 /* Área de contenido principal */
@@ -183,7 +182,7 @@ mat-menu-item {
   flex-direction: column;
   flex-grow: 1;
   height: 100%;
-  background-color: #fff;
+  background-color: #ffffff;
   box-sizing: border-box;
 }
 
@@ -195,4 +194,47 @@ mat-menu-item {
   height: 100%;
   overflow: hidden;
   box-sizing: border-box;
+}
+
+.divider-container {
+  position: relative;
+  margin: 40px auto; /* 40px arriba/abajo, auto izqda/dcha */
+  width: 80%;
+}
+
+.divider-avatar {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid hsla(273, 48%, 58%, 0.438);
+  object-fit: cover;
+}
+
+mat-menu-item {
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+
+}
+
+::ng-deep button[mat-menu-item] > * {
+  transition: transform 0.3s ease !important;
+}
+
+.general-menu button:last-of-type {
+  margin-bottom: 16px;
+}
+
+::ng-deep button[mat-menu-item]:hover > * {
+  transform: translateX(20px) !important;
+}
+
+.menu-button {
+  margin-left: 20px;;
 }
