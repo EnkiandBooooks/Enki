@@ -1,28 +1,60 @@
-.gen-form {
-  display: grid;
-  place-items: center; /* Centra tanto horizontal como verticalmente */
-  min-height: fit-content;
-}
-
-/* Contenedor del formulario que ocupa casi toda la pantalla */
 .form-container {
-  background-color: #FFCC00;
+  background-color: rgba(209, 197, 214, 0.8);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
-  align-items: center;
-  margin-top: 5%;
-}
-
-.mat-cards {
+  min-height: 92vh;
   display: flex;
-  gap: 20px;
+  flex-direction: column;
   justify-content: center;
 }
 
-/* Estilos de las tarjetas */
+/* Contenedor de las tarjetas */
+.mat-cards {
+  display: flex;
+  gap: 5%;
+  justify-content: center;
+  align-items: center; /* Asegura que estén alineadas verticalmente */
+  width: 100%;
+}
+
+/* Aumentar tamaño de las tarjetas */
 .form-card {
-  background-color: red !important;
-  padding: 30px; /* Más espacio interno */
+  background-color: rgba(102, 87, 108, 0.8) !important;
+  padding-left: 50px; /* Más espacio interno */
+  padding-right: 50px; /* Más espacio interno */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
+  width: 30vw; /* Más anchas */
+  height: 70vh; /* Más altas */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Aumentar tamaño del título */
+h2 {
+  font-size: 2rem; /* Hace el título más grande */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Aumentar tamaño de etiquetas y entradas */
+mat-label, input, mat-select {
+  font-size: 1rem !important;
+  color: white !important;
+}
+
+mat-form-field {
+  margin-bottom: 20px; /* Ajusta el valor según necesites */
+  width: 100%; /* Asegura que ocupen todo el ancho disponible */
+}
+
+::placeholder {
+  color: rgb(255, 255, 255) !important; /* Cambia el color del placeholder */
+  opacity: 1; /* Asegura que se vea completamente */
+}
+
+/* En Angular Material, también puede necesitar este selector */
+.mat-input-element::placeholder {
+  color: rgb(255, 255, 255) !important;
 }
