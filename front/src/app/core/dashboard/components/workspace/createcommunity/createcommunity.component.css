@@ -1,36 +1,16 @@
-/* Contenedor padre que ocupa toda la pantalla */
-.form-wrapper {
-  height: 100vh;
-  background: linear-gradient(to bottom, #D1C5D6, #F1F1F1);
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Centrado vertical */
-  width: 100%;
+.gen-form {
+  display: grid;
+  place-items: center; /* Centra tanto horizontal como verticalmente */
+  min-height: fit-content;
 }
 
 /* Contenedor del formulario que ocupa casi toda la pantalla */
 .form-container {
   background-color: #FFCC00;
-  width: 90%; /* Ocupa casi toda la pantalla */
-  max-width: 1200px; /* Aumentado para más espacio */
-  padding: 30px; /* Un poco más de padding para que no se vea apelotonado */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
-}
-
-/* Dos columnas con más espacio */
-.form-columns {
-  display: flex;
-  flex-direction: row;
-  gap: 40px; /* Más separación entre las dos mat-cards */
-  justify-content: space-between; /* Que se repartan bien */
-  align-items: flex-start;
-}
-
-/* Cada mat-card ocupa más espacio */
-.column, .form-card {
-  flex: 1;
-  max-width: 500px; /* Aumentamos el ancho */
+  align-items: center;
+  margin-top: 5%;
 }
 
 /* Estilos de las tarjetas */
@@ -40,24 +20,3 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
 }
-
-/* Estilo para el título preview */
-.preview-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-/* Estilo de la imagen del libro */
-.book-image {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  display: block;
-  margin: 10px auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-

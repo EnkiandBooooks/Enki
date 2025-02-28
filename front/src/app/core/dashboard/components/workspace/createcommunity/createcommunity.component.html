@@ -1,8 +1,10 @@
-<div class="community-form">
-  <form [formGroup]="communityForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+  <form [formGroup]="communityForm" (ngSubmit)="onSubmit()" ngNativeValidate class="gen-form">
     <div class="form-container">
+
       <h2>Create community</h2>
+
       <mat-card class="form-card">
+
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Community's name</mat-label>
           <input matInput formControlName="communityName" placeholder="Introduce el nombre de la comunidad">
@@ -37,12 +39,10 @@
             <mat-option value="private">Private</mat-option>
           </mat-select>
         </mat-form-field>
+
         <button mat-raised-button color="primary" type="submit" class="submit-button">Create</button>
+
       </mat-card>
+
     </div>
   </form>
-</div>
-
-
-
-  
