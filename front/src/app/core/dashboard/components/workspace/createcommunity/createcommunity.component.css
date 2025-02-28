@@ -1,7 +1,6 @@
 .form-container {
   background-color: rgba(209, 197, 214, 0.8);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
   min-height: 92vh;
   display: flex;
   flex-direction: column;
