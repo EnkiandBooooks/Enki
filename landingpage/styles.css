@@ -464,3 +464,23 @@ body {
     --gradient-color-3: #d89df0;  
     --gradient-color-4: #36dce7;
 }
+
+#btnTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  font-size: 5vh;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50px;
+  padding: 5px;
+  cursor: pointer;
+  display: block; /* Asegura que siempre está en el DOM */
+  opacity: 0; /* Inicia oculto */
+  pointer-events: none; /* Evita clics cuando es invisible */
+  transition: opacity .25s ease-out, bottom 0.25s ease-in-out; /* Transición suave */
+  user-select: none;
+}
+
+

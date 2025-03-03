@@ -1,5 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
+
   const gradient = new Gradient()
 
   // Call `initGradient` with the selector to your canvas

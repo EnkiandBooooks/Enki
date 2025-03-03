@@ -1,3 +1,30 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const btnTop = document.getElementById("btnTop");
+  const footer = document.getElementById("footer-nav");
+  const offset = 20;
+
+  window.addEventListener("scroll", function () {
+      let footerTop = footer.getBoundingClientRect().top;
+      let windowHeight = window.innerHeight;
+
+      // Mostrar el botón con una transición suave
+      if (window.scrollY > 100 && footerTop > windowHeight - offset) {
+          btnTop.style.opacity = "1";
+          btnTop.style.pointerEvents = "auto"; // Permitir clics
+      } else {
+          btnTop.style.opacity = "0";
+          btnTop.style.pointerEvents = "none"; // Evitar clics cuando se oculta
+      }
+  });
+
+  // Scroll suave al hacer clic en el botón
+  btnTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
+
+
 // ================================
 // REGISTRO DE PLUGINS Y CONFIGURACIONES INICIALES
 // ================================
@@ -10,7 +37,7 @@ const lenis = new Lenis({
 
 // Listen for the scroll event and log the event data
 lenis.on('scroll', (e) => {
-  console.log(e);
+
 });
 
 // ================================
@@ -18,7 +45,13 @@ lenis.on('scroll', (e) => {
 // ================================
 const splitTypes = document.querySelectorAll(".split_text");
 splitTypes.forEach((charEl) => {
-  const text = new SplitType(charEl, { types: "chars" });
+  const text = new SplitType(charEl, { types: "words, chars" });
+
+  text.words.forEach((word) => {
+    word.style.whiteSpace = "nowrap"; // No permite que una palabra se divida en múltiples líneas
+    word.style.display = "inline-block"; // Mantiene la palabra junta en la animación
+  });
+
   gsap.from(text.chars, {
     scrollTrigger: {
       trigger: charEl,
