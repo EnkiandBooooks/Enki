@@ -35,7 +35,8 @@ const abecedario = 'abcdefghijklmnopqrstuvwxyz';
 async function recogerLibrosAPI(query, maxResultados) {
   const url = `https://openlibrary.org/search.json?q=${query}&limit=${maxResultados}&language:en`;
   const response = await axios.get(url);
-
+  console.log(response)
+  console.log(response.data)
   const books = await Promise.all(
     response.data.docs.map(async (book) => {
       const isValidBook =
@@ -48,30 +49,31 @@ async function recogerLibrosAPI(query, maxResultados) {
         book.number_of_pages_median > 0 &&
         book.ratings_average &&
         Array.isArray(book.isbn) &&
-        book.isbn.length > 0 &&
+        book.ia[0].length > 0 &&
         Array.isArray(book.subject) &&
         book.subject.length > 0 &&
         (await hasImage(book.isbn[0]));
+        
 
       return isValidBook ? book : null;
     })
   );
+  console.log(await books)
   return books
     .filter(Boolean)
     .map((book) => ({
       title: book.title,
       authors: book.author_name,
-      publishedDate: book.publish_date[0],
+      publishedDate: book.first_publish_year,
       description: enDescription(book.first_sentence),
-      pageCount: book.number_of_pages_median,
-      categories: book.subject.slice(0, 3),
-      rating: book.ratings_average,
-      isbn: book.isbn[0],
+      // categories: book.subject.slice(0, 3),
+      // rating: book.ratings_average,
+      isbn: book.ia[0],
       thumbnail: `https://covers.openlibrary.org/b/isbn/${book.isbn[0]}-S.jpg`,
       largeThumbnail: `https://covers.openlibrary.org/b/isbn/${book.isbn[0]}-L.jpg`,
     }));
 };
-function enDescription(sentences){
+async function enDescription(sentences){
   const onlyLanguages = ['sco', 'ulst', 'eng'];
   const text = sentences.map(language => franc(language));
   const enIndex = text.findIndex(lang => onlyLanguages.includes(lang));
@@ -100,7 +102,8 @@ async function moverLibroDB(books) {
     console.log("--------------------------------------------------")
     for(const book of books){
       let existe = await bookModel.findOne({isbn : book.isbn});
-      
+      // console.log(book)
+      // console.log("Existe: ", existe)
       if (!existe){
         await bookModel.create(book);
         console.log("Libro",book.title,"insertado en la base de datos")
@@ -162,6 +165,7 @@ async function anadirLibrosDesdeArchivo(archivo) {
         if (!book) {
           console.log("No se pudo encontrar un libro.");
         } else {
+          console.log(book)
           await moverLibroDB(book);
         }
       } catch (error) {
@@ -200,6 +204,15 @@ async function anadirLibroManual(query){
 async function main() {
   const args = process.argv.slice(2);
   const modo = args[0] || '--archivo';
+
+  await connectDB()
+  .then(() => {
+    console.log("Conexión exitosa a MongoDB, iniciando servidor...");
+  })
+  .catch(err => {
+    console.error("Error conectando a la base de datos:", err);
+    process.exit(1); // Salir de la aplicación si no se puede conectar
+  });
 
   if (modo === '--aleatorio') {
     console.log('Añadiendo de forma aleatoria libros...');
