@@ -44,6 +44,7 @@ export class CreatecommunityComponent {
   options!: string[];
   filteredOptions!: string[];
   books: any;
+  previewText: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -65,7 +66,11 @@ export class CreatecommunityComponent {
         this.books = Object.entries(res);
         this.options =  this.books.map((book:any) => book[1].title)
         this.filteredOptions = this.options.slice();
-      })
+      });
+
+      this.communityForm.get('communityName')?.valueChanges.subscribe(value => {
+        this.previewText = value || ''; // Si es null, poner cadena vacía
+      });
   }
 
   onSubmit(): void {

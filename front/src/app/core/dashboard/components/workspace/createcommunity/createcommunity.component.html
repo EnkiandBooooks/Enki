@@ -49,6 +49,21 @@
 
       <mat-card class="form-card">
         <h2>Community Preview</h2>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Preview Name</mat-label>
+          <input matInput [value]="previewText" readonly>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <div class="avatar">
+            <label for="fileInput">
+              <img class="editImg" src="images/edit.png" alt="Editar imagen de perfil">
+              <img class="profilePicture"[src]="imgUrl" alt="Imagen de perfil">
+            </label>
+              <input type="file" (change)="onFileSelected($event)" accept="image/png" />
+          </div>
+        </mat-form-field>
   
       </mat-card>
 
