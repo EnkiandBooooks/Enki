@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
-import { AsyncPipe } from '@angular/common';
+import { CommonModule, AsyncPipe, NgIf } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -11,6 +11,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSelectModule } from '@angular/material/select';
 import { workspaceService } from '../services/workspace.service';
 import { BooksService } from '../services/books.service';
+import { Router } from '@angular/router';
 
 
 interface CommunityData {
@@ -34,6 +35,8 @@ interface CommunityData {
     MatSelectModule,
     MatAutocompleteModule,
     AsyncPipe,
+    NgIf,
+    CommonModule,
   ],
   templateUrl: './createcommunity.component.html',
   styleUrls: ['./createcommunity.component.css']
@@ -44,12 +47,17 @@ export class CreatecommunityComponent {
   options!: string[];
   filteredOptions!: string[];
   books: any;
+  previewText: string = '';
+  previewImage: string | null = null;
+  previewPrivacy: string = 'Public';
+  previewStamps: number = 0;
 
   constructor(
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
     private workspaceService: workspaceService,
     private booksService: BooksService,
+    private router: Router,
   ) {
     this.communityForm = this.fb.group({
       communityName: ['', Validators.required],
@@ -59,13 +67,30 @@ export class CreatecommunityComponent {
     });
   }
   
-  ngOnInit(){
+  ngOnInit() {
+    this.previewImage = 'images/default-book.jpg'
     this.booksService.getBooks()
       .subscribe((res) => {
         this.books = Object.entries(res);
-        this.options =  this.books.map((book:any) => book[1].title)
+        this.options = this.books.map((book: any) => book[1].title);
         this.filteredOptions = this.options.slice();
-      })
+      });
+
+    this.communityForm.get('communityName')?.valueChanges.subscribe(value => {
+      this.previewText = value || '';
+    });
+
+    this.communityForm.get('privacy')?.valueChanges.subscribe(value => {
+      this.previewPrivacy = value.charAt(0).toUpperCase() + value.slice(1);this.previewPrivacy = value || 'Public';
+    });
+
+    this.communityForm.get('stamps')?.valueChanges.subscribe(value => {
+      this.previewStamps = value || 0;
+    });
+
+    this.communityForm.get('book')?.valueChanges.subscribe(value => {
+      this.onBookSelected(value);
+    });
   }
 
   onSubmit(): void {
@@ -75,15 +100,33 @@ export class CreatecommunityComponent {
         (error: any) => this.snackBar.open('Error en la creación', 'Cerrar', { duration: 3000 })
       );
     } else {
-
       this.snackBar.open('Completa todos los campos', 'Cerrar', { duration: 3000 });
     }
-    window.location.reload()
+    this.router.navigate(["/dashboard/home"]).then(() => {
+      window.location.reload();
+    });
   }
 
   filter(): void {
     const filterValue = this.input.nativeElement.value.toLowerCase();
     this.filteredOptions = this.options.filter(o => o.toLowerCase().includes(filterValue));
+  }
+
+  onBookSelected(bookTitle: string): void {
+    if (!bookTitle) {
+      this.previewImage = 'images/default-book.jpg';
+      return;
+    }
+    this.getBookCover(bookTitle);
+  }
+
+  getBookCover(bookTitle: string): void {
+    const book = this.books.find((b: any) => b[1].title === bookTitle);
+    if (book) {
+      this.previewImage = book[1].largeThumbnail; 
+    } else {
+      this.previewImage = null;
+    }
   }
 }
 

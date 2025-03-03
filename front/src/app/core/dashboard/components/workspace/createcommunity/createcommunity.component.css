@@ -1,91 +1,179 @@
-:host {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-/* Contenedor principal centrado */
-.community-form {
-  display: flex;
-  flex-direction: column; /* Alinea los elementos en columna */
-  justify-content: center; /* Centra verticalmente */
-  align-items: center; /* Centra horizontalmente */
-  min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
-  width: 100%; /* Asegura que ocupe todo el ancho disponible */
-  background: linear-gradient(to bottom, #D1C5D6, #F1F1F1); /* Fondo similar al de profile */
-  padding: 20px;
-  box-sizing: border-box; /* Asegura que el padding se respete */
-}
-
-/* Estilo de la tarjeta que contiene el formulario */
 .form-container {
+  background-color: rgba(209, 197, 214, 0.8);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  min-height: 92vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Organiza los elementos de arriba hacia abajo */
-  align-items: center;
-  width: 150%; /* El formulario ocupa todo el ancho disponible */
-  
-  max-width: 800px; /* Limita el ancho máximo del formulario */
-  background-color: #ffffff; /* Fondo blanco para la tarjeta */
-  padding: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  border-radius: 12px;
-  box-sizing: border-box;
-  overflow: hidden; /* Asegura que no haya desbordes */
+  justify-content: center;
+  overflow: hidden;
 }
 
-/* Estilo del título */
-.form-container h2 {
-  margin-bottom: 20px;
-  font-size: 28px;
-  font-weight: 600;
-  color: #333;
-}
-
-/* Tarjeta que contiene los campos */
-.form-card {
-  background-color: #f9fafb;
-  padding: 20px;
-  border-radius: 8px;
-  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+/* Contenedor de las tarjetas */
+.mat-cards {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-/* Estilos para los campos del formulario */
-mat-form-field.full-width {
+  flex-wrap: wrap;
+  overflow: hidden;
+  gap: 5%;
+  justify-content: center;
+  align-items: center; /* Asegura que estén alineadas verticalmente */
   width: 100%;
-  margin-bottom: 15px;
 }
 
-/* Estilos para los campos de entrada */
-input.mat-input-element, 
-textarea.mat-input-element, 
-.mat-select-trigger {
-  background-color: white;
-  color: #333;
+/* Aumentar tamaño de las tarjetas */
+.form-card {
+  background-color: rgba(102, 87, 108, 0.8) !important;
+  padding-left: 50px; /* Más espacio interno */
+  padding-right: 50px; /* Más espacio interno */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  width: 30vw; /* Más anchas */
+  height: 70vh; /* Más altas */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.mat-form-field .mat-form-field-outline {
-  color: #666;
+/* Aumentar tamaño del título */
+h2 {
+  font-size: 2rem; /* Hace el título más grande */
+  text-align: center;
+  margin-bottom: 20px;
+
+  color: black;
+  font-size: 1.2em;
+  box-sizing: border-box;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  color: rgb(34, 30, 36);
+  font-style: bold;
+  font-weight: 500;
 }
 
-/* Estilo del botón de envío */
-.submit-button {
-  background-color: #D1C5D6;
-  color: black !important;
-  width: 100%; /* El botón ocupa el 100% del ancho de la tarjeta */
-  padding: 15px 0;
-  margin-top: 20px;
+/* Aumentar tamaño de etiquetas y entradas */
+mat-label, input, mat-select {
+  font-size: 1rem !important;
+  color: white !important;
+}
+
+mat-form-field {
+  margin-bottom: 15px; /* Ajusta el valor según necesites */
+  width: 100%; /* Asegura que ocupen todo el ancho disponible */
+}
+
+::placeholder {
+  color: rgb(255, 255, 255) !important; /* Cambia el color del placeholder */
+  opacity: 1; /* Asegura que se vea completamente */
+}
+
+/* En Angular Material, también puede necesitar este selector */
+.mat-input-element::placeholder {
+  color: rgb(255, 255, 255) !important;
+}
+
+.preview-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  gap: 20px;
+}
+
+.form-card:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.preview-title {
+  position: absolute;
+  top: 10px;
+  margin-bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  padding: 5px 5px;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  font-size: 1.5rem;
+  text-align: center;
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.submit-button:hover {
-  background-color: #D1C5D6;
-  color: #333;
+.preview-info-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.half-width {
+  width: 48%;
+}
+
+/* Envoltura de la imagen con el efecto */
+.preview-image-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 2px; /* Espacio alrededor de la imagen */
+  border-radius: 10px;
+  margin-top: 60px;
+}
+
+/* Imagen del libro */
+.preview-image {
+  background-color: rgba(102, 87, 108, 0.8) !important;
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  position: relative;
+  z-index: 2; /* Asegura que la imagen esté sobre el glow */
+}
+
+/* Efecto glow en el borde */
+.preview-image-wrapper::after,
+.preview-image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: linear-gradient(
+    45deg,
+    #F1F1F1,
+    rgba(160, 149, 149, 0.541),
+    #95859b,
+    #3e0753,
+    rgb(188, 151, 224),
+    #d0c1df
+
+  );
+  background-size: 300%;
+  border-radius: 10px;
+  z-index: 1;
+  animation: glow 20s linear infinite;
+}
+
+/* Desenfoque del glow */
+.preview-image-wrapper::after { 
+  filter: blur(8px);
+}
+
+/* Animación del glow */
+@keyframes glow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }

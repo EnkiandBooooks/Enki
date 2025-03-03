@@ -1,8 +1,12 @@
-<div class="community-form">
   <form [formGroup]="communityForm" (ngSubmit)="onSubmit()" ngNativeValidate>
     <div class="form-container">
+
       <h2>Create community</h2>
+
+      <div class="mat-cards">
+
       <mat-card class="form-card">
+
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Community's name</mat-label>
           <input matInput formControlName="communityName" placeholder="Introduce el nombre de la comunidad">
@@ -37,12 +41,37 @@
             <mat-option value="private">Private</mat-option>
           </mat-select>
         </mat-form-field>
+
         <button mat-raised-button color="primary" type="submit" class="submit-button">Create</button>
+
       </mat-card>
+
+
+      <mat-card class="form-card">
+
+        <h2 class="preview-title" *ngIf="previewText">{{ previewText }}</h2>
+
+        <div *ngIf="previewImage" class="preview-container">
+          <div class="preview-image-wrapper">
+            <img [src]="previewImage" alt="Book Preview" class="preview-image">
+          </div>
+        </div>        
+        
+        <div class="preview-info-container">
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Privacy</mat-label>
+            <input matInput [value]="previewPrivacy | titlecase" readonly>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Chapters / Pages</mat-label>
+            <input matInput [value]="previewStamps" readonly>
+          </mat-form-field>
+        </div>
+  
+      </mat-card>
+
+    </div>
+
     </div>
   </form>
-</div>
-
-
-
-  
