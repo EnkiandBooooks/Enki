@@ -11,6 +11,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSelectModule } from '@angular/material/select';
 import { workspaceService } from '../services/workspace.service';
 import { BooksService } from '../services/books.service';
+import { Router } from '@angular/router';
 
 
 interface CommunityData {
@@ -35,7 +36,7 @@ interface CommunityData {
     MatAutocompleteModule,
     AsyncPipe,
     NgIf,
-    CommonModule
+    CommonModule,
   ],
   templateUrl: './createcommunity.component.html',
   styleUrls: ['./createcommunity.component.css']
@@ -56,6 +57,7 @@ export class CreatecommunityComponent {
     private snackBar: MatSnackBar,
     private workspaceService: workspaceService,
     private booksService: BooksService,
+    private router: Router,
   ) {
     this.communityForm = this.fb.group({
       communityName: ['', Validators.required],
@@ -100,7 +102,9 @@ export class CreatecommunityComponent {
     } else {
       this.snackBar.open('Completa todos los campos', 'Cerrar', { duration: 3000 });
     }
-    window.location.reload();
+    this.router.navigate(["/dashboard/home"]).then(() => {
+      window.location.reload();
+    });
   }
 
   filter(): void {
