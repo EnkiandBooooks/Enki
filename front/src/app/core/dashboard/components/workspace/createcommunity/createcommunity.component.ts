@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -34,6 +34,7 @@ interface CommunityData {
     MatSelectModule,
     MatAutocompleteModule,
     AsyncPipe,
+    NgIf
   ],
   templateUrl: './createcommunity.component.html',
   styleUrls: ['./createcommunity.component.css']
@@ -45,6 +46,7 @@ export class CreatecommunityComponent {
   filteredOptions!: string[];
   books: any;
   previewText: string = '';
+  previewImage: string | null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -60,17 +62,21 @@ export class CreatecommunityComponent {
     });
   }
   
-  ngOnInit(){
+  ngOnInit() {
     this.booksService.getBooks()
       .subscribe((res) => {
         this.books = Object.entries(res);
-        this.options =  this.books.map((book:any) => book[1].title)
+        this.options = this.books.map((book: any) => book[1].title);
         this.filteredOptions = this.options.slice();
       });
 
-      this.communityForm.get('communityName')?.valueChanges.subscribe(value => {
-        this.previewText = value || ''; // Si es null, poner cadena vacía
-      });
+    this.communityForm.get('communityName')?.valueChanges.subscribe(value => {
+      this.previewText = value || ''; // Si es null, poner cadena vacía
+    });
+
+    this.communityForm.get('book')?.valueChanges.subscribe(value => {
+      this.onBookSelected(value); // Llamamos a la función al seleccionar un libro
+    });
   }
 
   onSubmit(): void {
@@ -80,15 +86,27 @@ export class CreatecommunityComponent {
         (error: any) => this.snackBar.open('Error en la creación', 'Cerrar', { duration: 3000 })
       );
     } else {
-
       this.snackBar.open('Completa todos los campos', 'Cerrar', { duration: 3000 });
     }
-    window.location.reload()
+    window.location.reload();
   }
 
   filter(): void {
     const filterValue = this.input.nativeElement.value.toLowerCase();
     this.filteredOptions = this.options.filter(o => o.toLowerCase().includes(filterValue));
+  }
+
+  onBookSelected(bookTitle: string): void {
+    this.getBookCover(bookTitle);
+  }
+
+  getBookCover(bookTitle: string): void {
+    const book = this.books.find((b: any) => b[1].title === bookTitle);
+    if (book) {
+      this.previewImage = book[1].largeThumbnail; // CORREGIDO: Usamos la propiedad correcta
+    } else {
+      this.previewImage = null;
+    }
   }
 }
 

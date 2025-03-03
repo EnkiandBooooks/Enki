@@ -57,3 +57,16 @@ mat-form-field {
 .mat-input-element::placeholder {
   color: rgb(255, 255, 255) !important;
 }
+
+.preview-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.preview-image {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
