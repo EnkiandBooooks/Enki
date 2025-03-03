@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
-import { AsyncPipe, NgIf } from '@angular/common';
+import { CommonModule, AsyncPipe, NgIf } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -34,7 +34,8 @@ interface CommunityData {
     MatSelectModule,
     MatAutocompleteModule,
     AsyncPipe,
-    NgIf
+    NgIf,
+    CommonModule
   ],
   templateUrl: './createcommunity.component.html',
   styleUrls: ['./createcommunity.component.css']

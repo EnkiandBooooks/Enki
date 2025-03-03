@@ -49,10 +49,7 @@
 
       <mat-card class="form-card">
 
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Preview Name</mat-label>
-          <input matInput [value]="previewText" readonly>
-        </mat-form-field>
+        <h2 class="preview-title" *ngIf="previewText">{{ previewText }}</h2>
 
         <div *ngIf="previewImage" class="preview-container">
           <img [src]="previewImage" alt="Book Preview" class="preview-image">
@@ -61,7 +58,7 @@
         <div class="preview-info-container">
           <mat-form-field appearance="outline" class="half-width">
             <mat-label>Privacy</mat-label>
-            <input matInput [value]="previewPrivacy" readonly>
+            <input matInput [value]="previewPrivacy | titlecase" readonly>
           </mat-form-field>
 
           <mat-form-field appearance="outline" class="half-width">
