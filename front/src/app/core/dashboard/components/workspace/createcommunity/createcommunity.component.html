@@ -52,8 +52,10 @@
         <h2 class="preview-title" *ngIf="previewText">{{ previewText }}</h2>
 
         <div *ngIf="previewImage" class="preview-container">
-          <img [src]="previewImage" alt="Book Preview" class="preview-image">
-        </div>
+          <div class="preview-image-wrapper">
+            <img [src]="previewImage" alt="Book Preview" class="preview-image">
+          </div>
+        </div>        
         
         <div class="preview-info-container">
           <mat-form-field appearance="outline" class="half-width">
