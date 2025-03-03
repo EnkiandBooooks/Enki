@@ -47,6 +47,8 @@ export class CreatecommunityComponent {
   books: any;
   previewText: string = '';
   previewImage: string | null = null;
+  previewPrivacy: string = 'Public';
+  previewStamps: number = 0;
 
   constructor(
     private fb: FormBuilder,
@@ -71,11 +73,19 @@ export class CreatecommunityComponent {
       });
 
     this.communityForm.get('communityName')?.valueChanges.subscribe(value => {
-      this.previewText = value || ''; // Si es null, poner cadena vacía
+      this.previewText = value || '';
+    });
+
+    this.communityForm.get('privacy')?.valueChanges.subscribe(value => {
+      this.previewPrivacy = value.charAt(0).toUpperCase() + value.slice(1);this.previewPrivacy = value || 'Public';
+    });
+
+    this.communityForm.get('stamps')?.valueChanges.subscribe(value => {
+      this.previewStamps = value || 0;
     });
 
     this.communityForm.get('book')?.valueChanges.subscribe(value => {
-      this.onBookSelected(value); // Llamamos a la función al seleccionar un libro
+      this.onBookSelected(value);
     });
   }
 
@@ -103,7 +113,7 @@ export class CreatecommunityComponent {
   getBookCover(bookTitle: string): void {
     const book = this.books.find((b: any) => b[1].title === bookTitle);
     if (book) {
-      this.previewImage = book[1].largeThumbnail; // CORREGIDO: Usamos la propiedad correcta
+      this.previewImage = book[1].largeThumbnail; 
     } else {
       this.previewImage = null;
     }

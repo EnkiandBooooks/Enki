@@ -5,11 +5,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
 }
 
 /* Contenedor de las tarjetas */
 .mat-cards {
   display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
   gap: 5%;
   justify-content: center;
   align-items: center; /* Asegura que estén alineadas verticalmente */
@@ -28,7 +31,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
 }
+
+
+
 
 /* Aumentar tamaño del título */
 h2 {
@@ -61,12 +68,25 @@ mat-form-field {
 .preview-container {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-bottom: 40px;
 }
 
 .preview-image {
-  width: 100px;
+  width: 180px;
   height: auto;
-  border-radius: 8px;
+  border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+.preview-info-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.half-width {
+  width: 48%;
 }
