@@ -65,6 +65,7 @@ export class CreatecommunityComponent {
   }
   
   ngOnInit() {
+    this.previewImage = 'images/default-book.jpg'
     this.booksService.getBooks()
       .subscribe((res) => {
         this.books = Object.entries(res);
@@ -107,6 +108,10 @@ export class CreatecommunityComponent {
   }
 
   onBookSelected(bookTitle: string): void {
+    if (!bookTitle) {
+      this.previewImage = 'images/default-book.jpg';
+      return;
+    }
     this.getBookCover(bookTitle);
   }
 
