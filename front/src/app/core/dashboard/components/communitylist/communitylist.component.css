@@ -1,89 +1,101 @@
-.communities-container{
+/* ============================================================
+  Communities Container
+  ============================================================ */
+  .communities-container {
   display: block;
+  align-items: center;
+  justify-content: flex-start;
   padding: 1rem;
+  border-radius: 8px;
+  max-height: auto;
   overflow-y: auto;
-  width: 200px;
-  margin: 0 auto;
-  position: fixed;
-  padding-bottom: 50px;
-  scrollbar-gutter: stable;
 }
 
 @media (min-width: 100px) {
-.communities-container{
-  height: 10vh;
-}}
+  .communities-container {
+    max-height: 35%;
+  }
+}
 
 @media (min-width: 1500px) {
-  .communities-container{
+  .communities-container {
     height: 40vh;
-  }}
-
-  .communities-container::-webkit-scrollbar {
-    display: none;
   }
-  /* .workspace.collapsed {
+}
 
-  } */
+.communities-container::-webkit-scrollbar {
+  display: none;
+}
 
-  .workspace {
-    background-color: #F1F1F1;
-    margin-bottom: 10px;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    color: white;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid #555;
-    border-radius: 0;
-  }
-  .collapsed-header {
-    display: none;
-  }
+/* ============================================================
+    Workspace Styles
+    ============================================================ */
+.workspace {
+  background-color: #F1F1F1;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #555;
+  border-radius: 6px;
+}
 
-  .collapsed-container .workspace-text {
-    display: none;
-  }
+.workspace:hover {
+  transform: scale(1.03);
+  background-color: #6C566D;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
 
-  .collapsed-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: fit-content;
-    padding-left: 0.3%;
-  }
+.workspace:hover * {
+  color: white !important;
+}
 
-  .collapsed-text {
-    display: none;
-  }
+.workspace .nav-button {
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #555;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-
-
-  .workspace:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-    background-color: #7d5e7d;
-  }
-
-  .workspace .nav-button {
-    font-size: 1rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: #555;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-
-  h6 {
-    padding-top: 1em;
-    text-align: center;
-    font-weight: bold;
-    color: #66576c
-  }
+/* ============================================================
+    Workspace Collapsed Styles
+    ============================================================ */
+.collapsed-header,
+.collapsed-container .workspace-text,
+.collapsed-text {
+  display: none;
+}
+.collapsed-container {
+  width: auto;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 7%;
+}
+.collapsed-container .workspace {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.collapsed-container .workspace:hover *{
+  color: #9C7AAA !important;
+}
+.collapsed-container .workspace:hover {
+  transform: scale(1.1);
+}
+/* ============================================================
+    Header Styles
+    ============================================================ */
+h6 {
+  padding-top: 1em;
+  text-align: center;
+  font-weight: bold;
+  color: #66576c;
+}

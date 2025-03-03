@@ -6,8 +6,8 @@
         <img src="images/LETTERING_FINAL_PURPLE.png" alt="letter" class="sidebar-letter">
       </div>
       <div class="sidebar-divider"></div>
-      <!-- <h6>My APP</h6> -->
-      <mat-nav-list>
+      <h6 [ngClass]="{'collapsed-header': isCollapsed}">My APP</h6>
+      <mat-nav-list class="mat-nav-list">
         <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('createcommunity'); $event.preventDefault()">
             <mat-icon aria-hidden="true">add</mat-icon>
@@ -33,13 +33,9 @@
         <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('workspace'); $event.preventDefault()">workspace</a>
         </mat-list-item> -->
-        <div class="sidebar-divider"></div>
-
-        <app-communitylist [isCollapsed]="isCollapsed" (sectionChange)="onSectionChange($event)"></app-communitylist>
-
       </mat-nav-list>
-
-
+      <div class="sidebar-divider"></div>
+      <app-communitylist [isCollapsed]="isCollapsed" (sectionChange)="onSectionChange($event)"></app-communitylist>
     </mat-sidenav>
 
 
