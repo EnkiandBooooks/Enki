@@ -48,19 +48,28 @@
             <img [src]="imgUrl" alt="Perfil" class="user-avatar" />
           </button>
 
-          <mat-menu #profileMenu="matMenu" class="profile-menu">
-            <div class="profile-header">
-              <img [src]="imgUrl" alt="Foto del usuario" class="user-avatar-large" />
-              <div class="profile-info">
-                <span class="user-name">{{arrUsr().user}}</span>
-                <span class="user-email" style="word-break: break-all;">{{arrUsr().mail}}</span>
-              </div>
+          <mat-menu #profileMenu="matMenu" class="general-menu">
+            <div class="profile-info">
+              <span class="user-name">{{ arrUsr().user }}</span>
+              <span class="user-email">{{ arrUsr().mail }}</span>
             </div>
+
+          <div class="divider-container">
             <mat-divider></mat-divider>
-            <button mat-menu-item (click)="showSection('profile')"><mat-icon>person</mat-icon>My Profile</button>
-            <mat-divider></mat-divider>
-            <button style="color: red;" mat-menu-item (click)="onLogout()"><mat-icon style="color: red;">logout</mat-icon>Logout</button>
-          </mat-menu>
+            <img [src]="imgUrl" alt="Perfil" class="divider-avatar">
+          </div>
+
+          
+          <button mat-menu-item (click)="showSection('profile')">
+            <mat-icon class="menu-button">person</mat-icon>
+            My Profile
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="onLogout()">
+            <mat-icon style="color: red;" class="menu-button">logout</mat-icon>
+            <span style="color: red;">Logout</span>
+          </button>
+        </mat-menu>
         </ng-container>
       </mat-toolbar>
 
