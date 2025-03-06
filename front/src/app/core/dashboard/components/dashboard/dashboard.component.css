@@ -106,6 +106,7 @@ Sidenav and Sidebar
   background: linear-gradient(to bottom, #fefcff, #ffffff);
   color: #66576c;
   display: flex;
+  flex-direction: column;
   align-items: center;
   height: 100%;
   border-radius: 0;
@@ -200,6 +201,9 @@ Sidebar Logo and Divider
   width: 80%;
   margin: 10px auto;
   border-top: 2px solid #66576c;
+  width: 80%;
+  margin: 10px auto;
+  border-top: 2px solid #66576c;
   opacity: 0.9;
 }
 
@@ -249,12 +253,16 @@ Toolbar and Profile
   background-color: #9C7AAA;
   color: #ffffff;
   justify-content: space-between;
+  background-color: #9C7AAA;
+  color: white;
   height: 64px;
-  align-items: center;
 }
 
-.mat-toolbar button {
-  margin-left: 10px;
+/* Contenedor flexible para el app-toolbar */
+.toolbar-center {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0 8px;
 }
 
 .user-avatar {
@@ -278,7 +286,7 @@ button[mat-icon-button] {
 Profile Menu
 ============================================================ */
 .profile-menu {
-  min-width: 20px;
+  min-width: 200px;
   padding: 8px 0;
 }
 
@@ -411,3 +419,4 @@ Other Dashboard Sections
   flex-direction: column;
   align-items: center;
 }
+

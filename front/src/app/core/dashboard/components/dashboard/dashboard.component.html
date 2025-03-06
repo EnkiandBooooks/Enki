@@ -3,7 +3,7 @@
     <mat-sidenav mode="side" [opened]="true" [ngClass]="{'collapsed': isCollapsed}">
       <div class="sidebar-logo">
         <img src="images/LOGOGHOST_ONLYPNG_PURPLE.png" alt="Logo" class="sidebar-logo-img">
-        <img src="images/LETTERING_FINAL_PURPLE.png" alt="letter" class="sidebar-letter">
+        <img src="images/LETTERING_FINAL_PURPLE.png" alt="Letter" class="sidebar-letter">
       </div>
       <div class="sidebar-divider"></div>
       <h6 [ngClass]="{'collapsed-header': isCollapsed}">My APP</h6>
@@ -67,9 +67,10 @@
 
       <div class="content-wrapper">
         <ng-container class="nav-community-list">
-            <router-outlet></router-outlet>
+          <router-outlet></router-outlet>
         </ng-container>
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
+

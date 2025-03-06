@@ -11,23 +11,6 @@
   overflow-y: auto;
 }
 
-/* @media (min-width: 100px) {
-  .communities-container {
-    max-height: 35%;
-  }
-  .communities-container.collapsed-container {
-    max-height: auto;
-  }
-}
-
-@media (min-width: 1500px) {
-  .communities-container {
-    height: 40vh;
-  }
-  .collapsed-container.collapsed-container {
-    height: 80%;
-  }
-} */
 @media (min-width: 100px) {
   .communities-container {
     max-height: 35%;

@@ -12,17 +12,17 @@ canvas.style.transition = 'background 5s, color 5s, transform 5s';
 
 // Establecemos dos configuraciones de colores como objetos
 const gradient1 = {
-  '--gradient-color-1': '#AB02FF',
-  '--gradient-color-2': '#7627D6', 
-  '--gradient-color-3': '#393939', 
-  '--gradient-color-4': '#450473',
+  '--gradient-color-1': '#525252',
+  '--gradient-color-2': '#66576c', 
+  '--gradient-color-3': '#d89df0',
+  '--gradient-color-4': '#36dce7',
 };
 
 const gradient2 = {
-  '--gradient-color-1': '#AB02FF',
-  '--gradient-color-2': '#7627D6', 
-  '--gradient-color-3': '#393939', 
-  '--gradient-color-4': '#450473',
+  // '--gradient-color-1': '#1F9EA3',
+  // '--gradient-color-2': '#F8BD97', 
+  // '--gradient-color-3': '#9E5428', 
+  // '--gradient-color-4': '#3B0102',
 };
 
 // Función para aplicar un gradiente al elemento
@@ -45,4 +45,20 @@ setInterval(() => {
 
 // Aplicamos inicialmente el primer gradiente
 applyGradient(canvas, gradient1);
+});
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault(); // Evita el salto directo
+    const target = document.querySelector(this.getAttribute('href')); // Selecciona la sección objetivo
+
+    if (target) {
+      const top = target.getBoundingClientRect().top + window.scrollY; // Calcula la posición absoluta
+      window.scrollTo({
+        top: top,
+        behavior: 'smooth' // Comportamiento de desplazamiento suave
+      });
+    }
+  });
 });

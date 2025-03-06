@@ -1,33 +1,70 @@
+
+
+
+
+:host {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto; /* Permite que el componente se expanda y encoja */
+  min-width: 0;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Contenedor general del toolbar (área de categorías y búsqueda) */
+.toolbar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
 @media (min-width: 100px) {
   .toolbar-container{
     height: 10vh;
-}}
+  }}
 
 @media (min-width: 1500px) {
   .toolbar-container{
       height: 40vh;
-}}
+    }}
 
-/* Contenedor de los botones */
-.toolscontainer{
+
+/* Contenedor del carrusel: se adapta al espacio disponible */
+.carousel-wrapper {
   display: flex;
-  max-height: 100%;
   align-items: center;
+  flex: 1 1 0;
+  min-width: 0;    /* Permite que se encoja correctamente */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
 }
 
+/* Contenedor con scroll horizontal para las categorías */
+.scrollable-categories {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow-x: auto;
+  white-space: nowrap; /* Evita que los elementos se envuelvan en varias líneas */
+  scroll-behavior: smooth;
+}
+
+/* Ocultar la scrollbar en la mayoría de los navegadores */
+.scrollable-categories::-webkit-scrollbar {
+  display: none;
+}
+.scrollable-categories {
+  -ms-overflow-style: none;  /* IE y Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Grupo de botones: se muestran en línea */
 .categoryButtons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1px;
-    justify-content: flex-end;
-    border: none;
-    padding: 1px 0px;
-    box-shadow: none !important;
-    min-height: 100%;
-    align-items: center;
+  display: inline-flex;
+  flex-wrap: nowrap;
 }
 
-/* Estilo para cada botón (ahora cuadro con borde redondeado) */
+/* Estilos para cada botón de categoría */
 .categoryButton {
   border-radius: 12px;
   margin: 2px;
@@ -40,26 +77,54 @@
   justify-content: center;
   text-align: center;
   box-sizing: border-box;
-  border: 1px solid #ccc;
-  background-color: #66576c;
-  color: white;
+  border: 1px solid #ffffff;
+  background-color: #F1F1F1;
+  color: #292929;
 }
-
-/* Fondo blanco al pasar el cursor */
 .categoryButton:hover {
   background-color: white;
   transform: scale(1.05);
-  border-color:white;
+  border-color: white;
   color: black;
 }
 
-.searchBar{
+
+/* Estilos para el botón de categoría activo */
+.categoryButton.mat-button-toggle-checked {
+  background-color: #D1C5D6 !important;
+  border-color: #D1C5D6 !important;
+  color: black !important;
+}
+
+/* Flechas para el carrusel */
+.arrow {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 10;
+  font-size: 24px;
+}
+.arrow.left {
+  margin-right: 4px;
+}
+.arrow.right {
+  margin-left: 4px;
+}
+
+/* Barra de búsqueda: ancho fijo */
+.searchBar {
+  flex: 0 0 300px;
+  max-width: 300px;
+  margin-left: 16px;
   margin-bottom: -1.25em;
 }
 
-.toolscontainer-left{
-  /*align it to left */
+
+.toolscontainer-left {
   margin-left: 1em;
+}
 
-
+.toolscontainer-left button {
+  margin-right: 16px;
 }
