@@ -24,7 +24,7 @@
   .toolbar-container{
     height: 10vh;
   }}
-  
+
 @media (min-width: 1500px) {
   .toolbar-container{
       height: 40vh;
@@ -90,7 +90,7 @@
 
 
 /* Estilos para el botón de categoría activo */
-.categoryButton.mat-button-toggle-checked { 
+.categoryButton.mat-button-toggle-checked {
   background-color: #D1C5D6 !important;
   border-color: #D1C5D6 !important;
   color: black !important;
@@ -126,5 +126,5 @@
 }
 
 .toolscontainer-left button {
-  margin-right: 16px; 
+  margin-right: 16px;
 }

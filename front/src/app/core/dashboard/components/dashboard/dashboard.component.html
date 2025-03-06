@@ -1,81 +1,69 @@
 <div class="dashboard-container">
   <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer mode="side" opened class="sidenav">
+    <mat-sidenav mode="side" [opened]="true" [ngClass]="{'collapsed': isCollapsed}">
       <div class="sidebar-logo">
         <img src="images/LOGOGHOST_ONLYPNG_PURPLE.png" alt="Logo" class="sidebar-logo-img">
         <img src="images/LETTERING_FINAL_PURPLE.png" alt="Letter" class="sidebar-letter">
       </div>
-
       <div class="sidebar-divider"></div>
-
-      <mat-nav-list>
-        <mat-list-item>
-          <a mat-button class="nav-button-createcommunity" href="#"
-             (click)="showSection('createcommunity'); $event.preventDefault()">
-            <mat-icon aria-hidden="true">add</mat-icon>
-            Create Community
-          </a>
+      <h6 [ngClass]="{'collapsed-header': isCollapsed}">My APP</h6>
+      <mat-nav-list class="mat-nav-list">
+        <mat-list-item class="nav-button" (click)="showSection('createcommunity'); $event.preventDefault()">
+          <mat-icon>add</mat-icon>
+          <span class="nav-text">Create Community</span>
         </mat-list-item>
-        <mat-list-item>
-          <a mat-button class="nav-button" href="#"
-             (click)="showSection('home'); $event.preventDefault()">
+        <mat-list-item class="nav-button" (click)="showSection('home'); $event.preventDefault()">
             <mat-icon>home</mat-icon>
-            Home
-          </a>
+            <span class="nav-text">Home</span>
+        </mat-list-item>
+        <mat-list-item class="nav-button" (click)="showSection('library'); $event.preventDefault()">
+            <mat-icon>local_library</mat-icon>
+            <span class="nav-text">Library</span>
+        </mat-list-item>
+        <!-- <mat-list-item>
+          <a mat-button class="nav-button" href="#" (click)="showSection('timeline'); $event.preventDefault()">Community Testing</a>
         </mat-list-item>
         <mat-list-item>
-          <a mat-button class="nav-button" href="#"
-             (click)="showSection('library'); $event.preventDefault()">
-            <mat-icon>local_library</mat-icon>
-            Library
-          </a>
-        </mat-list-item>
-        <div class="sidebar-divider"></div>
-        <!-- Componente adicional: lista de comunidades -->
-        <app-communitylist (sectionChange)="onSectionChange($event)"></app-communitylist>
+          <a mat-button class="nav-button" href="#" (click)="showSection('workspace'); $event.preventDefault()">workspace</a>
+        </mat-list-item> -->
       </mat-nav-list>
+      <div class="sidebar-divider"></div>
+      <app-communitylist [isCollapsed]="isCollapsed" (sectionChange)="onSectionChange($event)"></app-communitylist>
+
+      <img src="images/LETTERING_FINAL_PURPLE.png" alt="letter" class="sidebar-footer-letter" [ngClass]="{'collapsed-content': isCollapsed}">
+
     </mat-sidenav>
 
-    <mat-sidenav-content class="content-area">
+
+    <mat-sidenav-content class="content-area" [ngClass]="{'collapsed-content': isCollapsed}">
       <mat-toolbar color="primary" class="toolbar">
-        <button mat-icon-button (click)="drawer.toggle()">
-          <mat-icon>menu</mat-icon>
+        <button mat-icon-button (click)="toggleNavbar()">
+          &nbsp;<mat-icon>menu</mat-icon>&nbsp;
         </button>
+        <app-toolbar [currentSection]="selectedSection"></app-toolbar>
 
-        <!-- Contenedor flexible para el app-toolbar -->
-        <div class="toolbar-center">
-          <app-toolbar [currentSection]="selectedSection"></app-toolbar>
-        </div>
+        <!-- Sección de perfil -->
+        <ng-container *ngIf="cookieExists">
+          <button mat-icon-button [matMenuTriggerFor]="profileMenu">
+            <img [src]="imgUrl" alt="Perfil" class="user-avatar" />
+          </button>
 
-        <!-- Botón de perfil con imagen centrada -->
-        <button mat-icon-button class="profile-button" [matMenuTriggerFor]="profileMenu">
-          <img [src]="imgUrl" alt="Perfil" class="user-avatar">
-        </button>
-
-        <!-- Menú de perfil -->
-        <mat-menu #profileMenu="matMenu" class="general-menu">
-            <div class="profile-info">
-              <span class="user-name">{{ arrUsr().user }}</span>
-              <span class="user-email">{{ arrUsr().mail }}</span>
+          <mat-menu #profileMenu="matMenu" class="profile-menu">
+            <div class="profile-header">
+              <img [src]="imgUrl" alt="Foto del usuario" class="user-avatar-large" />
+              <div class="profile-info">
+                <span class="user-name">{{arrUsr().user}}</span>
+                <span class="user-email" style="word-break: break-all;">{{arrUsr().mail}}</span>
+              </div>
             </div>
-
-          <div class="divider-container">
             <mat-divider></mat-divider>
-            <img [src]="imgUrl" alt="Perfil" class="divider-avatar">
-          </div>
-
-          
-          <button mat-menu-item (click)="showSection('profile')">
-            <mat-icon class="menu-button">person</mat-icon>
-            My Profile
-          </button>
-          <mat-divider></mat-divider>
-          <button mat-menu-item (click)="onLogout()">
-            <mat-icon style="color: red;" class="menu-button">logout</mat-icon>
-            <span style="color: red;">Logout</span>
-          </button>
-        </mat-menu>
+            <button mat-menu-item (click)="showSection('profile')"><mat-icon>person</mat-icon>My Profile</button>
+            <mat-divider></mat-divider>
+            <button style="color: red;" mat-menu-item (click)="onLogout()"><mat-icon style="color: red;">logout</mat-icon>Logout</button>
+          </mat-menu>
+        </ng-container>
       </mat-toolbar>
+
 
       <div class="content-wrapper">
         <ng-container class="nav-community-list">
@@ -85,3 +73,4 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
+

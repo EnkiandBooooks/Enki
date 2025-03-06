@@ -1,65 +1,109 @@
-.communities-container{
+/* ============================================================
+  Communities Container
+  ============================================================ */
+  .communities-container {
   display: block;
+  align-items: center;
+  justify-content: flex-start;
   padding: 1rem;
-  overflow-y: auto; 
-  width: 200px; 
-  margin: 0 auto;
-  position: fixed;
-  padding-bottom: 50px;
-  scrollbar-gutter: stable;
+  border-radius: 8px;
+  max-height: auto;
+  overflow-y: auto;
 }
 
 @media (min-width: 100px) {
-.communities-container{
-  height: 10vh;
-}}
+  .communities-container {
+    max-height: 35%;
+  }
+  .communities-container.collapsed-container {
+    max-height: auto;
+  }
+}
 
 @media (min-width: 1500px) {
-  .communities-container{
+  .communities-container {
     height: 40vh;
-  }}
+  }
+  .communities-container.collapsed-container {
+    height: 63%;
+    max-height: none;
+  }
+}
 
-  .communities-container::-webkit-scrollbar {
-    display: none; 
-  }
-  
-  .workspace {
-    background-color: #F1F1F1; 
-    margin-bottom: 10px; 
-    padding: 10px 20px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    height: 50px; 
-    color: white; 
-    cursor: pointer; 
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid #555; 
-    border-radius: 0;
-  }
-  
-  .workspace:hover {
-    transform: scale(1.03); 
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-    background-color: #7d5e7d;
-  }
-  
-  .workspace .nav-button {
-    font-size: 1rem; 
-    font-weight: bold; 
-    text-decoration: none;
-    color: #555; 
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.communities-container::-webkit-scrollbar {
+  display: none;
+}
 
-  
-  h6 {
-    padding-top: 3em;
-    text-align: center;
-    font-weight: bold;
-    color: #66576c
-  }
-  
+/* ============================================================
+    Workspace Styles
+    ============================================================ */
+.workspace {
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #555;
+  border-radius: 6px;
+}
+
+.workspace:hover {
+  transform: scale(1.03);
+  background-color: #6C566D;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.workspace:hover * {
+  color: white !important;
+}
+
+.workspace .nav-button {
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #66576C;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ============================================================
+    Workspace Collapsed Styles
+    ============================================================ */
+.collapsed-header,
+.collapsed-container .workspace-text,
+.collapsed-text {
+  display: none;
+}
+.collapsed-container {
+  width: auto;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 7%;
+}
+.collapsed-container .workspace {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.collapsed-container .workspace:hover *{
+  color: #9C7AAA !important;
+}
+.collapsed-container .workspace:hover {
+  transform: scale(1.1);
+}
+/* ============================================================
+    Header Styles
+    ============================================================ */
+h6 {
+  font-size: 20px;
+  padding-top: 5%;
+  padding-left: 10%;
+  text-align: left;
+  font-weight: bold;
+  color: #66576c;
+}

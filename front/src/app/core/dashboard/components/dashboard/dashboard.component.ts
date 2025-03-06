@@ -58,7 +58,7 @@ export class DashboardComponent {
   arrUsr = signal<any>([]);
   cookieExists: boolean = false;
   currentWorkspaceId: string ='';
-
+  isCollapsed: boolean = false;
   constructor(
     private cdr: ChangeDetectorRef,
     private cookieService: CookieService,
@@ -69,7 +69,7 @@ export class DashboardComponent {
   ) {}
 
   async ngOnInit() {
-    
+
     this.selectedSection = this.router.url.split("/")[2] || "home"; //Para soportar recarga de página
 
     this.loadingService.show();
@@ -88,7 +88,7 @@ export class DashboardComponent {
     }else {
       this.loadingService.hide();
     }
-    
+
   }
 
 
@@ -96,7 +96,11 @@ export class DashboardComponent {
     this.selectedSection = section;
     this.cdr.detectChanges();
     this.router.navigate(["/dashboard/"+section])
-    
+
+  }
+
+  toggleNavbar(): void {
+    this.isCollapsed = !this.isCollapsed;
   }
 
   onLogout() {
