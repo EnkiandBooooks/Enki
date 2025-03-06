@@ -1,56 +1,65 @@
+@media (min-width: 100px) {
+  .toolbar-container{
+    height: 10vh;
+}}
+
+@media (min-width: 1500px) {
+  .toolbar-container{
+      height: 40vh;
+}}
+
 /* Contenedor de los botones */
 .toolscontainer{
   display: flex;
   max-height: 100%;
   align-items: center;
 }
+
 .categoryButtons {
-    display: flex; 
+    display: flex;
     flex-wrap: wrap;
-    gap: 1px; 
+    gap: 1px;
     justify-content: flex-end;
-    border: none; 
-    padding: 1px 0px; 
+    border: none;
+    padding: 1px 0px;
     box-shadow: none !important;
     min-height: 100%;
     align-items: center;
-  }
-  
-  /* Estilo para cada botón (ahora cuadro con borde redondeado) */
-  .categoryButton {
-    border-radius: 12px; 
-    margin: 2px; 
-    font-size: 12px; 
-    transition: background-color 0.3s ease; 
-    height: 36px; 
-    min-width: 80px; 
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    background-color: #66576c; 
-    color: white; 
+}
 
-    
-  }
-  
-  /* Fondo blanco al pasar el cursor */
-  .categoryButton:hover {
-    background-color: white; 
-    transform: scale(1.05); 
-    border-color:white; 
-    color: black; 
-  }
+/* Estilo para cada botón (ahora cuadro con borde redondeado) */
+.categoryButton {
+  border-radius: 12px;
+  margin: 2px;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+  height: 36px;
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  background-color: #66576c;
+  color: white;
+}
 
-  .searchBar{
-    margin-bottom: -1.25em;
-  }
-  .toolscontainer-left{
-    /*align it to left */
-    margin-left: 1em;
-    
+/* Fondo blanco al pasar el cursor */
+.categoryButton:hover {
+  background-color: white;
+  transform: scale(1.05);
+  border-color:white;
+  color: black;
+}
 
-  }
- 
+.searchBar{
+  margin-bottom: -1.25em;
+}
+
+.toolscontainer-left{
+  /*align it to left */
+  margin-left: 1em;
+
+
+}

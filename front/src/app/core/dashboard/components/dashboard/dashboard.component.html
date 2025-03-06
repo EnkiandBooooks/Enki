@@ -8,24 +8,17 @@
       <div class="sidebar-divider"></div>
       <h6 [ngClass]="{'collapsed-header': isCollapsed}">My APP</h6>
       <mat-nav-list class="mat-nav-list">
-        <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="showSection('createcommunity'); $event.preventDefault()">
-            <mat-icon aria-hidden="true">add</mat-icon>
-            <span class="nav-text">Create Community</span>
-          </a>
+        <mat-list-item class="nav-button" (click)="showSection('createcommunity'); $event.preventDefault()">
+          <mat-icon>add</mat-icon>
+          <span class="nav-text">Create Community</span>
         </mat-list-item>
-
-        <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="showSection('home'); $event.preventDefault()">
+        <mat-list-item class="nav-button" (click)="showSection('home'); $event.preventDefault()">
             <mat-icon>home</mat-icon>
             <span class="nav-text">Home</span>
-          </a>
         </mat-list-item>
-        <mat-list-item>
-          <a mat-button class="nav-button" href="#" (click)="showSection('library'); $event.preventDefault()">
+        <mat-list-item class="nav-button" (click)="showSection('library'); $event.preventDefault()">
             <mat-icon>local_library</mat-icon>
             <span class="nav-text">Library</span>
-          </a>
         </mat-list-item>
         <!-- <mat-list-item>
           <a mat-button class="nav-button" href="#" (click)="showSection('timeline'); $event.preventDefault()">Community Testing</a>
@@ -36,6 +29,9 @@
       </mat-nav-list>
       <div class="sidebar-divider"></div>
       <app-communitylist [isCollapsed]="isCollapsed" (sectionChange)="onSectionChange($event)"></app-communitylist>
+
+      <img src="images/LETTERING_FINAL_PURPLE.png" alt="letter" class="sidebar-footer-letter" [ngClass]="{'collapsed-content': isCollapsed}">
+
     </mat-sidenav>
 
 

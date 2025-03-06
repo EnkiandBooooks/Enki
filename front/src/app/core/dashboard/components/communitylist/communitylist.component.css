@@ -11,15 +11,39 @@
   overflow-y: auto;
 }
 
-@media (min-width: 100px) {
+/* @media (min-width: 100px) {
   .communities-container {
     max-height: 35%;
+  }
+  .communities-container.collapsed-container {
+    max-height: auto;
   }
 }
 
 @media (min-width: 1500px) {
   .communities-container {
     height: 40vh;
+  }
+  .collapsed-container.collapsed-container {
+    height: 80%;
+  }
+} */
+@media (min-width: 100px) {
+  .communities-container {
+    max-height: 35%;
+  }
+  .communities-container.collapsed-container {
+    max-height: auto;
+  }
+}
+
+@media (min-width: 1500px) {
+  .communities-container {
+    height: 40vh;
+  }
+  .communities-container.collapsed-container {
+    height: 63%;
+    max-height: none;
   }
 }
 
@@ -31,7 +55,6 @@
     Workspace Styles
     ============================================================ */
 .workspace {
-  background-color: #F1F1F1;
   margin-bottom: 10px;
   padding: 10px 20px;
   display: flex;
@@ -58,7 +81,7 @@
   font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
-  color: #555;
+  color: #66576C;
   width: 100%;
   display: flex;
   align-items: center;
@@ -94,8 +117,10 @@
     Header Styles
     ============================================================ */
 h6 {
-  padding-top: 1em;
-  text-align: center;
+  font-size: 20px;
+  padding-top: 5%;
+  padding-left: 10%;
+  text-align: left;
   font-weight: bold;
   color: #66576c;
 }

@@ -64,7 +64,7 @@ export class CommunitylistComponent {
       this.cdr.detectChanges();
       this.router.navigate(['/dashboard/home']).then(() => {
         this.router.navigate(['/dashboard/workspace', this.currentWorkspaceId]);
-      });      
+      });
 
   }
 

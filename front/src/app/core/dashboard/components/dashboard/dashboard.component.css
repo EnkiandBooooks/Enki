@@ -10,16 +10,16 @@ body {
 }
 
 /* ============================================================
-  Material Component Overrides
-  ============================================================ */
-  .mdc-list-item {
-    padding-left: 0;
-    padding-right: 0;
+Material Component Overrides
+============================================================ */
+.mdc-list-item {
+  padding-left: 0;
+  padding-right: 0;
 }
+
 /* ============================================================
-  Dashboard Layout Containers
-  ============================================================ */
-/* Contenedor principal del dashboard */
+Dashboard Layout Containers
+============================================================ */
 .dashboard-container {
   display: flex;
   height: 100%;
@@ -27,25 +27,46 @@ body {
   box-sizing: border-box;
 }
 
-/* Contenedor de sidenav */
+.sidebar-footer-letter {
+  display: none;
+}
+
+/* .sidebar-footer-letter.collapsed-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30%;
+  padding-left: 10%;
+  max-width: 80%;
+} */
+.sidebar-footer-letter.collapsed-content {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80%;
+  padding-bottom: 10%;
+  /* Puedes ajustar o eliminar paddings si ya no son necesarios */
+}
+
 .mat-sidenav-container {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Contenido principal */
 .mat-sidenav-content {
   margin-left: 250px;
   transition: margin-left 0.3s ease;
 }
 
-/* Ajustamos el margen del contenido principal al colapsar */
 .mat-sidenav-content.collapsed-content {
   margin-left: 70px !important;
 }
 
-/* Área de Contenido Principal */
 .content-area {
   display: flex;
   flex-direction: column;
@@ -54,7 +75,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Contenedor del contenido (wrapper) */
 .content-wrapper {
   display: flex;
   flex-direction: column;
@@ -70,9 +90,17 @@ body {
 }
 
 /* ============================================================
-  Sidenav and Sidebar
-  ============================================================ */
-/* Sidenav principal */
+Navigation Button Icon
+============================================================ */
+.nav-button mat-icon {
+  margin-top: 3%;
+  margin-right: 8px;
+  color: #66576C;
+}
+
+/* ============================================================
+Sidenav and Sidebar
+============================================================ */
 .mat-sidenav {
   width: 250px;
   background: linear-gradient(to bottom, #fefcff, #ffffff);
@@ -86,20 +114,19 @@ body {
   transition: width 0.3s ease;
 }
 
-/* Estado collapsed */
 .mat-sidenav.collapsed {
   width: 80px;
   align-items: center;
   justify-content: flex-start;
   padding: 0;
 }
-.mat-sidenav.collapsed .nav-button:hover *{
+
+.mat-sidenav.collapsed .nav-button:hover * {
   color: #9C7AAA !important;
 }
-.mat-sidenav.collapsed .nav-button:hover {
-  transform: scale(1.15);
-}
-/* Ocultar elementos innecesarios en modo collapsed */
+
+
+
 .mat-sidenav.collapsed h6,
 .mat-sidenav.collapsed .sidebar-letter,
 .mat-sidenav.collapsed .nav-text {
@@ -110,31 +137,35 @@ body {
   max-width: 100%;
 }
 
-/* Centrar los iconos en el sidebar colapsado */
 .mat-sidenav.collapsed .nav-button {
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 20px 0;
+  padding-left: 33%;
 }
 
 .mat-sidenav.collapsed .mat-nav-list {
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .mat-sidenav.collapsed .nav-button .mat-icon {
   margin: 0 auto;
+  padding-top: 11%;
+}
+
+.nav-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 16px;
 }
 
 /* ============================================================
-  Communities Container and Related Styles
-  ============================================================ */
-/* Contenedor con scroll para las comunidades */
+Communities Container
+============================================================ */
 .communities-container {
-  display: block;
-  align-items: center;
-  justify-content: flex-start;
   padding: 1rem;
   border-radius: 8px;
   max-height: 300px;
@@ -146,16 +177,15 @@ body {
 }
 
 /* ============================================================
-  Sidebar Logo and Divider
-  ============================================================ */
-/* Logo del Sidebar */
+Sidebar Logo and Divider
+============================================================ */
 .sidebar-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
   gap: 7px;
   padding: 15px;
+  margin-bottom: 20px;
 }
 
 .sidebar-logo-img {
@@ -166,7 +196,6 @@ body {
   max-width: 60%;
 }
 
-/* Divisor del Sidebar */
 .sidebar-divider {
   width: 80%;
   margin: 10px auto;
@@ -175,10 +204,10 @@ body {
 }
 
 /* ============================================================
-  Typography and Headings
-  ============================================================ */
-/* Títulos secundarios */
+Typography and Headings
+============================================================ */
 h6 {
+  font-size: 20px;
   padding-top: 5%;
   padding-left: 10%;
   text-align: left;
@@ -192,10 +221,19 @@ h1 {
   text-align: center;
 }
 
+.nav-text {
+  display: inline-block;
+  font-size: 19px;
+  font-weight: 410;
+  color: #726173;
+  position: relative;
+  top: -0.3rem;
+}
+
 /* ============================================================
-  Navigation Buttons
-  ============================================================ */
-.nav-button {
+Navigation List Item
+============================================================ */
+.nav-list-item {
   color: #66576c !important;
   font-size: 18px;
   width: 100%;
@@ -204,14 +242,9 @@ h1 {
   justify-content: flex-start;
 }
 
-.mat-nav-list {
-  padding-left: 6%;
-  padding-right: 6%;
-}
-
 /* ============================================================
-  Toolbar and Profile
-  ============================================================ */
+Toolbar and Profile
+============================================================ */
 .mat-toolbar {
   background-color: #9C7AAA;
   color: #ffffff;
@@ -224,7 +257,6 @@ h1 {
   margin-left: 10px;
 }
 
-/* Avatar de usuario */
 .user-avatar {
   width: 36px;
   height: 36px;
@@ -233,7 +265,6 @@ h1 {
   border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Botones de iconos */
 button[mat-icon-button] {
   display: flex;
   align-items: center;
@@ -243,7 +274,9 @@ button[mat-icon-button] {
   height: 48px;
 }
 
-/* Menú de perfil */
+/* ============================================================
+Profile Menu
+============================================================ */
 .profile-menu {
   min-width: 20px;
   padding: 8px 0;
@@ -294,7 +327,6 @@ mat-menu-item:focus {
   outline: 2px solid #9C7AAA;
 }
 
-/* Botón de Logout */
 .logout-button {
   font-weight: bold;
   color: #dfdfdf;
@@ -307,8 +339,8 @@ mat-menu-item:focus {
 }
 
 /* ============================================================
-  Workspace Buttons
-  ============================================================ */
+Workspace Buttons
+============================================================ */
 .workspace {
   background-color: #292929;
   border-radius: 30px !important;
@@ -320,7 +352,8 @@ mat-menu-item:focus {
   color: #ffffff;
   text-decoration: none;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
 }
 
@@ -333,6 +366,7 @@ mat-menu-item:focus {
 }
 
 .workspace a {
+  pointer-events: auto;
   all: unset;
   pointer-events: auto;
 
@@ -341,9 +375,10 @@ mat-menu-item:focus {
   display: flex;
   align-items: center;
 }
+
 /* ============================================================
-  Other Dashboard Sections
-  ============================================================ */
+Other Dashboard Sections
+============================================================ */
 .dashboard-content {
   display: flex;
   flex-direction: column;
@@ -368,7 +403,6 @@ mat-menu-item:focus {
   overflow-y: auto;
 }
 
-/* Contenedor de la lista de comunidades */
 .nav-community-list {
   background-color: pink;
   padding: 10em;
