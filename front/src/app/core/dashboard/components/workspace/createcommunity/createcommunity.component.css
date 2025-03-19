@@ -136,10 +136,14 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 50px;
+  margin-left: 10%;
+}
+
+.background-preview {
   background-color: #f5f5f5;
   border: 2px solid #66576C;
   border-radius: 8px;
-  gap: 10px;
 }
 
 
@@ -174,7 +178,8 @@ mat-form-field {
 **************************************************************/
 
 .icon-selector {
-  margin: 0;
+  margin-top: 20%;
+  margin: 10%;
 }
 
 .icon-label {
@@ -235,6 +240,7 @@ mat-form-field {
   gap: 10px;
   margin-top: 15px;
   width: auto;
+  max-width: 100px;
   padding-top: 5%;
 }
 
@@ -243,7 +249,11 @@ mat-form-field {
   font-size: 1rem;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 6px; 
+  max-width: 150px; /* Ajusta el ancho según necesites */
+  white-space: nowrap; /* Evita que el texto pase a otra línea */
+  overflow: hidden; /* Oculta el texto que se salga del contenedor */
+  text-overflow: ellipsis; /* Agrega los puntos suspensivos (...) */
 }
 /* Ícono de stamps y privacidad con pequeño margen a la derecha */
 .preview-info-row mat-icon {
@@ -265,8 +275,8 @@ mat-form-field {
 }
 
 .preview-image {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
   border-radius: 50%;
   display: block;

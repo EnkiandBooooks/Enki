@@ -48,20 +48,11 @@
                   <mat-option value="private">Private</mat-option>
                 </mat-select>
               </mat-form-field>
-              <!-- Selección de ícono -->
-              <div class="icon-selector">
-                <span class="icon-label">Community icon</span>
-                <div class="icon-options">
-                  <div class="icon-option" *ngFor="let icon of communityIcons" (click)="selectIcon(icon)"
-                    [class.selected]="icon === communityForm.value.icon">
-                    <img [src]="icon" alt="Community Icon">
-                  </div>
-                </div>
-              </div>
             </div>
             <!-- Fin de la sección del formulario -->
 
             <!-- Sección de la previsualización -->
+            <div class="background-preview">
             <div class="preview-section">
               <!-- Ícono seleccionado -->
               <div class="preview-container">
@@ -88,6 +79,18 @@
                   <span>{{ previewPrivacy }}</span>
                 </div>
               </div>
+            </div>
+              <!-- Selección de ícono -->
+              <div class="icon-selector">
+                <span class="icon-label">Community icon</span>
+                <div class="icon-options">
+                  <div class="icon-option" *ngFor="let icon of communityIcons" (click)="selectIcon(icon)"
+                    [class.selected]="icon === communityForm.value.icon">
+                    <img [src]="icon" alt="Community Icon">
+                  </div>
+                </div>
+              </div>
+
             </div>
             <!-- Fin de la sección de previsualización -->
           </div>
