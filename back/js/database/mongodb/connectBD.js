@@ -14,12 +14,12 @@ import mongoose from 'mongoose';
  *   .catch((error) => console.error("Error de conexión", error));
  */
 export const connectDB = () => {
-  return mongoose.connect(process.env.MONGO_URI)
-    .then(() => {
-      console.log('Conectado a MongoDB');
-    })
-    .catch((err) => {
-      console.log('Error conectando MongoDB', err);
-      throw err;
-    });
+  return mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('MongoDB connected');
+  })
+  .catch((err) => {
+    console.error('Error connecting to MongoDB:', err);
+    setTimeout(connectDB, 5000); // Reintenta la conexión después de 5 segundos
+  });
 };

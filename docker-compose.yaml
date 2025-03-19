@@ -1,0 +1,44 @@
+services:
+  frontend-dev:
+    build: ./front
+    container_name: frontend-dev
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./front:/app
+      - ./landingpage:/landingpage
+      - /app/node_modules
+    working_dir: /app
+    command: npm start -- --host 0.0.0.0 --poll 2000
+    networks:
+      - app-network
+    depends_on:
+      - backend-dev
+
+  backend-dev:
+    build: ./back/js
+    container_name: backend-dev
+    ports:
+      - "1234:1234"
+    volumes:
+      - ./back/js:/app:cached
+      - /app/node_modules
+    working_dir: /app
+    networks:
+      - app-network
+    depends_on:
+      - mongo-db
+
+  mongo-db:
+    image: mongo:latest
+    container_name: mongo-db
+    ports:
+      - "32768:27017"
+    volumes:
+      - ./BackupsMongo/mongo-data:/data/db 
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

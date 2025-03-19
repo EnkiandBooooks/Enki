@@ -43,7 +43,7 @@ export class MailController {
             jwt.sign(
                 {mail: mailUser, 
                 codigo: numRandom}, 
-                process.env.secret_jwt_key, {
+                process.env.SECRET_JWT_KEY, {
                 expiresIn: '1h'
             })        
         res.status(200).json({ message: "Email recibido.",email_sendcode_token:token}); // ejemplo cookie
