@@ -1,179 +1,283 @@
+/*************************************************************
+  OVERLAY Y CONTENEDOR POPUP
+**************************************************************/
+
+/* Fondo que cubre toda la pantalla con un blur translúcido */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 100;
+}
+
+/* Contenedor centrado del popup */
+.popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 101; /* Debe estar encima del overlay */
+  width: 120vw;
+  max-width: 900px;
+  margin: 0 10px;
+}
+
+/*************************************************************
+  CONTENEDOR PRINCIPAL DEL FORMULARIO
+**************************************************************/
+
+/* Contenedor principal (fondo suave) */
 .form-container {
-  background-color: rgba(209, 197, 214, 0.8);
+  background-color: #fafafa;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  min-height: 92vh;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/*************************************************************
+  TARJETA PRINCIPAL
+**************************************************************/
+
+/* Contenedor de la tarjeta (única) */
+.mat-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+/* Botón de cerrar en la esquina superior derecha */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 102;
+  background: transparent;
+  border: none;
+}
+
+/* Tarjeta con apariencia clara, similar a la captura */
+.form-card {
+  background-color: #ffffff !important;
+  color: #000 !important;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  width: 100%;
+  padding: 20px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   overflow: hidden;
 }
 
-/* Contenedor de las tarjetas */
-.mat-cards {
+/*************************************************************
+  TÍTULOS
+**************************************************************/
+/* Contenedor que contiene los títulos */
+.titles-container {
   display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-  gap: 5%;
-  justify-content: center;
-  align-items: center; /* Asegura que estén alineadas verticalmente */
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
-/* Aumentar tamaño de las tarjetas */
-.form-card {
-  background-color: rgba(102, 87, 108, 0.8) !important;
-  padding-left: 50px; /* Más espacio interno */
-  padding-right: 50px; /* Más espacio interno */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-  width: 30vw; /* Más anchas */
-  height: 70vh; /* Más altas */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-}
-
-/* Aumentar tamaño del título */
-h2 {
-  font-size: 2rem; /* Hace el título más grande */
-  text-align: center;
-  margin-bottom: 20px;
-
-  color: black;
-  font-size: 1.2em;
-  box-sizing: border-box;
-  white-space: nowrap;
-  justify-content: center;
-  align-items: center;
-  color: rgb(34, 30, 36);
-  font-style: bold;
-  font-weight: 500;
-}
-
-/* Aumentar tamaño de etiquetas y entradas */
-mat-label, input, mat-select {
-  font-size: 1rem !important;
-  color: white !important;
-}
-
-mat-form-field {
-  margin-bottom: 15px; /* Ajusta el valor según necesites */
-  width: 100%; /* Asegura que ocupen todo el ancho disponible */
-}
-
-::placeholder {
-  color: rgb(255, 255, 255) !important; /* Cambia el color del placeholder */
-  opacity: 1; /* Asegura que se vea completamente */
-}
-
-/* En Angular Material, también puede necesitar este selector */
-.mat-input-element::placeholder {
-  color: rgb(255, 255, 255) !important;
-}
-
-.preview-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-  gap: 20px;
-}
-
-.form-card:last-child {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.create-title {
+  text-align: left;
+  font-weight: 550 !important;
+  font-size: 5vh !important;
+  margin-bottom: 0;
+  padding: 2%;
 }
 
 .preview-title {
-  position: absolute;
-  top: 10px;
-  margin-bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.2);
-  color: white;
-  padding: 5px 5px;
-  border-radius: 5px;
-  font-size: 1.5rem;
-  text-align: center;
-  max-width: 90%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  text-align: right;
+  font-size: 3vh !important;
+  font-weight: 400 !important;
+  margin-bottom: 0;
+  padding-right: 10%;
+  padding-top: 8%;
+}
+/*************************************************************
+  DISTRIBUCIÓN INTERNA: FORM Y PREVIEW
+**************************************************************/
+
+/* Contenedor que alinea formulario y previsualización uno al lado del otro */
+.form-and-preview {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
 }
 
-.preview-info-container {
+/* Sección del formulario (izquierda) */
+.form-section {
+  flex: 1 1 60%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Sección de la previsualización (derecha) */
+.preview-section {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #f5f5f5;
+  border: 2px solid #66576C;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 2%;
+}
+
+
+/*************************************************************
+  CAMPOS DE FORMULARIO
+**************************************************************/
+
+/* Labels e inputs de Angular Material */
+mat-label, input, mat-select {
+  font-size: 1rem !important;
+  color: #333 !important;
+}
+
+/* Los campos se verán con fondo claro y bordes suaves */
+mat-form-field {
+  margin-bottom: 15px;
   width: 100%;
 }
 
-.half-width {
-  width: 48%;
+/* Placeholder en gris */
+::placeholder {
+  color: #888 !important;
+  opacity: 1;
 }
 
-/* Envoltura de la imagen con el efecto */
+.mat-input-element::placeholder {
+  color: #888 !important;
+}
+
+/*************************************************************
+  SELECCIÓN DE ÍCONO
+**************************************************************/
+
+.icon-selector {
+  margin: 0;
+}
+
+.icon-label {
+  color: #333;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.icon-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.icon-option {
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  padding: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.icon-option.selected {
+  border-color: #555;
+}
+
+.icon-option img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/*************************************************************
+  PREVISUALIZACIÓN
+**************************************************************/
+
+/* Contenedor para la imagen del ícono seleccionado */
+.preview-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+/* Texto de la preview (nombre, stamps, privacy) */
+.preview-info-container {
+  display: block;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 15px;
+  width: auto;
+  padding-top: 5%;
+}
+
+.preview-info-row {
+  color: #333;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+/* Ícono de stamps y privacidad con pequeño margen a la derecha */
+.preview-info-row mat-icon {
+  margin-right: 4px;
+  font-size: 1.2rem;
+}
+
+/*************************************************************
+  EFECTO GLOW PARA LA IMAGEN (OPCIONAL)
+**************************************************************/
+
+/* Contenedor de la imagen */
 .preview-image-wrapper {
   position: relative;
   display: inline-block;
-  padding: 2px; /* Espacio alrededor de la imagen */
-  border-radius: 10px;
-  margin-top: 60px;
+  border-radius: 50%;
+  border: 4px solid #000;
+  margin-top: 10px;
 }
 
-/* Imagen del libro */
 .preview-image {
-  background-color: rgba(102, 87, 108, 0.8) !important;
-  width: 180px;
-  height: auto;
-  border-radius: 10px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
   display: block;
   position: relative;
-  z-index: 2; /* Asegura que la imagen esté sobre el glow */
+  z-index: 2;
 }
 
-/* Efecto glow en el borde */
-.preview-image-wrapper::after,
-.preview-image-wrapper::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  background: linear-gradient(
-    45deg,
-    #F1F1F1,
-    rgba(160, 149, 149, 0.541),
-    #95859b,
-    #3e0753,
-    rgb(188, 151, 224),
-    #d0c1df
+/*************************************************************
+  BOTÓN DE CREAR
+**************************************************************/
 
-  );
-  background-size: 300%;
-  border-radius: 10px;
-  z-index: 1;
-  animation: glow 20s linear infinite;
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-/* Desenfoque del glow */
-.preview-image-wrapper::after { 
-  filter: blur(8px);
-}
-
-/* Animación del glow */
-@keyframes glow {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
+.submit-button {
+  background-color: #333 !important;
+  color: #fff !important;
+  text-transform: none !important;
+  padding: 10px 25px !important;
+  border-radius: 6px !important;
+  font-size: 1rem !important;
+  font-weight: 250 !important;
+  width: 80%;
 }

@@ -9,22 +9,24 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogRef } from '@angular/material/dialog';  // Importación para cerrar el dialog
 import { workspaceService } from '../services/workspace.service';
 import { BooksService } from '../services/books.service';
 import { Router } from '@angular/router';
-
 
 interface CommunityData {
   communityName: string;
   book: string;
   stamps: number;
   privacy: string;
+  icon: string;
 }
 
 @Component({
   selector: 'app-createcommunity',
   standalone: true,
-  encapsulation: ViewEncapsulation.None, // Desactiva encapsulación de estilos
+  encapsulation: ViewEncapsulation.None, // Permite que los estilos se apliquen globalmente
   imports: [
     ReactiveFormsModule,
     MatButtonModule,
@@ -34,6 +36,7 @@ interface CommunityData {
     MatToolbarModule,
     MatSelectModule,
     MatAutocompleteModule,
+    MatIconModule, // Se añade para usar <mat-icon>
     AsyncPipe,
     NgIf,
     CommonModule,
@@ -43,14 +46,26 @@ interface CommunityData {
 })
 export class CreatecommunityComponent {
   @ViewChild('input') input!: ElementRef<HTMLInputElement>;
+
   communityForm: FormGroup;
   options!: string[];
   filteredOptions!: string[];
   books: any;
+
+  previewBook: string = '';
   previewText: string = '';
-  previewImage: string | null = null;
   previewPrivacy: string = 'Public';
   previewStamps: number = 0;
+
+  // Íconos disponibles para seleccionar
+  communityIcons: string[] = [
+    'images/Enki_Icon_Red.png',
+    'images/Enki_Icon_Green.png',
+    'images/Enki_Icon_Purple.png',
+    'images/Enki_Icon_Black.png',
+    'images/Enki_Icon_White.png',
+    'images/Enki_Icon_Blue.png'
+  ];
 
   constructor(
     private fb: FormBuilder,
@@ -58,38 +73,38 @@ export class CreatecommunityComponent {
     private workspaceService: workspaceService,
     private booksService: BooksService,
     private router: Router,
+    public dialogRef: MatDialogRef<CreatecommunityComponent>
   ) {
     this.communityForm = this.fb.group({
       communityName: ['', Validators.required],
       book: ['', Validators.required],
       stamps: [0, [Validators.required, Validators.min(1)]],
-      privacy: ['public', Validators.required]
+      privacy: ['public', Validators.required],
+      icon: ['images/default-book.jpg']
     });
   }
-  
+
   ngOnInit() {
-    this.previewImage = 'images/default-book.jpg'
-    this.booksService.getBooks()
-      .subscribe((res) => {
-        this.books = Object.entries(res);
-        this.options = this.books.map((book: any) => book[1].title);
-        this.filteredOptions = this.options.slice();
-      });
+    this.booksService.getBooks().subscribe((res) => {
+      this.books = Object.entries(res);
+      this.options = this.books.map((book: any) => book[1].title);
+      this.filteredOptions = this.options.slice();
+    });
 
     this.communityForm.get('communityName')?.valueChanges.subscribe(value => {
       this.previewText = value || '';
     });
 
+    this.communityForm.get('book')?.valueChanges.subscribe(value => {
+      this.previewBook = value || '';
+    })
+
     this.communityForm.get('privacy')?.valueChanges.subscribe(value => {
-      this.previewPrivacy = value.charAt(0).toUpperCase() + value.slice(1);this.previewPrivacy = value || 'Public';
+      this.previewPrivacy = value ? (value.charAt(0).toUpperCase() + value.slice(1)) : 'Public';
     });
 
     this.communityForm.get('stamps')?.valueChanges.subscribe(value => {
       this.previewStamps = value || 0;
-    });
-
-    this.communityForm.get('book')?.valueChanges.subscribe(value => {
-      this.onBookSelected(value);
     });
   }
 
@@ -99,12 +114,12 @@ export class CreatecommunityComponent {
         () => this.snackBar.open('Comunidad creada', 'Cerrar', { duration: 3000 }),
         (error: any) => this.snackBar.open('Error en la creación', 'Cerrar', { duration: 3000 })
       );
+      this.router.navigate(['/dashboard/home']).then(() => {
+        window.location.reload();
+      });
     } else {
       this.snackBar.open('Completa todos los campos', 'Cerrar', { duration: 3000 });
     }
-    this.router.navigate(["/dashboard/home"]).then(() => {
-      window.location.reload();
-    });
   }
 
   filter(): void {
@@ -112,21 +127,11 @@ export class CreatecommunityComponent {
     this.filteredOptions = this.options.filter(o => o.toLowerCase().includes(filterValue));
   }
 
-  onBookSelected(bookTitle: string): void {
-    if (!bookTitle) {
-      this.previewImage = 'images/default-book.jpg';
-      return;
-    }
-    this.getBookCover(bookTitle);
+  selectIcon(icon: string): void {
+    this.communityForm.patchValue({ icon });
   }
 
-  getBookCover(bookTitle: string): void {
-    const book = this.books.find((b: any) => b[1].title === bookTitle);
-    if (book) {
-      this.previewImage = book[1].largeThumbnail; 
-    } else {
-      this.previewImage = null;
-    }
+  closeDialog(): void {
+    this.dialogRef.close();
   }
 }
-

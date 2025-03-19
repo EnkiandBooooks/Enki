@@ -432,3 +432,13 @@ Other Dashboard Sections
   align-items: center;
 }
 
+.custom-dialog-backdrop {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.custom-dialog-container {
+  border-radius: 12px;
+  padding: 0;
+}

@@ -1,77 +1,104 @@
+<!-- Overlay de fondo -->
+<div class="popup-overlay"></div>
+
+<!-- Contenedor centrado para el popup -->
+<div class="popup-container">
   <form [formGroup]="communityForm" (ngSubmit)="onSubmit()" ngNativeValidate>
-    <div class="form-container">
-
-      <h2>Create community</h2>
-
+      <!-- Título principal -->
       <div class="mat-cards">
-
-      <mat-card class="form-card">
-
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Community's name</mat-label>
-          <input matInput formControlName="communityName" placeholder="Introduce el nombre de la comunidad">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Book</mat-label>
-          <input #input 
-            type="text" 
-            placeholder="Introduce el nombre del libro"
-            matInput
-            formControlName="book"
-            [matAutocomplete]="auto"
-            (input)="filter()"
-            (focus)="filter()">
-          <mat-autocomplete requireSelection #auto="matAutocomplete">
-            @for (option of filteredOptions; track option) {
-              <mat-option [value]="option">{{option}}</mat-option>
-            }
-          </mat-autocomplete>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Chapters / Pages</mat-label>
-          <input matInput type="number" formControlName="stamps" placeholder="Cantidad de stamps" min="1" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Privacy</mat-label>
-          <mat-select formControlName="privacy">
-            <mat-option value="public">Public</mat-option>
-            <mat-option value="private">Private</mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <button mat-raised-button color="primary" type="submit" class="submit-button">Create</button>
-
-      </mat-card>
-
-
-      <mat-card class="form-card">
-
-        <h2 class="preview-title" *ngIf="previewText">{{ previewText }}</h2>
-
-        <div *ngIf="previewImage" class="preview-container">
-          <div class="preview-image-wrapper">
-            <img [src]="previewImage" alt="Book Preview" class="preview-image">
+        <!-- Única tarjeta que contiene tanto el formulario como la previsualización -->
+        <mat-card class="form-card">
+          <button type="button" class="close-button" mat-icon-button (click)="closeDialog()">
+            <mat-icon>close</mat-icon>
+          </button>
+          <div class="titles-container">
+            <h2 class="create-title">Create Community</h2>
+            <h2 class="preview-title">Previsualization</h2>
           </div>
-        </div>        
-        
-        <div class="preview-info-container">
-          <mat-form-field appearance="outline" class="half-width">
-            <mat-label>Privacy</mat-label>
-            <input matInput [value]="previewPrivacy | titlecase" readonly>
-          </mat-form-field>
+          <!-- Contenedor que divide la parte del formulario (izquierda) y la previsualización (derecha) -->
+          <div class="form-and-preview">
+            <!-- Sección del formulario -->
+            <div class="form-section">
+              <!-- Nombre de la comunidad -->
+              <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Community's name</mat-label>
+                <input matInput formControlName="communityName" placeholder="Introduce el nombre de la comunidad">
+              </mat-form-field>
+              <!-- Libro (se mantiene el input para el título, pero ya no se usa para imagen) -->
+              <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Which book is this community about?</mat-label>
+                <input #input type="text" placeholder="Introduce el nombre del libro" matInput formControlName="book"
+                  [matAutocomplete]="auto" (input)="filter()" (focus)="filter()">
+                <mat-autocomplete requireSelection #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of filteredOptions" [value]="option">
+                    {{ option }}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+              <!-- Stamps -->
+              <mat-form-field appearance="outline" class="full-width">
+                <mat-label>How many stamps do you want at your timeline?</mat-label>
+                <input matInput type="number" formControlName="stamps" placeholder="Cantidad de stamps" min="1" required>
+              </mat-form-field>
+              <!-- Privacidad -->
+              <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Community's privacy</mat-label>
+                <mat-select formControlName="privacy">
+                  <mat-option value="public">Public</mat-option>
+                  <mat-option value="private">Private</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <!-- Selección de ícono -->
+              <div class="icon-selector">
+                <span class="icon-label">Community icon</span>
+                <div class="icon-options">
+                  <div class="icon-option" *ngFor="let icon of communityIcons" (click)="selectIcon(icon)"
+                    [class.selected]="icon === communityForm.value.icon">
+                    <img [src]="icon" alt="Community Icon">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Fin de la sección del formulario -->
 
-          <mat-form-field appearance="outline" class="half-width">
-            <mat-label>Chapters / Pages</mat-label>
-            <input matInput [value]="previewStamps" readonly>
-          </mat-form-field>
-        </div>
-  
-      </mat-card>
-
-    </div>
-
-    </div>
+            <!-- Sección de la previsualización -->
+            <div class="preview-section">
+              <!-- Ícono seleccionado -->
+              <div class="preview-container">
+                <div class="preview-image-wrapper">
+                  <img [src]="communityForm.value.icon" alt="Selected Icon" class="preview-image">
+                </div>
+              </div>
+              <!-- Datos de la comunidad en la previsualización -->
+              <div class="preview-info-container">
+                <div class="preview-info-row">
+                  <strong>{{ previewText || '*Community Name*' }}</strong>
+                </div>
+                <div class="preview-info-row">
+                  <mat-icon>book</mat-icon>
+                  <span>{{ previewBook || '*Book Name*' }}</span>
+                </div>
+                <div class="preview-info-row">
+                  <mat-icon>menu_book</mat-icon>
+                  <span>{{ previewStamps || 0 }}</span>
+                </div>
+                <div class="preview-info-row">
+                  <mat-icon *ngIf="communityForm.value.privacy === 'public'">public</mat-icon>
+                  <mat-icon *ngIf="communityForm.value.privacy === 'private'">lock</mat-icon>
+                  <span>{{ previewPrivacy }}</span>
+                </div>
+              </div>
+            </div>
+            <!-- Fin de la sección de previsualización -->
+          </div>
+          <!-- Fin de form-and-preview -->
+          <!-- Botón de Crear (abajo de todo, dentro de la misma tarjeta) -->
+          <div class="button-container">
+            <button mat-raised-button color="primary" type="submit" class="submit-button">
+              Create
+            </button>
+          </div>
+        </mat-card>
+      </div>
   </form>
+</div>
