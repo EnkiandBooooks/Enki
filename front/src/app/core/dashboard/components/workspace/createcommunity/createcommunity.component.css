@@ -135,9 +135,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
   gap: 50px;
-  margin-left: 10%;
+  min-width: 380px;
+  max-width: 380px;
 }
 
 .background-preview {
@@ -230,6 +230,7 @@ mat-form-field {
   align-items: center;
   gap: 20px;
   margin-top: 10px;
+  margin-left: 30px;
 }
 
 /* Texto de la preview (nombre, stamps, privacy) */
@@ -240,8 +241,11 @@ mat-form-field {
   gap: 10px;
   margin-top: 15px;
   width: auto;
-  max-width: 100px;
   padding-top: 5%;
+  max-width: 360px;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
 
 .preview-info-row {
@@ -249,11 +253,7 @@ mat-form-field {
   font-size: 1rem;
   display: flex;
   align-items: center;
-  gap: 6px; 
-  max-width: 150px; /* Ajusta el ancho según necesites */
-  white-space: nowrap; /* Evita que el texto pase a otra línea */
-  overflow: hidden; /* Oculta el texto que se salga del contenedor */
-  text-overflow: ellipsis; /* Agrega los puntos suspensivos (...) */
+  gap: 6px;  
 }
 /* Ícono de stamps y privacidad con pequeño margen a la derecha */
 .preview-info-row mat-icon {
@@ -267,6 +267,7 @@ mat-form-field {
 
 /* Contenedor de la imagen */
 .preview-image-wrapper {
+  flex: 0 0 30%;
   position: relative;
   display: inline-block;
   border-radius: 50%;
