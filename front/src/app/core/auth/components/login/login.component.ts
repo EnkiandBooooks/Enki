@@ -14,7 +14,10 @@ import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '../../services/auth.service';
 
+
+declare var google: any;
 declare var grecaptcha: any;
+
 
 @Component({
   selector: 'app-login',
@@ -39,6 +42,8 @@ export class LoginComponent implements OnInit {
   password: string = '';
   hide = signal(true);
 
+
+  
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -46,6 +51,11 @@ export class LoginComponent implements OnInit {
     private snackBar: MatSnackBar,
     private renderer: Renderer2
   ) {}
+
+
+ handleCredentialResponse(response: any) {
+    console.log("Encoded JWT ID token: " + response.credential);
+  }
 
   ngOnInit(): void {
     // Cargar dinámicamente el script de reCAPTCHA
@@ -55,6 +65,23 @@ export class LoginComponent implements OnInit {
     script.defer = true;
     this.renderer.appendChild(document.body, script)
     console.log("Recaptcha cargado correctamente")
+
+
+
+
+      // Cargar dinámicamente el script de Google Identity
+    const scriptGoogle = this.renderer.createElement('script');
+    scriptGoogle.src = 'https://accounts.google.com/gsi/client';
+    scriptGoogle.async = true;
+    scriptGoogle.defer = true;
+    scriptGoogle.onload = () => {
+      google.accounts.id.initialize({
+        client_id: '1016059870581-dk2hh7sa8ksvdgqg7jtve0qc36de4omq.apps.googleusercontent.com',
+        callback: (response: any) => this.handleCredentialResponse(response),
+      });
+      console.log('Google Identity cargado correctamente');
+    };
+    this.renderer.appendChild(document.body, scriptGoogle);
   }
 
   clickEvent(event: MouseEvent) {
