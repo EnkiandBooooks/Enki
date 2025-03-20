@@ -13,6 +13,7 @@ import { MatCard } from '@angular/material/card';
 import { MatDivider } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from '../../services/auth.service';
 import { CreatecommunityComponent } from '../workspace/createcommunity/createcommunity.component';
 import { TimelineComponent } from '../workspace/timeline/timeline.component';
@@ -59,13 +60,15 @@ export class DashboardComponent {
   cookieExists: boolean = false;
   currentWorkspaceId: string ='';
   isCollapsed: boolean = false;
+
   constructor(
     private cdr: ChangeDetectorRef,
     private cookieService: CookieService,
     private router: Router,
     private authService: AuthService,
     private loadingService: LoadingService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog
   ) {}
 
   async ngOnInit() {
@@ -79,7 +82,6 @@ export class DashboardComponent {
         this.arrUsr.set(res);
         this.imgUrl = 'data:image/png;base64,' + res.img;
         console.log(this.arrUsr().userWorkspaces)
-
         this.loadingService.hide();
       }, (error) => {
         console.log("Error al cargar los datos del usuario", error);
@@ -93,11 +95,19 @@ export class DashboardComponent {
 
 
   showSection(section: string) {
-    this.selectedSection = section;
-    this.cdr.detectChanges();
-    this.router.navigate(["/dashboard/"+section])
-
+    if (section === 'createcommunity') {
+      this.dialog.open(CreatecommunityComponent, {
+        panelClass: 'custom-dialog-container',
+        backdropClass: 'custom-dialog-backdrop',
+        disableClose: true,
+      });
+    } else {
+      this.selectedSection = section;
+      this.cdr.detectChanges();
+      this.router.navigate(["/dashboard/" + section]);
+    }
   }
+
 
   toggleNavbar(): void {
     this.isCollapsed = !this.isCollapsed;

@@ -94,7 +94,11 @@ const workSpaceSchema = new mongooseSchema({
                 default: 1
             }
         }]
-    }
+    },
+    icon_workspace: {
+        type: String,
+        required: true
+    } 
 });
 
 const workspaceModel = mongoose.model('workspace', workSpaceSchema);
