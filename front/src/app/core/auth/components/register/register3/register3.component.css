@@ -133,3 +133,47 @@ mat-card-actions button:hover {
     max-width: 120px; /* Reducir aún más el tamaño del logo en pantallas pequeñas */
   }
 }
+
+/* ICONS */
+.icon-selector {
+  margin-top: 5%;
+}
+
+.icon-label {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.icon-options {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.icon-option {
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: border-color 0.3s ease;
+  width: 70px; /* Asegurar tamaño */
+  height: 70px;
+}
+
+.icon-option.selected {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  border: 3px solid #4C474E;
+}
+
+.icon-option img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}

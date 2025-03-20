@@ -52,6 +52,17 @@
             </button>
           </mat-form-field>
 
+          <!-- Selección de ícono -->
+             <div class="icon-selector">
+              <span class="icon-label">Community icon</span>
+              <div class="icon-options">
+                <div class="icon-option" *ngFor="let icon of communityIcons" (click)="selectIcon(icon)"
+                  [class.selected]="icon === selectedIcon">
+                  <img [src]="icon" alt="Community Icon">
+                </div>
+              </div>
+            </div>
+
           <!-- Contenedor para el botón -->
           <div class="button-container">
             <button mat-raised-button type="submit">Continue</button>

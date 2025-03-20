@@ -41,7 +41,7 @@ export class RegisterController {
             });
         }
 
-        const { username, passwordUser, cookie } = req.body;
+        const { username, passwordUser, cookie, img } = req.body;
         try {
             // Hashea la contraseña utilizando el gestor de hash de contraseñas
             const password = await PasswdHashManager.hashPassword(passwordUser);
@@ -59,7 +59,8 @@ export class RegisterController {
             const newUser = new userModel({
                 username,
                 email,
-                password
+                password,
+                img
             });
             //Inserta en la base de datos usando mongoose
             await newUser.save();

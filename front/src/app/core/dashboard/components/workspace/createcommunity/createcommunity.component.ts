@@ -15,14 +15,6 @@ import { workspaceService } from '../services/workspace.service';
 import { BooksService } from '../services/books.service';
 import { Router } from '@angular/router';
 
-interface CommunityData {
-  communityName: string;
-  book: string;
-  stamps: number;
-  privacy: string;
-  icon: string;
-}
-
 @Component({
   selector: 'app-createcommunity',
   standalone: true,
