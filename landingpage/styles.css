@@ -482,6 +482,10 @@ body {
   transition: opacity .25s ease-out, bottom 0.25s ease-in-out; /* Transición suave */
   user-select: none;
 }
-
-
+/*
+.scroll-section{
+  background-color:greenyellow;
+  border: 1px solid black;
+}
+*/
 
