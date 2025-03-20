@@ -26,7 +26,7 @@ export class WorkspaceController{
         const imagen = fs.readFileSync(imgPath);
         const base64Img = Buffer.from(imagen).toString('base64');
         const user = req.user;
-        const { communityName, book, stamps, privacy } = workspaceSchema.parse(req.body)
+        const { communityName, book, stamps, privacy, icon} = workspaceSchema.parse(req.body)
 
         const bookBD = await bookModel.find({title: book});
         try {
@@ -43,7 +43,8 @@ export class WorkspaceController{
                     memberId: user._id,
                     name: user.username,
                     image: base64Img
-                }
+                },
+                icon_workspace: icon
             });
             const workspace = await newWorkspace.save();
             const newInfo = {"workSpaces": workspace._id};

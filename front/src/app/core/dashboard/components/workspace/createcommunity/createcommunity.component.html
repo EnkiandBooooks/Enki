@@ -81,18 +81,20 @@
                 </div>
               </div>
             </div>
-              <!-- Selección de ícono -->
-              <div class="icon-selector">
-                <span class="icon-label">Community icon</span>
-                <div class="icon-options">
-                  <div class="icon-option" *ngFor="let icon of communityIcons" (click)="selectIcon(icon)"
-                    [class.selected]="icon === communityForm.value.icon">
-                    <img [src]="icon" alt="Community Icon">
-                  </div>
+
+             <!-- Selección de ícono -->
+             <div class="icon-selector">
+              <span class="icon-label">Community icon</span>
+              <div class="icon-options">
+                <div class="icon-option" *ngFor="let icon of communityIcons" (click)="selectIcon(icon)"
+                  [class.selected]="icon === communityForm.value.icon">
+                  <img [src]="icon" alt="Community Icon">
                 </div>
               </div>
-
             </div>
+            </div>
+            
+
             <!-- Fin de la sección de previsualización -->
           </div>
           <!-- Fin de form-and-preview -->

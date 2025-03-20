@@ -81,7 +81,7 @@ export class CreatecommunityComponent {
       book: ['', Validators.required],
       stamps: [0, [Validators.required, Validators.min(1)]],
       privacy: ['public', Validators.required],
-      icon: ['images/default-book.jpg']
+      icon: ['images/Enki_Icon_Red.png']
     });
   }
 

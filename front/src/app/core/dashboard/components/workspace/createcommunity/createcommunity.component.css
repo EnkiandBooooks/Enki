@@ -22,10 +22,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 101; /* Debe estar encima del overlay */
-  width: 90vw;
-  max-width: 900px;
+  width: 70%;
   margin: 0 10px;
-  max-height: 80vh;
+  height: 80%;
   min-width: 453px;
   display: flex;
   flex-direction: column;
@@ -106,8 +105,6 @@
   font-size: 3vh !important;
   font-weight: 400 !important;
   margin-bottom: 0;
-  padding-right: 10%;
-  padding-top: 8%;
 }
 /*************************************************************
   DISTRIBUCIÓN INTERNA: FORM Y PREVIEW
@@ -119,11 +116,12 @@
   flex-wrap: nowrap;
   gap: 2rem;
   max-height: 100%;
+  width: 100%;
 }
 
 /* Sección del formulario (izquierda) */
 .form-section {
-  flex: 1 1 40%;
+  flex: 0 0 40%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -135,15 +133,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 50px;
-  min-width: 380px;
-  max-width: 380px;
-}
-
-.background-preview {
   background-color: #f5f5f5;
   border: 2px solid #66576C;
   border-radius: 8px;
+
+}
+
+.background-preview {
+  align-items: center;
+  justify-content: center;
+  min-width: 500px;
+  max-width: 100%;
+  width: 100%;
 }
 
 
@@ -178,23 +179,24 @@ mat-form-field {
 **************************************************************/
 
 .icon-selector {
-  margin-top: 20%;
-  margin: 10%;
+  margin-top: 5%;
 }
 
 .icon-label {
   color: #333;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   margin-bottom: 5px;
   display: block;
 }
 
 .icon-options {
   display: flex;
-  gap: 10px;
+  gap: 50px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .icon-option {
@@ -202,8 +204,8 @@ mat-form-field {
   border: 2px solid transparent;
   border-radius: 50%;
   transition: border-color 0.3s ease;
-  width: 50px; /* Asegurar tamaño */
-  height: 50px;
+  width: 70px; /* Asegurar tamaño */
+  height: 70px;
 }
 
 .icon-option.selected {
@@ -228,9 +230,7 @@ mat-form-field {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  margin-top: 10px;
-  margin-left: 30px;
+  margin: 50px;
 }
 
 /* Texto de la preview (nombre, stamps, privacy) */
@@ -238,13 +238,11 @@ mat-form-field {
   display: block;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
-  margin-top: 15px;
-  width: auto;
-  padding-top: 5%;
-  max-width: 360px;
+  margin-left: 30px;
+  width: 100%;
+  max-width: 100%;
   white-space: nowrap; 
-  overflow: hidden; 
+  overflow: hidden;
   text-overflow: ellipsis; 
 }
 
@@ -252,13 +250,27 @@ mat-form-field {
   color: #333;
   font-size: 1rem;
   display: flex;
-  align-items: center;
-  gap: 6px;  
+  width: 100%;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
+.preview-info-row span, strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  flex-grow: 1; /* Permite que el texto ocupe el máximo espacio disponible */
+  min-width: 0; /* Necesario para que text-overflow funcione dentro de flexbox */
+}
+
 /* Ícono de stamps y privacidad con pequeño margen a la derecha */
 .preview-info-row mat-icon {
   margin-right: 4px;
   font-size: 1.2rem;
+  flex-shrink: 0;
 }
 
 /*************************************************************
@@ -272,7 +284,6 @@ mat-form-field {
   display: inline-block;
   border-radius: 50%;
   border: 4px solid #000;
-  margin-top: 10px;
 }
 
 .preview-image {
