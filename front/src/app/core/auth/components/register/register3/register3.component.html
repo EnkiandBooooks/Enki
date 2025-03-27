@@ -57,7 +57,7 @@
               <span class="icon-label">Community icon</span>
               <div class="icon-options">
                 <div class="icon-option" *ngFor="let icon of communityIcons" (click)="selectIcon(icon)"
-                  [class.selected]="icon === selectedIcon">
+                  [class.selected]="icon === img">
                   <img [src]="icon" alt="Community Icon">
                 </div>
               </div>

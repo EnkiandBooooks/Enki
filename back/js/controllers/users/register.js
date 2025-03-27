@@ -62,6 +62,9 @@ export class RegisterController {
                 password,
                 img
             });
+
+            console.log("Ruta de la imgen de perfil seleccionada: ", img)
+            console.log("Respuesta de backend: ", req.body)
             //Inserta en la base de datos usando mongoose
             await newUser.save();
             // Envía una respuesta de éxito

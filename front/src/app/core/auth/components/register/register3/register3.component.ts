@@ -33,7 +33,7 @@ export class Register3Component {
   userName: string = '';
   passWord: string = '';
   confirmPassword: string = '';
-  selectedIcon: string = '';
+  img: string = '';
 
    // Íconos disponibles para seleccionar
    communityIcons: string[] = [
@@ -58,17 +58,17 @@ export class Register3Component {
     event.stopPropagation();
   }
 
-  sendData(userName:string, passWord:string, selectedIcon:string):void{
+  sendData(userName:string, passWord:string, img:string):void{
     const cookie = this.cookieService.get('email_sendcode_token');
-    const body = {'username':userName, 'passwordUser':passWord, 'cookie': cookie, 'selectedIcon':selectedIcon}
+    const body = {'username':userName, 'passwordUser':passWord, 'cookie': cookie, 'img':img}
     this.authService.sendData(body)
     .subscribe(res => console.log(res))
-    console.log(passWord,userName, selectedIcon)
+    console.log(passWord,userName, img)
   }
 
   onSubmit() {
     if (this.passWord === this.confirmPassword && this.passWord.length >= 8) {
-      this.sendData(this.userName, this.passWord, this.selectedIcon);
+      this.sendData(this.userName, this.passWord, this.img);
       this.cookieService.delete('email_sendcode_token');
       this.router.navigate(['/auth/login']);
     } else {
@@ -76,8 +76,8 @@ export class Register3Component {
     }
   }
 
-  selectIcon(icon: string): void {
-    this.selectedIcon =icon;
-    console.log(icon)
+  selectIcon(img: string): void {
+    this.img =img;
+    console.log(img)
   }
 }
