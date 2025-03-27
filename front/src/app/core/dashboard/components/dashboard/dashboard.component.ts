@@ -80,7 +80,8 @@ export class DashboardComponent {
     if (this.cookieExists) {
       this.authService.getData().subscribe((res) => {
         this.arrUsr.set(res);
-        this.imgUrl = 'data:image/png;base64,' + res.img;
+        console.log("IMAGEN IMAGEN IMAGEN BOLUDO: ", res.img);
+        this.imgUrl = res.img;
         console.log(this.arrUsr().userWorkspaces)
         this.loadingService.hide();
       }, (error) => {

@@ -32,9 +32,7 @@ export class DataController {
     static async getData(req, res) {
         try {
             const usr = req.user;
-            const imgPath = (usr.img===null) ?"images/Enki_Icon_Red.png" : "img/img_profile_cut/"+usr.img;
-            const imagen = fs.readFileSync(imgPath);
-            const base64Img = Buffer.from(imagen).toString('base64');
+            const imgPath = (usr.img===null) ?"images/Enki_Icon_Red.png" : usr.img;
 
             const userWorkspaces = await userModel
                 .findOne({username: usr.username}, "workSpaces")
@@ -49,7 +47,7 @@ export class DataController {
                 rol: usr.rol,
                 creationDate: usr.createdAt,
                 userWorkspaces: userWorkspaces.workSpaces || null,
-                img: base64Img || null,  // Agregar la imagen si existe
+                img: imgPath,  // Agregar la imagen si existe
             })
         } catch (error) {
             console.error("Error fetching user data:", error);
