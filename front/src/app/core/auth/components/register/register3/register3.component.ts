@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from '../../../services/auth.service';
 import { MatIcon } from '@angular/material/icon';
+import { BlacklistService } from '../../../../../shared/services/blacklist.service';
 
 @Component({
   selector: 'app-register3',
@@ -32,7 +33,7 @@ export class Register3Component {
   passWord: string = '';
   confirmPassword: string = '';
 
-  constructor(private router: Router, private authService: AuthService, private cookieService: CookieService) {}
+  constructor(private router: Router, private authService: AuthService, private cookieService: CookieService, private blacklistService: BlacklistService) {}
 
   hide1 = signal(true);
   clickEvent1(event: MouseEvent) {
@@ -54,12 +55,22 @@ export class Register3Component {
   }
 
   onSubmit() {
-    if (this.passWord === this.confirmPassword && this.passWord.length >= 8) {
+    if (this.passWord !== this.confirmPassword || this.passWord.length < 8) {
+      alert('Por favor, asegúrese de que las contraseñas coincidan y tengan al menos 8 caracteres.');
+      return;
+    }
+  
+    // Validar username
+    this.blacklistService.validateText({ textBody: this.userName }).subscribe(res => {
+      if (!res.validText) {
+        alert('El nombre de usuario contiene palabras no permitidas.');
+        return;
+      }
+  
+      // Si pasa la validación, se envían los datos
       this.sendData(this.userName, this.passWord);
       this.cookieService.delete('email_sendcode_token');
       this.router.navigate(['/auth/login']);
-    } else {
-      alert('Por favor, asegúrese de que las contraseñas coincidan y tengan al menos 8 caracteres.');
-    }
+    });
   }
 }

@@ -7,6 +7,7 @@ import { connectDB } from "./database/mongodb/connectBD.js";
 import { downloadImgRouter } from "./routes/books/downloadImg.js";
 import { workspaceRouter } from "./routes/workspace.js";
 import { urlInvitationRoute } from "./routes/workspace/urlInvitation.js";
+import { blacklistValidationRouter } from "./routes/users/blacklistValidation.js";
 
 
 const app = express();
@@ -33,6 +34,7 @@ app.use('/books', booksRouter);
 app.use('/workspace',workspaceRouter)
 app.use('/', downloadImgRouter);
 app.use('/urlInvitation', urlInvitationRoute)
+app.use('/blacklistValidation', blacklistValidationRouter)
 app.listen(process.env.PORT, () => {
     console.log(`server running on port http://localhost:${process.env.PORT}`);
 });
