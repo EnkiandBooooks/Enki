@@ -132,26 +132,18 @@ Descripción y ejemplos de las pruebas de estilo que estás utilizando.
 ```bash
 # proporciona un ejemplo
 ```
-
 El servidor frontend se abrira en el http://localhost:4200 y el servidor backend en el http://localhost:1234
 
 ## Construido Con 🛠️
 
-Explica qué tecnologías usaste para construir este proyecto. Aquí algunos ejemplos:
-
-- [JavaScript]() - El lenguaje de backend utilizado
-- [NodeJs](https://nodejs.org/en) - El framework de backend utilizado
-- [TypeScript]() - El lenguaje de frontend utilizado
-- [Angular 18](https://angular.dev/) - El framework de frontend utilizado
-- [Ruby gems](https://rubygems.org) - Gestión de dependencias
-- [Postgresql](https://www.postgresql.org) - Sistema de base de datos
-- [Bulma IO](https://bulma.io) - Framework de CSS
-
+- [JavaScript]() - El lenguaje de backend utilizado.
+- [NodeJs](https://nodejs.org/en) - El framework de backend utilizado.
+- [TypeScript]() - El lenguaje de frontend utilizado.
+- [Angular 18](https://angular.dev/) - El framework de frontend utilizado.
+- [MongooDB](https://www.mongodb.com/) - Base de datos utilizada.
 ## Roadmap
 
-Ideas, mejoras planificadas y actualizaciones futuras
-
-para el proyecto actual.
+Ideas, mejoras planificadas y actualizaciones futuras para el proyecto actual.
 
 ## Autores ✒️
 
@@ -165,8 +157,3 @@ para el proyecto actual.
 
 
 
-
-- Mantén cada sección lo más concisa posible. Evita la pelusa innecesaria, ya que puede ser abrumadora para el lector.
-- Asegúrate de que tus instrucciones de instalación, pruebas y despliegue sean detalladas y precisas. Si hay pasos adicionales que el lector necesita tomar (como instalar dependencias extra), asegúrate de incluirlos.
-- Los visuales (imágenes, GIFs) son muy útiles para transmitir rápidamente lo que hace tu proyecto y cómo usarlo. Si puedes, incluye capturas de pantalla de tu aplicación en acción o GIFs que demuestren su uso.
-- El tono amigable y acogedor que usas en tu README es excelente. Ayuda a hacer tu proyecto más acogedor para los colaboradores.
