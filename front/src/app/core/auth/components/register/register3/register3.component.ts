@@ -30,13 +30,9 @@ import { NgForOf } from '@angular/common';
   styleUrls: ['./register3.component.css']
 })
 export class Register3Component {
-  userName: string = '';
-  passWord: string = '';
-  confirmPassword: string = '';
-  img: string = '';
 
-   // Íconos disponibles para seleccionar
-   communityIcons: string[] = [
+  // Íconos disponibles para seleccionar
+  communityIcons: string[] = [
     'images/Enki_Icon_Red.png',
     'images/Enki_Icon_Green.png',
     'images/Enki_Icon_Purple.png',
@@ -44,6 +40,11 @@ export class Register3Component {
     'images/Enki_Icon_White.png',
     'images/Enki_Icon_Blue.png'
   ];
+
+  userName: string = '';
+  passWord: string = '';
+  confirmPassword: string = '';
+  img: string = this.communityIcons[0];
 
   constructor(private router: Router, private authService: AuthService, private cookieService: CookieService) {}
 

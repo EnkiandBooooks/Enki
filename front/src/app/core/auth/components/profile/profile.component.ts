@@ -31,7 +31,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providers: [DatePipe]
 })
 export class ProfileComponent {
-  imgFile: any;
   imgUrl: any | undefined;
   arrUsr = signal<any>([]);
   edit = false;
@@ -66,7 +65,6 @@ export class ProfileComponent {
     // Procede solo si estamos fuera de modo edición
     if (!this.edit) {
       const formData = new FormData();
-      formData.append('file', this.imgFile);  // 'file' debe coincidir con el nombre del campo en Multer
       formData.append('username', this.arrUsr().user);
       formData.append('mail', this.arrUsr().mail);
 
@@ -90,7 +88,7 @@ export class ProfileComponent {
     this.authService.getData().subscribe((res) => {
       this.arrUsr.set(res);
       this.formattedDate = this.dateFormat(this.arrUsr().creationDate);
-      this.imgUrl = 'data:image/png;base64,' + res.img
+      this.imgUrl = res.img
       this.confirmMail = this.arrUsr().mail;
     });
   }
@@ -112,22 +110,5 @@ export class ProfileComponent {
 
   goToResetPwd() {
     this.router.navigate(['/resetPswd1']);
-  }
-
-  onFileSelected(event: Event) {
-    const input = event.target as HTMLInputElement;
-    if (input.files && input.files.length > 0) {
-      const file = input.files[0];
-      this.handleFileInput(file);
-    }
-  }
-
-  handleFileInput(file: File) {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      this.imgUrl = reader.result as string;
-    };
-    reader.readAsDataURL(file);
-    this.imgFile = file;
   }
 }

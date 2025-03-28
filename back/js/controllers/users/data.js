@@ -32,8 +32,7 @@ export class DataController {
     static async getData(req, res) {
         try {
             const usr = req.user;
-            const imgPath = (usr.img===null) ?"images/Enki_Icon_Red.png" : usr.img;
-
+            const imgPath = usr.img;
             const userWorkspaces = await userModel
                 .findOne({username: usr.username}, "workSpaces")
                 .populate('workSpaces', "_id workSpaceName");
@@ -47,7 +46,7 @@ export class DataController {
                 rol: usr.rol,
                 creationDate: usr.createdAt,
                 userWorkspaces: userWorkspaces.workSpaces || null,
-                img: imgPath,  // Agregar la imagen si existe
+                img: imgPath
             })
         } catch (error) {
             console.error("Error fetching user data:", error);
